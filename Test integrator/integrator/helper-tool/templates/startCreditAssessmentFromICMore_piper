@@ -1,0 +1,35 @@
+{
+    "pipes": [
+      <#if body.variables.DatabaseActionResult?? && body.variables.DatabaseActionResult?has_content>
+        {
+          "type": "script",
+          "name": "determineICMoreEntityInfo"
+        },
+        {
+          "type": "script",
+          "name": "determineDaylightTimeSaving"
+        },
+        {
+           "type": "action",
+           "name": "processGroups_piper",
+           "script": "initialBody = body; body.lessorID = body.icmoreEntityInfo.lessorID; body.operatingEntity = body.icmoreEntityInfo.operatingEntity;"
+        },
+        {
+            "type": "transform",
+            "name": "startCreditAssessmentFromICMore_mapping",
+            "script": "adminGroup = body.adminGroup; salesGroup = body.salesGroup; underwritersGroup = body.underwritersGroup; corpUnderwritersGroup = body.corpUnderwritersGroup; globalAdminGroup = body.globalAdminGroup; body = [initial: initialBody, salesGroup: body.salesGroup]"
+        },
+        {
+            "type" : "action",
+            "name" : "startProcess",
+            "script": "body = [answers: body.answers, secureData: body.secureData, documentsVariables: [], corpUnderwritersGroup: corpUnderwritersGroup, underwritersGroup: underwritersGroup, adminGroup: adminGroup, salesGroup: salesGroup, globalAdminGroup: globalAdminGroup]"
+        }
+        <#else>
+          {
+              "type": "transform",
+              "name": "callDatabase_error"
+          }
+          
+     </#if>
+    ]
+}
