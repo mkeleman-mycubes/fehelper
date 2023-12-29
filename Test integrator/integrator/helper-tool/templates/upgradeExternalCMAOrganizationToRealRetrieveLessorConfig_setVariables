@@ -1,0 +1,20 @@
+{
+    <#if body.bpmnError??>
+        "status": "true",
+        "bpmnError": {
+            "bpmnErrorCode": "${body.bpmnError.bpmnErrorCode}",
+            "bpmnErrorMessage": "${body.bpmnError.bpmnErrorMessage}"
+        }
+    <#else>
+        "variables": {
+            "LessorRecordId": "${body.id}",
+            "OrganizationCMAId": "${body.organizationResponse.id}"
+<#--            <#if body.organizationResponse.parent?? && body.organizationResponse.parent?has_content>
+                "ParentCMAId": "${body.organizationResponse.parent.id}"
+            <#else>
+                "ParentCMAId": "${body.organizationResponse.id}"
+            </#if> -->
+            
+        }
+    </#if>
+}
