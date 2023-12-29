@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/07/secext" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:act="urn:crmondemand/ws/ecbs/activity/" xmlns:data="urn:/crmondemand/xml/Activity/Data">
+   <soapenv:Header>
+    	<wsse:Security soapenv:mustUnderstand="1">
+    		<wsse:UsernameToken>
+                <wsse:Username>${headers.soapConnectorProperties.icMoreUsername}</wsse:Username>
+                <wsse:Password Type="wsse:PasswordText">${headers.soapConnectorProperties.icMorePassword}</wsse:Password>
+            </wsse:UsernameToken>
+    	</wsse:Security>
+    </soapenv:Header>
+   <soapenv:Body>
+      <act:ActivityUpdate_Input>
+         <data:ListOfActivity lastpage="?" recordcount="?">
+            <!--Zero or more repetitions:-->
+            <data:Activity operation="?">
+                <#list body.variables?keys as variableName>
+                    <#if variableName?starts_with("SET_")>
+                        <#assign tagName = variableName?split("_")[1]>
+                        <data:${tagName}>${body.variables[variableName]}</data:${tagName}>
+                    </#if>
+                </#list>
+            </data:Activity>
+         </data:ListOfActivity>
+      </act:ActivityUpdate_Input>
+   </soapenv:Body>
+</soapenv:Envelope>
