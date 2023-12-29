@@ -1,0 +1,116 @@
+<#if body.companyId?? && body.companyId?has_content>
+    <#if body.companyId[0] == "H">
+        <#assign companyId = body.companyId[1..8]>
+    <#else>
+        <#assign companyId = body.companyId>
+    </#if>
+</#if>
+{
+    "applicationId": "guid",
+    "businessPartners": [
+        {
+            "companyDisclosure": {
+                "companyId": "${companyId}"
+            }
+        }
+    ],
+    "currencyCode": "EUR",
+    "requestDate": "2020-01-01T00:00:00Z",
+    "requestReason": "Prospect",
+    "totalCreditLine": 50000
+}
+
+<#-- 
+<#if body.companyId == "34196963">
+{
+    "businessPartners": [
+        {
+            "companyDisclosure": {
+                "companyId": "34196963",
+                "companyName": "Graydon Nederland B.V.13524",
+                "vatId": "NL001425997B01"
+            },
+            "addresses": [
+                {
+                    "number": "250",
+                    "zipCode": "1101BV",
+                    "city": "AMSTERDAM",
+                    "countryCode": "NL",
+                    "street": "Hullenbergweg",
+                    "type": "Registered office address"
+                },
+                {
+                    "number": "12525",
+                    "zipCode": "1100AM",
+                    "city": "AMSTERDAM",
+                    "countryCode": "NL",
+                    "street": "",
+                    "type": "Postal address"
+                },
+                {
+                    "number": "250",
+                    "zipCode": "1101BV",
+                    "city": "AMSTERDAM",
+                    "countryCode": "NL",
+                    "street": "Hullenbergweg",
+                    "type": "Next to last registered office address"
+                }
+            ],
+            "externDisclosure": {
+                "agencies": [
+                    {
+                        "company": {
+                            "affiliatedCompanies": [
+                                {
+                                    "companyId": "11111111",
+                                    "companyName": "Sub 1",
+                                    "affiliationType": "Subsidiary"
+                                }
+                            ]
+                        },
+                        "agencyId": "18507",
+                        "bureauProductState": "CustomerFound",
+                        "agencyName": "GraydonNL"
+                    }
+                ]
+            }
+        }
+    ]
+}
+<#else>
+{
+    "businessPartners": [
+        {
+            "companyDisclosure": {
+                "companyId": "${body.companyId}",
+                "companyName": "Company ${body.companyId}",
+                "vatId": "NL-${body.companyId}"
+            },
+            "externDisclosure": {
+                "agencies": [
+                    {
+                        "company": {
+                            "affiliatedCompanies": [
+                                {
+                                    "companyId": "34196963",
+                                    "companyName": "Atradius N.V.",
+                                    "affiliationType": "Parent"
+                                },
+                                {
+                                    "companyId": "33189409",
+                                    "companyName": "Graydon Holding N.V.",
+                                    "affiliationType": "Parent"
+                                }
+                            ]
+                        },
+                        "agencyId": "18507",
+                        "bureauProductState": "CustomerFound",
+                        "agencyName": "GraydonNL"
+                    }
+                ]
+            }
+        }
+    ]
+}
+</#if>
+-->
