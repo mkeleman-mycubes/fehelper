@@ -1,0 +1,7 @@
+{
+    "status": "true",
+    "errorOccured": true,
+    "error": {
+        "message": <@printObjectToJson source=body />
+    }
+}
