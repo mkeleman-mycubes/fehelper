@@ -1,0 +1,17 @@
+{
+  "authorization": "Basic QXRobG9uQ3JlZGl0UG9ydGFsOkF0aGxvbkNyZWRpdFBvcnRhbA==",
+  "creditPlatformEndpoint": "https://api-mock-service.acc-docker.mycubes.nl/api/mock-api/rest/ACA",
+  "environment": "MC",
+  "integratorUrl": "https://api-mock-service.acc-docker.mycubes.nl/api/mock-api/rest/ACA",
+  "cmaAuthorization": "Basic Y21vLXBvcnRhbDpjbW8tcG9ydGFs",
+  "DMSEndpoint": "https://rest-file-storage.dev.mycubes.nl",
+  "BIEndpoint": "https://api-mock-service.acc-docker.mycubes.nl/api/mock-api/rest/ACA",
+  "camundaEndpoint": "https://acamo-camunda.acc-docker.mycubes.nl/engine-rest",
+  "cmaEndpoint": "https://cma-node.acc-docker.mycubes.nl/rest/api/cmo-assessment",
+  "disableICMorePolling": "true",
+  "OTDSEndpoint": "https://api-mock-service.acc-docker.mycubes.nl/api/mock-api/rest/ACA",
+  "restFileStorageEndpoint": "https://rest-file-storage.dev.mycubes.nl",
+  "smeoAuthorization": "Basic YWNhbW8tdXNlcjphY2Ftby11c2Vy",
+  "smeoEndpoint": "https://smeo-portal.acc-docker.mycubes.nl/api/credit-assessment/complete-step",
+  "sendGridAuth": "Bearer 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"
+}
