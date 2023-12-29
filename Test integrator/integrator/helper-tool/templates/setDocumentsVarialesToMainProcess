@@ -1,0 +1,11 @@
+{
+    "modifications": {
+    <#list body.variablesToSet as name, value>
+        "${name}" : {
+            "value": "<@printObjectToJsonString source=value/>",
+            "type": "Json"
+        }
+        <#sep>,</#sep>
+    </#list>    
+    }
+}
