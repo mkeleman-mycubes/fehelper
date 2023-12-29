@@ -1,0 +1,18 @@
+{
+    "status": "true",
+    <#if body.errorOccured??>
+    "bpmnError": {
+        "bpmnErrorCode": "${body.bpmnError.bpmnErrorCode}",
+        "bpmnErrorMessage": "${body.bpmnError.bpmnErrorMessage}"
+    }
+    <#else>
+        "processVariables": {
+            "OrganizationCMAId": "${body.id}",
+            <#if body.corporate?? && body.corporate == "true">
+                "OrganizationIsCorporateInCMA": "true"
+            <#else>
+                "OrganizationIsCorporateInCMA": "false"
+            </#if>
+        }
+    </#if>
+}
