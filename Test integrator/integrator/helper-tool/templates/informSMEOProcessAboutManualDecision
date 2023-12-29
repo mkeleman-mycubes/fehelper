@@ -1,0 +1,51 @@
+{
+    "messageData": {
+        "messageName": "DecisionDoneMessage",
+        "processInstanceId": "${body.variables.smeoProcessInstanceId}",
+        "processVariables": {
+             "ManualDecision":{
+                "value":"${body.variables.M_Decision!}",
+                "type":"String"
+             }
+        }  
+    },
+    "saveToDB": [
+        {
+              "variableName": "manualDecisionDescription",
+              "type": "STRING",
+              "value": "${body.variables.M_DecisionDescription!}"
+        },
+        {
+              "variableName": "manualDecisionDate",
+              "type": "DATE",
+              "value": "${body.variables.M_DecisionDate_ISO!}"
+        },
+        {
+              "variableName": "manualDecisionReasonPros",
+              "type": "TEXT",
+              "value": "${body.variables.M_DecisionReason_Pros!}"
+        },
+        {
+              "variableName": "manualDecisionReasonCons",
+              "type": "TEXT",
+              "value": "${body.variables.M_DecisionReason_Cons!}"
+        },
+        {
+              "variableName": "firstLendingOfficer",
+              "type": "STRING",
+              "value": "${body.variables.M_FirstOfficerApprovedName!}"
+        },
+        {
+              "variableName": "secondLendingOfficer",
+              "type": "STRING",
+              "value": "<#if body.variables.M_SecondOfficerApprovedName??>${body.variables.M_SecondOfficerApprovedName}<#else></#if>"
+        }
+        <#if body.variables.CreditEndDate?? && body.variables.CreditEndDate?has_content>
+        ,{
+              "variableName": "creditEndDate",
+              "type": "DATE",
+              "value": "${body.variables.CreditEndDate}"
+         }
+        </#if>
+    ]
+}
