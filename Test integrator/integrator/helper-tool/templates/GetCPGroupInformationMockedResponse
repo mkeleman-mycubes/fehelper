@@ -1,0 +1,55 @@
+{
+    "businessPartners": [
+        {
+            "companyDisclosure": {
+                "companyId": "34196963",
+                "companyName": "Graydon Nederland B.V.13524",
+                "vatId": "NL001425997B01"
+            },
+            "addresses": [
+                {
+                    "number": "250",
+                    "zipCode": "1101BV",
+                    "city": "AMSTERDAM",
+                    "countryCode": "NL",
+                    "street": "Hullenbergweg",
+                    "type": "Registered office address"
+                },
+                {
+                    "number": "12525",
+                    "zipCode": "1100AM",
+                    "city": "AMSTERDAM",
+                    "countryCode": "NL",
+                    "street": "",
+                    "type": "Postal address"
+                },
+                {
+                    "number": "250",
+                    "zipCode": "1101BV",
+                    "city": "AMSTERDAM",
+                    "countryCode": "NL",
+                    "street": "Hullenbergweg",
+                    "type": "Next to last registered office address"
+                }
+            ],
+            "externDisclosure": {
+                "agencies": [
+                    {
+                        "company": {
+                            "affiliatedCompanies": [
+                                {
+                                    "companyId": "11111111",
+                                    "companyName": "Sub 1",
+                                    "affiliationType": "Parent"
+                                }
+                            ]
+                        },
+                        "agencyId": "18507",
+                        "bureauProductState": "CustomerFound",
+                        "agencyName": "GraydonNL"
+                    }
+                ]
+            }
+        }
+    ]
+}
