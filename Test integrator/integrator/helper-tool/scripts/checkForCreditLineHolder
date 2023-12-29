@@ -1,0 +1,26 @@
+def creditLineHolder = body.lessorOrgs.find { lessorOrg -> lessorOrg.creditLineHolder == "true" }
+def creditLineHolderSet = "false";
+def creditLineHolderRowId = "";
+def lessorOrgAccountStatus = "";
+def lessorOrgType = "";
+def lessorOrgId = "";
+def lessorOrgIsLiableInCMA = "";
+def lessorOrgExistsForThisAccountId = "false";
+
+def checkIfLessorOrgIsLiable(lessorOrg) {
+    if (lessorOrg.liableRelation && lessorOrg.liableRelation.id == lessorOrg.organization.id) {
+        return "true";
+    }
+    
+    return "false";
+}
+
+if (creditLineHolder != null) {
+    creditLineHolderSet = "true";
+    creditLineHolderRowId = creditLineHolder.icmoreRowId;
+    lessorOrgAccountStatus = creditLineHolder.status;
+    lessorOrgType = creditLineHolder.type;
+    lessorOrgId = creditLineHolder.id;
+    lessorOrgIsLiableInCMA = checkIfLessorOrgIsLiable(creditLineHolder);
+    lessorOrgExistsForThisAccountId = 
+}
