@@ -1,0 +1,17 @@
+def globalAdminGroup = [:];
+def groups = body.groupsToLessorMapping;
+
+groups.each {
+  key,
+  val ->
+  if (groups[key].userRole == 'Global admin') {
+     globalAdminGroup = [
+      value: key,
+      type: 'String'
+    ]
+   }
+}
+
+body  = [globalAdminGroup: globalAdminGroup];
+
+return body;
