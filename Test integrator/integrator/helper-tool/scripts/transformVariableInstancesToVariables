@@ -1,0 +1,15 @@
+def processVariables = [:];
+
+body.each {
+    def variable = [
+        "value": "$it.value",
+        "type": "$it.type",
+        "valueInfo": "$it.valueInfo"
+    ]
+    
+    processVariables["$it.name"] = variable;
+}
+
+body = processVariables
+
+return body;
