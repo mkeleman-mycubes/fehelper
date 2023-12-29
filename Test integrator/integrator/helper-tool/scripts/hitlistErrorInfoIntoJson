@@ -1,0 +1,6 @@
+import groovy.json.*
+
+body.possibleCustomersJSON = new JsonBuilder(body.bpmnError.possibleCustomers).toPrettyString()
+body.cdsResponseJSON = new JsonBuilder(body.CreditPlatformResponseJSON).toPrettyString()
+
+return body
