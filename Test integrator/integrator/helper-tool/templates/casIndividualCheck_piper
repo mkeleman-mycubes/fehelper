@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "casIndividualCheck",
+            "script": "headers.handleSoapExceptionTemplate = 'callCAS_error'; headers.handleExceptionTemplate = 'callCAS_error'"
+        },
+        {
+            "type": "transform",
+            "name": "casIndividualCheck_setVariables"
+        }
+    ]
+}
