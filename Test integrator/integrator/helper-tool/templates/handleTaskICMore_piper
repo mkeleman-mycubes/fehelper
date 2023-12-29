@@ -1,0 +1,25 @@
+{
+    "pipes": [
+        <#if body.variables.TaskAction == "create">
+            {
+                "type": "action",
+                "name": "createTaskICMore",
+                "script": "headers.handleSoapExceptionTemplate = 'callICMore_error'; headers.handleExceptionTemplate = 'callICMore_error'"
+            },
+        <#elseif body.variables.TaskAction == "update">
+            <#-- Execute "updateTaskICMore" template only if we have created task -->
+            <#if body.variables.SET_Id?? && body.variables.SET_Id?has_content>
+                {
+                    "type": "action",
+                    "name": "updateTaskICMore",
+                    "script": "headers.handleSoapExceptionTemplate = 'callICMore_error'; headers.handleExceptionTemplate = 'callICMore_error'"
+                },
+            </#if>
+        </#if>
+        
+        {
+            "type": "transform",
+            "name": "handleTaskICMore_setVariables"
+        }
+    ]
+}
