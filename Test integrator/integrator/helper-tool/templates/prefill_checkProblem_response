@@ -1,0 +1,20 @@
+{ 
+    <#if body.hideRetryOption?? && body.hideRetryOption.value?has_content>
+        "hideRetryOption" : "${body.hideRetryOption.value?j_string}",
+    </#if>
+    "problemWith" : "${body.problemWith.value?j_string}"
+    <#if body.problemWith?? && body.problemWith.value == 'login'>,
+        "ErrCode": "",
+        "ErrMessage": "
+       Status: ${body.status.value?j_string}
+      <br>
+      <br>
+     <#if body.gasUsername??>
+       GasID: ${body.gasUsername.value?j_string}
+     </#if>"
+    <#else>
+      ,"ErrMessage": "${body.bpmnErrorMessage.value?j_string}",
+       "ErrCode": "${body.bpmnErrorCode.value?j_string}"
+    </#if>
+    ,"hideAssessmentDetails": <#if body.hideAssessmentDetails?? && body.hideAssessmentDetails.value?? && body.hideAssessmentDetails.value == "true">true<#else>false</#if>
+}
