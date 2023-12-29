@@ -1,0 +1,17 @@
+{
+    "pipes": [
+        <#if body.previousResponse.bpmnError??>
+            {
+                "type": "transform",
+                "name": "transformObjectToJson",
+                "script": "body = body.previousResponse"
+            }
+        <#else>
+            {
+                "type": "action",
+                "name": "createLessorOrg",
+                "script": "headers.cmaAction = 'createLessorOrg'; headers.companyId = body.variables.CompanyIdentifier; headers.companyName = body.variables.CustomerName; <#if body.variables.ApplicationId??>headers.applicationId = body.variables.ApplicationId;</#if>headers.handleExceptionTemplate = 'callCMA_error'; headers.handleRestExceptionTemplate = 'callCMA_error'; body.variables.OrganizationCMAId = body.previousResponse.variables.OrganizationCMAId; body.variables.LessorRecordId = body.previousResponse.variables.LessorRecordId"
+            }
+        </#if>
+    ]
+}
