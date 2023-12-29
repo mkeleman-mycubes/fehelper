@@ -1,0 +1,89 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.dfs.com/automotive/document/archival/1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:ArchiveDocument>
+         <ns:Customer>
+            <ns:bp_number></ns:bp_number>
+		    <ns:enterpriseno>${body.variables.CompanyIdentifier!}</ns:enterpriseno>
+		    <ns:vatno>${body.variables.VatId!}</ns:vatno>
+		    <ns:referenceno>${body.variables.CustomerID!}</ns:referenceno>
+		    <ns:bpcode></ns:bpcode>
+		    <ns:partnercustomerno></ns:partnercustomerno>
+		    <#if body.variables.AccountName?? && body.variables.AccountName?has_content && body.variables.AccountName?is_string && (body.variables.AccountName?length > 30)>
+		        <ns:searchname>${body.variables.AccountName[0..29]!}</ns:searchname>
+		    <#else>
+		        <ns:searchname>${body.variables.AccountName!}</ns:searchname>
+		    </#if>
+		    <#if body.variables.CustomerName?? && body.variables.CustomerName?has_content && body.variables.CustomerName?is_string && (body.variables.CustomerName?length > 30)>
+		        <ns:billingname>${body.variables.CustomerName[0..29]!}</ns:billingname>
+		    <#else>
+		        <ns:billingname>${body.variables.CustomerName!}</ns:billingname>
+		    </#if>    
+         </ns:Customer>
+         <ns:Basic_Attributes>
+            <ns:country>${body.variables.CustomerCountry!}</ns:country>
+            <#if body.variables.LessorID == "NLMBL">
+                <ns:legal_entity>MBFSNL</ns:legal_entity>
+            <#elseif body.variables.LessorID == "NLSLS">
+                <ns:legal_entity>SpecialLease</ns:legal_entity>
+            <#elseif body.variables.LessorID == "NLZL">
+                <ns:legal_entity>ZuidLease</ns:legal_entity>
+            <#elseif body.variables.LessorID == "NLFRL">
+                <ns:legal_entity>FrieslandLease</ns:legal_entity>
+            <#elseif body.variables.LessorID == "BEPRL">
+                <ns:legal_entity>PremiumLease</ns:legal_entity>
+            <#elseif body.variables.LessorID == "FRMFL">
+                <ns:legal_entity>MobiFleet</ns:legal_entity>
+            <#elseif body.variables.LessorID == "FRUCAR">
+                <ns:legal_entity>UCAR</ns:legal_entity>
+            <#else>
+                <ns:legal_entity>Athlon${body.variables.CustomerCountry!}</ns:legal_entity>
+            </#if>
+            <ns:segment>Core</ns:segment>
+            <ns:status>ACTIVE</ns:status>
+            <ns:statusdate></ns:statusdate>
+            <ns:workspacetype></ns:workspacetype>
+            <ns:workspacetemplate></ns:workspacetemplate>
+         </ns:Basic_Attributes>
+         <ns:Contract>
+            <ns:contractid></ns:contractid>
+            <ns:contracttype></ns:contracttype>
+            <ns:segment>Core</ns:segment>
+            <ns:contractstartdate></ns:contractstartdate>
+            <ns:contractenddate></ns:contractenddate>
+            <ns:vehicleid></ns:vehicleid>
+         </ns:Contract>
+         <ns:Case>
+            <ns:caseid>${body.variables.ApplicationId!}</ns:caseid>
+            <ns:casetype>CRA</ns:casetype>
+            <ns:casedate>${body.variables.ApplicationEntryDate[0..9]!}</ns:casedate>
+         </ns:Case>
+         <ns:Document_Basic_Attributes>
+            <ns:doc_type_number>${body.documentRestrictionCode!}</ns:doc_type_number>
+            <ns:doc_type_name></ns:doc_type_name>
+            <ns:segment>Core</ns:segment>
+            <ns:adate></ns:adate>
+            <ns:notificationto></ns:notificationto>
+            <ns:uniqueidentifier></ns:uniqueidentifier>
+         </ns:Document_Basic_Attributes>
+         <ns:Document>
+            <#assign fileName = ''/>
+            <#assign fileContent = ''/>
+            <#if body.fileIndex??>
+                <#assign fileName = "${headers.filesInfo[body.uploadField][body.fileIndex].filename}.${headers.filesInfo[body.uploadField][body.fileIndex].extension}">
+                <#assign fileContent = headers[body.uploadField][body.fileIndex]>
+            <#else>
+                <#assign fileName = "${headers.filesInfo[body.uploadField].filename}.${headers.filesInfo[body.uploadField].extension}">
+                <#assign fileContent = headers[body.uploadField]>
+            </#if>
+            <#if fileName?? && fileName?has_content && (fileName?length > 60)>
+                <ns:DocumentName>${fileName?keep_before_last(".")[0..56]}.${fileName?keep_after_last(".")}</ns:DocumentName>
+            <#else>
+                <ns:DocumentName>${fileName}</ns:DocumentName>
+            </#if>
+            <ns:MimeType>${determineMimeType(fileName)}</ns:MimeType>
+            <ns:DocumentContent>${fileContent}</ns:DocumentContent>
+    </ns:Document>
+      </ns:ArchiveDocument>
+   </soapenv:Body>
+</soapenv:Envelope>
