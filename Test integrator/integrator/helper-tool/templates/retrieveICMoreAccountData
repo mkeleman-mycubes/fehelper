@@ -1,0 +1,95 @@
+<soapenv:Envelope xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/07/secext" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="urn:crmondemand/ws/ecbs/account/" xmlns:quer="urn:/crmondemand/xml/Account/Query">
+   <soapenv:Header>
+      <wsse:Security soapenv:mustUnderstand="1">
+         <wsse:UsernameToken>
+            <wsse:Username>${headers.soapConnectorProperties.icMoreUsername}</wsse:Username>
+            <wsse:Password Type="wsse:PasswordText">${headers.soapConnectorProperties.icMorePassword}</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <acc:AccountQueryPage_Input>
+         <quer:ListOfAccount pagesize="50" startrownum="0" recordcountneeded="true">
+            <!--Optional:-->
+            <quer:Account>
+               <!--You may enter the following 1038 items in any order-->
+               <quer:ModifiedDate/>
+               <!--Account id-->
+               <#if body.variables.ICMoreAccountID?? && body.variables.ICMoreAccountID?has_content>
+               <quer:Id>='${body.variables.ICMoreAccountID}'</quer:Id>
+               <#else>
+               <quer:Id>='${body.variables.EVENT_AccountId}'</quer:Id>
+               </#if>
+               <!--Athlon entitiy = Country-->
+               <quer:IndexedPick0/>
+               <!--Requested credit line lease-->
+               <quer:CustomCurrency3/>
+               <!--Current credit line-->
+               <quer:CustomCurrency0/>
+               <!--Max number of rentals-->
+               <quer:CustomNumber7/> 
+               <!--Company name-->
+               <quer:AccountName/>
+               <!--BillingName-->
+               <quer:CustomText1/>
+               <!--Address street-->
+               <quer:PrimaryBillToStreetAddress/>
+               <!--Address Postalcode-->
+               <quer:PrimaryBillToPostalCode/>
+               <!--Address Province code-->
+               <quer:PrimaryBillToProvince/>
+               <!--Address country-->
+               <quer:PrimaryBillToCountry/>
+               <!--Address City-->
+               <quer:PrimaryBillToCity/>
+               <!--Request type-->
+               <quer:CustomPickList65/>
+               <!--Sales person-->
+               <quer:Owner/>
+               <!--Sales person full name-->
+               <quer:OwnerFullName/>
+               <!--Below are details that we will update in the process-->
+               <!--Company identifier-->
+               <quer:CustomText32/>
+               <!--Customer number; Reference nbr on CMA-->
+               <quer:CustomText33/>
+               <!--Siren/Siret/RCI number-->
+               <quer:CustomText36/>
+               <!--Company VAT number-->
+               <quer:CustomText31/>
+               <!--Camunda RFI description-->
+               <quer:CustomText44/>
+               <!--Original process instance id-->
+               <!--Alias of person who started the assessment-->
+               <quer:CustomText46/>
+                <!--Liable parent-->
+               <quer:CustomText52/>
+               <!--Credit line request status-->
+               <quer:CustomPickList63/>
+               <!--Credit line automatic decision-->
+               <quer:CustomPickList67/>
+               <!--Credit assessment URL-->
+               <quer:CustomWebLink2/>
+               <!--Credit assessment start date/time-->
+               <quer:CustomDate3/>
+               <!--Athlon entity-->
+               <quer:IndexedPick0/>
+               <!--Team identifier-->
+               <quer:CustomPickList10/>
+               <!-- SMEO process instance id-->
+               <quer:CustomText56/>
+               <!--CMA DefaultRegisterFlag-->
+               <quer:CustomBoolean11/>
+               <!--CMA Status for lesssor org-->
+               <quer:Status/>
+               <!--CMA Type for lessor org-->
+               <quer:AccountType/>
+               <!--Organization Credit status-->
+               <quer:CustomText53/>
+               <!--Organization Type-->
+               <quer:CustomPickList74/>
+            </quer:Account>
+         </quer:ListOfAccount>
+      </acc:AccountQueryPage_Input>
+   </soapenv:Body>
+</soapenv:Envelope>
