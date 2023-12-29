@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "updateCMAOrganizationCreditLine",
+            "script": "headers.cmaAction = 'updateCreditLine'; headers.companyName = body.variables.CustomerName; headers.companyId = body.variables.CompanyIdentifier; headers.requestedCreditLine = body.variables.RequestedCreditLine; headers.creditLineStatus = body.variables.CreditLineStatus; headers.decisionDate = body.variables.DecisionDate; headers.creditEndDate = body.variables.CreditEndDate; headers.status = body.variables.CreditLineStatus; headers.applicationId = body.variables.ApplicationId; headers.handleExceptionTemplate = 'callCMA_error'; headers.handleRestExceptionTemplate = 'callCMA_error'"
+        }
+    ]
+}
