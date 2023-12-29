@@ -1,0 +1,208 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#assign manualDecision = body.manual_decision.value>
+
+{
+    "variables" : {
+        "agree": {
+            "value": "${body.answers.agree.data.answer[0]}",
+            "type": "String"
+        },
+        <#if body.cancelledDueToCorporateThresholdExceeded??>
+        <#else>
+            "cancelledDueToCorporateThresholdExceeded": {
+                "value": "false",
+                "type": "Boolean"
+            },
+        </#if>
+        "AssignedAssessCreditManualReviewerTo": {
+            "value": "${body.secureData.user.identity.authenticatedUser}",
+            "type": "String"
+        },
+        "AssignedAssessCreditManualReviewerToName": {
+            "value": "${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}",
+            "type": "String"
+        },
+        <#if body.answers.reason_of_rejection??>
+            "AssignedBy": {
+                "value": "${body.secureData.user.identity.authenticatedUser}",
+                "type": "String"
+            },
+            "AssignedByName": {
+                "value": "${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}",
+                "type": "String"
+            },
+            "AssignedByGroup": {
+                "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+                "type": "String"
+            },
+            "AssignedByGroupName": {
+                "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+                "type": "String"
+            },
+            "AssignedTo": {
+                "value": "${body.AssignedAssessCreditManualTo.value}",
+                "type": "String"
+            },
+            "AssignedToName": {
+                "value": "${body.AssignedAssessCreditManualToName.value}",
+                "type": "String"
+            },
+            "AssignedToGroup": {
+                "value": "${body.AssignedAssessCreditManualToGroup.value}",
+                "type": "String"
+            },
+            "AssignedToGroupName": {
+                "value": "${body.AssignedAssessCreditManualToGroupName.value}",
+                "type": "String"
+            },
+            "reason_of_rejection": {
+                "value": "${body.answers.reason_of_rejection.data.answer[0]}",
+                "type": "String"
+            },
+            
+            <#if body.answers.reasons_pros?? && body.answers.reasons_pros.data.answer?has_content>
+            "M_reasons_pros": {
+                    "value": "${body.answers.reasons_pros.data.answer?join(',')}",
+                    "type": "String"
+            },
+            </#if>
+            <#if body.answers.reasons_cons?? && body.answers.reasons_cons.data.answer?has_content>
+             "M_reasons_cons": {
+                "value": "${body.answers.reasons_cons.data.answer?join(',')}",
+                "type": "String"
+            },
+            </#if>
+            
+                <#if body.opinionNumber??>
+                    "note_${aDateTime?long?c}": {
+                        "value": "{\"text\":\"${body.answers.reason_of_rejection.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\",\"label\":\"Second opinion (${body.opinionNumber.value?json_string})\"}",
+                        "type": "json"
+                    }
+                <#else>
+                    "note_${aDateTime?long?c}": {
+                        "value": "{\"text\":\"${body.answers.reason_of_rejection.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\"}",
+                        "type": "json"
+                    }
+                </#if>
+                
+        <#else>
+            "AssignedBy": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedByName": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedByGroup": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedByGroupName": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedTo": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedToName": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedToGroup": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedToGroupName": {
+                "value": "",
+                "type": "String"
+            },
+            <#if body.answers.reason_of_agree.data.answer[0]?? && body.answers.reason_of_agree.data.answer[0]?has_content>
+                <#if body.opinionNumber??>
+                    "note_${aDateTime?long?c}": {
+                        "value": "{\"text\":\"${body.answers.reason_of_agree.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\",\"label\":\"Second opinion (${body.opinionNumber.value?json_string})\"}",
+                        "type": "json"
+                        },
+                <#else>
+                    "note_${aDateTime?long?c}": {
+                        "value": "{\"text\":\"${body.answers.reason_of_agree.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\"}",
+                        "type": "json"
+                    },
+                </#if>
+            </#if>
+            <#if body.answers.manual_decision.data.answer[0] == 'cancel_due_to_retail_corporate_threshold_exceeded'>
+            "manual_decision" : {
+                "value": "",
+                "type": "String"
+               },
+            "M_DecisionDescription": {
+                "value": "",
+                "type": "String"
+                },
+           "M_FirstOfficerApprovedName": {
+              "value": "",
+              "type": "String"
+           },
+           "M_FirstOfficerApprovedDate": {
+              "value": "",
+              "type": "String"
+           },
+           "CreditEndDate": {
+              "value": "",
+              "type": "String"
+           },
+           "M_DecisionDate": {
+              "value": "",
+              "type": "String"
+           },
+           "M_reasons_pros": {
+              "value": "",
+              "type": "String"
+           },
+           "M_DecisionReason_Pros": {
+              "value": "",
+              "type": "String"
+           },
+           "M_reasons_cons": {
+              "value": "",
+              "type": "String"
+           },
+           "M_DecisionReason_Cons": {
+              "value": "",
+              "type": "String"
+           },
+            "M_DecisionDate_ISO": {
+                "value": "",
+                "type": "String"
+            },
+            "M_SecondOfficerApprovedName": {
+                "value": "",
+                "type": "String"
+            },
+            "M_SecondOfficerApprovedDate": {
+                "value": "",
+                "type": "String"
+            }
+            <#else>
+            "M_DecisionDate": {
+                "value": "${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}",
+                "type": "String"
+            },
+            "M_DecisionDate_ISO": {
+                "value": "${aDateTime?iso_utc}",
+                "type": "String"
+            },
+            "M_SecondOfficerApprovedName": {
+                "value": "${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}",
+                "type": "String"
+            },
+            "M_SecondOfficerApprovedDate": {
+                "value": "${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}",
+                "type": "String"
+            }
+            </#if>
+        </#if>
+    }
+}
