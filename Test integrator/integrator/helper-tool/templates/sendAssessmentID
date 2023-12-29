@@ -1,0 +1,19 @@
+{
+"messageData": {
+    "messageName": "ReceiveAssessmentIdMessage",
+    "processInstanceId": "${body.variables.smeoProcessInstanceId}",
+    "processVariables": {
+        "AssessmentId":{
+         "value":"${body.variables.mainProcessInstanceId}",
+         "type":"String"
+      }
+    }
+},
+"saveToDB": [
+        {
+              "variableName": "assessmentId",
+              "type": "STRING",
+              "value": "${body.variables.mainProcessInstanceId}"
+        }
+    ]
+}
