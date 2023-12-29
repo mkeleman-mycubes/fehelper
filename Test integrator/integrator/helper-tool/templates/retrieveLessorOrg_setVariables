@@ -1,0 +1,32 @@
+<#assign lessorOrgId = "" />
+<#assign emptyLessorOrgId = "" />
+{
+    "status": "true",
+    <#if !body.lessorOrgs?is_sequence && body.lessorOrgs.errorOccured??>
+        "bpmnError": {
+            "bpmnErrorCode": "${body.lessorOrgs.bpmnError.bpmnErrorCode}",
+            "bpmnErrorMessage": "${body.lessorOrgs.bpmnError.bpmnErrorMessage}"
+        }
+    <#elseif body.lessorOrgs?is_sequence && body.lessorOrgs?size == 0>
+        "bpmnError": {
+            "bpmnErrorCode": "CMACallFailedError",
+            "bpmnErrorMessage": "No LessorOrg records found for Organization ${headers.companyId} and Lessor ${headers.lessorId}"
+        }
+    <#else>
+        <#if body.lessorOrgs?is_sequence>
+            <#list body.lessorOrgs as lessorOrg>
+                <#if lessorOrg.icmoreRowId == body.ICMoreAccountID>
+                    <#assign lessorOrgId = lessorOrg.id />
+                    <#break />
+                </#if>
+                <#if lessorOrg.icmoreRowId?length == 0>
+                    <#assign emptyLessorOrgId = lessorOrg.id />
+                </#if>
+            </#list>
+        </#if>
+        "processVariables": {
+            "LessorOrgId": "${lessorOrgId}",
+            "EmptyLessorOrgId": "${emptyLessorOrgId}"
+        }
+    </#if>
+}
