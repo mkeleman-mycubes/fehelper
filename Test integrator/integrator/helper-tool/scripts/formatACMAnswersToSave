@@ -1,0 +1,23 @@
+def manual_decision = body.manual_decision[0];
+def M_reasons_pros = body.pros_reasons ? joinArray(body.pros_reasons[0]) : '';
+def M_reasons_cons = body.cons_reasons ? joinArray(body.cons_reasons[0]) : '';
+def M_Argumentation = body.argumentation[0];
+def CreditEndDate = (body.credit_end_date && body.credit_end_date[0]) ? body.credit_end_date[0] : '';
+def reviewer = body.reviewer[0] ? body.reviewer[0] : '';
+def taskId = body.taskid[0];
+
+def joinArray(arr) {
+  def result = ''
+  arr.eachWithIndex {
+    el, i ->
+      result += el
+      if (i != arr.size() - 1) {
+            result += ','
+    }
+  }
+  return result
+}
+
+body = [manual_decision: manual_decision, M_reasons_pros: M_reasons_pros, M_reasons_cons: M_reasons_cons, M_Argumentation: M_Argumentation, CreditEndDate: CreditEndDate, reviewer: reviewer, taskId: taskId]
+
+return body;
