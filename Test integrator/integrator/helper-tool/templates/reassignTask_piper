@@ -1,0 +1,24 @@
+{
+    "pipes": [
+        {
+            "type": "transform",
+            "name": "dummy",
+            "script": "answers = body.answers; secureData = body.secureData; assignee = body.answers.assign_to.data.answer[0]; processInstanceId = body.answers.taskprocessinstanceid.data.answer[0]"
+        },
+        {
+            "type": "action",
+            "name": "getUsersOfGroup_piper",
+            "script": "body.identity = secureData.user.identity"
+        },
+        {
+            "type" : "action",
+            "name" : "reassignTask",
+            "script" : "body = [answers: answers, secureData: secureData, assignee: assignee, usersOfGroup: body.usersOfGroup]; headers.processId = answers.taskprocessinstanceid.data.answer[0]; usersOfGroup = body.usersOfGroup"
+        },
+        {
+            "type" : "action",
+            "name" : "setTaskAssignee",
+            "script" : "body = [userId: assignee]; headers.taskId = answers.taskid.data.answer[0]"
+        }
+    ]
+}
