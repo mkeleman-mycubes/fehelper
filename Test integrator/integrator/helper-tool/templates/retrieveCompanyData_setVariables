@@ -1,0 +1,47 @@
+<#if body.errorOccured??>
+    <@printObjectToJson source=body/>
+<#else>
+<#assign companyName = "">
+<#if body.processVariables.ACCOUNT_CustomText1?? && body.processVariables.ACCOUNT_CustomText1?has_content>
+    <#assign companyName = body.processVariables.ACCOUNT_CustomText1>
+<#else>
+    <#assign companyName = body.processVariables.ACCOUNT_AccountName>
+</#if>
+<#assign countriesWithCompanyId = ["NL", "FR", "DE"]/>
+<#assign countriesWithVatId = ["ES", "IT", "BE", "LU", "PT"]/>
+
+{
+   "status":"true",
+   "processVariables":{
+        "LessorID":"${body.icmoreEntityInfo.lessorID}",
+        "CustomerName":"${companyName?json_string}",
+        "OperatingEntity":"${body.icmoreEntityInfo.operatingEntity}",
+        <#if countriesWithCompanyId?seq_contains(body.icmoreEntityInfo.country)> 
+            "CompanyIdentifier":"${body.processVariables.ACCOUNT_CustomText32}",
+        </#if>
+        <#if countriesWithVatId?seq_contains(body.icmoreEntityInfo.country)>
+            "CompanyIdentifier":"${body.processVariables.ACCOUNT_CustomText31}",
+        </#if>
+        <#if body.processVariables.ACCOUNT_AccountType?? && body.processVariables.ACCOUNT_AccountType?has_content>
+            "AccountType":"${body.processVariables.ACCOUNT_AccountType!}"
+        </#if>,
+        "AccountStatus":"${body.processVariables.ACCOUNT_Status}",
+        <#if body.processVariables.ACCOUNT_CustomBoolean11?? && body.processVariables.ACCOUNT_CustomBoolean11?has_content>
+            "DefaultRegisterFlag": "${body.processVariables.ACCOUNT_CustomBoolean11!}",
+        </#if>
+        <#if body.processVariables.ACCOUNT_CustomText52?? && body.processVariables.ACCOUNT_CustomText52?has_content>
+            "LiableParent": "${body.processVariables.ACCOUNT_CustomText52}",
+        <#else>
+            "LiableParent": "${body.processVariables.ACCOUNT_CustomText33}",
+        </#if>
+       "CustomerNumber": "${body.processVariables.ACCOUNT_CustomText33}",
+       "CustomerCountry": "${body.icmoreEntityInfo.country}",
+       "CustomerID": "${body.processVariables.ACCOUNT_CustomText33}",
+       "OrganizationType":  <#if body.processVariables.ACCOUNT_CustomPickList74?has_content>
+                                "${body.processVariables.ACCOUNT_CustomPickList74!}"
+                            <#else>
+                                "Retail"
+                            </#if>
+   }
+}
+</#if>
