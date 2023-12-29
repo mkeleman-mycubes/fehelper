@@ -1,0 +1,22 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+
+<#-- Determining the seconf opinion sequence number --> 
+<#if body.processVariables.opinionNumber??>
+    <#assign opinionNumber = body.processVariables.opinionNumber.value?number + 1>
+<#else>
+    <#assign opinionNumber = 1>
+</#if>
+
+{
+    "messageName" : "StartSecondOpinionProcess",
+    "tenantId" : "${body.secureData.tenantId}",
+    "processVariables" : {
+        <@printCamundaVariablesForProcessStart camundaVariables=body.processVariables />
+        <@printDocumentsVariables documentsVariables=body.documentsVariables />
+        "note_${aDateTime?long?c}": {
+            "value": "{\"text\":\"${body.answers.argumentation.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\",\"label\":\"Second opinion (${opinionNumber?string})\"}",
+            "type": "json"
+        }
+    }
+}
