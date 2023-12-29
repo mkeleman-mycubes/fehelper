@@ -1,0 +1,20 @@
+{
+    "pipes": [
+        <#if body.processIsFinished?? && body.processIsFinished == "true">
+        {
+            "type": "action",
+            "name": "getVariableInstanceList",
+            "script": "headers.processInstanceId = body.processInstanceId"
+        },
+        {
+            "type": "script",
+            "name": "transformVariableInstancesToVariables"
+        },
+        <#else>
+        {
+            "type": "script",
+            "name": "returnBody"
+        }
+        </#if>
+    ]
+}
