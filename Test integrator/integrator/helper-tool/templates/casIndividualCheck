@@ -1,0 +1,40 @@
+<#assign searchProfileNameMap = {
+    "NL": "T_All_ATH_NL_All",
+    "BE": "T_All_DMO_BE_5323_S_All",
+    "LU": "T_All_DMO_LU_5328_S_All",
+    "DE": "T_All_ATH_GER_All",
+    "FR": "T_All_ATH_FR_All",
+    "PL": "T_All_ATH_POL_All",
+    "IT": "T_All_ATH_ITA_All",
+    "ES": "T_All_ATH_IBE_All",
+    "PT": "T_All_ATH_IBE_All",
+    "SE": "T_All_SE_5324_ATH_All",
+    "UK": "T_All_UK_9943_AMS_All"
+}>
+<#assign customerName = "">
+<#if body.variables.CustomerName?? && body.variables.CustomerName?has_content && body.variables.CustomerName?length < 3>
+    <#assign customerName = body.variables.CustomerName + " company">
+<#else>
+    <#assign customerName = body.variables.CustomerName>
+</#if>
+<s11:Envelope xmlns:s11='http://schemas.xmlsoap.org/soap/envelope/'>
+  <s11:Body>
+    <ns1:screenAddress xmlns:ns1='http://as.ws.scheck.server.tia/'>
+      <request>
+        <entities>
+          <entity>
+            <address>${body.variables.AddressStreet} ${body.variables.AddressNumber}</address>
+            <city>${body.variables.AddressCity}</city>
+            <country>${body.variables.CustomerCountry}</country>
+            <name>${customerName}</name>
+            <zip>${body.variables.AddressPostalCode}</zip>
+            <referenceComment>${body.variables.processStarterName!}</referenceComment>
+          </entity>
+        </entities>
+        <mandator>MC1</mandator>
+        <responeDetailLevel>2</responeDetailLevel>
+        <searchProfileName>${searchProfileNameMap[body.variables.CustomerCountry]}</searchProfileName>
+      </request>
+    </ns1:screenAddress>
+  </s11:Body>
+</s11:Envelope>
