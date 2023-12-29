@@ -1,0 +1,13 @@
+<soap:Envelope
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns2:screenAddressResponse
+            xmlns:ns2="http://as.ws.scheck.server.tia/">
+            <screenAddressResponse>
+                <queryResults/>
+                <message>no search profile found with name XXX</message>
+                <state>ERROR</state>
+            </screenAddressResponse>
+        </ns2:screenAddressResponse>
+    </soap:Body>
+</soap:Envelope>
