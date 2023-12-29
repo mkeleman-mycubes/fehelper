@@ -1,0 +1,316 @@
+<#-- Code to get Street and Number from one address field -->
+<#assign addressStreet = "">
+<#assign addressAddition = "">
+<#assign onlyAdditionLeft = false>
+<#assign aDateTime = (.now?long - 3600000)?number_to_datetime>
+<#if body.initial.variables.ACCOUNT_PrimaryBillToStreetAddress?? && body.initial.variables.ACCOUNT_PrimaryBillToStreetAddress?has_content>
+    <#list body.initial.variables.ACCOUNT_PrimaryBillToStreetAddress?split(" ") as item>
+        <#if !onlyAdditionLeft>
+            <#if item?? && item?has_content && item[0]?matches("\\d")>
+                <#assign addressNumber = item>
+                <#assign onlyAdditionLeft = true>
+            <#else>
+                <#if addressStreet == "">
+                    <#assign addressStreet += item>
+                <#else>
+                    <#assign addressStreet += " " + item>
+                </#if>
+            </#if>
+        <#else>
+            <#if addressAddition == "">
+                <#assign addressAddition += item>
+            <#else>
+                <#assign addressAddition += " " + item>
+            </#if>
+        </#if>
+    </#list>
+</#if>
+<#-- Use Billing name or account name-->
+<#assign companyName = "">
+<#if body.initial.variables.ACCOUNT_CustomText1?? && body.initial.variables.ACCOUNT_CustomText1?has_content>
+    <#assign companyName = body.initial.variables.ACCOUNT_CustomText1>
+<#else>
+    <#assign companyName = body.initial.variables.ACCOUNT_AccountName>
+</#if>
+<#-- Determin new_required_credit_line -->
+<#if body.initial.variables.ACCOUNT_CustomCurrency3?? && body.initial.variables.ACCOUNT_CustomCurrency3?has_content>
+    <#if body.initial.variables.ACCOUNT_CustomCurrency0?? && body.initial.variables.ACCOUNT_CustomCurrency0?has_content>
+        <#assign new_required_credit_line = body.initial.variables.ACCOUNT_CustomCurrency3?number - body.initial.variables.ACCOUNT_CustomCurrency0?number>
+    <#else>
+        <#assign new_required_credit_line = body.initial.variables.ACCOUNT_CustomCurrency3>
+    </#if>
+<#else>
+    <#assign new_required_credit_line = 0>
+</#if>
+{
+    "secureData": {
+        "tenantId" : "${body.initial.tenantId}",
+        "user" : {
+            "identity" : {
+                "authenticatedUser" : "${body.initial.variables.DatabaseActionResult.gasUsername.gasUsername}",
+                "groups" : [
+                    {
+                        <#--- We are setting the salesGroup with a lessor id of the  person who started the assessment as the process starter group -->
+                        "groupID" : "${body.salesGroup.groupID}",
+                        "lessorID" : "${body.salesGroup.lessorID}",
+                        "userRole" : "${body.salesGroup.userRole}"
+                    }
+                ]
+            },
+            "profile" : {
+                "firstName" : "${body.initial.variables.DatabaseActionResult.gasUsername.firstName}",
+                "lastName" : "${body.initial.variables.DatabaseActionResult.gasUsername.lastName}"
+            }
+        }
+    },
+    "answers": {
+        "workflow_namespace": {
+            "data": {
+                "answer": ["${body.initial["PROCESS-NAMESPACE"]}"]
+            }
+        },
+        "country": {
+            "data": {
+                "answer": ["${body.initial.icmoreEntityInfo.country}"]
+            }
+        },
+        "lessorID": {
+            "data": {
+                "answer": ["${body.initial.icmoreEntityInfo.lessorID}"]
+            }   
+        },
+        <#if body.initial.icmoreEntityInfo.biPayment?? && body.initial.icmoreEntityInfo.biPayment?has_content>
+            "biPayment": {
+                "data": {
+                    "answer": ["${body.initial.icmoreEntityInfo.biPayment}"]
+                }   
+            },
+        </#if>
+        <#if body.initial.icmoreEntityInfo.cpScoring?? && body.initial.icmoreEntityInfo.cpScoring?has_content>
+            "cpScoring": {
+                "data": {
+                    "answer": ["${body.initial.icmoreEntityInfo.cpScoring}"]
+                }   
+            },
+        </#if>
+        <#if body.initial.icmoreEntityInfo.registerCreditLines?? && body.initial.icmoreEntityInfo.registerCreditLines?has_content>
+            "registerCreditLines": {
+                "data": {
+                    "answer": ["${body.initial.icmoreEntityInfo.registerCreditLines}"]
+                }   
+            },
+        </#if>
+        <#if body.initial.icmoreEntityInfo.operatingEntity?? && body.initial.icmoreEntityInfo.operatingEntity?has_content>
+            "operatingEntity": {
+                "data": {
+                    "answer": ["${body.initial.icmoreEntityInfo.operatingEntity}"]
+                }   
+            },
+        </#if>
+        <#if body.initial.icmoreEntityInfo.casCheck?? && body.initial.icmoreEntityInfo.casCheck?has_content>
+            "casCheck": {
+                "data": {
+                    "answer": ["${body.initial.icmoreEntityInfo.casCheck}"]
+                }   
+            },
+        </#if>
+        "groupConsolidation": {
+            "data": {
+                "answer": ["${body.initial.icmoreEntityInfo.groupConsolidation}"]
+            }   
+        },
+        "environment": {
+            "data": {
+                "answer": ["Test"]
+            }
+        },
+        "required_credit_line": {
+            "data": {
+                "answer": ["<#if body.initial.variables.ACCOUNT_CustomCurrency3?? && body.initial.variables.ACCOUNT_CustomCurrency3?has_content>${body.initial.variables.ACCOUNT_CustomCurrency3}<#else>0</#if>"]
+            }
+        },
+        "max_rentals": {
+            "data": {
+                "answer": ["<#if body.initial.variables.ACCOUNT_CustomNumber7?? && body.initial.variables.ACCOUNT_CustomNumber7?has_content>${body.initial.variables.ACCOUNT_CustomNumber7}<#else>0</#if>"]
+            }
+        },
+        "new_required_credit_line": {
+            "data": {
+                "answer": ["${new_required_credit_line?replace(",", "")}"]
+            }
+        },
+        "segment": {
+            "data": {
+                "answer": ["Athlon B2B"]
+            }
+        },
+        "sales_channel": {
+            "data": {
+                "answer": ["Key Accounts"]
+            }
+        },
+        "company_name": {
+            "data": {
+                "answer": ["${companyName?js_string}"]
+            }
+        },
+        "account_name": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_AccountName?js_string}"]
+            }
+        },
+        "process_type": {
+            "data": {
+                <#if body.initial.variables.ACCOUNT_CustomPickList65 == "Initial request">
+                    "answer": ["Prospect"]
+                <#else>
+                    "answer": ["${body.initial.variables.ACCOUNT_CustomPickList65}"]
+                </#if>
+            }
+        },
+        "relation_id": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_CustomText33}"]
+            }
+        },
+        "company_identifier": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_CustomText32}"] 
+            }
+        },
+        "vatId": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_CustomText31}"] 
+            }
+        },
+        "ic_more_account_id": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_Id}"]
+            }
+        },
+        "customer_number": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_CustomText33}"] 
+            }
+        },
+        "liable_parent": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_CustomText52}"] 
+            }
+        },
+        "credit_status": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_CustomText53}"] 
+            }
+        },
+        "addressStreet": {
+            "data": {
+                "answer": ["${(addressStreet?replace("\"", "\'"))!}"]
+            }
+        },
+        "addressNumber": {
+            "data": {
+                "answer": ["${(addressNumber)!}"]
+            }
+        },
+        "addressAddition": {
+            "data": {
+                "answer": ["${(addressAddition)!}"]
+            }
+        },
+        "addressCity": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_PrimaryBillToCity!}"]
+            }
+        },
+        "addressPostalCode": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_PrimaryBillToPostalCode!}"]
+            }
+        },
+        "addressProvinceCode": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_PrimaryBillToProvince!}"]
+            }
+        },
+        "ICMoreOwner": {
+            "data": {
+                "answer": ["${body.initial.variables.ICMoreOwner!}"]
+            }
+        },
+        "ICMoreStartProcessDate": {
+            "data": {
+            	<#if body.initial.daylightTimeSaving>
+                    "answer": ["${(body.initial.variables.ACCOUNT_CustomDate3?datetime.iso?long + 7200000)?number_to_datetime?string("yyyy-MM-dd | HH:mm:ss")!}"]
+                <#else>
+                    "answer": ["${(body.initial.variables.ACCOUNT_CustomDate3?datetime.iso?long + 3600000)?number_to_datetime?string("yyyy-MM-dd | HH:mm:ss")!}"]
+                </#if>
+            }
+        },
+        "portalVersion": {
+            "data": {
+                "answer": ["${body.initial.variables.portalVersion!}"]
+            }
+        },
+        "icmoreUserId": {
+            "data": {
+                "answer": ["${body.initial.variables.DatabaseActionResult.icmoreAlias!}"]
+            }
+        },
+        "icmoreEntity": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_IndexedPick0!}"]
+            }
+        },
+        <#if body.initial.variables.ACCOUNT_CustomText56?? && body.initial.variables.ACCOUNT_CustomText56?has_content && body.initial['PROCESS-NAMESPACE']?contains('DHC')>
+            "smeoProcessInstanceId": {
+                "data": {
+                    "answer": ["${body.initial.variables.ACCOUNT_CustomText56}"]
+                }
+            },
+        </#if>
+        <#if body.initial.variables.ACCOUNT_PrimaryBillToCountry?? && body.initial.variables.ACCOUNT_PrimaryBillToCountry?has_content>
+            "PrimaryBillToCountry": {
+                "data": {
+                    "answer": ["${body.initial.variables.ACCOUNT_PrimaryBillToCountry!}"]
+                }
+            },
+        </#if>
+        <#if body.initial.variables.ACCOUNT_CustomBoolean11?? && body.initial.variables.ACCOUNT_CustomBoolean11?has_content>
+            "DefaultRegisterFlag": {
+                "data": {
+                    "answer": ["${body.initial.variables.ACCOUNT_CustomBoolean11!}"]
+                }
+            },
+        </#if>
+        <#if body.initial.variables.ACCOUNT_AccountType?? && body.initial.variables.ACCOUNT_AccountType?has_content>
+            "AccountType": {
+                "data": {
+                    "answer": ["${body.initial.variables.ACCOUNT_AccountType!}"]
+                }
+            },
+        </#if>
+        <#if body.initial.variables.ACCOUNT_Status?? && body.initial.variables.ACCOUNT_Status?has_content>
+            "Status": {
+                "data": {
+                    "answer": ["${body.initial.variables.ACCOUNT_Status!}"]
+                }
+            },
+        </#if>
+        "icmoreTeamIdentifier": {
+            "data": {
+                "answer": ["${body.initial.variables.ACCOUNT_CustomPickList10!}"]
+            }
+        },
+        "OrganizationType": {
+            "data": {
+                <#if body.initial.variables.ACCOUNT_CustomPickList74?has_content>
+                    "answer": ["${body.initial.variables.ACCOUNT_CustomPickList74!}"]
+                <#else>
+                    "answer": ["Retail"]
+                </#if>
+                
+            }
+        }
+    }
+}
