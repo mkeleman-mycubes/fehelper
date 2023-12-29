@@ -1,0 +1,16 @@
+{
+    "pipes": [
+     <#if body.variables.LocalIndustryCodes??
+          && body.variables.LocalIndustryCodes?has_content>
+        {
+          "type":"script",
+           "name":"filterLocalIndustryCodes"
+        },
+     </#if>
+        {
+            "type": "action",
+            "name": "updateAccountICMore",
+            "script": "headers.handleSoapExceptionTemplate = 'callICMore_error'; headers.handleExceptionTemplate = 'callICMore_error'"
+        }
+    ]
+}
