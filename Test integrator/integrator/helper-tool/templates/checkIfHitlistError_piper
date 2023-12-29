@@ -1,0 +1,26 @@
+<#if body?? && body.bpmnError?? && body.bpmnError.bpmnErrorCode?? && body.bpmnError.bpmnErrorCode == "HitListReceivedException">
+    <#assign hitlistError = true>
+<#elseif body?? && body.bpmnError?? && body.bpmnError.bpmnErrorCode?? && body.bpmnError.bpmnErrorCode == "RetrieveAutomaticCreditScoreError">
+    <#assign cdsError = true>
+</#if> 
+{
+    "pipes": [
+        <#if hitlistError?? && hitlistError == true> 
+        {
+            "type": "action",
+            "name": "setMultipleVariablesToProcess",
+            "script": "headers.processInstanceId = body.processInstanceId; body.variablesToSet = [ possibleCustomers: body.bpmnError.possibleCustomers, CreditPlatformResponseJSON: body.CreditPlatformResponseJSON, CorrelationID: body.CorrelationID ]; body.types = [ possibleCustomers: 'Json', CreditPlatformResponseJSON: 'Json', CorrelationID: 'String' ]"
+        },
+        <#elseif cdsError?? && cdsError == true>
+        {
+            "type": "action",
+            "name": "setMultipleVariablesToProcess",
+            "script": "headers.processInstanceId = body.processInstanceId; body.variablesToSet = [ CreditPlatformResponseJSON: body.CreditPlatformResponseJSON, CorrelationID: body.CorrelationID ]; body.types = [ CreditPlatformResponseJSON: 'Json', CorrelationID: 'String' ]"
+        },
+        </#if>
+        {
+            "type": "transform",
+            "name": "returnOriginalBody"
+        }
+    ]
+}
