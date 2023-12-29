@@ -1,0 +1,14 @@
+<#ftl ns_prefixes={"D":"http://schemas.dfs.com/automotive/workspacetypes/1.0"}>
+<#if headers.restConnectorProperties.environment == "DHC">
+{
+    "requestStatus": "${body.GetCreateOrUpdateBWSRequestStatusResponse.RequestStatus.Request_Status}",
+    "requestStatusDetail": "${body.GetCreateOrUpdateBWSRequestStatusResponse.RequestStatus.Request_Status_Detail?json_string}",
+    "requestStatusCode": "${body.GetCreateOrUpdateBWSRequestStatusResponse.RequestStatus.Request_Status_No}"
+}
+<#else>
+{
+    "requestStatus": "Complete",
+    "requestStatusDetail": "Test <br/> error1",
+    "requestStatusCode": "500"
+}
+</#if>
