@@ -1,0 +1,17 @@
+{
+    "modifications": {
+        <#list body.variablesToSet?keys as variableName>
+            <#assign variableType = body.types['${variableName}'] />
+
+            "${variableName}" : {
+            <#if variableType == "Json">
+                "value": "<@printObjectToJsonString source=body.variablesToSet[variableName] />",
+            <#else>
+                "value": "${body.variablesToSet[variableName]}",
+            </#if>
+                "type": "${variableType}"
+            }
+                <#sep>,</#sep>
+        </#list>   
+    }
+}
