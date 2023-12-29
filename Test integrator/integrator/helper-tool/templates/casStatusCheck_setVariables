@@ -1,0 +1,23 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#if body.showAddressScreeningProtocolResponse?? && body.showAddressScreeningProtocolResponse.showAddressScreeningProtocolResponse?? >
+    <#assign responseData = body.showAddressScreeningProtocolResponse.showAddressScreeningProtocolResponse />
+</#if>
+<#if body.errorOccured?? && body.errorOccured == true>
+{
+    "status": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "CASCallFailedError",
+        "bpmnErrorMessage": "Call to CAS failed"
+    }
+}
+<#else>
+{
+    "status": "true",
+    "processVariables": {
+        "ResultType": "${responseData.resultTyp}",
+        "CASCheckTime": "${aDateTime?string["yyyy-MM-dd"]}",
+        "CASCheckTime_ISO": "${aDateTime?iso_utc}"   
+    }
+}
+</#if>
