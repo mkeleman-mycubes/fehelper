@@ -1,0 +1,19 @@
+<#if body.errorOccured??>
+{
+    "status": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "${body.bpmnError.bpmnErrorCode}",
+        "bpmnErrorMessage": "${body.bpmnError.bpmnErrorMessage}"
+    }
+}
+<#else>
+{
+    "status": "true",
+    "processVariables": {
+        "RentalInstallmentAmount": "${body.rentalInstallmentAmount}",
+        "LessorCountry": "${body.country.name}",
+        "LessorRecordId": "${body.id}",
+        "LessorID": "${body.lessorId}"
+    }
+}
+</#if>
