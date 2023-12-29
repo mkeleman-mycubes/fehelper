@@ -1,0 +1,13 @@
+{
+   "pipes":[
+      {
+         "type":"script",
+         "name":"formatACMAnswersToSave"
+      },
+      {
+         "type":"action",
+         "name":"setVariableToTask_piper",
+         "script":"body = [variableValue: [manual_decision: body.manual_decision, M_reasons_pros: body.M_reasons_pros, M_reasons_cons: body.M_reasons_cons, M_Argumentation: body.M_Argumentation, CreditEndDate: body.CreditEndDate, reviewer: body.reviewer], variableName: 'savedAnswers', variableType: 'Json', taskId: body.taskId] "
+      }
+   ]
+}
