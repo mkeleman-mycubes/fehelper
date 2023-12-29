@@ -1,0 +1,143 @@
+def icmoreEntities = [
+  "Netherlands": [
+    lessorID: "NLACL",
+    groupConsolidation: "true",
+    registerCreditLines: "true",
+    operatingEntity: "NLOE",
+    country: "NL",
+    casCheck: "true"
+  ],
+  "Mercedes NL": [
+    lessorID: "NLMBL",
+    groupConsolidation: "true",
+    registerCreditLines: "true",
+    operatingEntity: "NLOE",
+    country: "NL",
+    casCheck: "true"
+  ],
+  "Special Lease": [
+    lessorID: "NLSLS",
+    groupConsolidation: "true",
+    registerCreditLines: "true",
+    operatingEntity: "NLOE",
+    country: "NL",
+    casCheck: "true"
+  ],
+  "Wagenplan": [
+    lessorID: "NLWPL",
+    groupConsolidation: "true",
+    registerCreditLines: "true",
+    operatingEntity: "NLWPL",
+    country: "NL",
+    casCheck: "true"
+  ],
+  "Spain": [
+    lessorID: "ESACL",
+    groupConsolidation: "false",
+    registerCreditLines: "true",
+    operatingEntity: "ESOE",
+    country: "ES",
+    casCheck: "true"
+  ],
+  "Italy": [
+    lessorID: "ITACL",
+    groupConsolidation: "false",
+    registerCreditLines: "true",
+    operatingEntity: "ITOE",
+    country: "IT",
+    casCheck: "true"
+  ],
+  "France": [
+    lessorID: "FRACL",
+    groupConsolidation: "false",
+    registerCreditLines: "true",
+    operatingEntity: "FROE",
+    country: "FR",
+    casCheck: "true"
+  ],
+  "Mobifleet": [
+    lessorID: "FRMFL",
+    groupConsolidation: "false",
+    registerCreditLines: "true",
+    operatingEntity: "FROE",
+    country: "FR",
+    casCheck: "true"
+  ],
+  "UCAR": [
+    lessorID: "FRUCAR",
+    groupConsolidation: "false",
+    registerCreditLines: "true",
+    operatingEntity: "FROE",
+    country: "FR",
+    casCheck: "true"
+  ],
+  "Belgium": [
+    lessorID: "BEACL",
+    groupConsolidation: "false",
+    registerCreditLines: "true",
+    operatingEntity: "BEOE",
+    country: "BE",
+    casCheck: "true"
+  ],
+  "Premium lease": [
+    lessorID: "BEPRL",
+    groupConsolidation: "false",
+    registerCreditLines: "true",
+    operatingEntity: "BEOE",
+    country: "BE",
+    casCheck: "true"
+  ],
+  "Germany": [
+    lessorID: "DEACL",
+    groupConsolidation: "false",
+    registerCreditLines: "true",
+    operatingEntity: "DEOE",
+    country: "DE",
+    casCheck: "true"
+  ],
+  "Zuid Lease": [
+    lessorID: "NLZL",
+    groupConsolidation: "false",
+    cpScoring: "true",
+    biPayment: "false",
+    operatingEntity: "NLZL",
+    country: "NL",
+    casCheck: "true"
+  ],
+  "Friesland Lease": [
+    lessorID: "NLFRL",
+    groupConsolidation: "false",
+    cpScoring: "true",
+    biPayment: "false",
+    operatingEntity: "NLFL",
+    country: "NL",
+    casCheck: "true"
+  ],
+  "Portugal": [
+    lessorID: "PTACL",
+    groupConsolidation: "false",
+    registerCreditLines: "true",
+    cpScoring: "false",
+    biPayment: "false",
+    operatingEntity: "PTOE",
+    country: "PT",
+    casCheck: "true"
+  ],
+  "Luxemburg": [
+    lessorID: "LUACL",
+    groupConsolidation: "false",
+    registerCreditLines: "true",
+    cpScoring: "false",
+    biPayment: "false",
+    operatingEntity: "LUOE",
+    country: "LU",
+    casCheck: "true"
+  ]
+];
+if (body.variables) {
+    body.icmoreEntityInfo = icmoreEntities[body.variables.ACCOUNT_IndexedPick0];
+} else if (body.processVariables) {
+    body.icmoreEntityInfo = icmoreEntities[body.processVariables.ACCOUNT_IndexedPick0];   
+}
+
+return body;
