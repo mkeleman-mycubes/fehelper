@@ -1,0 +1,24 @@
+{
+    "pipes": [
+        {
+            "type" : "transform",
+            "name" : "dummy",
+            "script" : "processId = body.answers.processinstanceid.data.answer[0]; tenantId = body.secureData.tenantId; userFirstName = body.secureData.user.profile.firstName; userLastName = body.secureData.user.profile.lastName; history=body.answers.history.data.answer[0]"
+        },
+        {
+            "type": "action",
+            "name": "loginToDMS",
+            "script": "body = [variables: headers.variables]"
+        },
+        {
+            "type": "action",
+            "name": "getSAMLToken"
+        },
+        {
+            "type" : "transform",
+            "name" : "dummy",
+            "script" : "SAMLArt = body.SAMLArt"
+        },
+        <@uploadToDMSPiper uploadFields=["documents"] secureData=body.secureData headers=headers historyProcess=body.answers.history.data.answer[0]/>
+    ]
+}
