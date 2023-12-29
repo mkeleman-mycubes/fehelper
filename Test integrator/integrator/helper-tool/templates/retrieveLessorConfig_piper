@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "retrieveLessorConfig",
+            "script": "headers.lessorId = body.variables.LessorID; headers.customerName = body.variables.CustomerName; headers.companyId = body.variables.CompanyIdentifier; headers.applicationId = body.variables.ApplicationId; headers.handleExceptionTemplate =  'retrieveLessorConfig_error'; headers.handleRestExceptionTemplate = 'retrieveLessorConfig_error'"
+        },
+        {
+            "type": "transform",
+            "name": "retrieveLessorConfig_setVariables"
+        }
+    ]
+}
