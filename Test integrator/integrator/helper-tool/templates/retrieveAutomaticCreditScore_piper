@@ -1,0 +1,23 @@
+{
+    "pipes": [
+        {
+            "type": "script",
+            "name": "determineApiKey"
+        },
+        {
+            "type" : "action",
+            "name" : "retrieveAutomaticCreditScore",
+            "script": "mainProcessInstanceId = body.variables.mainProcessInstanceId; headers.mainProcessInstanceId = mainProcessInstanceId; headers.handleRestExceptionTemplate = 'retrieveAutomaticCreditScore_error'; headers.handleExceptionTemplate = 'retrieveAutomaticCreditScore_error';"
+        },
+        {
+            "type" : "transform",
+            "name" : "retrieveAutomaticCreditScore_setVariables",
+            "script": "body.CorrelationID = mainProcessInstanceId + '-' + headers.aDateTimeNowTimestamp"
+        },
+        {
+            "type": "action",
+            "name": "checkIfHitlistError_piper",
+            "script": "body.processInstanceId = mainProcessInstanceId"
+        }
+    ]
+}
