@@ -1,0 +1,20 @@
+<#-- Mapping between GAS username (1st column) and CMO/ICMore username (2nd column) -->
+{
+    "MANYOLI": AthlonCreditPortal,
+    "AthlonCreditPortal": AthlonCreditPortal,
+    "AthlonCreditAdminNL": AthlonCreditAdminNL,
+    "AthlonCreditAdminES": AthlonCreditAdminES,
+    "HUNTERM": HUNTERM,
+    "ES_PSA": ES_PSA,
+    "SalesNL1": SalesNL1,
+    "SalesNL2": SalesNL2,
+    "SalesNL3": SalesNL3,
+    "UnderwriterNL1": UnderwriterNL1,
+    "UnderwriterNL2": UnderwriterNL2,
+    "UnderwriterNL3": UnderwriterNL3,
+    "UnderwriterES1": UnderwriterES1,
+    "XSAVIOLA": XSAVIOLA,
+    "cbenz": cbenz,
+    "RPEDRO": RPEDRO
+   
+}
