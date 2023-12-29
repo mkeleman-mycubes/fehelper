@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "checkProblem",
+            "script" : "headers.taskId = body.answers.taskid.data.answer[0]"
+        }
+    ]
+}
