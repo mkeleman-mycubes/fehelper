@@ -1,0 +1,22 @@
+{
+   "pipes":[
+        {
+         "type": "transform",
+         "name": "dummy",
+         "script": "initialBody = body"
+        },
+        {
+         "type": "transform",
+         "name": "groupToLessor_mapping"
+       },
+       {
+         "type": "script",
+         "name": "getGlobalAdminGroupVariable"
+       },
+       {
+         "type": "action",
+         "name": "startICMoreEventsRetrievalProcess",
+         "script": "globalAdminGroup = body.globalAdminGroup; body = initialBody; body.variables.globalAdminGroup = globalAdminGroup"
+       }
+   ]
+}
