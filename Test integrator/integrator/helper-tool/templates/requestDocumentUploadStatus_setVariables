@@ -1,0 +1,30 @@
+<#if body.errorOccured??>
+{
+    "status": "true",
+    "errorOccured": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "GetDocumentUploadStatusError",
+        "bpmnErrorMessage": "Error message: Error occured during retrieving upload status of the document<br/><br/>RequestId: ${body.variables.RequestId}<br/>Filename: ${body.variables.DocumentInfo.fileName}"
+    }
+}
+<#else>
+{
+    "status": "true",
+    "processVariables": {
+    <#if body.requestStatus == 'Error'>
+        "status": "${body.requestStatus}",
+        <#if body.requestStatusDetail?? && body.requestStatusDetail?has_content && body.requestStatusDetail?is_string && (body.requestStatusDetail?length > 1000)>
+            "details": "${body.requestStatusDetail[0..999]?json_string}",
+            "bpmnErrorMessage": "Error message: ${body.requestStatusDetail[0..999]?json_string}<br/><br/>RequestId: ${body.variables.RequestId}<br/>Filename: ${body.variables.DocumentInfo.fileName}",
+        <#else>
+            "details": "${body.requestStatusDetail?json_string}",
+            "bpmnErrorMessage": "Error message: ${body.requestStatusDetail?json_string}<br/><br/>RequestId: ${body.variables.RequestId}<br/>Filename: ${body.variables.DocumentInfo.fileName}",
+        </#if>
+        "errorCode": "${body.requestStatusCode}",
+        "bpmnErrorCode": "${body.requestStatusCode}"
+    <#else>
+        "status": "${body.requestStatus}"
+    </#if>    
+    }
+}
+</#if>
