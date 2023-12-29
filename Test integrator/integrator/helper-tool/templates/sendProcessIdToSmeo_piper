@@ -1,0 +1,8 @@
+{
+   "pipes":[
+      {
+         "name":"sendProcessIdToSmeo",
+         "type":"action"
+      }
+   ]
+}

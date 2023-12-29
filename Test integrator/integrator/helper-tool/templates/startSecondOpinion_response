@@ -1,0 +1,4 @@
+{
+    "status": "true",
+    "response": "${body[0].processInstance.id}"
+}

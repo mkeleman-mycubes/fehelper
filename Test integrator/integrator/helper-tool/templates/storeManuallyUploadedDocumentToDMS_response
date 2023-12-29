@@ -1,0 +1,12 @@
+<#ftl ns_prefixes={"D":"http://schemas.dfs.com/automotive/document/archival/1.0"}>
+<#if headers.restConnectorProperties.environment == "DHC">
+    {
+        "requestId": "${body.ArchiveDocumentResponse.RequestStatus.Request_Id}",
+        "requestError": "${body.ArchiveDocumentResponse.RequestStatus.RequestError}"
+    }
+<#else>
+    {
+        "requestId": "1",
+        "requestError": "LegalEntity must be one of the configured values"
+    }
+</#if>

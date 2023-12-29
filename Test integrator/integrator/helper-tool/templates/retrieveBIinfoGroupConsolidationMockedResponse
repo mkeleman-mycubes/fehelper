@@ -1,0 +1,12 @@
+{
+    "GCCalculationFunction": {
+        "CompanyConsolidatedCreditLine": "334000",
+        "BorrowerGroupConsolidatedCreditLine":"500000",
+        "BorrowerGroupConsolidatedLeaseCreditLine":"4000",
+        "BorrowerGroupConsolidatedMaxNumberOfRentals":"5",
+        "BorrowerGroupConsolidatedRentalCreditLine":"10",
+        "CompanyConsolidatedLeaseCreditLine":"3000",
+        "CompanyConsolidatedMaxNumberOfRentals":"4",
+        "CompanyConsolidatedRentalCreditLine":"5599"
+    }
+}

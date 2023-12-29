@@ -1,0 +1,15 @@
+<#assign lessorCurrency = '' />
+<#assign lessorID = body.lessorID />
+<#assign currencies = body.currencies />
+
+<#list currencies as lessorCurrencyMap >
+    <#list lessorCurrencyMap as currency, lessors>
+        <#if lessors?seq_contains(lessorID)?string("yes", "no") == "yes"> 
+            <#assign lessorCurrency = currency />
+        </#if>
+    </#list>   
+</#list>
+
+{
+    "lessorCurrency": "${lessorCurrency}"
+}

@@ -1,0 +1,16 @@
+body.downloadedFiles = []
+body.fileNames = []
+body.variables = body;
+body.fileSizes = [:]
+body.fileNameUrlMapping = [:]
+
+body.variables.filesToStore.each {
+    def file = it.toURL()?.getBytes()
+    def fileName = URLDecoder.decode(it.substring(it.lastIndexOf('/') + 1).tokenize("?")[0])
+    body.fileNames << fileName
+    body.fileNameUrlMapping[fileName] = it
+    body.downloadedFiles << file?.encodeBase64()?.toString()
+    body.fileSizes[fileName] = file?.size()
+}
+
+return body;

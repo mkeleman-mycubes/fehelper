@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "informSMEOProcessAboutManualDecision",
+            "script": "headers.handleExceptionTemplate =  'callSMEO_error'; headers.handleRestExceptionTemplate = 'callSMEO_error'"
+        }
+    ]
+}

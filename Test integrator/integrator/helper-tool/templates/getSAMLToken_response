@@ -1,0 +1,11 @@
+<#ftl ns_prefixes={"samlp":"urn:oasis:names:tc:SAML:1.0:protocol"}>
+
+<#if headers.restConnectorProperties.environment == "DHC">
+    {
+        "SAMLArt": "${body["samlp:Response/samlp:AssertionArtifact"]}"
+    }
+<#else>
+    {
+        "SAMLArt": "e0pBVkEtQUVTL0dDTS9Ob1BhZGRpbmd9dz7U/gXJY7q1FXAs4LUZd3KYGWO5WbOwTE2LxAiJXXRQY1bZHU0oeoAw44d5PLZBEVf+WUs9NcdzxNQyfV7JiwydPzQ3tLSSlScEn3O+88zNZuSCCAZ7mVfmRHy2KLcL25Bi"
+    }
+</#if>

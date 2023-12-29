@@ -1,0 +1,45 @@
+[
+  {
+    "ApplicationRequest": {
+      "customeractivationdate": null,
+      "customerid": "${body.customerId}",
+      "remainingduration": null,
+      "customeractivemonthslast12months": 0,
+      "arrearsamountsum": 0,
+      "borrowertype": "BORROWERTYPE",
+      "daysinarrearsqty": 0,
+      "managementcode_02": null,
+      "writtenoffdate": null,
+      "daystopayaveragelast12months": 0,
+      "managementcode_03": null,
+      "managementcode_00": null,
+      "customergroupid": "1804746.00000",
+      "noagreementsearlierperiods": 0,
+      "managementcode_01": null,
+      "managementcode_06": "NP",
+      "managementcode_07": "NP",
+      "legalentityexternalidentifier": null,
+      "managementcode_04": null,
+      "managementcode_05": null,
+      "managementcode_08": "NP",
+      "managementcode_09": "B",
+      "CountryCode": "NL",
+      "paymentproblemflag": null,
+      <#if body.companyId?? >
+      "companyid": "${body.companyId}",
+      </#if>
+      "daystopayaveragelast6months": 0,
+      "noagreementscurrentperiod": null,
+      "noterminatedcontracts": 0,
+      "vatid": "Rutger123",
+      "totalexposure": 0,
+      "managementcode_10": "C",
+      "managementcode_11": "NP",
+      "NumberOfActiveContractsCurrentMonth": 0,
+      "managementcode_12": "NP",
+      "writeoffflag": null,
+      "arrearsamountmax": 0,
+      "defaultflag": false
+    }
+  }   
+]

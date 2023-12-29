@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "updateCMAOrganization",
+            "script": "headers.cmaAction = 'updateOrganization'; headers.customerName = body.variables.CustomerName; headers.companyId = body.variables.MainCompanyIdentifier; headers.operatingEntity = body.variables.OperatingEntity; headers.handleExceptionTemplate =  'callCMA_error'; headers.handleRestExceptionTemplate = 'callCMA_error'"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+[
+    {"GBP": ["UKACL"]},
+    {"SEK": ["SEACL"]},
+    {"PLN": ["PLACL"]},
+    {"EUR": ["NLACL", "NLSLS", "ITACL", "ESACL", "PTACL", "LUACL", "BEACL", "DEACL", "BEPRL", "FRACL", "FRMFL", "FRUCAR", "NLMBL", "NLWPL"]}
+]

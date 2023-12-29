@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Body xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <GetDocumentListResponse xmlns="http://schemas.cordys.com/" xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bpm="http://schemas.cordys.com/default" xmlns:instance="http://schemas.cordys.com/bpm/instance/1.0" xmlns:ns10="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:ns11="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ns12="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:ns13="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns14="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns15="http://schemas/DaimlerAutomotiveArchival/SystemConfiguration/operations" xmlns:ns16="http://schemas.opentext.com/bps/entity/core" xmlns:ns17="http://schemas/DaimlerAutomotiveArchival/SystemConfiguration" xmlns:ns18="http://schemas.cordys.com/casemanagement/1.0" xmlns:ns19="http://schemas.cordys.com/1.0/xmlstore" xmlns:ns2="urn:SearchServices.service.livelink.opentext.com" xmlns:ns20="http://schemas.cordys.com/cws/1.0" xmlns:ns21="http://schemas.cordys.com/General/1.0/" xmlns:ns22="http://service.daimler.com/doc-archive/otcs" xmlns:ns23="http://schemas.cordys.com/" xmlns:ns24="urn:DocMan.service.livelink.opentext.com" xmlns:ns25="urn:DocMan.service.livelink.opentext.com/Imports" xmlns:ns26="urn:Core.service.livelink.opentext.com" xmlns:ns3="urn:api.ecm.opentext.com" xmlns:ns4="urn:SearchServices.service.livelink.opentext.com/Imports" xmlns:ns5="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:ns6="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns7="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:ns8="http://www.w3.org/2005/08/addressing" xmlns:ns9="http://www.w3.org/2007/05/addressing/metadata" xmlns:sch="http://schemas.cordys.com/" xmlns:sm="http://www.w3.org/2005/07/scxml">
+      <documentInfo>
+         <ID>3642945</ID>
+         <DocumentName>FrissNL.pdf</DocumentName>
+         <CreationDate>2021-06-08T13:43:01</CreationDate>
+         <LastModificationDate>2021-06-08T13:43:02</LastModificationDate>
+         <FileDataSize>173914</FileDataSize>
+         <MimeType>application/pdf</MimeType>
+         <VersionNum>1</VersionNum>
+         <CustomerID />
+         <EnterpriseNo />
+         <VATNo />
+         <ReferenceNo />
+         <BP_Code />
+         <PartnerCustomerNo />
+         <SearchName />
+         <BillingName />
+         <SegmentMV>Core</SegmentMV>
+         <Status>ACTIVE</Status>
+         <StatusDate>2021-06-08</StatusDate>
+         <Country>NL</Country>
+         <LegalEntity>AthlonNL</LegalEntity>
+         <CaseID>816a1799-c84e-11eb-b194-0450560015c2</CaseID>
+         <CaseDate>2021-06-08</CaseDate>
+         <CaseType>CRA</CaseType>
+         <Segment>Core</Segment>
+         <DocTypeNumber>71</DocTypeNumber>
+         <DocTypeName>CRA CreditManagement Document</DocTypeName>
+         <Adate>2021-06-08</Adate>
+         <NotificationTo />
+         <UniqueIdentifier />
+      </documentInfo>
+      <documentInfo>
+         <ID>3642947</ID>
+         <DocumentName>FrissNL_1.pdf</DocumentName>
+         <CreationDate>2021-06-08T13:51:57</CreationDate>
+         <LastModificationDate>2021-06-08T13:51:58</LastModificationDate>
+         <FileDataSize>173914</FileDataSize>
+         <MimeType>application/pdf</MimeType>
+         <VersionNum>1</VersionNum>
+         <CustomerID />
+         <EnterpriseNo />
+         <VATNo />
+         <ReferenceNo />
+         <BP_Code />
+         <PartnerCustomerNo />
+         <SearchName />
+         <BillingName />
+         <SegmentMV>Core</SegmentMV>
+         <Status>ACTIVE</Status>
+         <StatusDate>2021-06-08</StatusDate>
+         <Country>NL</Country>
+         <LegalEntity>AthlonNL</LegalEntity>
+         <CaseID>816a1799-c84e-11eb-b194-0450560015c2</CaseID>
+         <CaseDate>2021-06-08</CaseDate>
+         <CaseType>CRA</CaseType>
+         <Segment>Core</Segment>
+         <DocTypeNumber>71</DocTypeNumber>
+         <DocTypeName>CRA CreditManagement Document</DocTypeName>
+         <Adate>2021-06-08</Adate>
+         <NotificationTo />
+         <UniqueIdentifier />
+      </documentInfo>
+      <documentInfo>
+         <ID>3642946</ID>
+         <DocumentName>GraydonNL.pdf</DocumentName>
+         <CreationDate>2021-06-08T13:43:06</CreationDate>
+         <LastModificationDate>2021-06-08T13:43:06</LastModificationDate>
+         <FileDataSize>147628</FileDataSize>
+         <MimeType>application/pdf</MimeType>
+         <VersionNum>1</VersionNum>
+         <CustomerID />
+         <EnterpriseNo />
+         <VATNo />
+         <ReferenceNo />
+         <BP_Code />
+         <PartnerCustomerNo />
+         <SearchName />
+         <BillingName />
+         <SegmentMV>Core</SegmentMV>
+         <Status>ACTIVE</Status>
+         <StatusDate>2021-06-08</StatusDate>
+         <Country>NL</Country>
+         <LegalEntity>AthlonNL</LegalEntity>
+         <CaseID>816a1799-c84e-11eb-b194-0450560015c2</CaseID>
+         <CaseDate>2021-06-08</CaseDate>
+         <CaseType>CRA</CaseType>
+         <Segment>Core</Segment>
+         <DocTypeNumber>71</DocTypeNumber>
+         <DocTypeName>CRA CreditManagement Document</DocTypeName>
+         <Adate>2021-06-08</Adate>
+         <NotificationTo />
+         <UniqueIdentifier />
+      </documentInfo>
+      <documentInfo>
+         <ID>3642948</ID>
+         <DocumentName>GraydonNL_1.pdf</DocumentName>
+         <CreationDate>2021-06-08T13:52:03</CreationDate>
+         <LastModificationDate>2021-06-08T13:52:03</LastModificationDate>
+         <FileDataSize>147628</FileDataSize>
+         <MimeType>application/pdf</MimeType>
+         <VersionNum>1</VersionNum>
+         <CustomerID />
+         <EnterpriseNo />
+         <VATNo />
+         <ReferenceNo />
+         <BP_Code />
+         <PartnerCustomerNo />
+         <SearchName />
+         <BillingName />
+         <SegmentMV>Core</SegmentMV>
+         <Status>ACTIVE</Status>
+         <StatusDate>2021-06-08</StatusDate>
+         <Country>NL</Country>
+         <LegalEntity>AthlonNL</LegalEntity>
+         <CaseID>816a1799-c84e-11eb-b194-0450560015c2</CaseID>
+         <CaseDate>2021-06-08</CaseDate>
+         <CaseType>CRA</CaseType>
+         <Segment>Core</Segment>
+         <DocTypeNumber>71</DocTypeNumber>
+         <DocTypeName>CRA CreditManagement Document</DocTypeName>
+         <Adate>2021-06-08</Adate>
+         <NotificationTo />
+         <UniqueIdentifier />
+      </documentInfo>
+      <documentInfo>
+         <ID>3642417</ID>
+         <DocumentName>MBOL10companies.xlsx</DocumentName>
+         <CreationDate>2021-06-08T13:49:56</CreationDate>
+         <LastModificationDate>2021-06-08T13:49:57</LastModificationDate>
+         <FileDataSize>15925</FileDataSize>
+         <MimeType>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</MimeType>
+         <VersionNum>1</VersionNum>
+         <CustomerID />
+         <EnterpriseNo />
+         <VATNo />
+         <ReferenceNo />
+         <BP_Code />
+         <PartnerCustomerNo />
+         <SearchName />
+         <BillingName />
+         <SegmentMV>Core</SegmentMV>
+         <Status>ACTIVE</Status>
+         <StatusDate>2021-06-08</StatusDate>
+         <Country>NL</Country>
+         <LegalEntity>AthlonNL</LegalEntity>
+         <CaseID>816a1799-c84e-11eb-b194-0450560015c2</CaseID>
+         <CaseDate>2021-06-08</CaseDate>
+         <CaseType>CRA</CaseType>
+         <Segment>Core</Segment>
+         <DocTypeNumber>71</DocTypeNumber>
+         <DocTypeName>CRA CreditManagement Document</DocTypeName>
+         <Adate>2021-06-08</Adate>
+         <NotificationTo />
+         <UniqueIdentifier />
+      </documentInfo>
+      <documentInfo>
+         <ID>3642949</ID>
+         <DocumentName>NL12companies.xlsx</DocumentName>
+         <CreationDate>2021-06-08T13:55:26</CreationDate>
+         <LastModificationDate>2021-06-08T13:55:26</LastModificationDate>
+         <FileDataSize>18311</FileDataSize>
+         <MimeType>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</MimeType>
+         <VersionNum>1</VersionNum>
+         <CustomerID />
+         <EnterpriseNo />
+         <VATNo />
+         <ReferenceNo />
+         <BP_Code />
+         <PartnerCustomerNo />
+         <SearchName />
+         <BillingName />
+         <SegmentMV>Core</SegmentMV>
+         <Status>ACTIVE</Status>
+         <StatusDate>2021-06-08</StatusDate>
+         <Country>NL</Country>
+         <LegalEntity>AthlonNL</LegalEntity>
+         <CaseID>816a1799-c84e-11eb-b194-0450560015c2</CaseID>
+         <CaseDate>2021-06-08</CaseDate>
+         <CaseType>CRA</CaseType>
+         <Segment>Core</Segment>
+         <DocTypeNumber>70</DocTypeNumber>
+         <DocTypeName>CRA Sales Document</DocTypeName>
+         <Adate>2021-06-08</Adate>
+         <NotificationTo />
+         <UniqueIdentifier />
+      </documentInfo>
+   </GetDocumentListResponse>
+</soapenv:Body>

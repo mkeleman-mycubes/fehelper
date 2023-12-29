@@ -1,0 +1,19 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "loginToDMS",
+            "script": "headers.handleRestExceptionTemplate = 'downloadAndStoreFilesToDMS_error'; headers.handleExceptionTemplate = 'downloadAndStoreFilesToDMS_error'"
+        },
+        {
+            "type": "action",
+            "name": "getSAMLToken",
+            "script": "headers.handleRestExceptionTemplate = 'downloadAndStoreFilesToDMS_error'; headers.handleExceptionTemplate = 'downloadAndStoreFilesToDMS_error'"
+        },
+        {
+            "type" : "action",
+            "name" : "requestStatusRequest",
+            "script": "headers.SAMLArt = body.SAMLArt"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "pipes": [
+        <#if hasGroupType(body.secureData.user, "ATHLONCREDITPORTAL_SALES")>
+            {
+                "type" : "transform",
+                "name" : "dummy",
+                "script" : "answers = body.answers; secureData = body.secureData"
+            },
+            <@uploadToDMSPiper uploadFields=["documents"] documentVariablesListName="documentsVariables" secureData=body.secureData headers=headers />
+            {
+                "type" : "action",
+                "name" : "getGroup",
+                "script" : "headers.groupId = 'AthlonCreditUnderwriters' + answers.country.data.answer[0]"
+            },
+            {
+                "type" : "action",
+                "name" : "getGroup",
+                "script" : "underwritersGroup = body; headers.groupId = 'AthlonCreditAdmin' + answers.country.data.answer[0]"
+            },
+            {
+                "type" : "action",
+                "name" : "startProcess",
+                "script": "body = [answers: answers, secureData: secureData, documentsVariables: documentsVariables, underwritersGroup: underwritersGroup, adminGroup: body]"
+            }
+        <#else>
+            {
+                "type" : "transform",
+                "name" : "failure"
+            }
+        </#if>
+    ]
+}

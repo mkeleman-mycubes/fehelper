@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "name": "setVariableToTask",
+            "type": "action",
+            "script": "headers.taskId = body.taskId; headers.variableName = body.variableName"
+        }
+    ]
+}

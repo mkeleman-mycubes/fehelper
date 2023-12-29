@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "retrieveCMACreditLine",
+            "script": "headers.cmaAction='retrieveCreditLine'; headers.companyName = body.variables.CustomerName; headers.applicationId = body.variables.ApplicationId; headers.companyId = body.variables.CompanyIdentifier; headers.status = body.variables.status; headers.handleExceptionTemplate = 'callCMA_error'; headers.handleRestExceptionTemplate = 'callCMA_error'"
+        },
+        {
+            "type": "transform",
+            "name": "retrieveCMACreditLine_setVariables"
+        }
+    ]
+}

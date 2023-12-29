@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "retrieveCMAOrganization",
+            "script": "headers.cmaAction = 'retrieveOrganization'; headers.companyId = body.variables.CompanyIdentifier; headers.customerName = body.variables.CustomerName;<#if body.variables.ApplicationId??> headers.applicationId = body.variables.ApplicationId;</#if> headers.lessorId = body.variables.LessorID; headers.operatingEntity = body.variables.OperatingEntity; headers.handleExceptionTemplate = 'callCMA_error'; headers.handleRestExceptionTemplate = 'callCMA_error'"
+        },
+        {
+            "type": "transform",
+            "name": "retrieveCMAOrganization_setVariables"
+        }
+    ]
+}

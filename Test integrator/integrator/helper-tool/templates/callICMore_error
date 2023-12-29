@@ -1,0 +1,23 @@
+{
+    "errorOccured": "true",
+    "status": "true",
+    <#if body?? && body.description?? && (body.description?contains("The maximum rate of requests was exceeded") || body.description?contains("The selected record has been modified"))>
+        "bpmnError": {
+            "bpmnErrorCode": "ICMoreMaxCallRateError",
+            "bpmnErrorMessage": "${body.description?json_string}"
+    }
+    <#else>
+        "bpmnError": {
+            "bpmnErrorCode": "ICMoreCallFailedError",
+            
+        <#if body?? && body.description?? && body.description?is_hash && body.description.detail??>
+            "bpmnErrorMessage": "${body.description.detail?json_string}"
+        <#elseif body.description?? && body.description?is_string>
+            "bpmnErrorMessage": "${body.description?json_string}"
+        <#else>
+            "bpmnErrorMessage": "IC more call failed. Check integrator for details."
+        </#if>
+        }
+    </#if>
+}
+

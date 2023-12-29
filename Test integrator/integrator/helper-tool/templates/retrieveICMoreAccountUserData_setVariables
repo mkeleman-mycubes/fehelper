@@ -1,0 +1,48 @@
+<#if body.errorOccured??>
+    <@printObjectToJson source=body /> 
+<#elseif !body.accountData?? && !body.AccountQueryPage_Output.ListOfAccount.Account??>
+{
+    "status": "true",
+    "errorOccured": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "ICMoreCallFailedError",
+        "bpmnErrorMessage": "Account not found"
+    }
+}
+<#elseif !body.userQueryPage?? || !body.userQueryPage.ListOfUser?? || !body.userQueryPage.ListOfUser.User??>
+{
+    "status": "true",
+    "errorOccured": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "ICMoreCallFailedError",
+        "bpmnErrorMessage": "User not found"
+    }
+}
+<#else>
+    <#assign account = body.accountData>
+    <#assign user = body.userQueryPage.ListOfUser.User>
+    
+    {
+        "status" : "true",
+        "processVariables" : {
+            <#list account?keys as accountKey>
+                <#if account[accountKey]?is_string>
+                    "ACCOUNT_${accountKey}": "${account[accountKey]?json_string}"
+                <#else>
+                    "ACCOUNT_${accountKey}": ""
+                </#if>
+                <#sep>,</#sep>
+            </#list>
+            ,
+            <#list user?keys as userKey>
+                <#if user[userKey]?is_string>
+                    "USER_${userKey}": "${user[userKey]?json_string}"
+                <#else>
+                    "USER_${userKey}": ""
+                </#if>
+                <#sep>,</#sep>
+            </#list>,
+            "ICMoreOwner": "${body.owner}"
+        }
+    }
+</#if>

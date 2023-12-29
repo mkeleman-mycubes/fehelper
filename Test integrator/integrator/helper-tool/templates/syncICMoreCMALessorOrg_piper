@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "name": "syncICMoreCMALessorOrg",
+            "type": "action",
+            "script": "headers.cmaAction = 'syncICMoreCMALessorOrg'; headers.lessorOrgId = <#if body.variables.LessorOrgId == "">body.varaibles.EmptyLessorOrgId<#else>body.variables.LessorOrgId</#if>; headers.companyId = body.variables.CompanyIdentifier; headers.customerName = body.variables.CustomerName; headers.lessorId = body.variables.LessorID; headers.handleExceptionTemplate = 'callCMA_error'; headers.handleRestExceptionTemplate = 'callCMA_error'"
+        }
+    ]
+}

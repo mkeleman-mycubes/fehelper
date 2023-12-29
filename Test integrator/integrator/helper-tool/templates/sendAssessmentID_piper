@@ -1,0 +1,9 @@
+{
+    "pipes":[
+       {
+          "name":"sendAssessmentID",
+          "type":"action",
+          "script":"headers.handleExceptionTemplate =  'callSMEO_error'; headers.handleRestExceptionTemplate = 'callSMEO_error'"
+       }
+    ]
+}

@@ -1,0 +1,530 @@
+{
+   "creditScore":{
+      "documents":[
+         "https://rest-file-storage.acc-docker.mycubes.nl/rest/file/download/e4c80616-2279-4434-b68d-874d77cb4dcc/camunda-logo.png",
+         "https://rest-file-storage.acc-docker.mycubes.nl/rest/file/download/a328f00d-bef2-40cd-ab03-f642cca55fa3/Untitled.png"
+      ],
+      "agencyData":{
+         "businessPartners":[
+            {
+               "addresses":[
+                  {
+                     "number":"57",
+                     "zipCode":"8443DV",
+                     "city":"Heerenveen",
+                     "countryCode":"NL",
+                     "street":"Tolhuisweg",
+                     "type":"Registered office address"
+                  },
+                  {
+                     "number":"24",
+                     "zipCode":"8440AA",
+                     "city":"Heerenveen",
+                     "countryCode":"NL",
+                     "street":"",
+                     "type":"Postal address"
+                  }
+               ],
+               "companyDisclosure":{
+                  "companyId":"29021830",
+                  "companyName":"Antea Nederland B.V.",
+                  "vatId":"NL003662317B01"
+               },
+               "externDisclosure":{
+                  "agencies":[
+                     {
+                        "scores":[
+                           {
+                              "valueString":"CCC",
+                              "name":"GraydonRating"
+                           },
+                           {
+                              "valueString":"2",
+                              "name":"EurogateRiskclassification"
+                           }
+                        ],
+                        "company":{
+                           "salesTurnoverTrend":5.755586744967205,
+                           "dueDayDebtors":204,
+                           "tangibleAssets":2818013,
+                           "currencyCodeAnnualAccount":"EUR",
+                           "returnOnEquityPercentage":15.384950025907637,
+                           "shareholdersFunds":6.2248054E7,
+                           "totalCurrentLiabilities":4.6413242E7,
+                           "liquidityRatio":2.37,
+                           "shareCapitalIssued":11250,
+                           "foundationDate":195951600000,
+                           "phoneAvailabilityFlag":true,
+                           "defaultRegisterFlag":false,
+                           "netResult":9576832,
+                           "creditLimit":3000000,
+                           "fixedAssets":3559045,
+                           "accountingPeriod":"2019",
+                           "currentRatio":2.37,
+                           "financialInformationAge":3,
+                           "totalCurrentAssets":1.09842422E8,
+                           "workingCapital":6.342918E7,
+                           "netTurnover":1.70741737E8,
+                           "totalOperatingExpenses":1.58242736E8,
+                           "solvencyRatio":54.89,
+                           "accountingDueDate":1597960800000,
+                           "localIndustryCodes":[
+                              {
+                                 "code":"7112",
+                                 "description":"Engineers and other technical design and consultancy",
+                                 "type":"PRIMARY"
+                              },
+                              {
+                                 "code":"78202",
+                                 "description":"Job pools (no employment projects)",
+                                 "type":"SECONDARY"
+                              },
+                              {
+                                 "code":"78202",
+                                 "description":"Job pools (no employment projects)",
+                                 "type":"SECONDARY"
+                              }
+                           ],
+                           "localLegalFormCode":"3",
+                           "numberOfEmployees":1025,
+                           "provisions":4740171,
+                           "accountingReferenceDate":1577746800000,
+                           "shareCapital":56250,
+                           "paymentBehavior":"4.8",
+                           "totalNetAssets":1.13401467E8,
+                           "dueDaysSuppliers":107,
+                           "salesTurnover":1.11741737E8,
+                           "financialFixedAssets":741032,
+                           "localLegalFormDescription":"General Partnership",
+                           "shareCapitalIssuedAndPaidUp":11250,
+                           "companyAge":536,
+                           "receivablesAmount":9.5490588E7,
+                           "netProfitPercentage":5.608957814456344
+                        },
+                        "agencyId":"1198487",
+                        "bureauProductState":"CustomerFound",
+                        "agencyName":"GraydonNL"
+                     },
+                     {
+                        "scores":[
+                           {
+                              "valueLong":84,
+                              "name":"Friss score"
+                           }
+                        ],
+                        "fraud":{
+                           "numberOfCollectionRecordsAddress":0,
+                           "creditCheckPerson":0,
+                           "numberOfCollectionRecordsPerson":0,
+                           "largestOutstandingDebtAmount":0
+                        },
+                        "agencyId":"29021830",
+                        "bureauProductState":"CustomerNotFound",
+                        "agencyName":"Friss"
+                     }
+                  ]
+               }
+            }
+         ]
+      },
+      "scoringResponse":{
+         "scoringId":"8cc678f8-f6c3-493c-9bdc-f7037926cac8",
+         "pdResult":{
+            "subScores":[
+               {
+                  "characteristicPoints":0,
+                  "characteristicId":"G Score",
+                  "characteristicValue":"CAT 1: <= 2, Missing"
+               },
+               {
+                  "characteristicPoints":59,
+                  "characteristicId":"Graydon Amount",
+                  "characteristicValue":"CAT 3: > 400k"
+               },
+               {
+                  "characteristicPoints":72,
+                  "characteristicId":"Negative Flag",
+                  "characteristicValue":"CAT 1: N, Missing"
+               },
+               {
+                  "characteristicPoints":0,
+                  "characteristicId":"UPC known",
+                  "characteristicValue":"CAT 2: N, Missing"
+               },
+               {
+                  "characteristicPoints":153,
+                  "characteristicId":"Equity Ratio",
+                  "characteristicValue":"CAT 4: > 50%"
+               },
+               {
+                  "characteristicPoints":120,
+                  "characteristicId":"Liquidity Ratio",
+                  "characteristicValue":"CAT 3: > 100%"
+               },
+               {
+                  "characteristicPoints":26,
+                  "characteristicId":"Age of Company",
+                  "characteristicValue":"CAT 2: > 7 years"
+               },
+               {
+                  "characteristicPoints":0,
+                  "characteristicId":"Graydon Performance",
+                  "characteristicValue":"CAT 1: <= 5"
+               },
+               {
+                  "characteristicPoints":124,
+                  "characteristicId":"DPD in last 12 months",
+                  "characteristicValue":"CAT 1: <= 7 DPD last 12m. Miss"
+               }
+            ],
+            "scoreCardVersion":"F1ATNL01",
+            "masterPD":1.97,
+            "scorePoints":554,
+            "scoreClass":"5"
+         },
+         "scoringDate":"2020-11-23T08:35:20.230+0000",
+         "additionalVariables":[
+            
+         ],
+         "decisionResult":{
+            "limitRules":[
+               {
+                  "limitRuleType":"Refer",
+                  "limitRuleTriggered":"0",
+                  "limitRuleId":1,
+                  "limitRuleLabel":"Corporate Limit",
+                  "limitRuleNumber":"LRCC"
+               },
+               {
+                  "limitRuleType":"Refer",
+                  "limitRuleTriggered":"0",
+                  "limitRuleId":2,
+                  "limitRuleLabel":"Limit Info",
+                  "limitRuleNumber":"LR26"
+               },
+               {
+                  "limitRuleType":"Refer",
+                  "limitRuleTriggered":"0",
+                  "limitRuleId":3,
+                  "limitRuleLabel":"Starter Limit",
+                  "limitRuleNumber":"LR11"
+               }
+            ],
+            "policyRules":[
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Credit line above EUR 500k: use CRC!",
+                  "policyRuleNumber":"N816",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":1
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"No Graydon Information available",
+                  "policyRuleNumber":"N814",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":2
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"No Friss Information available",
+                  "policyRuleNumber":"N815",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":3
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Government Scorecard",
+                  "policyRuleNumber":"N821",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":4
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Negative BKR - advise decline",
+                  "policyRuleNumber":"N822",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":5
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Branch activity advise decline",
+                  "policyRuleNumber":"N823",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":6
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Branch activity decline",
+                  "policyRuleNumber":"X802",
+                  "policyRuleType":"Decline",
+                  "policyRuleId":7
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Legal Entity is not allowed as Contract Party - advise decline",
+                  "policyRuleNumber":"N824",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":8
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Legal Entity is not allowed as Contract Party - decline",
+                  "policyRuleNumber":"X803",
+                  "policyRuleType":"Decline",
+                  "policyRuleId":9
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Customer with one or more contracts > 90 days in arrears - advise decline",
+                  "policyRuleNumber":"N825",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":10
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Customer with one or more contracts > 90 days in arrears - decline",
+                  "policyRuleNumber":"X804",
+                  "policyRuleType":"Decline",
+                  "policyRuleId":11
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Inactive company",
+                  "policyRuleNumber":"X812",
+                  "policyRuleType":"Decline",
+                  "policyRuleId":12
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Bankruptcy or suspension of payment - advise decline",
+                  "policyRuleNumber":"N826",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":13
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Bankruptcy or suspension of payment - decline",
+                  "policyRuleNumber":"X806",
+                  "policyRuleType":"Decline",
+                  "policyRuleId":14
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Bankruptcy - advise decline",
+                  "policyRuleNumber":"N827",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":15
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Bankruptcy - decline",
+                  "policyRuleNumber":"X807",
+                  "policyRuleType":"Decline",
+                  "policyRuleId":16
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Customer has a high risk profile (is risky), adv. Limit = 0 - advise decline",
+                  "policyRuleNumber":"N812",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":17
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Customer has a high risk profile (is risky), adv. Limit = 0 - decline",
+                  "policyRuleNumber":"X808",
+                  "policyRuleType":"Decline",
+                  "policyRuleId":18
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Private Household",
+                  "policyRuleNumber":"N830",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":19
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Low Credit Score - advise decline",
+                  "policyRuleNumber":"N828",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":20
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Low Credit Score - decline",
+                  "policyRuleNumber":"X811",
+                  "policyRuleType":"Decline",
+                  "policyRuleId":21
+               },
+               {
+                  "policyRuleTriggered":"1",
+                  "policyRuleLabel":"Customer has a high risk profile (is risky), adv. Limit > 0",
+                  "policyRuleNumber":"N813",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":22
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"High FRISS Score, Please Contact Special Affairs",
+                  "policyRuleNumber":"N803",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":23
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Sole Trader",
+                  "policyRuleNumber":"N831",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":24
+               },
+               {
+                  "policyRuleTriggered":"1",
+                  "policyRuleLabel":"Branch activity refer",
+                  "policyRuleNumber":"N817",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":25
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Unidentified legal form code",
+                  "policyRuleNumber":"N802",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":26
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Customer with one or more contracts > 60 days in arrears in last 9 months",
+                  "policyRuleNumber":"N804",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":27
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"This company has a negative equity",
+                  "policyRuleNumber":"N806",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":28
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Legal form code is foreign. This is not a Dutch legal form code. The company is a part of a group outside the Netherlands.",
+                  "policyRuleNumber":"N807",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":29
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Legal form code is \"bedrijf/rechtsvorm in oprichting\". This is a young company (existence is <= one year).",
+                  "policyRuleNumber":"N808",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":30
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Adverse Info Credit Report",
+                  "policyRuleNumber":"N809",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":31
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Bad Payment Experience Graydon",
+                  "policyRuleNumber":"N810",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":32
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"The financial information in Graydon is older than 24 months. Request for actual financial information.",
+                  "policyRuleNumber":"N811",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":33
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Non-Financial segment & acceptable score (small ticket)",
+                  "policyRuleNumber":"A807",
+                  "policyRuleType":"Accept 10% deposit + m.assets",
+                  "policyRuleId":34
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Intermediate Credit Score",
+                  "policyRuleNumber":"N818",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":35
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"High requested amount compared to Balance sheet total",
+                  "policyRuleNumber":"N829",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":36
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"BV's and NV's without registered figures, small ticket",
+                  "policyRuleNumber":"A803",
+                  "policyRuleType":"Accept only marketable assets",
+                  "policyRuleId":37
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Sole Trader and PSH, small ticket",
+                  "policyRuleNumber":"A804",
+                  "policyRuleType":"Accept only marketable assets",
+                  "policyRuleId":38
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Soletrader/PSH and Starter, small tickets",
+                  "policyRuleNumber":"A805",
+                  "policyRuleType":"Accept 10% deposit + m.assets",
+                  "policyRuleId":39
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"BV's and NV's without registered figures, ST/PSH, big tickets",
+                  "policyRuleNumber":"N819",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":40
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Soletrader/PSH and Starter, big tickets",
+                  "policyRuleNumber":"N820",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":41
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Age directors",
+                  "policyRuleNumber":"N805",
+                  "policyRuleType":"Refer",
+                  "policyRuleId":42
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Young companies (<= 1 year)",
+                  "policyRuleNumber":"A806",
+                  "policyRuleType":"Accept 10% deposit + m.assets",
+                  "policyRuleId":43
+               },
+               {
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"No negative signals are applicable for this application",
+                  "policyRuleNumber":"A802",
+                  "policyRuleType":"Accept all assets",
+                  "policyRuleId":44
+               }
+            ],
+            "decisionCode":"R",
+            "decisionDescription":"Refer",
+            "decisionReason":"N813"
+         }
+      },
+      "id":"0b30efee-2fde-47b7-af70-10d6be6f88fc"
+   }
+}

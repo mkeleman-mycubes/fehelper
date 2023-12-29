@@ -1,0 +1,21 @@
+<#assign aDateTime = .now />
+{
+    "lessorId": "${body.variables.LessorRecordId}",
+    "organizationId": "${body.variables.OrganizationCMAId}",
+    <#if body.variables.CustomerNumber??&& body.variables.CustomerNumber?has_content>
+        "referenceNbr": "${body.variables.CustomerNumber}",
+    <#else>
+        "referenceNbr": "",
+    </#if>
+    "status": "${body.variables.AccountStatus}",
+    "type": "${body.variables.AccountType}",
+    "icmoreRowId": "${body.variables.ICMoreAccountID}",
+    "statusDate": "${aDateTime?iso_utc}",
+    "liableRelation": {
+        "id": "${body.variables.OrganizationCMAId}"
+    },
+    <#if body.variables.LiableReferenceNbr?? && body.variables.LiableReferenceNbr?has_content>
+        "liableReferenceNbr": "${body.variables.LiableReferenceNbr}",
+    </#if>
+    "creditLineHolder": false
+}

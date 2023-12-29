@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "determineIfSecondOpinionNeeded",
+            "script" : "taskId = body.answers['taskid'].data.answer[0]; headers.taskId = taskId"
+        }
+    ]
+}

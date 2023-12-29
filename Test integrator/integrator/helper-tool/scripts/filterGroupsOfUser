@@ -1,0 +1,20 @@
+def groupNames = body.userGroups;
+def groups = [];
+
+body.groupsToLessorMappingList.each {
+  key, value ->
+  groupNames.each { name ->
+      if (key == name) {
+        groups.push([
+          groupID: key,
+          lessorID: value.lessorID,
+          userRole: value.userRole
+        ])
+      }
+
+  }
+}
+
+body = groups;
+
+return body;

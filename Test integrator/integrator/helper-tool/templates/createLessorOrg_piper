@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "createLessorOrg",
+            "script": "headers.cmaAction = 'createLessorOrg'; headers.companyId = body.variables.CompanyIdentifier; headers.companyName = body.variables.CustomerName; <#if body.variables.ApplicationId??>headers.applicationId = body.variables.ApplicationId;</#if>headers.handleExceptionTemplate = 'callCMA_error'; headers.handleRestExceptionTemplate = 'callCMA_error'"
+        },
+        {
+            "type": "transform",
+            "name": "createLessorOrg_setVariables"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "prefill_provideMoreInformation",
+            "script" : "taskId = body.taskid; headers.taskId = taskId"
+        }
+    ]
+}

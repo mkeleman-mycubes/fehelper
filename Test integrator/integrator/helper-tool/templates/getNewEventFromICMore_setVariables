@@ -1,0 +1,33 @@
+<#if body.Body.errorOccured??>
+    <@printObjectToJson source=body.Body />
+<#else>
+    <#if body.Body.IntegrationEventWS_GetEvents_Output?? && body.Body.IntegrationEventWS_GetEvents_Output.LastEventId?? && body.Body.IntegrationEventWS_GetEvents_Output.LastEventId?has_content>
+        <#assign eventType = "" />
+        <#if body.Body.IntegrationEventWS_GetEvents_Output.ListOfEvent._name?contains("Credit")>
+            <#assign eventType = "Credit Assessment" />
+        <#elseif body.Body.IntegrationEventWS_GetEvents_Output.ListOfEvent._name?contains("CMA")>
+            <#assign eventType = "CMA Sync">
+        </#if>
+        <#assign account = body.Body.IntegrationEventWS_GetEvents_Output.ListOfEvent.Event.SiebelMessage.ListOfAccount.Account>
+        {
+            "status" : "true",
+            "processVariables": {
+                "gotNewEvent": true,
+                "eventType": "${eventType}",
+                <#list account?keys as accountKey>
+                    <#if account[accountKey]?is_string>
+                "EVENT_${accountKey}": "${account[accountKey]?json_string}",
+                    </#if>
+                </#list>
+                "EVENT_LastEventId": "${body.Body.IntegrationEventWS_GetEvents_Output.LastEventId}"
+            }
+        }
+    <#else>
+        {
+            "status" : "true",
+            "processVariables": {
+                "gotNewEvent": false
+            }
+        }
+    </#if>
+</#if>

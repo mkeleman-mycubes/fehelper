@@ -1,0 +1,12 @@
+{
+    "pipes": [
+        {
+            "type" : "script",
+            "name" : "prepareEmail"
+        },
+        {
+            "type" : "action",
+            "name" : "sendEmail"
+        }
+    ]
+}

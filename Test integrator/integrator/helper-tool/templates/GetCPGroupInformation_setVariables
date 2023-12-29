@@ -1,0 +1,46 @@
+{
+    "status": "true",
+    <#if body.errorOccured??>
+        "bpmnError": {
+            "bpmnErrorMessage": "${body.bpmnError.bpmnErrorMessage}"
+        }
+    <#else>
+        <#function getCompanyId company>
+            <#assign companyId = ""/>
+            <#if company?has_content && company.companyId?has_content>
+                <#assign companyId = "H" + company.companyId + "0000"/>
+            </#if>
+            <#return companyId/>
+        </#function>
+        {
+          "businessPartners": [{
+            "companyDisclosure": {
+              "companyId": "${getCompanyId(body.businessPartners[0].companyDisclosure)}",
+              "companyName": "${body.businessPartners[0].companyDisclosure.companyName}",
+              <#if body.businessPartners[0].companyDisclosure.vatId?has_content>
+              "vatId": "${body.businessPartners[0].companyDisclosure.vatId}"
+              <#else>
+              "vatId": ""
+              </#if>
+            },
+            "externDisclosure": {
+                "agencies": [{
+                  "company": {
+                      "affiliatedCompanies": [
+                        <#if body.businessPartners[0].externDisclosure.agencies[0]?has_content && body.businessPartners[0].externDisclosure.agencies[0].company?has_content>
+                          <#list body.businessPartners[0].externDisclosure.agencies[0].company.affiliatedCompanies as company>
+                            {
+                                "companyId": "${getCompanyId(company)}",
+                                "companyName": "${company.companyName}",
+                                "affiliationType": "${company.affiliationType}"
+                            }<#if !company?is_last>,</#if>
+                          </#list>
+                        </#if>
+                      ]
+                  }
+                }]
+            }
+          }]
+        }
+    </#if>
+}

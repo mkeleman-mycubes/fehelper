@@ -1,0 +1,23 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "loginToDMS",
+            "script": "applicationId = body.applicationId"
+        },
+        {
+            "type": "action",
+            "name": "getSAMLToken",
+            "script": "headers.handleRestExceptionTemplate = 'downloadAndStoreFilesToDMS_error'; headers.handleExceptionTemplate = 'downloadAndStoreFilesToDMS_error'"
+        },
+        {
+            "type": "action",
+            "name": "getFilesListFromDMS",
+            "script": "headers.SAMLArt = body.SAMLArt; body.applicationId = applicationId"
+        },
+        {
+            "type": "transform",
+            "name": "getFilesListFromDMS_setVariables"
+        }
+    ]
+}

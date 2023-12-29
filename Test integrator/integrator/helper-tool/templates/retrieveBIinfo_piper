@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "retrieveBIinfo",
+            "script": "headers.CompanyIdentifier = body.variables.CompanyIdentifier; headers.CustomerCountry = body.variables.CustomerCountry; headers.handleRestExceptionTemplate = 'retrieveBIinfo_error'; headers.handleExceptionTemplate = 'retrieveBIinfo_error'"
+        },
+        {
+            "type" : "transform",
+            "name" : "retrieveBIinfo_setVariables"
+        }
+    ]
+}

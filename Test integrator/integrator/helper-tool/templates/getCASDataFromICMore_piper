@@ -1,0 +1,12 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "getCASDataFromICMore"
+        },
+        {
+            "type": "transform",
+            "name": "getCASDataFromICMore_setVariables"
+        }
+    ]
+}

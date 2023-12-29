@@ -1,0 +1,26 @@
+[
+    <#if body.GetDocumentListResponse?? && body.GetDocumentListResponse?has_content>
+        <#if body.GetDocumentListResponse?is_enumerable>
+            <#list body.GetDocumentListResponse as response>
+                <#if response.documentInfo?? && response.documentInfo?has_content && response.documentInfo.ID?? && response.documentInfo.ID?has_content>
+                {
+                    "ID": ${response.documentInfo.ID!},
+                    "DocumentName": "${response.documentInfo.DocumentName!}",
+                    "DocTypeNumber": "${response.documentInfo.DocTypeNumber!}",
+                    "CreationDate": "${response.documentInfo.CreationDate!?datetime.iso?string("yyyy-MM-dd | HH:mm:ss")}",
+                    "FileDataSize": "${response.documentInfo.FileDataSize!}"
+                }
+                <#sep>,</#sep>
+                </#if>
+            </#list>
+        <#else>
+            {
+                "ID": ${body.GetDocumentListResponse.documentInfo.ID!},
+                "DocumentName": "${body.GetDocumentListResponse.documentInfo.DocumentName!}",
+                "DocTypeNumber": "${body.GetDocumentListResponse.documentInfo.DocTypeNumber!}",
+                "CreationDate": "${body.GetDocumentListResponse.documentInfo.CreationDate!?datetime.iso?string("yyyy-MM-dd | HH:mm:ss")}",
+                "FileDataSize": "${body.GetDocumentListResponse.documentInfo.FileDataSize!}"
+            }
+        </#if>
+    </#if>
+]

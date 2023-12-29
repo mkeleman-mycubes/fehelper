@@ -1,0 +1,6 @@
+{
+    "status": "true",
+    "processVariables": {
+        "cancellationDescription": "${getCancellationStatus(body.cancellationType)}"
+    }
+}

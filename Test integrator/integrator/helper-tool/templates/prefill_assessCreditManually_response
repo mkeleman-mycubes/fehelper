@@ -1,0 +1,52 @@
+<#setting time_zone="GMT+2">
+<#assign aDateTime = .now>
+<#assign savedCreditEndDateExists = false/>
+<#if body.savedAnswers?? && body.savedAnswers?has_content>
+    <#assign savedAnswers = body.savedAnswers.value?eval />
+    <#if savedAnswers.CreditEndDate?? && savedAnswers.CreditEndDate != "">
+        <#assign savedCreditEndDateExists = true/>
+    </#if>
+</#if>
+{
+    <#if body.savedAnswers?? && body.savedAnswers?has_content>
+        "manual_decision": "${savedAnswers.manual_decision}",
+        "pros_reasons": "${savedAnswers.M_reasons_pros}",
+        "cons_reasons": "${savedAnswers.M_reasons_cons}",
+        "argumentation": "${savedAnswers.M_Argumentation?json_string}",
+        "reviewer": "${savedAnswers.reviewer}",
+    </#if>
+    <#if body.AssignedAssessCreditManualReviewerTo??>
+        <#if body.AssignedAssessCreditManualReviewerTo.value == body.AssignedTo.value>
+        "reviewer": "",
+        <#else>
+        "reviewer": "${body.AssignedAssessCreditManualReviewerTo.value}",
+        </#if>
+    </#if>
+    <#if body.reason_of_rejection??>
+        "rejected_by": "${body.AssignedAssessCreditManualReviewerToName.value?json_string}",
+        "reason_of_rejection": "${body.reason_of_rejection.value?json_string}",
+    </#if>
+    <#if body.A_DecisionCode?? && body.A_DecisionCode.value?has_content>
+        "A_DecisionCode": "${body.A_DecisionCode.value?json_string}",
+    </#if>
+    <#if savedCreditEndDateExists>
+        "credit_end_date": "${body.savedAnswers.value?eval.CreditEndDate}",
+    <#else>
+        "credit_end_date": "${headers.defaultCreditEndDate}",
+    </#if>
+    <#if body.cpScoring?? && body.cpScoring.value?has_content>
+        "cpscoring": "${body.cpScoring.value}",
+    </#if>
+    <#if body.biPayment?? && body.biPayment.value?has_content>
+        "bipayment": "${body.biPayment.value}",
+    </#if>
+    <#if body.opinionNumber??>
+        "second_opinion": "true",
+    </#if>
+    <#if body.GroupConsolidationRequired??>
+        "groupconsolidationrequired": "${body.GroupConsolidationRequired.value}",
+    </#if>
+    <#if body.OrganizationType??>
+        "organizationtype": "${body.OrganizationType.value}"
+    </#if>
+}

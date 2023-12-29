@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "name": "getGroupStructureFromCP",
+            "type": "action",
+            "script": "headers.handleRestExceptionTemplate = 'getGroupStructureFromCP_error'; headers.handleExceptionTemplate = 'getGroupStructureFromCP_error';"
+        },
+        {
+            "name": "getGroupStructureFromCP_setVariables",
+            "type": "transform"
+        }
+    ]
+}

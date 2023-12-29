@@ -1,0 +1,16 @@
+{
+    "value": <#if body.variables.RequestedCreditLineLease??>${body.variables.RequestedCreditLineLease}<#else>${body.variables.RequestedCreditLine}</#if>,
+    "valueTotal":  ${body.variables.RequestedCreditLine},
+    "valueRental": <#if body.variables.RequestedCreditLineRental??>${body.variables.RequestedCreditLineRental}<#else>0</#if>,
+    "maxRentals": <#if body.variables.MaxRentals??>${body.variables.MaxRentals}<#else>0</#if>,
+    <#if body.variables.CreditEndDate?? && body.variables.CreditEndDate?has_content>
+        "creditEndDate": "${body.variables.CreditEndDate}T00:00:00Z",
+    <#else>
+        "creditEndDate": null,
+    </#if>
+    <#if body.variables.DecisionDate??>
+        "decisionDate": "${body.variables.DecisionDate}",
+    </#if>
+    "status": "${body.variables.CreditLineStatus}",
+    "referenceNbr": "${body.variables.CustomerID!}"
+}

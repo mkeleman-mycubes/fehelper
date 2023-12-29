@@ -1,0 +1,30 @@
+{
+   "pipes":[
+      {
+         "type": "script",
+         "name": "defineSMEOCountry"
+      },
+      {
+         "type":"transform",
+         "name":"dummy",
+         "script":"initialBody = body; identity = body.feSecureData ? body.feSecureData.user.identity : body.identity ? body.identity : [:] ; groupIdVariable = identity.selectedGroup ?  identity.selectedGroup.groupID : body.groupID; excludeAssignedTo = body.excludeAssignedTo ? body.excludeAssignedTo : false; excludeMyself = body.excludeMyself ? body.excludeMyself : false; taskName = body.taskName ? body.taskName : ''"
+      },
+      <#if body.usersTask??>
+       {
+         "type":"action",
+         "name":"getTaskVariables",
+         "script":"headers.taskId = initialBody.taskId"
+      },
+      </#if>
+      {
+         "type":"action",
+         "name":"loginToOTDS",
+         "script":"taskVariables = body"
+      },
+      {
+         "type":"action",
+         "name":"getUsersOfGroup",
+         "script":"headers.groupId = groupIdVariable; headers.OTDSTicket = body.ticket; headers.AssignedTo = taskVariables.AssignedTo ? taskVariables.AssignedTo.value : ''; headers.AssignedAssessCreditManualTo = taskVariables.AssignedAssessCreditManualTo ? taskVariables.AssignedAssessCreditManualTo.value :''; headers.identity = identity; headers.excludeMyself = excludeMyself; headers.excludeAssignedTo = excludeAssignedTo; headers.taskName = taskName"
+      }
+   ]
+}

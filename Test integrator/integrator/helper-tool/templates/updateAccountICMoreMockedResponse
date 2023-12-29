@@ -1,0 +1,20 @@
+<SOAP-ENV:Body
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <ns:AccountUpdate_Output
+        xmlns:ns="urn:crmondemand/ws/ecbs/account/">
+        <ListOfAccount
+            xmlns="urn:/crmondemand/xml/Account/Data">
+            <Account>
+                <ModifiedDate>2021-10-18T11:36:29Z</ModifiedDate>
+                <CreatedDate>2021-03-04T11:22:26Z</CreatedDate>
+                <ModifiedById>ADBA-1VDETEB</ModifiedById>
+                <CreatedById>ADCA-1VRK2P6</CreatedById>
+                <ModId>35252</ModId>
+                <Id>ADCA-1VRL1S1</Id>
+                <CreatedBy>Mike Hunter,  03/04/2021 12:22:26</CreatedBy>
+                <ModifiedBy>Credit Integration, 10/18/2021 13:36:29</ModifiedBy>
+                <ExternalSystemId>Netherlands_1830744</ExternalSystemId>
+            </Account>
+        </ListOfAccount>
+    </ns:AccountUpdate_Output>
+</SOAP-ENV:Body>

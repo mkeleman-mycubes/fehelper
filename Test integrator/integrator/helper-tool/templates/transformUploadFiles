@@ -1,0 +1,16 @@
+{
+    variablesToSet: {
+        <#list body.uploadedFiles as name, value>
+            "${name}": '<@printObjectToJsonString source=value/>'
+            <#sep>,</#sep>
+    
+        </#list>
+    },
+    types: {
+        <#list body.uploadedFiles as name, value>
+            "${name}": 'Json'
+            <#sep>,</#sep>
+        </#list>    
+    }
+    
+}

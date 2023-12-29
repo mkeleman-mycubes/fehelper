@@ -1,0 +1,29 @@
+<soapenv:Envelope xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/07/secext" 
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+    xmlns:acc="urn:crmondemand/ws/ecbs/account/" 
+    xmlns:data="urn:/crmondemand/xml/Account/Data">
+    <soapenv:Header>
+        <wsse:Security soapenv:mustUnderstand="1">
+            <wsse:UsernameToken>
+                <wsse:Username>${headers.soapConnectorProperties.icMoreUsername}</wsse:Username>
+                <wsse:Password Type="wsse:PasswordText">${headers.soapConnectorProperties.icMorePassword}</wsse:Password>
+            </wsse:UsernameToken>
+        </wsse:Security>
+    </soapenv:Header>
+    <soapenv:Body>
+        <acc:AccountUpdate_Input>
+            <data:ListOfAccount>
+                <!--Zero or more repetitions:-->
+                <data:Account operation="UPDATE">
+                    <data:Id>${body.variables.ICMoreAccountID}</data:Id>
+                    <#list body.variables?keys as variableName>
+                        <#if variableName?starts_with("UPDATE_")>
+                            <#assign tagName = variableName?split("_")[1]>
+                            <data:${tagName}>${body.variables[variableName]!}</data:${tagName}>
+                        </#if>
+                    </#list>
+                </data:Account>
+            </data:ListOfAccount>
+        </acc:AccountUpdate_Input>
+    </soapenv:Body>
+</soapenv:Envelope>

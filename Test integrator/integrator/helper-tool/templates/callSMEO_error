@@ -1,0 +1,8 @@
+{
+    "errorOccured": "true",
+    "status": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "SMEOCallFailedError",
+        "bpmnErrorMessage": "Call to SMEO failed. <br/> <#if body.description.statusCode??>Error status: ${body.description.statusCode}</#if><br/><#if body.description.message??>Error message: ${body.description.message}</#if>"
+    }
+}

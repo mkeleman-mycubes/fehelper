@@ -1,0 +1,9 @@
+{
+  "status": "true",
+  "errorOccured": "true",
+  "description": {
+    "error": {
+      "message": "Error occured during retrieving data from CP."
+    }
+  }
+}

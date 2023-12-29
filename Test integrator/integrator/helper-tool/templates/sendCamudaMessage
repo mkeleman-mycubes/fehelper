@@ -1,0 +1,4 @@
+{
+    "messageName": "${body.messageName}",
+    "businessKey": "${body.businessKey}"
+}

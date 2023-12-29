@@ -1,0 +1,15 @@
+{
+    "assesser": "${body.AssignedAssessCreditManualToName.value}",
+    "manual_decision": "${body.manual_decision.value}",
+    
+    <#if body.M_reasons_pros?? && body.M_reasons_pros.value?has_content>
+    "reasons_pros": "${body.M_reasons_pros.value}",
+    </#if>
+    
+    <#if body.M_reasons_cons?? && body.M_reasons_cons.value?has_content>
+    "reasons_cons": "${body.M_reasons_cons.value}",
+    </#if>
+    
+    "argumentation": "${body.M_Argumentation.value?json_string}",
+    "credit_end_date": <#if body.CreditEndDate.value != "">"${body.CreditEndDate.value?date("yyyy-MM-dd")?string("dd-MM-yyyy")}"<#else>"${headers.defaultCreditEndDate}"</#if>
+}

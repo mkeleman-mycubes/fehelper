@@ -1,0 +1,46 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#assign timestamp = (aDateTime?long / 1000)?round?c>
+<#-- The documentRestrictionCode can have two values '70 - All users' and '71 - all users except Sales' -->
+<#assign documentRestrictionCode = 71>
+{
+    "pipes": [
+        {
+            "type" : "transform",
+            "name" : "dummy",
+            "script" : "uploadedFiles = [:]; initialBody = body; requestIds = [:]; headers.documentRestrictionCode = ${documentRestrictionCode}; headers.fileNameUrlMapping = body.fileNameUrlMapping; headers.fileSizes = body.fileSizes; headers.applicationId = body.ApplicationId;"
+        },
+        <#list 0..body.fileNames?size-1 as index>
+            {
+                "type" : "action",
+                "name" : "storeFileToDMS",
+                "script" : "body = [\"documentRestrictionCode\":\"${documentRestrictionCode}\",\"variables\": initialBody, \"indexOfProcessedFile\": \"${index}\", \"fileData\": initialBody.downloadedFiles[${index}]]; headers.SAMLArt = initialBody.SAMLArt; headers.fileNames = initialBody.fileNames; headers.handleExceptionTemplate = 'downloadAndStoreFilesToDMS_error';  headers.handleSoapExceptionTemplate = 'downloadAndStoreFilesToDMS_error'"
+            },
+            {
+                "type": "transform",
+                "name": "createFileInfoObjectTransform",
+                "script": "body.indexOfProcessedFile = ${index}; headers.fileNames = initialBody.fileNames; headers.documentRestrictionCode = ${documentRestrictionCode}; headers.fileNameUrlMapping = initialBody.fileNameUrlMapping; headers.fileSizes = initialBody.fileSizes; headers.applicationId = initialBody.ApplicationId; requestId = body.requestId; requestError = body.requestError"
+            },
+            {
+                "type" : "action",
+                "name" : "setVariableToProcess",
+                "script": "headers.processInstanceId = initialBody.processInstanceId; headers.variableName = 'DOCUMENT_${index}'; body.variableValue = body.fileInfoObject; uploadedFiles[\"DOCUMENT_${index}\"] = body.fileInfoObject; body.variableType = 'Json'; headers.handleExceptionTemplate = 'downloadAndStoreFilesToDMS_error'; headers.handleSoapExceptionTemplate = 'downloadAndStoreFilesToDMS_error'"
+            },
+            {
+                "type" : "action",
+                "name" : "setMultipleVariablesToProcess",
+                "script": "headers.processInstanceId = initialBody.processInstanceId; body.variablesToSet = [requestId: requestId, requestError: requestError]; body.types = [requestId: 'string', requestError: 'string'];"
+            },
+            {
+                "type" : "action",
+                "name" : "startDocumentUploadStatusCheckProcess_piper",
+                "script" : "body.variables = initialBody; body.documentInfo = uploadedFiles[\"DOCUMENT_${index}\"]; body.requestId = requestId; body.requestError = requestError; headers.handleExceptionTemplate = 'downloadAndStoreFilesToDMS_error'; headers.handleSoapExceptionTemplate = 'downloadAndStoreFilesToDMS_error'"
+            },
+        </#list>
+        {
+            "type" : "transform",
+            "name" : "storeFilesToDMS_setVariables",
+            "script" : "body.uploadedFiles = uploadedFiles;  headers.handleExceptionTemplate = 'downloadAndStoreFilesToDMS_error';  headers.handleSoapExceptionTemplate = 'downloadAndStoreFilesToDMS_error'"
+        }
+    ]
+}

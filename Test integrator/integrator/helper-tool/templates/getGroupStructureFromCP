@@ -1,0 +1,24 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#if body.variables.CompanyIdentifier?? && body.variables.CompanyIdentifier?has_content>
+    <#if body.variables.CompanyIdentifier[0] == "H">
+        <#assign companyId = body.variables.CompanyIdentifier[1..8]>
+    <#else>
+        <#assign companyId = body.variables.CompanyIdentifier>
+    </#if>
+</#if>
+{
+  "applicationId": "${body.variables.ApplicationId}",
+  "businessPartners": [
+    {
+      "companyDisclosure": {
+        "companyId": "${companyId}",
+        "companyName": "${body.variables.CustomerName}"
+      }
+    }
+  ],
+  "currencyCode": "EUR",
+  "requestDate": "${aDateTime?iso("UTC")}",
+  "requestReason": "Prospect",
+  "totalCreditLine": ${body.variables.RequestedCreditLine}
+}

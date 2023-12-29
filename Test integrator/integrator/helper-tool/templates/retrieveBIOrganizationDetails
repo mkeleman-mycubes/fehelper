@@ -1,0 +1,5 @@
+{ 
+ "companyId": "${body.variables.CompanyIdentifier!}",
+ "lessorId": "${body.variables.LessorID!}",
+ "customerId": "${body.variables.CustomerID!}"
+} 

@@ -1,0 +1,9 @@
+{
+  "icMorePassword": "Acamo123!@#",
+  "casAuthorization": "Basic VFVfQUNBTU9fVGVzdDpoM2xQODBhYVRSZjE=",
+  "odmUrl": "https://api-mock-service.tst-docker.mycubes.nl/api/mock-api/soap/ACA",
+  "integratorUrl": "https://acc-integrator.formsengine.io/mit/trainman/E1vgl7sC94bvBj1L/ACA",
+  "icMoreEndpoint": "https://secure-ausomxdca.crmondemand.com",
+  "dmsEndpoint": "https://api-mock-service.acc-docker.mycubes.nl/api/mock-api/soap/ACA",
+  "icMoreUsername": "ATHLONCAR/INTEGRATIONCREDIT"
+}

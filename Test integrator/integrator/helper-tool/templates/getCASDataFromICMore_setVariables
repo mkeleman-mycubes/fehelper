@@ -1,0 +1,10 @@
+<#assign accountData = body.AccountQueryPage_Output.ListOfAccount>
+{
+    "status": "true",
+    "processVariables": {
+        "LastCASCheckDate": <#if accountData.Account?? && accountData.Account.CustomDate28?? && accountData.Account.CustomDate28?has_content>"${accountData.Account.CustomDate28}"<#else>"2019-01-01"</#if>,
+        "CASCheckInProgres": <#if accountData.Account?? && accountData.Account.CustomInteger26?? && accountData.Account.CustomInteger26?has_content>"${accountData.Account.CustomInteger26}"<#else>"0"</#if>,
+        "CASFlagged": <#if accountData.Account?? && accountData.Account.CustomInteger25?? && accountData.Account.CustomInteger25?has_content>"${accountData.Account.CustomInteger25}"<#else>"0"</#if>,
+        "CASSearchId": <#if accountData.Account?? && accountData.Account.CustomText41?? && accountData.Account.CustomText41?has_content>"${accountData.Account.CustomText41}"<#else>""</#if>
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "updateCMAOrganization",
+            "script": "headers.cmaAction = 'updateOrganization'; headers.customerName = body.variables.CustomerName; headers.companyId = body.variables.MainCompanyIdentifier; headers.operatingEntity = body.variables.OperatingEntity; headers.handleExceptionTemplate =  'callCMA_error'; headers.handleRestExceptionTemplate = 'callCMA_error'; LessorID = body.variables.LessorID; CustomerName = body.variables.CustomerName; CompanyIdentifier = body.variables.CompanyIdentifier; ApplicationId = body.variables.ApplicationId; CustomerNumber = body.variables.CustomerNumber; AccountStatus = body.variables.AccountStatus; AccountType = body.variables.AccountType; ICMoreAccountID = body.variables.ICMoreAccountID; OrganizationTypeInCMA = body.variables.OrganizationType; LiableReferenceNbr = body.variables.LiableParent"
+        },
+        {
+            "type": "action",
+            "name": "upgradeExternalCMAOrganizationToRealRetrieveLessorConfig_piper",
+            "script": "body = [variables: [LessorID: LessorID, CustomerName: CustomerName, CompanyIdentifier: CompanyIdentifier, ApplicationId: ApplicationId], response: body];"
+        },
+        {
+            "type": "action",
+            "name": "upgradeExternalCMAOrganizationToRealCreateLessorOrg_piper",
+            "script": "body = [variables: [CustomerNumber: CustomerNumber, AccountStatus: AccountStatus, AccountType: AccountType, ICMoreAccountID: ICMoreAccountID, CompanyIdentifier: CompanyIdentifier, CustomerName: CustomerName, LiableReferenceNbr: LiableReferenceNbr], previousResponse: body]"
+        },
+        {
+            "type": "transform",
+            "name": "upgradeExternalCMAOrganizationToReal_setVariables",
+            "script": "body.OrganizationTypeInCMA = OrganizationTypeInCMA"
+        }
+    ]
+}

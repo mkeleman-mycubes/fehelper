@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "name": "retrieveCreditLineHolderData",
+            "type": "action",
+            "script": "headers.cmaAction = 'retrieveCreditLineHolderData'; headers.lessorOrgId = body.variables.CreditLineHolderId; headers.companyId = body.variables.CompanyIdentifier; headers.companyName = body.variables.CustomerName; <#if body.variables.ApplicationId??>headers.applicationId = body.variables.ApplicationId;</#if>headers.handleExceptionTemplate = 'callCMA_error'; headers.handleRestExceptionTemplate = 'callCMA_error'"
+        },
+        {
+            "name": "retrieveCreditLineHolderData_setVariables",
+            "type": "transform"
+        }
+    ]
+}

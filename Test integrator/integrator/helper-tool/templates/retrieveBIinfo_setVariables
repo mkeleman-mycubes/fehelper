@@ -1,0 +1,74 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#if body?is_hash && body.errorOccured??>
+    <@printObjectToJson source=body />
+<#else>
+    <#if body?? && body?is_hash && body.description?? && body.description.title??>
+        <#if body.description.title == "No results were found">
+          {
+            "status": "true",
+            "bpmnError": {
+              "bpmnErrorCode": "NoBIResultsError",
+              "bpmnErrorMessage": "${body.description.detail}"
+            }
+          }
+        <#elseif body.description.title == "More than one record was found">
+           {
+            "status": "true",
+            "bpmnError": {
+              "bpmnErrorCode": "MultipleRecordsError",
+              "bpmnErrorMessage": "${body.description.detail}"
+            }
+          }
+        <#else>
+          {
+            "status": "true",
+            "bpmnError": {
+              "bpmnErrorCode": "RetrieveBIError",
+              "bpmnErrorMessage": "${body.description.detail}"
+            }										  
+          }
+        </#if>
+    <#elseif body?is_sequence>
+        {
+            "status": "true",
+            "processVariables": {
+                "ArrearsAmountMAX": "${body[0].ApplicationRequest.arrearsamountmax!}",
+                "ArrearsAmountSUM": "${body[0].ApplicationRequest.arrearsamountsum!}",
+                "BIInfoRetrievedTime": "${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}",
+                "BorrowerType": "${body[0].ApplicationRequest.borrowertype!}",
+                "CompanyId": "${body[0].ApplicationRequest.companyid!}",
+                "CustomerActivationDate": "${body[0].ApplicationRequest.customeractivationdate!}",
+                "CustomerActiveMonthsLast12Months": "${body[0].ApplicationRequest.customeractivemonthslast12months!}",
+                "CustomerGroupId": "${body[0].ApplicationRequest.customergroupid!}",
+                "CustomerID": "${body[0].ApplicationRequest.customerid!}",
+                "DaysInArrearsQty": "${body[0].ApplicationRequest.daysinarrearsqty!}",
+                "DaysToPayAverageLast6Months": "${body[0].ApplicationRequest.daystopayaveragelast6months!}",
+                "DaysToPayAverageLast12Months": "${body[0].ApplicationRequest.daystopayaveragelast12months!}",
+                "DefaultFlag": "${body[0].ApplicationRequest.defaultflag!}",
+                "LegalEntityExternalIdentifier": "${body[0].ApplicationRequest.legalentityexternalidentifier!}",
+                "ManagementCode00": "${body[0].ApplicationRequest.managementcode_00!}",
+                "ManagementCode01": "${body[0].ApplicationRequest.managementcode_01!}",
+                "ManagementCode02": "${body[0].ApplicationRequest.managementcode_02!}",
+                "ManagementCode03": "${body[0].ApplicationRequest.managementcode_03!}",
+                "ManagementCode04": "${body[0].ApplicationRequest.managementcode_04!}",
+                "ManagementCode05": "${body[0].ApplicationRequest.managementcode_05!}",
+                "ManagementCode06": "${body[0].ApplicationRequest.managementcode_06!}",
+                "ManagementCode07": "${body[0].ApplicationRequest.managementcode_07!}",
+                "ManagementCode08": "${body[0].ApplicationRequest.managementcode_08!}",
+                "ManagementCode09": "${body[0].ApplicationRequest.managementcode_09!}",
+                "ManagementCode10": "${body[0].ApplicationRequest.managementcode_10!}",
+                "ManagementCode11": "${body[0].ApplicationRequest.managementcode_11!}",
+                "ManagementCode12": "${body[0].ApplicationRequest.managementcode_12!}",
+                "NoAgreementsCurrentPeriod": "${body[0].ApplicationRequest.noagreementscurrentperiod!}",
+                "NoAgreementsEarlierPeriods": "${body[0].ApplicationRequest.noagreementsearlierperiods!}",
+                "NoTerminatedContracts": "${body[0].ApplicationRequest.noterminatedcontracts!}",
+                "PaymentProblemFlag": "${body[0].ApplicationRequest.paymentproblemflag!}",
+                "RemainingDuration": "${body[0].ApplicationRequest.remainingduration!}",
+                "TotalExposure": "${body[0].ApplicationRequest.totalexposure!}",
+                "WrittenOffDate": "${body[0].ApplicationRequest.writtenoffdate!}",
+                "WriteOffFlag": "${body[0].ApplicationRequest.writeoffflag!}"
+            }
+        }
+    </#if>
+</#if> 

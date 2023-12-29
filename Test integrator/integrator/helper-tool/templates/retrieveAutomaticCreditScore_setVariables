@@ -1,0 +1,144 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#assign currentYear= aDateTime?date?string("yyyy")?number>
+
+<#if body.errorOccured??>
+  <@printObjectToJson source=body />
+<#else>
+  <#if body.description?? && body.description.error??>
+    <#if body.description.error.type == "risk_suite_hitlist_failure">
+      {
+        "status": "true",
+        "bpmnError": {
+          "bpmnErrorCode": "HitListReceivedException",
+          "bpmnErrorMessage": "${body.description.error.message}",
+		  <#if body.description.error.details?? && body.description.error.details?has_content>
+          "possibleCustomers": <@printObjectToJson source=body.description.error.details/>
+          </#if>	
+        },
+        "CreditPlatformResponseJSON": <@printObjectToJson source=body />,
+        "CorrelationID": "${body.CorrelationID}"
+      }
+    <#else>
+      {
+        "status": "true",
+        "bpmnError": {
+          "bpmnErrorCode": "CallCreditPlatformError",
+          "bpmnErrorMessage": "${body.description.error.message}"
+        },
+        "CreditPlatformResponseJSON": <@printObjectToJson source=body />,
+        "CorrelationID": "${body.CorrelationID}"
+      }
+    </#if>
+  <#else>
+    {
+      "status": "true",
+      "processVariables": {
+        "CorrelationID": "${body.CorrelationID}",
+        "A_DecisionDescription": "${body.creditScore.scoringResponse.decisionResult.decisionDescription}",
+        "A_DecisionCode": "${body.creditScore.scoringResponse.decisionResult.decisionCode[0]}",
+        "A_DecisionDate": "${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}",
+        "A_DecisionDate_ISO": "${aDateTime?iso_utc}",
+        "A_DecisionReason": "${businessPolicyRulesHit(body.creditScore.scoringResponse.decisionResult.policyRules)}",
+        "CreditScoreID": "${body.creditScore.id}",
+        "CreditEndDate": <#if body.creditScore.scoringResponse.decisionResult.decisionCode[0] == "A">
+                <#if isLeapYear(currentYear + 1) == true>
+                   "${dateAddDays(aDateTime, 365)?string["yyyy-MM-dd"]}"
+                <#else>
+                  "${dateAddDays(aDateTime, 364)?string["yyyy-MM-dd"]}"
+                </#if>
+                <#else>
+                ""
+        </#if>,
+        "ScoringValue": "${body.creditScore.scoringResponse.pdResult.scorePoints}",
+        "ScoreCardVersion": "${body.creditScore.scoringResponse.pdResult.scoreCardVersion}",
+        "ScoreClass": "${body.creditScore.scoringResponse.pdResult.scoreClass!}",
+        "MasterPD": "${body.creditScore.scoringResponse.pdResult.masterPD!}",
+        "ScoringVariables": [
+          <#list body.creditScore.scoringResponse.pdResult.subScores as subScore>
+            {
+              "ScoreCardVariable": "${subScore.characteristicId}",
+              "ScoreCardVariablePoints": "${subScore.characteristicPoints}",
+              "ScoreCardVariableResult": "${subScore.characteristicValue}"
+            }
+            <#sep>,</#sep>
+          </#list>
+        ],
+        <#assign creditAgencyState = []/>
+        <#list body.creditScore.agencyData.businessPartners[0].externDisclosure.agencies as agency>
+        <#assign creditAgencyState = creditAgencyState + [{"name": "${agency.agencyName!}", "state": "${agency.bureauProductState!}"}]/>
+            <#if (agency.agencyName == "GraydonNL" || agency.agencyName == "GraydonBE" || agency.agencyName == "InformaES" || agency.agencyName == "CervedIT" || agency.agencyName == "AltaresFR" || agency.agencyName == "CrefoDE") && agency.company?? && agency.company?has_content>
+            <#-- Company info variables -->
+            <#if body.creditScore.agencyData.businessPartners[0].companyDisclosure?? && body.creditScore.agencyData.businessPartners[0].companyDisclosure?has_content>
+                "CompanyNameCreditAgency": "${body.creditScore.agencyData.businessPartners[0].companyDisclosure.companyName?json_string!}",
+            </#if>
+            "LocalLegalFormCode": "<#if agency.company.localLegalFormCode?? && agency.company.localLegalFormCode?has_content>${agency.company.localLegalFormCode} - </#if>${agency.company.localLegalFormDescription!}",
+            "LocalIndustryCodes":  [
+                <#if agency.company.localIndustryCodes?? && agency.company.localIndustryCodes?has_content>
+                    <#list agency.company.localIndustryCodes as localIndustryCode>
+                    {
+                      "Code": "${localIndustryCode.code!}",
+                      "Description": "${localIndustryCode.description!}",
+                      "Type": "${localIndustryCode.type!}"
+                    }
+                    <#sep>,</#sep>
+                  </#list>
+              </#if>
+             ], 
+            "NumberOfEmployees": "${agency.company.numberOfEmployees!}",
+            "EstablishmentDate": "<#if agency.company.foundationDate?? && agency.company.foundationDate?has_content>${agency.company.foundationDate?number?number_to_date?string("yyyy-MM-dd")}</#if>",
+            <#-- Balance sheet figures -->
+            "TotalCurrentAssets":  "${agency.company.totalNetAssets!}",
+            "ShareholdersFunds": "${agency.company.shareholdersFunds!}",
+            "IntangibleAssets": "${agency.company.intangibleAssets!}",
+            "FinancialFixedAssets": "${agency.company.financialFixedAssets!}",
+            "WorkingCapital": "${agency.company.workingCapital!}",
+            "TotalNetAssets": "",
+            <#-- Ratio's -->
+            <#if agency.company.liquidityRatio?? && agency.company.liquidityRatio?contains(".") && (agency.company.liquidityRatio?keep_after(".")?length > 2)>
+                "LiquidityRatio": "${agency.company.liquidityRatio!?keep_before(".")}.${agency.company.liquidityRatio!?keep_after(".")[0..1]}",
+            <#else>
+                "LiquidityRatio": "${agency.company.liquidityRatio!}",
+            </#if>
+             <#if agency.company.currentRatio?? && agency.company.currentRatio?contains(".") && (agency.company.currentRatio?keep_after(".")?length > 2)>
+                "CurrentRatio": "${agency.company.currentRatio!?keep_before(".")}.${agency.company.currentRatio!?keep_after(".")[0..1]}",
+            <#else>
+                "CurrentRatio": "${agency.company.currentRatio!}",
+            </#if>
+            <#if agency.company.solvencyRatio?? && agency.company.solvencyRatio?contains(".") && (agency.company.solvencyRatio?keep_after(".")?length > 2)>
+                "SolvencyRatio": "${agency.company.solvencyRatio!?keep_before(".")}.${agency.company.solvencyRatio!?keep_after(".")[0..1]}",
+            <#else>
+                "SolvencyRatio": "${agency.company.solvencyRatio!}",
+            </#if>
+            <#-- Profit and Loss statement -->
+            "EBIT" : "${agency.company.ebit!}",
+            "NetTurnover": "${agency.company.netTurnover!}",
+            "SalesTurnover": "${agency.company.salesTurnover!}",
+            "NetResult": "${agency.company.netResult!}",
+            <#-- Score class and Probability of default -->
+            "AccountingPeriod": "${agency.company.accountingPeriod!}",
+            </#if>
+        </#list>
+        "CompanyAddresses":  [
+            <#if body.creditScore.agencyData.businessPartners[0].addresses?? && body.creditScore.agencyData.businessPartners[0].addresses?has_content>
+                <#list  body.creditScore.agencyData.businessPartners[0].addresses as address>
+                    {
+                      "Street": "${address.street!?j_string}",
+                      "Number": "${address.number!}",
+                      "NumberAddition": "${address.numberAddition!?json_string}",
+                      "ZipCode": "${address.zipCode!}",
+                      "City": "${address.city!}",
+                      "CountryCode": "${address.countryCode!}",
+                      "Type": "${address.type!}"
+                    }
+                    <#sep>,</#sep>
+                </#list>
+            </#if>
+        ], 
+        "CreditAgencyState": <@printObjectToJson source = creditAgencyState/>,
+        "filesToStore": <@printObjectToJson source=body.creditScore.documents />,
+        "CreditPlatformResponseJSON": <@printObjectToJson source=body />
+      }
+    }
+  </#if>
+</#if>

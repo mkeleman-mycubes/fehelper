@@ -1,0 +1,5 @@
+<#ftl ns_prefixes={"D":"http://schemas.dfs.com/automotive/document/archival/1.0"}>
+{
+    "requestId": "${body.ArchiveDocumentResponse.RequestStatus.Request_Id}",
+    "requestError": "${body.ArchiveDocumentResponse.RequestStatus.RequestError}"
+}

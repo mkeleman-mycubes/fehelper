@@ -1,0 +1,14 @@
+{
+        "pipes" : [
+         {
+            "type" : "transform",
+            "name" : "dummy",
+            "script" : "taskId = body.taskId; initialBody = body"
+        },
+          {
+           "type" : "action",
+           "name" : "setMultipleVariablesToTask",
+           "script" : "headers.taskId = initialBody.taskId; body = initialBody "
+          }
+    ]
+}

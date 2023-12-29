@@ -1,0 +1,12 @@
+{
+    "status": "true",
+    "errorOccured": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "CallCreditPlatformError",
+        <#if body.message?? && body.message?has_content>
+            "bpmnErrorMessage": "${body.message}"
+        <#else>
+            "bpmnErrorMessage": "Call to retrieve Group Structure from Credit Platform failed"
+        </#if>
+    }
+}

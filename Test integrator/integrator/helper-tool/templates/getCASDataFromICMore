@@ -1,0 +1,31 @@
+<soapenv:Envelope xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/07/secext" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="urn:crmondemand/ws/ecbs/account/" xmlns:quer="urn:/crmondemand/xml/Account/Query">
+   <soapenv:Header>
+      <wsse:Security soapenv:mustUnderstand="1">
+         <wsse:UsernameToken>
+            <wsse:Username>${headers.soapConnectorProperties.icMoreUsername}</wsse:Username>
+            <wsse:Password Type="wsse:PasswordText">${headers.soapConnectorProperties.icMorePassword}</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <acc:AccountQueryPage_Input>
+         <quer:ListOfAccount pagesize="50" startrownum="0" recordcountneeded="true">
+            <!--Optional:-->
+            <quer:Account>
+               <!--You may enter the following 1038 items in any order-->
+               <quer:ModifiedDate/>
+               <!--Account id-->
+               <quer:Id>='${body.variables.ICMoreAccountID}'</quer:Id>
+               <!-- CAS Validated -->
+               <quer:CustomInteger26/>
+               <!-- CAS date -->
+               <quer:CustomDate28/>
+               <!-- CAS Flagged -->
+               <quer:CustomInteger25/>
+               <!-- CAS test order -->
+               <quer:CustomText41/>
+            </quer:Account>
+         </quer:ListOfAccount>
+      </acc:AccountQueryPage_Input>
+   </soapenv:Body>
+</soapenv:Envelope>

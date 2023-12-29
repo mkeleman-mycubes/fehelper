@@ -1,0 +1,10 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "GetCPGroupInformation",
+            "script": "headers.handleRestExceptionTemplate = 'GetCPGroupInformation_error'; headers.handleExceptionTemplate = 'GetCPGroupInformation_error'"
+some     ;''''
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": 5464,
+  "nrReason": null,
+  "revolving": null,
+  "organization": {
+    "id": 2998
+  },
+  "decisionDate": "2018-12-06T00:00:00Z",
+  "creditEndDate": "2019-12-06T00:00:00Z",
+  "currency": null,
+  "lessor": {
+    "id": 1
+  },
+  "value": 35000,
+  "type": "Retail",
+  "account": null,
+  "status": "Approved",
+  "applicationId": "f60b2ae1-2d85-11ec-8855-045056002848"
+}

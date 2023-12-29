@@ -1,0 +1,11 @@
+{
+  "status": "false",
+  "description": {
+    "error": {
+      "type": "risk_suite_result_error",
+      "message": "Dummy Error for Testing",
+      "details": ["No Details for dummy error", "Really, there are no details"],
+      "timestamp": "2020-08-18T10:09:07.042316Z"
+    }
+  }
+}

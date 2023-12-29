@@ -1,0 +1,8 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "startICMoreEventProcess"
+        }
+    ]
+}

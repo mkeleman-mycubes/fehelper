@@ -1,0 +1,37 @@
+<#assign aDateTime = .now>
+<#assign result = ''/>
+<#assign timestamp = 0/>
+<#if body.variables.CASCheckTime_ISO?? && body.variables.CASCheckTime_ISO?has_content>
+    <#assign result = 'Success'/>
+    <#assign timestamp = body.variables.CASCheckTime_ISO/>
+<#elseif body.variables.LastCASCheckDate?? && body.variables.LastCASCheckDate?has_content>
+    <#assign result = 'Previous check still valid'/>
+    <#assign timestamp = body.variables.LastCASCheckDate/>
+<#else>
+    <#assign result = 'CAS check not required'/>
+    <#assign timestamp = aDateTime?iso_utc/>
+</#if>
+{
+    "messageData": {
+      "messageName": "CASCheckDoneMessage",
+      "processInstanceId": "${body.variables.smeoProcessInstanceId}",
+      "processVariables": {}
+    },
+     "saveToDB": [
+        {
+              "variableName": "casCheckResult",
+              "type": "STRING",
+              "value": "${result}"
+        },
+        {
+              "variableName": "casCheckTimestamp",
+              "type": "DATE",
+              "value": "${timestamp}"
+        },
+        {
+              "variableName": "creditAssessmentId",
+              "type": "STRING",
+              "value": "${body.variables.ApplicationId}"
+        }
+    ]
+}

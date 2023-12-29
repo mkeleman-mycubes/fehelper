@@ -1,0 +1,6 @@
+{
+    "type": "${body.variables.AccountType}",
+    "status": "${body.variables.AccountStatus}",
+    "icmoreRowId": "${body.variables.ICMoreAccountID}",
+    "liableReferenceNbr": <#if body.variables.LiableParent?? && body.variables.LiableParent?has_content>"${body.variables.LiableParent}"<#else>""</#if>
+}

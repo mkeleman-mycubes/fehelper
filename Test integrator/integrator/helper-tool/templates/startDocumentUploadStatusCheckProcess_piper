@@ -1,0 +1,16 @@
+{
+    "pipes": [
+        <#if body.requestId?? && body.requestId?has_content>
+            {
+                "type" : "action",
+                "name" : "startDocumentUploadStatusCheckProcess"
+            }
+        <#else>
+            {
+                "type" : "action",
+                "name" : "setMultipleVariablesToProcess",
+                "script": "headers.processInstanceId = body.variables.processInstanceId; body.variablesToSet = [errorRequestId: body.requestId, errorRequestName: body.requestError]; body.types = [errorRequestId: 'string', errorRequestName: 'string'];"
+            }
+        </#if>
+    ]
+}

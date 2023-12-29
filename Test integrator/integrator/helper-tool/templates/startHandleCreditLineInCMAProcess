@@ -1,0 +1,70 @@
+{
+    "messageName": "StartHandleCreditLineInCMA",
+    "tenantId": "AthlonCreditPortalTenant",
+    "processVariables": {
+        "PROCESS-NAMESPACE": {
+            "value": "${body["PROCESS-NAMESPACE"]}",
+            "type": "String"
+        },
+        "CompanyIdentifier": {
+            "value": "${body.variables.CompanyIdentifier}",
+            "type": "String"
+        },
+        "LessorID": {
+            "value": "${body.variables.LessorID}",
+            "type": "String"
+        },
+        "globalAdminGroup": {
+            "value": "${body.variables.globalAdminGroup}",
+            "type": "String"
+        },
+        "OperatingEntity": {
+            "value": "${body.variables.OperatingEntity}",
+            "type": "String"
+        },
+        "RequestedCreditLine": {
+            "value": "${body.variables.RequestedCreditLine}",
+            "type": "String"
+        },
+        "RequestedCreditLineLease": {
+            "value": "${body.variables.RequestedCreditLineLease}",
+            "type": "String"
+        },
+        "RequestedCreditLineRental": {
+            "value": "${body.variables.RequestedCreditLineRental}",
+            "type": "String"
+        },
+        "MaxRentals": {
+            "value": "${body.variables.MaxRentals}",
+            "type": "String"
+        },
+        "CustomerID": {
+            "value": "${body.variables.CustomerID}",
+            "type": "String"
+        },
+        "CustomerName": {
+            "value": "${body.variables.CustomerName}",
+            "type": "String"
+        },
+        "CustomerCountry": {
+            "value": "${body.variables.CustomerCountry}",
+            "type": "String"
+        },
+        "CustomerNumber": {
+            "value": "${body.variables.CustomerNumber}",
+            "type": "String"
+        },
+        "adminGroup": {
+            "value": "${body.variables.adminGroup}",
+            "type": "String"
+        },
+        "ApplicationId": {
+            "value": "${body.variables.mainProcessInstanceId}",
+            "type": "String"
+        },
+        "mainProcessInstanceId": {
+            "value": "${body.variables.mainProcessInstanceId}",
+            "type": "String"
+        }
+    }
+}

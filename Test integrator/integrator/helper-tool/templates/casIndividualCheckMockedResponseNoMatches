@@ -1,0 +1,29 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns2:screenAddressResponse xmlns:ns2="http://as.ws.scheck.server.tia/">
+            <screenAddressResponse>
+                <queryResults>
+                    <queryResultsEntry>
+                        <screeningInfo>
+                            <addressHits>0</addressHits>
+                            <hitType>IN_PROCESS</hitType>
+                            <query>
+                                <address>Adlergasse 7</address>
+                                <city>Böbingen</city>
+                                <country>DE</country>
+                                <createdOn xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                <entityType>Vendor</entityType>
+                                <name>TIA innovations GmbH</name>
+                                <pruefAuftrag xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                <reference>TIA4711</reference>
+                                <referenceComment>Test</referenceComment>
+                                <zip>73560</zip>
+                            </query>
+                        </screeningInfo>
+                    </queryResultsEntry>
+                </queryResults>
+                <state>OK</state>
+            </screenAddressResponse>
+        </ns2:screenAddressResponse>
+    </soap:Body>
+</soap:Envelope>

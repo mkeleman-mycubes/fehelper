@@ -1,0 +1,22 @@
+{
+    "messageData": {
+         "messageName": "CreditAssessmentCancelledMessage",
+         "processInstanceId": "${body.variables.smeoProcessInstanceId}",
+         "processVariables": {}
+    },
+    "saveToDB": [
+        {
+              "variableName": "assessmentCancellationDescription",
+              "type": "STRING",
+              "value": "${body.variables.cancellationDescription}"
+        }
+        <#if body.variables.canceledBy?? && body.variables.canceledBy?has_content>
+            ,  
+        {
+              "variableName": "assessmentCanceledBy",
+              "type": "STRING",
+              "value": "${body.variables.canceledBy}"
+        }
+        </#if>
+    ]
+}

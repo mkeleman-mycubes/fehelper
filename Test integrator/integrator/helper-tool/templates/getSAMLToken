@@ -1,0 +1,21 @@
+<soapenv:Envelope
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:urn="urn:oasis:names:tc:SAML:1.0:protocol"
+    xmlns:xd="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:urn1="urn:oasis:names:tc:SAML:1.0:assertion">
+    <soapenv:Header>
+        <OTAuthentication
+            xmlns="urn:api.ecm.opentext.com">
+            <AuthenticationToken>${body.ticket}</AuthenticationToken>
+        </OTAuthentication>
+    </soapenv:Header>
+    <soapenv:Body>
+        <urn:Request RequestID="95d29169-10cf-47a4-84d7-8a08f7913e28" MajorVersion="1" MinorVersion="1" IssueInstant="2020-10-08T22:31:00+0200">
+            <urn:AuthenticationQuery>
+                <urn1:Subject>
+                    <urn1:NameIdentifier Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"></urn1:NameIdentifier>
+                </urn1:Subject>
+            </urn:AuthenticationQuery>
+        </urn:Request>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,8 @@
+{
+    "status": "true",
+    "errorOccured": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "GetDocumentUploadStatusError",
+        "bpmnErrorMessage": "Error occured during retrieving upload status of the document"
+    }
+}

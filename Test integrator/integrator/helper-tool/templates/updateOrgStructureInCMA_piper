@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "name": "updateOrgStructureInCMA",
+            "type": "action",
+            "script": "headers.cmaAction = 'getAutoUpdateOrgStructureData'; headers.companyId = body.variables.MainCompanyIdentifier; headers.companyName = body.variables.CustomerName; headers.applicationId = body.variables.ApplicationId; headers.handleRestExceptionTemplate = 'callCMA_error'; headers.handleExceptionTemplate = 'callCMA_error';"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "modifications": {
+        <@printDocumentsVariables documentsVariables=body.documentsVariables trailingComma=false/>
+    }
+}

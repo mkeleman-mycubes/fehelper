@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "updateLessorOrg_MATS",
+            "script": "headers.cmaAction = 'updateLessorOrg'; headers.lessorOrgId = body.variables.id; headers.companyId = body.variables.CompanyIdentifier; headers.customerName = body.variables.CustomerName; headers.applicationId = body.variables.ApplicationId; headers.lessorId = body.variables.LessorID; headers.handleExceptionTemplate = 'callCMA_error'; headers.handleRestExceptionTemplate = 'callCMA_error'"
+        }
+    ]
+}

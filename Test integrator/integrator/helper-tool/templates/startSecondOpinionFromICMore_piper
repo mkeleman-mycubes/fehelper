@@ -1,0 +1,45 @@
+<#assign country = getCountryShorthand(body.variables.ACCOUNT_IndexedPick0)>
+
+{
+    "pipes": [
+        {
+            "type" : "transform",
+            "name" : "dummy",
+            "script" : "initialBody = body"
+        },
+        {
+            "type" : "action",
+            "name" : "getGroup",
+            "script" : "headers.groupId = 'AthlonCreditUnderwriters${country}'"
+        },
+        {
+            "type" : "action",
+            "name" : "getGroup",
+            "script" : "underwritersGroup = body; headers.groupId = 'AthlonCreditSales${country}'"
+        },
+        {
+            "type" : "action",
+            "name" : "getUserProfile",
+            "script" : "salesGroup = body; headers.userId = initialBody.variables.ACCOUNT_Owner"
+        },
+        {
+            "type" : "action",
+            "name" : "getVariableInstanceList",
+            "script" : "userProfile = body; headers.processInstanceId = initialBody.variables.ACCOUNT_CustomText44"
+        },
+        {
+            "type" : "transform",
+            "name" : "dummy",
+            "script" : "initialProcessVariables = body"
+        },
+        {
+            "type" : "transform",
+            "name" : "startSecondOpinionFromICMore_mapping",
+            "script": "body = [initial: initialBody, salesGroup: salesGroup, userProfile: userProfile, underwritersGroup: underwritersGroup, initialProcessVariables: initialProcessVariables]"
+        },
+        {
+            "type": "action",
+            "name": "startSecondOpinion"
+        }
+    ]
+}

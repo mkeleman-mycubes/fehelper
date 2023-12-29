@@ -1,0 +1,9 @@
+def processVariables = [:];
+
+body.each { entry ->
+    processVariables["$entry.key"] = entry.value.value;
+}
+
+body << processVariables
+
+return body;

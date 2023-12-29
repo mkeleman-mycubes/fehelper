@@ -1,0 +1,41 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#if body?is_hash && body.errorOccured??>
+    <@printObjectToJson source=body />
+<#else>
+    <#if body?? && body?is_hash && body.description?? && body.description.title??>
+        <#if body.description.title == "No results were found">
+          {
+            "status": "true",
+            "bpmnError": {
+              "bpmnErrorCode": "NoBIResultsError",
+              "bpmnErrorMessage": "${body.description.detail}"
+            }
+          }
+        <#elseif body.description.title == "More than one record was found">
+           {
+            "status": "true",
+            "bpmnError": {
+              "bpmnErrorCode": "MultipleRecordsError",
+              "bpmnErrorMessage": "${body.description.detail}"
+            }
+          }
+        <#else>
+          {
+            "status": "true",
+            "bpmnError": {
+              "bpmnErrorCode": "RetrieveBIError",
+              "bpmnErrorMessage": "${body.description.detail}"
+            }										  
+          }
+        </#if>
+    <#else>
+            {
+                "status": "true",
+                "processVariables": {
+                    "borrowerGroupConsolidatedCreditLine": "${body.GCCalculationFunction.BorrowerGroupConsolidatedCreditLine!}",
+                    "companyConsolidatedCreditLine": "${body.GCCalculationFunction.CompanyConsolidatedCreditlLineCalculation!}"
+                }
+            }
+    </#if>
+</#if>

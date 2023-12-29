@@ -1,0 +1,288 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#assign countriesWithCompanyId = ["NL", "IT", "FR", "DE", "LU"]/>
+<#assign countriesWithVatId = ["ES", "IT", "BE", "PT"]/>
+<#assign lessorsWithRental = ["LUACL", "ESACL", "BEACL", "BEPRL"]/>
+<#-- If you are changing anything in this request, make sure that startCreditAssessmentFromICMore_mapping and startCreditAssessmentFromICMore_piper are updated as well, as this template is reused there -->
+{
+    "messageName" : "StartCreditAssessmentProcess",
+    "tenantId" : "${body.secureData.tenantId}",
+    "resultEnabled": true,
+    "processVariables" : {
+        "PROCESS-NAMESPACE": {
+            "value": "${body.answers.workflow_namespace.data.answer[0]}",
+            "type": "String"
+        },
+        "main-process": {
+            "value": "true",
+            "type": "String"
+        },
+        "ApplicationEntryDate": {
+            "value": <#if body.answers.ICMoreStartProcessDate??&& body.answers.ICMoreStartProcessDate?has_content>"${body.answers.ICMoreStartProcessDate.data.answer[0]!}"<#else>"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}"</#if>,
+            "type": "String"
+        },
+        "OrganizationType": {
+            "value": "${body.answers.OrganizationType.data.answer[0]}",
+            "type": "String"
+        },
+        "CustomerCountry": {
+            "value": "${body.answers.country.data.answer[0]}",
+            "type": "String"
+        },
+        "LessorID": {
+            "value": "${body.answers.lessorID.data.answer[0]}",
+            "type": "String"
+        },
+        <#if body.answers.biPayment??&& body.answers.biPayment?has_content>
+         "biPayment": {
+            "value": "${body.answers.biPayment.data.answer[0]}",
+            "type": "String"
+            },
+        </#if>
+        <#if body.answers.cpScoring??&& body.answers.cpScoring?has_content>
+         "cpScoring": {
+            "value": "${body.answers.cpScoring.data.answer[0]}",
+           "type": "String"
+          },
+        </#if>
+        <#if body.answers.registerCreditLines??&& body.answers.registerCreditLines?has_content>
+         "registerCreditLines": {
+            "value": "${body.answers.registerCreditLines.data.answer[0]}",
+            "type": "String"
+          },
+        </#if>
+        <#if body.answers.smeoProcessInstanceId?? && body.answers.smeoProcessInstanceId?has_content>
+            "smeoProcessInstanceId": {
+                "value": "${body.answers.smeoProcessInstanceId.data.answer[0]}",
+                "type": "String"
+            },
+        </#if>
+        "environment": {
+            "value": "${body.answers.environment.data.answer[0]}",
+            "type": "String"
+        },
+        "RequestedCreditLine": {
+            "value": "${body.answers.required_credit_line.data.answer[0]}",
+            "type": "String"
+        },
+        "MaxRentals": {
+            <#if lessorsWithRental?seq_contains(body.answers.lessorID.data.answer[0])> 
+                "value": "${body.answers.max_rentals.data.answer[0]}",
+            <#else>
+                "value": "0",
+            </#if>
+            "type": "String"
+        },
+        "NewRequestedCreditLine": {
+            "value": "${body.answers.new_required_credit_line.data.answer[0]}",
+            "type": "String"
+        },
+        "Segment": {
+            "value": "${body.answers.segment.data.answer[0]}",
+            "type": "String"
+        },
+        "sales_channel": {
+            "value": "${body.answers.sales_channel.data.answer[0]}",
+            "type": "String"
+        },
+        "CompanyIdentifier": {
+            "value": "${body.answers.company_identifier.data.answer[0]}",
+            "type": "String"
+        },
+        <#if body.answers.vatId.data.answer[0]?? && body.answers.vatId.data.answer[0]?has_content && (body.answers.vatId.data.answer[0]?length > 2)>
+            <#if body.answers.vatId.data.answer[0][0..2] == "BE ">
+                <#assign vatId = "BE" + body.answers.vatId.data.answer[0][3..]>
+            <#elseif body.answers.vatId.data.answer[0][0..2] == "LU ">
+                <#assign vatId = "LU" + body.answers.vatId.data.answer[0][3..]>    
+            <#else>
+                <#assign vatId = body.answers.vatId.data.answer[0]>
+            </#if>
+        <#else>
+            <#assign vatId = body.answers.vatId.data.answer[0]!>
+        </#if>
+        "VatId": {
+            "value": "${vatId!}",
+            "type": "String"
+        },
+        <#if countriesWithCompanyId?seq_contains(body.answers.country.data.answer[0])> 
+            "MainCompanyIdentifier": {
+                "value": "${body.answers.company_identifier.data.answer[0]}",
+                "type": "String"
+            },
+        </#if>
+        <#if countriesWithVatId?seq_contains(body.answers.country.data.answer[0])>
+            "MainCompanyIdentifier": {
+                "value": "${vatId!}",
+                "type": "String"
+            },
+        </#if>
+        "CustomerName": {
+            "value": "${body.answers.company_name.data.answer[0]}",
+            "type": "String"
+        },
+        "AccountName": {
+            "value": "${body.answers.account_name.data.answer[0]}",
+            "type": "String"
+        },
+        "ProcessTypeDescription": {
+            "value": "${body.answers.process_type.data.answer[0]}",
+            "type": "String"
+        },
+        "CustomerID": {
+            "value": "${body.answers.relation_id.data.answer[0]}",
+            "type": "String"
+        },
+        "ICMoreAccountID": {
+            "value": <#if body.answers.ic_more_account_id??>"${body.answers.ic_more_account_id.data.answer[0]}"<#else>""</#if>,
+            "type": "String"
+        },
+        "CustomerNumber": {
+            "value": <#if body.answers.customer_number??>"${body.answers.customer_number.data.answer[0]}"<#else>""</#if>,
+            "type": "String"
+        },
+        "LiableParent": {
+            "value": <#if body.answers.liable_parent.data.answer[0]?has_content>
+                        "${body.answers.liable_parent.data.answer[0]}"
+                     <#else>
+                        "${body.answers.customer_number.data.answer[0]}"
+                     </#if>,
+            "type": "String"
+        },
+        "OrganizationIsLiableInICMore": {
+            "value": <#if body.answers.liable_parent.data.answer[0] == body.answers.customer_number.data.answer[0]>
+                            "true"
+                      <#elseif body.answers.liable_parent.data.answer[0] == "" && body.answers.customer_number.data.answer[0]?has_content>
+                            "true"
+                      <#else>
+                            "false"
+                      </#if>,
+            "type": "String"
+        },
+        "CreditStatus": {
+            "value": "${body.answers.credit_status.data.answer[0]}",
+            "type": "String"
+        },
+        
+        <@printDocumentsVariables documentsVariables=body.documentsVariables />
+        "salesGroup": {
+            "value": "${body.salesGroup.groupID}",
+            "type": "String"
+        },
+        "underwritersGroup": {
+            "value": "${body.underwritersGroup.groupID}",
+            "type": "String"
+        },
+        "corpUnderwritersGroup": {
+            "value": "${body.corpUnderwritersGroup.groupID}",
+            "type": "String"
+        },
+        "underwritersGroupName": {
+            "value": "${body.underwritersGroup.groupID}",
+            "type": "String"
+        },
+        "adminGroup": {
+            "value": "${body.adminGroup.groupID}",
+            "type": "String"
+        },
+        "adminGroupName": {
+            "value": "${body.adminGroup.groupID}",
+            "type": "String"
+        },
+        "globalAdminGroup": {
+           "value": "${body.globalAdminGroup.groupID}",
+           "type": "String"
+         },
+        "processStarter": {
+            "value": "${body.secureData.user.identity.authenticatedUser}",
+            "type": "String"
+        },
+        "processStarterName": {
+            "value": "${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}",
+            "type": "String"
+        },
+        "processStarterGroup": {
+            "value": "${body.secureData.user.identity.groups[0].groupID}",
+            "type": "String"
+        },
+        "processStarterGroupName": {
+            "value": "${body.secureData.user.identity.groups[0].groupID}",
+            "type": "String"
+        },
+        "AddressStreet": {
+            "value": "${body.answers.addressStreet.data.answer[0]!}",
+            "type": "String"
+        },
+        "AddressNumber": {
+            "value": "${body.answers.addressNumber.data.answer[0]!}",
+            "type": "String"
+        },
+        "AddressAddition": {
+            "value": "${body.answers.addressAddition.data.answer[0]!}",
+            "type": "String"
+        },
+        "AddressCity": {
+            "value": "${body.answers.addressCity.data.answer[0]!}",
+            "type": "String"
+        },
+        "AddressPostalCode": {
+            "value": "${body.answers.addressPostalCode.data.answer[0]!}",
+            "type": "String"
+        },
+        "AddressProvinceCode": {
+            "value": "${body.answers.addressProvinceCode.data.answer[0]!}",
+            "type": "String"
+        },
+        "AccountOwner": {
+            "value": <#if body.answers.ICMoreOwner?? && body.answers.ICMoreOwner?has_content>"${body.answers.ICMoreOwner.data.answer[0]!}"<#else>""</#if>,
+            "type": "String"
+        },
+        "ICMoreStartProcessDate": {
+            "value": <#if body.answers.ICMoreStartProcessDate?? && body.answers.ICMoreStartProcessDate?has_content>"${body.answers.ICMoreStartProcessDate.data.answer[0]!}"<#else>""</#if>,
+            "type": "String"
+        },
+        "portalVersion": {
+            "value": <#if body.answers.portalVersion?? && body.answers.portalVersion?has_content>"${body.answers.portalVersion.data.answer[0]!}"<#else>""</#if>,
+            "type": "String"
+        },
+        "processStarterICMoreId": {
+            "value": "${body.answers.icmoreUserId.data.answer[0]!}",
+            "type": "String"
+        },
+        "ICMoreEntity": {
+            "value": "${body.answers.icmoreEntity.data.answer[0]!}",
+            "type": "String"
+        },
+        "ICMoreTeamIdentifier": {
+            "value": "${body.answers.icmoreTeamIdentifier.data.answer[0]!}",
+            "type": "String"
+        },
+        "GroupConsolidationRequired": {
+            "value": "${body.answers.groupConsolidation.data.answer[0]}",
+            "type": "String"
+        },
+        "DefaultRegisterFlag": {
+            "value": <#if body.answers.DefaultRegisterFlag?? && body.answers.DefaultRegisterFlag?has_content>"${body.answers.DefaultRegisterFlag.data.answer[0]!}"<#else>""</#if>,
+            "type": "String"
+        },
+         "AccountType": {
+            "value": "${body.answers.AccountType.data.answer[0]}",
+            "type": "String"
+        },
+         "AccountStatus": {
+            "value": "${body.answers.Status.data.answer[0]}",
+            "type": "String"
+        },
+        "PrimaryBillToCountry": {
+            "value": "<#if body.answers.PrimaryBillToCountry??>${body.answers.PrimaryBillToCountry.data.answer[0]}<#else></#if>",
+            "type": "String"
+        },
+        "OperatingEntity": {
+            "value": "<#if body.answers.operatingEntity??>${body.answers.operatingEntity.data.answer[0]}<#else></#if>",
+            "type": "String"
+        },
+        "CasCheckRequired": {
+            "value": "<#if body.answers.casCheck??>${body.answers.casCheck.data.answer[0]}<#else></#if>",
+            "type": "String"
+        }
+    }
+}

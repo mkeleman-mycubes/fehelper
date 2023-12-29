@@ -1,0 +1,10 @@
+{
+    "serviceRequestContext": "test",
+    "serviceRequesterCode": "test",
+    "serviceRequesterUser": "test",
+    "countryCode": "LU",
+    "serviceProviderCode": "test",
+    "administartionCode": "LUX",
+    "customerId": "272683",
+    "numberOfRentalContracts": 6
+}

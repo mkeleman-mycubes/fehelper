@@ -1,0 +1,35 @@
+{
+  "id": 9,
+  "companyId": "H300869010000",
+  "creditLines": [
+    {
+      "id": 5814
+    }
+  ],
+  "lastCreditAgencyData": null,
+  "groupDeletion": null,
+  "share": null,
+  "riskAssessment": null,
+  "up": false,
+  "dateGroupUpdate": null,
+  "autoUpdate": null,
+  "caActive": null,
+  "customerProspect": null,
+  "groupUpdated": null,
+  "deletion": null,
+  "name": "De Vos Core Support B.V.",
+  "defaultRegisterFlag": null,
+  "operatingEntity": {
+    "id": 1
+  },
+  "shareholders": [],
+  "country": {
+    "id": 1
+  },
+  "corporate": null,
+  "lessorRelations": [],
+  "parent": {
+    "id": 4192
+  },
+  "children": []
+}

@@ -1,0 +1,51 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#assign assigneeFirstName = "">
+<#assign assigneeLastName = "">
+<#list body.usersOfGroup as user>
+   <#if body.assignee == user.id>
+       <#assign assigneeFirstName = user.firstName>
+       <#assign assigneeLastName = user.lastName>
+   </#if>
+</#list>
+
+{
+    "modifications" : {
+        "EmployeeAssignedDate": {
+            "value": "${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}",
+            "type": "String"
+        },
+        "AssignedBy": {
+            "value": "${body.secureData.user.identity.authenticatedUser}",
+            "type": "String"
+        },
+        "AssignedByName": {
+            "value": "${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}",
+            "type": "String"
+        },
+        "AssignedByGroup": {
+            "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+            "type": "String"
+        },
+        "AssignedByGroupName": {
+            "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+            "type": "String"
+        },
+        "AssignedTo": {
+            "value": "${body.assignee}",
+            "type": "String"
+        },
+        "AssignedToName": {
+            "value": "${assigneeFirstName} ${assigneeLastName}",
+            "type": "String"
+        },
+        "AssignedToGroup": {
+            "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+            "type": "String"
+        },
+        "AssignedToGroupName": {
+            "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+            "type": "String"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<#assign lessorId = body.lessorId/>
+<#assign groups = body.groups/>
+<#assign selectedRole = body.selectedRole/>
+<#assign userGroup = ''/>
+<#list groups as group>
+    <#if group.userRole == selectedRole && group.lessorID == lessorId>
+        <#assign userGroup = group.groupID/>
+    </#if>
+</#list>
+
+
+
+{ 
+   "userGroup": "${userGroup}"  
+}

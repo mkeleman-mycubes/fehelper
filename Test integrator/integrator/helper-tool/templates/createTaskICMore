@@ -1,0 +1,50 @@
+<#ftl strip_whitespace=false />
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+
+<#-- Set the reminder date: reminder date is today + 7 days (Note that 86400000 is the amount of milliseconds per day) -->
+<#assign reminderDate = (aDateTime?long + 7 * 86400000)?number_to_datetime?iso_utc>
+
+<soapenv:Envelope xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/07/secext" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:act="urn:crmondemand/ws/ecbs/activity/" xmlns:data="urn:/crmondemand/xml/Activity/Data">
+   <soapenv:Header>
+    	<wsse:Security soapenv:mustUnderstand="1">
+    		<wsse:UsernameToken>
+                <wsse:Username>${headers.soapConnectorProperties.icMoreUsername}</wsse:Username>
+                <wsse:Password Type="wsse:PasswordText">${headers.soapConnectorProperties.icMorePassword}</wsse:Password>
+            </wsse:UsernameToken>
+    	</wsse:Security>
+    </soapenv:Header>
+   <soapenv:Body>
+      <act:ActivityInsert_Input>
+         <data:ListOfActivity lastpage="?" recordcount="?">
+            <!--Zero or more repetitions:-->
+            <data:Activity operation="?">
+                <data:DueDate>${aDateTime?date?iso_utc}</data:DueDate>
+                <data:TaskReminder>${reminderDate}</data:TaskReminder>
+                <#outputformat "HTML">
+                <#if (getTaskDescription(body)?length > 16341)>
+		            <data:Description><![CDATA[${getTaskDescription(body)[0..16340]?no_esc}]]></data:Description>
+		        <#else>
+		            <data:Description><![CDATA[${getTaskDescription(body)?no_esc}]]></data:Description>
+		        </#if>
+		        <#if (getTaskSubject(body)?length > 150)>
+		            <data:Subject><![CDATA[${getTaskSubject(body)[0..149]?no_esc}]]></data:Subject>
+		        <#else>
+		            <data:Subject><![CDATA[${getTaskSubject(body)?no_esc}]]></data:Subject>
+		        </#if>
+		        </#outputformat>
+                <data:Activity>Task</data:Activity>
+                <data:Status>Assigned</data:Status>
+                <data:Priority>1-High</data:Priority>
+                <data:Type>Credit Check</data:Type>
+                <#list body.variables?keys as variableName>
+                    <#if variableName?starts_with("SET_")>
+                        <#assign tagName = variableName?split("_")[1]>
+                        <data:${tagName}>${body.variables[variableName]}</data:${tagName}>
+                    </#if>
+                </#list>
+            </data:Activity>
+         </data:ListOfActivity>
+      </act:ActivityInsert_Input>
+   </soapenv:Body>
+</soapenv:Envelope>

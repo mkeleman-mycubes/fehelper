@@ -1,0 +1,30 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns2:screenAddressResponse xmlns:ns2="http://as.ws.scheck.server.tia/">
+            <screenAddressResponse>
+                <queryResults>
+                    <queryResultsEntry>
+                        <screeningInfo>
+                            <addressHits>12</addressHits>
+                            <hitType>IN_PROCESS</hitType>
+                            <query>
+                                <address>Terror Square</address>
+                                <city>Amsterdam</city>
+                                <country>NL</country>
+                                <createdOn>2022-04-13T14:21:04</createdOn>
+                                <entityType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                                <name>Osama Bin Laden</name>
+                                <pruefAuftrag>108452500</pruefAuftrag>
+                                <reference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                                <referenceComment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                                <zip>0911 NY</zip>
+                            </query>
+                            <state>OK</state>
+                        </screeningInfo>
+                    </queryResultsEntry>
+                </queryResults>
+                <state>OK</state>
+            </screenAddressResponse>
+        </ns2:screenAddressResponse>
+    </soap:Body>
+</soap:Envelope>

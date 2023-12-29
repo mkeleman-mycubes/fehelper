@@ -1,0 +1,20 @@
+{
+    "messageName" : "StartICMoreEventsRetrievalProcess",
+    "tenantId" : "${body.feSecureData.tenantId}",
+    "processVariables" : {
+        "pollingDisabled": {
+            "type": "String",
+            "value": <#if headers.restConnectorProperties.disableICMorePolling == "false"> "false" <#else> "true" </#if>
+        },
+        "disableAuditLog": {
+            "type": "Boolean",
+            "value": true
+        },
+        <#list body.variables?keys as variableName>
+            "${variableName}": {
+                "type": "${body.variables[variableName].type}",
+                "value": "${body.variables[variableName].value}"
+            }<#sep>,</#sep>
+        </#list>
+    }
+}

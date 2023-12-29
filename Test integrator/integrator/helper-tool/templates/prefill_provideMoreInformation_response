@@ -1,0 +1,6 @@
+{
+    <#if body.request_information_manual_assessment??>
+    "requested_by": "${body.AssignedAssessCreditManualToName.value}",
+    "requested_information": "${body.request_information_manual_assessment.value?json_string}"
+    </#if>
+}

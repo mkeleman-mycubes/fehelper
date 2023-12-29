@@ -1,0 +1,98 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#assign timestamp = (aDateTime?long / 1000)?round?c>
+{
+    "messageName": "StartDocumentUploadStatusCheck",
+    "tenantId": "${body.variables.tenantId}",
+    "processVariables": {
+        "RequestId": {
+            "value": "${body.requestId}",
+            "type": "string"
+        },
+        "requestError": {
+            "value": "${body.requestError}",
+            "type": "string"
+        },
+        "ApplicationEntryDate": {
+            "value": "${body.variables.ApplicationEntryDate}",
+            "type": "string"
+        },
+        "DocumentName": {
+            "value": "${body.documentInfo.fileName}",
+            "type": "string"
+        },
+        "DocumentInfo": {
+            "value": "<@printObjectToJsonString source=body.documentInfo />",
+            "type": "Json"
+        },
+        "mainProcessInstanceId": {
+            "value": "${body.variables.mainProcessInstanceId}",
+            "type": "string"
+        },
+        "PROCESS-NAMESPACE": {
+            "value": "${body.variables["PROCESS-NAMESPACE"]}",
+            "type": "string"
+        },
+        "ApplicationId": {
+            "value": "${body.variables.ApplicationId}",
+            "type": "string"
+        },
+        <#if body.variables.LessorID??>
+        "LessorID": {
+           "value": "${body.variables.LessorID}",
+           "type": "string"
+        },
+        </#if>
+        <#if body.variables.CompanyId??>
+        "CompanyIdentifier": {
+            "value": "${body.variables.CompanyId}",
+            "type": "string"
+        },
+        <#elseif body.variables.CompanyIdentifier??>
+        "CompanyIdentifier": {
+            "value": "${body.variables.CompanyIdentifier}",
+            "type": "string"
+        },
+        </#if>
+        <#if body.variables.VatId??>
+        "VatId": {
+            "value": "${body.variables.VatId}",
+            "type": "string"
+        },
+        </#if>
+        "CustomerName": {
+            "value": "${body.variables.CustomerName}",
+            "type": "string"
+        },
+        "variableName": {
+            "value": "DOCUMENT_${timestamp}",
+            "type": "string"
+        },
+        "adminGroup": {
+            "value": "${body.variables.adminGroup}",
+            "type": "string"
+        },
+        "ProcessTypeDescription": {
+            "value": "${body.variables.ProcessTypeDescription}",
+            "type": "string"
+        },
+        "Segment": {
+            "value": "${body.variables.Segment}",
+            "type": "string"
+        },
+        "RequestedCreditLine": {
+            "value": "${body.variables.RequestedCreditLine}",
+            "type": "string"
+        },
+        "CustomerCountry": {
+            "value": "${body.variables.CustomerCountry}",
+            "type": "string"
+        },
+        "globalAdminGroup": {
+            "value": "${body.variables.globalAdminGroup}",
+            "type": "string"
+        }
+    },
+    "resultEnabled" : true,
+    "variablesInResultEnabled" : true
+}

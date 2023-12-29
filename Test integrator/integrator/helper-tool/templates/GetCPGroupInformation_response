@@ -1,0 +1,15 @@
+
+<#if body.errorOccured??>
+    "bpmnError": {
+        "description": "${body.description.error.message}"
+    }
+<#else>
+    <#function getCompanyId company>
+        <#assign companyId = ""/>
+        <#if company?has_content && company.companyId?has_content>
+            <#assign companyId = "H" + company.companyId + "0000"/>
+        </#if>
+        <#return companyId/>
+    </#function>
+    <@printObjectToJson source=body />
+</#if>

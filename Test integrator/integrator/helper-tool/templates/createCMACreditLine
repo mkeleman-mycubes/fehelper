@@ -1,0 +1,12 @@
+{
+    "status": "Requested",
+    "valueTotal": ${body.variables.RequestedCreditLine},
+    "value": ${body.variables.RequestedCreditLineLease},
+    "valueRental": ${body.variables.RequestedCreditLineRental},
+    "applicationId": "${body.variables.ApplicationId}",
+    "maxRentals": ${body.variables.MaxRentals},
+    "type": "Retail",
+    "referenceNbr": "${body.variables.CustomerID!}",
+    "currency": "${body.lessorCurrency!}",
+    "revolving": true
+}

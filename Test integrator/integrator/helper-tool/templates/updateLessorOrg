@@ -1,0 +1,11 @@
+<#-- variable "test" won't pass DTO, but it exists for adding comas between next variables -->
+{
+    "test": "test"
+    <#if body.variables.AccountStatus?? && body.variables.AccountStatus != "Active">,
+        "status": "${body.variables.LessorOrgStatus}",
+        "doNotUpdateLiableParent": "true"
+    </#if>
+    <#if body.variables.OrganizationIsLiableInICMore?? && body.variables.OrganizationIsLiableInICMore == "false">,
+        "liableReferenceNbr":  <#if body.variables.LiableParent?? && body.variables.LiableParent?has_content>"${body.variables.LiableParent}"<#else>""</#if>
+    </#if>
+}

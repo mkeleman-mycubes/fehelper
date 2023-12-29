@@ -1,0 +1,12 @@
+<#assign countriesWithCompanyId = ["NL", "IT", "FR", "DE"]/>
+<#assign countriesWithVatId = ["ES", "IT", "BE"]/>
+{ 
+ <#if countriesWithCompanyId?seq_contains(body.variables.CustomerCountry)> 
+ "companyId": "${body.variables.CompanyIdentifier!}",
+ </#if>
+ <#if countriesWithVatId?seq_contains(body.variables.CustomerCountry)>
+ "vatId": "${body.variables.VatId!}",
+ </#if>
+ "lessorId": "${body.variables.LessorID!}",
+ "customerId": "${body.variables.CustomerID!}"
+}

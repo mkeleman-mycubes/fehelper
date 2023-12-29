@@ -1,0 +1,53 @@
+<#if headers.restConnectorProperties.environment == "DHC">
+<#assign groupList>
+  <#list body.groups as group>
+      "${group.name?json_string}"<#sep>,
+  </#list>
+  </#assign>
+   {
+        "groups": [${groupList}]
+    }
+
+<#else>
+
+<#assign groupsMap = {
+        "AthlonCreditPortal": ["E501_UR-501-CSDMO-CRA-INT-NL-INT-Admin"],
+        "HUNTERM": ["E501_UR-440-CSDMO-CRA-INT-NL-Admin2", "E501_UR-440-CSDMO-CRA-INT-NL-Sales", "E501_UR-906-CSDMO-CRA-INT-IT-Sales","E501_UR-584-CSDMO-CRA-INT-ES-Sales","E501_UR-906-CSDMO-CRA-INT-IT-Underwriters","E501_UR-584-CSDMO-CRA-INT-ES-Underwriters","E501_UR-440-CSDMO-CRA-INT-NL-Underwriters","E501_UR-440-CSDMO-INT-NL-RM", "E501_UR-501-CSDMO-CRA-INT-NL-INT-Admin", "E501_UR-642-CSDMO-CRA-INT-FR-Admin2", "E501_UR-642-CSDMO-CRA-INT-FR-Underwriters", "E501_UR-642-CSDMO-CRA-INT-FR-Sales", "E501_UR-611-CSDMO-CRA-INT-PT-Sales", "E501_UR-611-CSDMO-CRA-INT-PT-Underwriters", "E501_UR-853-CSDMO-CRA-INT-BE-Sales", "E501_UR-853-CSDMO-CRA-INT-BE-Underwriters", "E501_UR-905-CSDMO-CRA-INT-LU-Sales", "E501_UR-905-CSDMO-CRA-INT-LU-Underwriters", "E501_UR-440-CSDMO-CRA-INT-NL-Underwriters-Corp-INT", "E501_UR-584-CSDMO-CRA-INT-ES-Underwriters-Corp-INT"],
+        "AthlonCreditAdminNL": ["E501_UR-440-CSDMO-CRA-INT-NL-Admin2"],
+        "AthlonCreditAdminES": ["E501_UR-584-CSDMO-CRA-INT-ES-Admin2"],
+        "AthlonCreditAdminFR": ["E501_UR-642-CSDMO-CRA-INT-FR-Admin2"],
+        "PSANCHEZ": ["E501_UR-584-CSDMO-CRA-INT-ES-Sales", "E501_UR-584-CSDMO-CRA-INT-ES-Underwriters", "E501_UR-440-CSDMO-CRA-INT-NL-Underwriters-Corp", "E501_UR-440-CSDMO-CRA-INT-NL-SLS-Underwriters-Corp", "E501_UR-853-CSDMO-CRA-INT-BE-Underwriters-Corp", "E501_UR-905-CSDMO-CRA-INT-LU-Underwriters-Corp", "E501_UR-584-CSDMO-CRA-INT-ES-Underwriters-Corp", "E501_UR-501-CSDMO-CRA-INT-NL-INT-Admin", "E501_UR-584-CSDMO-CRA-INT-ES-Underwriters-Corp-INT"],
+        "SalesNL1": ["E501_UR-440-CSDMO-CRA-INT-NL-Sales"],
+        "SalesNL2": ["E501_UR-440-CSDMO-CRA-INT-NL-Sales"],
+        "SalesNL3": ["E501_UR-440-CSDMO-CRA-INT-NL-Sales"],
+        "UnderwriterNL1": ["E501_UR-440-CSDMO-CRA-INT-NL-Underwriters", "E501_UR-584-CSDMO-CRA-INT-ES-Sales"],
+        "UnderwriterNL2": ["E501_UR-440-CSDMO-CRA-INT-NL-Underwriters"],
+        "UnderwriterNL3": ["E501_UR-440-CSDMO-CRA-INT-NL-Underwriters"],
+        "UnderwriterES1": ["E501_UR-584-CSDMO-CRA-INT-ES-Underwriters", "E501_UR-440-CSDMO-CRA-INT-NL-Underwriters"],
+        "XSAVIOLA": ["E501_UR-584-CSDMO-CRA-INT-ES-Underwriters", "E501_UR-584-CSDMO-CRA-INT-ES-Underwriters-Corp-INT"],
+        "cbenz": ["E501_UR-440-CSDMO-CRA-INT-NL-Underwriters",  "E501_UR-440-CSDMO-CRA-INT-NL-Underwriters-Corp", "E501_UR-440-CSDMO-CRA-INT-NL-Underwriters-Retail", "E501_UR-440-CSDMO-CRA-INT-NL-Underwriters-Corp-INT", "E501_UR-584-CSDMO-CRA-INT-ES-Underwriters-Corp-INT"],
+        "RPEDRO": ["E501_UR-584-CSDMO-CRA-INT-ES-Sales"],
+        "VANDIJR": ["E501_UR-501-CSDMO-CRA-INT-NL-INT-Admin"],
+        "SalesFR": ["E501_UR-642-CSDMO-CRA-INT-FR-Sales"],
+        "UnderwriterFR": ["E501_UR-642-CSDMO-CRA-INT-FR-Underwriters"],
+        "ESSMEO": ["E501_UR-584-CSDMO-CRA-INT-ES-Sales"],
+        "PTSMEO": ["E501_UR-611-CSDMO-CRA-INT-PT-Sales"]
+}>
+
+ <#assign username = headers.gasId>
+ 
+  <#list groupsMap as user, groups>
+    <#if user == username>
+    <#-- <#assign groupsOfUser = groups?split(',')>
+    <#list groupsOfUser as group>
+        [
+         ${group?chop_linebreak}
+        ]
+    </#list>-->
+    {
+        "groups": <@printObjectToJson source=groups />
+    }
+    </#if>
+   </#list>
+  
+</#if>

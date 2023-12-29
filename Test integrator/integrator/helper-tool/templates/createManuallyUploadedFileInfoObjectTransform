@@ -1,0 +1,20 @@
+<#assign uploadField = body.uploadField/>
+<#assign file = ''>
+<#assign fileContent = ''>
+<#if body.fileIndex??>
+    <#assign file = headers.filesInfo[uploadField][body.fileIndex]>
+    <#assign fileContent = headers["${uploadField}"][body.fileIndex]>
+<#else>
+    <#assign file = headers.filesInfo[uploadField]>
+    <#assign fileContent = headers["${uploadField}"]>
+</#if>
+{
+    "fileInfo": {
+        "fileName": "${file.filename}.${file.extension}",
+        "addedBy": "${body.userFirstName} ${body.userLastName}",
+        "status": "In Progress",
+        "fileSize": "${(fileContent?length * 0.75)?long?c}",
+        "documentRestrictionCode": "${body.documentRestrictionCode}",
+        "applicationId": "${body.applicationId}"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "setAssessmentCancelStatus",
+            "script": "headers.processInstanceId = body.variables.mainProcessInstanceId; cancellationType = body.variables.cancellationType"
+        },
+        {
+            "type": "transform",
+            "name": "setAssessmentCancelStatus_setVariables",
+            "script": "body.cancellationType = cancellationType"
+        }
+    ]
+}

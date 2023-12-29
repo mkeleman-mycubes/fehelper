@@ -1,0 +1,20 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns2:showAddressScreeningProtocolResponse xmlns:ns2="http://as.ws.scheck.server.tia/">
+            <showAddressScreeningProtocolResponse>
+                <address>Veluwezoom 4</address>
+                <blockIndicator>0</blockIndicator>
+                <city>Almere</city>
+                <country>NL</country>
+                <createdBy>TU_ACAMO_Test</createdBy>
+                <createdOn>2022-04-12T20:30:23.523+02:00</createdOn>
+                <modifiedBy>TU_ACAMO_Test</modifiedBy>
+                <modifiedOn>2022-04-12T20:30:23.523+02:00</modifiedOn>
+                <name>Athlon</name>
+                <resultTyp>4</resultTyp>
+                <sc13QueryId>108448382</sc13QueryId>
+                <zip>1327 AG</zip>
+            </showAddressScreeningProtocolResponse>
+        </ns2:showAddressScreeningProtocolResponse>
+    </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,12 @@
+<soap:Envelope
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns2:screenAddressResponse
+            xmlns:ns2="http://as.ws.scheck.server.tia/">
+            <screenAddressResponse>
+                <queryResults/>
+                <state>INSUFFICIENT_BALANCE</state>
+            </screenAddressResponse>
+        </ns2:screenAddressResponse>
+    </soap:Body>
+</soap:Envelope>

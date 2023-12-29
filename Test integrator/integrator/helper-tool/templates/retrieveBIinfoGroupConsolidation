@@ -1,0 +1,12 @@
+{
+ "customerId": "${body.variables.CustomerID!}",
+ "lessorId": "${body.variables.LessorID!}",
+ "companyId": "${body.variables.CompanyIdentifier!}",
+ "vatId": "${body.variables.VatId!}",
+ "applicationId": "${body.variables.mainProcessInstanceId!}",
+ "rentalInstalmentAmount": ${(body.variables.RentalInstallmentAmount)!},
+ "requestedLeaseCreditline": ${(body.variables.RequestedCreditLineLease)!},
+ "requestedRentalCreditline": ${(body.variables.RequestedCreditLineRental)!},
+ "maxNumberOfRentals": ${(body.variables.MaxRentals)!},
+ "groupStructure": <@printObjectToJson source=body.groupStructure />
+}

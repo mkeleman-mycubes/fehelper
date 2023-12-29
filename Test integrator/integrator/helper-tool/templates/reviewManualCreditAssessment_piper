@@ -1,0 +1,14 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "getTaskVariables",
+            "script" : "answers = body.answers; secureData = body.secureData; headers.taskId = answers.taskid.data.answer[0]"
+        },
+        {
+            "type" : "action",
+            "name" : "reviewManualCreditAssessment",
+            "script" : "body.answers = answers; body.secureData = secureData; headers.taskId = answers.taskid.data.answer[0]"
+        }
+    ]
+}

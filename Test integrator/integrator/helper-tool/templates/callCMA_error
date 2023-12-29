@@ -1,0 +1,47 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign creditEndDate = "" />
+<#assign decisionDate = "" />
+<#if headers.creditEndDate??>
+    <#assign creditEndDate = headers.creditEndDate />
+</#if>
+<#if headers.decisionDate??>
+    <#assign decisionDate = headers.decisionDate />
+</#if>
+{
+    "errorOccured": "true",
+    "status": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "CMACallFailedError",
+        <#if headers.cmaAction?? && headers.cmaAction == 'retrieveOrganization' >
+            "bpmnErrorMessage": "Retrieving Organization from CMA failed. <br/> Company name: ${headers.customerName?json_string} <br/> Company ID: ${headers.companyId} <#if headers.applicationId??><br/> Application ID: ${headers.applicationId}</#if>"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'createOrganization' >
+            "bpmnErrorMessage": "Creating Organization in CMA failed. <br/> Company name: ${headers.customerName?json_string} <br/> Company ID: ${headers.companyId} <#if headers.applicationId??> <br/> Application ID: ${headers.applicationId}</#if>"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'updateOrganization' >
+            "bpmnErrorMessage": "Updating Organization in CMA failed. <br/> Company name: ${headers.customerName?json_string} <br/> Company ID: ${headers.companyId} <#if headers.applicationId??> <br/> Application ID: ${headers.applicationId}</#if>"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'createCreditLine' >
+            "bpmnErrorMessage": "Creating Credit Line in CMA failed.<br/>Company name: ${headers.companyName?json_string}<br/>Company ID: ${headers.companyId}<br/> ApplicationID: ${headers.applicationId} <br/><hr/><b>Credit Line Details:</b><br/>Status: Requested<br/>Value: ${headers.requestedCreditLine}"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'retrieveCreditLine' >
+            "bpmnErrorMessage": "Retrieving Credit Line in CMA failed.<br/>Company name: ${headers.companyName?json_string}<br/>Company ID: ${headers.companyId}<br/> ApplicationID: ${headers.applicationId} <br/><hr/><b>Credit Line Details:</b><br/>Status: ${headers.status}"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'updateCreditLine' >
+            "bpmnErrorMessage": "Updating Credit Line in CMA failed.<br/>Company name: ${headers.companyName?json_string}<br/>Company ID: ${headers.companyId}<br/> ApplicationID: ${headers.applicationId} <br/><hr/><b>Credit Line Details:</b><br/>Status: ${headers.creditLineStatus}<br/>Value: ${headers.requestedCreditLine}<br/>Decision Date: <#if decisionDate?? && decisionDate?has_content>${decisionDate?datetime.iso?string["yyyy-MM-dd HH:mm:ss"]}<#else></#if><br/>Credit End Date: ${creditEndDate}"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'retrieveLessorOrg' >
+            "bpmnErrorMessage": "Retrieving LessorOrg record from CMA failed.<br/>Company name: ${headers.customerName?json_string}<br/>Company ID: ${headers.companyId}<#if headers.applicationId??> <br/> Application ID: ${headers.applicationId}</#if>"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'setLessorOrgRowId' >
+            "bpmnErrorMessage": "Writting ICMore Row Id to LessorOrg failed.<br/>LessorOrg Id: ${headers.lessorOrgId}<br/>Company ID: ${headers.companyId}<br/>Company name: ${headers.companyName}<#if headers.applicationId??> <br/> Application ID: ${headers.applicationId}</#if>"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'retrieveCreditLineHolder' >
+            "bpmnErrorMessage": "Retrieving Credit Line Holder failed.<br/>Lessor Id: ${headers.lessorId}<br/>Organization Id: ${headers.organizationId}<br/>Company ID: ${headers.companyId}<br/>Company name: ${headers.companyName}<#if headers.applicationId??> <br/> Application ID: ${headers.applicationId}</#if>"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'setCreditLineHolder' >
+            "bpmnErrorMessage": "Setting LessorOrg as Credit Line Holder failed.<br/>LessorOrg Id: ${headers.lessorOrgId}<br/>Company ID: ${headers.companyId}<br/>Company name: ${headers.companyName}<#if headers.applicationId??> <br/> Application ID: ${headers.applicationId}</#if>"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'retrieveCreditLineHolderData' >
+            "bpmnErrorMessage": "Retrieving Credit Line Holder data failed.<br/>LessorOrg Id: ${headers.lessorOrgId}<br/>Company ID: ${headers.companyId}<br/>Company name: ${headers.companyName}<#if headers.applicationId??> <br/> Application ID: ${headers.applicationId}</#if>"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'createLessorOrg' >
+            "bpmnErrorMessage": "Creating LessorOrg failed.<br/>Company ID: ${headers.companyId}<br/>Company name: ${headers.companyName}<#if headers.applicationId??> <br/> Application ID: ${headers.applicationId}</#if>"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'retrieveCreditLineHodler' >
+            "bpmnErrorMessage": "Retrieving Credit Line Holder failed.<br/>Company ID: ${headers.companyId}<br/>Company name: ${headers.companyName}<#if headers.applicationId??> <br/> Application ID: ${headers.applicationId}</#if>"
+        <#elseif headers.cmaAction?? && headers.cmaAction == 'getAutoUpdateOrgStructureData' >
+            "bpmnErrorMessage": "Retrieving Auto Update structure data failed.<br/>Company ID: ${headers.companyId}<br/>Company name: ${headers.companyName}<#if headers.applicationId??> <br/> Application ID: ${headers.applicationId}</#if>"
+        <#else>
+            "bpmnErrorMessage": "Call to CMA failed"
+        </#if>
+    }
+}

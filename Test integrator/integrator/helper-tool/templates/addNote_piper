@@ -1,0 +1,19 @@
+{
+    "pipes": [
+        {
+            "type" : "transform",
+            "name" : "dummy",
+            "script" : "answers = body.answers; secureData = body.secureData"
+        },
+        {
+            "type" : "action",
+            "name" : "getProcessVariables",
+            "script" : "processInstanceId = answers.processinstanceid.data.answer[0]; headers.processInstanceId = processInstanceId;"
+        },
+        {
+            "type" : "action",
+            "name" : "addNote",
+            "script" : "body = [answers: answers, secureData: secureData, processVariables: body]; headers.processInstanceId = processInstanceId;"
+        }
+    ]
+}

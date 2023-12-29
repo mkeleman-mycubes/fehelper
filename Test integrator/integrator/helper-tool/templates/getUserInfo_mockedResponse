@@ -1,0 +1,92 @@
+{
+	"originUUID": "f36d944b-e07c-4487-a301-ab3ff9f548ab",
+	"urlLocation": "cn=Van Dijk?, Rutger (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+	"values": [{
+		"values": ["0"],
+		"name": "schemaType"
+	}, {
+		"values": ["Van Dijk, Rutger (501-Extern)"],
+		"name": "cn"
+	}, {
+		"values": ["fbb22b3f-f484-4683-b8df-6995ef43d9c6:5289575"],
+		"name": "oTObjectIDInResource"
+	}, {
+		"values": ["VANDIJR"],
+		"name": "oTExternalID1"
+	}, {
+		"values": ["2020-12-16T10:35:36Z"],
+		"name": "modifyTimestamp"
+	}, {
+		"values": ["Rutger"],
+		"name": "givenName"
+	}, {
+		"values": ["EMEA\\VANDIJR"],
+		"name": "oTExternalID4"
+	}, {
+		"values": ["VANDIJR@emea.corpdir.net"],
+		"name": "oTExternalID2"
+	}, {
+		"values": ["Van Dijk, Rutger (501-Extern)"],
+		"name": "displayName"
+	}, {
+		"values": ["vandijr@emea.corpdir.net"],
+		"name": "oTExternalID3"
+	}, {
+		"values": ["2020-12-16T10:20:50Z"],
+		"name": "createTimestamp"
+	}, {
+		"values": ["NL"],
+		"name": "c"
+	}, {
+		"values": ["FS/IFM"],
+		"name": "oTDepartment"
+	}, {
+		"values": ["cn=Van Dijk\\, Rutger (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"],
+		"name": "entryDN"
+	}, {
+		"values": ["Almere"],
+		"name": "l"
+	}, {
+		"values": ["EMEA"],
+		"name": "oTNetBIOSName"
+	}, {
+		"values": ["5310"],
+		"name": "o"
+	}, {
+		"values": ["emea.corpdir.net"],
+		"name": "oTDomainName"
+	}, {
+		"values": ["S5Rt83zgh0SjAas/+fVIqw=="],
+		"name": "oTObjectGUID"
+	}, {
+		"values": ["cn=E501_UR-APP-CSDMO-CRA-ES-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net", "cn=E501_UR-APP-CSDMO-CRA-ES-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net", "cn=E501_UR-APP-CSDMO-CRA-NL-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net", "cn=E501_UR-APP-CSDMO-CRA-NL-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net", "cn=E501_UR-APP-CSDMO-CRA-IT-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net", "cn=E501_UR-APP-CSDMO-CRA-IT-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"],
+		"name": "oTMemberOf"
+	}, {
+		"values": ["CN=Van Dijk\\, Rutger (501-Extern),OU=Users,OU=_GlobalResources,OU=E501,DC=emea,DC=corpdir,DC=net"],
+		"name": "oTOriginalDN"
+	}, {
+		"values": ["rutger.vandijk@athlon.com"],
+		"name": "mail"
+	}, {
+		"values": ["Van Dijk"],
+		"name": "sn"
+	}, {
+		"values": ["1c9ed148-a9c3-4ebc-96f8-3042724be181"],
+		"name": "entryUUID"
+	}, {
+		"values": ["false"],
+		"name": "accountDisabled"
+	}, {
+		"values": ["false"],
+		"name": "accountLockedOut"
+	}],
+	"name": "Van Dijk, Rutger (501-Extern)",
+	"objectClass": "oTPerson",
+	"description": null,
+	"userPartitionID": "emea.corpdir.net",
+	"location": "cn=Van Dijk\\, Rutger (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+	"id": "vandijr@emea.corpdir.net",
+	"urlId": "vandijr@emea.corpdir.net",
+	"uuid": "1c9ed148-a9c3-4ebc-96f8-3042724be181",
+	"customAttributes": null
+}

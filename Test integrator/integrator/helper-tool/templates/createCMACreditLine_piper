@@ -1,0 +1,23 @@
+{
+   "pipes":[
+      {
+         "type":"transform",
+         "name":"lessorToCurrency_mapping",
+         "script":"initialBody = body"
+      },
+      {
+         "type":"transform",
+         "name":"checkLessorCurrency",
+         "script":"body = [currencies: body, lessorID: initialBody.variables.LessorID ]"
+      },
+      {
+         "type":"action",
+         "name":"createCMACreditLine",
+         "script":"lessorCurrency = body.lessorCurrency; headers.cmaAction='createCreditLine'; headers.requestedCreditLine = initialBody.variables.RequestedCreditLine; headers.companyName = initialBody.variables.CustomerName; headers.companyId = initialBody.variables.CompanyIdentifier; headers.lessorId = initialBody.variables.LessorID; headers.applicationId = initialBody.variables.ApplicationId; headers.handleExceptionTemplate = 'callCMA_error'; headers.handleRestExceptionTemplate = 'callCMA_error';  body = initialBody; body.lessorCurrency = lessorCurrency"
+      },
+      {
+         "name": "createCMACreditLine_setVariables",
+         "type": "transform"
+      }
+   ]
+}

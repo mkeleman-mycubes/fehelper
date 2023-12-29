@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "name": "getAutoUpdateOrgStructureData",
+            "type": "action",
+            "script": "headers.companyId = body.variables.CompanyIdentifier; headers.lessorId = body.variables.LessorID; headers.handleRestExceptionTemplate = 'callCMA_error'; headers.handleExceptionTemplate = 'callCMA_error'; headers.applicationId = body.variables.ApplicationID; headers.companyName = body.variables.CustomerName;"
+        },
+        {
+            "name": "getAutoUpdateOrgStructureData_setVariables",
+            "type": "transform"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+<s11:Envelope xmlns:s11='http://schemas.xmlsoap.org/soap/envelope/'>
+  <s11:Body>
+    <ns1:showAddressScreeningProtocol xmlns:ns1='http://as.ws.scheck.server.tia/'>
+      <request>
+        <mandator>MC1</mandator>
+        <#-- <reference>${body.variables.CustomerID}</reference> -->
+        <pruefAuftrag>${body.variables.CASSearchId}</pruefAuftrag>
+        <startDate>2022-01-01T00:00:00</startDate>
+      </request>
+    </ns1:showAddressScreeningProtocol>
+  </s11:Body>
+</s11:Envelope>

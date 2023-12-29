@@ -1,0 +1,7 @@
+{ 
+ "companyId": "${body.variables.CompanyIdentifier!}",
+ "lessorId": "${body.variables.LessorID!}",
+ "requestedCreditline": ${body.variables.RequestedCreditLine!},
+ "applicationId": "${body.variables.mainProcessInstanceId!}",
+ "customerId": "${body.variables.CustomerID!}"
+}

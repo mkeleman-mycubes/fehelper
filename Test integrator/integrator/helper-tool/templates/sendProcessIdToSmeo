@@ -1,0 +1,10 @@
+{
+   "messageName":"CreditAssessmentStartedMessage",
+   "processInstanceId":"${body.variables.smeoProcessInstanceId}",
+   "processVariables":{
+      "CMOProcessId":{
+         "value":"${body.variables.mainProcessInstanceId}",
+         "type":"String"
+      }
+   }
+}

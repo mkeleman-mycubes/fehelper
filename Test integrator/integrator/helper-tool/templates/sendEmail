@@ -1,0 +1,24 @@
+{
+  "personalizations": [
+    {
+      "to": [
+        <#list body.mailSendTo?split(",") as recipient>
+            {
+              "email": "${recipient}"
+            }
+        </#list>
+      ],
+      "subject": "${body.mailSubject}"
+    }
+  ],
+  "from": {
+    "email": "noreply@formsengine.io",
+    "name": "Athlon Credit Portal"
+  },
+  "content": [
+    {
+      "type": "text/html",
+      "value": "${body.mailContent}"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+    "status": "true",
+    <#if body.errorOccured??>
+        "bpmnError": {
+            "bpmnErrorCode": "${body.bpmnError.bpmnErrorCode}",
+            "bpmnErrorMessage": "${body.bpmnError.bpmnErrorMessage}"
+        }
+    <#else>
+        "processVariables": {
+            "LessorOrgAccountStatus": "${body.status}",
+            "LessorOrgType": "${body.type}",
+            "LessorOrgId": "${body.id}",
+            <#if body.liableRelation?? && body.liableRelation?has_content>
+                <#if body.organization.id == body.liableRelation.id>
+                    "LessorOrgIsLiableInCMA": "true"
+                <#elseif body.organization.id != body.liableRelation.id>
+                    "LessorOrgIsLiableInCMA": "false"
+                </#if>
+            <#else>
+                "LessorOrgIsLiableInCMA": "true"
+            </#if>
+        }
+    </#if>
+}

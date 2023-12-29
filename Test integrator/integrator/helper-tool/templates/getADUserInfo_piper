@@ -1,0 +1,18 @@
+{
+    "pipes": [
+         {
+            "type" : "transform",
+             "name" : "dummy",
+             "script" : "gasID = body.gasId"
+          },
+          {
+             "type" : "action",
+             "name" : "loginToOTDS"
+          },
+          {  
+             "type" : "action",
+             "name" : "getUserInfo",
+             "script" : "headers.OTDSTicket = body.ticket; headers.gasID = gasID"
+           }
+    ]
+}
