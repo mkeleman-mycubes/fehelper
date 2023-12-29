@@ -1,0 +1,23 @@
+// Configs
+def portalUrl = "https://tst-athlon-credit-assessment.dev.mycubes.nl"
+
+// Defaults
+body.mailContent = "Mail content not configured"
+body.mailSubject = "Mail subject not configured"
+body.mailSendTo = "rshamborovskyy@mycubes.nl,rdijk@mycubes.nl"
+
+if (body.variables.emailType == 'sendReminderToAssessCreditManually') {
+    body.mailSubject = "Do not forget to complete assessment"
+    body.mailContent = """
+        <p>Hello!</p>
+        <p>
+            There's credit assessment for company "${body.variables.company_name}" waiting for Your action. Please complete this <a href="${portalUrl}/form/task/${body.variables.currentTaskId}">form</a> in order to proceed.
+        </p>
+        <span>
+            Regards,<br/>
+            <b>Athlon Credit Portal</b>
+        </span>
+    """
+}
+
+return body
