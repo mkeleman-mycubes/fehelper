@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "retrieveOperatingEntityConfig",
+            "script": "headers.operatingEntityId = body.variables.OperatingEntity; headers.customerName = body.variables.CustomerName; headers.companyId = body.variables.CompanyIdentifier; headers.applicationId = body.variables.ApplicationId; headers.handleExceptionTemplate =  'retrieveOperatingEntityConfig_error'; headers.handleRestExceptionTemplate = 'retrieveOperatingEntityConfig_error'"
+        },
+        {
+            "type": "transform",
+            "name": "retrieveOperatingEntityConfig_setVariables"
+        }
+    ]
+}
