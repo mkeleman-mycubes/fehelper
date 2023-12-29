@@ -1,0 +1,29 @@
+<#-- 
+    Object have to consist of:
+    1. key (empty key will not show pop up after login);
+    2. name (title in popup);
+    3. content (html code)
+    
+    img tags must have class='innerImg'
+-->
+
+{
+    "key": "3",
+    "name": "Release 2.3.0:",
+    "content": "
+        <p>Dear user, there is a new version of Credit Mid Office installed.</p>
+        <p>This 2.3.0 version contains some interesting new features and fixes:</p>
+        <ol>
+            <li>The postal code information is now also displayed as part of address info in the list of companies that were found by the credit agency, which should help you with finding the correct company.</li>
+            <li>Process Diagram shows the last status in which the credit assessment is finalized and also shows the steps the assessment has taken.</li>
+            <li>The error message is improved when user can't be found.</li>
+            <li>An automatic accept now has default credit end date of 365 days in the future in stead of 366 days.</li>
+            <li>In case of to be submitted Request for Information the text in the argumentation field is now also temporally saved.</li>
+            <li>It is now also possible to order on action in the Tasks overview</li>
+            <li>In case of a low side override the Credit Analyst can now describe the mitigating action per BPR hit, to comply to lending standards</li>
+            <li>In case of FRAUD signals in BE/NL (BPR High FRISS score) the Credit Analyst is now able to clarify the fraud risk explicitly in his manual assessment</li>
+        </ol>
+        <p>For more info see the <a href=\"http://www.google.com\" target=\"_blank\">user manual</a>.</p>
+        <p>Best Regards<br/>CMO Support team</p>
+    "
+}
