@@ -1,0 +1,268 @@
+{
+   "creditScore":{
+      "id":"5f721d84-7cf7-41bf-971a-25a000a6e6fd",
+      "documents":[
+         
+      ],
+      "agencyData":{
+         "businessPartners":[
+            {
+               "companyDisclosure":{
+                  "vatId":"A71396345",
+                  "companyId":"",
+                  "companyName":"Alquiler de autos"
+               },
+               "externDisclosure":{
+                  "agencies":[
+                     {
+                        "bureauProductState":"CustomerNotFound",
+                        "agencyName":"InformaES"
+                     },
+                     {
+                        "bureauProductState":"CustomerNotFound",
+                        "agencyName":"EquifaxES"
+                     }
+                  ]
+               }
+            }
+         ]
+      },
+      "scoringResponse":{
+         "scoringDate":"2022-08-10T10:53:02.171+0000",
+         "scoringId":"5f721d84-7cf7-41bf-971a-25a000a6e6fd",
+         "pdResult":{
+            "subScores":[
+               {
+                  "characteristicPoints":"100",
+                  "characteristicId":"DPD in last 12 months",
+                  "characteristicValue":"CAT 2: <= 7 DPD last 12m. New Customer"
+               },
+               {
+                  "characteristicPoints":"0",
+                  "characteristicId":"Branch",
+                  "characteristicValue":"CAT 3: Services, Missing"
+               },
+               {
+                  "characteristicPoints":"0",
+                  "characteristicId":"Due Days Suppliers",
+                  "characteristicValue":"CAT 3: > 270, Missing"
+               },
+               {
+                  "characteristicPoints":"0",
+                  "characteristicId":"Informa Rating",
+                  "characteristicValue":"CAT 3: <= 5, Missing"
+               },
+               {
+                  "characteristicPoints":"0",
+                  "characteristicId":"Age of Company",
+                  "characteristicValue":"CAT 2: <= 7 years, Missing"
+               },
+               {
+                  "characteristicPoints":"0",
+                  "characteristicId":"Trend Annual Sales",
+                  "characteristicValue":"CAT 3: 0, Missing"
+               }
+            ],
+            "masterPD":"52.24",
+            "scoreCardVersion":"ATEURES_RENOSALL_SCLR180100",
+            "scorePoints":"100",
+            "scoreClass":"9"
+         },
+         "additionalVariables":[
+            {
+               "valueBoolean":"true",
+               "name":"AVCraBusinessFlag"
+            },
+            {
+               "valueBoolean":"false",
+               "name":"AVGovernmentalBusinessFlag"
+            },
+            {
+               "valueBoolean":"false",
+               "name":"EquifaxAvailableFlag"
+            },
+            {
+               "valueBoolean":"false",
+               "name":"InformaAvailableFlag"
+            }
+         ],
+         "decisionResult":{
+            "policyRules":[
+               {
+                  "policyRuleNumber":"N822",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Credit line above EUR 500k: use CRC!",
+                  "policyRuleId":"1"
+               },
+               {
+                  "policyRuleNumber":"N803",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"1",
+                  "policyRuleLabel":"No Informa Information available",
+                  "policyRuleId":"2"
+               },
+               {
+                  "policyRuleNumber":"N802",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"No Equifax Information available",
+                  "policyRuleId":"3"
+               },
+               {
+                  "policyRuleNumber":"X803",
+                  "policyRuleType":"Decline",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Bad Payment Behavior - Intern Payment Code D",
+                  "policyRuleId":"4"
+               },
+               {
+                  "policyRuleNumber":"X805",
+                  "policyRuleType":"Decline",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Bad Payment Behavior - Intern Payment Code C",
+                  "policyRuleId":"5"
+               },
+               {
+                  "policyRuleNumber":"X806",
+                  "policyRuleType":"Decline",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Bad Payment Behavior - Intern Payment Code C or worse in last 9 months",
+                  "policyRuleId":"6"
+               },
+               {
+                  "policyRuleNumber":"N807",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Bad ASNEF Payment Experience",
+                  "policyRuleId":"7"
+               },
+               {
+                  "policyRuleNumber":"N809",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Bad Payment Behavior - Intern Payment Code B",
+                  "policyRuleId":"8"
+               },
+               {
+                  "policyRuleNumber":"N810",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"VAT number P, Q, S - Public Entities",
+                  "policyRuleId":"9"
+               },
+               {
+                  "policyRuleNumber":"N811",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"VAT number U - UTE",
+                  "policyRuleId":"10"
+               },
+               {
+                  "policyRuleNumber":"A813",
+                  "policyRuleType":"Accept all assets",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Super Accept NGOs",
+                  "policyRuleId":"11"
+               },
+               {
+                  "policyRuleNumber":"X815",
+                  "policyRuleType":"Decline",
+                  "policyRuleTriggered":"1",
+                  "policyRuleLabel":"Low Credit Score",
+                  "policyRuleId":"12"
+               },
+               {
+                  "policyRuleNumber":"N816",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"High Risk Branch",
+                  "policyRuleId":"13"
+               },
+               {
+                  "policyRuleNumber":"N817",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Age of Company < 2 Years",
+                  "policyRuleId":"14"
+               },
+               {
+                  "policyRuleNumber":"N818",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Accounts Out of Date - The financial information in Informa is older than 20 months. Request for actual financial information.",
+                  "policyRuleId":"15"
+               },
+               {
+                  "policyRuleNumber":"N819",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Intermediate Credit Score",
+                  "policyRuleId":"16"
+               },
+               {
+                  "policyRuleNumber":"N820",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Non-CRA Business",
+                  "policyRuleId":"17"
+               },
+               {
+                  "policyRuleNumber":"N821",
+                  "policyRuleType":"Refer",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"Amount Requested Higher Than Shareholders Funds",
+                  "policyRuleId":"18"
+               },
+               {
+                  "policyRuleNumber":"A822",
+                  "policyRuleType":"Accept all assets",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"High Credit Score",
+                  "policyRuleId":"19"
+               },
+               {
+                  "policyRuleNumber":"A823",
+                  "policyRuleType":"Accept all assets",
+                  "policyRuleTriggered":"0",
+                  "policyRuleLabel":"No negative signals are applicable for this application",
+                  "policyRuleId":"20"
+               }
+            ],
+            "limitRules":[
+               {
+                  "limitRuleType":"Refer",
+                  "limitRuleTriggered":"0",
+                  "limitRuleId":"1",
+                  "limitRuleLabel":"Corporate Limit",
+                  "limitRuleNumber":"LRCC"
+               },
+               {
+                  "limitRuleType":"Refer",
+                  "limitRuleTriggered":"0",
+                  "limitRuleId":"2",
+                  "limitRuleLabel":"One Times Vendor Limit",
+                  "limitRuleNumber":"LRN1"
+               },
+               {
+                  "limitRuleType":"Refer",
+                  "limitRuleTriggered":"0",
+                  "limitRuleId":"3",
+                  "limitRuleLabel":"Fixed Limit 25k Vendor Limit - NGO",
+                  "limitRuleNumber":"LRN4"
+               },
+               {
+                  "limitRuleType":"Refer",
+                  "limitRuleTriggered":"0",
+                  "limitRuleId":"4",
+                  "limitRuleLabel":"Fixed Limit High Credit Score",
+                  "limitRuleNumber":"LRN5"
+               }
+            ],
+            "decisionCode":"A",
+            "decisionDescription":"Accept all assets",
+            "decisionReason":"N803"
+         }
+      }
+   }
+}
