@@ -1,0 +1,8 @@
+{
+    "variables" : {
+        "second_opinion": {
+            "value": "${body.answers.is_second_opinion_required.data.answer[0]}",
+            "type": "String"
+        }
+    }
+}
