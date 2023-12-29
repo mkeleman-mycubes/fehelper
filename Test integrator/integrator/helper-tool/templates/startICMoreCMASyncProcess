@@ -1,0 +1,22 @@
+{
+    "messageName" : "StartICMoreCMASyncProcess",
+    "tenantId" : "${body.tenantId}",
+    "resultEnabled": true,
+    "processVariables" : {
+        <#list body.variables?keys as variableName>
+            "${variableName}": {
+                <#if body.variables[variableName]?is_boolean>
+                    "type": "Boolean",
+                    "value": ${body.variables[variableName]?c}
+                <#else>
+                    "type": "String",
+                    "value": "${body.variables[variableName]}"
+                </#if>
+            },
+        </#list>
+        "PROCESS-NAMESPACE": {
+            "type": "String",
+            "value": "${body["PROCESS-NAMESPACE"]}"
+        }
+    }
+}
