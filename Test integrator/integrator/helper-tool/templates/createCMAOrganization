@@ -1,0 +1,28 @@
+{
+    <#if body.variables.CustomerNumber??&& body.variables.CustomerNumber?has_content>
+        "referenceNbr": "${body.variables.CustomerNumber}",
+    <#else>
+        "referenceNbr": "",
+    </#if>
+    "companyId": "${body.variables.CompanyIdentifier}",
+    "name": "${body.variables.CustomerName}",
+    "lessor": "${body.variables.LessorID}",
+    "accountType": "${body.variables.AccountType}",
+    "accountStatus": "${body.variables.AccountStatus}",
+    "country": "${body.variables.CustomerCountry}",
+    "defaultRegisterFlag":
+        <#if body.variables.DefaultRegisterFlag?? && body.variables.DefaultRegisterFlag?has_content && body.variables.DefaultRegisterFlag == 'true'>
+            true
+        <#else>
+            false
+        </#if>,
+    "liableReferenceNbr": <#if body.variables.LiableParent?? && body.variables.LiableParent?has_content>"${body.variables.LiableParent}"<#else>""</#if>
+    <#if body.variables.ICMoreRowId?? && body.variables.ICMoreRowId?has_content>
+        ,"icmoreRowId": "${body.variables.ICMoreRowId}"
+    </#if>
+    <#if body.variables.OrganizationType?? && body.variables.OrganizationType?has_content>
+     ,"type": "${body.variables.OrganizationType}"
+     <#else>
+     ,"type": "Retail"
+    </#if>
+}
