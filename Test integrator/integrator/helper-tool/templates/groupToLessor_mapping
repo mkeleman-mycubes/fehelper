@@ -1,0 +1,205 @@
+{
+    "groupsToLessorMapping" : {
+        "E501_UR-584-CSDMO-CRA-INT-ES-Admin2": {
+            "lessorID": "ESACL", "userRole": "Lessor admin"
+        },  
+        "E501_UR-440-CSDMO-CRA-INT-NL-Admin2": {
+         "lessorID": "NLACL", "userRole": "Lessor admin"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-Sales": {
+            "lessorID": "NLACL", "userRole": "Sales"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-Underwriters": {
+            "lessorID": "NLACL", "userRole": "Underwriter"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-Admin": {
+            "lessorID": "NLACL", "userRole": "Lessor admin"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-Underwriters-Corp-INT": {
+            "lessorID": "NLACL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Sales": {
+            "lessorID": "NLMBL", "userRole": "Sales"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Underwriters": {
+            "lessorID": "NLMBL", "userRole": "Underwriter"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Admin": {
+            "lessorID": "NLMBL", "userRole": "Lessor admin"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Underwriters-Corp-INT": {
+            "lessorID": "NLMBL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-SLS-Sales": {
+            "lessorID": "NLSLS", "userRole": "Sales"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-SLS-Underwriters": {
+            "lessorID": "NLSLS", "userRole": "Underwriter"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-SLS-Admin": {
+            "lessorID": "NLSLS", "userRole": "Lessor admin"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-SLS-Underwriters-Corp-INT": {
+            "lessorID": "NLSLS", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-WPL-Sales-INT": {
+            "lessorID": "NLWPL", "userRole": "Sales"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-WPL-Underwriters-INT": {
+            "lessorID": "NLWPL", "userRole": "Underwriter"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-WPL-Admin-INT": {
+            "lessorID": "NLWPL", "userRole": "Lessor admin"
+        },
+        "E501_UR-440-CSDMO-CRA-INT-NL-WPL-Underwriters-Corp-INT": {
+            "lessorID": "NLWPL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-584-CSDMO-CRA-INT-ES-Sales": {
+            "lessorID": "ESACL", "userRole": "Sales"
+        },
+        "E501_UR-584-CSDMO-CRA-INT-ES-Underwriters": {
+            "lessorID": "ESACL", "userRole": "Underwriter"
+        },
+        "E501_UR-584-CSDMO-CRA-INT-ES-Admin": {
+            "lessorID": "ESACL", "userRole": "Lessor admin"
+        },
+        "E501_UR-584-CSDMO-CRA-INT-ES-Underwriters-Corp-INT": {
+            "lessorID": "ESACL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-906-CSDMO-CRA-INT-IT-Sales": {
+            "lessorID": "ITACL", "userRole": "Sales"
+        },
+        "E501_UR-906-CSDMO-CRA-INT-IT-Underwriters": {
+            "lessorID": "ITACL", "userRole": "Underwriter"
+        },
+        "E501_UR-906-CSDMO-CRA-INT-IT-Admin": {
+            "lessorID": "ITACL", "userRole": "Lessor admin"
+        },
+        "E501_UR-906-CSDMO-CRA-INT-IT-Underwriters-Corp": {
+            "lessorID": "ITACL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-853-CSDMO-CRA-INT-BE-Sales": {
+            "lessorID": "BEACL", "userRole": "Sales"
+        },
+        "E501_UR-853-CSDMO-CRA-INT-BE-Underwriters": {
+            "lessorID": "BEACL", "userRole": "Underwriter"
+        },
+        "E501_UR-853-CSDMO-CRA-INT-BE-Admin": {
+            "lessorID": "BEACL", "userRole": "Lessor admin"
+        },
+        "E501_UR-853-CSDMO-CRA-INT-BE-Underwriters-Corp-INT": {
+            "lessorID": "BEACL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-853-CSDMO-CRA-INT-BE-PRL-Sales": {
+            "lessorID": "BEPRL", "userRole": "Sales"
+        },
+        "E501_UR-853-CSDMO-CRA-INT-BE-PRL-Underwriters": {
+            "lessorID": "BEPRL", "userRole": "Underwriter"
+        },
+        "E501_UR-853-CSDMO-CRA-INT-BE-PRL-Admin": {
+            "lessorID": "BEPRL", "userRole": "Lessor admin"
+        },
+        "E501_UR-853-CSDMO-CRA-INT-BE-PRL-Underwriters-Corp-INT": {
+            "lessorID": "BEPRL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-537-CSDMO-CRA-INT-BE-RENT-Underwriters-Corp-INT2": {
+            "lessorID": "BEACR", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-Sales": {
+            "lessorID": "FRACL", "userRole": "Sales"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-Underwriters": {
+            "lessorID": "FRACL", "userRole": "Underwriter"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-Admin": {
+            "lessorID": "FRACL", "userRole": "Lessor admin"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-Underwriters-Corp": {
+            "lessorID": "FRACL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-MBF-Sales": {
+            "lessorID": "FRMFL", "userRole": "Sales"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-MBF-Underwriters": {
+            "lessorID": "FRMFL", "userRole": "Underwriter"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-MBF-Admin": {
+            "lessorID": "FRMFL", "userRole": "Lessor admin"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-MBF-Underwriters-Corp": {
+            "lessorID": "FRMFL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Sales": {
+            "lessorID": "FRUCAR", "userRole": "Sales"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Underwriters": {
+            "lessorID": "FRUCAR", "userRole": "Underwriter"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Admin": {
+            "lessorID": "FRUCAR", "userRole": "Lessor admin"
+        },
+        "E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Underwriters-Corp": {
+            "lessorID": "FRUCAR", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-635-CSDMO-CRA-INT-DE-Sales": {
+            "lessorID": "DEACL", "userRole": "Sales"
+        },
+        "E501_UR-635-CSDMO-CRA-INT-DE-Underwriters": {
+            "lessorID": "DEACL", "userRole": "Underwriter"
+        },
+        "E501_UR-635-CSDMO-CRA-INT-DE-Admin": {
+            "lessorID": "DEACL", "userRole": "Lessor admin"
+        },
+        "E501_UR-635-CSDMO-CRA-INT-DE-Underwriters-Corp": {
+            "lessorID": "DEACL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-426-CSDMO-CRA-INT-NL-ZL-Sales": {
+            "lessorID": "NLZL", "userRole": "Sales"
+        },
+        "E501_UR-426-CSDMO-CRA-INT-NL-ZL-Underwriters": {
+            "lessorID": "NLZL", "userRole": "Underwriter"
+        },
+        "E501_UR-426-CSDMO-CRA-INT-NL-ZL-Admin": {
+            "lessorID": "NLZL", "userRole": "Lessor admin"
+        },
+        "E501_UR-427-CSDMO-CRA-INT-NL-FRL-Sales": {
+            "lessorID": "NLFRL", "userRole": "Sales"
+        },
+        "E501_UR-427-CSDMO-CRA-INT-NL-FRL-Underwriters": {
+            "lessorID": "NLFRL", "userRole": "Underwriter"
+        },
+        "E501_UR-427-CSDMO-CRA-INT-NL-FRL-Admin": {
+            "lessorID": "NLFRL", "userRole": "Lessor admin"
+        },
+        "E501_UR-611-CSDMO-CRA-INT-PT-Sales": {
+            "lessorID": "PTACL", "userRole": "Sales"
+        },
+        "E501_UR-611-CSDMO-CRA-INT-PT-Underwriters": {
+            "lessorID": "PTACL", "userRole": "Underwriter"
+        },
+        "E501_UR-611-CSDMO-CRA-INT-PT-Admin": {
+            "lessorID": "PTACL", "userRole": "Lessor admin"
+        },
+        "E501_UR-611-CSDMO-CRA-INT-PT-Underwriters-Corp": {
+            "lessorID": "PTACL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-905-CSDMO-CRA-INT-LU-Sales": {
+            "lessorID": "LUACL", "userRole": "Sales"
+        },
+        "E501_UR-905-CSDMO-CRA-INT-LU-Underwriters": {
+            "lessorID": "LUACL", "userRole": "Underwriter"
+        },
+        "E501_UR-905-CSDMO-CRA-INT-LU-Admin": {
+            "lessorID": "LUACL", "userRole": "Lessor admin"
+        },
+        "E501_UR-905-CSDMO-CRA-INT-LU-Underwriters-Corp-INT": {
+            "lessorID": "LUACL", "userRole": "Corp. Underwriter"
+        },
+        "E501_UR-501-CSDMO-CRA-INT-NL-INT-Admin": {
+            "lessorID": "", "userRole": "Global admin"
+        }
+    }
+    <#if body?is_hash && body.lessorID?? && body.lessorID?has_content>
+     ,"lessorID": ${body.lessorID}
+    </#if>
+}
