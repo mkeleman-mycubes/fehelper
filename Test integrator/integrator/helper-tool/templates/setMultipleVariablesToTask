@@ -1,0 +1,15 @@
+{
+    "modifications": {
+    <#list body.variablesToSet as name, value>
+        "${name}" : {
+            <#if body.types['${name}'] == "Json">
+            "value": "<@printObjectToJsonString source = value/>",
+            <#elseif body.types['${name}'] == "String">
+            "value": "${value}",
+            </#if>
+            "type": "${body.types['${name}']}"
+        }
+        <#sep>,</#sep>
+    </#list>    
+    }
+}
