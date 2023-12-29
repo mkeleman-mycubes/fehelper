@@ -1,0 +1,85 @@
+{
+    "messageName": "StartCancelAssessmentSubprocess",
+    "processInstanceId": "${body.variables.mainProcessInstanceId}",
+    "processVariables": {
+        "mainProcessInstanceId": {
+            "value": "${body.variables.mainProcessInstanceId}",
+            "type": "String"
+        },
+        "cancellationType": {
+            "value": "${body.variables.cancellationType}",
+            "type": "String"
+        }
+        <#if body.variables.createICMoreTask?? && body.variables.createICMoreTask == "true">
+        ,
+        "createICMoreTask": {
+            "value": "true",
+            "type": "String"
+        }
+        </#if>
+        <#if body.variables.creditLineSufficient??>
+            ,
+            "creditLineSufficient": {
+                "value": "${body.variables.creditLineSufficient}",
+                "type": "String"
+            }
+        </#if>
+        
+        <#if body.variables.RequestedCreditLineLease??>
+            ,
+            "RequestedCreditLineLease": {
+                "value": "${body.variables.RequestedCreditLineLease}",
+                "type": "String"
+            }
+        </#if>
+        
+        <#if body.variables.RequestedCreditLineRental??>
+            ,
+            "RequestedCreditLineRental": {
+                "value": "${body.variables.RequestedCreditLineRental}",
+                "type": "String"
+            }
+        </#if>
+        
+        <#if body.variables.registerCreditLines??>
+            ,
+            "registerCreditLines": {
+                "value": "${body.variables.registerCreditLines}",
+                "type": "String"
+            }
+        </#if>
+        
+        
+        <#if body.variables.BusinessRuleIsApplied?? && body.variables.BusinessRuleIsApplied == "true">
+            ,
+            "BusinessRuleIsApplied": {
+                "value": "${body.variables.BusinessRuleIsApplied}",
+                "type": "String"
+            }
+        </#if>
+        <#if body.variables.LessorOrgId??>
+            ,
+            "LessorOrgId": {
+                "value": "${body.variables.LessorOrgId}",
+                "type": "String"
+            }
+        </#if>
+        
+        <#if body.variables.CreditLineHolderRowId??>
+            ,
+            "CreditLineHolderRowId": {
+                "value": "${body.variables.CreditLineHolderRowId}",
+                "type": "String"
+            }
+        </#if>
+        
+        <#list body.variables as key, value>
+            <#if key?starts_with("BRCancellationReason")>
+            ,"${key}":{
+                "value": "${value}",
+                "type": "String"
+            }
+            </#if>
+        </#list>
+    }
+}
