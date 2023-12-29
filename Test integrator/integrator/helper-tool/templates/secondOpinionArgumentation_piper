@@ -1,0 +1,20 @@
+{
+    "pipes": [
+        {
+            "type" : "transform",
+            "name" : "dummy",
+            "script" : "answers = body.answers; secureData = body.secureData"
+        },
+        <@uploadToDMSPiper uploadFields=["documents"] documentVariablesListName="documentsVariables" secureData=body.secureData headers=headers />
+        {
+            "type" : "action",
+            "name" : "getTaskVariables",
+            "script" : "headers.taskId = answers['taskid'].data.answer[0]"
+        },
+        {
+            "type" : "action",
+            "name" : "secondOpinionArgumentation",
+            "script": "body = [answers: answers, secureData: secureData, documentsVariables: documentsVariables, taskVariables: body]; headers.taskId = answers['taskid'].data.answer[0]"
+        }
+    ]
+}
