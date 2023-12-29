@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:quer="urn:crmondemand/ws/ecbs/user/query" xmlns:user="urn:crmondemand/ws/ecbs/user/" xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/07/secext">
+   <soapenv:Header>
+      <wsse:Security soapenv:mustUnderstand="1">
+         <wsse:UsernameToken>
+            <wsse:Username>ATHLONCAR/INTEGRATIONCREDIT</wsse:Username>
+            <wsse:Password Type="wsse:PasswordText">Acamo123!@#</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <user:UserQueryPage_Input>
+         <!--Optional:-->
+         <quer:ListOfUser>
+            <!--Optional:-->
+            <quer:User>
+               <!--Optional:-->
+               <quer:FirstName />
+               <!--Optional:-->
+               <quer:LastName />
+               <!--Optional:-->
+               <quer:Alias>='${body.AccountQueryPage_Output.ListOfAccount.Account.CustomText46}'</quer:Alias>
+               <!--Optional:-->
+            </quer:User>
+         </quer:ListOfUser>
+      </user:UserQueryPage_Input>
+   </soapenv:Body>
+</soapenv:Envelope>
