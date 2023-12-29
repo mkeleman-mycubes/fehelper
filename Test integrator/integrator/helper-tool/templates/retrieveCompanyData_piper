@@ -1,0 +1,16 @@
+{
+    "pipes": [
+        {
+            "name": "retrieveICMoreAccountData_piper",
+            "type": "action"
+        },
+        {
+            "name": "determineICMoreEntityInfo",
+            "type": "script"
+        },
+        {
+            "name": "retrieveCompanyData_setVariables",
+            "type": "transform"
+        }
+    ]
+}
