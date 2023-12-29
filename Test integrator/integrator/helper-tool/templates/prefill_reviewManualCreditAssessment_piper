@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type" : "script",
+            "name" : "setDefaultCreditEndDate"
+        }, 
+        {
+            "type" : "action",
+            "name" : "prefill_reviewManualCreditAssessment",
+            "script" : "taskId = body.taskid; headers.taskId = taskId"
+        }
+    ]
+}
