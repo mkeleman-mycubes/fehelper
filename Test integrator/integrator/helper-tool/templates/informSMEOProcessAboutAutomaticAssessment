@@ -1,0 +1,41 @@
+{   
+    "messageData": {
+        "messageName": "AutomaticAssessmentDoneMessage",
+        "processInstanceId": "${body.variables.smeoProcessInstanceId}",
+        "processVariables": {
+            "AutomaticDecision":{
+                "value":"${body.variables.A_DecisionCode!}",
+                "type":"String"
+             },
+            "ManualFlowRequired":{
+                "value":"${body.variables.ManualFlowRequired!}",
+                "type":"String"
+             }
+        }
+     },
+    "saveToDB": [
+        {
+              "variableName": "automaticAssessmentDecision",
+              "type": "STRING",
+              "value": "${body.variables.A_DecisionDescription}"
+        },
+        {
+              "variableName": "automaticAssessmentDecisionDate",
+              "type": "DATE",
+              "value": "${body.variables.A_DecisionDate_ISO}"
+        },
+        {
+              "variableName": "manualFlowRequired",
+              "type": "STRING",
+              "value": "${body.variables.ManualFlowRequired!}"
+        }
+        <#if body.variables.CreditEndDate?? && body.variables.CreditEndDate?has_content>
+            ,   
+        {
+              "variableName": "automaticDecisionCreditEndDate",
+              "type": "DATE",
+              "value": "${body.variables.CreditEndDate}"
+        }
+        </#if>
+    ]
+}
