@@ -1,0 +1,28 @@
+{
+    "status": "true",
+    <#if body.errorOccured??>
+        "bpmnError": {
+            "bpmnErrorCode": "${body.bpmnError.bpmnErrorCode}",
+            "bpmnErrorMessage": "${body.bpmnError.bpmnErrorMessage}"
+        }
+    <#else>
+        "processVariables": {
+            <#if body.id??>
+                "OrganizationCMAId": "${body.id}",
+                <#if body.type?? && body.type == "Corporate">
+                    "OrganizationIsCorporateInCMA": "true",
+                    "OrganizationTypeInCMA": "${body.type}",
+                <#else>
+                    "OrganizationIsCorporateInCMA": "false",
+                    "OrganizationTypeInCMA": "${body.type}",
+                </#if>
+                <#if body.defaultRegisterFlag?? && body.defaultRegisterFlag?has_content>,
+                    "defaultRegisterFlagInCMA": "${body.defaultRegisterFlag}",
+                </#if>
+                "organizationExistsOnCMA": "true"
+            <#else>
+                "organizationExistsOnCMA": "false"
+            </#if>
+        }
+    </#if>
+}
