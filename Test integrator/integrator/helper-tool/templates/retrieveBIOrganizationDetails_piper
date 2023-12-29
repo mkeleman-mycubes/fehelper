@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type":"action",
+            "name":"retrieveBIOrganizationDetails",
+            "script": "headers.handleRestExceptionTemplate = 'retrieveBIinfo_error'; headers.handleExceptionTemplate = 'retrieveBIinfo_error'"
+        },
+        {
+            "type" : "transform",
+            "name" : "retrieveBIOrganizationDetails_setVariables"
+        }
+    ]
+}
