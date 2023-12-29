@@ -1,0 +1,17 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+{
+    "modifications": {
+        <#if body.processVariables.opinionNumber??>
+            "note_${aDateTime?long?c}": {
+                "value": "{\"text\":\"${body.answers.message_text.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\",\"label\":\"Second opinion (${body.processVariables.opinionNumber.value?json_string})\"}",
+                "type": "json"
+            }
+        <#else>
+            "note_${aDateTime?long?c}": {
+                "value": "{\"text\":\"${body.answers.message_text.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\"}",
+                "type": "json"
+            }
+        </#if>
+    }
+}
