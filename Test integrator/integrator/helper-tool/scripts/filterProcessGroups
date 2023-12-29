@@ -1,0 +1,48 @@
+def adminGroup = [:];
+def globalAdminGroup = [:];
+def underwritersGroup = [:];
+def salesGroup = [:];
+def corpUnderwritersGroup = [:];
+def lessorID = body.lessorID;
+def groups = body.groupsToLessorMapping;
+
+groups.each {
+  key,
+  val ->
+  if (groups[key].userRole == 'Global admin') {
+    globalAdminGroup = [
+      groupID: key,
+      lessorID: groups[key].lessorID,
+      userRole: groups[key].userRole
+    ]
+  } else if (groups[key].lessorID == lessorID) {
+    if (groups[key].userRole == 'Lessor admin') {
+      adminGroup = [
+        groupID: key,
+        lessorID: lessorID,
+        userRole: groups[key].userRole
+      ]
+    } else if (groups[key].userRole == 'Underwriter') {
+      underwritersGroup = [
+        groupID: key,
+        lessorID: lessorID,
+        userRole: groups[key].userRole
+      ]
+    } else if (groups[key].userRole == 'Sales') {
+      salesGroup = [
+        groupID: key,
+        lessorID: lessorID,
+        userRole: groups[key].userRole
+      ]
+    } else if (groups[key].userRole == 'Corp. Underwriter') {
+      corpUnderwritersGroup = [
+        groupID: key,
+        lessorID: lessorID,
+        userRole: groups[key].userRole
+      ]
+    }
+  }
+}
+
+body = [adminGroup: adminGroup, underwritersGroup: underwritersGroup, salesGroup: salesGroup, globalAdminGroup: globalAdminGroup, corpUnderwritersGroup: corpUnderwritersGroup]
+return body;
