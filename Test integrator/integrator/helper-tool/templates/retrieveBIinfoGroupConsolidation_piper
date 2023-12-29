@@ -1,0 +1,18 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "retrieveCMAOrganizationTree",
+            "script": "initialBody = body; headers.cmaAction = 'retrieveOrganizationTree'; headers.companyId = body.variables.CompanyIdentifier; headers.lessorId = body.variables.LessorID; headers.handleRestExceptionTemplate = 'callCMA_error'; headers.handleExceptionTemplate = 'callCMA_error'"
+        },
+        {
+            "type":"action",
+            "name":"retrieveBIinfoGroupConsolidation",
+            "script": "body = [groupStructure: body, variables: initialBody.variables]; headers.handleRestExceptionTemplate = 'retrieveBIinfo_error'; headers.handleExceptionTemplate = 'retrieveBIinfo_error'"
+        },
+        {
+            "type" : "transform",
+            "name" : "retrieveBIinfoGroupConsolidation_setVariables"
+        }
+    ]
+}
