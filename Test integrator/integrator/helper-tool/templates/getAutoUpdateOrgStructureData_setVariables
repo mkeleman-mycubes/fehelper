@@ -1,0 +1,11 @@
+<#if body.errorOccured?? && body.errorOccured == "true">
+    <@printObjectToJson source=body /> 
+<#else>
+{
+    "status": "true",
+    "processVariables": {
+        "AutoUpdateOrgStructure": "${body.autoUpdate}",
+        "AutoUpdateOrgStructureExpired": "${body.autoUpdateExpired}"
+    }
+}
+</#if>
