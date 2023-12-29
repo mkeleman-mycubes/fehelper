@@ -1,0 +1,10 @@
+{
+  "status": "false",
+  "description": {
+       "instance":"urn:uuid:05ae9e85-0cc3-4a4d-9097-e15f900e790b",
+       "detail":"No results were found.",
+       "type":"https://athlon.com/acamo/error/not-found",
+       "title":"No results were found",
+       "status":404
+   }
+}
