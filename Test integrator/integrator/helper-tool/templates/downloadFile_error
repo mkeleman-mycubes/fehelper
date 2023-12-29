@@ -1,0 +1,14 @@
+{
+    "status": "true",
+    "errorOccured": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "DownloadFileFromDMSError",
+        <#if body?? && body.description?? && body.description?is_hash && body.description.detail??>
+            "bpmnErrorMessage": "${body.description.detail?json_string}"
+        <#elseif body.description?? && body.description?is_string>
+            "bpmnErrorMessage": "${body.description?json_string}"
+        <#else>
+            "bpmnErrorMessage": "Error occured during downloading file from DMS. Please check integrator."
+        </#if>
+    }
+}
