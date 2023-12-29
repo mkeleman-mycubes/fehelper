@@ -1,0 +1,5 @@
+<#if body?is_sequence>
+    <@printObjectToJson source=body[0] />
+<#else>
+    {}
+</#if>
