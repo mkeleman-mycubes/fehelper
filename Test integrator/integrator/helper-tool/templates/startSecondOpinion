@@ -1,0 +1,60 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+
+
+<#-- Determining the second opinion sequence number --> 
+<#if body.processVariables.opinionNumber??>
+    <#assign opinionNumber = body.processVariables.opinionNumber.value?number + 1>
+<#else>
+    <#assign opinionNumber = 1>
+</#if>
+
+
+{
+    "messageName" : "StartSecondOpinionProcess",
+    "tenantId" : "${body.secureData.tenantId}",
+    "resultEnabled" : true,
+    "processVariables" : {
+        <#list body.processVariables?keys as variableName>
+            <#if body.processVariables[variableName].type == "String" || body.processVariables[variableName].type == "Json">
+                "${variableName}": {
+                    "type": "${body.processVariables[variableName].type}",
+                    "value": "${body.processVariables[variableName].value}"
+                },
+            </#if>
+        </#list>
+        "previousOpinionProcessId": { 
+            "value": "${body.answers.processinstanceid.data.answer[0]?string}",
+            "type": "String"
+        },
+        "opinionNumber": { 
+            "value": "${opinionNumber?string}",
+            "type": "String"
+        },
+        <#-- Second opinion argumentation note -->
+        "note_${aDateTime?long?c}": {
+            "value": "{\"text\":\"${body.answers.argumentation.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\",\"label\":\"Second opinion (${opinionNumber?string})\"}",
+            "type": "json"
+        },
+        "status": {
+            "type": "String",
+            "value": "Manual credit assessment requested"
+        },
+        "processStarter": {
+            "value": "${body.secureData.user.identity.authenticatedUser}",
+            "type": "String"
+        },
+        "processStarterName": {
+            "value": "${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}",
+            "type": "String"
+        },
+        "processStarterGroup": {
+            "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+            "type": "String"
+        },
+        "processStarterGroupName": {
+            "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+            "type": "String"
+        }
+    }
+}
