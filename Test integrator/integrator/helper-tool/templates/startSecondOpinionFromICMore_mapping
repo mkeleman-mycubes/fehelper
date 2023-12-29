@@ -1,0 +1,43 @@
+{
+    "feSecureData" : {
+        "tenantId" : "${body.initial.tenantId}",
+        "user" : {
+            "identity" : {
+                "authenticatedUser" : "${body.userProfile.id}",
+                "groups" : [
+                    {
+                        "id" : "${body.salesGroup.id}",
+                        "name" : "${body.salesGroup.name}",
+                        "type" : "${body.salesGroup.type}"
+                    }
+                ]
+            },
+            "profile" : {
+                "firstName" : "${body.userProfile.firstName}",
+                "lastName" : "${body.userProfile.lastName}"
+            }
+        }
+    },
+    "variables" : {
+        <#list body.initialProcessVariables as variable>
+            <#if variable.type == "String" || variable.type == "Json">
+                "${variable.name}": {
+                    "type": "${variable.type}",
+                    "value": "${variable.value?json_string}"
+                },
+            </#if>
+        </#list>
+        "previousOpinionProcessId": {
+            "value": "${body.initial.variables.ACCOUNT_CustomText44}",
+            "type": "String"
+        },
+        opinionNumber: {
+            <#if body.initial.variables.opinionNumber??>
+                "value": "${body.initial.variables.opinionNumber.value?string.number + 1}",
+            <#else>
+                "value": "${2}",
+            </#if>
+            "type": 'String'
+        }
+    }
+}
