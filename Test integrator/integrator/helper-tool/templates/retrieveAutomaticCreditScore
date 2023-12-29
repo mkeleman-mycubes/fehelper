@@ -1,0 +1,96 @@
+<#assign aDateTime = body.variables.ApplicationEntryDate?datetime("yyyy-MM-dd | HH:mm:ss")>
+<#assign companyId = "">
+<#assign vatId = "">
+<#if body.variables.CompanyIdentifier?? && body.variables.CompanyIdentifier?has_content>
+    <#if body.variables.CompanyIdentifier[0] == "H">
+        <#assign companyId = body.variables.CompanyIdentifier[1..8]>
+    <#else>
+        <#assign companyId = body.variables.CompanyIdentifier>
+    </#if>
+</#if>
+<#if body.variables.VatId?? && body.variables.VatId?has_content>
+    <#if body.variables.VatId[0..1] == "IT" || body.variables.VatId[0..1] == "BE">
+        <#assign vatId = body.variables.VatId[2..]>
+    <#else>
+        <#assign vatId = body.variables.VatId>
+    </#if>
+</#if>
+{
+	"applicationId":"${body.variables.mainProcessInstanceId}",
+	"lessorName":"${body.variables.LessorID!}",
+	"businessPartners": [{
+    <#if body.variables.ProcessTypeDescription != "Prospect">
+    	<#if body.variables.companyNotFoundBI?? && body.variables.companyNotFoundBI?has_content && body.variables.companyNotFoundBI == "true">
+        <#else>
+        "internDisclosure": {
+            <#if body.variables.DaysToPayAverageLast6Months?? && body.variables.DaysToPayAverageLast6Months?has_content>
+            "daysToPayAverageLast6Months": ${body.variables.DaysToPayAverageLast6Months},
+            <#else>
+            "daysToPayAverageLast6Months": 0,
+            </#if>
+            <#if body.variables.DaysToPayAverageLast12Months?? && body.variables.DaysToPayAverageLast12Months?has_content>
+            "daysToPayAverageLast12Months": ${body.variables.DaysToPayAverageLast12Months},
+            <#else>
+            "daysToPayAverageLast12Months": 0,
+            </#if>
+            <#if body.variables.CustomerActiveMonthsLast12Months?? && body.variables.CustomerActiveMonthsLast12Months?has_content>
+            "numberOfActiveMonthsLast12Months": ${body.variables.CustomerActiveMonthsLast12Months},
+            <#else>
+            "numberOfActiveMonthsLast12Months": 0,
+            </#if>
+            <#if body.variables.NoAgreementsCurrentPeriod?? && body.variables.NoAgreementsCurrentPeriod?has_content>
+            "numberOfActiveContractsCurrentMonth": ${body.variables.NoAgreementsCurrentPeriod},
+            <#else>
+            "numberOfActiveContractsCurrentMonth": 0,
+            </#if>
+            <#if body.variables.DefaultFlag?? && body.variables.DefaultFlag?has_content>
+            "defaultFlag": ${(body.variables.DefaultFlag)!},
+            </#if>
+            <#if body.variables.TotalExposure?? && body.variables.TotalExposure?has_content>
+            "totalExposure": ${(body.variables.TotalExposure?replace(",", ""))!},
+            </#if>
+            "internPaymentCode00": "${(body.variables.ManagementCode00)!}",
+            "internPaymentCode01": "${(body.variables.ManagementCode01)!}",
+            "internPaymentCode02": "${(body.variables.ManagementCode02)!}",
+            "internPaymentCode03": "${(body.variables.ManagementCode03)!}",
+            "internPaymentCode04": "${(body.variables.ManagementCode04)!}",
+            "internPaymentCode05": "${(body.variables.ManagementCode05)!}",
+            "internPaymentCode06": "${(body.variables.ManagementCode06)!}",
+            "internPaymentCode07": "${(body.variables.ManagementCode07)!}",
+            "internPaymentCode08": "${(body.variables.ManagementCode08)!}",
+            "internPaymentCode09": "${(body.variables.ManagementCode09)!}",
+            "internPaymentCode10": "${(body.variables.ManagementCode10)!}",
+            "internPaymentCode11": "${(body.variables.ManagementCode11)!}",
+            "internPaymentCode12": "${(body.variables.ManagementCode12)!}"
+    	},
+		</#if>
+	</#if>
+		<#if body.variables.AddressStreet?? && body.variables.AddressStreet?has_content || body.variables.AddressProvinceCode?? && body.variables.AddressProvinceCode?has_content || (body.variables.CustomerCountry?? && body.variables.CustomerCountry?has_content && body.variables.CustomerCountry == "DE")>
+		"addresses": [{
+            "city": "${(body.variables.AddressCity)!}",
+            "countryCode": "${(body.variables.CustomerCountry)!}",
+            "number": "${(body.variables.AddressNumber)!}",
+            "numberAddition": "${(body.variables.AddressAddition)!}",
+            "provinceCode": "${(body.variables.AddressProvinceCode)!}",
+            "regionCode": "",
+            "street": "${(body.variables.AddressStreet)!}",
+            "type": "Visiting",
+            "zipCode": "${(body.variables.AddressPostalCode)!}"
+        }],
+        </#if>
+		"companyDisclosure": {
+			"companyId": "${companyId}",
+			"vatId": "${vatId}",
+			"companyName": "${(body.variables.CustomerName)!}"
+		}
+	}],
+	"currencyCode": "EUR",
+	"requestDate": "${aDateTime?iso("UTC")}",
+	"requestReason": "${(body.variables.ProcessTypeDescription)!}",
+	"newRequestedCreditLine": ${(body.variables.NewRequestedCreditLine)!},
+	<#if body.variables.companyConsolidatedCreditLine?? && body.variables.companyConsolidatedCreditLine?has_content>
+      "totalCreditLine": ${(body.variables.companyConsolidatedCreditLine)!}
+    <#else>
+      "totalCreditLine": ${(body.variables.RequestedCreditLine)!}
+    </#if>
+}
