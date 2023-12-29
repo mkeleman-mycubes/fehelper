@@ -1,0 +1,14 @@
+<#if body.errorOccured??>
+    <@printObjectToJson source=body /> 
+<#else>
+    {
+        "bb": <@printObjectToJson source=body />,
+        "status" : "true"
+        <#if body.ActivityInsert_Output??>
+        ,
+        "processVariables" : {
+            "ICMoreTaskID": "${body.ActivityInsert_Output.ListOfActivity.Activity.Id?json_string}"
+        }
+        </#if>
+    }
+</#if>
