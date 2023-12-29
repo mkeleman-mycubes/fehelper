@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "getTaskVariables",
+            "script" : "headers.taskId = body.taskid"
+        },
+        {
+            "type" : "transform",
+            "name" : "prefill_checkProblem_response"
+        }
+    ]
+}
