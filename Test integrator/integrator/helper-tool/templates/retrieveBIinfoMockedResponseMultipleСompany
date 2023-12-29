@@ -1,0 +1,10 @@
+{
+    "status": "false",
+    "description": {
+        "instance":"urn:uuid:05ae9e85-0cc3-4a4d-9097-e15f900e790b",
+        "detail":"Multiple rows returned",
+        "type":"https://athlon.com/acamo/error/not-found",
+        "title":"More than one record was found",
+        "status":404
+    }
+}
