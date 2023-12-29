@@ -1,0 +1,13 @@
+{
+    "status": "true",
+    <#if body.errorOccured??>
+    "bpmnError": {
+        "bpmnErrorCode": "${body.bpmnError.bpmnErrorCode}",
+        "bpmnErrorMessage": "${body.bpmnError.bpmnErrorMessage}"
+    }
+    <#else>
+        "processVariables": {
+            "LessorOrgId": "${body.id}"
+        }
+    </#if>
+}
