@@ -1,0 +1,7 @@
+body.usersOfGroup.each { user ->
+    if (body.assignee == user.id) {
+        body.assigneeFullName.firstName = user.firstName + " " + user.secondName;
+    }
+}
+
+return;
