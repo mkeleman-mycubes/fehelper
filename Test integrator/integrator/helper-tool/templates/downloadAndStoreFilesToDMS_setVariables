@@ -1,0 +1,15 @@
+{
+    "status": "true",
+    <#if body.uploadedFiles.bpmnError?? && body.uploadedFiles.bpmnError?has_content>
+    "bpmnError": {
+        "bpmnErrorCode": "${body.uploadedFiles.bpmnError.bpmnErrorCode}",
+        "bpmnErrorMessage": "${body.uploadedFiles.bpmnError.bpmnErrorMessage}"
+    }
+    <#else>
+    "processVariables": {
+        <#list body.uploadedFiles?keys as variableName>
+            "${variableName}": <@printObjectToJson source=body.uploadedFiles[variableName] /><#sep>,</#sep>
+        </#list>
+    }
+    </#if>
+}
