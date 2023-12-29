@@ -1,0 +1,334 @@
+{
+<#if headers.restConnectorProperties.environment == "DHC">
+"usersOfGroup": [
+<#list body.listUsersResult.users as user>
+ <#assign id = "">
+ <#assign firstName = "">
+ <#assign lastName = "">
+<#list user.values as value>
+      <#if value.name == 'givenName'>
+         <#assign firstName = value.values[0]>
+         <#elseif value.name == 'sn'>
+         <#assign lastName = value.values[0]>
+         <#elseif value.name == 'oTExternalID1'>
+         <#assign id = value.values[0]>
+      </#if>
+</#list>
+       <#if  !((headers.excludeMyself && headers.identity.authenticatedUser == id)  || 
+    (headers.excludeAssignedTo && headers.AssignedTo == id)  ||
+    (headers.taskName == "Review manual credit assessment" && headers.AssignedAssessCreditManualTo == id))>
+              {
+                   "id": "${id}",
+                   "firstName" : "${firstName}",
+                   "lastName" : "${lastName}"
+              }
+         <#sep>,</#sep>
+       </#if>
+</#list>
+<#if  headers.SMEOCountry?? && !((headers.excludeMyself && headers.identity.authenticatedUser == id)  || 
+    (headers.excludeAssignedTo && headers.AssignedTo == headers.SMEOCountry + "SMEO") || 
+    (headers.taskName == "Review manual credit assessment" && headers.AssignedAssessCreditManualTo == user.id))>
+      ,{
+           "id": "${headers.SMEOCountry}SMEO",
+           "firstName": "SME Online",
+           "lastName": "Department"
+      }
+</#if>
+]
+<#else>
+<#assign usersMap = {
+   "E501_UR-501-CSDMO-CRA-INT-NL-INT-Admin":[
+      {
+         "id":"AthlonCreditPortal",
+         "firstName":"Athlon",
+         "lastName":"Credit Admin"
+      }
+   ],
+   "E501_UR-440-CSDMO-CRA-INT-NL-Admin2":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"AthlonCreditAdminNL",
+         "firstName":"Athlon",
+         "lastName":"Credit Admin NL"
+      }
+   ],
+   "E501_UR-584-CSDMO-CRA-INT-ES-Admin2":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"AthlonCreditAdminES",
+         "firstName":"Athlon",
+         "lastName":"Credit Admin ES"
+      }
+   ],
+   "E501_UR-440-CSDMO-CRA-INT-NL-Underwriters":[
+      {
+         "id":"UnderwriterNL1",
+         "firstName":"Underwriter",
+         "lastName":"NL-1"
+      },
+      {
+         "id":"UnderwriterNL2",
+         "firstName":"Underwriter",
+         "lastName":"NL-2"
+      },
+      {
+         "id":"UnderwriterNL3",
+         "firstName":"Underwriter",
+         "lastName":"NL-3"
+      },
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"cbenz",
+         "firstName":"Carl",
+         "lastName":"Benz"
+      }
+   ],
+   "E501_UR-584-CSDMO-CRA-INT-ES-Underwriters":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"UnderwriterES1",
+         "firstName":"Underwriter",
+         "lastName":"ES-1"
+      },
+      {
+         "id":"PSANCHEZ",
+         "firstName":"Pedro",
+         "lastName":"Sanchez"
+      },
+      {
+         "id":"XSAVIOLA",
+         "firstName":"Xavier",
+         "lastName":"Saviola"
+      }
+   ],
+   "E501_UR-584-CSDMO-CRA-INT-ES-Underwriters-Corp-INT": [
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+       {
+         "id":"PSANCHEZ",
+         "firstName":"Pedro",
+         "lastName":"Sanchez"
+        },
+        {
+         "id":"XSAVIOLA",
+         "firstName":"Xavier",
+         "lastName":"Saviola"
+      }
+   ],
+   "E501_UR-440-CSDMO-CRA-INT-NL-Underwriters-Corp-INT":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"cbenz",
+         "firstName":"Carl",
+         "lastName":"Benz"
+      }
+   ],
+   "E501_UR-440-CSDMO-CRA-INT-NL-Sales":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"SalesNL1",
+         "firstName":"Sales",
+         "lastName":"NL-1"
+      },
+      {
+         "id":"SalesNL2",
+         "firstName":"Sales",
+         "lastName":"NL-2"
+      },
+      {
+         "id":"SalesNL3",
+         "firstName":"Sales",
+         "lastName":"NL-3"
+      }
+   ],
+   "E501_UR-584-CSDMO-CRA-INT-ES-Sales":[
+      {
+         "id":"PSANCHEZ",
+         "firstName":"Pedro",
+         "lastName":"Sanchez"
+      },
+      {
+         "id":"RPEDRO",
+         "firstName":"Pedro",
+         "lastName":"Rodriguez"
+      },
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      }
+   ],
+    "E501_UR-906-CSDMO-CRA-INT-IT-Admin2":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      }
+   ],
+   "E501_UR-906-CSDMO-CRA-INT-IT-Sales":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      }
+   ],
+   "E501_UR-906-CSDMO-CRA-INT-IT-Underwriters":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      }
+   ],
+    "E501_UR-642-CSDMO-CRA-INT-FR-Admin2":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"AthlonCreditAdminFR",
+         "firstName":"Athlon",
+         "lastName":"CreditAdminFR"
+      }
+   ],
+   "E501_UR-642-CSDMO-CRA-INT-FR-Sales":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"SalesFR",
+         "firstName":"SalesFR1",
+         "lastName":"FR-1"
+      }
+   ],
+   "E501_UR-642-CSDMO-CRA-INT-FR-Underwriters":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"UnderwriterFR",
+         "firstName":"UnderwriterFR1",
+         "lastName":"FR-1"
+      }
+   ],
+   "E501_UR-611-CSDMO-CRA-INT-PT-Sales":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"PSANCHEZ",
+         "firstName":"Pedro",
+         "lastName":"Sanchez"
+      }
+   ],
+   "E501_UR-611-CSDMO-CRA-INT-PT-Underwriters": [
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"PSANCHEZ",
+         "firstName":"Pedro",
+         "lastName":"Sanchez"
+      }
+   ],
+   "E501_UR-905-CSDMO-CRA-INT-LU-Sales": [
+     {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      }
+   ],
+    "E501_UR-905-CSDMO-CRA-INT-LU-Underwriters": [
+     {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      }
+   ],
+      "E501_UR-853-CSDMO-CRA-INT-BE-Sales": [
+     {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      }
+   ],
+    "E501_UR-853-CSDMO-CRA-INT-BE-Underwriters": [
+     {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      }
+   ]
+}>
+"usersOfGroup": [
+    <#assign lastUserSkipped = false />
+   <#list usersMap as group, users>
+       <#if group == headers.groupId>
+            <#list users as user>
+                <#assign userAdded = false />
+                 <#if !((headers.excludeMyself && headers.identity.authenticatedUser == user.id)  || 
+                        (headers.excludeAssignedTo && headers.AssignedTo == user.id)  ||
+                        (headers.taskName == "Review manual credit assessment" && headers.AssignedAssessCreditManualTo == user.id))>
+                        <#assign userAdded = true />
+                        {
+                           "id": "${user.id}",
+                           "firstName" : "${user.firstName}",
+                           "lastName" : "${user.lastName}"
+                        }<#sep>,</#sep>
+                 </#if>
+                 <#if !userAdded && !user?has_next>
+                    <#assign lastUserSkipped = true />
+                 </#if>
+            </#list>
+       </#if>
+   </#list>
+   <#if headers.SMEOCountry?? && !((headers.excludeMyself && headers.identity.authenticatedUser == id)  || 
+    (headers.excludeAssignedTo && headers.AssignedTo == headers.SMEOCountry + "SMEO") || 
+    (headers.taskName == "Review manual credit assessment" && headers.AssignedAssessCreditManualTo == user.id))>
+      <#if !lastUserSkipped>
+      ,
+      </#if>
+      {
+           "id": "${headers.SMEOCountry}SMEO",
+           "firstName": "SME Online",
+           "lastName": "Department"
+      }
+    </#if>
+]
+</#if>
+}
