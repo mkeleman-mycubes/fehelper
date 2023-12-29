@@ -1,0 +1,305 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#if body.answers.reviewer?? && body.answers.reviewer.data.answer[0]?length gt 0> 
+<#assign reviewer = body.answers.reviewer.data.answer[0]>
+<#else>
+  <#assign reviewer = "">
+</#if>
+<#assign assigneeFirstName = "">
+<#assign assigneeLastName = "">
+<#list body.usersOfGroup as user>
+   <#if reviewer == user.id>
+       <#assign assigneeFirstName = user.firstName>
+       <#assign assigneeLastName = user.lastName>
+   </#if>
+</#list>
+
+
+{
+    "variables" : {
+        "action": {
+            "value": "${body.answers.action_options.data.answer[0]}",
+            "type": "String"
+        },
+        "AssignedAssessCreditManualTo": {
+            "value": "${body.secureData.user.identity.authenticatedUser}",
+            "type": "String"
+        },
+        "AssignedAssessCreditManualToName": {
+            "value": "${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}",
+            "type": "String"
+        },
+        "AssignedAssessCreditManualToGroup": {
+            "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+            "type": "String"
+        },
+        "AssignedAssessCreditManualToGroupName": {
+            "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+            "type": "String"
+        },
+        "moreInfoProvided": {
+            "value": "false",
+            "type": "Boolean"
+        }
+        <#if !body.answers.request_information??>
+            <#assign manual_decision = '' />
+            <#assign M_reasons_pros = ''/>
+            <#assign M_reasons_cons = ''/>
+            <#assign M_Argumentation = ''/>
+            <#assign CreditEndDate = ''/>
+            <#assign reviewer = '' />
+            <#if body.answers.manual_decision??>
+                <#assign manual_decision = body.answers.manual_decision.data.answer[0] />
+            </#if>
+            <#if body.answers.pros_reasons??>
+                <#assign M_reasons_pros = body.answers.pros_reasons.data.answer?join(',') />
+            </#if>
+            <#if body.answers.cons_reasons??>
+                <#assign M_reasons_cons = body.answers.cons_reasons.data.answer?join(',') />
+            </#if>
+            <#if body.answers.argumentation??>
+                <#assign M_Argumentation = body.answers.argumentation.data.answer[0] />
+            </#if>
+            <#if body.answers.credit_end_date??>
+                <#assign CreditEndDate = body.answers.credit_end_date.data.answer[0] />
+            </#if>
+            <#if body.answers.reviewer??>
+                <#assign reviewer = body.answers.reviewer.data.answer[0] />
+            </#if>
+            <#assign savedAnswers = {
+                "manual_decision": "${manual_decision}",
+                "M_reasons_pros": "${M_reasons_pros}",
+                "M_reasons_cons": "${M_reasons_cons}",
+                "M_Argumentation": "${M_Argumentation}",
+                "CreditEndDate": "${CreditEndDate}",
+                "reviewer": "${reviewer}"
+            } />
+            ,
+            "savedAnswers": {
+                "value": "<@printObjectToJsonString source=savedAnswers />",
+    		    "type": "Json"
+            }
+        </#if>
+
+        <#if body.answers.argumentation??>
+        ,
+        "M_Argumentation": {
+            "value": "${body.answers.argumentation.data.answer[0]}",
+            "type": "String"
+        }
+        ,
+        
+            <#if body.taskVariables.opinionNumber??>
+                "note_${aDateTime?long?c}": {
+                    "value": "{\"text\":\"${body.answers.argumentation.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\", \"label\":\"Second opinion (${body.taskVariables.opinionNumber.value?json_string})\",\"label\":\"Second opinion (${body.taskVariables.opinionNumber.value?json_string})\"}",
+                    "type": "json"
+                }
+            <#else>
+                "note_${aDateTime?long?c}": {
+                    "value": "{\"text\":\"${body.answers.argumentation.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\"}",
+                    "type": "json"
+                }
+            </#if>
+        
+        </#if>
+        
+        
+       <#assign cancelledDueToCorporateThresholdExceeded = "false">
+       <#assign manualDecision = "">
+       <#if body.answers.manual_decision??>
+           <#assign manualDecision = body.answers.manual_decision.data.answer[0]>
+           <#if manualDecision == 'cancel_due_to_retail_corporate_threshold_exceeded'>
+             <#assign cancelledDueToCorporateThresholdExceeded = "true">
+           </#if>
+        </#if>
+        , 
+        "cancelledDueToCorporateThresholdExceeded": {
+            "value": "${cancelledDueToCorporateThresholdExceeded}",
+            "type": "Boolean"
+        }
+        <#if manualDecision?? && 
+             manualDecision?length gt 0 
+             && (manualDecision != 'cancel_due_to_retail_corporate_threshold_exceeded' 
+             || (body.answers.reviewer?? && body.answers.reviewer.data.answer[0]?length gt 0))>
+            ,
+            "manual_decision": {
+                "value": "${manualDecision}",
+                "type": "String"
+            }
+            ,
+            "M_DecisionDescription": {
+                "value": "${body.answers.manual_decision.data.answerLabel[0]}",
+                "type": "String"
+            }
+            ,
+            "M_FirstOfficerApprovedName": {
+                "value": "${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}",
+                "type": "String"
+            }
+            ,
+            "M_FirstOfficerApprovedDate": {
+                "value": "${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}",
+                "type": "String"
+            },
+            "CreditEndDate": {
+                    <#-- 
+                        Set credit end date if user choosed any of "Accept" decisions.
+                    -->
+                    <#if body.answers.credit_end_date??>
+                        <#if body.answers.credit_end_date.data.answer[0]?contains("-")>
+                            <#assign creditEndDate = body.answers.credit_end_date.data.answer[0]?date("dd-MM-yyyy")?string("yyyy-MM-dd")>
+                        <#else>
+                            <#assign creditEndDate = body.answers.credit_end_date.data.answer[0]?date("dd/MM/yyyy")?string("yyyy-MM-dd")>
+                        </#if>
+                        "value": "${creditEndDate}",
+                    <#else>
+                        "value": "",
+                    </#if>
+                    "type": "String"
+                }
+            
+            <#-- 
+                Set decision dates only if review step is skipped. Otherwise we'll set them right on review submit.
+            -->
+            <#if body.answers.reviewer?? && body.answers.reviewer.data.answer[0]?length == 0>
+                ,
+                "M_DecisionDate": {
+                    "value": "${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}",
+                    "type": "String"
+                }
+                ,
+                "M_DecisionDate_ISO": {
+                    "value": "${aDateTime?iso_utc}",
+                    "type": "String"
+                }
+            </#if>
+        </#if>
+        
+        <#if body.answers.pros_reasons??>
+        ,
+        "M_reasons_pros": {
+            "value": "${body.answers.pros_reasons.data.answer?join(',')}",
+            "type": "String"
+        }
+        ,
+        "M_DecisionReason_Pros": {
+            "value": "${body.answers.pros_reasons.data.answerLabel?join(',')}",
+            "type": "String"
+        }
+        </#if>
+        
+        <#if body.answers.cons_reasons??>
+        ,
+        "M_reasons_cons": {
+            "value": "${body.answers.cons_reasons.data.answer?join(',')}",
+            "type": "String"
+        }
+        ,
+        "M_DecisionReason_Cons": {
+            "value": "${body.answers.cons_reasons.data.answerLabel?join(',')}",
+            "type": "String"
+        }
+        </#if>
+        
+        <#if body.answers.request_information??>
+        ,
+        "request_information_manual_assessment": {
+            "value": "${body.answers.request_information.data.answer[0]}",
+            "type": "String"
+        }
+        ,
+            <#if body.taskVariables.opinionNumber??>
+                "note_${aDateTime?long?c}": {
+                    "value": "{\"text\":\"${body.answers.request_information.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\", \"label\":\"Second opinion (${body.taskVariables.opinionNumber.value?json_string})\",\"label\":\"Second opinion (${body.taskVariables.opinionNumber.value?json_string})\"}",
+                    "type": "json"
+                }
+            <#else>
+                "note_${aDateTime?long?c}": {
+                    "value": "{\"text\":\"${body.answers.request_information.data.answer[0]?json_string}\",\"author\":\"${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}\",\"datetime\":\"${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}\"}",
+                    "type": "json"
+                }
+            </#if>
+        
+        </#if>
+        
+        ,
+        "reviewer": {
+            "value": <#if body.answers.reviewer?? && body.answers.reviewer.data.answer[0]?length gt 0>"${body.answers.reviewer.data.answer[0]}"<#else>""</#if>,
+            "type": "String"
+        }
+            
+        <#-- 
+            Check for skipping review task. If its skipped, remove all assignBy and assignTo values.
+            Same is done on submit of review form, but since we skip it, we do it here.
+        -->
+        <#if body.answers.reviewer?? && body.answers.reviewer.data.answer[0]?length == 0>
+            ,
+            "AssignedBy": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedByName": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedByGroup": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedByGroupName": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedTo": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedToName": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedToGroup": {
+                "value": "",
+                "type": "String"
+            },
+            "AssignedToGroupName": {
+                "value": "",
+                "type": "String"
+            }
+        <#else>
+            ,
+            "AssignedBy": {
+                "value": "${body.secureData.user.identity.authenticatedUser}",
+                "type": "String"
+            },
+            "AssignedByName": {
+                "value": "${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}",
+                "type": "String"
+            },
+            "AssignedByGroup": {
+                "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+                "type": "String"
+            },
+            "AssignedByGroupName": {
+                "value": "${body.secureData.user.identity.selectedGroup.groupID}",
+                "type": "String"
+            },
+            "AssignedTo": {
+                "value": "<#if reviewer?? && reviewer?has_content>${reviewer}<#else>${body.taskVariables.processStarter.value}</#if>",
+                "type": "String"
+            },
+            "AssignedToName": {
+                "value": "<#if reviewer?? && reviewer?has_content>${assigneeFirstName} ${assigneeLastName}<#else>${body.taskVariables.processStarterName.value}</#if>",
+                "type": "String"
+            },
+            "AssignedToGroup": {
+                "value": "<#if body.answers.request_information?? && body.answers.request_information?has_content>${body.taskVariables.processStarterGroupName.value}<#else>${body.secureData.user.identity.selectedGroup.groupID}</#if>",
+                "type": "String"
+            },
+            "AssignedToGroupName": {
+                "value": "<#if body.answers.request_information?? && body.answers.request_information?has_content>${body.taskVariables.processStarterGroupName.value}<#else>${body.secureData.user.identity.selectedGroup.groupID}</#if>",
+                "type": "String"
+            }
+        </#if>
+    }
+}
