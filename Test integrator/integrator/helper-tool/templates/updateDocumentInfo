@@ -1,0 +1,22 @@
+{
+    "mainProcessInstanceId": "${body.variables.mainProcessInstanceId}",
+    "variableName": "${body.variables.variableName}",
+    "DocumentInfo": {
+        "applicationId": "${body.variables.DocumentInfo.applciationId}",
+        "fileName": "${body.variables.DocumentInfo.fileName}",
+        "addedBy": "${body.variables.DocumentInfo.addedBy}",
+        "documentRestrictionCode": "${body.variables.DocumentInfo.documentRestrictionCode}",
+        "id": "${body.variables.DocumentInfo.id}",
+        <#if body.variables.DocumentInfo.fileSize?? && body.variables.DocumentInfo.fileSize?has_content>
+        "fileSize": "${body.variables.DocumentInfo.fileSize}",
+        </#if>
+        <#if body.variables.DocumentInfo.linkToFile?? && body.variables.DocumentInfo.linkToFile?has_content>
+        "linkToFile": "${body.variables.DocumentInfo.linkToFile}",
+        </#if>
+        <#if body.variables.status == 'Error'>
+        "errorDescription": "${body.variables.details}",
+        "errorCode": "${body.variables.errorCode!}",
+        </#if>
+        "status": "${body.variables.status}"
+    }
+}
