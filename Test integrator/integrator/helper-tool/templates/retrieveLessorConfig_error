@@ -1,0 +1,8 @@
+{
+    "errorOccured": "true",
+    "status": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "CMACallFailedError",
+        "bpmnErrorMessage": "Retrieving Lessor config from CMA failed. <br/> <#if body.description.statusCode??> Error status: ${body.description.statusCode}, <br/> </#if> <#if body.description.message??> Error message: ${body.description.message}, <br/> </#if> LessorId: ${headers.lessorId} <br/> Company name: ${headers.customerName?json_string} <br/> Company ID: ${headers.companyId} <br/> Application ID: ${headers.applicationId}"
+    }
+}
