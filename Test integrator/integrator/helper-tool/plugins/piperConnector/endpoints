@@ -1,0 +1,390 @@
+[
+  {
+    "pipername": "addNote_piper",
+    "name": "addNote_piper"
+  },
+  {
+    "pipername": "assignManualCreditAssessmentToGroupmember_piper",
+    "name": "assignManualCreditAssessmentToGroupmember_piper"
+  },
+  {
+    "pipername": "callCMA_piper",
+    "name": "callCMA_piper"
+  },
+  {
+    "pipername": "casIndividualCheck_piper",
+    "name": "casIndividualCheck_piper"
+  },
+  {
+    "pipername": "casStatusCheck_piper",
+    "name": "casStatusCheck_piper"
+  },
+  {
+    "pipername": "checkDMSFileStatus_piper",
+    "name": "checkDMSFileStatus_piper"
+  },
+  {
+    "pipername": "checkIfHitlistError_piper",
+    "name": "checkIfHitlistError_piper"
+  },
+  {
+    "pipername": "checkProblem_piper",
+    "name": "checkProblem_piper"
+  },
+  {
+    "pipername": "createCMACreditLine_piper",
+    "name": "createCMACreditLine_piper"
+  },
+  {
+    "pipername": "createCMAOrganization_piper",
+    "name": "createCMAOrganization_piper"
+  },
+  {
+    "pipername": "createCMAOrganizationIfNotExists_piper",
+    "name": "createCMAOrganizationIfNotExists_piper"
+  },
+  {
+    "pipername": "createLessorOrg_piper",
+    "name": "createLessorOrg_piper"
+  },
+  {
+    "pipername": "deleteEventFromICMore_piper",
+    "name": "deleteEventFromICMore_piper"
+  },
+  {
+    "pipername": "determineIfSecondOpinionNeeded_piper",
+    "name": "determineIfSecondOpinionNeeded_piper"
+  },
+  {
+    "pipername": "downloadAndStoreFilesToDMS_piper",
+    "name": "downloadAndStoreFilesToDMS_piper"
+  },
+  {
+    "pipername": "downloadFile_piper",
+    "name": "downloadFile_piper"
+  },
+  {
+    "pipername": "getADUserGroups_piper",
+    "name": "getADUserGroups_piper"
+  },
+  {
+    "pipername": "getADUserInfo_piper",
+    "name": "getADUserInfo_piper"
+  },
+  {
+    "pipername": "getAutoUpdateOrgStructureData_piper",
+    "name": "getAutoUpdateOrgStructureData_piper"
+  },
+  {
+    "pipername": "getCASDataFromICMore_piper",
+    "name": "getCASDataFromICMore_piper"
+  },
+  {
+    "pipername": "GetCPGroupInformation_piper",
+    "name": "GetCPGroupInformation_piper"
+  },
+  {
+    "pipername": "getDocumentUploadStatus_piper",
+    "name": "getDocumentUploadStatus_piper"
+  },
+  {
+    "pipername": "getFilesListFromDMS_piper",
+    "name": "getFilesListFromDMS_piper"
+  },
+  {
+    "pipername": "getGroupLessor_piper",
+    "name": "getGroupLessor_piper"
+  },
+  {
+    "pipername": "getGroupsOfUser_piper",
+    "name": "getGroupsOfUser_piper"
+  },
+  {
+    "pipername": "getGroupStructureFromCP_piper",
+    "name": "getGroupStructureFromCP_piper"
+  },
+  {
+    "pipername": "getNewEventFromICMore_piper",
+    "name": "getNewEventFromICMore_piper"
+  },
+  {
+    "pipername": "getNewEventsFromICMore_piper",
+    "name": "getNewEventsFromICMore_piper"
+  },
+  {
+    "pipername": "getOTDSGroupsOfUserMockedResponse_piper",
+    "name": "getOTDSGroupsOfUserMockedResponse_piper"
+  },
+  {
+    "pipername": "getUserGroups_piper",
+    "name": "getUserGroups_piper"
+  },
+  {
+    "pipername": "getUserInfo_piper",
+    "name": "getUserInfo_piper"
+  },
+  {
+    "pipername": "getUsersOfGroup_piper",
+    "name": "getUsersOfGroup_piper"
+  },
+  {
+    "pipername": "handleProcessIsAlreadyFinished_piper",
+    "name": "handleProcessIsAlreadyFinished_piper"
+  },
+  {
+    "pipername": "handleTaskICMore_piper",
+    "name": "handleTaskICMore_piper"
+  },
+  {
+    "pipername": "informSMEOProcessAboutAssessmentCancellation_piper",
+    "name": "informSMEOProcessAboutAssessmentCancellation_piper"
+  },
+  {
+    "pipername": "informSMEOProcessAboutAutomaticAssessment_piper",
+    "name": "informSMEOProcessAboutAutomaticAssessment_piper"
+  },
+  {
+    "pipername": "informSMEOProcessAboutCasCheck_piper",
+    "name": "informSMEOProcessAboutCasCheck_piper"
+  },
+  {
+    "pipername": "informSMEOProcessAboutManualDecision_piper",
+    "name": "informSMEOProcessAboutManualDecision_piper"
+  },
+  {
+    "pipername": "LongExecutionPiperForTesting",
+    "name": "LongExecutionPiperForTesting"
+  },
+  {
+    "pipername": "prefill_assessCreditManually_piper",
+    "name": "prefill_assessCreditManually_piper"
+  },
+  {
+    "pipername": "prefill_checkProblem_piper",
+    "name": "prefill_checkProblem_piper"
+  },
+  {
+    "pipername": "prefill_provideMoreInformation_piper",
+    "name": "prefill_provideMoreInformation_piper"
+  },
+  {
+    "pipername": "prefill_reviewManualCreditAssessment_piper",
+    "name": "prefill_reviewManualCreditAssessment_piper"
+  },
+  {
+    "pipername": "processGroups_piper",
+    "name": "processGroups_piper"
+  },
+  {
+    "pipername": "provideMoreInformation_piper",
+    "name": "provideMoreInformation_piper"
+  },
+  {
+    "pipername": "reassignTask_piper",
+    "name": "reassignTask_piper"
+  },
+  {
+    "pipername": "retrieveAutomaticCreditScore_piper",
+    "name": "retrieveAutomaticCreditScore_piper"
+  },
+  {
+    "pipername": "retrieveBIinfo_piper",
+    "name": "retrieveBIinfo_piper"
+  },
+  {
+    "pipername": "retrieveBIinfoGroupConsolidation_piper",
+    "name": "retrieveBIinfoGroupConsolidation_piper"
+  },
+  {
+    "pipername": "retrieveBIOrganizationDetails_piper",
+    "name": "retrieveBIOrganizationDetails_piper"
+  },
+  {
+    "pipername": "retrieveCAReport_piper",
+    "name": "retrieveCAReport_piper"
+  },
+  {
+    "pipername": "retrieveCMACreditLine_piper",
+    "name": "retrieveCMACreditLine_piper"
+  },
+  {
+    "pipername": "retrieveCMAOrganization_piper",
+    "name": "retrieveCMAOrganization_piper"
+  },
+  {
+    "pipername": "retrieveCompanyData_piper",
+    "name": "retrieveCompanyData_piper"
+  },
+  {
+    "pipername": "retrieveCreditLineHolder_piper",
+    "name": "retrieveCreditLineHolder_piper"
+  },
+  {
+    "pipername": "retrieveCreditLineHolderData_piper",
+    "name": "retrieveCreditLineHolderData_piper"
+  },
+  {
+    "pipername": "retrieveICMoreAccountData_piper",
+    "name": "retrieveICMoreAccountData_piper"
+  },
+  {
+    "pipername": "retrieveICMoreAccountUserData_piper",
+    "name": "retrieveICMoreAccountUserData_piper"
+  },
+  {
+    "pipername": "retrieveICMoreUserData_piper",
+    "name": "retrieveICMoreUserData_piper"
+  },
+  {
+    "pipername": "retrieveLessorConfig_piper",
+    "name": "retrieveLessorConfig_piper"
+  },
+  {
+    "pipername": "retrieveLessorOrg_piper",
+    "name": "retrieveLessorOrg_piper"
+  },
+  {
+    "pipername": "retrieveOperatingEntityConfig_piper",
+    "name": "retrieveOperatingEntityConfig_piper"
+  },
+  {
+    "pipername": "reviewManualCreditAssessment_piper",
+    "name": "reviewManualCreditAssessment_piper"
+  },
+  {
+    "pipername": "saveACMFormAnswers_piper",
+    "name": "saveACMFormAnswers_piper"
+  },
+  {
+    "pipername": "secondOpinionArgumentation_piper",
+    "name": "secondOpinionArgumentation_piper"
+  },
+  {
+    "pipername": "seMultipleVariablesToTask_piper",
+    "name": "seMultipleVariablesToTask_piper"
+  },
+  {
+    "pipername": "sendAssessmentID_piper",
+    "name": "sendAssessmentID_piper"
+  },
+  {
+    "pipername": "sendEmail_piper",
+    "name": "sendEmail_piper"
+  },
+  {
+    "pipername": "setAssessmentCancelStatus_piper",
+    "name": "setAssessmentCancelStatus_piper"
+  },
+  {
+    "pipername": "setCMACreditLine_piper",
+    "name": "setCMACreditLine_piper"
+  },
+  {
+    "pipername": "setCreditLineHolder_piper",
+    "name": "setCreditLineHolder_piper"
+  },
+  {
+    "pipername": "setLessorOrgRowId_piper",
+    "name": "setLessorOrgRowId_piper"
+  },
+  {
+    "pipername": "setMultipleVariablesToTask_piper",
+    "name": "setMultipleVariablesToTask_piper"
+  },
+  {
+    "pipername": "setVariableToTask_piper",
+    "name": "setVariableToTask_piper"
+  },
+  {
+    "pipername": "startCancelAssessmentSubprocess_piper",
+    "name": "startCancelAssessmentSubprocess_piper"
+  },
+  {
+    "pipername": "startCreditAssessmentFromICMore_piper",
+    "name": "startCreditAssessmentFromICMore_piper"
+  },
+  {
+    "pipername": "startDocumentUploadStatusCheckProcess_piper",
+    "name": "startDocumentUploadStatusCheckProcess_piper"
+  },
+  {
+    "pipername": "startICMoreCMASyncProcess_piper",
+    "name": "startICMoreCMASyncProcess_piper"
+  },
+  {
+    "pipername": "startICMoreEventProcess_piper",
+    "name": "startICMoreEventProcess_piper"
+  },
+  {
+    "pipername": "startICMoreEventsRetrievalProcess_piper",
+    "name": "startICMoreEventsRetrievalProcess_piper"
+  },
+  {
+    "pipername": "startProcess_piper",
+    "name": "startProcess_piper"
+  },
+  {
+    "pipername": "startSecondOpinion_piper",
+    "name": "startSecondOpinion_piper"
+  },
+  {
+    "pipername": "startSecondOpinionFromICMore_piper",
+    "name": "startSecondOpinionFromICMore_piper"
+  },
+  {
+    "pipername": "startUpdateCMACreditLine_piper",
+    "name": "startUpdateCMACreditLine_piper"
+  },
+  {
+    "pipername": "storeFilesToDMS_piper",
+    "name": "storeFilesToDMS_piper"
+  },
+  {
+    "pipername": "syncICMoreCMALessorOrg_piper",
+    "name": "syncICMoreCMALessorOrg_piper"
+  },
+  {
+    "pipername": "Test_piper",
+    "name": "Test_piper"
+  },
+  {
+    "pipername": "TestCMA_piper",
+    "name": "TestCMA_piper"
+  },
+  {
+    "pipername": "updateAccountICMore_piper",
+    "name": "updateAccountICMore_piper"
+  },
+  {
+    "pipername": "updateCMAOrganization_piper",
+    "name": "updateCMAOrganization_piper"
+  },
+  {
+    "pipername": "updateCMAOrganizationCreditLine_piper",
+    "name": "updateCMAOrganizationCreditLine_piper"
+  },
+  {
+    "pipername": "updateDocumentVariableInMainProcess_piper",
+    "name": "updateDocumentVariableInMainProcess_piper"
+  },
+  {
+    "pipername": "updateLessorOrg_piper",
+    "name": "updateLessorOrg_piper"
+  },
+  {
+    "pipername": "updateOrgStructureInCMA_piper",
+    "name": "updateOrgStructureInCMA_piper"
+  },
+  {
+    "pipername": "upgradeExternalCMAOrganizationToReal_piper",
+    "name": "upgradeExternalCMAOrganizationToReal_piper"
+  },
+  {
+    "pipername": "upgradeExternalCMAOrganizationToRealCreateLessorOrg_piper",
+    "name": "upgradeExternalCMAOrganizationToRealCreateLessorOrg_piper"
+  },
+  {
+    "pipername": "upgradeExternalCMAOrganizationToRealRetrieveLessorConfig_piper",
+    "name": "upgradeExternalCMAOrganizationToRealRetrieveLessorConfig_piper"
+  }
+]
