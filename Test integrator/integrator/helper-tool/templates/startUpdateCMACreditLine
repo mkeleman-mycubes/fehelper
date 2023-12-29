@@ -1,0 +1,74 @@
+{
+    "messageName": "StartCallCMAProcess",
+    "tenantId": "${body.tenantId}",
+    "processVariables": {
+        "PROCESS-NAMESPACE": {
+            "value": "${body.variables['PROCESS-NAMESPACE']}",
+            "type": "String"
+        },
+        "CMACallTemplateName": {
+            "value": "updateCMAOrganizationCreditLine_piper",
+            "type": "String"
+        },
+        "ApplicationId": {
+            "value": "${body.variables.ApplicationId}",
+            "type": "String"
+        },
+        "RequestedCreditLine": {
+            "value": "${body.variables.RequestedCreditLine}",
+            "type": "String"
+        },
+        "RequestedCreditLineLease": {
+            "value": "<#if body.variables.RequestedCreditLineLease??>${body.variables.RequestedCreditLineLease}<#else>${body.variables.RequestedCreditLine}</#if>",
+            "type": "String"
+        },
+        "RequestedCreditLineRental": {
+            "value": "<#if body.variables.RequestedCreditLineRental??>${body.variables.RequestedCreditLineRental}<#else>0</#if>",
+            "type": "String"
+        },
+        "MaxRentals": {
+            "value": "<#if body.variables.MaxRentals??>${body.variables.MaxRentals}<#else>0</#if>",
+            "type": "String"
+        },
+        "CustomerID": {
+            "value": "${body.variables.CustomerID}",
+            "type": "String"
+        },
+        "CustomerName": {
+            "value": "${body.variables.CustomerName}",
+            "type": "String"
+        },
+        "CompanyIdentifier": {
+            "value": "${body.variables.CompanyIdentifier}",
+            "type": "String"
+        },
+        <#if body.variables.CreditEndDate?? && body.variables.CreditEndDate != "">
+            "CreditEndDate": {
+                "value": "${body.variables.CreditEndDate}",
+                "type": "String"
+            },
+        </#if>
+        <#if body.variables.DecisionDate??>
+            "DecisionDate": {
+                "value": "${body.variables.DecisionDate}",
+                "type": "String"
+            },
+        </#if>
+        "CreditLineStatus": {
+            "value": "${body.variables.CreditLineStatus}",
+            "type": "String"
+        },
+        "globalAdminGroup": {
+            "value": "${body.variables.globalAdminGroup}",
+            "type": "String"
+        },
+        "adminGroup": {
+            "value": "${body.variables.adminGroup}",
+            "type": "String"
+        },
+        "mainProcessInstanceId": {
+            "value": "${body.variables.mainProcessInstanceId}",
+            "type": "String"
+        }
+    }
+}
