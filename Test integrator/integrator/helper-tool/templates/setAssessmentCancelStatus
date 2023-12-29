@@ -1,0 +1,11 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+
+{
+    "modifications" : {
+        "status": {
+            "value": "${getCancellationStatus(body.variables.cancellationType)}",
+            "type": "String"
+        }
+    }
+}
