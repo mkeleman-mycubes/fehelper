@@ -1,0 +1,42 @@
+<#if headers.restConnectorProperties.environment == "DHC">
+    <@XMLToJSON body />
+<#else>
+{
+   "GetDocumentResponse": {
+      "GetDocumentResponse": {
+         "documentInfo": {
+            "ID": "3595541",
+            "DocumentName": "Test.txt",
+            "CreationDate": "2021-02-08T15:16:45+01:00",
+            "LastModificationDate": "2021-02-08T15:16:45+01:00",
+            "FileDataSize": "13264",
+            "MimeType": "text/plain",
+            "VersionNum": "1",
+            "Segment": "Core",
+            "DocTypeNumber": "70",
+            "DocTypeName": "CRA Sales Document",
+            "Adate": "2021-02-08T00:00:00+01:00",
+            "NotificationTo": null,
+            "UniqueIdentifier": null,
+            "CustomerID": null,
+            "EnterpriseNo": null,
+            "VATNo": null,
+            "ReferenceNo": null,
+            "BP_Code": null,
+            "PartnerCustomerNo": null,
+            "SearchName": null,
+            "BillingName": null,
+            "SegmentMV": null,
+            "Status": "ACTIVE",
+            "StatusDate": "2021-02-08T01:00:00+01:00",
+            "Country": "ES",
+            "LegalEntity": "AthlonES",
+            "CaseID": "d66f00cb-6a0d-11eb-941e-025056007954",
+            "CaseDate": "2021-02-08T01:00:00+01:00",
+            "CaseType": "CRA"
+         },
+         "documentContent": "VGVzdCBzdHJpbmcK"
+      }
+   }
+}
+</#if>
