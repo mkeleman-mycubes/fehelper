@@ -1,0 +1,11 @@
+def SMEO_mapping = [
+    "E501_UR-584-CSDMO-CRA-PROD-ES-Sales": "ES",
+    "E501_UR-584-CSDMO-CRA-INT-ES-Sales": "ES",
+    "E501_UR-611-CSDMO-CRA-PROD-PT-Sales": "PT",
+    "E501_UR-611-CSDMO-CRA-INT-PT-Sales": "PT"
+]
+def identity = body.feSecureData ? body.feSecureData.user.identity : body.identity ? body.identity : [:] ;
+def groupIdVariable = identity.selectedGroup ?  identity.selectedGroup.groupID : body.groupID;
+
+headers.SMEOCountry = SMEO_mapping[groupIdVariable];
+return body
