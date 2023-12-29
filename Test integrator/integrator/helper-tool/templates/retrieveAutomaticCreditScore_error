@@ -1,0 +1,23 @@
+{
+    "errorOccured": "true",
+    "status": "true",
+    "CreditPlatformResponseJSON": <@printObjectToJson source=body />,
+    "bpmnError": {
+        <#if body?? && body.description?? && body.description?is_hash && body.description.error?? && body.description.error.type?? && body.description.error.type == "risk_suite_hitlist_failure">
+            "bpmnErrorCode": "HitListReceivedException",
+            <#if body.description.error.details?? && body.description.error.details?has_content>
+            "possibleCustomers": <@printObjectToJson source=body.description.error.details />,
+            </#if>
+            "bpmnErrorMessage": "${body.description.error.message?js_string}"
+        <#else>
+            "bpmnErrorCode": "CallCreditPlatformError",
+            <#if body?? && body.description?? && body.description?is_hash && body.description.error?? && body.description.error.message??>
+                "bpmnErrorMessage": "${body.description.error.message?js_string}"
+            <#elseif body.description?? && body.description?is_string>
+                "bpmnErrorMessage": "${body.description?js_string}"
+            <#else>
+                "bpmnErrorMessage": "Error occured retrieving automatic credit score. Please check integrator."
+            </#if> 
+        </#if>
+    }
+}
