@@ -1,0 +1,48 @@
+    <#-- variable "test" won't pass DTO, but it exists for adding comas between next variables -->
+{
+    "test": "test"
+    <#if body.variables.OrganizationType??&& body.variables.OrganizationType?has_content>,
+       "type": "${body.variables.OrganizationType}"
+    </#if>
+    <#if body.variables.customerProspect??&& body.variables.customerProspect?has_content>,
+       "customerProspect": <#if body.variables.customerProspect == 'true'>
+            true
+        <#else>
+            false
+        </#if>
+    </#if>
+    <#if body.variables.deletion??&& body.variables.deletion?has_content>,
+       "deletion": <#if body.variables.deletion == 'true'>
+            true
+        <#else>
+            false
+        </#if>
+    </#if>
+    <#if body.variables.groupDeletion??&& body.variables.groupDeletion?has_content>,
+       "groupDeletion": <#if body.variables.groupDeletion == 'true'>
+            true
+        <#else>
+            false
+        </#if>
+    </#if>
+    <#if body.variables.caActive??&& body.variables.caActive?has_content>,
+       "caActive": "${body.variables.caActive}"
+    </#if>
+    <#if body.variables.groupUpdated??&& body.variables.groupUpdated?has_content>,
+       "groupUpdated":  <#if body.variables.groupUpdated == 'true'>
+            true
+        <#else>
+            false
+        </#if>
+    </#if>
+    <#if body.variables.riskSegment??&& body.variables.riskSegment?has_content>,
+       "riskSegment": "${body.variables.riskSegment}"
+    </#if>
+    <#if body.variables.CreditStatus??&& body.variables.CreditStatus?has_content>,
+        <#if body.variables.CreditStatus == '3' || body.variables.CreditStatus == '4'>
+            "defaultRegisterFlag": true
+        <#else>
+            "defaultRegisterFlag": false
+        </#if>
+    </#if>
+}
