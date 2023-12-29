@@ -1,0 +1,13 @@
+<#assign index = body.indexOfProcessedFile?number />
+<#assign fileName = headers.fileNames[index] />
+{
+    "fileInfoObject": {
+        "fileName": "${fileName}",
+        "addedBy": "Automatic credit assessment",
+        "status": "In Progress",
+        "linkToFile": "${headers.fileNameUrlMapping[fileName]}",
+        "fileSize": "${headers.fileSizes[fileName]?long?c}",
+        "documentRestrictionCode": "${headers.documentRestrictionCode}",
+        "applicationId": "${headers.applicationId}"
+    }
+}
