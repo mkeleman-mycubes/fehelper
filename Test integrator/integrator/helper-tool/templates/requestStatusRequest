@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.dfs.com/automotive/workspacetypes/1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:GetCreateOrUpdateBWSRequestStatus>
+         <!--type: string-->
+         <ns:Request_Id>00505684-FF11-A1EB-8EE8-792C6D25510C</ns:Request_Id>
+      </ns:GetCreateOrUpdateBWSRequestStatus>
+   </soapenv:Body>
+</soapenv:Envelope>
