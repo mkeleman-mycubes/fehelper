@@ -1,0 +1,65 @@
+{
+
+
+  "groups":[
+  
+    <#--  Groups with NLACL LessorID -->
+    {
+     "name": "E501_UR-501-CSDMO-CRA-INT-NL-INT-Admin"
+    },
+    {
+      "name":"E501_UR-440-CSDMO-CRA-INT-NL-Admin"
+    },
+    {
+      "name":"E501_UR-440-CSDMO-CRA-INT-NL-Underwriters"
+    },
+    {
+      "name":"E501_UR-440-CSDMO-CRA-INT-NL-Underwriters-Corp-INT"
+    },
+    {
+      "name":"E501_UR-440-CSDMO-CRA-INT-NL-Sales"
+    }
+    
+    <#--  Groups with NLSLS Lessor ID -->
+   <#--
+    {
+      "name":"E501_UR-440-CSDMO-CRA-INT-NL-SLS-Admin"
+    },
+    {
+      "name":"E501_UR-440-CSDMO-CRA-INT-NL-SLS-Underwriters"
+    },
+    {
+      "name":"E501_UR-440-CSDMO-CRA-INT-NL-SLS-Sales"
+    }
+    -->
+      <#--  Groups with ES Lessor ID -->
+     <#--
+      
+    {
+      "name":"E501_UR-584-CSDMO-CRA-INT-ES-Admin"
+    },
+    {
+      "name":"E501_UR-584-CSDMO-CRA-INT-ES-Underwriters"
+    },
+    {
+      "name":"E501_UR-584-CSDMO-CRA-INT-ES-Sales"
+    }
+    -->
+    
+     <#--  Groups with IT Lessor ID -->
+    <#--
+    {
+      "name":"E501_UR-906-CSDMO-CRA-INT-IT-Admin"
+    },
+    {
+      "name":"E501_UR-906-CSDMO-CRA-INT-IT-Underwriters"
+    },
+    {
+      "name":"E501_UR-906-CSDMO-CRA-INT-IT-Sales"
+    }
+    -->
+  ],
+  "actualPageSize": 3,
+  "requestedPageSize":250,
+  "nextPageCookie":null
+}
