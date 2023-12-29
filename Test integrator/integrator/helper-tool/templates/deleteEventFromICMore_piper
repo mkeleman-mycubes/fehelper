@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "deleteEventFromICMore",
+            "script" : "headers.handleSoapExceptionTemplate = 'callICMore_error'; headers.handleExceptionTemplate = 'callICMore_error'"
+        }
+    ]
+}
