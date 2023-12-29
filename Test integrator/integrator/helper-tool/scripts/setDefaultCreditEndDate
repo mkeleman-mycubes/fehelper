@@ -1,0 +1,11 @@
+import groovy.time.TimeCategory
+
+def today = new Date();
+
+use(TimeCategory) {
+    def nextYear = today + 1.year - 1;
+    def defaultCreditEndDate = nextYear.format("dd-MM-yyyy");
+    headers.defaultCreditEndDate = defaultCreditEndDate;
+}
+
+return body;
