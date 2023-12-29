@@ -1,0 +1,16 @@
+{
+    "pipes": [
+        <#if !body.errorOccured?? && body.AccountQueryPage_Output?? && body.AccountQueryPage_Output?has_content && body.AccountQueryPage_Output.ListOfAccount.Account?? && body.AccountQueryPage_Output.ListOfAccount.Account?has_content??>
+        {
+            "type": "action",
+            "name": "retrieveICMoreUserData",
+            "script": "accountData = body.AccountQueryPage_Output.ListOfAccount.Account; owner = body.AccountQueryPage_Output.ListOfAccount.Account.Owner; headers.handleSoapExceptionTemplate = 'callICMore_error'; headers.handleExceptionTemplate = 'callICMore_error'"
+        },
+        </#if>
+        {
+            "type": "transform",
+            "name": "retrieveICMoreAccountUserData_setVariables",
+            "script": "<#if body.errorOccured?? || !body.AccountQueryPage_Output.ListOfAccount.Account??> body = body <#else> body = [accountData: accountData, userQueryPage: body.UserQueryPage_Output, owner: owner] </#if>"
+        }
+    ]
+}
