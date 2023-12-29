@@ -1,0 +1,8 @@
+{
+    "variables" : {
+        "retry": {
+            "value": "${body.answers.retry.data.answerLabel[0]?capitalize}",
+            "type": "String"
+        }
+    }
+}
