@@ -1,0 +1,15 @@
+{
+    "status": "true",
+    "errorOccured": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "RetrieveDatabaseError",
+        "bpmnErrorMessage": "Error occured during retrieving data from database.
+         <br><br>
+         ICMore alias: ${body.variables.USER_Alias} 
+         <br>
+         ICMore first name: ${body.variables.USER_FirstName}
+         <br>
+         ICMore last name: ${body.variables.USER_LastName}
+         <br>"
+    }
+}
