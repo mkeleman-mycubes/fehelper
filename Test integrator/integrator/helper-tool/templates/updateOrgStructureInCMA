@@ -1,0 +1,4 @@
+{
+    "cpStructure": <@printObjectToJson source=body.variables.CPGroupStructure />,
+    "lessorId": "${body.variables.LessorID}"
+}
