@@ -1,0 +1,33 @@
+import java.util.Date;
+
+def apiKeys = [
+    "DHC-TST-NL": "df35330f-e7e7-4c54-b299-265eacb766a0",
+    "DHC-TST-ES": "a295b423-4233-4d2c-be83-9934c99cc008",
+    "DHC-TST-IT": "b6d26d40-8b07-4fcb-9add-1bcbe1cebaa2",
+    "DHC-TST-FR": "421fbab3-63f5-466f-9493-404d82812d12",
+    "DHC-TST-BE": "977beeb3-29c6-4bfa-bbe9-d5bb0c373d8a",
+    "DHC-TST-DE": "77222e1f-55bb-4d81-a913-2155bffa46ce",
+    "DHC-INT-NL": "6d31c440-c36d-4bd0-ada3-0e29e913bc0b",
+    "DHC-INT-ES": "349b6e08-4e19-4df9-a8a7-7a4afe1b9daf",
+    "DHC-INT-IT": "f0f8296e-500c-4f63-9258-861d86918b78",
+    "DHC-INT-FR": "8ef01d6d-895d-47c2-a59b-91aa82563486",
+    "DHC-INT-BE": "116ce68b-88c9-4a7f-a7dd-02321dd2da34",
+    "DHC-INT-DE": "b0c8c9b5-ccb6-4a1c-944c-ec203b1cdd98",
+    "DHC-PRD-NL": "1ef8b589-94b8-469c-80f2-fce58ff2dda6",
+    "DHC-PRD-ES": "76fcb57e-19a6-47a1-b129-835bb51f6b71",
+    "DHC-PRD-IT": "b6f79e21-3956-4f42-b85a-7e23d16fc9ce",
+    "DHC-PRD-FR": "590056f3-eecc-42c1-ab57-28f42556d64e",
+    "DHC-PRD-BE": "03761cdf-cb73-4cc7-9e1d-fc632596df5c",
+    "DHC-PRD-DE": "f4fe39a0-5d1b-488a-886c-b09b8cc99fe3",
+    "test-env-NL": "NL_TEST_API_KEY",
+    "test-env-ES": "ES_TEST_API_KEY",
+    "acceptance-NL": "NL_ACCEPTANCE_API_KEY",
+    "acceptance-ES": "ES_ACCEPTANCE_API_KEY",
+];
+
+def env = body.variables["PROCESS-NAMESPACE"] + "-" + body.variables["CustomerCountry"];
+
+headers.aDateTimeNowTimestamp = (int) (new Date().getTime() / 1000);
+headers["CDSApiKey"] = apiKeys[env];
+
+return body;
