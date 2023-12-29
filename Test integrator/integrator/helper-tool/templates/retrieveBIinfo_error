@@ -1,0 +1,19 @@
+{   "errorOccured": "true",
+    "status": "true",
+    "bpmnError": {
+        <#if body?? && body.description?? && body.description?is_hash && body.description.title?? && body.description.title == "No results were found">
+            "bpmnErrorCode": "NoBIResultsError",
+         <#elseif body?? && body.description?? && body.description?is_hash && body.description.title?? && body.description.title == "Multiple rows returned">
+             "bpmnErrorCode": "MultipleRecordsError",
+        <#else>
+            "bpmnErrorCode": "RetrieveBIError",
+        </#if>
+        <#if body?? && body.description?? && body.description?is_hash && body.description.detail??>
+            "bpmnErrorMessage": "${body.description.detail?json_string}"
+        <#elseif body.description?? && body.description?is_string>
+            "bpmnErrorMessage": "${body.description?json_string}"
+        <#else>
+            "bpmnErrorMessage": "Error occured retrieving BI info. Please check integrator."
+        </#if>
+    }
+}
