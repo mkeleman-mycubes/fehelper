@@ -1,0 +1,6 @@
+import java.util.Date;
+
+def daylightTimeSaving = TimeZone.getTimeZone( "Europe/Amsterdam").inDaylightTime( new Date() );
+body.daylightTimeSaving = daylightTimeSaving;
+
+return body;
