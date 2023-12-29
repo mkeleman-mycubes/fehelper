@@ -1,0 +1,12 @@
+{
+    "modifications": {
+        "possibleCustomers": {
+            "value": "${body.possibleCustomersJSON}",
+            "type": "Json"
+        },
+        "CreditPlatformResponseJSON": {
+            "value": "${body.cdsResponseJSON}",
+            "type": "Json"
+        }
+    }
+}
