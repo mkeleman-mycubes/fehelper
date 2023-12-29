@@ -1,0 +1,17 @@
+[
+    {
+    	"GCOrganizationFunction": {
+    		"liablerelationcompanyname": "Pro-At B.V.",
+    		"companyid": "H243543830000",
+    		"creditstatuscode": "1",
+    		"creditstatusdescription": "Akkoord",
+    		"countrycode": "NL",
+    		"customerid": "1827670",
+    		"vatid": null,
+    		"liablerelation": "1827670",
+    		"liablerelationvatid": null,
+    		"lessorid": "NLACL",
+    		"liablerelationcompanyid": "H243543830000"
+	    }
+    }
+]
