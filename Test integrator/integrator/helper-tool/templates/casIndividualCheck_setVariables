@@ -1,0 +1,45 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#if body.screenAddressResponse?? && body.screenAddressResponse.screenAddressResponse?? >
+    <#assign responseData = body.screenAddressResponse.screenAddressResponse />
+</#if>
+<#if body.errorOccured?? && body.errorOccured == true>
+{
+    "status": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "CASCallFailedError",
+        "bpmnErrorMessage": <#if body.error?? && body.error.message?? && body.error.message.description?? && body.error.message.description?has_content>"${body.error.message.description?html}"<#else>"Error occured during CAS call"</#if>
+    }
+}
+<#elseif responseData?? && responseData.state == "ERROR">
+{
+    "status": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "CASCallFailedError",
+        "bpmnErrorMessage": <#if responseData.message?? && responseData.message?has_content>"${responseData.message}"<#else>"Error occured during CAS call"</#if>
+    }
+}
+<#elseif responseData?? && responseData.state == "INSUFFICIENT_BALANCE">
+{
+    "status": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "CASCallFailedError",
+        "bpmnErrorMessage": "Insufficient balance"
+    }
+}
+<#else>
+{
+    "status": "true",
+    "processVariables": {
+        <#if responseData.queryResults.queryResultsEntry.screeningInfo.hitType?? && responseData.queryResults.queryResultsEntry.screeningInfo.hitType?has_content>
+            "HitType": "${responseData.queryResults.queryResultsEntry.screeningInfo.hitType}",
+        </#if>
+        <#if responseData.queryResults.queryResultsEntry.screeningInfo.query.pruefAuftrag?? && responseData.queryResults.queryResultsEntry.screeningInfo.query.pruefAuftrag?has_content>
+            "CASSearchId": "${responseData.queryResults.queryResultsEntry.screeningInfo.query.pruefAuftrag!}",
+        </#if>
+        "AddressHits": "${responseData.queryResults.queryResultsEntry.screeningInfo.addressHits}",
+        "CASCheckTime": "${aDateTime?string["yyyy-MM-dd"]}",
+        "CASCheckTime_ISO": "${aDateTime?iso_utc}"
+    }
+}
+</#if>
