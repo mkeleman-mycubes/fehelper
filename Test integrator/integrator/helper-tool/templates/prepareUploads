@@ -1,0 +1,21 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#assign timestamp = (aDateTime?long / 1000)?round?c>
+
+{
+    "variables": {
+        <#list body.uploadFields as uploadField>
+            <#if headers.filesInfo[uploadField]??>
+                <#if headers.filesInfo[uploadField]?is_sequence>
+                sequence
+                <#else>
+                    "DOCUMENT_${timestamp}_${headers.filesInfo[uploadField].filename}.${headers.filesInfo[uploadField].extension}": {
+                        "fileName": "${headers.filesInfo[uploadField].filename}.${headers.filesInfo[uploadField].extension}",
+                        "dateAdded": "${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}",
+                        "addedBy": "${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}"
+                    }
+                </#if>
+            </#if>
+        </#list>
+    }
+}
