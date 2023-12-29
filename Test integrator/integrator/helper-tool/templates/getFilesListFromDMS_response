@@ -1,0 +1,115 @@
+<#ftl ns_prefixes={"D":"http://schemas.cordys.com/"}>
+<#if headers.restConnectorProperties.environment == "DHC">
+    <@XMLToJSON body />
+<#else>
+{
+   "GetDocumentListResponse":[
+      {
+         "documentInfo":{
+            "ID":"24568983",
+            "DocumentName":"2020_renta.pdf",
+            "CreationDate":"2021-09-22T09:51:48",
+            "LastModificationDate":"2021-09-22T09:51:48",
+            "FileDataSize":"247123",
+            "MimeType":"application/pdf",
+            "VersionNum":"1",
+            "CustomerID":{
+               
+            },
+            "EnterpriseNo":{
+               
+            },
+            "VATNo":{
+               
+            },
+            "ReferenceNo":{
+               
+            },
+            "BP_Code":{
+               
+            },
+            "PartnerCustomerNo":{
+               
+            },
+            "SearchName":{
+               
+            },
+            "BillingName":{
+               
+            },
+            "SegmentMV":"Core",
+            "Status":"ACTIVE",
+            "StatusDate":"2021-09-22",
+            "Country":"ES",
+            "LegalEntity":"AthlonES",
+            "CaseID":"a12ce731-1b79-11ec-8f59-045056002dc1",
+            "CaseDate":"2021-09-22",
+            "CaseType":"CRA",
+            "Segment":"Core",
+            "DocTypeNumber":"71",
+            "DocTypeName":"CRA Sales Document",
+            "Adate":"2021-09-22",
+            "NotificationTo":{
+               
+            },
+            "UniqueIdentifier":{
+               
+            }
+         }
+      },
+      {
+         "documentInfo":{
+            "ID":"24568407",
+            "DocumentName":"2021_6_JUNIO_copia.pdf",
+            "CreationDate":"2021-09-22T09:51:51",
+            "LastModificationDate":"2021-09-22T09:51:51",
+            "FileDataSize":"35334",
+            "MimeType":"application/pdf",
+            "VersionNum":"1",
+            "CustomerID":{
+               
+            },
+            "EnterpriseNo":{
+               
+            },
+            "VATNo":{
+               
+            },
+            "ReferenceNo":{
+               
+            },
+            "BP_Code":{
+               
+            },
+            "PartnerCustomerNo":{
+               
+            },
+            "SearchName":{
+               
+            },
+            "BillingName":{
+               
+            },
+            "SegmentMV":"Core",
+            "Status":"ACTIVE",
+            "StatusDate":"2021-09-22",
+            "Country":"ES",
+            "LegalEntity":"AthlonES",
+            "CaseID":"a12ce731-1b79-11ec-8f59-045056002dc1",
+            "CaseDate":"2021-09-22",
+            "CaseType":"CRA",
+            "Segment":"Core",
+            "DocTypeNumber":"70",
+            "DocTypeName":"CRA Sales Document",
+            "Adate":"2021-09-22",
+            "NotificationTo":{
+               
+            },
+            "UniqueIdentifier":{
+               
+            }
+         }
+      }
+   ]
+}
+</#if>
