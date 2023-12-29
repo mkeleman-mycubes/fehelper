@@ -1,0 +1,114 @@
+<#if headers.restConnectorProperties.environment == "DHC">
+    <#assign firstName = ""/>
+    <#assign lastName = ""/>
+    <#assign email = ""/>
+<#list body.values as value>
+        <#if value.name == 'givenName'>
+         <#assign firstName = value.values[0]/>
+         <#elseif value.name == 'sn'>
+         <#assign lastName = value.values[0]/>
+         <#elseif value.name == 'mail'>
+         <#assign email = value.values[0]/>
+      </#if>
+</#list>
+  {
+    "firstName": "${firstName}",
+    "lastName": "${lastName}",
+    "email": "${email}"
+  }
+<#else>
+  <#assign userInfoMap = {
+    	"UnderwriterNL1":{
+    		"firstName":"Underwriter",
+    		"lastName":"NL-1",
+    		"email":"shamborovskyy@gmail.com"
+    	},
+    	"UnderwriterES1":{
+    		"firstName":"Underwriter",
+    		"lastName":"ES-1",
+    		"email":"ishvets@mycubes.nl"
+    	},
+    	"RPEDRO":{
+    		"firstName":"Pedro",
+    		"lastName":"Rodriguez",
+    		"email":"pedro.rodriguez@mycubes.nl"
+    	},
+    	"cbenz":{
+    		"firstName":"Carl",
+    		"lastName":"Benz",
+    		"email":"cbenz@mycubes.nl"
+    	},
+    	"UnderwriterNL2":{
+    		"firstName":"Underwriter",
+    		"lastName":"NL-2",
+    		"email":"shamborovskyy@gmail.com"
+    	},
+    	"PSANCHEZ":{
+    		"firstName":"Pedro",
+    		"lastName":"Sanchez",
+    		"email":"test@mycubes.nl"
+    	},
+    	"SalesNL1":{
+    		"firstName":"Sales",
+    		"lastName":"NL-1",
+    		"email":"shamborovskyy@gmail.com"
+    	},
+    	"XSAVIOLA":{
+    		"firstName":"Xavier",
+    		"lastName":"Saviola",
+    		"email":"xavier.saviola@mycubes.nl"
+    	},
+    	"AthlonCreditAdminES":{
+    		"firstName":"AthlonCreditAdminES",
+    		"lastName":"Credit Admin ES",
+    		"email":"shvets@mycubes.nl"
+    	},
+    	"AthlonCreditAdminFR":{
+    		"firstName":"AthlonCreditAdminFR",
+    		"lastName":"Credit Admin FR",
+    		"email":"shvets@mycubes.nl"
+    	},
+    	"AthlonCreditPortal":{
+    		"firstName":"Athlon",
+    		"lastName":"Credit Admin",
+    		"email":"acamo@mycubes.nl"
+    	},
+    	"AthlonCreditAdminNL":{
+    		"firstName":"Athlon",
+    		"lastName":"Credit Admin NL",
+    		"email":"acamo@mycubes.nl"
+    	},
+    	"SalesNL3":{
+    		"firstName":"Sales",
+    		"lastName":"NL-3",
+    		"email":"acamo@mycubes.nl"
+    	},
+    	"SalesNL2":{
+    		"firstName":"Sales",
+    		"lastName":"NL-2",
+    		"email":"acamo@mycubes.nl"
+    	},
+    	"HUNTERM":{
+    		"firstName":"Mike",
+    		"lastName":"Hunter",
+    		"email":"brian.schilham@mycubes.nl"
+    	},
+    	"ESSMEO":{
+    	    "firstName": "SME Online",
+    	    "lastName": "Department",
+    	    "email": "test@mycubes.nl"
+    	},
+    	"PTSMEO":{
+    	    "firstName": "SME Online",
+    	    "lastName": "Department",
+    	    "email": "test@mycubes.nl"
+    	}
+    }/>
+ <#assign username = headers.gasId>
+ 
+   <#list userInfoMap as user, info>
+    <#if user == username>
+      <@printObjectToJson source=info />
+    </#if>
+   </#list>
+ </#if>
