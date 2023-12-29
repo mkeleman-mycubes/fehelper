@@ -1,0 +1,13 @@
+{
+    "referenceNbr": "${body.variables.referenceNbr}",
+    "icmoreRowId": "${body.variables.icmoreRowId}",
+    "liable": ${body.variables.liable?c},
+    "lessorId": "${body.variables.lessorId}",
+    "organizationId": "${body.variables.organizationId}",
+    "type": "${body.variables.type}",
+    "partnerType": "${body.variables.partnerType}",
+    "status": "${body.variables.status}",
+    "creditLineHolder": ${body.variables.creditLineHolder?c},
+    "actualApprovedRentals": ${body.variables.actualApprovedRentals}
+
+}
