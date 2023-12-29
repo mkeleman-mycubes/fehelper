@@ -1,0 +1,12 @@
+{
+    "pipes" : [
+        {
+             "type": "transform",
+             "name": "groupToLessor_mapping"
+        },
+        {
+            "type": "script",
+            "name": "filterProcessGroups"
+        }
+    ]
+}
