@@ -1,0 +1,100 @@
+<script>
+    (function() {
+        const FE_curr = FE["{{options.containerId}}"];
+        const dataMap = {
+            "linenumber": "number",
+            "licenseplate": "licensePlateNumber",
+            "invoicesubcategory": "type",
+            "lineamount": "amount",
+            "status": "status"
+        };
+        const dataMapKeys = Object.keys(dataMap);
+        const allAnswers = FE_curr.getAllAnswers();
+        const invoiceLinesStr = allAnswers.invoiceLines[0];
+        let showInfoMessage = false;
+        
+        let invoiceLines = [];
+        
+        if (invoiceLinesStr && invoiceLinesStr.length > 0) {
+            invoiceLines = JSON.parse(invoiceLinesStr);
+        }
+
+        let h = [];
+
+
+        for (let invoiceLineIndex = 0; invoiceLineIndex < invoiceLines.length; invoiceLineIndex++) {
+            const currInvoiceLine = invoiceLines[invoiceLineIndex];
+            const showNonAlgkoInvoices = FE_curr.getAnswer({questionName: "non_algko_invoice"})
+
+            if (currInvoiceLine?.type === "ALGKO" || showNonAlgkoInvoices[0] === 'non_algko') {
+                h.push('<tr role="row" class="mat-row ng-star-inserted">');
+
+                if (showNonAlgkoInvoices[0] === 'non_algko' && currInvoiceLine?.type !== "ALGKO") {
+                  showInfoMessage = true;
+                } else {
+                  showInfoMessage = false;
+                }
+
+                for (let i = 0; i < dataMapKeys.length; i++) {
+                    const columnKey = dataMapKeys[i];
+                    const invoiceLineparam = dataMap[columnKey];
+                    let invoiceLinevalue = null;
+
+                    if (currInvoiceLine[invoiceLineparam] !== undefined && currInvoiceLine[invoiceLineparam] !== null) {
+                        invoiceLinevalue = currInvoiceLine[invoiceLineparam];
+                    } else {
+                        invoiceLinevalue = '-';
+                    }
+
+                    if(columnKey === 'linenumber') {
+                        h.push('<td role="gridcell" class="mat-cell mat-column-linenumber ng-star-' + columnKey + '" style="padding-left: 0;">' + invoiceLinevalue + '</td>');
+                    } else if (columnKey === 'lineamount') {
+                        h.push('<td role="gridcell" class="mat-cell mat-column-linenumber ng-star-' + columnKey + '">' + formatMoney(invoiceLinevalue) + '</td>');
+                    } else {
+                        h.push('<td role="gridcell" class="mat-cell mat-column-linenumber ng-star-' + columnKey + '">' + invoiceLinevalue + '</td>');
+                    }
+                }
+                
+                h.push('</tr>');
+            }
+        }
+
+        if (showInfoMessage) {
+            jQuery('#{{options.containerId}} #nonAlgkoMessage').show();
+        }
+
+        jQuery('#{{options.containerId}} .invoice-line-table tbody').html(h.join(' '));
+
+        //formatMoney(answer, 2, ',', '.', '€ ');
+        jQuery('#{{options.containerId}} .amountExlVat').focusout(function() {
+          let sum = 0;
+          const allAnswers = FE_curr.getAllAnswers();
+          const amountExlVats = allAnswers.lineItemAmountExclVAT;
+
+          for(let i = 0; i < amountExlVats.length; i++) {
+            for(let j = 0; j < amountExlVats[i].length; j++) {
+              sum = +amountExlVats[i][j] + sum;
+            }
+          }
+
+          FE_curr.setAnswer({questionName: 'lineItemAmountExclVATSum', answer: sum.toString()});
+        });
+
+        function formatMoney(number, decPlaces, decSep, thouSep, moneySign) {
+            decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces,
+                decSep = typeof decSep === "undefined" ? "." : decSep,
+                thouSep = typeof thouSep === "undefined" ? "," : thouSep;
+            moneySign = typeof moneySign === "undefined" ? "" : moneySign;
+            var sign = number < 0 ? "-" : "";
+            var i = String(parseInt(number = Math.abs(Number(number) || 0).toFixed(decPlaces)));
+            var j = (j = i.length) > 3 ? j % 3 : 0;
+
+            var formattedData = moneySign + sign +
+                (j ? i.substr(0, j) + thouSep : "") +
+                i.substr(j).replace(/(\decSep{3})(?=\decSep)/g, "$1" + thouSep) +
+                (decPlaces ? decSep + Math.abs(number - i).toFixed(decPlaces).slice(2) : "");
+
+            return formattedData;
+        }
+    })()
+</script>
