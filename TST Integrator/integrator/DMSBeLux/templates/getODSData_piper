@@ -1,0 +1,13 @@
+{
+	"pipes": [
+		{
+			"type": "action",
+			"name": "getODSData",
+			"script": "headers.handleRestExceptionTemplate = 'getODSData_error';  headers.handleExceptionTemplate = 'getODSData_error'"
+		},
+		{
+			"type": "transform",
+			"name": "getODSData_setVariables"
+		}
+	]
+}
