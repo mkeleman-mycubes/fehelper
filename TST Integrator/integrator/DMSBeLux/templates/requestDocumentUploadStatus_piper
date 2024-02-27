@@ -1,0 +1,28 @@
+{
+	"pipes": [
+	    {
+			"type": "transform",
+			"name": "dummy",
+			"script": "initialBody = body"
+		},
+		{
+			"type": "action",
+			"name": "loginToDMS",
+			"script": "tenantId = initialBody.tenantId; headers.handleRestExceptionTemplate = 'requestDocumentUploadStatus_error';  headers.handleExceptionTemplate = 'requestDocumentUploadStatus_error'"
+		},
+		{
+			"type": "action",
+			"name": "getSAMLToken",
+			"script": "headers.handleSoapExceptionTemplate = 'requestDocumentUploadStatus_error'; headers.handleExceptionTemplate = 'requestDocumentUploadStatus_error'"
+		},
+		{
+			"type": "action",
+			"name": "requestDocumentUploadStatus",
+			"script": "headers.SAMLArt = body.SAMLArt; body.variables = initialBody.variables; headers.handleSoapExceptionTemplate = 'requestDocumentUploadStatus_error'; headers.handleExceptionTemplate = 'requestDocumentUploadStatus_error'"
+		},
+		{
+			"type": "transform",
+			"name": "requestDocumentUploadStatus_setVariables"
+		}
+	]
+}
