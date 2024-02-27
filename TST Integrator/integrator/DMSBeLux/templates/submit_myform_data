@@ -1,0 +1,105 @@
+<#assign dateTime = .now>
+<#if body.serviceCall?? && body.serviceCall == "true">
+    <#assign taskStatus = body.answers['taskStatus'][0]?json_string>
+    {
+        "variables": {
+            <#-- Set Status -->
+            <#if body.answers['action'][0] == "on_hold">
+                "approvalStatusNonALGKOInvoice": {
+                    "type": "String",
+                    "value": "ON_HOLD"
+                },
+                <#assign taskStatus = "On Hold">
+            </#if>
+            <#if body.answers['action'][0] == "approve">
+                "approvalStatusNonALGKOInvoice": {
+                    "type": "String",
+                    "value": "APPROVE"
+                },
+                <#assign taskStatus = "Approved">
+            </#if>
+    
+    
+            <#-- Set FormData -->
+            <#if body.answers["contractNo"]??>
+                "contractNo": { "type": "String", "value": "${body.answers["contractNo"][0]}"},
+            <#elseif body["answers"].claim_nr??>
+                "claim_nr": { "type": "String", "value": "${body.answers["claim_nr"][0]}"},
+            <#elseif body["answers"].internal_invoice_number??>
+                "internal_invoice_number": { "type": "String", "value": "${body.answers["internal_invoice_number"][0]}"},
+            <#elseif body["answers"].customerNo??>
+                "customerNo": { "type": "String", "value": "${body.answers["customerNo"][0]}"},
+            </#if>
+    
+            <#if body.answers["modificationDate"]??>
+                "modificationDate": { "type": "String", "value": "${body.answers["modificationDate"][0]}"},
+            </#if>
+            <#if body.answers["title"]??>
+                "title": { "type": "String", "value": "${body.answers["title"][0]}"},
+            </#if>
+            <#if body.answers["department"]??>
+                "department": { "type": "String", "value": "${body.answers["department"][0]}"},
+            </#if>
+            <#if body.answers["category"]??>
+                "category": { "type": "String", "value": "${body.answers["category"][0]}"},
+            </#if>
+            <#if body.answers["subcategory"]??>
+                "subcategory": { "type": "String", "value": "${body.answers["subcategory"][0]}"},
+            </#if>
+            <#if body.answers.tags?? && body.answers.tags[0]?is_sequence>
+                "tags": { "type": "String", "value": "${body.answers.tags[0]?join(",")}"}
+            <#else>
+                "tags": { "type": "String", "value": ""}
+            </#if>
+        }
+    }
+<#else>
+    <#assign taskStatus = body.answers['taskStatus'].data.answer[0]?json_string>
+    {
+        "variables": {
+            <#-- Set Status -->
+            <#if body.answers['action'].data.answer[0] == "on_hold">
+                "approvalStatusNonALGKOInvoice": {
+                    "type": "String",
+                    "value": "ON_HOLD"
+                },
+                <#assign taskStatus = "On Hold">
+            </#if>
+            <#if body.answers['action'].data.answer[0] == "approve">
+                "approvalStatusNonALGKOInvoice": {
+                    "type": "String",
+                    "value": "APPROVE"
+                },
+                <#assign taskStatus = "Approved">
+            </#if>
+    
+    
+            <#-- Set FormData -->
+            <#if body.answers["contractNo"]??>
+                "contractNo": { "type": "String", "value": "${body.answers["contractNo"].data.answer[0]}"},
+            <#elseif body["answers"].claim_nr??>
+                "claim_nr": { "type": "String", "value": "${body.answers["claim_nr"].data.answer[0]}"},
+            <#elseif body["answers"].internal_invoice_number??>
+                "internal_invoice_number": { "type": "String", "value": "${body.answers["internal_invoice_number"].data.answer[0]}"},
+            <#elseif body["answers"].customerNo??>
+                "customerNo": { "type": "String", "value": "${body.answers["customerNo"].data.answer[0]}"},
+            </#if>
+    
+            <#if body.answers["modificationDate"]??>
+                "modificationDate": { "type": "String", "value": "${body.answers["modificationDate"].data.answer[0]}"},
+            </#if>
+            <#if body.answers["title"]??>
+                "title": { "type": "String", "value": "${body.answers["title"].data.answer[0]}"},
+            </#if>
+            <#if body.answers["department"]??>
+                "department": { "type": "String", "value": "${body.answers["department"].data.answer[0]}"},
+            </#if>
+            <#if body.answers["category"]??>
+                "category": { "type": "String", "value": "${body.answers["category"].data.answer[0]}"},
+            </#if>
+            <#if body.answers["subcategory"]??>
+                "subcategory": { "type": "String", "value": "${body.answers["subcategory"].data.answer[0]}"}
+            </#if>
+        }
+    }
+</#if>
