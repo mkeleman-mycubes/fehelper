@@ -1,0 +1,158 @@
+<#assign fileExt = body.answers['nameScanningFile'].data.answer[0]?keep_after_last(".")?lower_case>
+{
+    "messageName" : "AtlasInvoiceRequest",
+    "tenantId" : "AthlonDMSBeLux",
+    "processVariables" : {
+        "handledByAtlas": {
+            "type": "Boolean",
+            "value": "${body.answers['handledByAtlas'].data.answer[0]}"
+        },
+        "atlasStatusOfTheInvoice": {
+                "type": "String",
+                "value": "${body.answers['atlasStatusOfTheInvoice'].data.answer[0]}"
+        },
+        "invoiceNrInternal": {
+                "type": "String",
+                "value": "${body.answers['invoiceNrInternal'].data.answer[0]}"
+        },
+        "invoiceNrTech": {
+                "type": "String",
+                "value": "${body.answers['invoiceNrTech'].data.answer[0]}"
+        },
+        "invoiceNrExternal": {
+                "type": "String",
+                "value": "${body.answers['invoiceNrExternal'].data.answer[0]}"
+        },
+        "invoiceIdIC": {
+            "type": "String",
+            "value": "${body.answers['invoiceIdIC'].data.answer[0]}"
+        },
+        "dateRegistered": {
+                "type": "String",
+                "value": "${body.answers['dateRegistered'].data.answer[0]}"
+        },
+        "dateInvoice": {
+                "type": "String",
+                "value": "${body.answers['dateInvoice'].data.answer[0]}"
+        },
+        "totalAmountVATExcl": {
+                "type": "Double",
+                "value": "${body.answers['totalAmountVATExcl'].data.answer[0]}"
+        },
+        "totalAmountVATIncl": {
+                "type": "Double",
+                "value": "${body.answers['totalAmountVATIncl'].data.answer[0]}"
+        },
+        "subcategory": {
+                "type": "String",
+                "value": "${body.answers['subcategory'].data.answer[0]}"
+        },
+        "invoiceType": {
+                "type": "String",
+                "value": "${body.answers['invoiceType'].data.answer[0]}"
+        },
+        "companyCode": {
+                "type": "String",
+                "value": "${body.answers['companyCode'].data.answer[0]}"
+        },
+        "supplierNr": {
+                "type": "String",
+                "value": "${body.answers['supplierNr'].data.answer[0]}"
+        },
+        "supplierName": {
+                "type": "String",
+                "value": "${body.answers['supplierName'].data.answer[0]}"
+        },
+        "supplierVAT": {
+                "type": "String",
+                "value": "${body.answers['supplierVAT'].data.answer[0]}"
+        },
+        <#if body.invoiceFile??>
+        "invoiceFile": {
+            "type": "Json",
+            "value": "{\"file\": \"${body.invoiceFile}\"}"
+        },
+        <#else>
+        "invoiceFile": {
+            "type": "Json",
+            "value": "{\"file\": \"\"}"
+        },        
+        </#if>        
+        "fileExt": {
+            "type": "String",
+            "value": "${fileExt}"
+        },
+        "scanFileName": {
+                "type": "String",
+                "value": "${body.answers['nameScanningFile'].data.answer[0]}"
+        },
+        "scanDate": {
+                "type": "String",
+                "value": "${body.answers['scanDate'].data.answer[0]}"
+        },
+        "invoiceLineNumber": {
+                "type": "String",
+                "value": "${body.answers['invoiceLineNumber'].data.answer[0]}"
+        },
+        "invoiceLineType": {
+                "type": "String",
+                "value": "${body.answers['invoiceLineType'].data.answer[0]}"
+        },
+        "invoiceLineSubType": {
+                "type": "String",
+                "value": "${body.answers['invoiceLineSubType'].data.answer[0]}"
+        },
+        "InvoiceLineAmountVATExcl": {
+                "type": "Double",
+                "value": "${body.answers['InvoiceLineAmountVATExcl'].data.answer[0]}"
+        },
+        "invoiceLineLicensePlate": {
+                "type": "String",
+                "value": "${body.answers['invoiceLineLicensePlate'].data.answer[0]}"
+        },
+        "invoiceLineAgreement": {
+                "type": "String",
+                "value": "${body.answers['invoiceLineAgreement'].data.answer[0]}"
+        },
+        "invoiceLineLedger": {
+                "type": "String",
+                "value": "${body.answers['invoiceLineLedger'].data.answer[0]}"
+        },
+        "invoiceLineCostCenter": {
+                "type": "String",
+                "value": "${body.answers['invoiceLineCostCenter'].data.answer[0]}"
+        },
+        "cpNr": {
+                "type": "String",
+                "value": "${body.answers['cpNr'].data.answer[0]}"
+        },
+        "cpName": {
+                "type": "String",
+                "value": "${body.answers['cpName'].data.answer[0]}"
+        },
+        "cpAtt": {
+                "type": "String",
+                "value": "${body.answers['cpAtt'].data.answer[0]}"
+        },
+        "cpTitle": {
+                "type": "String",
+                "value": "${body.answers['cpTitle'].data.answer[0]}"
+        },
+        "cpTel": {
+                "type": "String",
+                "value": "${body.answers['cpTel'].data.answer[0]}"
+        },
+        "cpEmail": {
+                "type": "String",
+                "value": "${body.answers['cpEmail'].data.answer[0]}"
+        },
+        "cpLang": {
+                "type": "String",
+                "value": "${body.answers['cpLang'].data.answer[0]}"
+        },
+        "PROCESS-NAMESPACE": {
+            "type": "String",
+            "value": "${body.answers['process_namespace'].data.answer[0]}"
+        }
+    }
+}
