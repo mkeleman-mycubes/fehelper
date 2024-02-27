@@ -1,0 +1,48 @@
+{
+  "variables": {
+    "approvalStatusAccountant": {
+        "type": "String",
+        "value": "Declined by First Approver"
+    },
+    "approvalStatusApprover1": {
+        "type": "String",
+        "value": "DECLINE"
+    },
+    "email_from": {
+        "type": "String",
+        "value": <#if body.secureData.user.profile.email != "">"${body.secureData.user.profile.email}"<#else>"${body.answers['decline_email_from'].data.answer[0]}"</#if>
+    },
+    "email_to": {
+        "type": "String",
+        "value": "${body.answers['decline_email_to'].data.answer[0]}"
+    },
+    "email_subject": {
+        "type": "String",
+        "value": "${body.answers['decline_subject'].data.answer[0]}"
+    },
+    "email_text": {
+        "type": "String",
+        "value": "${body.answers['decline_email_text'].data.answer[0]}"
+    },
+    "objectId": {
+        "type": "String",
+        "value": "${body.answers['invoiceNrInternal'].data.answer[0]}"
+    },
+    "title": {
+        "type": "String",
+        "value": "${body.answers['title'].data.answer[0]}"
+    },
+    "documentType": {
+        "type": "String",
+        "value": "INVOICE"
+    },
+    "PROCESS-NAMESPACE": {
+        "type": "String",
+        "value": "AthlonDMSBeLux-MyCubes"
+    },
+    "sendDeclineMail": {
+        "type": "String",
+        "value": "yes"
+    }
+  }
+}
