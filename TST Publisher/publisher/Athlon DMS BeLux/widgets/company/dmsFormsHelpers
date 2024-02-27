@@ -1,0 +1,13 @@
+<script>
+    FE["{{options.containerId}}"].validate = function (success, err) {
+        jQuery('#{{options.containerId}}').questionnaire('validateEvent', success, err);
+    };
+    
+    FE["{{options.containerId}}"].extraValidation = false;
+    
+    (function() {
+        if ("{{widget.variables.extraValidation}}" === "true") {
+            FE["{{options.containerId}}"].extraValidation = true;
+        }
+    })();
+</script>
