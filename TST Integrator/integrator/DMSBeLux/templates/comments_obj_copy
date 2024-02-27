@@ -1,0 +1,7 @@
+<#assign dateTime = .now>
+<#assign approvalStatus = "DECLINE">
+<#assign reviewer_comments = body.reviewer_comments>
+{
+    "type": "String",
+    "value" : "${reviewer_comments?json_string}"
+}

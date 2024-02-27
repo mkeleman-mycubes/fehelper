@@ -1,0 +1,14 @@
+<#--
+<#if headers.CamelHttpResponseCode == 204>
+{
+    "status": "true"
+}
+<#else>
+{
+    "status": "false"
+}
+</#if>
+-->
+{
+    "status": "true"
+}

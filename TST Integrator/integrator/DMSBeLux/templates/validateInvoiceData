@@ -1,0 +1,42 @@
+<#assign invoices = body.content>
+<#if body.serviceCall?? && body.serviceCall == "true">
+    <#assign invoiceNr = body.initBody.answers['internal_invoice_number'][0]>
+    <#assign validInvoice = "valid_invoice">
+    <#assign message = "Valid invoice number">
+    <#assign validationStatus = "true">
+    <#list invoices as invoice>
+      <#if invoice.number?? && invoice.number == invoiceNr>
+        <#assign validInvoice = "valid_invoice">
+        <#assign message = "Valid invoice number">
+        <#assign validationStatus = "true">
+        <#break>
+      <#else>
+        <#assign validInvoice = "not_valid_invoice">
+        <#assign message = "This is not an existing invoice number">
+        <#assign validationStatus = "false">
+      </#if>
+    </#list>
+<#else>
+    <#assign invoiceNr = body.initBody.answers['internal_invoice_number'].data.answer[0]>
+    <#assign validInvoice = "valid_invoice">
+    <#assign message = "Valid invoice number">
+    <#assign validationStatus = "true">
+    <#list invoices as invoice>
+      <#if invoice.number?? && invoice.number == invoiceNr>
+        <#assign validInvoice = "valid_invoice">
+        <#assign message = "Valid invoice number">
+        <#assign validationStatus = "true">
+        <#break>
+      <#else>
+        <#assign validInvoice = "not_valid_invoice">
+        <#assign message = "This is not an existing invoice number">
+        <#assign validationStatus = "false">
+      </#if>
+    </#list>
+</#if>
+
+{
+  "validInvoice": "${validInvoice}",
+  "message": "${message}",
+  "validationStatus": "${validationStatus}"
+}

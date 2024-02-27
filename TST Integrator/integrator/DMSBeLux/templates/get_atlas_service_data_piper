@@ -1,0 +1,9 @@
+{
+	"pipes": [
+		{
+			"type": "action",
+			"name": "get_atlas_service_data",
+			"script": "headers.atlas_service_type = body.atlas_service_type";
+		}
+	]
+}

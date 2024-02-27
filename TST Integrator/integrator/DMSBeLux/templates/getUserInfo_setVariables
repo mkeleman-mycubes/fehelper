@@ -1,0 +1,4 @@
+{
+    "groups": <@printObjectToJson source=body.groups/>,
+    "userInfo": <@printObjectToJson source=body.userInfo/>
+}

@@ -1,0 +1,14 @@
+{
+	"pipes": [
+		{
+			"type": "action",
+			"name": "ODM_login",
+			"script": "initialBody = body"
+		},
+		{
+			"type": "action",
+			"name": "ODM_getDocument",
+			"script": "headers.token = body.token; headers.documentId = initialBody.fileId"
+		}
+	]
+}

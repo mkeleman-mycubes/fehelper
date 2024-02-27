@@ -1,0 +1,104 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+
+{
+    "modifications" : {
+        "EmployeeAssignedDate": {
+            "value": "${aDateTime?string["yyyy-MM-dd | HH:mm:ss"]}",
+            "type": "String"
+        },
+        "AssignedBy": {
+            "value": "${body.answers.AssignedBy.data.answer[0]}",
+            "type": "String"
+        },
+        "currentApprover": {
+            "value": "${body.answers.AssignedBy.data.answer[0]}",
+            "type": "String"
+        },
+        "AssignedByName": {
+            "value": "${body.secureData.user.profile.firstName} ${body.secureData.user.profile.lastName}",
+            "type": "String"
+        },
+        "AssignedByGroup": {
+            "value": "${body.secureData.user.identity.groups[0].id}",
+            "type": "String"
+        },
+        "AssignedByGroupName": {
+            "value": "${body.secureData.user.identity.groups[0].name}",
+            "type": "String"
+        },
+        "AssignedToName": {
+            "value": "${body.answers.assign_to.data.answer[0]}",
+            "type": "String"
+        },
+        "companyCode": {
+            "value": "${body.answers.companyCode.data.answer[0]}",
+            "type": "String"
+        },
+        "invoiceNrTech": {
+            "value": "${body.answers.invoiceNrTech.data.answer[0]}",
+            "type": "String"
+        },
+        "invoiceLineNr": {
+            "value": "${body.answers.invoiceLineNr.data.answer[0]}",
+            "type": "String"
+        },
+        "invoiceNrInternal": {
+            "value": "${body.answers.invoiceNrInternal.data.answer[0]}",
+            "type": "String"
+        }
+        <#if body.answers.approver1?? && body.answers.approver1.data.answer[0] != "">
+        ,
+            "approver1": {
+                "value": "${body.answers.approver1.data.answer[0]}",
+                "type": "String"
+            }
+        </#if>
+        <#if body.answers.approver1Label?? && body.answers.approver1Label.data.answer[0] != "">
+        ,
+            "approver1Label": {
+                "value": "${body.answers.approver1Label.data.answer[0]}",
+                "type": "String"
+            }
+        </#if>
+        <#if body.answers.pre_approver1Label?? && body.answers.pre_approver1Label.data.answer[0] != "">
+        ,
+            "pre_approver1Label": {
+                "value": "${body.answers.pre_approver1Label.data.answer[0]}",
+                "type": "String"
+            }
+        </#if>
+        <#if body.answers.approver2??>
+        ,
+            "approver2": {
+                "value": "${body.answers.approver2.data.answer[0]}",
+                "type": "String"
+            }
+        </#if>
+        <#if body.answers.approver2Label??>
+        ,
+            "approver2Label": {
+                "value": "${body.answers.approver2Label.data.answer[0]}",
+                "type": "String"
+            }
+        </#if>
+        <#if body.answers.pre_approver2Label??>
+        ,
+            "pre_approver2Label": {
+                "value": "${body.answers.pre_approver2Label.data.answer[0]}",
+                "type": "String"
+            }
+        </#if>
+        
+        <#--
+        "AssignedToGroup": {
+            "value": "${body.groupsOfUser.groups[0].id}",
+            "type": "String"
+        },
+        "AssignedToGroupName": {
+            "value": "${body.groupsOfUser.groups[0].name}",
+            "type": "String"
+        }
+        -->
+    }
+}

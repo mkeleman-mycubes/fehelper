@@ -1,0 +1,14 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "decline_email",
+            "script" : "answers = body.answers; secureData = body.secureData; taskId = body.answers['taskid'].data.answer[0]; headers.taskId = taskId"
+        },
+        {
+            "type" : "action",
+            "name" : "add_new_comment",
+            "script" : "body.answers = answers; body.secureData = secureData; commentId = body.answers['invoiceNrInternal'].data.answer[0] + '-' + body.answers['invoiceNrTech'].data.answer[0] + '-' + body.answers['invoiceLineNr'].data.answer[0]; headers.commentId = commentId"
+        }
+    ]
+}

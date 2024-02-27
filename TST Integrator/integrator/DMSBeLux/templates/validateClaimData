@@ -1,0 +1,39 @@
+<#if body?? && body.serviceCall?? && body.serviceCall == "true">
+    <#assign claimNr = body.initBody.answers['claim_nr'][0]>
+    <#assign validClaim = "valid_claim">
+    <#assign message = "Valid claim number">
+    <#assign validationStatus = "true">
+    <#if body.id?? && body.id == claimNr>
+        <#assign validClaim = "valid_claim">
+        <#assign message = "Valid claim number">
+        <#assign validationStatus = "true">
+    <#else>
+        <#assign validClaim = "not_valid_claim">
+        <#assign message = "This is not an existing claim number">
+        <#assign validationStatus = "false">
+    </#if>
+<#elseif body??>
+    <#assign claimNr = body.initBody.answers['claim_nr'].data.answer[0]>
+    <#assign validClaim = "valid_claim">
+    <#assign message = "Valid claim number">
+    <#assign validationStatus = "true">
+    <#if body.id?? && body.id == claimNr>
+        <#assign validClaim = "valid_claim">
+        <#assign message = "Valid claim number">
+        <#assign validationStatus = "true">
+    <#else>
+        <#assign validClaim = "not_valid_claim">
+        <#assign message = "This is not an existing claim number">
+        <#assign validationStatus = "false">
+    </#if>
+<#else>
+    <#assign validClaim = "not_valid_claim">
+    <#assign message = "This is not an existing claim number">
+    <#assign validationStatus = "false">
+</#if>
+
+{
+  "validClaim": "${validClaim}",
+  "message": "${message}",
+  "validationStatus": "${validationStatus}"
+}

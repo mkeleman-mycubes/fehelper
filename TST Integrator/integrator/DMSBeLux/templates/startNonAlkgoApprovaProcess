@@ -1,0 +1,157 @@
+<#assign fileExt = body.variables['scanFileName']?keep_after_last(".")?lower_case>
+{
+    "messageName" : "DMSNonALGKOFlowRequest",
+    "tenantId" : "AthlonDMSBeLux",
+    "businessKey": "GENERATED-${.now?iso_local}",
+    "processVariables" : {
+        "atlasStatusOfTheInvoice": {
+                "type": "String",
+                "value": "${body.variables['atlasStatusOfTheInvoice']}"
+        },
+        "invoiceNrInternal": {
+                "type": "String",
+                "value": "${body.variables['invoiceNrInternal']}"
+        },
+        "invoiceNrTech": {
+                "type": "String",
+                "value": "${body.variables['invoiceNrTech']}"
+        },
+        "invoiceNrExternal": {
+                "type": "String",
+                "value": "${body.variables['invoiceNrExternal']}"
+        },
+        "invoiceIdIC": {
+            "type": "String",
+            "value": "${body.variables['invoiceIdIC']}"
+        },
+        "dateRegistered": {
+                "type": "String",
+                "value": "${body.variables['dateRegistered']}"
+        },
+        "dateInvoice": {
+                "type": "String",
+                "value": "${body.variables['dateInvoice']}"
+        },
+        "totalAmountVATExcl": {
+                "type": "Double",
+                "value": "${body.variables['totalAmountVATExcl']?c}"
+        },
+        "totalAmountVATIncl": {
+                "type": "Double",
+                "value": "${body.variables['totalAmountVATIncl']?c}"
+        },
+        "category": {
+            "type": "String",
+            "value": "${body.variables['category']}"
+        },
+        "subcategory": {
+                "type": "String",
+                "value": "${body.variables['subcategory']}"
+        },
+        "invoiceType": {
+                "type": "String",
+                "value": "${body.variables['invoiceType']}"
+        },
+        "contractStatus": {
+                "type": "String",
+                "value": "Test status"
+        },
+        "approvalNumber": {
+                "type": "String",
+                "value": "12345"
+        },
+        "companyCode": {
+                "type": "String",
+                "value": "${body.variables['companyCode']}"
+        },
+        "supplierNr": {
+                "type": "String",
+                "value": "${body.variables['supplierNr']}"
+        },
+        "supplierName": {
+                "type": "String",
+                "value": "${body.variables['supplierName']}"
+        },
+        "supplierVAT": {
+                "type": "String",
+                "value": "${body.variables['supplierVAT']}"
+        },
+        <#if body.variables['invoiceFile']??>
+        "invoiceFile": {
+            "type": "Json",
+            "value": "{\"file\": \"${body.variables['invoiceFile'].file}\"}"
+        },
+        <#else>
+        "invoiceFile": {
+            "type": "Json",
+            "value": "{\"file\": \"\"}"
+        },        
+        </#if>        
+        "fileExt": {
+            "type": "String",
+            "value": "${fileExt}"
+        },
+        "scanFileName": {
+                "type": "String",
+                "value": "${body.variables['scanFileName']}"
+        },
+        "scanDate": {
+                "type": "String",
+                "value": "${body.variables['scanDate']}"
+        },
+        <#if body.variables['invoiceLines']??>
+        "invoiceLines": {
+            "type": "Json",
+            "value": "${processCamundaJsonVariable(body.variables['invoiceLines'])}"
+        },
+        <#else>
+        "invoiceLines": {
+            "type": "Json",
+            "value": "[]"
+        },
+        </#if>
+        <#if body.variables['lineItems']??>
+        "lineItems": {
+            "type": "Json",
+            "value": "${processCamundaJsonVariable(body.variables['lineItems'])}"
+        },
+        <#else>
+        "lineItems": {
+            "type": "Json",
+            "value": "[]"
+        },
+        </#if>
+        "cpNr": {
+                "type": "String",
+                "value": "${body.variables['cpNr']}"
+        },
+        "cpName": {
+                "type": "String",
+                "value": "${body.variables['cpName']}"
+        },
+        "cpAtt": {
+                "type": "String",
+                "value": "${body.variables['cpAtt']}"
+        },
+        "cpTitle": {
+                "type": "String",
+                "value": "${body.variables['cpTitle']}"
+        },
+        "cpTel": {
+                "type": "String",
+                "value": "${body.variables['cpTel']}"
+        },
+        "cpEmail": {
+                "type": "String",
+                "value": "${body.variables['cpEmail']}"
+        },
+        "cpLang": {
+                "type": "String",
+                "value": "${body.variables['cpLang']}"
+        },
+        "PROCESS-NAMESPACE": {
+            "type": "String",
+            "value": "AthlonDMSBeLux-MyCubes"
+        }
+    }
+}

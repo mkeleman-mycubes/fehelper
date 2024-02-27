@@ -1,0 +1,20 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://schemas.cordys.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:GetDocumentList>
+ <!--1 or more repetitions:-->
+         <sch:GetDocumentListRequest>
+            <sch:CustomerID></sch:CustomerID>
+            <sch:EnterpriseNo></sch:EnterpriseNo>
+            <sch:VATNo></sch:VATNo>
+            <sch:ReferenceNo></sch:ReferenceNo>
+            <sch:BPCode></sch:BPCode>
+            <sch:PartnerCustomerNo></sch:PartnerCustomerNo>
+            <#-- <sch:CaseID>d66f00cb-6a0d-11eb-941e-025056007954</sch:CaseID> -->
+            <sch:CaseID>${body.variables.invoiceNrInternal!}</sch:CaseID>
+            <sch:DocTypeNumber></sch:DocTypeNumber>
+            <sch:LimitResult></sch:LimitResult>
+         </sch:GetDocumentListRequest>
+      </sch:GetDocumentList>
+   </soapenv:Body>
+</soapenv:Envelope>

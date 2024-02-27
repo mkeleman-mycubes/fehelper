@@ -1,0 +1,42 @@
+<#assign customers = body.customers>
+<#if body.serviceCall?? && body.serviceCall == "true">
+    <#assign customerNr = body.initBody.answers['customerNo'][0]>
+    <#assign validCustomer = "valid_customer">
+    <#assign message = "Valid customer number">
+    <#assign validationStatus = "true">
+    <#list customers as customer>
+      <#if customer.id?? && customer.id == customerNr>
+        <#assign validCustomer = "valid_customer">
+        <#assign message = "Valid customer number">
+        <#assign validationStatus = "true">
+        <#break>
+      <#else>
+        <#assign validCustomer = "not_valid_customer">
+        <#assign message = "This is not an existing customer number">
+        <#assign validationStatus = "false">
+      </#if>
+    </#list>
+<#else>
+    <#assign customerNr = body.initBody.answers['customerNo'].data.answer[0]>
+    <#assign validCustomer = "valid_customer">
+    <#assign message = "Valid customer number">
+    <#assign validationStatus = "true">
+    <#list customers as customer>
+      <#if customer.id?? && customer.id == customerNr>
+        <#assign validCustomer = "valid_customer">
+        <#assign message = "Valid customer number">
+        <#assign validationStatus = "true">
+        <#break>
+      <#else>
+        <#assign validCustomer = "not_valid_customer">
+        <#assign message = "This is not an existing customer number">
+        <#assign validationStatus = "false">
+      </#if>
+    </#list>
+</#if>
+
+{
+  "validCustomer": "${validCustomer}",
+  "message": "${message}",
+  "validationStatus": "${validationStatus}"
+}

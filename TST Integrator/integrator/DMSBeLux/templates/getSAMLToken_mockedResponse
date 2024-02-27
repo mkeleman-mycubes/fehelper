@@ -1,0 +1,35 @@
+<soapenv:Body xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <samlp:Response xmlns:samlp="urn:oasis:names:tc:SAML:1.0:protocol" InResponseTo="1bdadc18-c2ff-4f9b-811a-9f87f3cd8194" IssueInstant="2020-11-27T10:00:59.065Z" MajorVersion="1" MinorVersion="1" ResponseID="A00505684-FF11-A1EB-8C25-DC818475910C">
+      <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+         <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+            <Reference URI="#A00505684-FF11-A1EB-8C25-DC818475D10C">
+               <Transforms>
+                  <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                  <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+               </Transforms>
+               <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+               <DigestValue>11K941NIOqjJf5mo1iOZwI+PLRKAKSAziVubtvnPqJI=</DigestValue>
+            </Reference>
+         </SignedInfo>
+         <SignatureValue>Yco0K4VxI+lJHknOmg7tyef9X+ye04U2odp2B5jZDgwatSE65DLRJOo8nkBBR+zMAtnrQUH9XK9u
+/U+IvBY8o0V8OKv7Wj5liTQ6lPR/0HWzDea2u47GAJ8GRW/sWnkcJ4D8To8P22IbYo4x/Ay6ecBC
+gcuAPhBvNZQ+n4qcy1onPWGaKdbnyiV3tuk3gwtywP1ydwTiF6ydF0kbRPvJzWRRwKQR6h23zMZL
+IXd4ZrMbEBWIjD5lRhICxNiOG5h83wbhqSWzMUtta1rWd+W8CPzIUEpuz6+ix2Np9UtYuE0tZXMu
+i+YLGoGsaB/5RZ4aRdi9+epJm0rSutRIXYA9fg==</SignatureValue>
+      </Signature>
+      <samlp:Status>
+         <samlp:StatusCode Value="samlp:Success" />
+      </samlp:Status>
+      <saml:Assertion xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion" AssertionID="A00505684-FF11-A1EB-8C25-DC818475D10C" IssueInstant="2020-11-27T10:00:59.065Z" Issuer="https://www.cordys.com/SSO" MajorVersion="1" MinorVersion="1">
+         <saml:Conditions NotBefore="2020-11-27T09:55:59.065Z" NotOnOrAfter="2020-11-27T18:00:59.065Z" />
+         <saml:AuthenticationStatement AuthenticationInstant="2020-11-27T10:00:59.065Z" AuthenticationMethod="urn:oasis:names:tc:SAML:1.0:am:password">
+            <saml:Subject>
+               <saml:NameIdentifier Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">Athlon_TechUser_AppWorks</saml:NameIdentifier>
+            </saml:Subject>
+         </saml:AuthenticationStatement>
+      </saml:Assertion>
+      <samlp:AssertionArtifact>e0pBVkEtQUVTL0dDTS9Ob1BhZGRpbmd9dz7U/gXJY7q1FXAs4LUZd3KYGWO5WbOwTE2LxAiJXXRQY1bZHU0oeoAw44d5PLZBEVf+WUs9NcdzxNQyfV7JiwydPzQ3tLSSlScEn3O+88zNZuSCCAZ7mVfmRHy2KLcL25Bi</samlp:AssertionArtifact>
+   </samlp:Response>
+</soapenv:Body>

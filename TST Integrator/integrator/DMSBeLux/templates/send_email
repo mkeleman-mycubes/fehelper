@@ -1,0 +1,67 @@
+{
+    "messageName" : "DMSSendEmail",
+    "tenantId" : "AthlonDMSBeLux",
+    "businessKey": "GENERATED-${.now?iso_local}",
+    "processVariables" : {
+        "email_from": {
+            "type": "String",
+            "value": "${body.answers['email_from'][0]}"
+        },
+        "email_to": {
+            "type": "String",
+            "value": "${body.answers['email_to'][0]}"
+        },
+        "email_subject": {
+            "type": "String",
+            "value": "${body.answers['email_subject'][0]}"
+        },
+        "email_text": {
+            "type": "String",
+            "value": "${body.answers['email_text'][0]}"
+        },
+        "email_attachments": {
+            "type": "Json",
+            <#if body.answers['attachments']??>
+                <#assign attachments = body.answers['attachments'][0] />
+                <#if attachments?seq_contains(body.answers['fileurl'][0])>
+                    "value": "[{\"content\": \"${body.answers['fileurl'][0]}\", \"filename\": \"${body.answers['fileName'][0]}\"}]"
+                <#else>
+                    "value": "[]"
+                </#if>
+            <#else>
+                "value": "[]"
+            </#if>
+        },
+        "uploaded_files": {
+            "type": "Json",
+            <#if body.formVariables.uploadedFiles??>
+                <#assign uploadedFiles = body.formVariables.uploadedFiles />
+                "value": "[<#list uploadedFiles as uploadedFile>{\"name\": \"${uploadedFile.name}\", \"type\": \"${uploadedFile.type}\", \"content\": \"${uploadedFile.content}\"}<#sep>,</#sep></#list>]"
+            <#else>
+                "value": "[]"
+            </#if>
+        },
+        "action": {
+            "type": "String",
+            "value": "send_email"
+        },
+        "approvalStatusNonALGKOInvoice": {
+            "type": "String",
+            "value": "SEND_MAIL"
+        },
+        <#if body.camundaVariables??>
+            <#list body.camundaVariables as key, value>
+                <#if key != "dummy">
+                    "${key}": {
+                        "type": "${value.type}",
+                        "value": "${value.value}"
+                    },
+                </#if>
+            </#list>
+        </#if>
+        "PROCESS-NAMESPACE": {
+            "type": "String",
+            "value": "AthlonDMSBeLux-MyCubes"
+        }
+    }
+}

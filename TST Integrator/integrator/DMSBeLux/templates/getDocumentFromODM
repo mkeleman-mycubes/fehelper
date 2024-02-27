@@ -1,0 +1,12 @@
+<soapenv:Envelope
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:def="http://schemas.cordys.com/default"
+    xmlns:ns="http://schemas.dfs.com/automotive/document/archival/1.0">
+    <soapenv:Header></soapenv:Header>
+    <soapenv:Body>
+        <def:GetDocument>
+            <ns:objectid><#if body.fileId?is_number>${body.fileId?c}<#else>${body.fileId}</#if></ns:objectid>
+            <ns:RequestingSystem></ns:RequestingSystem>
+        </def:GetDocument>
+    </soapenv:Body>
+</soapenv:Envelope>

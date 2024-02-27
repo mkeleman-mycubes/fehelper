@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "prefill_my_form",
+            "script" : "taskId = body.taskid; headers.taskId = taskId; "
+        },
+        {
+            "type" : "transform",
+            "name" : "prefill_tasklist_details_screen"
+        }
+    ]
+}

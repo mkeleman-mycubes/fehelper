@@ -1,0 +1,23 @@
+<#ftl ns_prefixes={"D":"http://schemas.dfs.com/automotive/document/archival/1.0"}>
+<#if headers.restConnectorProperties.environment == "DHC">
+    {
+         <#if body.ArchiveDocumentResponse.RequestStatus.Request_Id?? && (body.ArchiveDocumentResponse.RequestStatus.Request_Id?length > 0)>
+          "status": "true"
+        <#else>
+            "status": "false"
+        </#if>
+         <#if body.ArchiveDocumentResponse.RequestStatus.RequestError?? && (body.ArchiveDocumentResponse.RequestStatus.RequestError?length > 0)>
+                ,"RequestError": "${body.ArchiveDocumentResponse.RequestStatus.RequestError}"
+            </#if>
+        
+        <#if body.ArchiveDocumentResponse.RequestStatus.Request_Id?? && (body.ArchiveDocumentResponse.RequestStatus.Request_Id?length > 0)>
+        , "processVariables": {
+            "requestId": "${body.ArchiveDocumentResponse.RequestStatus.Request_Id}"
+             }
+        </#if>
+    }
+<#else>
+    {
+         "requestId": "005056A9-6D12-A1EB-95A8-3C6E07DE1103"
+    }
+</#if>

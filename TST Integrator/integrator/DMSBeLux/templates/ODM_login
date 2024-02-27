@@ -1,0 +1,4 @@
+{
+    "username" : "${headers.restConnectorProperties.ODMUsername}",
+    "password" : "${headers.restConnectorProperties.ODMPassword}"
+}

@@ -1,0 +1,99 @@
+{
+    <#if body.taskStatus??>
+        "taskStatus": "${print(body.taskStatus.value)}",
+    <#else>
+        "taskStatus": "To Do",
+    </#if>
+
+    <#if body.contractId??>
+        "contractId": "${print(body.contractId.value)}",
+    </#if>
+    <#if body.customerId??>
+        "customerId": "${print(body.customerId.value)}",
+    </#if>
+    <#if body.customerName??>
+        "customerName": "${print(body.customerName.value)}",
+    </#if>
+    <#if body.driver??>
+        "driver": "${print(body.driver.value)}",
+    </#if>
+    <#if body.licensePlate??>
+        "licensePlate": "${print(body.licensePlate.value)}",
+    </#if>
+    <#if body.entity??>
+        "entity": "${print(body.entity.value)}",
+    </#if>
+    <#if body.contractLifecycleStatus??>
+        "contractLifecycleStatus": "${print(body.contractLifecycleStatus.value)}",
+    </#if>
+
+    <#if body.parentId??>
+        "parentId": "${print(body.parentId.value)}",
+    </#if>
+    <#if body.parentName??>
+        "parentName": "${print(body.parentName.value)}",
+    </#if>
+    
+    <#if body.internalInvoiceNumber??>
+        "internalInvoiceNumber": "${print(body.internalInvoiceNumber.value)}",
+    </#if>
+    <#if body.policeReportNo??>
+        "policeReportNo": "${print(body.policeReportNo.value)}",
+    </#if>
+    <#if body.bookingDate??>
+        "bookingDate": "${print(body.bookingDate.value)}",
+    </#if>
+    <#if body.invoiceDate??>
+        "invoiceDate": "${print(body.invoiceDate.value)}",
+    </#if>
+    <#if body.amountExclVat??>
+        "amountExclVat": "${print(body.amountExclVat.value)}",
+    </#if>
+    <#if body.amountInclVat??>
+        "amountInclVat": "${print(body.amountInclVat.value)}",
+    </#if>
+    <#if body.invoiceCategory??>
+        "invoiceCategory": "${print(body.invoiceCategory.value)}",
+    </#if>
+    <#if body.invoiceType??>
+        "invoiceType": "${print(body.invoiceType.value)}",
+    </#if>
+    <#if body.fineId??>
+        "fineId": "${print(body.fineId.value)}",
+    </#if>
+    <#if body.claimId??>
+        "claimId": "${print(body.claimId.value)}",
+    </#if>
+    <#if body.claimHandler??>
+        "claimHandler": "${print(body.claimHandler.value)}",
+    </#if>
+    <#if body.claimDate??>
+        "claimDate": "${print(body.claimDate.value?date("yyyy-MM-dd")?string['yyyy-MM-dd'])}",
+    </#if>
+    <#if body.externalInvoiceNumber??>
+        "externalInvoiceNumber": "${print(body.externalInvoiceNumber.value)}",
+    </#if>
+
+    <#-- Document information -->
+    <#if body.title??>
+        "title": "${print(body.title.value)}",
+    </#if>
+    <#if body.category??>
+        "category": "${print(body.category.value)}",
+    </#if>
+    <#if body.department??>
+        "department": "${print(body.department.value)}",
+    </#if>
+    <#if body.subcategory??>
+        "subcategory": "${print(body.subcategory.value)}",
+    </#if>
+    <#if body.creationDate??>
+        "creationDate": "${print(body.creationDate.value)}",
+    </#if>
+    <#if body.documentType??>
+        "documentType": "${print(body.documentType.value)}",
+    </#if>
+    <#if body["PROCESS-NAMESPACE"]??>
+        "PROCESS-NAMESPACE": "${print(body["PROCESS-NAMESPACE"].value)}"
+    </#if>
+}

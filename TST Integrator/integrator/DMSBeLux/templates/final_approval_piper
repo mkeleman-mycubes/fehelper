@@ -1,0 +1,35 @@
+{
+    "pipes": [
+        <#-- Validation call -->
+        {
+            "type" : "action",
+            "name" : "retrieveLedgerAccounts",
+            "script" : "answers = body.answers; formVariables = body.formVariables; secureData = body.secureData; taskId = body.answers['taskid'].data.answer[0]; headers.taskId = taskId; headers.companyCode = body.answers['companyCode'].data.answer[0]"
+        },
+        {
+            "type": "transform",
+            "name": "validate_ledger_account",
+            "script": "body.answers = answers"
+        },
+        {
+            "type" : "action",
+            "name" : "retrieveCostCenters",
+            "script" : "validAccounts = body.validAccounts"
+        },
+        {
+            "type": "transform",
+            "name": "validate_cost_center",
+            "script": "body.answers = answers"
+        },
+        {
+            "type" : "action",
+            "name" : "validate_ledger_account_piper",
+            "script": "body.answers = answers; body.formVariables = formVariables; body.templateName = 'final_approval'; body.validAccounts = validAccounts"
+        },
+        {
+            "type" : "action",
+            "name" : "add_new_comment",
+            "script" : "body.answers = answers; body.secureData = secureData; body.formVariables = formVariables; commentId = body.answers['invoiceNrInternal'].data.answer[0] + '-' + body.answers['invoiceNrTech'].data.answer[0] + '-' + body.answers['invoice_lines_repeater'].data[0].invoiceLineNo.data.answer[0]; headers.commentId = commentId"
+        }
+    ]
+}

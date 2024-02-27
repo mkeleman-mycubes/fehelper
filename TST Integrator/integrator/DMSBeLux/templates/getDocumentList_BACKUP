@@ -1,0 +1,32 @@
+<#assign id><#if body.documentId?is_number>${body.documentId?c}<#else>${body.documentId}</#if></#assign>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://schemas.cordys.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:GetDocumentList>
+ <!--1 or more repetitions:-->
+         <sch:GetDocumentListRequest>
+            <sch:CustomerID><#if (body.searchType == "CUSTOMER")><#if id?length < 6><#list 0..(5 - id?length) as i>0</#list></#if>${id}</#if></sch:CustomerID>
+            <sch:ContractID><#if (body.searchType == "CONTRACT")><#if id?length < 6><#list 0..(5 - id?length) as i>0</#list></#if>${id}</#if></sch:ContractID>
+            <sch:EnterpriseNo></sch:EnterpriseNo>
+            <sch:VATNo></sch:VATNo>
+            <sch:ReferenceNo></sch:ReferenceNo>
+            <sch:BPCode></sch:BPCode>
+            <sch:PartnerCustomerNo></sch:PartnerCustomerNo>
+            <#if (body.searchType == "CLAIM")>
+                <sch:CaseType>DAM</sch:CaseType>
+            </#if>
+            <#if (body.searchType == "FINE")>
+                <sch:CaseType>FIN</sch:CaseType>
+            </#if>
+            <#if (body.searchType == "INVOICE")>
+                <sch:CaseType>INV</sch:CaseType>
+            </#if>
+            <sch:CaseID><#if (body.searchType == "CLAIM") || (body.searchType == "FINE") || (body.searchType == "INVOICE")><#if id?length < 6><#list 0..(5 - id?length) as i>0</#list></#if><#if id?is_number>${id?c}<#else>${id}</#if></#if></sch:CaseID>
+            <sch:DocTypeNumber></sch:DocTypeNumber>
+            <sch:LimitResult>5000</sch:LimitResult>
+            <sch:Country>${body.country}</sch:Country>
+            <sch:LegalEntity>${body.entity}</sch:LegalEntity>
+         </sch:GetDocumentListRequest>
+      </sch:GetDocumentList>
+   </soapenv:Body>
+</soapenv:Envelope>

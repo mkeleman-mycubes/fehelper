@@ -1,0 +1,282 @@
+{
+<#if headers.restConnectorProperties.environment == "DHC" || headers.restConnectorProperties.environment == "MOCK">
+"usersOfGroup": [
+    <#if body.listUsersResult?? && body.listUsersResult.users??>
+        <#list body.listUsersResult.users as user>
+            <#assign id = "">
+            <#assign firstName = "">
+            <#assign lastName = "">
+            <#assign email = "">
+        <#list user.values as value>
+            <#if value.name == 'givenName'>
+                <#assign firstName = value.values[0]>
+            <#elseif value.name == 'sn'>
+                <#assign lastName = value.values[0]>
+            <#elseif value.name == 'oTExternalID1'>
+                <#assign id = value.values[0]>
+            <#elseif value.name == 'mail'>
+                <#assign email = value.values[0]>
+            </#if>
+        </#list>
+        <#--
+        {
+            "id": "${id}",
+            "firstName" : "${firstName}",
+            "lastName" : "${lastName}"
+        } 
+        <#sep>,</#sep>
+        -->
+        <#if  !((headers.excludeMyself && headers.identity.authenticatedUser == id)  || 
+            (headers.excludeAssignedTo && headers.AssignedTo == id))>
+            {
+               "id": "${id}",
+               "firstName" : "${firstName}",
+               "lastName" : "${lastName}",
+               "email": "${email}"
+            } 
+            <#sep>,</#sep>
+        </#if>
+        </#list>
+    </#if>
+]
+<#else>
+<#assign usersMap = {
+   "E501_UR-501-CSDMO-CRA-INT-NL-INT-Admin":[
+      {
+         "id":"AthlonCreditPortal",
+         "firstName":"Athlon",
+         "lastName":"Credit Admin"
+      }
+   ],
+   "E501_UR-853-APP-CSDMO-INT-DMS-BE-INAPPR1":[
+    {
+         "id":"AthlonDMSBeLuxApprover1",
+	    "firstName":"AthlonDMSBeLuxApprover1",
+		"lastName":"user",
+		"email":"AthlonDMSBeLuxApprover1@mycubes.nl"
+      },
+      {
+         "id":"AthlonCreditAdminNL",
+         "firstName":"Athlon",
+         "lastName":"Credit Admin NL",
+		"email":"AthlonDMSBeLuxApprover1@mycubes.nl"
+      },
+      	{
+      	    "id": "PID2A30",
+    	    "firstName":"DMS_FirstApprover-ILB-LUX_1",
+    		"lastName":"",
+    		"email":""
+    	},
+    	{
+    	    "id": "PID2A4F",
+    	    "firstName":"DMS_FirstApproverILB_1",
+    		"lastName":"",
+    		"email":""
+    	},
+    	   {
+            "id": "PID2A5D",
+    	    "firstName":"DMS_FirstApproverILB_1",
+    		"lastName":"",
+    		"email":"mfedyshyn@mycubes.nl"
+    	}
+   ],
+    "E501_UR-853-APP-CSDMO-INT-DMS-BE-INAPPR2":[
+    {
+        "id": "AthlonDMSBeLuxApprover2",
+        "firstName":"AthlonDMSBeLuxApprover2",
+		"lastName":"user",
+		"email":"AthlonDMSBeLuxApprover2@mycubes.nl"
+      },
+      {
+         "id":"AthlonCreditAdminNL",
+         "firstName":"Athlon",
+         "lastName":"Credit Admin NL"
+      },
+      {
+            "id": "PID2A5D",
+    	    "firstName":"DMS_FirstApproverILB_1",
+    		"lastName":"",
+    		"email":""
+    	},
+    	{
+    	    "id": "PID2A62",
+    	    "firstName":"DMS_SecondApprover-ILB-LUX_1",
+    		"lastName":"",
+    		"email":"lalimova@mycubes.nl"
+    	}
+   ],
+   "E501_UR-440-CSDMO-CRA-INT-NL-Admin":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"AthlonCreditAdminNL",
+         "firstName":"Athlon",
+         "lastName":"Credit Admin NL"
+      }
+   ],
+   "E501_UR-584-CSDMO-CRA-INT-ES-Admin":[
+      {
+         "id":"AthlonCreditAdminES",
+         "firstName":"Athlon",
+         "lastName":"Credit Admin ES"
+      }
+   ],
+   "E501_UR-440-CSDMO-CRA-INT-NL-Underwriters":[
+      {
+         "id":"UnderwriterNL1",
+         "firstName":"Underwriter",
+         "lastName":"NL-1"
+      },
+      {
+         "id":"UnderwriterNL2",
+         "firstName":"Underwriter",
+         "lastName":"NL-2"
+      },
+      {
+         "id":"UnderwriterNL3",
+         "firstName":"Underwriter",
+         "lastName":"NL-3"
+      },
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"cbenz",
+         "firstName":"Carl",
+         "lastName":"Benz"
+      }
+   ],
+   "E501_UR-584-CSDMO-CRA-INT-ES-Underwriters":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"UnderwriterES1",
+         "firstName":"Underwriter",
+         "lastName":"ES-1"
+      },
+      {
+         "id":"PSANCHEZ",
+         "firstName":"Pedro",
+         "lastName":"Sanchez"
+      },
+      {
+         "id":"XSAVIOLA",
+         "firstName":"Xavier",
+         "lastName":"Saviola"
+      },
+      {
+          "id": "AARNAUG",
+          "firstName": "AAR",
+          "lastName": "NAUG"
+      },
+      {
+          "id": "AFONLUT",
+          "firstName": "AFO",
+          "lastName": "NLUT"
+      },
+      {
+          "id": "ANGGAR",
+          "firstName": "ANG",
+          "lastName": "GAR"
+      }
+   ],
+   "E501_UR-440-CSDMO-CRA-INT-NL-Sales":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      },
+      {
+         "id":"SalesNL1",
+         "firstName":"Sales",
+         "lastName":"NL-1"
+      },
+      {
+         "id":"SalesNL2",
+         "firstName":"Sales",
+         "lastName":"NL-2"
+      },
+      {
+         "id":"SalesNL3",
+         "firstName":"Sales",
+         "lastName":"NL-3"
+      }
+   ],
+   "E501_UR-584-CSDMO-CRA-INT-ES-Sales":[
+      {
+         "id":"PSANCHEZ",
+         "firstName":"Pedro",
+         "lastName":"Sanchez"
+      },
+      {
+         "id":"RPEDRO",
+         "firstName":"Pedro",
+         "lastName":"Rodriguez"
+      },
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      }
+   ],
+   "E501_UR-906-CSDMO-CRA-INT-IT-Sales":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      }
+   ],
+   "E501_UR-906-CSDMO-CRA-INT-IT-Underwriters":[
+      {
+         "id":"HUNTERM",
+         "firstName":"Mike",
+         "lastName":"Hunter"
+      }
+   ],
+   "E501_UR-853-APP-CSDMO-INT-DMS-BE-GENACC": [
+        {
+            "id": "PID2A22",
+            "firstName":"DMS_GeneralAccountant-ILB-LUX-PREML-ILR_1",
+            "lastName":"",
+            "email": "markiyan.ph@gmail.com"
+        }
+   ],
+   "E501_UR-853-APP-CSDMO-INT-DMS-BE-ACCPAY": [
+        {
+           "id": "PID2A27",
+            "firstName":"DMS_AccountsPayable-ILB-LUX-PREML-ILR_1",
+            "lastName":"",
+            "email": "markiyan.keleman@athlon.com"
+        }
+   ]
+}>
+"usersOfGroup": [
+   <#list usersMap as group, users>
+       <#if group == headers.groupId>
+            <#list users as user>
+             <#if  !((headers.excludeMyself && headers.identity.authenticatedUser == user.id)  || 
+                    (headers.excludeAssignedTo && headers.AssignedTo == user.id))>
+                      {
+                       "id": "${user.id}",
+                       "firstName" : "${user.firstName}",
+                       <#if user.email??>
+                           "email": "${user.email}",
+                       </#if>
+                       "lastName" : "${user.lastName}"
+                  } 
+             <#sep>,</#sep>
+             </#if>
+            </#list>
+       </#if>
+   </#list>
+]
+</#if>
+}

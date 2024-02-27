@@ -1,0 +1,7 @@
+{
+	"pipes": [{
+		"type": "action",
+		"name": "retrieveCostCenters"
+		}
+	]
+}

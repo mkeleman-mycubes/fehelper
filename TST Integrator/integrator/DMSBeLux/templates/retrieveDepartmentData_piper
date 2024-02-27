@@ -1,0 +1,9 @@
+{
+	"pipes": [
+		{
+			"type": "action",
+			"name": "retrieveDepartmentData",
+			"script": "headers.dataType = body.dataType";
+		}
+	]
+}

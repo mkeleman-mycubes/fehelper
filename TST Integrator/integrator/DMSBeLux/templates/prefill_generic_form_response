@@ -1,0 +1,116 @@
+<#assign showInvoiTypeSubcategory = ['ONBC', 'OROB', 'ALGKO'] >
+{
+    <#if body.invoiceNrExternal??>
+        "invoiceNrExternal": "${print(body.invoiceNrExternal.value)}",
+    </#if>        
+    <#if body.dateRegistered?? && body.dateRegistered.value??>
+        "dateRegistered": "${printDate(body.dateRegistered.value)}",
+    </#if>
+    <#if body.AssignedBy??>
+        "AssignedBy": "${body.AssignedBy.value?json_string}",
+    </#if>
+    <#if body.dateInvoice?? && body.dateInvoice.value??>
+        "dateInvoice": "${printDate(body.dateInvoice.value)}",
+    </#if>
+    <#if body.totalAmountVATExcl??>
+        "totalAmountVATExcl": "${(body.totalAmountVATExcl.value?c)!}",
+    </#if>    
+    <#if body.totalAmountVATIncl??>
+        "totalAmountVATIncl": "${(body.totalAmountVATIncl.value?c)!}",
+    </#if>       
+    <#if body.invoiceNrTech??>
+        "invoiceNrTech": "${body.invoiceNrTech.value?json_string}",
+    </#if> 
+     <#if body.subcategory??>
+        "subcategory": "${body.subcategory.value?json_string}",
+    </#if>
+     <#if body.category??>
+        "category": "${body.category.value?json_string}",
+    </#if>
+     <#if body.invoiceType?? && body.subcategory?? && -1 < showInvoiTypeSubcategory?seq_index_of(body.subcategory.value?json_string)>
+        "invoiceType": "${body.invoiceType.value?json_string}",
+    </#if>
+    <#if body.companyCode??>
+        "companyCode": "${body.companyCode.value?json_string}",
+    </#if>
+    <#if body.relationNr??>
+        "supplierNr": "${body.relationNr.value?json_string}",
+    </#if>    
+    <#if body.relationName??>
+        "supplierName": "${body.relationName.value?json_string}",
+    </#if>
+    <#if body.relationVAT??>
+        "supplierVAT": "${body.relationVAT.value?json_string}",
+    </#if>
+    <#if body.scanFileName??>
+        "scanFileName": "${body.scanFileName.value?json_string}",
+    </#if>
+    <#if body.scanDate??>
+        "scanDate": "${body.scanDate.value?json_string}",
+    </#if>
+    <#if body.invoiceLines??>
+        <#--  "invoice_lines_repeater": [{"invoiceLineIndex": "1", "lineItems": [{"lineItemLedgerAccount": "1111"}, {"lineItemLedgerAccount": "22222"}]}, {"invoiceLineIndex": "2", "lineItems": [{"lineItemLedgerAccount": "3333"}, {"lineItemLedgerAccount": "4444"}]}],  -->
+
+        "invoice_lines_repeater": [
+            <#list body.invoiceLines.value?eval_json as invoiceLine>
+                {
+                    "invoiceLineNo": "${invoiceLine.invoiceLineNo?json_string}",
+                    "invoiceLineLicensePlate": "${(invoiceLine.invoiceLineLicensePlate?json_string)!}",
+                    "invoiceLineSubcategory": "${(invoiceLine.invoiceLineSubcategory?json_string)!}",
+                    "invoiceLineApprovalNo": "${(invoiceLine.invoiceLineApprovalNo?json_string)!}",
+                    "invoiceLineAmount": "${(invoiceLine.invoiceLineAmount?json_string)!}",
+                    "invoiceLineBlockingReason": "${(invoiceLine.invoiceLineBlockingReason?json_string)!}",
+                    "invoiceLineStatus": "${(invoiceLine.invoiceLineStatus?json_string)!}",
+                    "invoiceLineRemarks": "${(invoiceLine.invoiceLineRemarks?json_string)!}",
+                    "lineItems":  [
+                        <#list (invoiceLine.lineItems)![] as lineItem>
+                            {
+                                "lineItemLedgerAccount": "${lineItem.lineItemLedgerAccount?json_string}",
+                                "lineItemAmountExclVAT": "${lineItem.lineItemAmountExclVAT?json_string}",
+                                "lineItemCostCenter": "${lineItem.lineItemCostCenter?json_string}",
+                                "lineItemRemark": "${lineItem.lineItemRemark?json_string}"
+                            }
+                            <#sep>,</#sep>
+                        </#list>
+                    ]
+                }
+                <#sep>,</#sep>
+            </#list>
+        ],
+    </#if>
+    
+    <#if body.approver1??>
+        "approver1": "${body.approver1.value?json_string}",
+    </#if>
+    <#if body.approver1Label??>
+        "approver1Label": "${body.approver1Label.value?json_string}",
+    </#if>
+    <#if body.pre_approver1Label??>
+        "pre_approver1Label": "${body.pre_approver1Label.value?json_string}",
+    </#if>
+    <#if body.remarksForApprover1??>
+        "remarksForApprover1": "${body.remarksForApprover1.value?json_string}",
+    </#if>
+    <#if body.approver2??>
+        "approver2": "${body.approver2.value?json_string}",
+    </#if>
+    <#if body.approver2Label??>
+        "approver2Label": "${body.approver2Label.value?json_string}",
+    </#if>
+    <#if body.pre_approver2Label??>
+        "pre_approver2Label": "${body.pre_approver2Label.value?json_string}",
+    </#if>
+    <#if body.remarksForApprover2??>
+        "remarksForApprover2": "${body.remarksForApprover2.value?json_string}",
+    </#if>    
+    <#if body.finalApprovalRequired??>
+        "finalApprovalRequired": "<#if body.finalApprovalRequired.value == 'yes'>yes<#else></#if>",
+    </#if>    
+    <#if body.AssignedToName??>
+        "AssignedToName": "${body.AssignedToName.value?json_string}",
+    </#if>
+    
+    <#if body.invoiceNrInternal??>
+        "invoiceNrInternal": "${print(body.invoiceNrInternal.value)}"
+    </#if>   
+}

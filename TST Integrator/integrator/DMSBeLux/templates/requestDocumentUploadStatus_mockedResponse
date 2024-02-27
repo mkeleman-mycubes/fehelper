@@ -1,0 +1,239 @@
+<#-- 
+    Hardcoded responses, could be of a 3 types: "success", "in_progress", "error". 
+    Change "responseType" variable in order to change the process flow.
+-->
+
+<#assign responseType="in_progress">
+
+<#if responseType="error">
+    <soapenv:Body
+    	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    	<GetCreateOrUpdateBWSRequestStatusResponse
+    		xmlns="http://schemas.dfs.com/automotive/workspacetypes/1.0"
+    		xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"
+    		xmlns:bpm="http://schemas.cordys.com/default"
+    		xmlns:instance="http://schemas.cordys.com/bpm/instance/1.0"
+    		xmlns:ns="http://schemas.dfs.com/automotive/workspacetypes/1.0"
+    		xmlns:ns10="http://schemas/DFSCALMS_POC/Customer"
+    		xmlns:ns11="http://schemas/DFSCALMS_POC/Contract_Employee/operations"
+    		xmlns:ns12="http://schemas/DFSCALMS_POC/Contract_Employee"
+    		xmlns:ns13="http://schemas/DFSCALMS_POC/Contract"
+    		xmlns:ns14="http://schemas/DFSCALMS_POC/Contract_LeasFin/operations"
+    		xmlns:ns15="http://schemas/DFSCALMS_POC/Contract_LeasFin"
+    		xmlns:ns16="http://schemas/DFSCALMS_POC/DamageFile/operations"
+    		xmlns:ns17="http://schemas/DFSCALMS_POC/DamageFile"
+    		xmlns:ns18="http://schemas.cordys.com/casemanagement/1.0"
+    		xmlns:ns19="http://schemas/DFSCALMS_POC/Create_Or_Update_BWS_Requests/operations"
+    		xmlns:ns2="http://schemas.dfs.com/automotive/workspacetypes/1.0"
+    		xmlns:ns20="http://schemas/DFSCALMS_POC/Create_Or_Update_BWS_Requests"
+    		xmlns:ns21="http://schemas.cordys.com/bpm/execution/1.0"
+    		xmlns:ns22="http://schemas.cordys.com/General/1.0/"
+    		xmlns:ns23="http://schemas/DaimlerAutomotiveArchival/Automotive_Request_Type/operations"
+    		xmlns:ns24="http://schemas/DaimlerAutomotiveArchival/Automotive_Request_Type"
+    		xmlns:ns25="http://schemas/DaimlerAutomotiveArchival/Create_Or_Update_BWS_Requests/operations"
+    		xmlns:ns26="http://schemas/DaimlerAutomotiveArchival/Create_Or_Update_BWS_Requests"
+    		xmlns:ns27="http://schemas.cordys.com/cws/1.0"
+    		xmlns:ns28="http://schemas/DaimlerAutomotiveArchival/Asynchronous_Requests/operations"
+    		xmlns:ns29="http://schemas/DaimlerAutomotiveArchival/Asynchronous_Requests"
+    		xmlns:ns3="http://schemas/DFSCALMS_POC/CreateOrUpdateBWSRequests/operations"
+    		xmlns:ns30="http://schemas/DaimlerAutomotiveArchival/Business_Partner"
+    		xmlns:ns4="http://schemas.opentext.com/bps/entity/core"
+    		xmlns:ns5="http://schemas/DFSCALMS_POC/CreateOrUpdateBWSRequests"
+    		xmlns:ns6="http://schemas/DFSCALMS_POC/Business_Partner/operations"
+    		xmlns:ns7="http://schemas/DFSCALMS_POC/Business_Partner"
+    		xmlns:ns8="http://schemas.opentext.com/entitymodeling/buildingblocks/businessworkspace/1.0"
+    		xmlns:ns9="http://schemas/DFSCALMS_POC/Customer/operations"
+    		xmlns:sm="http://www.w3.org/2005/07/scxml">
+    		<RequestStatus>
+    			<Request_Id>005056A9-45FA-A1EB-956C-ED3418E0D101</Request_Id>
+    			<Request_Status>Error</Request_Status>
+    			<Request_Status_No>501</Request_Status_No>
+    			<Request_Status_Detail>CONTENT SERVER Error Message: Cannot store structure information. For more information, see the Content Server log files. (iepuaotcs100:D:\services\opentext\contentserver\Logs\csdfs\, thread 1)</Request_Status_Detail>
+    			<Workspace_Type>Archive Document</Workspace_Type>
+    		</RequestStatus>
+    		<BusinessWorkspaces>
+    			<BusinessWorkspace templateName="">
+    				<CustomerID/>
+    				<EnterpriseNo/>
+    				<VATNo/>
+    				<ReferenceNo/>
+    				<BPCode/>
+    				<PartnerCustomerNo/>
+    				<SearchName/>
+    				<BillingName/>
+    				<SegmentMV/>
+    				<Status/>
+    				<StatusDate/>
+    				<Country/>
+    				<Legal_Entity/>
+    				<BWS_ID/>
+    			</BusinessWorkspace>
+    			<BusinessWorkspace templateName="Athlon_CaseFile">
+    				<Status>ACTIVE</Status>
+    				<StatusDate>2021-01-13Z</StatusDate>
+    				<Country>ES</Country>
+    				<Legal_Entity>AthlonES</Legal_Entity>
+    				<CaseID>3cd454bb-53e0-11eb-9394-0250560079ae</CaseID>
+    				<CaseDate>2020-12-10Z</CaseDate>
+    				<CaseType>CRA</CaseType>
+    				<CaseSegment>Core</CaseSegment>
+    				<BWS_ID/>
+    			</BusinessWorkspace>
+    		</BusinessWorkspaces>
+    	</GetCreateOrUpdateBWSRequestStatusResponse>
+    </soapenv:Body>
+<#elseif responseType == "in_progress">
+    <soapenv:Body
+    	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    	<GetCreateOrUpdateBWSRequestStatusResponse
+    		xmlns="http://schemas.dfs.com/automotive/workspacetypes/1.0"
+    		xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"
+    		xmlns:bpm="http://schemas.cordys.com/default"
+    		xmlns:instance="http://schemas.cordys.com/bpm/instance/1.0"
+    		xmlns:ns="http://schemas.dfs.com/automotive/workspacetypes/1.0"
+    		xmlns:ns10="http://schemas/DFSCALMS_POC/Customer"
+    		xmlns:ns11="http://schemas/DFSCALMS_POC/Contract_Employee/operations"
+    		xmlns:ns12="http://schemas/DFSCALMS_POC/Contract_Employee"
+    		xmlns:ns13="http://schemas/DFSCALMS_POC/Contract"
+    		xmlns:ns14="http://schemas/DFSCALMS_POC/Contract_LeasFin/operations"
+    		xmlns:ns15="http://schemas/DFSCALMS_POC/Contract_LeasFin"
+    		xmlns:ns16="http://schemas/DFSCALMS_POC/DamageFile/operations"
+    		xmlns:ns17="http://schemas/DFSCALMS_POC/DamageFile"
+    		xmlns:ns18="http://schemas.cordys.com/casemanagement/1.0"
+    		xmlns:ns19="http://schemas/DFSCALMS_POC/Create_Or_Update_BWS_Requests/operations"
+    		xmlns:ns2="http://schemas.dfs.com/automotive/workspacetypes/1.0"
+    		xmlns:ns20="http://schemas/DFSCALMS_POC/Create_Or_Update_BWS_Requests"
+    		xmlns:ns21="http://schemas.cordys.com/bpm/execution/1.0"
+    		xmlns:ns22="http://schemas.cordys.com/General/1.0/"
+    		xmlns:ns23="http://schemas/DaimlerAutomotiveArchival/Automotive_Request_Type/operations"
+    		xmlns:ns24="http://schemas/DaimlerAutomotiveArchival/Automotive_Request_Type"
+    		xmlns:ns25="http://schemas/DaimlerAutomotiveArchival/Create_Or_Update_BWS_Requests/operations"
+    		xmlns:ns26="http://schemas/DaimlerAutomotiveArchival/Create_Or_Update_BWS_Requests"
+    		xmlns:ns27="http://schemas.cordys.com/cws/1.0"
+    		xmlns:ns28="http://schemas/DaimlerAutomotiveArchival/Asynchronous_Requests/operations"
+    		xmlns:ns29="http://schemas/DaimlerAutomotiveArchival/Asynchronous_Requests"
+    		xmlns:ns3="http://schemas/DFSCALMS_POC/CreateOrUpdateBWSRequests/operations"
+    		xmlns:ns30="http://schemas/DaimlerAutomotiveArchival/Business_Partner"
+    		xmlns:ns4="http://schemas.opentext.com/bps/entity/core"
+    		xmlns:ns5="http://schemas/DFSCALMS_POC/CreateOrUpdateBWSRequests"
+    		xmlns:ns6="http://schemas/DFSCALMS_POC/Business_Partner/operations"
+    		xmlns:ns7="http://schemas/DFSCALMS_POC/Business_Partner"
+    		xmlns:ns8="http://schemas.opentext.com/entitymodeling/buildingblocks/businessworkspace/1.0"
+    		xmlns:ns9="http://schemas/DFSCALMS_POC/Customer/operations"
+    		xmlns:sm="http://www.w3.org/2005/07/scxml">
+    		<RequestStatus>
+    			<Request_Id>005056A9-45FA-A1EB-956C-ED3418E0D101</Request_Id>
+    			<Request_Status>In Progress</Request_Status>
+    			<Request_Status_No/>
+    			<Request_Status_Detail/>
+    			<Workspace_Type>Archive Document</Workspace_Type>
+    		</RequestStatus>
+    		<BusinessWorkspaces>
+    			<BusinessWorkspace templateName="">
+    				<CustomerID/>
+    				<EnterpriseNo/>
+    				<VATNo/>
+    				<ReferenceNo/>
+    				<BPCode/>
+    				<PartnerCustomerNo/>
+    				<SearchName/>
+    				<BillingName/>
+    				<SegmentMV/>
+    				<Status/>
+    				<StatusDate/>
+    				<Country/>
+    				<Legal_Entity/>
+    				<BWS_ID/>
+    			</BusinessWorkspace>
+    			<BusinessWorkspace templateName="Athlon_CaseFile">
+    				<Status>ACTIVE</Status>
+    				<StatusDate>2021-01-13Z</StatusDate>
+    				<Country>ES</Country>
+    				<Legal_Entity>AthlonES</Legal_Entity>
+    				<CaseID>3cd454bb-53e0-11eb-9394-0250560079ae</CaseID>
+    				<CaseDate>2020-12-10Z</CaseDate>
+    				<CaseType>CRA</CaseType>
+    				<CaseSegment>Core</CaseSegment>
+    				<BWS_ID/>
+    			</BusinessWorkspace>
+    		</BusinessWorkspaces>
+    	</GetCreateOrUpdateBWSRequestStatusResponse>
+    </soapenv:Body>
+<#else>
+    <soapenv:Body
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<GetCreateOrUpdateBWSRequestStatusResponse
+		xmlns="http://schemas.dfs.com/automotive/workspacetypes/1.0"
+		xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"
+		xmlns:bpm="http://schemas.cordys.com/default"
+		xmlns:instance="http://schemas.cordys.com/bpm/instance/1.0"
+		xmlns:ns="http://schemas.dfs.com/automotive/workspacetypes/1.0"
+		xmlns:ns10="http://schemas/DFSCALMS_POC/Customer"
+		xmlns:ns11="http://schemas/DFSCALMS_POC/Contract_Employee/operations"
+		xmlns:ns12="http://schemas/DFSCALMS_POC/Contract_Employee"
+		xmlns:ns13="http://schemas/DFSCALMS_POC/Contract"
+		xmlns:ns14="http://schemas/DFSCALMS_POC/Contract_LeasFin/operations"
+		xmlns:ns15="http://schemas/DFSCALMS_POC/Contract_LeasFin"
+		xmlns:ns16="http://schemas/DFSCALMS_POC/DamageFile/operations"
+		xmlns:ns17="http://schemas/DFSCALMS_POC/DamageFile"
+		xmlns:ns18="http://schemas.cordys.com/casemanagement/1.0"
+		xmlns:ns19="http://schemas/DFSCALMS_POC/Create_Or_Update_BWS_Requests/operations"
+		xmlns:ns2="http://schemas.dfs.com/automotive/workspacetypes/1.0"
+		xmlns:ns20="http://schemas/DFSCALMS_POC/Create_Or_Update_BWS_Requests"
+		xmlns:ns21="http://schemas.cordys.com/bpm/execution/1.0"
+		xmlns:ns22="http://schemas.cordys.com/General/1.0/"
+		xmlns:ns23="http://schemas/DaimlerAutomotiveArchival/Automotive_Request_Type/operations"
+		xmlns:ns24="http://schemas/DaimlerAutomotiveArchival/Automotive_Request_Type"
+		xmlns:ns25="http://schemas/DaimlerAutomotiveArchival/Create_Or_Update_BWS_Requests/operations"
+		xmlns:ns26="http://schemas/DaimlerAutomotiveArchival/Create_Or_Update_BWS_Requests"
+		xmlns:ns27="http://schemas.cordys.com/cws/1.0"
+		xmlns:ns28="http://schemas/DaimlerAutomotiveArchival/Asynchronous_Requests/operations"
+		xmlns:ns29="http://schemas/DaimlerAutomotiveArchival/Asynchronous_Requests"
+		xmlns:ns3="http://schemas/DFSCALMS_POC/CreateOrUpdateBWSRequests/operations"
+		xmlns:ns30="http://schemas/DaimlerAutomotiveArchival/Business_Partner"
+		xmlns:ns4="http://schemas.opentext.com/bps/entity/core"
+		xmlns:ns5="http://schemas/DFSCALMS_POC/CreateOrUpdateBWSRequests"
+		xmlns:ns6="http://schemas/DFSCALMS_POC/Business_Partner/operations"
+		xmlns:ns7="http://schemas/DFSCALMS_POC/Business_Partner"
+		xmlns:ns8="http://schemas.opentext.com/entitymodeling/buildingblocks/businessworkspace/1.0"
+		xmlns:ns9="http://schemas/DFSCALMS_POC/Customer/operations"
+		xmlns:sm="http://www.w3.org/2005/07/scxml">
+		<RequestStatus>
+			<Request_Id>005056A9-6D12-A1EB-95A8-3C6E07DE1103</Request_Id>
+			<Request_Status>Complete</Request_Status>
+			<Request_Status_No>200</Request_Status_No>
+			<Request_Status_Detail/>
+			<Workspace_Type>Archive Document</Workspace_Type>
+		</RequestStatus>
+		<BusinessWorkspaces>
+			<BusinessWorkspace templateName="Athlon_Customer">
+				<CustomerID>VESA08103343</CustomerID>
+				<EnterpriseNo>8358</EnterpriseNo>
+				<VATNo>A08103343</VATNo>
+				<ReferenceNo>602103</ReferenceNo>
+				<BPCode/>
+				<PartnerCustomerNo/>
+				<SearchName>UPL IBERIA SA</SearchName>
+				<BillingName>UPL IBERIA SA</BillingName>
+				<SegmentMV>Core</SegmentMV>
+				<Status>ACTIVE</Status>
+				<StatusDate>2021-01-14Z</StatusDate>
+				<Country>ES</Country>
+				<Legal_Entity>AthlonES</Legal_Entity>
+				<BWS_ID>3572211</BWS_ID>
+			</BusinessWorkspace>
+			<BusinessWorkspace templateName="Athlon_CaseFile">
+				<Status>ACTIVE</Status>
+				<StatusDate>2021-01-14Z</StatusDate>
+				<Country>ES</Country>
+				<Legal_Entity>AthlonES</Legal_Entity>
+				<CaseID>ccde0b57-5692-11eb-b0c7-025056007843</CaseID>
+				<CaseDate>2020-12-10Z</CaseDate>
+				<CaseType>CRA</CaseType>
+				<CaseSegment>Core</CaseSegment>
+				<BWS_ID>3572322</BWS_ID>
+			</BusinessWorkspace>
+		</BusinessWorkspaces>
+	</GetCreateOrUpdateBWSRequestStatusResponse>
+</soapenv:Body>
+</#if>

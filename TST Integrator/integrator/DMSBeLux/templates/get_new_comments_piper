@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "get_new_comments",
+            "script" : "workspace = body.workspace; headers.workspace = workspace; entity = body.entity; headers.entity = entity; headers.commentId = body.id + '-' + body.lineNumber; headers.handleRestExceptionTemplate = 'get_new_comments_error';  headers.handleExceptionTemplate = 'get_new_comments_error'"
+        }
+    ]
+}

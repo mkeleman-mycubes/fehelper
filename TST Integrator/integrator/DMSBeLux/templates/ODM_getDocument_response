@@ -1,0 +1,22 @@
+{
+    "documentInfo": {
+        "documentName": "${body.Docname}",
+        "legalEntity": "${body.LegalEntity}",
+        "docTypeNumber": ${body.DocTypeNumber?c},
+        
+        <#if body.ScanDate?has_content>
+            "creationDate": "${body.ScanDate}",
+        <#elseif body.CreationDate?has_content>
+            "creationDate": "${body.CreationDate}",
+        <#else>
+            "creationDate": "",
+        </#if>
+        
+        <#if body.CaseType?has_content>
+            "caseType": "${body.CaseType}",
+        </#if>
+        
+        "mimeType": "${body["File-MimeType"]}"
+    },
+    "documentInBase64": "${body["File-Content"]}"
+}

@@ -1,0 +1,9 @@
+{
+    "status": "true",
+    "name": "${body.feSecureData.user.identity.authenticatedUser}",
+    <#if body.feSecureData.user.profile.email??>
+        "email": "${body.feSecureData.user.profile.email}",
+    </#if>
+    "firstName": "${body.feSecureData.user.profile.firstName}",
+    "lastName": "${body.feSecureData.user.profile.lastName}"
+}

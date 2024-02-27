@@ -1,0 +1,21 @@
+{
+	"pipes": [{
+			"type": "transform",
+			"name": "dummy",
+			"script": "initialBody = body"
+		},
+		{
+			"type": "action",
+			"name": "loginToDMS"
+		},
+		{
+			"type": "action",
+			"name": "getSAMLToken"
+		},
+		{
+			"type": "action",
+			"name": "getDocumentList",
+			"script": "headers.SAMLArt = body.SAMLArt;body.variables = initialBody.variables; body.documentId = initialBody.documentId; body.searchType = initialBody.documentType; body.entity = initialBody.entity; body.country = initialBody.country"
+		}
+	]
+}

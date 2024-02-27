@@ -1,0 +1,17 @@
+<#if body.errorOccured??>
+{
+    "error": "${body.bpmnError.bpmnErrorCode}"
+}
+<#else>
+{
+    "processVariables": {
+        "documentInfo": {
+            "documentName": "${body.GetDocumentResponse.GetDocumentResponse.documentInfo.DocumentName}",
+            "mimeType": "${body.GetDocumentResponse.GetDocumentResponse.documentInfo.MimeType}",
+            "documentBase64": "${body.GetDocumentResponse.GetDocumentResponse.documentContent}"
+        },
+        "documentRetrieved": "yes"
+    },
+    "status": "true"
+}
+</#if>

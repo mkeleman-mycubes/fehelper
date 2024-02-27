@@ -1,0 +1,15 @@
+<#assign taskId = body.taskId >
+<#assign documentType = body.documentType >
+{
+    "pipes" : [
+            {
+                "type" : "action",
+                "name" : "save_action",
+                "script" : "headers.taskId = '${taskId}'; initBody = body; body.initBody = initBody; body.answers = body.initBody.answers; documentType = body.documentType"
+            },
+            {
+                "type": "action",
+                "name": "save_tasklist_response"
+            }
+    ]
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "dummy": "false",
+    "soapname": "getDocumentFromODM",
+    "name": "getDocumentFromODM",
+    "soapAction": "\"\"",
+    "uri": "https://aw-odm.intm.fs.corpintra.net/home/athlon/com.eibus.web.soap.Gateway.wcp?organization=o=athlon,cn=cordys,cn=MBB,o=epuint.biz"
+  },
+  {
+    "dummy": "false",
+    "soapname": "getDocumentList",
+    "name": "getDocumentList",
+    "soapAction": "\"\"",
+    "uri": "https://aw-odm.intm.fs.corpintra.net/home/athlon/com.eibus.web.soap.Gateway.wcp?organization=o=athlon,cn=cordys,cn=MBB,o=epuint.biz"
+  },
+  {
+    "dummy": "false",
+    "soapname": "getSAMLToken",
+    "name": "getSAMLToken",
+    "soapAction": "\"\"",
+    "uri": "https://aw-odm.intm.fs.corpintra.net/home/athlon/com.eibus.web.soap.Gateway.wcp?organization=o=athlon,cn=cordys,cn=MBB,o=epuint.biz"
+  },
+  {
+    "dummy": "true",
+    "soapname": "loginToDMS_mockedResponse",
+    "name": "loginToDMS_mockedResponse",
+    "soapAction": "",
+    "uri": ""
+  },
+  {
+    "dummy": "true",
+    "soapname": "prefill_tasklist_details_screen",
+    "name": "prefill_tasklist_details_screen",
+    "soapAction": "",
+    "uri": ""
+  },
+  {
+    "dummy": "false",
+    "soapname": "requestDocumentUploadStatus",
+    "name": "requestDocumentUploadStatus",
+    "soapAction": "\"\"",
+    "uri": "https://aw-odm.intm.fs.corpintra.net/home/athlon/com.eibus.web.soap.Gateway.wcp?organization=o=athlon,cn=cordys,cn=MBB,o=epuint.biz"
+  },
+  {
+    "dummy": "false",
+    "soapname": "storeFileToODM",
+    "name": "storeFileToODM",
+    "soapAction": "\"\"",
+    "uri": "https://aw-odm.intm.fs.corpintra.net/home/athlon/com.eibus.web.soap.Gateway.wcp?organization=o=athlon,cn=cordys,cn=MBB,o=epuint.biz"
+  },
+  {
+    "dummy": "true",
+    "soapname": "storeFileToODMBuilsXML",
+    "name": "storeFileToODMBuilsXML",
+    "soapAction": "",
+    "uri": ""
+  },
+  {
+    "dummy": "false",
+    "soapname": "storeInvoiceFileToODM",
+    "name": "storeInvoiceFileToODM",
+    "soapAction": "\"\"",
+    "uri": "https://aw-odm.intm.fs.corpintra.net/home/athlon/com.eibus.web.soap.Gateway.wcp?organization=o=athlon,cn=cordys,cn=MBB,o=epuint.biz"
+  },
+  {
+    "dummy": "true",
+    "soapname": "test_invoice_approve",
+    "name": "test_invoice_approve",
+    "soapAction": "",
+    "uri": ""
+  }
+]

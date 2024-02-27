@@ -1,0 +1,102 @@
+{
+    <#if body.taskStatus??>
+        "taskStatus": "${body.taskStatus?json_string}",
+    <#else>
+        "taskStatus": "To Do",
+    </#if>
+
+    <#if body.contractId??>
+        "contractId": "${body.contractId}",
+    </#if>
+    <#if body.customerId??>
+        "customerId": "${body.customerId?json_string}",
+    </#if>
+    <#if body.customerName??>
+        "customerName": "${body.customerName?json_string}",
+    </#if>
+    <#if body.driver??>
+        "driver": "${body.driver?json_string}",
+    </#if>
+    <#if body.licensePlate??>
+        "licensePlate": "${body.licensePlate?json_string}",
+    </#if>
+    <#if body.entity??>
+        "entity": "${body.entity?json_string}",
+    </#if>
+    <#if body.contractLifecycleStatus??>
+        "contractLifecycleStatus": "${body.contractLifecycleStatus?json_string}",
+    </#if>
+
+    <#if body.parentId??>
+        "parentId": "${body.parentId?json_string}",
+    </#if>
+    <#if body.parentName??>
+        "parentName": "${body.parentName?json_string}",
+    </#if>
+    
+    <#if body.internalInvoiceNumber??>
+        "internalInvoiceNumber": "${body.internalInvoiceNumber}",
+    </#if>
+    <#if body.externalInvoiceNumber??>
+        "externalInvoiceNumber": "${body.externalInvoiceNumber}",
+    </#if>
+    <#if body.bookingDate??>
+        "bookingDate": "${printDate(body.bookingDate)}",
+    </#if>
+    <#if body.invoiceDate??>
+        "invoiceDate": "${printDate(body.invoiceDate)}",
+    </#if>
+    <#if body.amountExclVat??>
+        "amountExclVat": "${body.amountExclVat?json_string}",
+    </#if>
+    <#if body.amountInclVat??>
+        "amountInclVat": "${body.amountInclVat?json_string}",
+    </#if>
+    <#if body.invoiceCategory??>
+        "invoiceCategory": "${body.invoiceCategory?json_string}",
+    </#if>
+    <#if body.invoiceType??>
+        "invoiceType": "${body.invoiceType?json_string}",
+    </#if>
+    <#if body.fineId??>
+        "fineId": "${body.fineId?json_string}",
+    </#if>
+    <#if body.policeReportNo??>
+        "policeReportNo": "${body.policeReportNo?json_string}",
+    </#if>
+    <#if body.claimId??>
+        "claimId": "${body.claimId?json_string}",
+    </#if>
+    <#if body.claimHandler??>
+        "claimHandler": "${body.claimHandler?json_string}",
+    </#if>
+    <#if body.claimDate??>
+        "claimDate": "${printDate(body.claimDate?json_string)}",
+    </#if>
+
+    <#-- Document information -->
+    <#if body.title??>
+        "title": "${body.title?json_string}",
+    </#if>
+    <#if body.category??>
+        "category": "${body.category?json_string}",
+    </#if>
+    <#if body.department??>
+        "department": "${body.department?json_string}",
+    </#if>
+    <#if body.subcategory??>
+        "subcategory": "${body.subcategory?json_string}",
+    </#if>
+    <#--
+    <#if body.creationDate??>
+        "creationDate": "${body.creationDate?json_string}",
+    </#if>
+    -->
+    
+    <#if body.documentType??>
+        "documentType": "${body.documentType?json_string}",
+    </#if>
+    <#if body["PROCESS-NAMESPACE"]??>
+        "PROCESS-NAMESPACE": "${body["PROCESS-NAMESPACE"]?json_string}"
+    </#if>
+}

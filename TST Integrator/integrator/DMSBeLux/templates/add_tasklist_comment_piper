@@ -1,0 +1,108 @@
+<#assign documentType = "">
+
+<#if body.serviceCall?? && body.serviceCall == "true">
+    <#assign documentType = body.answers['documentType'][0]>
+<#elseif body.serviceCall?? && body.serviceCall == "false">
+    <#assign documentType = body.answers['documentType'].data.answer[0]>
+</#if>
+
+{
+    "pipes": [
+        <#if body.serviceCall == "true" && body.validDepartmentsData == "valid" && body.validContract?? && body.validContract == "valid_contract">
+            {
+                "type" : "action",
+                "name" : "add_tasklist_comment",
+                "script" : "body.answers = body.answers; body.secureData = body.feSecureData; commentId = '${documentType}-' + body.answers['contractNo'][0]; headers.commentId = commentId"
+            }
+        <#elseif body.serviceCall == "false" && body.validDepartmentsData == "valid" && body.validContract?? && body.validContract == "valid_contract">
+            {
+                "type" : "action",
+                "name" : "add_tasklist_comment",
+                "script" : "body.answers = body.answers; commentId = '${documentType}-' + body.answers['contractNo'].data.answer[0]; headers.commentId = commentId"
+            }
+        <#elseif body.serviceCall == "true" && body.validDepartmentsData == "valid" && body.validFine?? && body.validFine == "valid_contract">
+            {
+                "type" : "action",
+                "name" : "add_tasklist_comment",
+                "script" : "body.answers = body.answers; body.secureData = body.feSecureData; commentId = '${documentType}-' + body.answers['contractNo'][0]; headers.commentId = commentId"
+            }
+        <#elseif body.serviceCall == "false" && body.validDepartmentsData == "valid" && body.validFine?? && body.validFine == "valid_contract">
+            {
+                "type" : "action",
+                "name" : "add_tasklist_comment",
+                "script" : "body.answers = body.answers; commentId = '${documentType}-' + body.answers['contractNo'].data.answer[0]; headers.commentId = commentId"
+            }
+         <#elseif body.serviceCall == "true" && body.validDepartmentsData == "valid" && body.validClaim?? && body.validClaim == "valid_claim">
+            {
+                "type" : "action",
+                "name" : "add_tasklist_comment",
+                "script" : "body.answers = body.answers; body.secureData = body.feSecureData; commentId = '${documentType}-' + body.answers['claim_nr'][0]; headers.commentId = commentId"
+            }
+        <#elseif body.serviceCall == "false" && body.validDepartmentsData == "valid" && body.validClaim?? && body.validClaim == "valid_claim">
+            {
+                "type" : "action",
+                "name" : "add_tasklist_comment",
+                "script" : "body.answers = body.answers; commentId = '${documentType}-' + body.answers['claim_nr'].data.answer[0]; headers.commentId = commentId"
+            }
+        <#elseif body.serviceCall == "true" && body.validDepartmentsData == "valid" && body.validInvoice?? && body.validInvoice == "valid_invoice">
+            {
+                "type" : "action",
+                "name" : "add_tasklist_comment",
+                "script" : "body.answers = body.answers; body.secureData = body.feSecureData; commentId = '${documentType}-' + body.answers['internal_invoice_number'][0]; headers.commentId = commentId"
+            }
+        <#elseif body.serviceCall == "false" && body.validDepartmentsData == "valid" && body.validInvoice?? && body.validInvoice == "valid_invoice">
+            {
+                "type" : "action",
+                "name" : "add_tasklist_comment",
+                "script" : "body.answers = body.answers; commentId = '${documentType}-' + body.answers['internal_invoice_number'].data.answer[0]; headers.commentId = commentId"
+            }
+        <#elseif body.serviceCall == "true" && body.validDepartmentsData == "valid" && body.validCustomer?? && body.validCustomer == "valid_customer">
+            {
+                "type" : "action",
+                "name" : "add_tasklist_comment",
+                "script" : "body.answers = body.answers; body.secureData = body.feSecureData; commentId =  '${documentType}-' + body.answers['customerNo'][0]; headers.commentId = commentId;"
+            }
+        <#elseif body.serviceCall == "false" && body.validDepartmentsData == "valid" && body.validCustomer?? && body.validCustomer == "valid_customer">
+            {
+                "type" : "action",
+                "name" : "add_tasklist_comment",
+                "script" : "body.answers = body.answers; commentId =  '${documentType}-' + body.answers['customerNo'].data.answer[0]; headers.commentId = commentId;"
+            }
+        <#elseif  body.validFine?? && body.validFine == "not_valid_fine">
+            {
+                "type" : "transform",
+                "name" : "atlasServiceError",
+                "script": "body.errorType = 'not_valid_fine';"
+            }
+        <#elseif  body.validContract?? && body.validContract == "not_valid_contract">
+            {
+                "type" : "transform",
+                "name" : "atlasServiceError",
+                "script": "body.errorType = 'not_valid_contract';"
+            }
+        <#elseif body.validClaim?? && body.validClaim == "not_valid_claim">
+            {
+                "type" : "transform",
+                "name" : "atlasServiceError",
+                "script": "body.errorType = 'not_valid_claim'; "
+            }
+        <#elseif body.validInvoice?? && body.validInvoice == "not_valid_invoice">
+            {
+                "type" : "transform",
+                "name" : "atlasServiceError",
+                "script": "body.errorType = 'not_valid_invoice'; "
+            }
+        <#elseif body.validCustomer?? && body.validCustomer == "not_valid_customer">
+            {
+                "type" : "transform",
+                "name" : "atlasServiceError",
+                "script": "body.errorType = 'not_valid_customer'; "
+            }
+        <#else>
+            {
+                "type" : "transform",
+                "name" : "hackedDepartmentsError"
+            }
+        </#if>
+    ]
+}

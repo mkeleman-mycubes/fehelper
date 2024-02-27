@@ -1,0 +1,190 @@
+<#--
+<#assign firstName = ""/>
+<#assign lastName = ""/>
+<#assign email = ""/>
+<#list body.values as value>
+    <#if value.name == 'givenName'>
+         <#assign firstName = value.values[0]/>
+     <#elseif value.name == 'sn'>
+         <#assign lastName = value.values[0]/>
+     <#elseif value.name == 'mail'>
+         <#assign email = value.values[0]/>
+    </#if>
+</#list>
+{
+    "firstName": "${firstName}",
+    "lastName": "${lastName}",
+    "email": "${email}"
+}
+-->
+
+
+<#if headers.restConnectorProperties.environment == "DHC">
+    <#assign firstName = ""/>
+    <#assign lastName = ""/>
+    <#assign email = ""/>
+<#list body.values as value>
+        <#if value.name == 'givenName'>
+         <#assign firstName = value.values[0]/>
+         <#elseif value.name == 'sn'>
+         <#assign lastName = value.values[0]/>
+         <#elseif value.name == 'mail'>
+         <#assign email = value.values[0]/>
+      </#if>
+</#list>
+  {
+    "firstName": "${firstName}",
+    "lastName": "${lastName}",
+    "email": "${email}"
+  }
+<#else>
+  <#assign userInfoMap = {
+    	"ILBContractManagement":{
+    		"firstName":"ILBContractManagement",
+    		"lastName":"user",
+    		"email":"ILBContractManagement@gmail.com"
+    	},
+    	"ILBOrderDelivery":{
+    		"firstName":"ILBOrderDelivery",
+    		"lastName":"user",
+    		"email":"ILBOrderDelivery@gmail.com"
+    	},
+    	"ILBDamages":{
+    		"firstName":"ILBDamages",
+    		"lastName":"user",
+    		"email":"ILBDamages@gmail.com"
+    	},
+    	"ILBFinance":{
+    		"firstName":"ILBFinance",
+    		"lastName":"user",
+    		"email":"ILBFinance@gmail.com"
+    	},
+    	"ILBInsurance":{
+    		"firstName":"ILBInsurance",
+    		"lastName":"user",
+    		"email":"ILBInsurance@gmail.com"
+    	},
+    	"ILBRemarketing":{
+    		"firstName":"ILBRemarketing",
+    		"lastName":"user",
+    		"email":"ILBRemarketing@gmail.com"
+    	},
+    	"ILBFines":{
+    		"firstName":"ILBFines",
+    		"lastName":"user",
+    		"email":"ILBFines@gmail.com"
+    	},
+    	"AthlonDMSBeLuxTaskListUser":{
+    		"firstName":"TaskList",
+    		"lastName":"user",
+    		"email":"AthlonDMSBeLuxTaskListUser@mycubes.nl"
+    	},
+    	"AthlonDMSBeLuxGeneralAccountant":{
+    		"firstName":"AthlonDMSBeLuxGeneralAccountant",
+    		"lastName":"user",
+    		"email":"AthlonDMSBeLuxTaskListUser@mycubes.nl"
+    	},
+    	"AthlonDMSBeLuxGeneralAccountant_1":{
+    		"firstName":"AthlonDMSBeLuxGeneralAccountant_1",
+    		"lastName":"user",
+    		"email":"AthlonDMSBeLuxTaskListUser_1@mycubes.nl"
+    	},
+    	"AthlonDMSBeLuxApprover1": {
+    	    "firstName":"AthlonDMSBeLuxApprover1",
+    		"lastName":"user",
+    		"email":"AthlonDMSBeLuxApprover1@mycubes.nl"
+    	},
+    	"AthlonDMSBeLuxApprover1_1": {
+    	    "firstName":"AthlonDMSBeLuxApprover1_1",
+    		"lastName":"user",
+    		"email":"AthlonDMSBeLuxApprover1_1@mycubes.nl"
+    	},
+    	"AthlonDMSBeLuxApprover2": {
+    	    "firstName":"AthlonDMSBeLuxApprover2",
+    		"lastName":"user",
+    		"email":"AthlonDMSBeLuxApprover2@mycubes.nl"
+    	},
+    	"AthlonDMSBeLuxAccountPayable": {
+    	    "firstName":"AthlonDMSBeLuxAccountPayable",
+    		"lastName":"user",
+    		"email":"AthlonDMSBeLuxAccountPayable@mycubes.nl"
+    	},
+    	"AthlonDMSBeLuxUser": {
+    	    "firstName":"AthlonDMSBeLuxUser",
+    		"lastName":"user",
+    		"email":"AthlonDMSBeLuxUser@mycubes.nl"
+    	},
+    	"AthlonDMSBeLuxPayable_1": {
+    	    "firstName":"AthlonDMSBeLuxPayable_1",
+    		"lastName":"user",
+    		"email":"AthlonDMSBeLuxPayable_1@mycubes.nl"
+    	},
+    	"cbenz":{
+    		"firstName":"Carl",
+    		"lastName":"Benz",
+    		"email":"cbenz@mycubes.nl"
+    	},
+    	"UnderwriterNL2":{
+    		"firstName":"Underwriter",
+    		"lastName":"NL-2",
+    		"email":"shamborovskyy@gmail.com"
+    	},
+    	"PSANCHEZ":{
+    		"firstName":"Pedro",
+    		"lastName":"Sanchez",
+    		"email":"test@mycubes.nl"
+    	},
+    	"SalesNL1":{
+    		"firstName":"Sales",
+    		"lastName":"NL-1",
+    		"email":"shamborovskyy@gmail.com"
+    	},
+    	"XSAVIOLA":{
+    		"firstName":"Xavier",
+    		"lastName":"Saviola",
+    		"email":"xavier.saviola@mycubes.nl"
+    	},
+    	"AthlonCreditAdminES":{
+    		"firstName":"AthlonCreditAdminES",
+    		"lastName":"Credit Admin ES",
+    		"email":"shvets@mycubes.nl"
+    	},
+    	"AthlonCreditPortal":{
+    		"firstName":"Athlon",
+    		"lastName":"Credit Admin",
+    		"email":"acamo@mycubes.nl"
+    	},
+    	"AthlonCreditAdminNL":{
+    		"firstName":"Athlon",
+    		"lastName":"Credit Admin NL",
+    		"email":"acamo@mycubes.nl"
+    	},
+    	"SalesNL3":{
+    		"firstName":"Sales",
+    		"lastName":"NL-3",
+    		"email":"acamo@mycubes.nl"
+    	},
+    	"SalesNL2":{
+    		"firstName":"Sales",
+    		"lastName":"NL-2",
+    		"email":"acamo@mycubes.nl"
+    	},
+    	"HUNTERM":{
+    		"firstName":"Mike",
+    		"lastName":"Hunter",
+    		"email":"brian.schilham@mycubes.nl"
+    	},
+    	"VANDIJR": {
+    	    "firstName":"Rutger",
+    		"lastName":"Van Dijk",
+    		"email":"mock.rutger.vandijk@gmail.com"
+    	}
+    }/>
+ <#assign username = headers.gasId>
+ 
+   <#list userInfoMap as user, info>
+    <#if user == username>
+         <@printObjectToJson source=info />
+    </#if>
+   </#list>
+ </#if>

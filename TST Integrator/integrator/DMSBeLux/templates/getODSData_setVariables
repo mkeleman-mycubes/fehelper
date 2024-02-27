@@ -1,0 +1,17 @@
+<#if body.errorOccured??>
+    <@printObjectToJson source=body />
+<#elseif body.status?? && body.status == "NOK">
+    {
+        "errorOccured": "true",
+        "status": "true",
+        "bpmnError": {
+            "bpmnErrorCode": "MilesCallFailedError",
+            "bpmnErrorMessage": "${body.message}"
+        }
+    }
+<#else>
+    {
+        "status": "true",
+        "processVariables": <@printObjectToJson source=body />
+    }
+</#if>

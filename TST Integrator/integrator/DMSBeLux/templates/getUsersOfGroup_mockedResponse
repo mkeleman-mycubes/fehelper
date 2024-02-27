@@ -1,0 +1,670 @@
+{
+  "allObjectsNumber": 8,
+  "listUsersResult": {
+    "users": [
+      {
+        "originUUID": "8f916b21-8e84-4b38-9b6e-8dfba41da232",
+        "urlLocation": "cn=Wiggers, Tom (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "values": [
+          { "values": ["Approver1"], "name": "givenName" },
+          { "values": ["SureNameApprover1"], "name": "sn" },
+          { "values": ["AthlonDMSBeLuxApprover1"], "name": "oTExternalID1" }
+        ],
+        "name": "Wiggers, Tom (501-Extern)",
+        "objectClass": "oTPerson",
+        "description": null,
+        "userPartitionID": "emea.corpdir.net",
+        "location": "cn=Wiggers\\, Tom (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "id": "twigger@emea.corpdir.net",
+        "urlId": "twigger@emea.corpdir.net",
+        "uuid": "b716a027-333b-4f4e-81ee-46b869ac975f",
+        "customAttributes": null
+      },
+      {
+        "originUUID": "94058b97-b21b-408a-87fa-d4b4c0b2fbe9",
+        "urlLocation": "cn=Van Der Schoot, Joost (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "values": [
+          { "values": ["0"], "name": "schemaType" },
+          { "values": ["Van Der Schoot, Joost (501-Extern)"], "name": "cn" },
+          {
+            "values": [
+              "1a71256e-7593-4ef3-be64-c1a353306b74:343071",
+              "8a0e1975-f16a-4ad3-9a24-aad519c26344:USER~15b7890a-05c8-44ae-a847-807b2c80b2c3",
+              "3bf1f593-257f-498b-8877-80f2569778eb:3558797",
+              "2202f770-0d9e-40c1-a257-c4d2785b9fa8:USER~70a75c14-a70f-4b63-a7db-e8e3799f5e4d"
+            ],
+            "name": "oTObjectIDInResource"
+          },
+          { "values": ["JOOVAND"], "name": "oTExternalID1" },
+          { "values": ["2021-07-14T15:48:37Z"], "name": "modifyTimestamp" },
+          {
+            "values": ["2021-07-14T15:48:37Z"],
+            "name": "oTLastLoginTimestamp"
+          },
+          { "values": ["Joost"], "name": "givenName" },
+          { "values": ["EMEA\\JOOVAND"], "name": "oTExternalID4" },
+          { "values": ["JOOVAND@emea.corpdir.net"], "name": "oTExternalID2" },
+          {
+            "values": ["Van Der Schoot, Joost (501-Extern)"],
+            "name": "displayName"
+          },
+          { "values": ["joovand@emea.corpdir.net"], "name": "oTExternalID3" },
+          { "values": ["2020-12-16T10:33:44Z"], "name": "createTimestamp" },
+          { "values": ["NL"], "name": "c" },
+          { "values": ["ITM/EA"], "name": "oTDepartment" },
+          {
+            "values": [
+              "cn=Van Der Schoot\\, Joost (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "entryDN"
+          },
+          { "values": ["Almere"], "name": "l" },
+          { "values": ["EMEA"], "name": "oTNetBIOSName" },
+          { "values": ["5310"], "name": "o" },
+          { "values": ["emea.corpdir.net"], "name": "oTDomainName" },
+          { "values": ["l4sFlBuyikCH+tS0wLL76Q=="], "name": "oTObjectGUID" },
+          {
+            "values": [
+              "cn=E501_UR-APP-CSDMO-CRA-ES-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-ES-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-IT-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-NL-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-NL-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-IT-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-CRA-INT-IT-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-501-CSDMO-CRA-INT-NL-INT-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-CRA-INT-IT-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-INT-IT-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-CRA-INT-IT-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-501-CSDMO-CRA-INT-NL-INT-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-501-CSDMO-CRA-INT-NL-INT-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-501-CSDMO-INT-NL-INT-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-SLS-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-INT-NL-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-INT-NL-SLS-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-SLS-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-SLS-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-CRA-INT-ES-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-INT-NL-MBFS-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-CRA-INT-ES-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-CRA-INT-ES-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-INT-ES-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-INT-FR-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-INT-FR-MBF-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-MBF-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-MBF-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-INT-BE-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-PRL-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-PRL-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-INT-BE-PRL-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-537-CSDMO-CRA-INT-BE-RENT-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-537-CSDMO-INT-BE-RENT-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-PRL-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-537-CSDMO-CRA-INT-BE-RENT-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-537-CSDMO-CRA-INT-BE-RENT-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "oTMemberOf"
+          },
+          {
+            "values": [
+              "CN=Van Der Schoot\\, Joost (501-Extern),OU=Users,OU=_GlobalResources,OU=E501,DC=emea,DC=corpdir,DC=net"
+            ],
+            "name": "oTOriginalDN"
+          },
+          { "values": ["joost.vanderschoot@Athlon.com"], "name": "mail" },
+          { "values": ["Van Der Schoot"], "name": "sn" },
+          {
+            "values": ["cc0229b9-634c-4e0e-9d38-32599ac07b7f"],
+            "name": "entryUUID"
+          }
+        ],
+        "name": "Van Der Schoot, Joost (501-Extern)",
+        "objectClass": "oTPerson",
+        "description": null,
+        "userPartitionID": "emea.corpdir.net",
+        "location": "cn=Van Der Schoot\\, Joost (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "id": "joovand@emea.corpdir.net",
+        "urlId": "joovand@emea.corpdir.net",
+        "uuid": "cc0229b9-634c-4e0e-9d38-32599ac07b7f",
+        "customAttributes": null
+      },
+      {
+        "originUUID": "f36d944b-e07c-4487-a301-ab3ff9f548ab",
+        "urlLocation": "cn=Van Dijk, Rutger (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "values": [
+          { "values": ["0"], "name": "schemaType" },
+          { "values": ["Van Dijk, Rutger (501-Extern)"], "name": "cn" },
+          {
+            "values": [
+              "1a71256e-7593-4ef3-be64-c1a353306b74:343020",
+              "8a0e1975-f16a-4ad3-9a24-aad519c26344:USER~f6d43769-50a6-4698-a623-58fab0b90a6e",
+              "3bf1f593-257f-498b-8877-80f2569778eb:3559136",
+              "2202f770-0d9e-40c1-a257-c4d2785b9fa8:USER~de18772c-7b88-455d-ab31-035a43a93707"
+            ],
+            "name": "oTObjectIDInResource"
+          },
+          { "values": ["VANDIJR"], "name": "oTExternalID1" },
+          { "values": ["2021-07-12T05:40:42Z"], "name": "modifyTimestamp" },
+          {
+            "values": ["2021-07-12T05:40:42Z"],
+            "name": "oTLastLoginTimestamp"
+          },
+          { "values": ["Rutger"], "name": "givenName" },
+          { "values": ["EMEA\\VANDIJR"], "name": "oTExternalID4" },
+          { "values": ["VANDIJR@emea.corpdir.net"], "name": "oTExternalID2" },
+          {
+            "values": ["Van Dijk, Rutger (501-Extern)"],
+            "name": "displayName"
+          },
+          { "values": ["vandijr@emea.corpdir.net"], "name": "oTExternalID3" },
+          { "values": ["2020-12-16T10:18:27Z"], "name": "createTimestamp" },
+          { "values": ["NL"], "name": "c" },
+          { "values": ["ITM/EA"], "name": "oTDepartment" },
+          {
+            "values": [
+              "cn=Van Dijk\\, Rutger (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "entryDN"
+          },
+          { "values": ["Almere"], "name": "l" },
+          { "values": ["EMEA"], "name": "oTNetBIOSName" },
+          { "values": ["5310"], "name": "o" },
+          { "values": ["emea.corpdir.net"], "name": "oTDomainName" },
+          { "values": ["S5Rt83zgh0SjAas/+fVIqw=="], "name": "oTObjectGUID" },
+          {
+            "values": [
+              "cn=E501_UR-APP-CSDMO-CRA-ES-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-ES-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-NL-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-NL-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-IT-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-IT-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-501-CSDMO-CRA-INT-NL-INT-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-501-CSDMO-CRA-PROD-NL-INT-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-SLS-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-INT-NL-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-INT-NL-SLS-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-CRA-INT-IT-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-SLS-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-CRA-INT-ES-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-INT-NL-MBFS-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-INT-ES-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-CRA-INT-IT-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-CRA-INT-IT-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-CRA-INT-ES-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-CRA-INT-ES-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-INT-IT-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-SLS-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-MBF-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-MBF-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-MBF-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-PRL-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-PRL-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-PRL-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "oTMemberOf"
+          },
+          {
+            "values": [
+              "CN=Van Dijk\\, Rutger (501-Extern),OU=Users,OU=_GlobalResources,OU=E501,DC=emea,DC=corpdir,DC=net"
+            ],
+            "name": "oTOriginalDN"
+          },
+          { "values": ["rutger.vandijk@athlon.com"], "name": "mail" },
+          { "values": ["Van Dijk"], "name": "sn" },
+          {
+            "values": ["4739b86b-8ee9-411f-b0e8-aecc7dac17ff"],
+            "name": "entryUUID"
+          }
+        ],
+        "name": "Van Dijk, Rutger (501-Extern)",
+        "objectClass": "oTPerson",
+        "description": null,
+        "userPartitionID": "emea.corpdir.net",
+        "location": "cn=Van Dijk\\, Rutger (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "id": "vandijr@emea.corpdir.net",
+        "urlId": "vandijr@emea.corpdir.net",
+        "uuid": "4739b86b-8ee9-411f-b0e8-aecc7dac17ff",
+        "customAttributes": null
+      },
+      {
+        "originUUID": "77014b9f-7dbf-4a10-8cfb-9865bdf71190",
+        "urlLocation": "cn=De Keijzer, Roy (440-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "values": [
+          { "values": ["0"], "name": "schemaType" },
+          { "values": ["De Keijzer, Roy (440-Extern)"], "name": "cn" },
+          {
+            "values": [
+              "1a71256e-7593-4ef3-be64-c1a353306b74:345347",
+              "3bf1f593-257f-498b-8877-80f2569778eb:3624397",
+              "8a0e1975-f16a-4ad3-9a24-aad519c26344:USER~15d21d5a-b146-4190-ba7e-119a9263d76f"
+            ],
+            "name": "oTObjectIDInResource"
+          },
+          { "values": ["RDEKEIJ"], "name": "oTExternalID1" },
+          { "values": ["2021-05-07T11:44:13Z"], "name": "modifyTimestamp" },
+          { "values": ["Roy"], "name": "givenName" },
+          { "values": ["EMEA\\RDEKEIJ"], "name": "oTExternalID4" },
+          { "values": ["RDEKEIJ@emea.corpdir.net"], "name": "oTExternalID2" },
+          { "values": ["De Keijzer, Roy (440-Extern)"], "name": "displayName" },
+          { "values": ["rdekeij@emea.corpdir.net"], "name": "oTExternalID3" },
+          { "values": ["+49 123 1234567"], "name": "oTTelephoneNumber" },
+          { "values": ["2021-05-06T08:20:44Z"], "name": "createTimestamp" },
+          { "values": ["NL"], "name": "c" },
+          { "values": ["ITM/EA"], "name": "oTDepartment" },
+          {
+            "values": [
+              "cn=De Keijzer\\, Roy (440-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "entryDN"
+          },
+          { "values": ["Almere"], "name": "l" },
+          { "values": ["EMEA"], "name": "oTNetBIOSName" },
+          { "values": ["+49 123 1234567"], "name": "telephoneNumber" },
+          { "values": ["5313"], "name": "o" },
+          { "values": ["emea.corpdir.net"], "name": "oTDomainName" },
+          { "values": ["n0sBd799EEqM+5hlvfcRkA=="], "name": "oTObjectGUID" },
+          {
+            "values": [
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "oTMemberOf"
+          },
+          {
+            "values": [
+              "CN=De Keijzer\\, Roy (440-Extern),OU=Users,OU=_GlobalResources,OU=E501,DC=emea,DC=corpdir,DC=net"
+            ],
+            "name": "oTOriginalDN"
+          },
+          { "values": ["roy.dekeijzer@athlon.com"], "name": "mail" },
+          { "values": ["De Keijzer"], "name": "sn" },
+          {
+            "values": ["23f7a22f-8900-460a-8c59-096bfea985f3"],
+            "name": "entryUUID"
+          }
+        ],
+        "name": "De Keijzer, Roy (440-Extern)",
+        "objectClass": "oTPerson",
+        "description": null,
+        "userPartitionID": "emea.corpdir.net",
+        "location": "cn=De Keijzer\\, Roy (440-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "id": "rdekeij@emea.corpdir.net",
+        "urlId": "rdekeij@emea.corpdir.net",
+        "uuid": "23f7a22f-8900-460a-8c59-096bfea985f3",
+        "customAttributes": null
+      },
+      {
+        "originUUID": "117ce44b-7756-434b-83e2-0e2a824ab75a",
+        "urlLocation": "cn=Reynaert, Justin (440-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "values": [
+          { "values": ["0"], "name": "schemaType" },
+          { "values": ["Reynaert, Justin (440-Extern)"], "name": "cn" },
+          {
+            "values": [
+              "1a71256e-7593-4ef3-be64-c1a353306b74:345346",
+              "3bf1f593-257f-498b-8877-80f2569778eb:3624796",
+              "8a0e1975-f16a-4ad3-9a24-aad519c26344:USER~50e420ac-4094-4978-9903-a64a7f417223"
+            ],
+            "name": "oTObjectIDInResource"
+          },
+          { "values": ["JREYNAE"], "name": "oTExternalID1" },
+          { "values": ["2021-05-07T11:44:13Z"], "name": "modifyTimestamp" },
+          { "values": ["Justin"], "name": "givenName" },
+          { "values": ["EMEA\\JREYNAE"], "name": "oTExternalID4" },
+          { "values": ["JREYNAE@emea.corpdir.net"], "name": "oTExternalID2" },
+          {
+            "values": ["Reynaert, Justin (440-Extern)"],
+            "name": "displayName"
+          },
+          { "values": ["jreynae@emea.corpdir.net"], "name": "oTExternalID3" },
+          { "values": ["2021-05-06T08:20:44Z"], "name": "createTimestamp" },
+          { "values": ["NL"], "name": "c" },
+          { "values": ["ITM/EA"], "name": "oTDepartment" },
+          {
+            "values": [
+              "cn=Reynaert\\, Justin (440-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "entryDN"
+          },
+          { "values": ["Almere"], "name": "l" },
+          { "values": ["EMEA"], "name": "oTNetBIOSName" },
+          { "values": ["5313"], "name": "o" },
+          { "values": ["emea.corpdir.net"], "name": "oTDomainName" },
+          { "values": ["S+R8EVZ3S0OD4g4qgkq3Wg=="], "name": "oTObjectGUID" },
+          {
+            "values": [
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "oTMemberOf"
+          },
+          {
+            "values": [
+              "CN=Reynaert\\, Justin (440-Extern),OU=Users,OU=_GlobalResources,OU=E501,DC=emea,DC=corpdir,DC=net"
+            ],
+            "name": "oTOriginalDN"
+          },
+          { "values": ["justin.reynaert@athlon.com"], "name": "mail" },
+          { "values": ["Reynaert"], "name": "sn" },
+          {
+            "values": ["43359078-7315-4bc0-97ad-ff2aa2b70462"],
+            "name": "entryUUID"
+          }
+        ],
+        "name": "Reynaert, Justin (440-Extern)",
+        "objectClass": "oTPerson",
+        "description": null,
+        "userPartitionID": "emea.corpdir.net",
+        "location": "cn=Reynaert\\, Justin (440-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "id": "jreynae@emea.corpdir.net",
+        "urlId": "jreynae@emea.corpdir.net",
+        "uuid": "43359078-7315-4bc0-97ad-ff2aa2b70462",
+        "customAttributes": null
+      },
+      {
+        "originUUID": "f4a83b4a-23ea-4420-a24a-284bd40b0677",
+        "urlLocation": "cn=Bijllaardt, Kimberly (440),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "values": [
+          { "values": ["0"], "name": "schemaType" },
+          { "values": ["Bijllaardt, Kimberly (440)"], "name": "cn" },
+          {
+            "values": [
+              "1a71256e-7593-4ef3-be64-c1a353306b74:345339",
+              "8a0e1975-f16a-4ad3-9a24-aad519c26344:USER~be2a59a9-90cf-4d3b-81a1-cc5a6c7c6094",
+              "3bf1f593-257f-498b-8877-80f2569778eb:3625074"
+            ],
+            "name": "oTObjectIDInResource"
+          },
+          { "values": ["KIMVAND"], "name": "oTExternalID1" },
+          { "values": ["2021-05-07T11:44:13Z"], "name": "modifyTimestamp" },
+          { "values": ["Kimberly"], "name": "givenName" },
+          { "values": ["EMEA\\KIMVAND"], "name": "oTExternalID4" },
+          { "values": ["KIMVAND@emea.corpdir.net"], "name": "oTExternalID2" },
+          { "values": ["Bijllaardt, Kimberly (440)"], "name": "displayName" },
+          { "values": ["kimvand@emea.corpdir.net"], "name": "oTExternalID3" },
+          { "values": ["+31 36 547 4260"], "name": "oTTelephoneNumber" },
+          { "values": ["2021-05-06T08:20:44Z"], "name": "createTimestamp" },
+          { "values": ["NL"], "name": "c" },
+          { "values": ["ITM/EA"], "name": "oTDepartment" },
+          {
+            "values": [
+              "cn=Bijllaardt\\, Kimberly (440),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "entryDN"
+          },
+          { "values": ["Almere"], "name": "l" },
+          { "values": ["EMEA"], "name": "oTNetBIOSName" },
+          { "values": ["+31 36 547 4260"], "name": "telephoneNumber" },
+          { "values": ["5313"], "name": "o" },
+          { "values": ["emea.corpdir.net"], "name": "oTDomainName" },
+          { "values": ["Sjuo9OojIESiSihL1AsGdw=="], "name": "oTObjectGUID" },
+          {
+            "values": [
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "oTMemberOf"
+          },
+          {
+            "values": [
+              "CN=Bijllaardt\\, Kimberly (440),OU=Users,OU=_GlobalResources,OU=E501,DC=emea,DC=corpdir,DC=net"
+            ],
+            "name": "oTOriginalDN"
+          },
+          {
+            "values": ["kimberly.vandenbijllaardt@athlon.com"],
+            "name": "mail"
+          },
+          { "values": ["Bijllaardt"], "name": "sn" },
+          {
+            "values": ["84732858-8266-4793-9fc8-2cf67b69dc60"],
+            "name": "entryUUID"
+          }
+        ],
+        "name": "Bijllaardt, Kimberly (440)",
+        "objectClass": "oTPerson",
+        "description": null,
+        "userPartitionID": "emea.corpdir.net",
+        "location": "cn=Bijllaardt\\, Kimberly (440),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "id": "kimvand@emea.corpdir.net",
+        "urlId": "kimvand@emea.corpdir.net",
+        "uuid": "84732858-8266-4793-9fc8-2cf67b69dc60",
+        "customAttributes": null
+      },
+      {
+        "originUUID": "79f37c8f-1c64-4117-a7a5-4a4f611e488b",
+        "urlLocation": "cn=Hoeven, Carla (440),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "values": [
+          { "values": ["0"], "name": "schemaType" },
+          { "values": ["Hoeven, Carla (440)"], "name": "cn" },
+          {
+            "values": [
+              "1a71256e-7593-4ef3-be64-c1a353306b74:345341",
+              "3bf1f593-257f-498b-8877-80f2569778eb:3625278",
+              "8a0e1975-f16a-4ad3-9a24-aad519c26344:USER~78d18db3-e274-4c19-bfb2-d76567115968"
+            ],
+            "name": "oTObjectIDInResource"
+          },
+          { "values": ["CVANHOE"], "name": "oTExternalID1" },
+          { "values": ["2021-05-21T03:26:55Z"], "name": "modifyTimestamp" },
+          { "values": ["Carla"], "name": "givenName" },
+          { "values": ["EMEA\\CVANHOE"], "name": "oTExternalID4" },
+          { "values": ["CVANHOE@emea.corpdir.net"], "name": "oTExternalID2" },
+          { "values": ["Hoeven, Carla (440)"], "name": "displayName" },
+          { "values": ["cvanhoe@emea.corpdir.net"], "name": "oTExternalID3" },
+          { "values": ["2021-05-06T08:20:44Z"], "name": "createTimestamp" },
+          { "values": ["NL"], "name": "c" },
+          { "values": ["ITM/EA"], "name": "oTDepartment" },
+          {
+            "values": [
+              "cn=Hoeven\\, Carla (440),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "entryDN"
+          },
+          { "values": ["Almere"], "name": "l" },
+          { "values": ["EMEA"], "name": "oTNetBIOSName" },
+          { "values": ["5313"], "name": "o" },
+          { "values": ["emea.corpdir.net"], "name": "oTDomainName" },
+          { "values": ["j3zzeWQcF0GnpUpPYR5Iiw=="], "name": "oTObjectGUID" },
+          {
+            "values": [
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "oTMemberOf"
+          },
+          {
+            "values": [
+              "CN=Hoeven\\, Carla (440),OU=Users,OU=_GlobalResources,OU=E501,DC=emea,DC=corpdir,DC=net"
+            ],
+            "name": "oTOriginalDN"
+          },
+          {
+            "values": [
+              "cn=Van Hoeven\\, Carla (440),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "oTPreviousDN"
+          },
+          { "values": ["carla.vanhoeven@athlon.com"], "name": "mail" },
+          { "values": ["Hoeven"], "name": "sn" },
+          {
+            "values": ["b533476e-8a2d-4abc-b8bd-f3277927ef4c"],
+            "name": "entryUUID"
+          }
+        ],
+        "name": "Hoeven, Carla (440)",
+        "objectClass": "oTPerson",
+        "description": null,
+        "userPartitionID": "emea.corpdir.net",
+        "location": "cn=Hoeven\\, Carla (440),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "id": "cvanhoe@emea.corpdir.net",
+        "urlId": "cvanhoe@emea.corpdir.net",
+        "uuid": "b533476e-8a2d-4abc-b8bd-f3277927ef4c",
+        "customAttributes": null
+      },
+      {
+        "originUUID": "8f916b21-8e84-4b38-9b6e-8dfba41da231",
+        "urlLocation": "cn=Wiggers, Tom (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "values": [
+          { "values": ["0"], "name": "schemaType" },
+          { "values": ["Wiggers, Tom (501-Extern)"], "name": "cn" },
+          {
+            "values": [
+              "1a71256e-7593-4ef3-be64-c1a353306b74:343674",
+              "3bf1f593-257f-498b-8877-80f2569778eb:3592968",
+              "8a0e1975-f16a-4ad3-9a24-aad519c26344:USER~7a7ba057-ba0e-49f1-8db6-cc5a9602dcc5",
+              "2202f770-0d9e-40c1-a257-c4d2785b9fa8:USER~017f155a-b3f0-406f-9fcd-83f12a16fd1b"
+            ],
+            "name": "oTObjectIDInResource"
+          },
+          { "values": ["TWIGGER"], "name": "oTExternalID1" },
+          { "values": ["2021-07-14T14:13:17Z"], "name": "modifyTimestamp" },
+          {
+            "values": ["2021-07-14T09:42:27Z"],
+            "name": "oTLastLoginTimestamp"
+          },
+          { "values": ["Tom"], "name": "givenName" },
+          { "values": ["EMEA\\TWIGGER"], "name": "oTExternalID4" },
+          { "values": ["TWIGGER@emea.corpdir.net"], "name": "oTExternalID2" },
+          { "values": ["Wiggers, Tom (501-Extern)"], "name": "displayName" },
+          { "values": ["twigger@emea.corpdir.net"], "name": "oTExternalID3" },
+          { "values": ["2021-01-27T13:14:01Z"], "name": "createTimestamp" },
+          { "values": ["NL"], "name": "c" },
+          { "values": ["ITM/EA"], "name": "oTDepartment" },
+          {
+            "values": [
+              "cn=Wiggers\\, Tom (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "entryDN"
+          },
+          { "values": ["Almere"], "name": "l" },
+          { "values": ["EMEA"], "name": "oTNetBIOSName" },
+          { "values": ["5310"], "name": "o" },
+          { "values": ["emea.corpdir.net"], "name": "oTDomainName" },
+          { "values": ["IWuRj4SOOEubbo37pB2iMQ=="], "name": "oTObjectGUID" },
+          {
+            "values": [
+              "cn=E501_UR-APP-CSDMO-CRA-IT-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-NL-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-NL-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-APP-CSDMO-CRA-IT-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-CRA-INT-IT-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-INT-IT-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-CRA-INT-IT-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-501-CSDMO-CRA-INT-NL-INT-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-501-CSDMO-CRA-INT-NL-INT-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-501-CSDMO-INT-NL-INT-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-INT-NL-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-SLS-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-SLS-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-INT-NL-SLS-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-CRA-INT-ES-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-INT-NL-MBFS-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-CRA-INT-ES-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-INT-ES-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-INT-FR-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-INT-FR-MBF-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-MBF-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-MBF-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-INT-FR-UCAR-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-INT-BE-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-PRL-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-PRL-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-CRA-INT-BE-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-853-CSDMO-INT-BE-PRL-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-MBF-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-906-CSDMO-CRA-INT-IT-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-SLS-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-642-CSDMO-CRA-INT-FR-UCAR-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-584-CSDMO-CRA-INT-ES-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-440-CSDMO-CRA-INT-NL-MBFS-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-501-CSDMO-CRA-INT-NL-INT-Admin,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-537-CSDMO-INT-BE-RENT-RM,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-537-CSDMO-CRA-INT-BE-RENT-Sales,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+              "cn=E501_UR-537-CSDMO-CRA-INT-BE-RENT-Underwriters,ou=Groups,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net"
+            ],
+            "name": "oTMemberOf"
+          },
+          {
+            "values": [
+              "CN=Wiggers\\, Tom (501-Extern),OU=Users,OU=_GlobalResources,OU=E501,DC=emea,DC=corpdir,DC=net"
+            ],
+            "name": "oTOriginalDN"
+          },
+          { "values": ["tom.wiggers@athlon.com"], "name": "mail" },
+          { "values": ["Wiggers"], "name": "sn" },
+          {
+            "values": ["b716a027-333b-4f4e-81ee-46b869ac975f"],
+            "name": "entryUUID"
+          }
+        ],
+        "name": "Wiggers, Tom (501-Extern)",
+        "objectClass": "oTPerson",
+        "description": null,
+        "userPartitionID": "emea.corpdir.net",
+        "location": "cn=Wiggers\\, Tom (501-Extern),ou=Users,ou=_GlobalResources,ou=E501,ou=Root,ou=emea.corpdir.net,ou=IdentityProviders,dc=identity,dc=opentext,dc=net",
+        "id": "twigger@emea.corpdir.net",
+        "urlId": "twigger@emea.corpdir.net",
+        "uuid": "b716a027-333b-4f4e-81ee-46b869ac975f",
+        "customAttributes": null
+      }
+    ],
+    "actualPageSize": 7,
+    "nextPageCookie": null,
+    "requestedPageSize": 250
+  },
+  "listGroupsResult": {
+    "groups": null,
+    "actualPageSize": 0,
+    "nextPageCookie": null,
+    "requestedPageSize": 250
+  },
+  "listOrganizationalUnitsResult": null,
+  "listRolesResult": {
+    "roles": null,
+    "actualPageSize": 0,
+    "nextPageCookie": null,
+    "requestedPageSize": 250
+  },
+  "listUserPartitionsResult": null
+}

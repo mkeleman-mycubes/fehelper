@@ -1,0 +1,6 @@
+{
+    "status": "false",
+    "errorOccured": "true",
+    "errorType" : "${body.errorType}",
+    "message": "${body.message}"
+}

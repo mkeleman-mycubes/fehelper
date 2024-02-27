@@ -1,0 +1,27 @@
+{
+   "pipes":[
+      
+     {
+        "type" : "transform",
+         "name" : "dummy",
+         "script" : "initialBody = body; identity = body.feSecureData ? body.feSecureData.user.identity : body.identity ? body.identity : [:] ; groupId = body.groupId; excludeAssignedTo = body.excludeAssignedTo ? body.excludeAssignedTo : false; excludeMyself = body.excludeMyself ? body.excludeMyself : false;"
+      },   
+    <#if body.usersTask??>
+       {
+         "type":"action",
+         "name":"getTaskVariables",
+         "script":"headers.taskId = initialBody.taskId"
+      },
+    </#if>
+      {
+         "type":"action",
+         "name":"loginToOTDS",
+         "script":"taskVariables = body"
+      },
+      {
+         "type":"action",
+         "name":"getUsersOfGroup",
+         "script":"headers.groupId = groupId; headers.OTDSTicket = body.ticket; headers.AssignedTo = taskVariables.AssignedTo ? taskVariables.AssignedTo.value : ''; headers.excludeMyself = excludeMyself; headers.identity = [authenticatedUser:identity.authenticatedUser]; headers.excludeAssignedTo = excludeAssignedTo;"
+      }
+   ]
+}

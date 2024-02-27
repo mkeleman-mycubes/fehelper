@@ -1,0 +1,83 @@
+<#assign departments = body.departments>
+<#if body.serviceCall?? && body.serviceCall == "true">
+    <#assign fedepartment = body.initBody.answers['department'][0]>
+    <#assign fecategory = body.initBody.answers['category'][0]>
+    <#assign fesubcategory = body.initBody.answers['subcategory'][0]>
+    <#assign validDepartmentsData = "valid">
+    
+    <#list departments as dep>
+      <#if dep.key?? && dep.key == fedepartment>
+        <#assign categories = dep.categories>
+        <#assign validDepartmentsData = "valid">
+        <#break>
+      <#else>
+        <#assign validDepartmentsData = "not_valid">
+      </#if>
+    </#list>
+    
+    <#if categories??>
+      <#list categories as cat>
+        <#if cat.key?? && cat.key == fecategory>
+          <#assign subcategories = cat.subcategories>
+          <#assign validDepartmentsData = "valid">
+          <#break>
+        <#else>
+          <#assign validDepartmentsData = "not_valid">
+        </#if>
+      </#list>
+    </#if>
+    
+    <#if subcategories??>
+      <#list subcategories as subcat>
+        <#if subcat.key?? && subcat.key == fesubcategory>
+          <#assign validDepartmentsData = "valid">
+          <#break>
+        <#else>
+          <#assign validDepartmentsData = "not_valid">
+        </#if>
+      </#list>
+    </#if>
+<#else>
+    <#assign fedepartment = body.initBody.answers['department'].data.answer[0]>
+    <#assign fecategory = body.initBody.answers['category'].data.answer[0]>
+    <#assign fesubcategory = body.initBody.answers['subcategory'].data.answer[0]>
+    <#assign validDepartmentsData = "valid">
+    
+    <#list departments as dep>
+      <#if dep.key?? && dep.key == fedepartment>
+        <#assign categories = dep.categories>
+        <#assign validDepartmentsData = "valid">
+        <#break>
+      <#else>
+        <#assign validDepartmentsData = "not_valid">
+      </#if>
+    </#list>
+    
+    <#if categories??>
+      <#list categories as cat>
+        <#if cat.key?? && cat.key == fecategory>
+          <#assign subcategories = cat.subcategories>
+          <#assign validDepartmentsData = "valid">
+          <#break>
+        <#else>
+          <#assign validDepartmentsData = "not_valid">
+        </#if>
+      </#list>
+    </#if>
+    
+    <#if subcategories??>
+      <#list subcategories as subcat>
+        <#if subcat.key?? && subcat.key == fesubcategory>
+          <#assign validDepartmentsData = "valid">
+          <#break>
+        <#else>
+          <#assign validDepartmentsData = "not_valid">
+        </#if>
+      </#list>
+    </#if>
+</#if>
+
+
+{
+  "validDepartmentsData": "${validDepartmentsData}"
+}

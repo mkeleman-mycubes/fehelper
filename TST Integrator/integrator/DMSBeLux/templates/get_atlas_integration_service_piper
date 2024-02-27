@@ -1,0 +1,9 @@
+{
+	"pipes": [
+		{
+			"type": "action",
+			"name": "get_atlas_integration_service",
+			"script": "headers.atlas_integration_service_type = body.atlas_integration_service_type;  headers.handleRestExceptionTemplate = '';  headers.handleExceptionTemplate = ''"
+		}
+	]
+}

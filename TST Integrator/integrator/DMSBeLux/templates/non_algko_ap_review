@@ -1,0 +1,22 @@
+<#assign dateTime = .now>
+<#assign commentStatusData = "Reviewed by AP">
+{
+  "variables": {
+    "comments_obj": {
+      "type": "Json",
+      "value": <#if 0 < body.answers['comments_obj_str'].data.answer[0]?length><#assign prev_comments = body.answers['comments_obj_str'].data.answer[0]>"[${prev_comments}, {\"approver\": \"${body.formVariables['user_name']}\",\"comment\":\"${body.answers['reviewer_comments'].data.answer[0]?json_string}\",\"time\":\"${dateTime}\",\"status\": \"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], commentStatusData)}\"}]"<#else>"[{\"approver\": \"${body.formVariables['user_name']}\",\"comment\":\"${body.answers['reviewer_comments'].data.answer[0]?json_string}\",\"time\":\"${dateTime}\",\"status\": \"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], commentStatusData)}\"}]"</#if>
+    },
+    "approvalStatusAccountant": {
+      "type": "String",
+      "value": "RE_APPROVAL"
+    },
+    "ApprovalStatus": {
+      "type": "String",
+      "value": "RE_APPROVAL"
+    },
+    "AssignedToName": {
+      "type": "String",
+      "value": ""
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+    "err": "500",
+    "errMessage": "Wrong user permissions. Action is not allowed."
+}

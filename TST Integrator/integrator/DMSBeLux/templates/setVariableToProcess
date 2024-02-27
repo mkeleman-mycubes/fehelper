@@ -1,0 +1,10 @@
+{
+    <#if body.variableType == "Json">
+        "value": "<@printObjectToJsonString source=body.variableValue />",
+    <#elseif body.variableType == "String">
+        "value": "${body.variableValue}"
+    <#elseif body.variableType == "Integer">
+        "value": ${body.variableValue}
+    </#if>
+    "type": "${body.variableType}"
+}

@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "submit_myform_data_piper",
+            "script": "serviceCall = body.answers['service_type'][0];  headers.dataType = 'FINES'; body.serviceCall = serviceCall;  body.validDepartmentsData = 'valid'"
+        }
+    ]
+}

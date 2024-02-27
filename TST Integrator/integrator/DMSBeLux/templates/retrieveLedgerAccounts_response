@@ -1,0 +1,5 @@
+{
+    "status": "true",
+    "ledgerData": <@printObjectToJson source=body />
+    <#-- "ledgerData": [{"description": "BTW Buitenland export NIET INTRA", "id": "45409"}]  -->
+}

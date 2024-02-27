@@ -1,0 +1,281 @@
+<#assign showInvoiTypeSubcategory = ['ONBC', 'OROB', 'ALGKO'] >
+<#if body.errorOccured??>
+    {
+        <#if body.handledByAtlas??>
+            "handledByAtlas": "${body.handledByAtlas}",
+        </#if>
+        <#if body.invoiceNrExternal??>
+            "invoiceNrExternal": "${body.invoiceNrExternal}",
+        </#if>        
+        <#if body.dateRegistered??>
+            "dateRegistered": "${body.dateRegistered?json_string}",
+        </#if>    
+        <#if body.AssignedBy??>
+            "AssignedBy": "${body.AssignedBy?json_string}",
+        </#if>  
+        <#if body.dateInvoice??>
+            "dateInvoice": "${body.dateInvoice?json_string}",
+        </#if>
+        <#if body.totalAmountVATExcl??>
+            "totalAmountVATExcl": "${body.totalAmountVATExcl?json_string}",
+        </#if>    
+        <#if body.totalAmountVATIncl??>
+            "totalAmountVATIncl": "${body.totalAmountVATIncl?json_string}",
+        </#if>       
+        <#if body.invoiceNrTech??>
+            "invoiceNrTech": "${body.invoiceNrTech?json_string}",
+        </#if> 
+         <#if body.subcategory??>
+            "subcategory": "${body.subcategory?json_string}",
+        </#if>
+         <#if body.category??>
+            "category": "${body.category?json_string}",
+        </#if>
+         <#if body.invoiceType?? && body.subcategory?? && -1 < showInvoiTypeSubcategory?seq_index_of(body.subcategory?json_string)>
+            "invoiceType": "${body.invoiceType?json_string}",
+        </#if>
+        <#if body.companyCode??>
+            "companyCode": "${body.companyCode?json_string}",
+        </#if>
+        <#if body.supplierNr??>
+            "supplierNr": "${body.supplierNr?json_string}",
+        </#if>    
+        <#if body.supplierName??>
+            "supplierName": "${body.supplierName?json_string}",
+        </#if>
+        <#if body.supplierVAT??>
+            "supplierVAT": "${body.supplierVAT?json_string}",
+        </#if>
+        <#if body.scanFileName??>
+            "scanFileName": "${body.scanFileName?json_string}",
+        </#if>
+        <#if body.scanDate??>
+            "scanDate": "${body.scanDate?json_string}",
+        </#if>
+        <#if body.invoice_lines_repeater??>
+            <#--  "invoice_lines_repeater": [{"invoiceLineIndex": "1", "lineItems": [{"lineItemLedgerAccount": "1111"}, {"lineItemLedgerAccount": "22222"}]}, {"invoiceLineIndex": "2", "lineItems": [{"lineItemLedgerAccount": "3333"}, {"lineItemLedgerAccount": "4444"}]}],  -->
+    
+            "invoice_lines_repeater": [
+                <#list body.invoice_lines_repeater as invoiceLine>
+                    <#assign lineItems = invoiceLine.lineItems>
+                    {
+                        "invoiceLineNo": "${invoiceLine.invoiceLineNo?json_string}",
+                        "invoiceLineLicensePlate": "${invoiceLine.invoiceLineLicensePlate?json_string}",
+                        "invoiceLineSubcategory": "${invoiceLine.invoiceLineSubcategory?json_string}",
+                        "invoiceLineApprovalNo": "${invoiceLine.invoiceLineApprovalNo?json_string}",
+                        "invoiceLineAmount": "${invoiceLine.invoiceLineAmount?json_string}",
+                        "invoiceLineBlockingReason": "${invoiceLine.invoiceLineBlockingReason?json_string}",
+                        "invoiceLineStatus": "${invoiceLine.invoiceLineStatus?json_string}",
+                        "invoiceLineRemarks": "${invoiceLine.invoiceLineRemarks?json_string}",
+                        "lineItems": [
+                            <#list lineItems as lineItem>
+                                {
+                                    "lineItemLedgerAccount": "${lineItem.lineItemLedgerAccount?json_string}",
+                                    "lineItemAmountExclVAT": "${lineItem.lineItemAmountExclVAT?json_string}",
+                                    "lineItemCostCenter": "${lineItem.lineItemCostCenter?json_string}",
+                                    "lineItemRemark": "${lineItem.lineItemRemark?json_string}"
+                                }
+                                <#sep>,</#sep>
+                            </#list>
+                        ]
+                    }
+                    <#sep>,</#sep>
+                </#list>
+            ],
+        </#if>
+        <#--
+        <#if body.invoiceLines??>
+            "invoiceLines": <@printObjectToJson source=body.invoiceLines />,
+        </#if>
+        <#if body.lineItems?? && (body.lineItems?eval?size > 0) >
+            <#list body.lineItems?eval as lineItem>
+                "lineItemLedgerAccount_${lineItem?index}": "${lineItem.lineItemLedgerAccount?json_string}",
+                "lineItemAmountExclVAT_${lineItem?index}": "${lineItem.lineItemAmountExclVAT?json_string}",
+                "lineItemCostCenter_${lineItem?index}": "${lineItem.lineItemCostCenter?json_string}",
+                "lineItemRemark_${lineItem?index}": "${lineItem.lineItemRemark?json_string}",
+            </#list>
+        <#else>
+            "lineItemRemark_0":"",
+            "lineItemAmountExclVAT_0":"${body.totalAmountVATExcl?c?json_string}",
+            "lineItemLedgerAccount_0":"",
+            "lineItemCostCenter_0":"",
+        </#if>
+        -->
+        <#if body.approver1??>
+            "approver1": "${body.approver1?json_string}",
+        </#if>
+        <#if body.approver1Label??>
+            "approver1Label": "${body.approver1Label?json_string}",
+        </#if>
+        <#if body.pre_approver1Label??>
+            "pre_approver1Label": "${body.pre_approver1Label?json_string}",
+        </#if>
+        <#if body.remarksForApprover1??>
+            "remarksForApprover1": "${body.remarksForApprover1?json_string}",
+        </#if>
+        <#if body.approver2??>
+            "approver2": "${body.approver2?json_string}",
+        </#if>
+        <#if body.approver2Label??>
+            "approver2Label": "${body.approver2Label?json_string}",
+        </#if>
+        <#if body.pre_approver2Label??>
+            "pre_approver2Label": "${body.pre_approver2Label?json_string}",
+        </#if>
+        <#if body.remarksForApprover2??>
+            "remarksForApprover2": "${body.remarksForApprover2?json_string}",
+        </#if>    
+        <#if body.finalApprovalRequired??>
+            "finalApprovalRequired": "<#if body.finalApprovalRequired == 'yes'>yes<#else></#if>",
+        </#if>    
+        <#if body.AssignedToName??>
+            "AssignedToName": "${body.AssignedToName?json_string}",
+        </#if>
+        <#if body.invoiceNrInternal??>
+            "invoiceNrInternal": "${body.invoiceNrInternal?json_string}"
+        </#if>   
+    }
+<#elseif body.status?? && body.status == "NOK">
+    {
+        "errorOccured": "true",
+        "status": "true",
+        "message": "Get comments error"
+    }
+<#else>
+    {
+        <#if body.handledByAtlas??>
+            "handledByAtlas": "${body.handledByAtlas}",
+        </#if>
+        <#if body.invoiceNrExternal??>
+            "invoiceNrExternal": "${body.invoiceNrExternal}",
+        </#if>      
+        <#if body.AssignedBy??>
+            "AssignedBy": "${body.AssignedBy?json_string}",
+        </#if>     
+        <#if body.dateRegistered??>
+            "dateRegistered": "${body.dateRegistered?json_string}",
+        </#if>    
+        <#if body.dateInvoice??>
+            "dateInvoice": "${body.dateInvoice?json_string}",
+        </#if>
+        <#if body.totalAmountVATExcl??>
+            "totalAmountVATExcl": "${body.totalAmountVATExcl?json_string}",
+        </#if>    
+        <#if body.totalAmountVATIncl??>
+            "totalAmountVATIncl": "${body.totalAmountVATIncl?json_string}",
+        </#if>       
+        <#if body.invoiceNrTech??>
+            "invoiceNrTech": "${body.invoiceNrTech?json_string}",
+        </#if> 
+         <#if body.subcategory??>
+            "subcategory": "${body.subcategory?json_string}",
+        </#if>
+         <#if body.category??>
+            "category": "${body.category?json_string}",
+        </#if>
+         <#if body.invoiceType?? && body.subcategory?? && -1 < showInvoiTypeSubcategory?seq_index_of(body.subcategory?json_string)>
+            "invoiceType": "${body.invoiceType?json_string}",
+        </#if>
+        <#if body.companyCode??>
+            "companyCode": "${body.companyCode?json_string}",
+        </#if>
+        <#if body.supplierNr??>
+            "supplierNr": "${body.supplierNr?json_string}",
+        </#if>    
+        <#if body.supplierName??>
+            "supplierName": "${body.supplierName?json_string}",
+        </#if>
+        <#if body.supplierVAT??>
+            "supplierVAT": "${body.supplierVAT?json_string}",
+        </#if>
+        <#if body.scanFileName??>
+            "scanFileName": "${body.scanFileName?json_string}",
+        </#if>
+        <#if body.scanDate??>
+            "scanDate": "${body.scanDate?json_string}",
+        </#if>
+        <#if body.invoice_lines_repeater??>
+            <#--  "invoice_lines_repeater": [{"invoiceLineIndex": "1", "lineItems": [{"lineItemLedgerAccount": "1111"}, {"lineItemLedgerAccount": "22222"}]}, {"invoiceLineIndex": "2", "lineItems": [{"lineItemLedgerAccount": "3333"}, {"lineItemLedgerAccount": "4444"}]}],  -->
+    
+            "invoice_lines_repeater": [
+                <#list body.invoice_lines_repeater as invoiceLine>
+                    <#assign lineItems = invoiceLine.lineItems>
+                    {
+                        "invoiceLineNo": "${invoiceLine.invoiceLineNo?json_string}",
+                        "invoiceLineLicensePlate": "${invoiceLine.invoiceLineLicensePlate?json_string}",
+                        "invoiceLineSubcategory": "${invoiceLine.invoiceLineSubcategory?json_string}",
+                        "invoiceLineApprovalNo": "${invoiceLine.invoiceLineApprovalNo?json_string}",
+                        "invoiceLineAmount": "${invoiceLine.invoiceLineAmount?json_string}",
+                        "invoiceLineBlockingReason": "${invoiceLine.invoiceLineBlockingReason?json_string}",
+                        "invoiceLineStatus": "${invoiceLine.invoiceLineStatus?json_string}",
+                        "invoiceLineRemarks": "${invoiceLine.invoiceLineRemarks?json_string}",
+                        "lineItems": [
+                            <#list lineItems as lineItem>
+                                {
+                                    "lineItemLedgerAccount": "${lineItem.lineItemLedgerAccount?json_string}",
+                                    "lineItemAmountExclVAT": "${lineItem.lineItemAmountExclVAT?json_string}",
+                                    "lineItemCostCenter": "${lineItem.lineItemCostCenter?json_string}",
+                                    "lineItemRemark": "${lineItem.lineItemRemark?json_string}"
+                                }
+                                <#sep>,</#sep>
+                            </#list>
+                        ]
+                    }
+                    <#sep>,</#sep>
+                </#list>
+            ],
+        </#if>
+        <#--
+        <#if body.invoiceLines??>
+            "invoiceLines": <@printObjectToJson source=body.invoiceLines />,
+        </#if>
+        <#if body.lineItems?? && (body.lineItems?eval?size > 0) >
+            <#list body.lineItems?eval as lineItem>
+                "lineItemLedgerAccount_${lineItem?index}": "${lineItem.lineItemLedgerAccount?json_string}",
+                "lineItemAmountExclVAT_${lineItem?index}": "${lineItem.lineItemAmountExclVAT?json_string}",
+                "lineItemCostCenter_${lineItem?index}": "${lineItem.lineItemCostCenter?json_string}",
+                "lineItemRemark_${lineItem?index}": "${lineItem.lineItemRemark?json_string}",
+            </#list>
+        <#else>
+            "lineItemRemark_0":"",
+            "lineItemAmountExclVAT_0":"${body.totalAmountVATExcl?c?json_string}",
+            "lineItemLedgerAccount_0":"",
+            "lineItemCostCenter_0":"",
+        </#if>
+        -->
+        <#if body.approver1??>
+            "approver1": "${body.approver1?json_string}",
+        </#if>
+        <#if body.approver1Label??>
+            "approver1Label": "${body.approver1Label?json_string}",
+        </#if>
+        <#if body.pre_approver1Label??>
+            "pre_approver1Label": "${body.pre_approver1Label?json_string}",
+        </#if>
+        <#if body.remarksForApprover1??>
+            "remarksForApprover1": "${body.remarksForApprover1?json_string}",
+        </#if>
+        <#if body.approver2??>
+            "approver2": "${body.approver2?json_string}",
+        </#if>
+        <#if body.approver2Label??>
+            "approver2Label": "${body.approver2Label?json_string}",
+        </#if>
+        <#if body.pre_approver2Label??>
+            "pre_approver2Label": "${body.pre_approver2Label?json_string}",
+        </#if>
+        <#if body.remarksForApprover2??>
+            "remarksForApprover2": "${body.remarksForApprover2?json_string}",
+        </#if>    
+        <#if body.finalApprovalRequired??>
+            "finalApprovalRequired": "<#if body.finalApprovalRequired == 'yes'>yes<#else></#if>",
+        </#if>    
+        <#if body.AssignedToName??>
+            "AssignedToName": "${body.AssignedToName?json_string}",
+        </#if>
+        
+        <#if body.invoiceNrInternal??>
+            "invoiceNrInternal": "${body.invoiceNrInternal?json_string}"
+        </#if>   
+    }
+</#if>

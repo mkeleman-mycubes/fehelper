@@ -1,0 +1,27 @@
+<#setting time_zone="Europe/Amsterdam">
+<#assign aDateTime = .now>
+<#assign timestamp = (aDateTime?long / 1000)?round?c>
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "loginToDMS",
+            "script": "uploadedFiles = [:]; initialBody = body.variables; requestIds = [:]; headers.handleRestExceptionTemplate = 'downloadFile_error'; headers.handleExceptionTemplate = 'downloadFile_error';"
+        },
+        {
+            "type": "action",
+            "name": "getSAMLToken",
+            "script": "headers.handleRestExceptionTemplate = 'downloadFile_error'; headers.handleExceptionTemplate = 'downloadFile_error'"
+        },
+        {
+            "type" : "transform",
+            "name" : "dummy",
+            "script" : "initialBody.SAMLArt = body.SAMLArt"
+        },
+        {
+            "type" : "action",
+            "name" : "storeFileToODM",
+            "script" : "headers.SAMLArt = initialBody.SAMLArt; body = initialBody; headers.handleExceptionTemplate = 'downloadAndStoreFilesToDMS_error';  headers.handleSoapExceptionTemplate = 'downloadAndStoreFilesToDMS_error'"
+        }
+    ]
+}

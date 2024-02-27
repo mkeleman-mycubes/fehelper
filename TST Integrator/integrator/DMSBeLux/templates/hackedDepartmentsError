@@ -1,0 +1,5 @@
+{
+    "status": "false",
+    "message": "Wrong departments data",
+    "errorType": "not_valid_department"
+}

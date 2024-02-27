@@ -1,0 +1,33 @@
+<#if body.answers?? && body.answers.invoice_lines_repeater?? && body.costCenterData?? && body.answers.approvalStatus?? && (body.answers['approvalStatus'].data.answer[0] == "APPROVE") >
+    <#assign noRepeat = [] >
+    
+    <#list body.answers.invoice_lines_repeater.data as invoice_line>
+      <#assign lineItems = invoice_line.lineItems.data?map(currLine -> currLine.lineItemCostCenter.data.answer[0]) >
+      <#-- <#assign lineItems = invoice_line.lineItems.data?map(account -> account.lineItemLedgerAccount.data.answer[0]) > -->
+      
+      <#list lineItems as lineItem >
+      <#if noRepeat?seq_contains(lineItem)>
+        <#else>
+          <#assign noRepeat = noRepeat + [lineItem]>
+        </#if>
+      </#list>
+    </#list>
+    
+    <#assign costcenter = body.costCenterData + [{"code": "", "translation": "FE Empty field"}] >
+    <#assign filteredData = costcenter?filter(center -> noRepeat?seq_contains(center.code)) >
+    <#assign validCostCenters = filteredData?size == noRepeat?size >
+    
+    {
+        "validCostCenters": "${validCostCenters?c}"
+    }
+<#else>
+    <#if (body.answers['approvalStatus'].data.answer[0] != "APPROVE")>
+    {
+        "validCostCenters": "true"
+    }
+    <#else>
+    {
+        "validCostCenters": "false"
+    }
+    </#if>
+</#if>

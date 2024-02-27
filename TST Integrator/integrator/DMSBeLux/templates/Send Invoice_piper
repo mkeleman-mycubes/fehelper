@@ -1,0 +1,9 @@
+{
+  "pipes": [
+    {
+        "type": "action", 
+        "name": "Send Invoice",
+        "script": "body.invoiceFile=headers.nameScanningFile; headers.remove('nameScanningFile')"
+    }
+  ]
+}

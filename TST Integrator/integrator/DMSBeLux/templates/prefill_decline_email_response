@@ -1,0 +1,38 @@
+{
+    <#if body.odmId??>
+        "odmId": "${body.odmId.value?json_string}",
+    </#if>
+    <#if body.invoiceNrExternal??>
+        "invoiceNrExternal": "${body.invoiceNrExternal.value?json_string}",
+    </#if>
+    <#if body.invoiceNrInternal??>
+        "invoiceNrInternal": "${body.invoiceNrInternal.value?json_string}",
+    </#if>
+    <#if body.invoiceNrTech??>
+        "invoiceNrTech": "${body.invoiceNrTech.value?json_string}",
+    </#if>
+    <#if body.companyCode??>
+        "companyCode": "${body.companyCode.value?json_string}",
+    </#if>
+    <#if body.invoiceLines??>
+        "invoiceLines": "${body.invoiceLines.value?json_string}",
+    </#if>
+    <#if body.cpLang??>
+        "decline_choose_language": "${body.cpLang.value?json_string}",
+    </#if>
+    <#if body.reviewer_comments??>
+        "reviewer_comments": "${body.reviewer_comments.value?json_string}",
+    </#if>
+    <#--Temporary change
+    <#if body.cpEmail??>
+        "decline_email_to": "${body.cpEmail.value?json_string}",
+    </#if>
+    -->
+    <#if body.cpEmail??>
+        "decline_email_text": "${body.cpEmail.value?json_string}",
+    </#if>
+    <#if body.comments_obj_copy??>
+        "comments_obj": "${body.comments_obj_copy.value?json_string}"
+    </#if>
+    
+}
