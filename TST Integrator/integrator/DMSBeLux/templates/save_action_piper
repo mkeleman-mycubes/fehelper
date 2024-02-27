@@ -1,0 +1,16 @@
+<#assign documentType = body.answers.documentType[0] >
+<#assign serviceCall =  body.answers.service_type[0] >
+<#assign taskId = body['taskid'] >
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "save_action",
+            "script" : "headers.taskId = '${taskId}';"
+        },
+        {
+            "type": "transform",
+            "name": "save_tasklist_response"
+        }
+    ]
+}
