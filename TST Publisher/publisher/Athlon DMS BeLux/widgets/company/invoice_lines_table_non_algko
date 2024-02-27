@@ -1,0 +1,146 @@
+<div class="question-text">
+  <div class="label-row">
+    <h4>Invoice Lines</h4>
+    <button class="mat-flat-button mat-button-base mat-accent" style="display: none; font-size: 0.85em; line-height: 20px; margin: 5px;" type="button" id="toggleSlideInvoice{{options.containerId}}">Show/Hide all invoices</button>
+  </div>
+  <div class="sub-html"></div>
+</div>
+
+<table class="mat-table mat-elevation-z0 invoice-lines-table" role="grid" style="width: 100%;">
+  <thead role="rowgroup">
+    <tr role="row" class="mat-header-row ng-star-inserted" style="height: 30px;">
+      <th role="columnheader" class="mat-header-cell ng-star-inserted"
+        style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44); padding-left: 0">
+        Line Nr
+      </th>
+      <th role="columnheader" class="mat-header-cell ng-star-inserted"
+        style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44);">
+        License Plate
+      </th>
+      <th role="columnheader" class="mat-header-cell ng-star-inserted"
+        style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44);">
+        Invoice Subcategory
+      </th>
+      <th role="columnheader" class="mat-header-cell ng-star-inserted"
+        style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44);">
+        Approval Number
+      </th>
+      <th role="columnheader" class="mat-header-cell ng-star-inserted"
+        style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44);">
+        Line Amount
+      </th>
+      <th role="columnheader" class="mat-header-cell ng-star-inserted"
+        style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44);">
+        Blocking Reason
+      </th>
+      <th role="columnheader" class="mat-header-cell ng-star-inserted"
+        style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44); max-width: 75px;">
+        Status invoice in Atlas
+      </th>
+      <!---->
+    </tr>
+    <!---->
+  </thead>
+  <tbody role="rowgroup">
+  </tbody>
+  <tfoot role="rowgroup" class="mat-table-sticky" style="display: none; bottom: 0px; position: sticky; z-index: 10;">
+    <!---->
+  </tfoot>
+
+</table>
+
+<style>
+  .hidden-rows {
+    display: none;
+  }
+  .label-row {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+
+<script>
+  jQuery(document).ready(function () {
+    const dataMap = {
+      "linenumber": "invoiceLineNo",
+      "licenseplate": "invoiceLineLicensePlate",
+      "invoicesubcategory": "invoiceLineSubcategory",
+      "approvalnumber": "invoiceLineApprovalNo",
+      "lineamount": "invoiceLineAmount",
+      "blockingreason": "invoiceLineBlockingReason",
+      "status": "invoiceLineStatus",
+    };
+    const dataMapKeys = Object.keys(dataMap);
+    const invoiceLinesString = FE["{{options.containerId}}"].getAnswer({ questionName: 'invoiceLines' });
+    const invoiceLines = JSON.parse(invoiceLinesString);
+
+    let tableRow = '<tr role="row" class="mat-row ng-star-inserted"> <td role="gridcell" class="mat-cell mat-column-linenumber ng-star-inserted" style="padding-left: 0"></td> <td role="gridcell" class="mat-cell mat-column-licenseplate ng-star-inserted"></td> <td role="gridcell" class="mat-cell mat-column-invoicesubcategory ng-star-inserted"></td> <td role="gridcell" class="mat-cell mat-column-approvalnumber ng-star-inserted"></td> <td role="gridcell" class="mat-cell mat-column-lineamount ng-star-inserted"></td> <td role="gridcell" class="mat-cell mat-column-blockingreason ng-star-inserted"></td> <td role="gridcell" class="mat-cell mat-column-status ng-star-inserted"></td> <td role="gridcell" class="mat-cell mat-column-remarks ng-star-inserted" style="padding-right: 0"> <div class="btn btn-primary tooltip"> <i class="material-icons md-dark" style="color: #264579; cursor: pointer; font-size: 22px;"> error </i> <div class="right"> <p></p> <i></i> </div> </div> </td> </tr>';
+    let tableBody = [];
+
+    invoiceLines.forEach(function (invoiceLine, index) {
+      let row = ['<tr role="row" class="mat-row ng-star-inserted">'];
+
+      if (index > 9) {
+        row = ['<tr role="row" class="mat-row ng-star-inserted hidden-rows">'];
+      }
+
+      for (let i = 0; i < dataMapKeys.length; i++) {
+        const key = dataMapKeys[i];
+        const questionName = dataMap[key];
+        let questionValue = invoiceLine[questionName];
+
+        if (key === 'lineamount') questionValue = formatMoney(questionValue, 2, ',', '.', '€ ');
+
+        if (key === 'remarks') {
+          if (questionValue.length > 0) {
+            let rowHtml = jQuery(tableRow).find(".mat-column-" + key);
+
+            jQuery(rowHtml).find(".tooltip .right > p").text(questionValue);
+            row.push(rowHtml[0].outerHTML);
+          } else {
+            let rowHtml = jQuery(tableRow).find(".mat-column-" + key);
+
+            rowHtml.text(questionValue);
+            row.push(rowHtml[0].outerHTML);
+          }
+
+        } else {
+          let rowHtml = jQuery(tableRow).find(".mat-column-" + key);
+          rowHtml.text(questionValue);
+          row.push(rowHtml[0].outerHTML);
+        }
+      }
+
+      row.push('</tr>');
+      tableBody.push(row.join(' '));
+
+    });
+
+    if (invoiceLines.length > 10) {
+      let buttonId = "toggleSlideInvoice{{options.containerId}}";
+      jQuery('#' + buttonId).click(function () {
+        jQuery('table.invoice-lines-table tbody tr.hidden-rows').slideToggle('slow');
+      });
+      jQuery('#' + buttonId).show();
+    }
+
+    jQuery("#{{options.containerId}} table.invoice-lines-table tbody").html(tableBody.join(' '));
+
+    function formatMoney(number, decPlaces, decSep, thouSep, moneySign) {
+      decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces,
+        decSep = typeof decSep === "undefined" ? "." : decSep,
+        thouSep = typeof thouSep === "undefined" ? "," : thouSep;
+      moneySign = typeof moneySign === "undefined" ? "" : moneySign;
+      var sign = number < 0 ? "-" : "";
+      var i = String(parseInt(number = Math.abs(Number(number) || 0).toFixed(decPlaces)));
+      var j = (j = i.length) > 3 ? j % 3 : 0;
+
+      var formattedData = moneySign + sign +
+        (j ? i.substr(0, j) + thouSep : "") +
+        i.substr(j).replace(/(\decSep{3})(?=\decSep)/g, "$1" + thouSep) +
+        (decPlaces ? decSep + Math.abs(number - i).toFixed(decPlaces).slice(2) : "");
+
+      return formattedData;
+    }
+  });
+</script>
