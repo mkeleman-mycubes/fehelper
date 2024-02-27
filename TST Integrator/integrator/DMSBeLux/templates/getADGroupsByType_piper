@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "getADGroupsByType",
+            "script" : "description = body.description; headers.description = description; entity = body.entity; headers.entity = entity"
+        }
+    ]
+}
