@@ -1,0 +1,52 @@
+{
+    "pipes": [
+    <#if body.documentType?? && body.documentType == "claim">
+        {
+            "type" : "action",
+            "name" : "get_tasklist_comment",
+            "script" : "camundaData = body; entity = body.entity; headers.entity = entity; workspace = 'INV'; headers.workspace = workspace; commentId = body.documentType + '-' + body.claim_nr; headers.commentId = commentId; headers.handleRestExceptionTemplate = 'get_new_comments_error';  headers.handleExceptionTemplate = 'get_new_comments_error'"
+        },
+        {
+            "type" : "transform",
+            "name" : "get_tasklist_comment_setVariable"
+        }
+    </#if>
+
+
+    <#if body.documentType?? && body.documentType == "customer">
+        {
+            "type" : "action",
+            "name" : "get_tasklist_comment",
+            "script" : "camundaData = body; entity = body.entity; headers.entity = entity; workspace = 'INV'; headers.workspace = workspace; commentId = body.documentType + '-' + body.customerNo; headers.commentId = commentId; headers.handleRestExceptionTemplate = 'get_new_comments_error';  headers.handleExceptionTemplate = 'get_new_comments_error'"
+        },
+        {
+            "type" : "transform",
+            "name" : "get_tasklist_comment_setVariable"
+        }
+    </#if>
+    
+    <#if body.documentType?? && (body.documentType == "contract" || body.documentType == "fine") >
+        {
+            "type" : "action",
+            "name" : "get_tasklist_comment",
+            "script" : "camundaData = body; entity = body.entity; headers.entity = entity; workspace = 'INV'; headers.workspace = workspace; commentId = body.documentType + '-' + body.contractNo; headers.commentId = commentId; headers.handleRestExceptionTemplate = 'get_new_comments_error';  headers.handleExceptionTemplate = 'get_new_comments_error'"
+        },
+        {
+            "type" : "transform",
+            "name" : "get_tasklist_comment_setVariable"
+        }
+    </#if>
+    
+    <#if body.documentType?? && body.documentType == "invoice">
+        {
+            "type" : "action",
+            "name" : "get_tasklist_comment",
+            "script" : "camundaData = body; entity = body.entity; headers.entity = entity; workspace = 'INV'; headers.workspace = workspace; commentId = body.documentType + '-' + body.internal_invoice_number; headers.commentId = commentId; headers.handleRestExceptionTemplate = 'get_new_comments_error';  headers.handleExceptionTemplate = 'get_new_comments_error'"
+        },
+        {
+            "type" : "transform",
+            "name" : "get_tasklist_comment_setVariable"
+        }
+    </#if>
+    ]
+}
