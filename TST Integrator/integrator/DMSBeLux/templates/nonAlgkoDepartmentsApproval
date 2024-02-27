@@ -1,0 +1,40 @@
+<#assign dateTime = .now>
+<#assign department = body.secureData.user.identity.groups[0].name>
+{
+    "variables": {
+        <#if body.answers['action'].data.answer[0] == "decline">
+            "approvalStatusNonALGKOInvoice": {
+                "type": "String",
+                "value": "DECLINE"
+            },
+        </#if>
+        <#if body.answers['action'].data.answer[0] == "on_hold">
+            "approvalStatusNonALGKOInvoice": {
+                "type": "String",
+                "value": "ON_HOLD"
+            },
+        </#if>
+        <#if body.answers['action'].data.answer[0] == "approve">
+            "approvalStatusNonALGKOInvoice": {
+                "type": "String",
+                "value": "APPROVE"
+            },
+        </#if>
+        <#if body.answers['action'].data.answer[0] == "back_ap">
+            "approvalStatusNonALGKOInvoice": {
+                "type": "String",
+                "value": "BACK_AP"
+            },
+        </#if>
+        <#if body.answers['action'].data.answer[0] == "nightbatch">
+            "approvalStatusNonALGKOInvoice": {
+                "type": "String",
+                "value": "NIGHTBATCH"
+            },
+        </#if>
+        "comments_obj": {
+          "type": "Json",
+          "value": <#if 0 < body.answers['comments_obj_str'].data.answer[0]?length><#assign prev_comments = body.answers['comments_obj_str'].data.answer[0]>"[${prev_comments}, {\"approver\": \"${body.formVariables['user_name']}\",\"comment\":\"${body.answers['reviewer_comments'].data.answer[0]?json_string}\",\"time\":\"${dateTime}\",\"status\": \"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], department + " department")}\"}]"<#else>"[{\"approver\": \"${body.formVariables['user_name']}\",\"comment\":\"${body.answers['reviewer_comments'].data.answer[0]?json_string}\",\"time\":\"${dateTime}\",\"status\": \"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], department + " department")}\"}]"</#if>
+        }
+    }
+}
