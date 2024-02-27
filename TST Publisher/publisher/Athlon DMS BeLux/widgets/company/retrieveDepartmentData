@@ -1,0 +1,19 @@
+<script>
+    (function () {
+        let FE_current = FE['{{options.containerId}}'];
+        let formType = "{{widget.variables.formType}}";
+        FE_current.serviceCall({
+            data: {
+                name: 'retrieveDepartmentData_piper',
+                dataType: formType
+            },
+            success: function (resp) {
+                FE_current.departmentData = resp;
+                FE_current.render();
+            },
+            err: function () {
+                console.log('Departments can not be retrieved');
+            }
+        })
+    })();
+</script>
