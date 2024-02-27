@@ -1,0 +1,29 @@
+{
+    "pipes": [
+         {
+            "type" : "transform",
+             "name" : "dummy",
+             "script" : "initialBody = body; gasID = body.gasId"
+          },
+          {
+             "type" : "action",
+             "name" : "loginToOTDS"
+          },
+          {
+             "type" : "action",
+              "name" : "getUserGroups",
+              "script" : "otdsTicket = body.ticket; headers.OTDSTicket = otdsTicket; headers.gasID = gasID; user = gasID"
+          },
+          {  
+             "type" : "action",
+             "name" : "getUserInfo",
+             "script" : "headers.OTDSTicket = otdsTicket; headers.gasID = gasID; groups = body.groups"
+           },
+         {
+            "type": "transform",
+            "name": "getUserInfo_setVariables",
+            "script": "body = [groups: groups, userInfo: body]"
+          }
+          
+    ]
+}
