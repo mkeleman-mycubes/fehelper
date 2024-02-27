@@ -1,0 +1,36 @@
+{
+    "variables": {
+      <#list body as key, value>
+          <#if key == "fileUrl" || key == "PROCESS-NAMESPACE" || key == "invoiceFile">
+              
+              <#if key?has_next>
+                <#continue>
+              <#else>
+                "dummy": "dummy"
+              </#if>
+              
+          <#else>
+            "${key}": {
+                "value": "${value.value?json_string}",
+                "type": "${value.type?json_string}"
+            }
+            <#if key?has_next>,</#if>
+          </#if>
+      </#list>
+    },
+    <#if body.fileUrl??>
+        "fileUrl": "${body.fileUrl.value?json_string}",
+    </#if>
+    <#if body.fileExt??>
+        "fileExt": "${body.fileExt.value?json_string}",
+    </#if>
+    <#if body.fileName??>
+        "fileName": "${body.fileName.value?json_string}",
+    </#if>
+    <#if body.invoiceFile??>
+        "invoiceFile": "${body.invoiceFile.value?json_string}",
+    </#if>
+    <#if body["PROCESS-NAMESPACE"]??>
+        "PROCESS-NAMESPACE": "${body["PROCESS-NAMESPACE"].value?json_string}"
+    </#if>
+}
