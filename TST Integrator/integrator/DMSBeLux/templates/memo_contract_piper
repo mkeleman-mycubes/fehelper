@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "memo_contract",
+            "script" : "taskId = body.id; headers.taskId = taskId"
+        }
+    ]
+}
