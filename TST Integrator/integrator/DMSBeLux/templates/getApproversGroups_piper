@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "getApproversGroups",
+            "script" : "description = body.description; headers.description = description;"
+        }
+    ]
+}
