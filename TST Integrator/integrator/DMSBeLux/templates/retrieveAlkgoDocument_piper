@@ -1,0 +1,30 @@
+{
+	"pipes": [{
+			"type": "transform",
+			"name": "dummy",
+			"script": "initialBody = body"
+		},
+		{
+			"type": "action",
+			"name": "loginToDMS"
+		},
+		{
+			"type": "action",
+			"name": "getSAMLToken"
+		},
+		{
+			"type": "action",
+			"name": "retrieveAlkgoDocumentList",
+			"script": "headers.handleSoaptExceptionTemplate = 'requestDocumentRetrieving_error';  headers.handleExceptionTemplate = 'requestDocumentRetrieving_error'; headers.SAMLArt = body.SAMLArt; initialBody.SAMLArt = body.SAMLArt; body.variables = initialBody.variables"
+		},
+		{
+			"type": "action",
+			"name": "retrieveAlkgoDocument",
+			"script": "headers.handleRestExceptionTemplate = 'requestDocumentRetrieving_error';  headers.handleExceptionTemplate = 'requestDocumentRetrieving_error'; headers.SAMLArt = initialBody.SAMLArt; body.fileId = body.GetDocumentListResponse[0].documentInfo.ID";
+		},
+		{
+			"type": "transform",
+			"name": "retrieveAlkgoDocument_setVariables"
+		}
+	]
+}
