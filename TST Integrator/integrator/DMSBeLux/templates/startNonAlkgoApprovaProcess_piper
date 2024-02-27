@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "startNonAlkgoApprovaProcess",
+            "script": "body.invoiceFile=headers.nameScanningFile; headers.remove('nameScanningFile')"
+        }
+    ]
+}
