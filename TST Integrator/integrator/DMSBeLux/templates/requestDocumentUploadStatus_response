@@ -1,0 +1,51 @@
+<#ftl ns_prefixes={"D":"http://schemas.dfs.com/automotive/workspacetypes/1.0"}>
+
+<#if headers.restConnectorProperties.environment == "DHC">
+<#if body.GetCreateOrUpdateBWSRequestStatusResponse?? && body.GetCreateOrUpdateBWSRequestStatusResponse.RequestStatus?? && body.GetCreateOrUpdateBWSRequestStatusResponse.RequestStatus.Request_Status == 'Error'>
+    {
+        "errorOccured": "true",
+        "status": "false",
+        "bpmnError": {
+            "bpmnErrorCode": "GetDocumentUploadStatusError",
+            "bpmnErrorMessage": "Document can't be uploaded"
+        }
+    }
+<#else>
+{
+    "requestStatus": "${body.GetCreateOrUpdateBWSRequestStatusResponse.RequestStatus.Request_Status}",
+    "requestStatusDetail": "${body.GetCreateOrUpdateBWSRequestStatusResponse.RequestStatus.Request_Status_Detail}",
+    "requestStatusCode": "${body.GetCreateOrUpdateBWSRequestStatusResponse.RequestStatus.Request_Status_No}"
+    <#if body.GetCreateOrUpdateBWSRequestStatusResponse.RequestStatus.Request_Status == "Completed">
+    ,"odmId": "${body.GetCreateOrUpdateBWSRequestStatusResponse.Document.objID}"
+    </#if>
+}
+</#if>
+<#else>
+    <#-- 
+        Hardcoded responses, could be of a 3 types: "success", "in_progress", "error". 
+        Change "responseType" variable in order to change the process flow.
+    -->
+    
+    <#assign responseType="error">
+    
+    <#if responseType="error">
+        {
+          "requestStatus": "Error",
+          "requestStatusDetail": "CONTENT SERVER Error Message: Cannot store structure information. For more information, see the Content Server log files. (iepuaotcs100:D:\services\opentext\contentserver\Logs\csdfs\, thread 1)",
+          "requestStatusCode": "500"
+        }
+    <#elseif responseType == "in_progress">
+        {
+            "requestStatus": "In Progress",
+            "requestStatusDetail": "",
+            "requestStatusCode": ""
+        }
+    <#else>
+        {
+            "requestStatus": "Complete",
+            "requestStatusDetail": "",
+            "requestStatusCode": "200",
+            "odmId": "12344"
+        }
+    </#if>
+</#if>
