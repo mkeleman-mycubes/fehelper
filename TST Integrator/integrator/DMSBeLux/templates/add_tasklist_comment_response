@@ -1,0 +1,4 @@
+{
+    "addCommentResponse": <@printObjectToJson source=body />,
+    "status": "true"
+}
