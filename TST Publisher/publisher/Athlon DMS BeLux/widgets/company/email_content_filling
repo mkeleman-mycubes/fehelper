@@ -1,0 +1,103 @@
+</br>
+
+<script>
+/*
+	NL:
+	Hebt u nog vragen? Aarzel niet om mij te contacteren via xxx@xxx.com
+
+	Met vriendelijke groeten,
+	Name
+
+	FR:
+	Vous avez d'autres questions? N’hésitez pas à me contacter à l’adresse xxx@xxx.com
+
+	Cordialement,
+	Name
+
+	USA:
+	Any questions? Please do not hesitate to contact me via xxx@xxx.com.
+
+	Kind regards,
+	Name
+*/
+	jQuery(document).ready(function () {
+		const curr_FE = FE["{{options.containerId}}"];
+		const invoiceNrExternal = curr_FE.getAnswer({ questionName: "invoiceNrExternal" });
+		const invoiceLinesStr = curr_FE.getAnswer({ questionName: "invoiceLines" });
+		const userData = curr_FE.getFormVariable({ name: 'userData' }); 
+		const decline_email_text_initial = curr_FE.getFormVariable({ name: "decline_email_text_initial" });
+		const userEmail = (userData && userData.email) || '';
+		const userFullName = (userData && userData.firstName) ? (userData.firstName + ' ' + userData.lastName) : '';
+		const invoiceLines = JSON.parse(invoiceLinesStr)
+
+		if (!decline_email_text_initial) {
+			const initial_body = curr_FE.getAnswer({ questionName: "decline_email_text" });
+			if (initial_body.length > 0) {
+				curr_FE.setFormVariable({ name: 'decline_email_text_initial', value: initial_body });
+			} else {
+				curr_FE.setFormVariable({ name: 'decline_email_text_initial', value: 'false' });
+			}
+		}
+
+		if (invoiceLines.length > 0) {
+			setLineNumber(invoiceLines[0]);
+		}
+
+		const langMap = {
+			nl: {
+				subject: 'Weigering van uw factuur ' + invoiceNrExternal,
+				text: 'Hebt u nog vragen? Aarzel niet om mij te contacteren via ' + userEmail + '\n\nMet vriendelijke groeten,\n' + userFullName
+			},
+			fr: {
+				subject: 'Rejet de votre facture ' + invoiceNrExternal,
+				text: 'Vous avez d\'autres questions? N’hésitez pas à me contacter à l’adresse ' + userEmail + '\n\nCordialement,\n' + userFullName
+			},
+			usa: {
+				subject: 'Rejection of your invoice no. ' + invoiceNrExternal,
+				text: 'Any questions? Please do not hesitate to contact me via ' + userEmail + '\n\nKind regards,\n' + userFullName
+			}
+		};
+
+		const emailSender = curr_FE.getFormVariable({ name: 'emailSender' });
+		const currLang = curr_FE.getFormVariable({ name: 'emailLanguage' });
+		const choosenLang = curr_FE.getAnswer({ questionName: "decline_choose_language" }).toLocaleLowerCase();
+
+		if (choosenLang === 'en') {
+		  return curr_FE.setAnswer({ questionName: 'decline_choose_language', answer: 'usa', render: true });
+		}
+
+		if (!emailSender || emailSender === 'false') {
+			curr_FE.serviceCall({
+				data: { name: "getAuthenticatedUserName_piper" },
+				success: function (resp) {
+					curr_FE.setAnswer({ questionName: 'decline_email_from', answer: resp.email });
+					curr_FE.setFormVariable({ name: 'userData', value: resp });
+					curr_FE.setFormVariable({ name: 'emailSender', value: 'true' });
+					curr_FE.render();
+				}
+			});
+		}
+/*
+		if(choosenLang) {
+			jQuery('#fe_email_body .mat-form-field-label').text(langMap[choosenLang].text);
+		}
+*/
+
+		if ((!currLang || currLang !== choosenLang) && userData) {
+			curr_FE.setAnswer({ questionName: 'decline_subject', answer: langMap[choosenLang].subject });
+			if (decline_email_text_initial !== 'false') {
+				curr_FE.setAnswer({ questionName: 'decline_email_text', answer: (decline_email_text_initial + '\n' + langMap[choosenLang].text) });
+			} else {
+				curr_FE.setAnswer({ questionName: 'decline_email_text', answer: langMap[choosenLang].text });
+			}
+			curr_FE.setFormVariable({ name: 'emailLanguage', value: choosenLang });
+			curr_FE.render();
+		}
+
+		function setLineNumber(invoiceLines) {
+			if (invoiceLines.invoiceLineNo) {
+				curr_FE.setAnswer({ questionName: 'invoiceLineNr', answer: invoiceLines.invoiceLineNo });
+			}
+		}
+	});
+</script>
