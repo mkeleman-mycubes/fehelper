@@ -1,0 +1,14 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "loginToDMS",
+            "script": "headers.handleRestExceptionTemplate = 'downloadFile_error'; headers.handleExceptionTemplate = 'downloadFile_error';"
+        },
+        {
+            "type": "action",
+            "name": "getSAMLToken",
+            "script": "headers.handleRestExceptionTemplate = 'downloadFile_error'; headers.handleExceptionTemplate = 'downloadFile_error'"
+        }
+    ]
+}
