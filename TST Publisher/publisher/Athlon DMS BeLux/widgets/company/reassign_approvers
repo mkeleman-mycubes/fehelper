@@ -1,0 +1,50 @@
+
+<script>
+  jQuery(document).ready(function () {
+    let FE_current = FE["{{options.containerId}}"];
+   
+    let pre_approver1 = FE_current.getAnswer({ questionName: "pre_approver1"});
+    let approver1 = FE_current.getAnswer({ questionName: "approver1"});
+    let temp_approver1 = FE_current.getAnswer({ questionName: "temp_approver1" });
+  
+    if(approver1 && !temp_approver1) {
+        FE_current.setAnswer({ questionName: "temp_approver1", answer: approver1});
+    } else {
+       FE_current.setAnswer({ questionName: "temp_approver1", answer: "temp_approver1"});
+    }
+    
+    if( !approver1 ) {
+        if(pre_approver1 != approver1) {
+            pre_approver1 = FE_current.getAnswer({ questionName: "approver1"});
+            FE_current.setAnswer({ questionName: "pre_approver1", answer: pre_approver1 });
+        }
+    } else if( approver1 && temp_approver1 == "temp_approver1" && pre_approver1 == "") {
+        FE_current.setAnswer({ questionName: "pre_approver1", answer: "" });
+    } else if( approver1 && pre_approver1 != approver1 && !pre_approver1) {
+        pre_approver1 = FE_current.getAnswer({ questionName: "approver1"});
+        FE_current.setAnswer({ questionName: "pre_approver1", answer: pre_approver1 });
+    } 
+    
+    let pre_approver2 = FE_current.getAnswer({ questionName: "pre_approver2"});
+    let approver2 = FE_current.getAnswer({ questionName: "approver2"});
+    let temp_approver2 = FE_current.getAnswer({ questionName: "temp_approver2" });
+   
+    if(approver2 && !temp_approver2) {
+        FE_current.setAnswer({ questionName: "temp_approver2", answer: approver2});
+    } else {
+       FE_current.setAnswer({ questionName: "temp_approver2", answer: "temp_approver2"});
+    }
+    
+    if( !approver2 ) {
+        if(pre_approver2 != approver2) {
+            pre_approver2 = FE_current.getAnswer({ questionName: "approver2"});
+            FE_current.setAnswer({ questionName: "pre_approver2", answer: pre_approver2 });
+        }
+    } else if( approver2 && temp_approver2 == "temp_approver2" && pre_approver2 == "") {
+        FE_current.setAnswer({ questionName: "pre_approver2", answer: "" });
+    } else if( approver2 && pre_approver2 != approver2 && !pre_approver2) {
+        pre_approver2 = FE_current.getAnswer({ questionName: "approver2"});
+        FE_current.setAnswer({ questionName: "pre_approver2", answer: pre_approver2 });
+    } 
+  });
+</script>
