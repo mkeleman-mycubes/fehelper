@@ -1,0 +1,3710 @@
+{
+  "hash": "wadqhQfy",
+  "name": "Invoice details",
+  "description": "",
+  "tags": "",
+  "company": "1244",
+  "version": "0.01",
+  "theme": "1",
+  "themeViewUri": "",
+  "serviceUri": "",
+  "servicePackageId": "",
+  "serviceTemplateName": "",
+  "prefillServiceTemplateName": "prefill_my_form_piper",
+  "jsDependencies": "[]",
+  "data": {
+    "successContent": {
+      "NL": ""
+    },
+    "submitButton": {
+      "NL": ""
+    },
+    "publishVersion": "0.01",
+    "submitErrorUrl": "",
+    "publishDate": "27-02-2024 11:57:28",
+    "description": "",
+    "type": "questionnaire",
+    "version": 0,
+    "tags": "",
+    "token": "nalZ2arq",
+    "submitUrl": "/my-tasks-list",
+    "nextButton": {
+      "NL": ""
+    },
+    "locales": "NL",
+    "pages": [
+      {
+        "elementId": "",
+        "submitButton": {
+          "NL": ""
+        },
+        "condScript": "",
+        "submitErrorUrl": "",
+        "questions": [
+          {
+            "elementId": "",
+            "children": [
+              {
+                "elementId": "",
+                "children": [
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": "<h4>Invoice data</h4>"
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textlabel",
+                    "disabled": false,
+                    "id": 973,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "Invoice data"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoice_data",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textfield",
+                    "disabled": true,
+                    "id": 974,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "internalInvoiceNo",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "Internal Invoice Number"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "internalInvoiceNumber",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textfield",
+                    "disabled": true,
+                    "id": 975,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "External Invoice Number"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "externalInvoiceNumber",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textfield",
+                    "disabled": true,
+                    "id": 976,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "Booking Date"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "bookingDate",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textfield",
+                    "disabled": true,
+                    "id": 977,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "Invoice Date"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoiceDate",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  }
+                ],
+                "name": "Left column",
+                "description": "",
+                "className": "left-column",
+                "id": 972,
+                "type": "group",
+                "tags": ""
+              },
+              {
+                "elementId": "",
+                "children": [
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": "<h4>&nbsp;</h4>"
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textlabel",
+                    "disabled": false,
+                    "id": 979,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "empty_label"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "empty_label",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textfield",
+                    "disabled": true,
+                    "id": 980,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "Entity"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "entity",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textfield",
+                    "disabled": true,
+                    "id": 981,
+                    "validations": [],
+                    "mask": {
+                      "options": "{ \"currency\": \"€ \", \"placement\": \"before\"}",
+                      "rule": "N9999999999999999,99"
+                    },
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "Amount excl VAT"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "amountExclVat",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textfield",
+                    "disabled": true,
+                    "id": 982,
+                    "validations": [],
+                    "mask": {
+                      "options": "{ \"currency\": \"€ \", \"placement\": \"before\"}",
+                      "rule": "N9999999999999999,99"
+                    },
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "Amount incl VAT"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "amountInclVat",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textfield",
+                    "disabled": true,
+                    "id": 983,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "Invoice Category"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoiceCategory",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  }
+                ],
+                "name": "Right column",
+                "description": "",
+                "className": "right-column",
+                "id": 978,
+                "type": "group",
+                "tags": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "w-100",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "textfield",
+                "disabled": true,
+                "id": 984,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "Invoice Type"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "invoiceType",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "widget",
+                "disabled": false,
+                "id": 985,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "DisableInvoiceDataElements"
+                },
+                "customTemplate": "disable_invoice_data_elements",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "disable_invoice_data_elements",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              }
+            ],
+            "name": "Invoice Data",
+            "description": "",
+            "className": "split-row mat-card flex-wrap",
+            "id": 971,
+            "type": "group",
+            "tags": ""
+          },
+          {
+            "elementId": "",
+            "operands": [
+              {
+                "elementId": "",
+                "children": [
+                  {
+                    "elementId": "",
+                    "children": [
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": "<h4>Supplier</h4>"
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "textlabel",
+                        "disabled": false,
+                        "id": 989,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Supplier Data"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "supplier_data",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      },
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": "Leveranciersnummer: het unieke leveranciersnummer dat die leverancier in Atlas heeft"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "textfield",
+                        "disabled": true,
+                        "id": 990,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Supplier Number"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "supplierNr",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      }
+                    ],
+                    "name": "Left supplier column",
+                    "description": "",
+                    "className": "left-column",
+                    "id": 988,
+                    "type": "group",
+                    "tags": ""
+                  },
+                  {
+                    "elementId": "",
+                    "children": [
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": "<h4>&nbsp;</h4>"
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "textlabel",
+                        "disabled": false,
+                        "id": 992,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "empty_supplier_label"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "empty_supplier_label",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      },
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": "Leveranciersnaam: de naam die de leverancier in Atlas heeft"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "textfield",
+                        "disabled": true,
+                        "id": 993,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Supplier Name"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "supplierName",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      }
+                    ],
+                    "name": "Right supplier column",
+                    "description": "",
+                    "className": "right-column",
+                    "id": 991,
+                    "type": "group",
+                    "tags": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "w-100",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textfield",
+                    "disabled": true,
+                    "id": 994,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "VAT Number"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "supplierVAT",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  }
+                ],
+                "name": "Supplier Data",
+                "description": "",
+                "className": "split-row mat-card flex-wrap",
+                "id": 987,
+                "type": "group",
+                "tags": ""
+              }
+            ],
+            "condScript": "",
+            "operatorButton": {
+              "NL": ""
+            },
+            "name": "original_fields",
+            "description": "",
+            "className": "",
+            "id": 986,
+            "label": {
+              "NL": "Original fields"
+            },
+            "operatorType": "condition",
+            "condJson": "[{\"action\":\"Show\",\"page\":\"Invoice\",\"question\":\"original\",\"operation\":\"is\",\"param\":\"true\"}]",
+            "type": "operator"
+          },
+          {
+            "elementId": "",
+            "operands": [
+              {
+                "elementId": "",
+                "children": [
+                  {
+                    "elementId": "",
+                    "children": [
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": "<h4>Document Information</h4>"
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "textlabel",
+                        "disabled": false,
+                        "id": 998,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Document Information"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "document_information",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      },
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "textfield",
+                        "disabled": true,
+                        "id": 999,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "documentTitle",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Title"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "title",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      },
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "dropdown",
+                        "disabled": false,
+                        "id": 1000,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "invoice_category",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": "-"
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Category"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "category",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      },
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "textfield",
+                        "disabled": true,
+                        "id": 1001,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "disabledCategory",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": "-"
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Category"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "disabled_category",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      }
+                    ],
+                    "name": "Doc info Left column",
+                    "description": "",
+                    "className": "left-column",
+                    "id": 997,
+                    "type": "group",
+                    "tags": ""
+                  },
+                  {
+                    "elementId": "",
+                    "children": [
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": "<h4>&nbsp;</h4>"
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "textlabel",
+                        "disabled": false,
+                        "id": 1003,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "empty_label"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "empty_label_2",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      },
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "dropdown",
+                        "disabled": false,
+                        "id": 1004,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "invoice_department",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": "-"
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Department"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "department",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      },
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "dropdown",
+                        "disabled": false,
+                        "id": 1005,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "invoice_subcategory",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": "-"
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Subcategory"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "subcategory",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      },
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "textfield",
+                        "disabled": true,
+                        "id": 1006,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "disabledDepartment",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": "-"
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Department"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "disabled_department",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      },
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "textfield",
+                        "disabled": true,
+                        "id": 1007,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "disabledSubcategory",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": "-"
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Subcategory"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "disabled_subcategory",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      }
+                    ],
+                    "name": "Doc info Right column",
+                    "description": "",
+                    "className": "right-column",
+                    "id": 1002,
+                    "type": "group",
+                    "tags": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "w-100",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "textfield",
+                    "disabled": true,
+                    "id": 1008,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "Creation Date"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "creationDate",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{\"dropdownId\":\"invoice_department\",\"dropdownName\":\"department\",\"formType\":\"invoice\",\"dropdownType\":\"departmentsList\"}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "widget",
+                    "disabled": false,
+                    "id": 1009,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "populate_department_info"
+                    },
+                    "customTemplate": "populate_document_info",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "populate_department_info",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{\"dropdownId\":\"invoice_category\",\"dropdownName\":\"category\",\"formType\":\"invoice\",\"dropdownType\":\"categoriesList\",\"departmentForm\":\"department\"}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "widget",
+                    "disabled": false,
+                    "id": 1010,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "populate_category_info"
+                    },
+                    "customTemplate": "populate_document_info",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "populate_category_info",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{\"dropdownId\":\"invoice_subcategory\",\"dropdownName\":\"subcategory\",\"formType\":\"invoice\",\"dropdownType\":\"subcategoryList\",\"departmentForm\":\"department\",\"categoryForm\":\"category\"}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "widget",
+                    "disabled": false,
+                    "id": 1011,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "populate_subcategory_info"
+                    },
+                    "customTemplate": "populate_document_info",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "populate_subcategory_info",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "widget",
+                    "disabled": false,
+                    "id": 1012,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "Disable Invoice Department Elements"
+                    },
+                    "customTemplate": "disable_invoice_dept_elements",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "disable_invoice_dept_elements",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  }
+                ],
+                "name": "Document Information",
+                "description": "",
+                "className": "split-row mat-card flex-wrap",
+                "id": 996,
+                "type": "group",
+                "tags": ""
+              }
+            ],
+            "condScript": "",
+            "operatorButton": {
+              "NL": ""
+            },
+            "name": "non_original_fields",
+            "description": "",
+            "className": "",
+            "id": 995,
+            "label": {
+              "NL": "Non original fields"
+            },
+            "operatorType": "condition",
+            "condJson": "[{\"action\":\"Show\",\"page\":\"Invoice\",\"question\":\"original\",\"operation\":\"is not\",\"param\":\"true\"}]",
+            "type": "operator"
+          },
+          {
+            "elementId": "",
+            "operands": [
+              {
+                "elementId": "",
+                "children": [
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "hidden",
+                    "disabled": false,
+                    "id": 1015,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "invoiceLineBlockingReason"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoiceLineBlockingReason",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "hidden",
+                    "disabled": false,
+                    "id": 1016,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "invoiceLineAmount"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoiceLineAmount",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "hidden",
+                    "disabled": false,
+                    "id": 1017,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "invoiceLineStatus"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoiceLineStatus",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "hidden",
+                    "disabled": false,
+                    "id": 1018,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "invoiceLineRemarks"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoiceLineRemarks",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "hidden",
+                    "disabled": false,
+                    "id": 1019,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "invoiceLineApprovalNo"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoiceLineApprovalNo",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "hidden",
+                    "disabled": false,
+                    "id": 1020,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "invoiceLineSubcategory"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoiceLineSubcategory",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "hidden",
+                    "disabled": false,
+                    "id": 1021,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "invoiceLineLicensePlate"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoiceLineLicensePlate",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "hidden",
+                    "disabled": false,
+                    "id": 1022,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "invoiceLineNo"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoiceLineNo",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "elementId": "",
+                    "children": [
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": "<h4>Invoice Lines</h4>"
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "textlabel",
+                        "disabled": false,
+                        "id": 1024,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "Invoice Lines"
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "invoice_lines",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      },
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [],
+                        "inputType": "widget",
+                        "disabled": false,
+                        "id": 1025,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": "invoice_line_table"
+                        },
+                        "customTemplate": "invoice_search_details_table",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "invoice_line_table",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      },
+                      {
+                        "minDate": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "minDateOffset": "",
+                        "varValues": "{}",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "className": "",
+                        "type": "question",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "validScript": "",
+                        "deduceScript": "",
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "options": [
+                          {
+                            "elementId": "",
+                            "condScript": "",
+                            "defaultValue": false,
+                            "tooltip": {
+                              "NL": ""
+                            },
+                            "questions": [],
+                            "description": "",
+                            "className": "",
+                            "label": {
+                              "NL": "NON-ALGKO"
+                            },
+                            "condJson": "",
+                            "type": "answeroption",
+                            "name": "non_algko",
+                            "disabled": false,
+                            "id": 1027
+                          }
+                        ],
+                        "inputType": "checkbox",
+                        "disabled": false,
+                        "id": 1026,
+                        "validations": [],
+                        "mask": "",
+                        "elementId": "FE_non_algko_chkbx",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "minDateType": "",
+                        "varNames": "",
+                        "label": {
+                          "NL": ""
+                        },
+                        "customTemplate": "",
+                        "tags": "",
+                        "maxDateType": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "name": "non_algko_invoice",
+                        "maxDate": "",
+                        "secured": false,
+                        "deduceJson": ""
+                      }
+                    ],
+                    "name": "Invoice Lines",
+                    "description": "",
+                    "className": "invoice-lines-group mat-card",
+                    "id": 1023,
+                    "type": "group",
+                    "tags": ""
+                  }
+                ],
+                "name": "Invoice lines group",
+                "description": "",
+                "className": "",
+                "id": 1014,
+                "type": "group",
+                "tags": ""
+              },
+              {
+                "elementId": "",
+                "children": [
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "hidden",
+                    "disabled": false,
+                    "id": 1029,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "lineItemAmountExclVATSum"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "lineItemAmountExclVATSum",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  },
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "widget",
+                    "disabled": false,
+                    "id": 1030,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "invoice_lines_table_builder"
+                    },
+                    "customTemplate": "invoice_lines_search_details",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "invoice_lines_table_builder",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  }
+                ],
+                "name": "LineItemsBuilder",
+                "description": "",
+                "className": "",
+                "id": 1028,
+                "type": "group",
+                "tags": ""
+              }
+            ],
+            "condScript": "",
+            "operatorButton": {
+              "NL": ""
+            },
+            "name": "originalfromsearch",
+            "description": "",
+            "className": "",
+            "id": 1013,
+            "label": {
+              "NL": "OriginalFromSearch"
+            },
+            "operatorType": "condition",
+            "condJson": "[{\"action\":\"Show\",\"page\":\"Invoice\",\"question\":\"original\",\"operation\":\"is\",\"param\":\"true\"},{\"action\":\"And\",\"page\":\"Invoice\",\"question\":\"viewsearchcontract\",\"operation\":\"is\",\"param\":\"false\"},{\"action\":\"And\",\"page\":\"Invoice\",\"question\":\"showInvoiceLines\",\"operation\":\"is\",\"param\":\"true\"}]",
+            "type": "operator"
+          },
+          {
+            "elementId": "",
+            "operands": [
+              {
+                "elementId": "",
+                "children": [
+                  {
+                    "minDate": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "minDateOffset": "",
+                    "varValues": "{}",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "className": "m-t-5",
+                    "type": "question",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "validScript": "",
+                    "deduceScript": "",
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "options": [],
+                    "inputType": "tag",
+                    "disabled": false,
+                    "id": 1033,
+                    "validations": [],
+                    "mask": "",
+                    "elementId": "",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "minDateType": "",
+                    "varNames": "",
+                    "label": {
+                      "NL": "Tags (type tag and hit enter)"
+                    },
+                    "customTemplate": "",
+                    "tags": "",
+                    "maxDateType": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "name": "tags",
+                    "maxDate": "",
+                    "secured": false,
+                    "deduceJson": ""
+                  }
+                ],
+                "name": "Tags group",
+                "description": "",
+                "className": "mat-card",
+                "id": 1032,
+                "type": "group",
+                "tags": ""
+              }
+            ],
+            "condScript": "",
+            "operatorButton": {
+              "NL": ""
+            },
+            "name": "tags_condition_528098_528101_528104",
+            "description": "",
+            "className": "",
+            "id": 1031,
+            "label": {
+              "NL": "Tags condition"
+            },
+            "operatorType": "condition",
+            "condJson": "[{\"action\":\"Show\",\"page\":\"Invoice\",\"question\":\"taskid\",\"operation\":\"contains\",\"param\":\"-\"}]",
+            "type": "operator"
+          },
+          {
+            "elementId": "",
+            "children": [
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": "<h4>Comments history</h4>"
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "textlabel",
+                "disabled": false,
+                "id": 1035,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "Comments history"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "comments_history",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{\"label2\":\"Document handler\",\"label4\":\"Document status\",\"json\":\"\"}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "widget",
+                "disabled": false,
+                "id": 1036,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "history_comments_builder"
+                },
+                "customTemplate": "invoice_search_detail_comments",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "history_comments_builder",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "textarea",
+                "disabled": false,
+                "id": 1037,
+                "validations": [],
+                "mask": "",
+                "elementId": "addComments",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "Add comments"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "reviewer_comments",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "hidden",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "textarea",
+                "disabled": false,
+                "id": 1038,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "comments_obj"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "comments_obj",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "hidden",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "textarea",
+                "disabled": false,
+                "id": 1039,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "comments_obj_str"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "comments_obj_str",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1040,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "taskStatus"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "taskStatus",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              }
+            ],
+            "name": "Comments history",
+            "description": "",
+            "className": "comments-history-group mat-card",
+            "id": 1034,
+            "type": "group",
+            "tags": ""
+          },
+          {
+            "elementId": "",
+            "children": [
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1042,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "action"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "action",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1043,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "approvalStatus"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "approvalStatus",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1044,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "taskId"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "taskid",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1045,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "documentType"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "documentType",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": "false"
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1046,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "Service Type"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "service_type",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": "true"
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1047,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "ViewSearchContract"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "viewsearchcontract",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1048,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "invoiceLines"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "invoiceLines",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1049,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "workspaceData"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "workspaceData",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1050,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "original"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "original",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1051,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "uniqueidentifier"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "uniqueidentifier",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": "false"
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1052,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "showInvoiceLines"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "showInvoiceLines",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1053,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "odmId"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "odmId",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1054,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "relationType"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "relationType",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "hidden",
+                "disabled": false,
+                "id": 1055,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "modificationDate"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "modificationDate",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              }
+            ],
+            "name": "Hidden Fields",
+            "description": "",
+            "className": "",
+            "id": 1041,
+            "type": "group",
+            "tags": ""
+          }
+        ],
+        "description": "",
+        "className": "",
+        "label": {
+          "NL": "Invoice"
+        },
+        "condJson": "",
+        "type": "section",
+        "tags": "",
+        "nextButton": {
+          "NL": ""
+        },
+        "submitUrl": "",
+        "name": "invoice",
+        "backButton": {
+          "NL": ""
+        },
+        "pageUrl": "",
+        "id": 970
+      },
+      {
+        "minDate": "",
+        "defaultValue": {
+          "NL": ""
+        },
+        "minDateOffset": "",
+        "varValues": "{\"formType\":\"INVOICE\"}",
+        "tooltip": {
+          "NL": ""
+        },
+        "description": {
+          "NL": ""
+        },
+        "className": "",
+        "type": "question",
+        "maxDateOffset": "",
+        "dateType": "calendar",
+        "validScript": "",
+        "deduceScript": "",
+        "labelVariables": {
+          "NL": ""
+        },
+        "options": [],
+        "inputType": "formwidget",
+        "disabled": false,
+        "id": 1056,
+        "validations": [],
+        "mask": "",
+        "elementId": "",
+        "subLabel": {
+          "NL": ""
+        },
+        "unselectLabel": {
+          "NL": ""
+        },
+        "minDateType": "",
+        "varNames": "",
+        "label": {
+          "NL": "retrieveDepartmentData"
+        },
+        "customTemplate": "retrieveDepartmentData",
+        "tags": "",
+        "maxDateType": "",
+        "hint": {
+          "NL": ""
+        },
+        "name": "retrievedepartmentdata",
+        "maxDate": "",
+        "secured": false,
+        "deduceJson": ""
+      }
+    ],
+    "errorContent": {
+      "NL": ""
+    },
+    "defLocale": "NL",
+    "name": "Invoice details",
+    "backButton": {
+      "NL": ""
+    },
+    "company": "Athlon DMS BeLux",
+    "id": 413,
+    "user": "DMSBelux.support"
+  }
+}
