@@ -1,0 +1,22 @@
+{
+  "personalizations": [
+    {
+      "to": [
+            {
+              "email": "sing@mycubes.nl"
+            }
+      ],
+      "subject": "${body.variables.declineMailSubject}"
+    }
+  ],
+  "from": {
+    "email": "noreply@formsengine.io",
+    "name": "Athlon"
+  },
+  "content": [
+    {
+      "type": "text/html",
+      "value": "${body.variables.declineMailBody}"
+    }
+  ]
+}
