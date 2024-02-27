@@ -1,0 +1,24 @@
+<script>
+    var FE_current = FE['{{options.containerId}}'];
+    var viewsearchcontract = FE_current.getAnswer({questionName: 'viewsearchcontract'});
+    if(viewsearchcontract && viewsearchcontract == "false") {
+        var department = FE_current.getAnswer({questionName: 'department'});
+        $('#contract_department select option').filter(function () {
+            return $(this).text() === department;
+        }).attr('selected', true);
+        $('#contract_department select').prop('disabled', true);
+        
+        var category = FE_current.getAnswer({questionName: 'category'});
+        $('#contract_category select option').filter(function () {
+            return $(this).text() === '-';
+        }).text(category);
+        $('#contract_category select').prop('disabled', true);
+        
+        var subcategory = FE_current.getAnswer({questionName: 'subcategory'});
+        $('#contract_subcategory select option').filter(function () {
+            return $(this).text() === '-';
+        }).text(subcategory);
+        $('#contract_subcategory select').prop('disabled', true);
+    }
+    
+</script>
