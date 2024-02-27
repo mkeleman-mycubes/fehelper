@@ -1,0 +1,22 @@
+{
+    "messageName" : "DMSDeclineEmail",
+    "tenantId" : "AthlonDMSBeLux",
+    "processVariables" : {
+        "decline_email_from": {
+                "type": "String",
+                "value": "${body.variables['decline_email_from']}"
+        },
+        "decline_email_to": {
+                "type": "String",
+                "value": "${body.variables['decline_email_to']}"
+        },
+        "decline_subject": {
+                "type": "String",
+                "value": "${body.variables['decline_subject']}"
+        },
+        "decline_email_text": {
+                "type": "String",
+                "value": "${body.variables['decline_email_text']}"
+        }
+    }
+}
