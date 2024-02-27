@@ -1,0 +1,23 @@
+<#if body.errorOccured??>
+{
+    "error": "${body.bpmnError.bpmnErrorCode}"
+}
+<#else>
+{
+    "documentInfo": {
+        "documentName": "${body.GetDocumentResponse.GetDocumentResponse.documentInfo.DocumentName}",
+        "legalEntity": "${body.GetDocumentResponse.GetDocumentResponse.documentInfo.LegalEntity}",
+        "docTypeNumber": "${body.GetDocumentResponse.GetDocumentResponse.documentInfo.DocTypeNumber}",
+        <#if body.GetDocumentResponse.GetDocumentResponse.documentInfo.ScanDate?has_content>
+         "creationDate": "${body.GetDocumentResponse.GetDocumentResponse.documentInfo.ScanDate}",
+        <#else>
+        "creationDate": "Not set",
+        </#if>
+        <#if body.GetDocumentResponse.GetDocumentResponse.documentInfo.CaseType?has_content>
+        "caseType": "${body.GetDocumentResponse.GetDocumentResponse.documentInfo.CaseType}",
+        </#if>
+        "mimeType": "${body.GetDocumentResponse.GetDocumentResponse.documentInfo.MimeType}"
+    },
+    "documentInBase64": "${body.GetDocumentResponse.GetDocumentResponse.documentContent}"
+}
+</#if>
