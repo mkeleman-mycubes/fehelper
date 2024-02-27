@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "multi_approvement",
+            "script" : "taskId = body.id; headers.taskId = taskId"
+        }
+    ]
+}
