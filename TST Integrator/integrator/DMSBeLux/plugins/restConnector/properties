@@ -1,0 +1,20 @@
+{
+  "ODSAuth": "Basic YWRtaW46T0RTQURNMTIzIUAj",
+  "ODMUsername": "EA_TechUser_Camunda@part.cs.econarchive.athlon",
+  "integratorUrl": "https://acc-dms-integrator.apps.int.ap1-paas.cloud.corpintra.net/mit/trainman/5m48XcaPbLosCjBc/DMSBeLux",
+  "ODSUrl": "https://acc-dms-ods.apps.int.ap1-paas.cloud.corpintra.net/rest/api",
+  "ODMUrl": "https://dmsapi.intm.econtracting.mercedes-benz.com/archiveapi/api/v1",
+  "AtlasIntegrationUrl": "https://gateway.acc.be.athlon.app.corpintra.net/api",
+  "authorization": "Basic QXRobG9uRE1TQmVMdXhBdGxhc0ludGVncmF0aW9uVXNlcjpBdGhsb25ETVNCZUx1eEF0bGFzSW50ZWdyYXRpb25Vc2Vy",
+  "environment": "DHC",
+  "DHC_environment": "INT",
+  "OTDSUrl": "https://iam-odm.intm.fs.corpintra.net",
+  "AtlasUrl": "https://testing.api.isl.app.corpintra.net/v2/isl/lease/operations",
+  "DMSEndpoint": "https://acamo-storage.dhcpaas-apps-p03-edc5.dhc.corpintra.net",
+  "OTDSUsername": "Athlon_TechUser_AppWorks_BE_AthlonBE_DMS",
+  "camundaEndpoint": "https://acc-dms-camunda.apps.int.ap1-paas.cloud.corpintra.net/engine-rest",
+  "Atlas_BE_ApiKey": "76553d51-45b0-4f1b-9c53-7d4ff90b072f",
+  "OTDSPassword": "Start123!",
+  "ODMPassword": "6jPi+Mo$]fCjaPm!]BRF6$l7",
+  "Atlas_ISL_ApiKey": "76553d51-45b0-4f1b-9c53-7d4ff90b072f"
+}
