@@ -1,0 +1,45 @@
+<#if body.serviceCall?? && body.serviceCall == "true">
+
+    <#assign approver = body.secureData.user.identity.authenticatedUser> 
+    <#assign taskStatus = body.answers['taskStatus'][0]?json_string>
+    
+    <#if body.answers['action'][0] == "on_hold">
+        <#assign taskStatus = "On Hold">
+    </#if>
+    <#if body.answers['action'][0] == "approve">
+        <#assign taskStatus = "Approved">
+    </#if>
+    
+    {
+        "entity": "${body.answers['entity'][0]}",
+        "workspace": "INV",
+        "comments": [{
+            "body": "${body.answers['reviewer_comments'][0]}",
+            "userCreated": "${approver}",
+            "status":"${taskStatus}"
+        }]
+    }
+    
+<#else>
+
+    <#assign approver = body.secureData.user.identity.authenticatedUser> 
+    <#assign taskStatus = body.answers['taskStatus'].data.answer[0]?json_string>
+    
+    <#if body.answers['action'].data.answer[0] == "on_hold">
+        <#assign taskStatus = "On Hold">
+    </#if>
+    <#if body.answers['action'].data.answer[0] == "approve">
+        <#assign taskStatus = "Approved">
+    </#if>
+    
+    {
+        "entity": "${body.answers['entity'].data.answer[0]}",
+        "workspace": "INV",
+        "comments": [{
+            "body": "${body.answers['reviewer_comments'].data.answer[0]}",
+            "userCreated": "${approver}",
+            "status":"${taskStatus}"
+        }]
+    }
+
+</#if>
