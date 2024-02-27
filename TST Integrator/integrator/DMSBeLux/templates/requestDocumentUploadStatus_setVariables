@@ -1,0 +1,18 @@
+<#if body.errorOccured??>
+  <@printObjectToJson source=body />
+<#else>
+{
+    "status": "true",
+    "processVariables": {
+    <#if body.requestStatus == 'Error'>
+        "status": "${body.requestStatus}",
+        "details": "${body.requestStatusDetail}",
+        "errorCode": "${body.requestStatusCode}",
+        "bpmnErrorCode": "${body.requestStatusCode}",
+        "bpmnErrorMessage": "${body.requestStatusDetail}"
+    <#else>
+        "status": "${body.requestStatus}"
+    </#if>    
+    }
+}
+</#if>
