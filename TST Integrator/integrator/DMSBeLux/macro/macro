@@ -1,0 +1,411 @@
+<#-- Generate stringified array of objects -->
+<#function processCamundaJsonVariable obj>
+    <#assign result = "[">
+    <#list obj as item>
+        <#assign result += "{">
+        <#list item as key, value>
+            <#assign result += "\"${key}\":\"${value}\"">
+            <#if key?has_next>
+                <#assign result += ",">
+            </#if>
+        </#list>
+        <#assign result += "}">
+        <#if item?has_next>
+            <#assign result += ",">
+        </#if>
+    </#list>
+
+    <#assign result += "]">
+    
+    <#return result> 
+</#function>
+
+<#function dateGreaterThanDays date days>
+    <#assign timeInMilliseconds = (1000 * 60 * 60 * 24 * days) >
+    <#if ((.now?long - timeInMilliseconds?long) > date?long)>
+      <#return true>
+    <#else>
+      <#return false>
+    </#if>
+</#function>
+
+<#function print val="">
+  <#if val?is_number>
+    <#return val?c?json_string>
+  <#elseif val?is_boolean>
+    <#return val?c>
+  <#else>
+    <#return val?json_string>
+  </#if>
+</#function>
+
+<#function printDate val="">
+  <#if val != "">
+    <#return val?keep_before('T')?date.iso?string['dd-MM-yyyy']>
+  <#else>
+    <#return val?json_string>
+  </#if>
+</#function>
+
+<#function dateTimeToDate val="">
+  <#if val?has_content>
+    <#return (val?date("yyyy-MM-dd")?string('yyyy-MM-dd'))>
+  <#else>
+    <#return val>
+  </#if>
+</#function>
+
+<#-- Return comment status -->
+<#function getCommentStatus mapKey approvePerson>
+    <#if mapKey == "BACK_AP">
+        <#return "Back to account payable">
+    <#elseif mapKey == "BACK_GA">
+        <#return "Back to general accountant">
+    <#elseif mapKey == "RE_APPROVAL">
+        <#return "Back to general accountant">
+    <#elseif mapKey == "BACK_FIRST_APPROVER">
+        <#return "Back to first approver">
+    <#else>
+        <#assign statuses = {
+            "APPROVE": "Approved by ",
+            "ON_HOLD": "On hold by ",
+            "DECLINE": "Declined by "
+        }>
+        <#return getMappedDataByKey(statuses, mapKey) + approvePerson>
+    </#if>
+</#function>
+
+<#function determineMimeType fileName>
+   <#assign extensionsMap = {
+        'pdf': 'application/pdf',
+        'docx': 'application/msword',
+        'xlsx': 'application/vnd.ms-excel',
+        'pptx': 'application/vnd.ms-powerpoint',
+        'tif': 'image/tif',
+        'tiff':'image/tiff',
+        'gif': 'image/gif',
+        'png': 'image/png',
+        'jpeg': 'image/jpeg',
+        'jpg':'image/jpg',
+        'bmp': 'image/bmp',
+        'txt': 'text/plain',
+        'eml': 'message/rfc822'
+    }>
+  <#return extensionsMap[fileName?keep_after_last(".")?lower_case]>
+</#function>
+
+<#-- Get data based on map -->
+<#function getMappedDataByKey map mapKey>
+    <#return map[mapKey]!"">
+</#function>
+
+<#function getTaskDescription body>
+    <#if body.variables.TaskType == "Hitlist_task">
+        <#assign description>
+            The credit assessment for company ${body.variables.CustomerName} is canceled because the Credit agency could not uniquely identify the company.
+            The following list of identities were found:
+            <#if body.variables.possibleCustomers??>
+            <#list body.variables.possibleCustomers as possibleCustomer>
+                Company name: ${possibleCustomer.businessPartner.companyDisclosure.companyName}
+                Company ID: ${possibleCustomer.businessPartner.companyDisclosure.companyId}<#rt>
+                <#if possibleCustomer.businessPartner.companyDisclosure.vatId??>
+                VAT ID: ${possibleCustomer.businessPartner.companyDisclosure.vatId}<#rt>
+                </#if>
+                <#if possibleCustomer.businessPartner.addresses?? && possibleCustomer.businessPartner.addresses?has_content>
+                Address: <#if possibleCustomer.businessPartner.addresses[0].street?? && possibleCustomer.businessPartner.addresses[0].street?has_content>${possibleCustomer.businessPartner.addresses[0].street}</#if><#if possibleCustomer.businessPartner.addresses[0].number?? && possibleCustomer.businessPartner.addresses[0].number?has_content> ${possibleCustomer.businessPartner.addresses[0].number}</#if><#if possibleCustomer.businessPartner.addresses[0].city?? && possibleCustomer.businessPartner.addresses[0].city?has_content> ${possibleCustomer.businessPartner.addresses[0].city}</#if><#rt>
+                </#if>
+                <#if possibleCustomer.probability??>
+                Probability: ${possibleCustomer.probability}<#rt>
+                </#if>
+            </#list>
+            </#if>
+            Please update the account in ICMore with the correct enterprise number from the list above.
+            After you have made your changes, please restart the Credit assessment.
+        </#assign>
+    </#if>
+    <#if body.variables.TaskType == "MoreInfo_task"><#assign description>Business Underwriting has requested additional information concerning the following credit line request.
+Account: ${body.variables.SET_AccountName}
+Requested credit line: ${body.variables.RequestedCreditLine}
+Request date: ${body.variables.ApplicationEntryDate}
+Request: ${body.variables.QuestionOfUnderwriter}
+Please open the Credit assessment URL and provide the needed information.</#assign></#if>
+    <#return description>
+</#function>
+<#function getTaskSubject body>
+    <#assign subject = "NOT_IMPLEMENTED">
+    <#if body.variables.TaskType == "Hitlist_task">
+        <#assign subject>Assessment canceled - Company ${body.variables.SET_AccountName} couldn't be uniquely identified</#assign>
+    </#if>
+    <#if body.variables.TaskType == "MoreInfo_task">
+        <#assign subject>Credit assessment - Additional information requested for ${body.variables.SET_AccountName}</#assign>
+    </#if>
+    <#return subject>
+</#function>
+<#function businessPolicyRulesHit policyRules>
+  <#assign rules = []>
+  <#list policyRules as policyRule>
+    <#if policyRule.policyRuleTriggered == "1">
+        <#local str = policyRule.policyRuleNumber + ", " + policyRule.policyRuleLabel>
+        <#assign rules += [str]>
+    </#if>
+  </#list>
+  <#return rules?join("|||")?json_string>
+</#function>
+<#function hasGroupType user expectedGroupType>
+    <#assign hasGroup = false>
+    <#list user.identity.groups as group>
+        <#if group.type == expectedGroupType>
+            <#assign hasGroup = true>
+            <#break>
+        </#if>
+    </#list>
+    <#return hasGroup>
+</#function>
+<#function getCountryShorthand countryFullName>
+    <#if countryFullName == "Netherlands">
+        <#return "NL">
+    <#elseif countryFullName == "Belgium">
+        <#return "BE">
+    <#elseif countryFullName == "Germany">
+        <#return "GE">
+    <#elseif countryFullName == "Spain">
+        <#return "ES">
+    </#if>
+    <#return "Unknown">
+</#function>
+<#function dateAddDays date days>
+    <#assign timeInMilliseconds = (1000 * 60 * 60 * 24 * days) >
+    <#assign aDate = date?long + timeInMilliseconds?long>
+    <#return aDate?number_to_date>
+</#function>
+<#function getCancellationStatus cancellationType>
+    <#if cancellationType == "provideInformationTimeExpired">
+        <#return "Credit assessment canceled due to no information provided">
+    <#elseif cancellationType == "hitlist">
+        <#return "Credit assessment canceled due to hitlist">
+    <#elseif cancellationType == "error">
+        <#return "Credit assessment canceled due to error">
+    <#elseif cancellationType == "manual">
+        <#return "Credit assessment canceled manually">
+    </#if>
+    <#return "Credit assessment canceled">
+</#function>
+
+<#macro printObjectToJson name="" source="" dontEscape="false" nested="false" hasNext="false">
+    <#if name?has_content>
+        "${name}":
+    </#if>
+    <#if source?is_hash>
+        {
+            <#list source?keys as key>
+                <#assign hn = key?has_next?c>
+                <@printObjectToJson name=key source=source[key] dontEscape=dontEscape nested="true" hasNext=hn />
+            </#list>
+        }<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_sequence>
+        [
+            <#list source as seqObject>
+                <#if seqObject?has_content>
+                    <#assign hn = seqObject?has_next?c>
+                    <@printObjectToJson source=seqObject dontEscape=dontEscape nested="true" hasNext=hn />
+                </#if>
+            </#list>
+        ]<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_boolean>
+        "${source?string("true","false")}"<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_number>
+        "${source?c}"<#if nested=="true" && hasNext=="true">,</#if>
+    <#else>
+        <#if dontEscape=="true">"${source}"<#else>"${source?json_string}"</#if>
+        <#if nested=="true" && hasNext=="true">,</#if>
+    </#if>
+</#macro>
+
+<#macro printObjectToJsonTyped name="" source="" dontEscape="false" nested="false" hasNext="false">
+    <#if name?has_content>
+        "${name}":
+    </#if>
+    <#if source?is_hash>
+        {
+            <#list source?keys as key>
+                <#assign hn = key?has_next?c>
+                <@printObjectToJsonTyped name=key source=source[key] dontEscape=dontEscape nested="true" hasNext=hn />
+            </#list>
+        }<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_sequence>
+        [
+            <#list source as seqObject>
+                <#if seqObject?has_content>
+                    <#assign hn = seqObject?has_next?c>
+                    <@printObjectToJsonTyped source=seqObject dontEscape=dontEscape nested="true" hasNext=hn />
+                </#if>
+            </#list>
+        ]<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_boolean>
+        ${source?string("true","false")}<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_number>
+        ${source?c}<#if nested=="true" && hasNext=="true">,</#if>
+    <#else>
+        <#if dontEscape=="true">"${source}"<#else>"${source?json_string}"</#if>
+        <#if nested=="true" && hasNext=="true">,</#if>
+    </#if>
+</#macro>
+
+<#macro printObjectToJsonString name="" source="" dontEscape="false" nested="false" hasNext="false">
+    <@compress single_line=true>
+    <#if name?has_content>
+        \"${name}\":
+    </#if>
+    <#if source?is_hash>
+        {
+            <#list source?keys as key>
+                <#assign hn = key?has_next?c>
+                <@printObjectToJsonString name=key source=source[key] dontEscape=dontEscape nested="true" hasNext=hn />
+            </#list>
+        }<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_sequence>
+        [
+            <#list source as seqObject>
+                <#if seqObject?has_content>
+                    <#assign hn = seqObject?has_next?c>
+                    <@printObjectToJsonString source=seqObject dontEscape=dontEscape nested="true" hasNext=hn />
+                </#if>
+            </#list>
+        ]<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_boolean>
+        \"${source?string("true","false")}\"<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_number>
+        \"${source?c}\"<#if nested=="true" && hasNext=="true">,</#if>
+    <#else>
+        <#if dontEscape=="true">\"${source}\"<#else>\"${source?json_string}\"</#if>
+        <#if nested=="true" && hasNext=="true">,</#if>
+    </#if>
+    </@compress>
+</#macro>
+
+<#macro uploadToDMSPiper uploadFields secureData headers historyProcess='false'>
+    <#setting time_zone="GMT+2">
+    <#assign aDateTime = .now>
+    <#assign timestamp = (aDateTime?long / 1000)?round?c>
+    <#-- The documentRestrictionCode can have two values '70 - All users' and '71 - Underwriters only' -->
+    <#if secureData.user.identity.groups[0].name?contains("Underwriter")>
+        <#assign documentRestrictionCode = 71>
+    <#else>
+        <#assign documentRestrictionCode = 70>
+    </#if>
+    <#list uploadFields as uploadField>
+        <#if headers.filesInfo[uploadField]??>
+            <#if headers.filesInfo[uploadField]?is_sequence>
+                <#list headers.filesInfo[uploadField] as file>
+                    <#if historyProcess?? && historyProcess == 'true'>
+                    {
+                        "type" : "action",
+                        "name" : "getVariableInstanceList",
+                        "script" : "headers.processInstanceId = processId"
+                    },
+                    {
+                        "type": "script",
+                        "name": "transformVariableInstancesToVariables"
+                    },
+                    <#else>
+                    {
+                        "type" : "action",
+                        "name" : "getProcessVariables",
+                        "script" : "headers.processInstanceId = processId"
+                    },
+                    </#if>
+                    {
+                        "type": "script",
+                        "name": "transformCamundaVariablesToObject"
+                    },
+                    {
+                        "type" : "action",
+                        "name" : "storeFileToDMS",
+                        "script" : "body = [\"documentRestrictionCode\":\"${documentRestrictionCode}\", \"fileName\": \"${file.filename}.${file.extension}\", \"fileData\": headers[\"${uploadField}\"][${file?index}], \"variables\": body]; headers.filesInfo[\"${uploadField}\"] = null; headers.SAMLArt = SAMLArt;"
+                    }<#sep>, </#sep>
+                </#list>
+            <#else>
+                <#if historyProcess?? && historyProcess == 'true'>
+                {
+                    "type" : "action",
+                    "name" : "getVariableInstanceList",
+                    "script" : "headers.processInstanceId = processId"
+                },
+                {
+                    "type": "script",
+                    "name": "transformVariableInstancesToVariables"
+                },
+                <#else>
+                {
+                    "type" : "action",
+                    "name" : "getProcessVariables",
+                    "script" : "headers.processInstanceId = processId"
+                },
+                </#if>
+                {
+                    "type": "script",
+                    "name": "transformCamundaVariablesToObject"
+                },
+                {
+                    "type" : "action",
+                    "name" : "storeFileToDMS",
+                    "script" : "body = [\"documentRestrictionCode\":\"${documentRestrictionCode}\",\"fileName\": \"${headers.filesInfo[uploadField].filename}.${headers.filesInfo[uploadField].extension}\", \"fileData\": headers[\"${uploadField}\"], \"variables\": body]; headers.filesInfo[\"${uploadField}\"] = null; headers.SAMLArt = SAMLArt;"
+                }
+            </#if>
+        </#if>
+    </#list>
+</#macro>
+
+<#macro printDocumentsVariables documentsVariables trailingComma=true>
+    <#list documentsVariables as documentVariable>
+        "${documentVariable.name}": {
+            "value" : "{\"fileName\": \"${documentVariable.fileName?json_string}\", \"addedBy\": \"${documentVariable.addedBy?json_string}\", \"dateAdded\": \"${documentVariable.dateAdded}\", \"id\": \"${documentVariable.id}\"}",
+            "type" : "Json"
+        }
+        <#if trailingComma>
+            ,
+        <#else>
+            <#sep>,</#sep>
+        </#if>
+    </#list>
+</#macro>
+
+<#macro printCamundaVariablesForProcessStart camundaVariables>
+    <#list camundaVariables?keys as variableName>
+        "${variableName}": {
+            "value" : "${camundaVariables[variableName].value}", 
+            "type": "${camundaVariables[variableName].type}"
+        }
+    </#list>
+</#macro>
+
+<#macro XMLToJSON node>
+    <#if (node?children?size==1 && node?children?first?node_type=='text' )>
+        "${node?children?first?j_string}"
+    <#else>
+        <#if ((node?children?first?node_name)?? && node[node?children?first?node_name]?size> 1)>
+            [
+            <#list node?children as item>
+                <#if item?node_name?has_content>
+                    {
+                        "${item?node_name}" :
+                        <@XMLToJSON item />
+                    }
+                    <#if item_has_next>,</#if>
+                <#else>
+                    <@XMLToJSON item />
+                    <#if item_has_next>,</#if>
+                </#if>
+            </#list>
+            ]
+        <#else>
+            {
+            <#list node?children as item>
+                "${item?node_name}":
+                <@XMLToJSON item />
+                <#if item_has_next>,</#if>
+            </#list>
+            }
+        </#if>
+    </#if>
+</#macro>
