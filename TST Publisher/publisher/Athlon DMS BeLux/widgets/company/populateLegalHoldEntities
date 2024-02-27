@@ -1,0 +1,83 @@
+<script>
+    (function () {
+        const FE_current = FE['{{options.containerId}}'];
+        const dropdownName = "{{widget.variables.dropdownName}}";
+        const updateField = "{{widget.variables.updateField}}";
+        const dropdownContainer = jQuery('#{{options.containerId}} #{{widget.variables.dropdownId}}');
+        const dropdownEl = dropdownContainer.find('select');
+        const currentAnswer = FE_current['storedAnswer_' + dropdownName] == null
+            ? (FE_current.getAllOptions().initAnswers[updateField] || "")
+            : FE_current['storedAnswer_' + dropdownName];
+        const submitBtn = jQuery('#{{options.containerId}} .fe-btn-submit');
+
+        if (dropdownEl) {
+            const changeFunc = dropdownEl[0].onchange;
+            dropdownEl[0].onchange = null;
+
+            // Bind change event
+            dropdownEl.on('change', function () {
+                const answer = dropdownEl.val();
+                const listData = FE_current.getFormVariable({name: 'dataList_'+dropdownName});
+
+                FE_current['storedAnswer_' + dropdownName] = answer;
+                
+                // Set needed field answer
+                FE_current.setAnswer({
+                    questionName: updateField,
+                    answer: answer
+                });
+            });
+
+            if (FE_current['FEData_' + dropdownName]) {
+                return populateDropdown(FE_current['FEData_' + dropdownName]);
+            }
+
+            submitBtn.addClass('disabled');
+            dropdownContainer.hide();
+
+            // Make a service call to data to populate dropdown
+            FE_current.serviceCall({
+              data: {
+                name: "ODS_getDmsEntities"
+              },
+              success: function (resp) {
+                if (resp && resp.length > 0) {
+                    const allowedEntities = FE_current.getAnswer({questionName: 'entities'});
+
+                    // Filter entities based on user groups
+                    resp = resp.filter(entity => allowedEntities.includes(entity.cd));
+                    FE_current['FEData_' + dropdownName] = resp;
+                    populateDropdown(resp);
+
+                    if (resp.length === 1) {
+                        FE_current.setAnswer({
+                            questionName: updateField,
+                            answer: resp[0].cd
+                        });
+                    }
+
+                    submitBtn.removeClass('disabled');
+                    dropdownContainer.show();
+                } else {
+                  console.error('Can not retrieve entities');
+                }
+              }
+            });       
+        }
+
+        // Populate dropdown
+        function populateDropdown(dataList) {
+            const h = [];
+
+            const selectEmpty = currentAnswer === "" && dataList.length !== 1 ? 'selected' : '';
+            h.push('<option value disabled ' + selectEmpty + '> - Select entity - </option>');
+
+            dataList.forEach(function (option) {
+                const selected = (currentAnswer !== "" && currentAnswer === option.cd) ? "selected" : "";
+                h.push('<option value="' + option.cd + '" ' + selected + '>' + option.cd + '</option>');
+            });
+
+            dropdownEl.append(h.join(''));
+        }
+    })();
+</script>
