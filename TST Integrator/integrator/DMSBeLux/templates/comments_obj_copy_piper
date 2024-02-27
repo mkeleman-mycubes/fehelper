@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "comments_obj_copy",
+            "script" : "taskId = body.taskid; headers.taskId = taskId"
+        }
+    ]
+}
