@@ -1,0 +1,25 @@
+<script>
+    (function () {
+
+        var FE_current = FE['{{options.containerId}}'];
+        var FE_options = FE_current.getAllOptions();
+        var taskName = FE_current.getAnswer({ questionName: "taskname" });
+        var selected_approver = FE_current.getAnswer({ questionName: "selected_approver" });
+
+        if (!selected_approver || selected_approver.length < 1) {
+            selected_approver = taskName === 'First Approval' ? 'approver1' : 'approver2';
+            var another_approver_question = selected_approver === 'approver1' ? 'approver2' : 'approver1';
+            var another_approver_value = FE_options.initAnswers[another_approver_question];
+
+            FE_current.setAnswer({
+                questionName: 'selected_approver',
+                answer: selected_approver
+            });
+            
+            FE_current.setAnswer({
+                questionName: 'another_approver',
+                answer: another_approver_value
+            });
+        }
+    })();
+</script>
