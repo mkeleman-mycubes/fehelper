@@ -1,0 +1,127 @@
+<#assign dateTime = .now>
+<#if body.answers['taskname'].data.answer[0] == "First Approval">
+    <#assign commentStatusData = "first approver">
+<#else>
+    <#assign commentStatusData = "second approver">
+</#if>
+{
+  "variables": {
+    "comments_obj": {
+      "type": "Json",
+      "value": <#if 0 < body.answers['comments_obj_str'].data.answer[0]?length><#assign prev_comments = body.answers['comments_obj_str'].data.answer[0]>"[${prev_comments}, {\"approver\": \"${body.formVariables['user_name']}\",\"comment\":\"${body.answers['reviewer_comments'].data.answer[0]?json_string}\",\"time\":\"${dateTime}\",\"status\": \"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], commentStatusData)}\"}]"<#else>"[{\"approver\": \"${body.formVariables['user_name']}\",\"comment\":\"${body.answers['reviewer_comments'].data.answer[0]?json_string}\",\"time\":\"${dateTime}\",\"status\": \"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], commentStatusData)}\"}]"</#if>
+    },
+      <#if body.answers['action'].data.answer[0] == "decline">
+        <#if body.answers['subject']??>
+            "declineMailSubject": {
+                "type": "String",
+                "value": "${body.answers['subject'].data.answer[0]}"
+            },
+        </#if>
+        <#if body.answers['declinemail']??>
+            "declineMailBody": {
+                "type": "String",
+                "value":  "${body.answers['declinemail'].data.answer[0]}"
+            },
+        </#if>
+        "sendDeclineMail": {
+            "type": "String",
+            "value": "no"
+        },
+        <#if body.answers['taskname'].data.answer[0] == "First Approval">
+            "approvalStatusAccountant": {
+                "type": "String",
+                "value": "Declined by First Approver"
+            },
+            "approvalStatusApprover1": {
+                "type": "String",
+                "value": "DECLINE"
+            }
+        </#if>
+        <#if body.answers['taskname'].data.answer[0] == "Second Approval">
+            "approvalStatusAccountant": {
+                "type": "String",
+                "value": "Declined by Second Approver"
+            },
+            "approvalStatusApprover2": {
+                "type": "String",
+                "value": "DECLINE"
+            }
+        </#if>
+        
+    <#else>
+        <#if body.answers['taskname'].data.answer[0] == "First Approval">
+            <#if body.answers['approvalStatus'].data.answer[0] != "ON_HOLD">
+                "AssignedToName": {
+                  "type": "String",
+                  "value": "${body.answers['approver2'].data.answer[0]}"
+                },
+                "approvalStatusAccountant": {
+                    "type": "String",
+                    "value": "Awaiting approval Second Approver"
+                },
+            </#if>
+            "approvalStatusApprover1": {
+                "type": "String",
+                "value": "${body.answers['approvalStatus'].data.answer[0]}"
+            }
+        </#if>
+        <#if body.answers['taskname'].data.answer[0] == "Second Approval">
+             <#if body.answers['approvalStatus'].data.answer[0] != "ON_HOLD">
+                "approvalStatusAccountant": {
+                    "type": "String",
+                    "value": <#if body.answers['finalApprovalRequired'].data.answer[0]?contains("yes")>
+                        "Awaiting Final approval Accountant"
+                    <#else>
+                        "Invoice Approved"
+                    </#if>
+                },
+                "AssignedToName": {
+                  "type": "String",
+                  "value": ""
+                },
+            </#if>
+            "approvalStatusApprover2": {
+                "type": "String",
+                "value": "${body.answers['approvalStatus'].data.answer[0]}"
+            }
+        </#if>
+    </#if>
+    <#if body.answers['action'].data.answer[0] == "back_ga">
+        ,
+        "AssignedToName": {
+            "type": "String",
+            "value": ""
+        },
+        "ApprovalStatus": {
+            "type": "String",
+            "value": "Awaiting approval Accountant"
+        },
+        "approvalStatusAccountant": {
+            "type": "String",
+            "value": "Awaiting approval Accountant"
+        },
+        "approvalStatusApprover1": {
+            "type": "String",
+            "value": "BACK_GA"
+        }
+    <#elseif body.answers['action'].data.answer[0] == "back_first_approver">
+        ,
+        "AssignedToName": {
+            "type": "String",
+            "value": "${body.answers['approver1'].data.answer[0]}"
+        },
+        "ApprovalStatus": {
+            "type": "String",
+            "value": "Awaiting approval First Approver"
+        },
+        "approvalStatusAccountant": {
+            "type": "String",
+            "value": "Awaiting approval First Approver"
+        },
+        "approvalStatusApprover2": {
+            "type": "String",
+            "value": "BACK_FIRST_APPROVER"
+        }
+    </#if>
+  }
+}
