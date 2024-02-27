@@ -1,0 +1,9 @@
+{
+	"pipes": [
+		{
+			"type": "action",
+			"name": "get_atlas_finance_service",
+			"script": "headers.atlas_finance_service_type = body.atlas_finance_service_type;"
+		}
+	]
+}
