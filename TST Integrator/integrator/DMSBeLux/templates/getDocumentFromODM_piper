@@ -1,0 +1,23 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "loginToDMS",
+            "script": "headers.handleRestExceptionTemplate = 'downloadFile_error'; headers.handleExceptionTemplate = 'downloadFile_error'; fileId = body.fileId"
+        },
+        {
+            "type": "action",
+            "name": "getSAMLToken",
+            "script": "headers.handleRestExceptionTemplate = 'downloadFile_error'; headers.handleExceptionTemplate = 'downloadFile_error'"
+        },
+        {
+            "type" : "action",
+            "name" : "getDocumentFromODM",
+            "script" : "headers.SAMLArt = body.SAMLArt; body.fileId = fileId; headers.handleSoapExceptionTemplate = 'downloadFile_error'; headers.handleExceptionTemplate = 'downloadFile_error'"
+        },
+        {
+            "type" : "transform",
+            "name" : "getDocumentFromODM_setVariables"
+        }
+    ]
+}
