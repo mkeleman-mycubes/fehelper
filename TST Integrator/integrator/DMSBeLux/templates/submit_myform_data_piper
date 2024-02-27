@@ -1,0 +1,70 @@
+{
+    "pipes": [
+        <#if body.serviceCall == "true" && body.validDepartmentsData == "valid" >
+            {
+                "type" : "action",
+                "name" : "submit_myform_data",
+                "script" : "taskId = body.answers['taskid'][0]; headers.taskId = taskId"
+            }
+        <#elseif body.serviceCall == "false" && body.validDepartmentsData == "valid" >
+            {
+                "type" : "action",
+                "name" : "submit_myform_data",
+                "script" : "taskId = body.answers['taskid'].data.answer[0]; headers.taskId = taskId"
+            }
+        <#elseif body.serviceCall == "true" && body.validDepartmentsData == "valid" >
+            {
+                "type" : "action",
+                "name" : "submit_myform_data",
+                "script" : "taskId = body.answers['taskid'][0]; headers.taskId = taskId"
+            }
+        <#elseif body.serviceCall == "false" && body.validDepartmentsData == "valid" >
+            {
+                "type" : "action",
+                "name" : "submit_myform_data",
+                "script" : "taskId = body.answers['taskid'].data.answer[0]; headers.taskId = taskId"
+            }
+         <#elseif body.serviceCall == "true" && body.validDepartmentsData == "valid" >
+            {
+                "type" : "action",
+                "name" : "submit_myform_data",
+                "script" : "taskId = body.answers['taskid'][0]; headers.taskId = taskId"
+            }
+        <#elseif body.serviceCall == "false" && body.validDepartmentsData == "valid" >
+            {
+                "type" : "action",
+                "name" : "submit_myform_data",
+                "script" : "taskId = body.answers['taskid'].data.answer[0]; headers.taskId = taskId"
+            }
+        <#elseif body.serviceCall == "true" && body.validDepartmentsData == "valid" >
+            {
+                "type" : "action",
+                "name" : "submit_myform_data",
+                "script" : "taskId = body.answers['taskid'][0]; headers.taskId = taskId"
+            }
+        <#elseif body.serviceCall == "false" && body.validDepartmentsData == "valid" >
+            {
+                "type" : "action",
+                "name" : "submit_myform_data",
+                "script" : "taskId = body.answers['taskid'].data.answer[0]; headers.taskId = taskId"
+            }
+        <#elseif body.serviceCall == "true" && body.validDepartmentsData == "valid" >
+            {
+                "type" : "action",
+                "name" : "submit_myform_data",
+                "script" : "taskId = body.answers['taskid'][0]; headers.taskId = taskId"
+            }
+        <#elseif body.serviceCall == "false" && body.validDepartmentsData == "valid" >
+            {
+                "type" : "action",
+                "name" : "submit_myform_data",
+                "script" : "taskId = body.answers['taskid'].data.answer[0]; headers.taskId = taskId"
+            }
+        <#else>
+            {
+                "type" : "transform",
+                "name" : "hackedDepartmentsError"
+            }
+        </#if>
+    ]
+}
