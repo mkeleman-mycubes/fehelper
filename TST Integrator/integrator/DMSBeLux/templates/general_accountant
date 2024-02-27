@@ -1,0 +1,156 @@
+<#assign dateTime = .now>
+{
+  "variables": {
+    "handledByAtlas": {
+      "type": "Boolean",
+      "value": "${body.answers['handledByAtlas'].data.answer[0]}"
+    },
+    "invoiceNrInternal": {
+      "type": "String",
+      "value": "${body.answers['invoiceNrInternal'].data.answer[0]}"
+    },
+    <#--
+    "invoiceNrExternal": {
+      "type": "String",
+      "value": "${body.answers['invoiceNrExternal'].data.answer[0]}"
+    },
+    "dateRegistered": {
+      "type": "String",
+      "value": "${body.answers['dateRegistered'].data.answer[0]}"
+    },
+    "dateInvoice": {
+      "type": "String",
+      "value": "${body.answers['dateInvoice'].data.answer[0]}"
+    },
+    "totalAmountVATExcl": {
+      "type": "Double",
+      "value": "${body.answers['totalAmountVATExcl'].data.answer[0]}"
+    },
+    "totalAmountVATIncl": {
+      "type": "Double",
+      "value": "${body.answers['totalAmountVATIncl'].data.answer[0]}"
+    },
+    "remarks": {
+      "type": "String",
+      "value": "${body.answers['remarks'].data.answer[0]!''}"
+    },
+    -->
+    "ApprovalStatus": {
+      "type": "String",
+      "value": "${body.answers['approvalStatus'].data.answer[0]}"
+    },
+    "approvalStatusAccountant": {
+      "type": "String",
+      "value": "${body.answers['approvalStatus'].data.answer[0]}"
+    },
+    "approver1": {
+      "type": "String",
+      "value": "${body.answers['approver1'].data.answer[0]}"
+    },
+    "approver2": {
+      "type": "String",
+      "value": "${body.answers['approver2'].data.answer[0]}"
+    },
+    "approver1Label": {
+        "type": "String",
+        "value": "${body.answers['approver1Label'].data.answer[0]}"
+    },
+    "approver2Label": {
+        "type": "String",
+        "value": "${body.answers['approver2Label'].data.answer[0]}"
+    },
+     "pre_approver1Label": {
+      "type": "String",
+      "value": "${body.answers['pre_approver1Label'].data.answer[0]}"
+    },
+    "pre_approver2Label": {
+      "type": "String",
+      "value": "${body.answers['pre_approver2Label'].data.answer[0]}"
+    },
+    "finalApprovalRequired": {
+      "type": "String",
+      "value": "<#if body.answers['finalApprovalRequired'].data.answer[0] =="yes">yes<#else>no</#if>"
+    },
+    
+    <#if body.answers['invoice_lines_repeater']??>
+        <#assign result = "[">
+        <#list body.answers['invoice_lines_repeater'].data as invoice_line>
+            <#assign result += "{">
+            <#list invoice_line as key, value>
+                <#if key == "lineItems">
+                    <#assign result += "\"${key}\":">
+                    <#assign result += "[">
+                        <#list value.data as lineItem>
+                            <#assign result += "{">
+                                <#list lineItem as lineItemKey, lineItemValue>
+                                    <#assign result += "\"${lineItemKey}\":\"${lineItemValue.data.answer[0]}\"">
+                                    <#if lineItemKey?has_next>
+                                        <#assign result += ",">
+                                    </#if>
+                                </#list>
+                            <#assign result += "}">
+                            <#if lineItem?has_next>
+                                <#assign result += ",">
+                            </#if>
+                        </#list>
+                    <#assign result += "]">
+                <#else>
+                    <#assign result += "\"${key}\":\"${value.data.answer[0]}\"">
+                </#if>
+                <#if key?has_next>
+                    <#assign result += ",">
+                </#if>
+            </#list>
+            <#assign result += "}">
+            <#if invoice_line?has_next>
+                <#assign result += ",">
+            </#if>
+        </#list>
+    
+        <#assign result += "]">
+        
+    "invoiceLines": {
+        "type": "Json",
+        "value": "${result}"
+    },
+    </#if>
+
+<#--
+    <#if body.answers['lineItems']??>
+        <#assign result = "[">
+        <#list body.answers['lineItems'].data as lineItem>
+            <#assign result += "{">
+            <#list lineItem as key, value>
+                <#assign result += "\"${key}\":\"${value.data.answer[0]}\"">
+                <#if key?has_next>
+                    <#assign result += ",">
+                </#if>
+            </#list>
+            <#assign result += "}">
+            <#if lineItem?has_next>
+                <#assign result += ",">
+            </#if>
+        </#list>
+    
+        <#assign result += "]">
+        
+    "lineItems": {
+        "type": "Json",
+        "value": "${result}"
+    },
+    </#if>
+-->
+
+    <#if body.answers['approvalStatus'].data.answer[0] == "ON_HOLD" || body.answers['approvalStatus'].data.answer[0] == "BACK_AP">
+      "AssignedToName": {
+        "type": "String",
+        "value": ""
+      }
+    <#else>
+      "AssignedToName": {
+        "type": "String",
+        "value": "${body.answers['approver1'].data.answer[0]}"
+      }
+    </#if>
+  }
+}
