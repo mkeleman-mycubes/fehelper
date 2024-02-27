@@ -1,0 +1,7 @@
+{
+  "comments": "[<#list body.comments as comment>{\"approver\": \"${comment.userCreated?json_string}\",\"comment\":\"${comment.body?json_string}\",\"time\":\"${comment.dateTimeCreated?json_string}\",\"status\": \"${comment.status?json_string}\"}<#sep>,</#sep></#list>]",
+  "category": "${body.category}",
+  "department": "${body.department}",
+  "status": "${body.status}",
+  "subcategory": "${body.subcategory}"
+}
