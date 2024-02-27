@@ -14,7 +14,7 @@
   "OTDSUsername": "Athlon_TechUser_AppWorks_BE_AthlonBE_DMS",
   "camundaEndpoint": "https://acc-dms-camunda.apps.int.ap1-paas.cloud.corpintra.net/engine-rest",
   "Atlas_BE_ApiKey": "76553d51-45b0-4f1b-9c53-7d4ff90b072f",
-  "OTDSPassword": "Start123!",
   "ODMPassword": "6jPi+Mo$]fCjaPm!]BRF6$l7",
+  "OTDSPassword": "Start123!",
   "Atlas_ISL_ApiKey": "76553d51-45b0-4f1b-9c53-7d4ff90b072f"
 }
