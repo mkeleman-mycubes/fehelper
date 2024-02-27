@@ -1,0 +1,5 @@
+{
+    "status": "true",
+    "costCenterData": <@printObjectToJson source=body />
+    <#-- "costCenterData": [{"description": "BTW Buitenland export NIET INTRA", "id": "45409"}]  -->
+}
