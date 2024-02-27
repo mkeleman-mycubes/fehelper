@@ -1,0 +1,40 @@
+<#ftl ns_prefixes={"D":"http://schemas.cordys.com/"}>
+<#if headers.restConnectorProperties.environment == "DHC">
+    <@XMLToJSON body />
+<#else>
+{
+	"GetDocumentListResponse": [{
+		"documentInfo": {
+			"ID": "3596060",
+			"DocumentName": "Athlon financial report 2017.pdf",
+			"CreationDate": "2021-02-08T15:16:20",
+			"LastModificationDate": "2021-02-08T15:16:21",
+			"FileDataSize": "13264",
+			"MimeType": "application/pdf",
+			"VersionNum": "1",
+			"CustomerID": {},
+			"EnterpriseNo": {},
+			"VATNo": {},
+			"ReferenceNo": {},
+			"BP_Code": {},
+			"PartnerCustomerNo": {},
+			"SearchName": {},
+			"BillingName": {},
+			"SegmentMV": "Core",
+			"Status": "ACTIVE",
+			"StatusDate": "2021-02-08",
+			"Country": "ES",
+			"LegalEntity": "AthlonES",
+			"CaseID": "d66f00cb-6a0d-11eb-941e-025056007954",
+			"CaseDate": "2021-02-08",
+			"CaseType": "CRA",
+			"Segment": "Core",
+			"DocTypeNumber": "70",
+			"DocTypeName": "CRA Sales Document",
+			"Adate": "2021-08-02",
+			"NotificationTo": {},
+			"UniqueIdentifier": {}
+		}
+	}]
+}
+</#if>
