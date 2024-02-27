@@ -1,0 +1,29 @@
+<#assign dateTime = .now>
+<#assign commentStatusData = "second approver">
+{
+  "variables": {
+    <#--
+    "comments_obj": {
+      "type": "Json",
+      "value": <#if 0 < comments_obj_str?length><#assign prev_comments = comments_obj_str>"[${prev_comments}, {\"approver\": \"${body.assignee}\",\"comment\":\"\",\"time\":\"${dateTime}\",\"status\": \"${getCommentStatus("APPROVE", commentStatusData)}\"}]"<#else>"[{\"approver\": \"${body.assignee}\",\"comment\":\"\",\"time\":\"${dateTime}\",\"status\": \"${getCommentStatus("APPROVE", commentStatusData)}\"}]"</#if>
+    },
+    
+    "approvalStatusAccountant": {
+        "type": "String",
+        "value": <#if body.answers['finalApprovalRequired'].data.answer[0]?contains("yes")>
+            "Awaiting Final approval Accountant"
+        <#else>
+            "Invoice Approved"
+        </#if>
+    },
+    -->
+    "AssignedToName": {
+      "type": "String",
+      "value": ""
+    },
+    "approvalStatusApprover2": {
+        "type": "String",
+        "value": "APPROVE"
+    }
+  }
+}
