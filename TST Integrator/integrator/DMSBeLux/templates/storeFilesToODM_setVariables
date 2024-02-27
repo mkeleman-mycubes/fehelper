@@ -1,0 +1,6 @@
+<#assign uploadedFilesObj><@printObjectToJson source=body.uploadedFiles /></#assign>
+
+{
+    "uploadedFiles": ${uploadedFilesObj},
+    "status": "true"
+}
