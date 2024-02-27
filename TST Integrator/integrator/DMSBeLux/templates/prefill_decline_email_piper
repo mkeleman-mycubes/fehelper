@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "prefill_decline_email",
+            "script" : "taskId = body.taskid; headers.taskId = taskId"
+        }
+    ]
+}
