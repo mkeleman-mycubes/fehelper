@@ -1,0 +1,108 @@
+<table class="mat-table mat-elevation-z0 history-comments-table" role="grid" style="display: none; width: 100%;">
+  <thead role="rowgroup">
+    <tr role="row" class="mat-header-row ng-star-inserted" style="height: 30px;">
+      <th role="columnheader" class="mat-header-cell ng-star-inserted"
+        style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44); padding-left: 0">
+        Date
+      </th>
+      <th role="columnheader" class="mat-header-cell ng-star-inserted"
+        style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44);">
+        Approver
+      </th>
+      <th role="columnheader" class="mat-header-cell ng-star-inserted"
+        style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44);">
+        Comments
+      </th>
+      <th role="columnheader" class="mat-header-cell ng-star-inserted"
+        style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44);">
+        Status
+      </th>
+      <!---->
+    </tr>
+    <!---->
+  </thead>
+  <tbody role="rowgroup">
+
+  </tbody>
+</table>
+
+<script>
+  jQuery(document).ready(function () {
+    let FE_current = FE["{{options.containerId}}"];
+    let comments_obj = FE_current.getAnswer({ questionName: "comments_obj" });
+    let h = [];
+
+    FE_current.serviceCall({
+      data: {
+        name: "getAuthenticatedUserName_piper"
+      },
+      success: function (userData) {
+            FE_current.setFormVariable({
+                name: "user_name",
+                value: userData.name,
+                submit: true
+            });
+      }
+    })
+
+    if (comments_obj && comments_obj.length > 0) {
+      let comments_obj_parsed = JSON.parse(comments_obj);
+      let comments_obj_str = '';
+
+
+
+      for (let i = 0; i < comments_obj_parsed.length; i++) {
+        let curr_obj = comments_obj_parsed[i];
+        let comma = i == comments_obj_parsed.length-1 ? '' : ',';
+        comments_obj_str += (JSON.stringify(curr_obj)+comma);
+      }
+      
+      FE_current.setAnswer({ questionName: "comments_obj_str", answer: comments_obj_str });
+
+      for (let j = comments_obj_parsed.length - 1; j >= 0; j--) {
+        let curr_comment = comments_obj_parsed[j];
+        let commentKeys = ['time', 'approver', 'comment', 'status'];
+        let commentWidth = [18, 20, 44, 18];
+        h.push('<tr role="row" class="mat-row ng-star-inserted">');
+
+        for (let keyIndex = 0; keyIndex < commentKeys.length; keyIndex++) {
+          let key = commentKeys[keyIndex];
+
+          if (key === 'time') {
+            // debugger;
+            h.push('<td role="gridcell" class="mat-cell ng-star-inserted" style="padding-left: 0; width: ' + commentWidth[keyIndex] + '%">' + formatDate(curr_comment[key]) + '</td>');
+          } else if (key === 'status') {
+            h.push('<td role="gridcell" class="mat-cell ng-star-inserted" style="padding-right: 0; width: ' + commentWidth[keyIndex] + '%">' + curr_comment[key] + '</td>');
+          } else {
+            h.push('<td role="gridcell" class="mat-cell ng-star-inserted" style="width: ' + commentWidth[keyIndex] + '%">' + curr_comment[key] + '</td>');
+          }
+        }
+
+        h.push('</tr>');
+      }
+
+      jQuery("#{{options.containerId}} .history-comments-table tbody").html(h.join(' '));
+      jQuery("#{{options.containerId}} .history-comments-table").show();
+    }
+
+    function formatDate(date) {
+      var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = '' + d.getFullYear(),
+        hours = '' + d.getHours(),
+        minutes = '' + d.getMinutes(),
+        seconds = '' + d.getSeconds();
+
+      month = month.length < 2 ? '0' + month : month;
+      day = day.length < 2 ? '0' + day : day;
+      hours = hours.length < 2 ? '0' + hours : hours;
+      minutes = minutes.length < 2 ? '0' + minutes : minutes;
+      seconds = seconds.length < 2 ? '0' + seconds : seconds;
+
+      var formattedDate = [day, month, year].join('-');
+      var formattedTime = [hours, minutes].join(':');
+      return formattedDate + ' ' + formattedTime;
+    }
+  });
+</script>

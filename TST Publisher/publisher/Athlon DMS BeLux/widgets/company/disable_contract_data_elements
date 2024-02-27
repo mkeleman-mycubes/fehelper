@@ -1,0 +1,10 @@
+<script>
+    var FE_current = FE['{{options.containerId}}'];
+    var viewsearchcontract = FE_current.getAnswer({questionName: 'viewsearchcontract'});
+    if(viewsearchcontract && viewsearchcontract == "false") {
+        $('#contractNo input').prop('disabled', true);
+        $('#externalReference input').prop('disabled', true);
+        $('#labelNr input').prop('disabled', true);
+         $('#documentTitle input').prop('disabled', true);
+    } 
+</script>

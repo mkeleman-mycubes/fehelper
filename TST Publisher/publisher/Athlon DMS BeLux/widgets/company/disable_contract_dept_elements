@@ -1,0 +1,34 @@
+<script>
+    // var FE_current = FE['{{options.containerId}}'];
+    // var viewsearchcontract = FE_current.getAnswer({questionName: 'viewsearchcontract'});
+    // if(viewsearchcontract && viewsearchcontract == "false") {
+        
+    //     $('#disabledCategory').css('visibility', 'visible');
+    //     $('#contract_category').css('display', 'none');
+        
+    //     $('#disabledDepartment').css('visibility', 'visible');
+    //     $('#contract_department').css('display', 'none');
+        
+    //     $('#disabledSubcategory').css('visibility', 'visible');
+    //     $('#contract_subcategory').css('display', 'none');
+    // } else {
+    //     $('#disabledCategory').css('display', 'none');
+    //     $('#contract_category').css('visibility', 'visible');
+        
+    //     $('#contract_department').css('visibility', 'visible');
+    //     $('#disabledDepartment').css('display', 'none');
+        
+    //     $('#disabledSubcategory').css('display', 'none');
+    //     $('#contract_subcategory').css('visibility', 'visible');
+    // }
+    
+     $('#disabledCategory').css('visibility', 'visible');
+        $('#contract_category').css('display', 'none');
+        
+        $('#disabledDepartment').css('visibility', 'visible');
+        $('#contract_department').css('display', 'none');
+        
+        $('#disabledSubcategory').css('visibility', 'visible');
+        $('#contract_subcategory').css('display', 'none');
+    
+</script>

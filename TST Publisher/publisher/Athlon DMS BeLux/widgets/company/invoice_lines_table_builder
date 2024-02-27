@@ -1,0 +1,70 @@
+<script>
+    (function() {
+        const FE_curr = FE["{{options.containerId}}"];
+        const dataMap = {
+            "linenumber": "invoiceLineNo",
+            "licenseplate": "invoiceLineLicensePlate",
+            "invoicesubcategory": "invoiceLineSubcategory",
+            "approvalnumber": "invoiceLineApprovalNo",
+            "lineamount": "invoiceLineAmount",
+            "blockingreason": "invoiceLineBlockingReason",
+            "status": "invoiceLineStatus",
+            "remarks": "invoiceLineRemarks"
+        };
+        const allAnswers = FE_curr.getAllAnswers();
+        const dataMapKeys = Object.keys(dataMap);
+
+        for (let i = 0; i < dataMapKeys.length; i++) {
+            const columnKey = dataMapKeys[i];
+            const questionName = dataMap[columnKey];
+            let tablesColumn = jQuery("#{{options.containerId}} .invoice-line-table .mat-column-" + dataMapKeys[i]);
+            let answers = allAnswers[questionName];
+
+            for (let j=0; j < answers.length; j++) {
+                let currTableColumn = tablesColumn[j];
+                let answer = answers[j];
+
+                if (columnKey === 'lineamount') {
+                    answer = formatMoney(answer, 2, ',', '.', '€ ');
+                }
+
+                if (columnKey === 'remarks' && answer.length > 0) {
+                    jQuery(currTableColumn).find(".tooltip .right > p").text(answer);
+                } else {
+                    jQuery(currTableColumn).text(answer);
+                }                
+            }
+        }
+
+        jQuery('#{{options.containerId}} .amountExlVat').focusout(function() {
+          let sum = 0;
+          const allAnswers = FE_curr.getAllAnswers();
+          const amountExlVats = allAnswers.lineItemAmountExclVAT;
+
+          for(let i = 0; i < amountExlVats.length; i++) {
+            for(let j = 0; j < amountExlVats[i].length; j++) {
+              sum = +amountExlVats[i][j] + sum;
+            }
+          }
+
+          FE_curr.setAnswer({questionName: 'lineItemAmountExclVATSum', answer: sum.toFixed(2)});
+        });
+
+        function formatMoney(number, decPlaces, decSep, thouSep, moneySign) {
+            decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces,
+                decSep = typeof decSep === "undefined" ? "." : decSep,
+                thouSep = typeof thouSep === "undefined" ? "," : thouSep;
+            moneySign = typeof moneySign === "undefined" ? "" : moneySign;
+            var sign = number < 0 ? "-" : "";
+            var i = String(parseInt(number = Math.abs(Number(number) || 0).toFixed(decPlaces)));
+            var j = (j = i.length) > 3 ? j % 3 : 0;
+
+            var formattedData = moneySign + sign +
+                (j ? i.substr(0, j) + thouSep : "") +
+                i.substr(j).replace(/(\decSep{3})(?=\decSep)/g, "$1" + thouSep) +
+                (decPlaces ? decSep + Math.abs(number - i).toFixed(decPlaces).slice(2) : "");
+
+            return formattedData;
+        }
+    })()
+</script>

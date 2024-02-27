@@ -1,0 +1,34 @@
+<script>
+    // var FE_current = FE['{{options.containerId}}'];
+    // var viewsearchcontract = FE_current.getAnswer({questionName: 'viewsearchcontract'});
+    // if(viewsearchcontract && viewsearchcontract == "false") {
+        
+    //     $('#disabledCategory').css('visibility', 'visible');
+    //     $('#invoice_category').css('display', 'none');
+        
+    //     $('#disabledDepartment').css('visibility', 'visible');
+    //     $('#invoice_department').css('display', 'none');
+        
+    //     $('#disabledSubcategory').css('visibility', 'visible');
+    //     $('#invoice_subcategory').css('display', 'none');
+    // } else {
+    //     $('#disabledCategory').css('display', 'none');
+    //     $('#invoice_category').css('visibility', 'visible');
+        
+    //     $('#invoice_department').css('visibility', 'visible');
+    //     $('#disabledDepartment').css('display', 'none');
+        
+    //     $('#disabledSubcategory').css('display', 'none');
+    //     $('#invoice_subcategory').css('visibility', 'visible');
+    // }
+    
+    $('#disabledCategory').css('visibility', 'visible');
+        $('#invoice_category').css('display', 'none');
+        
+        $('#disabledDepartment').css('visibility', 'visible');
+        $('#invoice_department').css('display', 'none');
+        
+        $('#disabledSubcategory').css('visibility', 'visible');
+        $('#invoice_subcategory').css('display', 'none');
+    
+</script>

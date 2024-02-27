@@ -1,0 +1,1497 @@
+{
+  "hash": "RaLqgyYq",
+  "name": "Reassign task",
+  "description": "",
+  "tags": "",
+  "company": "1244",
+  "version": "0.01",
+  "theme": "1",
+  "themeViewUri": "",
+  "serviceUri": "",
+  "servicePackageId": "",
+  "serviceTemplateName": "",
+  "prefillServiceTemplateName": "prefill_generic_form_piper",
+  "jsDependencies": "[]",
+  "data": {
+    "successContent": {
+      "NL": ""
+    },
+    "submitButton": {
+      "NL": ""
+    },
+    "publishVersion": "0.01",
+    "submitErrorUrl": "",
+    "publishDate": "27-02-2024 11:57:28",
+    "description": "",
+    "type": "questionnaire",
+    "version": 0,
+    "tags": "",
+    "token": "nalZ2arq",
+    "submitUrl": "/non-car-related",
+    "nextButton": {
+      "NL": ""
+    },
+    "locales": "NL",
+    "pages": [
+      {
+        "elementId": "",
+        "submitButton": {
+          "NL": ""
+        },
+        "condScript": "",
+        "submitErrorUrl": "",
+        "questions": [
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1147,
+            "validations": [],
+            "mask": "",
+            "elementId": "taskId",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "taskId"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "taskid",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1148,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "taskName"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "taskname",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1149,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "taskProcessInstanceId"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "taskprocessinstanceid",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1150,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Assign to"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "assign_to",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1151,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "approverType"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "approverType",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "elementId": "",
+            "operands": [
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "textfield",
+                "disabled": true,
+                "id": 1153,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "Approver 1"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "approver1Label",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              }
+            ],
+            "condScript": "",
+            "operatorButton": {
+              "NL": ""
+            },
+            "name": "showapprover1text",
+            "description": "",
+            "className": "",
+            "id": 1152,
+            "label": {
+              "NL": "ShowApprover1Text"
+            },
+            "operatorType": "condition",
+            "condJson": "[{\"action\":\"Show\",\"page\":\"Reassign\",\"question\":\"approverType\",\"operation\":\"is not\",\"param\":\"approver1\"}]",
+            "type": "operator"
+          },
+          {
+            "elementId": "",
+            "operands": [
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "dropdown",
+                "disabled": false,
+                "id": 1155,
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value || value == '' ) { return [ERR_EMPTY:\"Field is required\"] }"
+                  }
+                ],
+                "mask": "",
+                "elementId": "approver1",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": "Please select first approver"
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "Approver 1"
+                },
+                "customTemplate": "",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "approver1",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              },
+              {
+                "minDate": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "minDateOffset": "",
+                "varValues": "{\"dropdownId\":\"approver1\",\"groupIdVariable\":\"Invoice Approver 1\",\"dropdownName\":\"approver1\",\"excludeMyself\":\"true\"}",
+                "tooltip": {
+                  "NL": ""
+                },
+                "description": {
+                  "NL": ""
+                },
+                "className": "",
+                "type": "question",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "validScript": "",
+                "deduceScript": "",
+                "labelVariables": {
+                  "NL": ""
+                },
+                "options": [],
+                "inputType": "widget",
+                "disabled": false,
+                "id": 1156,
+                "validations": [],
+                "mask": "",
+                "elementId": "",
+                "subLabel": {
+                  "NL": ""
+                },
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "minDateType": "",
+                "varNames": "",
+                "label": {
+                  "NL": "Populate approver1 dropdown with options"
+                },
+                "customTemplate": "populate_assignee_dropdown",
+                "tags": "",
+                "maxDateType": "",
+                "hint": {
+                  "NL": ""
+                },
+                "name": "populate_approver1_dropdown_with_options",
+                "maxDate": "",
+                "secured": false,
+                "deduceJson": ""
+              }
+            ],
+            "condScript": "",
+            "operatorButton": {
+              "NL": ""
+            },
+            "name": "showapprover1dropdown",
+            "description": "",
+            "className": "",
+            "id": 1154,
+            "label": {
+              "NL": "ShowApprover1Dropdown"
+            },
+            "operatorType": "condition",
+            "condJson": "[{\"action\":\"Show\",\"page\":\"Reassign\",\"question\":\"approverType\",\"operation\":\"is\",\"param\":\"approver1\"}]",
+            "type": "operator"
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "// current_approver1\r\ndef approverType = values.get(\"approverType\")\r\n\r\nif (approverType && approverType == \"approver1\") {\r\n    def approver1 = values.get(\"approver1\")\r\n    if (value.length() > 0 && value == approver1) {\r\n        return [ERR_SAME_APPROVER:\"Second approver should be different then first one.\"]\r\n    }   \r\n}\r\n\r\n\r\nif (approverType && approverType == \"approver2\") {\r\n    def current_approver1 = values.get(\"current_approver1\")\r\n    if (value.length() > 0 && value == current_approver1) {\r\n        return [ERR_SAME_APPROVER:\"Second approver should be different then first one.\"]\r\n    }\r\n}\r\n\r\nif (value.length() == 0 && approverType != \"approver1\") {\r\n    return [ERR_EMPTY_SECOND_APPROVER:\"Second approver can not be undefined.\"]\r\n} ",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "dropdown",
+            "disabled": false,
+            "id": 1157,
+            "validations": [],
+            "mask": "",
+            "elementId": "approver2",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": "Please select second approver"
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Approver 2"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "approver2",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{\"dropdownId\":\"approver2\",\"groupIdVariable\":\"Invoice Approver 2\",\"dropdownName\":\"approver2\",\"excludeMyself\":\"true\"}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "widget",
+            "disabled": false,
+            "id": 1158,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Populate approver2 dropdown with options"
+            },
+            "customTemplate": "populate_assignee_dropdown",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "populate_approver2_dropdown_with_options",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "hidden",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "textarea",
+            "disabled": false,
+            "id": 1159,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Comments Object"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "comments_obj",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "hidden",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "textarea",
+            "disabled": false,
+            "id": 1160,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Comments Object String"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "comments_obj_str",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1161,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Previous Approver1"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "pre_approver1",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1162,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Previous Approver2"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "pre_approver2",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1163,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Check Reassign Page"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "check_reassign_page",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1164,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "CompanyCode"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "companyCode",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1165,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "InvoiceNrInternal"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "invoiceNrInternal",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1166,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "InvoiceNrTech"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "invoiceNrTech",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1167,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "AssignedBy"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "AssignedBy",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1168,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "InvoiceLineNr"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "invoiceLineNr",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1169,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Temp Approver1"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "temp_approver1",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1170,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Temp Approver2"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "temp_approver2",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "widget",
+            "disabled": false,
+            "id": 1171,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "ReAssign Approvers"
+            },
+            "customTemplate": "reassign_approvers",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "reassign_approvers",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1172,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Approver1Label"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "approver1Label",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1173,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Approver2Label"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "approver2Label",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1174,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Previous Approver1 Label"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "pre_approver1Label",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          },
+          {
+            "minDate": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "minDateOffset": "",
+            "varValues": "{}",
+            "tooltip": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "className": "",
+            "type": "question",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "validScript": "",
+            "deduceScript": "",
+            "labelVariables": {
+              "NL": ""
+            },
+            "options": [],
+            "inputType": "hidden",
+            "disabled": false,
+            "id": 1175,
+            "validations": [],
+            "mask": "",
+            "elementId": "",
+            "subLabel": {
+              "NL": ""
+            },
+            "unselectLabel": {
+              "NL": ""
+            },
+            "minDateType": "",
+            "varNames": "",
+            "label": {
+              "NL": "Previous Approver2 Label"
+            },
+            "customTemplate": "",
+            "tags": "",
+            "maxDateType": "",
+            "hint": {
+              "NL": ""
+            },
+            "name": "pre_approver2Label",
+            "maxDate": "",
+            "secured": false,
+            "deduceJson": ""
+          }
+        ],
+        "description": "",
+        "className": "reassign-page shown",
+        "label": {
+          "NL": "Reassign"
+        },
+        "condJson": "",
+        "type": "section",
+        "tags": "",
+        "nextButton": {
+          "NL": ""
+        },
+        "submitUrl": "",
+        "name": "reassign_page",
+        "backButton": {
+          "NL": ""
+        },
+        "pageUrl": "",
+        "id": 1146
+      }
+    ],
+    "errorContent": {
+      "NL": ""
+    },
+    "defLocale": "NL",
+    "name": "Reassign task",
+    "backButton": {
+      "NL": ""
+    },
+    "company": "Athlon DMS BeLux",
+    "id": 416,
+    "user": "DMSBelux.support"
+  }
+}

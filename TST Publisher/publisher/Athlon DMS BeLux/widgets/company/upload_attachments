@@ -1,0 +1,51 @@
+<script>
+    jQuery(document).ready(function() {
+        const addFilesInputs = jQuery('#addFiles input[type="file"]');
+        const FE_curr = FE["{{options.containerId}}"];
+        let uploadedFiles = FE_curr.getFormVariable({name: 'uploadedFiles'}) || [];
+        let addFilesAnswer = FE_curr.getAnswer({questionName: 'add_files'});
+
+        for (let i = 0; i < addFilesInputs.length; i++) {
+            let currInput = addFilesInputs[i];
+            let onchangeEvent = currInput.onchange.bind(currInput);
+
+            currInput.onchange = function() {
+                getBase64(currInput.files[0]);
+                onchangeEvent();
+            }
+        }
+
+        const existingFiles = uploadedFiles.filter(function(el) {
+            return addFilesAnswer.includes(el.name);
+        });
+
+        FE_curr.setFormVariable({ name: 'uploadedFiles', value: existingFiles, submit: true });
+
+        function getBase64(file) {
+            const FE_curr = FE["{{options.containerId}}"];
+            const reader = new FileReader();
+            let uploadedFiles = FE_curr.getFormVariable({name: 'uploadedFiles'}) || [];
+            let fileData = {
+                name: file.name,
+                size: file.size,
+                type: file.type,
+                lastModified: file.lastModified
+            };
+            
+            reader.readAsDataURL(file);
+ 
+            reader.onload = function () {
+                let base64str = reader.result;
+                base64str = base64str.substr(base64str.indexOf(',')+1);
+                fileData.content = base64str;
+                uploadedFiles.push(fileData);
+                FE_curr.setFormVariable({ name: 'uploadedFiles', value: uploadedFiles, submit: true });
+            };
+ 
+            reader.onerror = function (error) {
+                console.log('Error: ', error);
+            };
+        }
+
+    });
+</script>

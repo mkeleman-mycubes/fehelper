@@ -1,0 +1,302 @@
+<div class="mat-form-field mat-primary mat-form-field-type-mat-native-select mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-should-float mat-form-field-has-label fe-linecomments-container"
+    style="display: none;">
+    <div class="mat-form-field-wrapper">
+        <div class="mat-form-field-flex">
+            <div class="mat-form-field-infix">
+                <select matnativecontrol=""
+                    class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored"
+                    id="FE_InvoiceLineComments">
+                    <option value="" selected disabled hidden>Select invoice line</option>
+                </select>
+                <span class="mat-form-field-label-wrapper">
+                    <label class="mat-form-field-label mat-empty mat-form-field-empty ng-star-inserted"
+                        for="FE_InvoiceLineComments">
+                        <div class="ng-star-inserted">Select invoice line</div>
+                    </label>
+                </span>
+            </div>
+        </div>
+        <div class="mat-form-field-underline ng-star-inserted">
+            <span class="mat-form-field-ripple"></span>
+        </div>
+        <div class="mat-form-field-subscript-wrapper">
+            <div class="mat-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages ng-star-inserted"
+                style="opacity: 1; transform: translateY(0%);">
+                <div class="mat-form-field-hint-spacer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+  Table headers cam be defined as widget variable: label1, label2, label3, label4.
+  It's possible to define only one label and leave other defaul. 
+  Default labels: "Date", "Approver", "Comments", "Status"
+
+  Also it's possible to define comment object params by adding json variable.
+  Json variable example: 
+  {
+      "commentKeys": ["time", "approver", "comment", "status"]
+  }
+
+  in example you can see array of parameters which are using by default and which can 
+  be changed in the widget variables.
+  Array length should contain the same amount of elements as headers.
+
+  If "noStatus" has been added then array should contain only 3 elements.
+ -->
+
+<table class="mat-table mat-elevation-z0 history-comments-table" role="grid" style="display: none; width: 100%;">
+    <thead role="rowgroup">
+        <tr role="row" class="mat-header-row ng-star-inserted"
+            style="height: 30px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, .12)">
+            <th role="columnheader" class="mat-header-cell ng-star-inserted"
+                style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44); padding-left: 0">
+                {{#if widget.variables.label1}} {{widget.variables.label1}}{{else}} Date{{/if}}
+            </th>
+            <th role="columnheader" class="mat-header-cell ng-star-inserted"
+                style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44);">
+
+                {{#if widget.variables.label2}} {{widget.variables.label2}}{{else}} Approver{{/if}}
+            </th>
+            <th role="columnheader" class="mat-header-cell ng-star-inserted"
+                style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44);">
+                {{#if widget.variables.label3}} {{widget.variables.label3}}{{else}} Comments{{/if}}
+            </th>
+            {{#if widget.variables.noStatus}}
+            {{else}}
+            <th role="columnheader" class="mat-header-cell ng-star-inserted"
+                style="text-shadow: 0 0 1px rgba(0, 0, 0, 0.05); font-weight: 500; letter-spacing: 1px; color: rgba(0, 0, 0, 0.44);">
+                {{#if widget.variables.label4}} {{widget.variables.label4}}{{else}} Status{{/if}}
+            </th>
+            {{/if}}
+            <!---->
+        </tr>
+        <!---->
+    </thead>
+    <tbody role="rowgroup">
+
+    </tbody>
+</table>
+
+<script>
+    jQuery(document).ready(function () {
+        let FE_current = FE["{{options.containerId}}"];
+        let comments_obj = FE_current.getAnswer({ questionName: "comments_obj" });
+        let viewsearchcontract = FE_current.getAnswer({ questionName: "viewsearchcontract" });
+        let invoiceLinesStr = FE_current.getAnswer({ questionName: "invoiceLines" });
+        let invoiceEntity = FE_current.getAnswer({ questionName: "entity" });
+        let original = FE_current.getAnswer({ questionName: "original" });
+        let odmId = FE_current.getAnswer({ questionName: "odmId" });
+        let user_name = FE.getFormVariable({ name: 'user_name' });
+        let selectedCommentLine = FE.getFormVariable({ name: 'selectedCommentLine' });
+        let showInvoiceLines = FE.getAnswer({ questionName: 'showInvoiceLines' });
+        let invoiceLines = [];
+        let h = [];
+
+        try {
+            invoiceLines = JSON.parse(invoiceLinesStr);
+        } catch(err) {
+            invoiceLines = [];
+        }
+
+        const non_algko_amount = invoiceLines.filter(isNonALGKOInvoice).length;
+        if (non_algko_amount === 0) {
+            jQuery('#{{options.containerId}} #FE_non_algko_chkbx input').prop('disabled', true);
+            jQuery('#{{options.containerId}} #FE_non_algko_chkbx .mat-checkbox-label').css('color', '#aaa');
+            jQuery('#{{options.containerId}} #FE_non_algko_chkbx .mat-checkbox-frame').css('border-color', '#bbb');
+        }
+
+        if (viewsearchcontract && viewsearchcontract == "false") {
+            $('#addComments').css('visibility', 'hidden');
+        }
+
+        if ((viewsearchcontract && viewsearchcontract === "false") && (original && original === "true")) {
+            jQuery('#{{options.containerId}} .fe-linecomments-container').show();
+            jQuery('#FE_InvoiceLineComments').html('<option value="" selected disabled hidden>Select ALGKO invoice line</option>');
+
+            if (showInvoiceLines && showInvoiceLines === 'false') {
+                
+                FE_current.setAnswer({questionName: 'showInvoiceLines', answer: 'true', render: true});
+            }
+
+            invoiceLines.forEach(function (invoice) {
+                let hOption = [];
+
+                if (invoice.type === "ALGKO") {
+                    hOption.push('<option value="' + invoice.number + '">' + invoice.number + '</option>');
+
+                    jQuery('#FE_InvoiceLineComments').append(hOption.join(' '));
+                }
+            });
+
+            if (selectedCommentLine) {
+                jQuery('#FE_InvoiceLineComments').val(selectedCommentLine);
+            }
+
+            jQuery('#FE_InvoiceLineComments').change(function (e) {
+                let invoiceLineNr = jQuery(this).val();
+
+                FE_current.serviceCall({
+                    data: {
+                        name: 'get_new_comments_piper',
+                        workspace: 'INV',
+                        entity: invoiceEntity,
+                        id: odmId,
+                        lineNumber: invoiceLineNr
+                    },
+                    success: function (resp) {
+                        //resp = { "comments": [{ "body": "Wating for some more information from Jan", "dateTimeCreated": "2021-06-29T11:49:31.372+0000", "id": "3265", "status": "On Hold by General accountant", "userCreated": "Sing Hsu" }, { "body": "Wating for some more information from Jan", "dateTimeCreated": "2021-06-30T06:49:23.448+0000", "id": "3269", "status": "On Hold by General accountant", "userCreated": "Sing Hsu" }, { "body": "Wating for some more information from Jan", "dateTimeCreated": "2021-06-30T08:22:11.781+0000", "id": "3272", "status": "On Hold by General accountant", "userCreated": "Sing Hsu" }], "entity": "ILB", "objectId": "98999232-1", "workspace": "INV" };
+                        if (resp.status === "true" && resp.errorOccured === "true") {
+                            FE.setFormVariable({name: 'selectedCommentLine', value: invoiceLineNr});
+                            if (comments_obj === '[]') return;
+
+                            FE_current.setAnswer({ questionName: 'comments_obj', answer: '[]', render: true });
+                        }
+
+                        if (resp.status === "false") {
+                            console.log('Can not get comments. Service call errror.');
+                            FE_current.setAnswer({ questionName: 'comments_obj', answer: '[]' });
+                            return;
+                        }
+
+                        const comments = resp.comments ? JSON.stringify(resp.comments) : '[]';
+                        FE.setFormVariable({name: 'selectedCommentLine', value: invoiceLineNr});
+                        FE_current.setAnswer({ questionName: 'comments_obj', answer: comments, render: true });
+
+                    },
+                    err: function () {
+                        console.log('Can not get comments. Service call errror.');
+                        FE_current.setAnswer({ questionName: 'comments_obj', answer: '[]' });
+                    }
+                })
+            });
+        }
+
+        if (!user_name) {
+            FE_current.serviceCall({
+                data: {
+                    name: "getAuthenticatedUserName_piper"
+                },
+                success: function (userData) {
+                    FE_current.setFormVariable({
+                        name: "user_name",
+                        value: userData.name,
+                        submit: true
+                    });
+                }
+            });
+        }
+
+        let pre_approver1 = FE_current.getAnswer({ questionName: "pre_approver1" });
+        let approver1 = FE_current.getAnswer({ questionName: "approver1" });
+        let temp_approver1 = FE_current.getAnswer({ questionName: "temp_approver1" });
+
+        if (approver1 && !temp_approver1) {
+            FE_current.setAnswer({ questionName: "temp_approver1", answer: approver1 });
+        } else {
+            FE_current.setAnswer({ questionName: "temp_approver1", answer: "temp_approver1" });
+        }
+
+        if (!approver1) {
+            if (pre_approver1 != approver1) {
+                pre_approver1 = FE_current.getAnswer({ questionName: "approver1" });
+                FE_current.setAnswer({ questionName: "pre_approver1", answer: pre_approver1 });
+            }
+        } else if (approver1 && temp_approver1 == "temp_approver1" && pre_approver1 == "") {
+            FE_current.setAnswer({ questionName: "pre_approver1", answer: "" });
+        } else if (approver1 && pre_approver1 != approver1 && !pre_approver1) {
+            pre_approver1 = FE_current.getAnswer({ questionName: "approver1" });
+            FE_current.setAnswer({ questionName: "pre_approver1", answer: pre_approver1 });
+        }
+
+        let pre_approver2 = FE_current.getAnswer({ questionName: "pre_approver2" });
+        let approver2 = FE_current.getAnswer({ questionName: "approver2" });
+        let temp_approver2 = FE_current.getAnswer({ questionName: "temp_approver2" });
+
+        if (approver2 && !temp_approver2) {
+            FE_current.setAnswer({ questionName: "temp_approver2", answer: approver2 });
+        } else {
+            FE_current.setAnswer({ questionName: "temp_approver2", answer: "temp_approver2" });
+        }
+
+        if (!approver2) {
+            if (pre_approver2 != approver2) {
+                pre_approver2 = FE_current.getAnswer({ questionName: "approver2" });
+                FE_current.setAnswer({ questionName: "pre_approver2", answer: pre_approver2 });
+            }
+        } else if (approver2 && temp_approver2 == "temp_approver2" && pre_approver2 == "") {
+            FE_current.setAnswer({ questionName: "pre_approver2", answer: "" });
+        } else if (approver2 && pre_approver2 != approver2 && !pre_approver2) {
+            pre_approver2 = FE_current.getAnswer({ questionName: "approver2" });
+            FE_current.setAnswer({ questionName: "pre_approver2", answer: pre_approver2 });
+        }
+
+
+        if (comments_obj && comments_obj.length > 0) {
+            let comments_obj_parsed = JSON.parse(comments_obj);
+            let comments_obj_str = '';
+
+            for (let i = 0; i < comments_obj_parsed.length; i++) {
+                let curr_obj = comments_obj_parsed[i];
+                let comma = i == comments_obj_parsed.length - 1 ? '' : ',';
+                comments_obj_str += (JSON.stringify(curr_obj) + comma);
+            }
+
+            FE_current.setAnswer({ questionName: "comments_obj_str", answer: comments_obj_str });
+
+            for (let j = comments_obj_parsed.length - 1; j >= 0; j--) {
+                let curr_comment = comments_obj_parsed[j];
+                let commentKeys = ['dateTimeCreated', 'userCreated', 'body', 'status'];
+
+
+                let commentWidth = [18, 24, 40, 18];
+                h.push('<tr role="row" class="mat-row ng-star-inserted">');
+
+                for (let keyIndex = 0; keyIndex < commentKeys.length; keyIndex++) {
+                    let key = commentKeys[keyIndex];
+                    commentValue = (curr_comment[key] !== undefined && curr_comment[key] !== null) ? curr_comment[key] : '';
+
+                    if (key === 'dateTimeCreated') {
+                        h.push('<td role="gridcell" class="mat-cell ng-star-inserted" style="padding-left: 0; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 3px 25px 3px !important; width: ' + commentWidth[keyIndex] + '%">' + formatDate(commentValue) + '</td>');
+                    } else if (key === 'userCreated') {
+                        h.push('<td role="gridcell" class="mat-cell ng-star-inserted" style="padding-right: 0; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 3px 25px 3px !important; width: ' + commentWidth[keyIndex] + '%">' + commentValue + '</td>');
+                    } else if (key === 'status') {
+                        h.push('<td role="gridcell" class="mat-cell ng-star-inserted" style="padding-right: 0; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 3px 25px 3px !important; width: ' + commentWidth[keyIndex] + '%">' + commentValue + '</td>');
+                    } else {
+                        h.push('<td role="gridcell" class="mat-cell ng-star-inserted" style="border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 3px 25px 3px !important; width: ' + commentWidth[keyIndex] + '%">' + commentValue + '</td>');
+                    }
+                }
+
+                h.push('</tr>');
+            }
+
+            jQuery("#{{options.containerId}} .history-comments-table tbody").html(h.join(' '));
+            jQuery("#{{options.containerId}} .history-comments-table").show();
+        }
+
+        function formatDate(date) {
+            var d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = '' + d.getFullYear(),
+                hours = '' + d.getHours(),
+                minutes = '' + d.getMinutes(),
+                seconds = '' + d.getSeconds();
+
+            month = month.length < 2 ? '0' + month : month;
+            day = day.length < 2 ? '0' + day : day;
+            hours = hours.length < 2 ? '0' + hours : hours;
+            minutes = minutes.length < 2 ? '0' + minutes : minutes;
+            seconds = seconds.length < 2 ? '0' + seconds : seconds;
+
+            var formattedDate = [day, month, year].join('-');
+            var formattedTime = [hours, minutes].join(':');
+            return formattedDate + ' ' + formattedTime;
+        }
+
+        function isNonALGKOInvoice(invoice) {
+            return invoice.type !== 'ALGKO';
+        }
+    });
+</script>

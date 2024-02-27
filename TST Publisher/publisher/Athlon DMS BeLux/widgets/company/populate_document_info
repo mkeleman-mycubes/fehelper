@@ -1,0 +1,112 @@
+<script>
+    (function () {
+
+        var FE_current = FE['{{options.containerId}}'];
+        var formType = "{{widget.variables.formType}}";
+        var dropdownType = "{{widget.variables.dropdownType}}";
+        var dropdownName = "{{widget.variables.dropdownName}}";
+        var dropdownContainer = jQuery('#{{options.containerId}} #{{widget.variables.dropdownId}}');
+        var dropdownEl = dropdownContainer.find('select');
+        var currentAnswer = FE_current['storedAnswer_' + dropdownName] == null
+            ? (FE_current.getAllOptions().initAnswers[dropdownName] || "")
+            : FE_current['storedAnswer_' + dropdownName];
+
+        const departmentData = FE_current.departmentData;
+        
+        if (!departmentData || !departmentData.departments) {
+           return;
+        }
+
+        if (dropdownEl) {
+            FE_current.setAnswer({
+                questionName: dropdownName,
+                answer: currentAnswer
+            });
+
+            var changeFunc = dropdownEl[0].onchange;
+            dropdownEl[0].onchange = null;
+
+            dropdownEl.on('change', function () {
+                var answer = dropdownEl.val();
+                FE_current['storedAnswer_' + dropdownName] = answer;
+                changeFunc.call(dropdownEl[0]);
+            });
+        }
+
+        function populateDropdown(data) {
+            var h = [];
+
+            if (data.length === 1) {
+                var selected = "selected";
+                let option = data[0];
+                if (option.key) {
+                  option.value = option.value ?? option.key;
+                  FE_current['storedAnswer_' + dropdownName] = option.key;
+                  
+                  if (!currentAnswer || currentAnswer !== option.key) {
+                      FE_current.setAnswer({
+                          questionName: dropdownName,
+                          answer: option.key
+                      });
+                  }
+
+                  h.push('<option value="' + option.key + '" ' + selected + '>' + option.label + '</option>');
+                }
+            } else {
+                data.forEach(function (option) {
+                  if (option.key) {
+                    option.value = option.value ?? option.key;
+                    
+                    var selected = (currentAnswer === option.key) ? "selected" : "";
+                    h.push('<option value="' + option.key + '" ' + selected + '>' + option.label + '</option>');
+                  }
+                });
+            }
+
+
+            dropdownEl.append(h.join(''));
+        }
+
+        if (dropdownType === 'departmentsList') {
+            populateDropdown(departmentData.departments);
+        }
+
+        if (dropdownType === 'categoriesList') {
+            var departmentForm = "{{widget.variables.departmentForm}}";
+            var departmentVal = FE_current.getAnswer({ questionName: departmentForm });
+            if (departmentVal && departmentVal.length > 0) {
+                let departments = departmentData.departments;
+                let departmentIndex = departments.findIndex(function (el) { return el.key === departmentVal })
+
+                if (departmentIndex !== -1) {
+                  let department = departments[departmentIndex];
+
+                  populateDropdown(department.categories);
+                }
+            }
+        }
+  
+        if (dropdownType === 'subcategoryList') {
+            var departmentForm = "{{widget.variables.departmentForm}}";
+            var departmentVal = FE_current.getAnswer({ questionName: departmentForm });
+            var categoryForm = "{{widget.variables.categoryForm}}";
+            var categoryVal = FE_current.getAnswer({ questionName: categoryForm });
+
+            if (departmentVal && departmentVal.length > 0 && categoryVal && categoryVal.length > 0) {
+              let departments = departmentData.departments;          
+              let departmentIndex = departments.findIndex(function (el) { return el.key === departmentVal })
+
+              if (departmentIndex !== -1) {
+                let department = departments[departmentIndex];
+                let categories = department.categories;
+                let categoryIndex = categories.findIndex(function (el) { return el.key === categoryVal });
+                
+                if (categoryIndex !== -1) {
+                  let category = categories[categoryIndex];
+                  populateDropdown(category.subcategories);
+                }
+              }
+            }
+        }
+    })();
+</script>
