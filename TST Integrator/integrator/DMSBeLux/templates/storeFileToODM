@@ -1,0 +1,112 @@
+<#assign workspace = body.workspace>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.dfs.com/automotive/document/archival/1.0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:ArchiveDocument>
+          <#if workspace.cdWorkspace == 'CONTRACT' || workspace.cdRelatedWs1 == 'CONTRACT' || workspace.cdRelatedWs2 == 'CONTRACT'>
+            <#assign contract = body.contract>
+            <#assign contractId><#if contract.id?is_number>${contract.id?c}<#else>${contract.id?number?c}</#if></#assign>
+            <ns:Contract>
+                <ns:contractid>${body.generatedContractId}</ns:contractid>
+                <ns:contracttype>StandardContract</ns:contracttype>
+                <ns:contracttypedetail>${contract.servicePackageCode!""}</ns:contracttypedetail>
+                <ns:vehicleid>${(contract.vehicle.licensePlate.number)!}</ns:vehicleid>
+                <ns:segment>Core</ns:segment>
+                <ns:contracttypedetail>${(contract.uncontextualData.additionalInfo?truncate(32))!"undefined"}</ns:contracttypedetail>
+                <ns:status>ACTIVE</ns:status>
+                <ns:statusdate>${contract.startDate!"2021-12-31"}</ns:statusdate>
+             </ns:Contract>
+          </#if>
+          <#if workspace.cdWorkspace == 'CUSTOMER' || workspace.cdRelatedWs1 == 'CUSTOMER' || workspace.cdRelatedWs2 == 'CUSTOMER'>
+            <#assign customer = body.customer>
+            <#assign customerId><#if customer.id?is_number>${customer.id?c}<#else>${customer.id?number?c}</#if></#assign>
+            <ns:Customer>
+              <ns:customer_id>${body.generatedCustomerId}</ns:customer_id>
+              <ns:vatno>${(customer.vat.vatNumber)?replace(" ", "")!""}</ns:vatno>
+              <ns:referenceno>${customerId}</ns:referenceno>
+              <#--<ns:bpcode>${customer.businessEntityIdentifier!""}</ns:bpcode> -->
+              <ns:searchname>${customer.searchName!""}</ns:searchname>
+              <ns:billingname>${customer.name!""} ${customer.alias!""}</ns:billingname>
+              <ns:segmentmv>Core</ns:segmentmv>
+              <ns:status>ACTIVE</ns:status>
+              <ns:statusdate>${.now?string("yyyy-MM-dd")}</ns:statusdate>
+            </ns:Customer>
+          </#if>
+          <#if workspace.cdWorkspace == 'SUPPLIER' || workspace.cdRelatedWs1 == 'SUPPLIER' || workspace.cdRelatedWs2 == 'SUPPLIER'>
+            <#assign supplier = body.supplier>
+            <#assign supplierId><#if supplier.id?is_number>${supplier.id?c}<#else>${supplier.id?number?c}</#if></#assign>
+            <ns:Supplier>
+                <ns:supplier_id>${body.generatedSupplierId}</ns:supplier_id>
+    		    <#if customer.vat?? >
+                <ns:vatno>${(customer.vat.vatNumber)?replace(" ", "")!""}</ns:vatno>
+                </#if>
+    		    <ns:referenceno>${supplierId}</ns:referenceno>
+    		    <#--<ns:bpcode>${supplier.administrationCode!""}</ns:bpcode>-->
+    		    <ns:searchname>${supplier.searchName!"undefined"}</ns:searchname>
+                <ns:billingname>${supplier.name!""} ${supplier.alias!""}</ns:billingname>
+    		    <ns:segmentmv>Core</ns:segmentmv>
+    		    <ns:status>ACTIVE</ns:status>
+                <ns:statusdate>${.now?string("yyyy-MM-dd")}</ns:statusdate>
+            </ns:Supplier>
+          </#if>
+         <#if workspace.cdWorkspace == 'DAM' || workspace.cdRelatedWs1 == 'DAM' || workspace.cdRelatedWs2 == 'DAM'>
+            <#assign claim = body.claim>
+             <#assign claimId><#if claim.id?is_number>${claim.id?c}<#else>${claim.id?number?c}</#if></#assign>
+            <ns:Case>
+              <ns:caseid><#if claimId?length < 6><#list 0..(5 - claimId?length) as i>0</#list></#if>${claimId}</ns:caseid>
+              <ns:casetype>DAM</ns:casetype>
+              <ns:casedate>${dateTimeToDate(claim.claimDate)}</ns:casedate>
+              <ns:status>ACTIVE</ns:status>
+              <ns:statusdate>${dateTimeToDate(claim.closingDate)}</ns:statusdate>
+            </ns:Case>
+         </#if>
+         <#if workspace.cdWorkspace == 'INV' || workspace.cdRelatedWs1 == 'INV' || workspace.cdRelatedWs2 == 'INV'>
+            <#assign invoice = body.invoice>
+             <#assign invoiceNumber><#if invoice.number?is_number>${invoice.number?c}<#else>${invoice.number?number?c}</#if></#assign>
+            <ns:Case>
+              <ns:caseid><#if invoiceNumber?length < 6><#list 0..(5 - invoiceNumber?length) as i>0</#list></#if>${invoiceNumber}</ns:caseid>
+              <ns:casetype>INV</ns:casetype>
+              <ns:casedate>${invoice.invoiceDate!"2021-12-31"}</ns:casedate>
+              <ns:casetypedetail>${workspace.cd!}</ns:casetypedetail>
+              <ns:status>ACTIVE</ns:status>
+              <ns:statusdate>${invoice.invoiceDate!"2021-12-30"}</ns:statusdate>
+            </ns:Case>
+         </#if>
+         <#if workspace.cdWorkspace == 'FIN' || workspace.cdRelatedWs1 == 'FIN' || workspace.cdRelatedWs2 == 'FIN'>
+            <#assign fine = body.fine>
+            <#assign fineId><#if fine.id?is_number>${fine.id?c}<#else>${fine.id?number?c}</#if></#assign>
+            <ns:Case>
+              <ns:caseid><#if fineId?length < 6><#list 0..(5 - fineId?length) as i>0</#list></#if>${fineId}</ns:caseid>
+              <ns:casetype>FIN</ns:casetype>
+              <ns:casedate>${fine.fineDate!""}</ns:casedate>
+              <ns:status>${dateGreaterThanDays(fine.fineDate?date('yyyy-MM-dd'), 45)?string('COMPLETED', 'ACTIVE')}</ns:status>
+              <ns:statusdate>${fine.fineDate!""}</ns:statusdate>
+            </ns:Case>
+         </#if>
+         <ns:Basic_Attributes>
+            <ns:country>${body.country!"BE"}</ns:country>
+            <ns:legal_entity>${body.odmEntity!"ILB"}</ns:legal_entity>
+            <ns:segment>Core</ns:segment>
+            <ns:status>ACTIVE</ns:status>
+         </ns:Basic_Attributes>
+         <ns:Document_Basic_Attributes>
+            <#if workspace.original == "true">
+                <ns:docmemo>{\"original\":true}</ns:docmemo>
+            <#elseif body.documentCode == "S_FINERETR">
+                <ns:docmemo>{\"isFine\":true}</ns:docmemo>
+            </#if>
+            <ns:doc_type_number>${workspace.docTypeNr!}</ns:doc_type_number>
+            <ns:doctypedetail>${workspace.cd!}</ns:doctypedetail>
+            <ns:segment>Core</ns:segment>
+            <ns:uniqueidentifier>${body.processInstanceId}</ns:uniqueidentifier>
+         </ns:Document_Basic_Attributes>
+         <ns:Document>
+            <ns:scandate>${body.scanDate!}</ns:scandate>
+            <ns:barcode>${body.barCode!}</ns:barcode>
+            <ns:MimeType>${body.mimeType}</ns:MimeType>
+            <ns:DocumentName>${body.title!}</ns:DocumentName>
+            <ns:DocumentContent>${body.file.document!}</ns:DocumentContent>
+        </ns:Document>
+      </ns:ArchiveDocument>
+   </soapenv:Body>
+</soapenv:Envelope>
