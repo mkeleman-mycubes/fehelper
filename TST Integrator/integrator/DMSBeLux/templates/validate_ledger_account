@@ -1,0 +1,32 @@
+<#if body.answers?? && body.answers.invoice_lines_repeater?? && body.ledgerData?? && body.answers.approvalStatus?? && (body.answers['approvalStatus'].data.answer[0] == "APPROVE") >
+    <#assign noRepeat = [] >
+    
+    <#list body.answers.invoice_lines_repeater.data as invoice_line>
+      <#assign lineItems = invoice_line.lineItems.data?map(account -> account.lineItemLedgerAccount.data.answer[0]) >
+      
+      <#list lineItems as lineItem >
+      <#if noRepeat?seq_contains(lineItem)>
+        <#else>
+          <#assign noRepeat = noRepeat + [lineItem]>
+        </#if>
+      </#list>
+    </#list>
+    
+    <#assign ledgeraccounts = body.ledgerData >
+    <#assign filteredData = ledgeraccounts?filter(account -> noRepeat?seq_contains(account.id)) >
+    <#assign validAccounts = filteredData?size == noRepeat?size >
+    
+    {
+        "validAccounts": "${validAccounts?c}"
+    }
+<#else>
+    <#if (body.answers['approvalStatus'].data.answer[0] != "APPROVE")>
+    {
+        "validAccounts": "true"
+    }
+    <#else>
+    {
+        "validAccounts": "false"
+    }
+    </#if>
+</#if>
