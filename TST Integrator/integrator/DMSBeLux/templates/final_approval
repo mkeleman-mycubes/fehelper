@@ -1,0 +1,53 @@
+<#assign dateTime = .now>
+{
+  "variables": {
+    
+    <#if body.answers['invoice_lines_repeater']??>
+        <#assign result = "[">
+        <#list body.answers['invoice_lines_repeater'].data as invoice_line>
+            <#assign result += "{">
+            <#list invoice_line as key, value>
+                <#if key == "lineItems">
+                    <#assign result += "\"${key}\":">
+                    <#assign result += "[">
+                        <#list value.data as lineItem>
+                            <#assign result += "{">
+                                <#list lineItem as lineItemKey, lineItemValue>
+                                    <#assign result += "\"${lineItemKey}\":\"${lineItemValue.data.answer[0]}\"">
+                                    <#if lineItemKey?has_next>
+                                        <#assign result += ",">
+                                    </#if>
+                                </#list>
+                            <#assign result += "}">
+                            <#if lineItem?has_next>
+                                <#assign result += ",">
+                            </#if>
+                        </#list>
+                    <#assign result += "]">
+                <#else>
+                    <#assign result += "\"${key}\":\"${value.data.answer[0]}\"">
+                </#if>
+                <#if key?has_next>
+                    <#assign result += ",">
+                </#if>
+            </#list>
+            <#assign result += "}">
+            <#if invoice_line?has_next>
+                <#assign result += ",">
+            </#if>
+        </#list>
+    
+        <#assign result += "]">
+        
+    "invoiceLines": {
+        "type": "Json",
+        "value": "${result}"
+    },
+    </#if>    
+
+    "comments_obj": {
+      "type": "Json",
+      "value": <#if 0 < body.answers['comments_obj_str'].data.answer[0]?length><#assign prev_comments = body.answers['comments_obj_str'].data.answer[0]>"[${prev_comments}, {\"approver\": \"${body.formVariables['user_name']}\",\"comment\":\"${body.answers['reviewer_comments'].data.answer[0]?json_string}\",\"time\":\"${dateTime}\",\"status\": \"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], 'accountant')}\"}]"<#else>"[{\"approver\": \"${body.formVariables['user_name']}\",\"comment\":\"${body.answers['reviewer_comments'].data.answer[0]?json_string}\",\"time\":\"${dateTime}\",\"status\": \"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], 'accountant')}\"}]"</#if>
+    }
+  }
+}
