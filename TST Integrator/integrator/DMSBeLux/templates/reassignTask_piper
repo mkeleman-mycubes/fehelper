@@ -1,0 +1,44 @@
+<#assign groups = body.secureData.user.identity.groups >
+<#assign generalGroup = groups?filter(group -> group.description == "General Accountant") >
+{
+    "pipes": [
+        <#if 0 < generalGroup?size>
+        {
+            "type" : "transform",
+            "name" : "dummy",
+            "script" : "answers = body.answers; secureData = body.secureData; headers.userId = answers.assign_to.data.answer[0]"
+        },
+        <#--
+        {
+            "type" : "action",
+            "name" : "getGroupsOfUser",
+            "script" : "answers = body.answers; secureData = body.secureData; headers.userId = answers.assign_to.data.answer[0]"
+        },
+        {
+            "type" : "action",
+            "name" : "getUserProfile",
+            "script" : "groupsOfUser = body; headers.userId = answers.assign_to.data.answer[0]"
+        },
+        -->
+        {
+            "type" : "action",
+            "name" : "reassignTask",
+            "script" : "body = [answers: answers, secureData: secureData]; processInstanceId = answers.taskprocessinstanceid.data.answer[0]; headers.processId = processInstanceId"
+        },
+        {
+            "type" : "action",
+            "name" : "setTaskAssignee",
+            "script" : "body = [userId: answers.assign_to.data.answer[0]]; headers.taskId = answers.taskid.data.answer[0]"
+        }
+        <#else>
+        {
+            "type": "transform",
+            "name": "wrong_user_permissions"
+        },
+        {
+            "type": "transform",
+            "name": "return_error"
+        }
+        </#if>
+    ]
+}
