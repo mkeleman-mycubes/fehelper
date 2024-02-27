@@ -1,0 +1,173 @@
+<#assign approver = body.secureData.user.identity.authenticatedUser> 
+<#if body.answers.check_reassign_page?? && body.answers.check_reassign_page.data.answer[0] == "yes">
+    {
+        "entity": "${body.answers['companyCode'].data.answer[0]}",
+        "externalObjectId": "${body.answers['invoiceNrInternal'].data.answer[0]}",
+        "workspace": "INV",
+        "comments":  <#if body.answers.approver1?? && body.answers.approver1.data.answer[0] != "">
+                        <#assign approver1 = body.answers.approver1.data.answer[0]>
+                        <#assign pre_approver1 = body.answers.pre_approver1.data.answer[0]>
+                        
+                        <#if body.answers.approver2.data.answer[0]??>
+                            <#assign approver2 = body.answers.approver2.data.answer[0]>
+                            <#assign pre_approver2 = body.answers.pre_approver2.data.answer[0]>
+                            <#if body.answers.taskname.data.answer[0] == "First Approval">
+                                <#if pre_approver1 == approver1 && pre_approver2 != "" && pre_approver2 == approver2>
+                                    [{
+                                        "body": "Invoice was assigned Second Approver: ${approver2}",
+                                        "userCreated": "${approver}",
+                                        "status":"Approver 2 assigned by Accountant"
+                                    }]
+                                <#elseif pre_approver1 != approver1 && pre_approver2 != "" && pre_approver2 == approver2>
+                                    [{
+                                        "body": "Invoice was reassigned From First Approver: ${pre_approver1} to ${approver1}",
+                                        "userCreated": "${approver}",
+                                        "status":"Approver 1 reassigned by Accountant"
+                                    },
+                                    {
+                                        "body": "Invoice was assigned to Second Approver: ${approver2}",
+                                        "userCreated": "${approver}",
+                                        "status":"Approver 2 assigned by Accountant"
+                                    }]
+                                </#if>
+                            <#else>
+                                <#if pre_approver1 != approver1 && pre_approver2 != "" && pre_approver2 != approver2>
+                                    [{
+                                        "body": "Invoice was reassigned From First Approver: ${pre_approver1} to ${approver1}",
+                                        "userCreated": "${approver}",
+                                        "status":"Approver 1 reassigned by Accountant"
+                                    },
+                                    {
+                                        "body": "Invoice was reassigned From Second Approver: ${pre_approver2} to ${approver2}",
+                                        "userCreated": "${approver}",
+                                        "status":"Approver 2 reassigned by Accountant"
+                                    }]
+                                <#elseif pre_approver1 != approver1 && pre_approver2 != approver2>
+                                    [{
+                                        "body": "Invoice was reassigned From First Approver: ${pre_approver1} to ${approver1}",
+                                        "userCreated": "${approver}",
+                                        "status":"Approver 1 reassigned by Accountant"
+                                    },
+                                    {
+                                        "body": "Invoice was reassigned to Second Approver: ${approver2}",
+                                        "userCreated": "${approver}",
+                                        "status":"Approver 2 reassigned by Accountant"
+                                    }]
+                                <#elseif pre_approver1 != approver1>
+                                    [{
+                                        "body": "Invoice was reassigned From First Approver: ${pre_approver1} to ${approver1}",
+                                        "userCreated": "${approver}",
+                                        "status":"Approver 1 reassigned by Accountant"
+                                    }]
+                                <#elseif pre_approver2 != approver2>
+                                    [{
+                                        "body": "Invoice was reassigned From Second Approver: ${pre_approver2} to ${approver2}",
+                                        "userCreated": "${approver}",
+                                        "status":"Approver 2 reassigned by Accountant"
+                                    }]
+                                <#else>
+                                </#if>
+                            </#if>
+                        <#elseif pre_approver1 != approver1 >
+                            [{
+                                "body": "Invoice was reassigned From First Approver: ${pre_approver1} to ${approver1}",
+                                "userCreated": "${approver}",
+                                "status":"Approver 1 reassigned by Accountant"
+                            }]
+                        <#else>
+                        </#if>
+                    <#elseif body.answers.taskname.data.answer[0]?? && body.answers.taskname.data.answer[0] == "Second Approval">
+                        <#assign approver2 = body.answers.approver2.data.answer[0]>
+                        <#assign pre_approver2 = body.answers.pre_approver2.data.answer[0]>
+                        <#if pre_approver2 != approver2>
+                                [{
+                                    "body": "Invoice was reassigned From Second Approver: ${pre_approver2} to ${approver2}",
+                                    "userCreated": "${approver}",
+                                    "status":"Approver 2 assigned by Accountant"
+                                }]
+                        </#if>
+                    <#else>
+                    </#if>
+    }
+<#elseif body.answers.taskname?? && body.answers.taskname.data.answer[0] == "Approval Accountant">
+    {
+        "entity": "${body.answers['companyCode'].data.answer[0]}",
+        "externalObjectId": "${body.answers['invoiceNrInternal'].data.answer[0]}",
+        "workspace": "INV",
+        "comments": <#if body.answers['approver1'].data.answer[0]?? && body.answers['approver1'].data.answer[0] != "">
+                        <#assign temp_approver = body.answers['temp_approver'].data.answer[0]>
+                        <#assign approver1 = body.answers['approver1'].data.answer[0]>
+                        <#assign approver2 = body.answers['approver2'].data.answer[0]>
+                        <#assign pre_approver1 = body.answers['pre_approver1'].data.answer[0]>
+                        <#assign pre_approver2 = body.answers['pre_approver2'].data.answer[0]>
+                        <#if temp_approver == "temp_approver" && body.answers['approver2'].data.answer[0]?? && approver2 != "">
+                            [{
+                                "body": "${body.answers['reviewer_comments'].data.answer[0]}",
+                                "userCreated": "${approver}",
+                                "status":"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], approver)}"
+                            },
+                            {
+                                "body": "First Approver: ${approver1} , Second Approver: ${approver2}",
+                                "userCreated": "${approver}",
+                                "status":"Approvers assigned by Accountant"
+                            }]
+                        <#elseif temp_approver != "temp_approver" && body.answers['approver2'].data.answer[0]?? && approver2 != "" && pre_approver2?? && pre_approver2 != approver2>
+                            [{
+                                "body": "${body.answers['reviewer_comments'].data.answer[0]}",
+                                "userCreated": "${approver}",
+                                "status":"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], approver)}"
+                            },
+                            {
+                                "body": "First Approver: ${approver1} , Second Approver: ${approver2}",
+                                "userCreated": "${approver}",
+                                "status":"Approvers assigned by Accountant"
+                            }]
+                        <#elseif temp_approver != "temp_approver" && pre_approver1?? && pre_approver1 != approver1 >
+                            [{
+                                "body": "${body.answers['reviewer_comments'].data.answer[0]}",
+                                "userCreated": "${approver}",
+                                "status":"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], approver)}"
+                            },
+                            {
+                                "body": "First Approver: ${approver1}",
+                                "userCreated": "${approver}",
+                                "status":"Approvers assigned by Accountant"
+                            }]
+                        <#elseif temp_approver == "temp_approver" >
+                            [{
+                                "body": "${body.answers['reviewer_comments'].data.answer[0]}",
+                                "userCreated": "${approver}",
+                                "status":"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], approver)}"
+                            },
+                            {
+                                "body": "First Approver: ${approver1}",
+                                "userCreated": "${approver}",
+                                "status":"Approvers assigned by Accountant"
+                            }]
+                        <#else>
+                            [{
+                                "body": "${body.answers['reviewer_comments'].data.answer[0]}",
+                                "userCreated": "${approver}",
+                                "status":"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], approver)}"
+                            }]
+                        </#if>
+                    <#else>
+                        [{
+                            "body": "${body.answers['reviewer_comments'].data.answer[0]}",
+                            "userCreated": "${approver}",
+                            "status":"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], approver)}"
+                        }]
+                    </#if> 
+    }
+<#else>
+    {
+        "entity": "${body.answers['companyCode'].data.answer[0]}",
+        "externalObjectId": "${body.answers['invoiceNrInternal'].data.answer[0]}",
+        "workspace": "INV",
+        "comments": [{
+            "body": "${body.answers['reviewer_comments'].data.answer[0]}",
+            "userCreated": "${approver}",
+            "status":"${getCommentStatus(body.answers['approvalStatus'].data.answer[0], approver)}"
+        }]
+    }
+</#if>
