@@ -1,0 +1,42 @@
+<#assign contracts = body.contracts>
+<#if body.serviceCall?? && body.serviceCall == "true">
+    <#assign contractNr = body.initBody.answers['contractNo'][0]>
+    <#assign validContract = "valid_contract">
+    <#assign message = "Valid contract number">
+    <#assign validationStatus = "true">
+    <#list contracts as contract>
+      <#if contract.id?? && contract.id == contractNr>
+        <#assign validContract = "valid_contract">
+        <#assign message = "Valid contract number">
+        <#assign validationStatus = "true">
+        <#break>
+      <#else>
+        <#assign validContract = "not_valid_contract">
+        <#assign message = "This is not an existing fine number">
+        <#assign validationStatus = "false">
+      </#if>
+    </#list>
+<#else>
+    <#assign contractNr = body.initBody.answers['contractNo'].data.answer[0]>
+    <#assign validContract = "valid_contract">
+    <#assign message = "Valid contract number">
+    <#assign validationStatus = "true">
+    <#list contracts as contract>
+      <#if contract.id?? && contract.id == contractNr>
+        <#assign validContract = "valid_contract">
+        <#assign message = "Valid contract number">
+        <#assign validationStatus = "true">
+        <#break>
+      <#else>
+        <#assign validContract = "not_valid_contract">
+        <#assign message = "This is not an existing fine number">
+        <#assign validationStatus = "false">
+      </#if>
+    </#list>
+</#if>
+
+{
+  "validFine": "${validContract}",
+  "message": "${message}",
+  "validationStatus": "${validationStatus}"
+}
