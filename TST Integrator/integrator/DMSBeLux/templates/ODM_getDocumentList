@@ -1,0 +1,37 @@
+{
+    "query": [
+        {
+            <#if body.country??>
+                "Country" : "${body.country}",
+            </#if>
+            
+            <#if body.entity??>
+                "LegalEntity": "${body.entity}",
+            </#if>
+            
+            <#if body.documentType == "CUSTOMER" || body.documentType == "SUPPLIER">
+                "PartnerID": "${body.documentId}",
+                "BPType": "${body.documentType}",
+            </#if>
+            
+            <#if body.documentType == "CONTRACT">
+                "ContractID": "${body.documentId}",
+            </#if>
+            
+            <#if body.documentType == "INVOICE" || body.documentType == "FINE" || body.documentType == "CLAIM">
+                "CaseID": "${body.documentId}",
+                <#if body.documentType == "INVOICE">
+                    "CaseType": "INV",
+                </#if>
+                <#if body.documentType == "FINE">
+                    "CaseType": "FIN",
+                </#if>
+                <#if body.documentType == "CLAIM">
+                    "CaseType": "DAM",
+                </#if>
+            </#if>
+            
+            "objID": "*"
+        }
+    ]
+}
