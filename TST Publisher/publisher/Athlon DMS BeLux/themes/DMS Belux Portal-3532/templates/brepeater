@@ -1,0 +1,5 @@
+{
+  "name": "brepeater",
+  "desc": "",
+  "data": "<div id=\"{{repeater.elementId}}\" class=\"brepeater {{repeater.className}}\">\r\n\t<div class=\"repeater-header\">\r\n    \t<h4>\r\n    \t\t<span class=\"brepeater-title\">{{#if repeater.title}} {{{repeater.title}}} {{/if}}</span>\r\n    \r\n    \t</h4>\r\n\t</div>\r\n\t<div class=\"brepeater-html\">\r\n\t\t{{#each listHtml}}\r\n\t\t\t<div class=\"repeater-html\">\r\n\t\t\t    {{{this}}}\r\n\t\t\t\t{{#ifVarNotEqual 'totalIter' 1}}\r\n\t\t\t\t\t<a onclick=\"jQuery('#{{../options.containerId}}').questionnaire('repeateEvent', {{../repeater.id}}, '{{../ctx.id}}', {{@index}});\"\r\n\t\t\t\t\t   class=\"brepeater-remove\" style=\"cursor: pointer\">x</a>\r\n\t\t\t\t{{/ifVarNotEqual}}\r\n\t\t\t</div>\r\n\t\t{{/each}}\r\n\t</div>\r\n\r\n\t{{#ifVarNotEqual 'totalIter' 10}}\r\n\t<a class=\"button brepeater-add\" onclick=\"jQuery('#{{options.containerId}}').questionnaire('repeateEvent', {{repeater.id}}, '{{ctx.id}}');\" style=\"cursor: pointer\">\r\n\t\t{{repeater.buttonLabel}}\r\n\t</a>\r\n\t{{/ifVarNotEqual}}\r\n\r\n</div>"
+}
