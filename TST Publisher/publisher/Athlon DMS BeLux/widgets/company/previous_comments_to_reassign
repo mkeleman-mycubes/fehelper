@@ -1,0 +1,38 @@
+<script>
+  jQuery(document).ready(function () {
+    // let FE_current = FE["{{options.containerId}}"];
+    // let comments_obj = FE_current.getAnswer({ questionName: "comments_obj" });
+    // let h = [];
+
+    // FE_current.setAnswer({ questionName: "check_reassign_page", answer: "yes" });
+    
+    // FE_current.setAnswer({ questionName: "invoiceLineNr", answer: FE_current.getAllOptions().initAnswers.invoice_lines_repeater[0].invoiceLineNo });
+    // let pre_approver1 = FE_current.getAnswer({ questionName: "pre_approver1"});
+    // let approver1 = FE_current.getAnswer({ questionName: "approver1"});
+    // if( typeof pre_approver1 == undefined || !pre_approver1 ) {
+    //     pre_approver1 = FE_current.getAnswer({ questionName: "approver1"});
+    //     FE_current.setAnswer({ questionName: "pre_approver1", answer: pre_approver1 });
+    // }
+    
+    // let pre_approver2 = FE_current.getAnswer({ questionName: "pre_approver2"});
+    // let approver2 = FE_current.getAnswer({ questionName: "approver2"});
+    // if( typeof pre_approver2 == undefined || !pre_approver2 ) {
+    //     pre_approver2 = FE_current.getAnswer({ questionName: "approver2"});
+    //     FE_current.setAnswer({ questionName: "pre_approver2", answer: pre_approver2 });
+    // }
+        
+    // if (comments_obj && comments_obj.length > 0) {
+    //   let comments_obj_parsed = JSON.parse(comments_obj);
+      
+    //   let comments_obj_str = '';
+
+    //   for (let i = 0; i < comments_obj_parsed.length; i++) {
+    //     let curr_obj = comments_obj_parsed[i];
+    //     let comma = i == comments_obj_parsed.length-1 ? '' : ',';
+    //     comments_obj_str += (JSON.stringify(curr_obj)+comma);
+    //   }
+    //   FE_current.setAnswer({ questionName: "comments_obj_str", answer: comments_obj_str });
+    // }
+   
+  });
+</script>
