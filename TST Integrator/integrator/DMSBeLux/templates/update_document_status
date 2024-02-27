@@ -1,0 +1,34 @@
+{
+    "messageName": "SplitDateRangeByChunks",
+    "tenantId": "AthlonDMSBeLux",
+    "processVariables": {
+        "StartProcessWithChunk": {
+            "type": "String",
+            "value": "StartUpdateRetentionStatus"
+        },
+        "date_from": {
+            "type": "String",
+            "value": "${body.answers['date_from'].data.answer[0]}"
+        },
+        "date_to": {
+            "type": "String",
+            "value": "${body.answers['date_to'].data.answer[0]}"
+        },
+        "chunkTime": {
+            "type": "String",
+            "value": "PT5M"
+        },
+        "checkTime": {
+            "type": "String",
+            "value": "PT1M"
+        },
+        "definitionKey": {
+            "type": "String",
+            "value": "UpdateRetentionStatus"
+        },
+        "PROCESS-NAMESPACE": {
+            "type": "String",
+            "value": "AthlonDMSBeLux-MyCubes"
+        }
+    }
+}
