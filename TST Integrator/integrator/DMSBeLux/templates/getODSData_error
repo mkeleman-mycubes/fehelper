@@ -1,0 +1,8 @@
+{
+    "status": "true",
+    "errorOccured": "true",
+    "bpmnError": {
+        "bpmnErrorCode": "GetODSDataError",
+        "bpmnErrorMessage": "Error occured during retrieving data from ODS"
+    }
+}
