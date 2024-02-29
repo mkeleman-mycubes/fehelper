@@ -1,0 +1,5 @@
+{
+  "name": "qrepeater",
+  "desc": "",
+  "data": "<div id=\"{{repeater.elementId}}\" class=\"qrepeater {{repeater.className}}\">\r\n\t<div class=\"repeater-header\">\r\n    \t<h4>\r\n    \t\t<span class=\"repeater-title\">{{#if repeater.title}} {{{repeater.title}}} {{/if}}</span>\r\n    \r\n    \t</h4>\r\n\t</div>\r\n\t{{#each listHtml}}\r\n\t\t<div class=\"repeater-html\">{{{this}}}</div>\r\n\t{{/each}}\t\r\n</div>"
+}
