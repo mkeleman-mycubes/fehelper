@@ -1,0 +1,5 @@
+<p>{{widget.variables.test1}}</p>
+
+<p>{{widget.variables.test2}}</p>
+
+<p>{{widget.variables.test3}}</p>

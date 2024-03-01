@@ -1,0 +1,187 @@
+ {{widget.labels.firstLabel}}  
+{{widget.labels.second}}  
+{{widget.labels.third}}  
+
+<script>
+	var getCaravanInfoTimer_{{widget.id}}{{ctx.id}} = 0;		
+	getCaravanInfo_{{widget.id}}{{ctx.id}}();
+	
+	$('#questionnaire').questionnaire('subscribeEvent', 'answer', event_getCaravanInfo{{widget.id}}{{ctx.id}});
+		
+	function event_getCaravanInfo{{widget.id}}{{ctx.id}}(questionId, questionName) {
+		if (questionName === undefined || questionName == "ConstructionYear" || questionName == "PurchaseDate") {
+			clearTimeout(getCaravanInfoTimer_{{widget.id}}{{ctx.id}});		
+			getCaravanInfoTimer_{{widget.id}}{{ctx.id}} = setTimeout("getCaravanInfo_{{widget.id}}{{ctx.id}}();", 1000);
+		}
+	}		
+	
+	function getCaravanInfo_{{widget.id}}{{ctx.id}}() {			
+		var data = new Object();
+
+		data.Brand = "";
+		data.Model = "";		
+		data.name = "getCaravanInfo";
+		
+		data.CaravanType = $('#questionnaire').questionnaire('findAnswer', 'CaravanType', '{{ctx.id}}');
+		data.ConstructionYear = $('#questionnaire').questionnaire('findAnswer', 'ConstructionYear', '{{ctx.id}}'); 
+		data.PurchaseDate = $('#questionnaire').questionnaire('findAnswer', 'PurchaseDate', '{{ctx.id}}');
+		
+		var caravanInfo = $('#questionnaire').questionnaire('findVar', {{widget.id}}, '{{ctx.id}}', 'caravanInfo');
+		
+		var brandSelect = $("#questionnaire #Brand select");
+		var modelSelect = $("#questionnaire #Model select");
+		
+		if (brandSelect) {
+			brandSelect.prop("disabled", true);
+			brandSelect.empty();			
+			brandSelect.append("<option value=''> ... </option>");
+		}
+		
+		if (modelSelect) {
+			modelSelect.prop("disabled", true);
+			modelSelect.empty();			
+			modelSelect.append("<option value=''> ... </option>");
+		}
+
+		if (data.CaravanType && data.ConstructionYear && data.PurchaseDate && (caravanInfo == null || data.CaravanType != caravanInfo.CaravanType ||  
+			data.ConstructionYear != caravanInfo.ConstructionYear || data.PurchaseDate != caravanInfo.PurchaseDate)) {
+			var newCaravanInfo = {CaravanType: data.CaravanType, ConstructionYear: data.ConstructionYear,
+					  			  PurchaseDate: data.PurchaseDate, Result: {}};			
+			
+			var serviceUri = $('#questionnaire').questionnaire("option", "serviceUri");
+			$('#questionnaire').questionnaire("sendAnswer", serviceUri, data,
+				// 'sendAnswer' success event
+				function(json) {					
+					var caravanResults = (json.status == "true") ? json.results : []; 
+					
+					for (var i = 0; i < caravanResults.length; i++) {
+						var key = caravanResults[i].Brand;			
+						
+						if (newCaravanInfo.Result[key] === undefined) newCaravanInfo.Result[key] = [];				
+						newCaravanInfo.Result[key].push(caravanResults[i]);
+					}
+									
+					$('#questionnaire').questionnaire('setVar', {{widget.id}}, '{{ctx.id}}', 'caravanInfo', newCaravanInfo);
+	    			updateCaravanInfo_{{widget.id}}{{ctx.id}}(newCaravanInfo);		    		
+				},
+						
+				// 'sendAnswer' error event
+				function() {					
+					$('#questionnaire').questionnaire('setVar', {{widget.id}}, '{{ctx.id}}', 'caravanInfo', newCaravanInfo);
+	    			updateCaravanInfo_{{widget.id}}{{ctx.id}}(newCaravanInfo);
+				}			
+			);	   
+		} else {
+			updateCaravanInfo_{{widget.id}}{{ctx.id}}(caravanInfo ? caravanInfo : {});
+		}
+	}
+	
+	function updateCaravanInfo_{{widget.id}}{{ctx.id}}(caravanInfo) {		
+		if (caravanInfo) {			
+			var brandSelect = $("#questionnaire #Brand select");
+
+			if (brandSelect) {			
+				var brandData = null;
+				var brandValue = $('#questionnaire').questionnaire('findAnswer', 'Brand', '{{ctx.id}}');
+				
+				var caravanResult = caravanInfo.Result ? caravanInfo.Result : {}; 
+				var html = "<option value=''>- selecteer optie -</option>";
+				
+				for (var currBrand in caravanResult) {
+					if (caravanResult.hasOwnProperty(currBrand)) {
+						html += "<option value='" + currBrand + "' " + 
+						(currBrand == brandValue ? "selected" : "") + " >" + currBrand + "</option>";
+							
+						if (currBrand == brandValue) brandData = caravanResult[currBrand];
+					}
+				}
+				
+				brandSelect.prop("disabled", false);
+				brandSelect.empty();
+				brandSelect.append(html);
+				
+				if (!brandData) {
+					$('#questionnaire').questionnaire('setAnswer', null, 'Model', '{{ctx.id}}', "");					
+					$('#questionnaire').questionnaire('setAnswer', null, 'Brand', '{{ctx.id}}', "");
+					
+					if (caravanInfo.Brand != "" || caravanInfo.Model != "") {
+						caravanInfo.Brand = ""; 
+						caravanInfo.Model = "";
+						
+						$('#questionnaire').questionnaire('setAnswer', null, 'ListPrice', '{{ctx.id}}', "");
+						$("#questionnaire #ListPrice input").val("");
+						
+						$('#questionnaire').questionnaire('setAnswer', null, 'InsuredValueCasco', '{{ctx.id}}', "");
+						$("#questionnaire #InsuredValueCasco input").val("");					
+											
+						$('#questionnaire').questionnaire('setAnswer', null, 'TotalWeight', '{{ctx.id}}', "");
+						$('#questionnaire').questionnaire('setAnswer', null, 'EmptyWeight', '{{ctx.id}}', "");
+						$('#questionnaire').questionnaire('setAnswer', null, 'InsuredValueHigh', '{{ctx.id}}', "");					
+						$('#questionnaire').questionnaire('setAnswer', null, 'InsuredValueLow', '{{ctx.id}}', "");	
+					}
+				}				
+
+				//brandSelect.val(brandValue);
+				var modelSelect = $("#questionnaire #Model select");				
+				
+				if (modelSelect) {
+					html = "<option value=''>- selecteer optie -</option>";
+					
+					if (brandData) {
+						var modelData = null;
+						var modelValue = $('#questionnaire').questionnaire('findAnswer', 'Model', '{{ctx.id}}');
+						
+						for (var i = 0; i < brandData.length; i++) {
+							var currModel = brandData[i].Model;
+							
+							html += "<option value='" + currModel + "' " + 
+							(currModel == modelValue ? "selected" : "") + " >" + currModel + "</option>";
+							
+							if (currModel == modelValue) modelData = brandData[i];
+						}
+						
+						if (modelData) {
+							if (caravanInfo.Model != modelData.Model || caravanInfo.Brand != modelData.Brand) {
+								caravanInfo.Model = modelData.Model; 
+								caravanInfo.Brand = modelData.Brand;
+								
+								$('#questionnaire').questionnaire('setAnswer', null, 'ListPrice', '{{ctx.id}}', modelData.ListPrice);
+								$("#questionnaire #ListPrice input").val(modelData.ListPrice);
+
+								$('#questionnaire').questionnaire('setAnswer', null, 'InsuredValueCasco', '{{ctx.id}}', modelData.InsuredAmountCasco);
+								$("#questionnaire #InsuredValueCasco input").val(modelData.InsuredAmountCasco);
+								
+								$('#questionnaire').questionnaire('setAnswer', null, 'TotalWeight', '{{ctx.id}}', modelData.TotalWeight);
+								$('#questionnaire').questionnaire('setAnswer', null, 'EmptyWeight', '{{ctx.id}}', modelData.EmptyWeight);
+								$('#questionnaire').questionnaire('setAnswer', null, 'InsuredValueHigh', '{{ctx.id}}', modelData.InsuredValueHigh);
+								$('#questionnaire').questionnaire('setAnswer', null, 'InsuredValueLow', '{{ctx.id}}', modelData.InsuredValueLow);
+							}
+						} else {
+							$('#questionnaire').questionnaire('setAnswer', null, 'Model', '{{ctx.id}}', "");	
+							
+							if (caravanInfo.Model != "") {
+								caravanInfo.Model = "";
+								
+								$('#questionnaire').questionnaire('setAnswer', null, 'ListPrice', '{{ctx.id}}', "");
+								$("#questionnaire #ListPrice input").val("");
+								
+								$('#questionnaire').questionnaire('setAnswer', null, 'InsuredValueCasco', '{{ctx.id}}', "");
+								$("#questionnaire #InsuredValueCasco input").val("");
+																						
+								$('#questionnaire').questionnaire('setAnswer', null, 'TotalWeight', '{{ctx.id}}', "");
+								$('#questionnaire').questionnaire('setAnswer', null, 'EmptyWeight', '{{ctx.id}}', "");
+								$('#questionnaire').questionnaire('setAnswer', null, 'InsuredValueHigh', '{{ctx.id}}', "");
+								$('#questionnaire').questionnaire('setAnswer', null, 'InsuredValueLow', '{{ctx.id}}', "");
+							}
+						}							
+					}
+					
+					modelSelect.prop("disabled", false);
+					modelSelect.empty();
+					modelSelect.append(html);					
+				}				
+			}			
+		}				
+	}	
+	
+</script>

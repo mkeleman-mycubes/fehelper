@@ -1,0 +1,377 @@
+<div class="mainhtml" >
+
+	<script>
+	    var caravanTravelTimer_{{widget.id}}{{ctx.id}} = 0;		
+	    caravanTravel_{{widget.id}}{{ctx.id}}();
+		
+	    $('#questionnaire').questionnaire('subscribeEvent', 'answer', event_caravanTravel{{widget.id}}{{ctx.id}});
+
+	    function event_caravanTravel{{widget.id}}{{ctx.id}}(questionId, questionName) {		
+	        if (questionName == "InsuredValueContents") {
+	            clearTimeout(caravanTravelTimer_{{widget.id}}{{ctx.id}});			
+	    caravanTravelTimer_{{widget.id}}{{ctx.id}} = setTimeout("caravanTravel_{{widget.id}}{{ctx.id}}();", 1000);
+	    }
+	    }		
+		
+	    function set_caravanAnswer{{widget.id}}{{ctx.id}}(name, data) {
+	        var answer = $('#questionnaire').questionnaire('findAnswer', name, '{{ctx.id}}');
+	        if (answer) data[name] = $.isArray(answer) ? answer[0] : answer;
+	    }
+		
+	    function loading_caravanAnswer{{widget.id}}{{ctx.id}}(name) {
+	        option = $("#" + name + "_Price");
+			
+	        if (option.length == 0) {
+	            option = $("#" + name);
+	            option.after("<span id='" + name + "_Price' class='loading'></span>");
+	        } else {
+	            option.html("");
+	            option.removeClass().addClass("loading");				
+	        }
+	    }						
+		
+	    function caravanTravel_{{widget.id}}{{ctx.id}}() {				
+	        var data = new Object();
+	        data.name = "calculateTravelCaravan";
+			
+	        $(".PremiumPerTerm").html("...");
+	        $(".DiscountAmountPerTerm").html("...");
+	        $(".OrigPremiumPerTerm").html("...");
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('CaravanType', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('Brand', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('Model', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('PurchaseDate', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('ConstructionYear', data);
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('ListPrice', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('InsuredValueCasco', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('FamilySituation', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasWorldCoverage', data);	
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('MembershipStatus', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('MembershipId', data);
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('TotalWeight', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('EmptyWeight', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('InsuredValueHigh', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('InsuredValueLow', data);
+						
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('CaravanProductType', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('CaravanNewValueArrangement', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasHailProtectedRoof', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasHailCoverage', data);
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('InsuredValueAnnexe', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('InsuredValueContents', data);
+
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasTransportAidCoverage', data);
+	        loading_caravanAnswer{{widget.id}}{{ctx.id}}('HasTransportAidCoverage');
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasLuggageCoverage', data);
+	        loading_caravanAnswer{{widget.id}}{{ctx.id}}('HasLuggageCoverage');
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasAssistanceCoverage', data);
+	        loading_caravanAnswer{{widget.id}}{{ctx.id}}('HasAssistanceCoverage');
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasMoneyAndChequesCoverage', data);
+	        loading_caravanAnswer{{widget.id}}{{ctx.id}}('HasMoneyAndChequesCoverage');
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasTravelAccidentsCoverage', data);
+	        loading_caravanAnswer{{widget.id}}{{ctx.id}}('HasTravelAccidentsCoverage');
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasMedicalCostsCoverage', data);
+	        loading_caravanAnswer{{widget.id}}{{ctx.id}}('HasMedicalCostsCoverage');
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasSpecialSportsCoverage', data);
+	        loading_caravanAnswer{{widget.id}}{{ctx.id}}('HasSpecialSportsCoverage');
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasExtraSportEquipmentCoverage', data);
+	        loading_caravanAnswer{{widget.id}}{{ctx.id}}('HasExtraSportEquipmentCoverage');
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasLegalCoverage', data);
+	        loading_caravanAnswer{{widget.id}}{{ctx.id}}('HasLegalCoverage');
+			
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasAttorney', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('CancellationType', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('HasTopCoverage', data);
+	        set_caravanAnswer{{widget.id}}{{ctx.id}}('PaymentTerm', data);
+			
+	        if(data.CancellationType == 'Top'){
+	            data.HasTopCoverage = 'false';
+	        }
+	        var currDate = null;
+	        var requestType = $('#questionnaire').questionnaire('findAnswer', 'RequestType', '{{ctx.id}}');
+
+	        if (requestType == "Alteration") {
+	            set_caravanAnswer{{widget.id}}{{ctx.id}}('StartDate', data);
+				
+	            currDate = parseDate(data.StartDate, new Date(), false);			
+	            data.StartDate = formatDate(currDate, false); 			
+	        } else {
+	            set_caravanAnswer{{widget.id}}{{ctx.id}}('StartDate_Request', data);
+				
+	            currDate = parseDate(data.StartDate_Request, new Date(), false);			
+	            data.StartDate = formatDate(currDate, false); 	
+				
+	            delete data.StartDate_Request;
+	        }
+						
+	        if (currDate) {
+	            currDate.setFullYear(currDate.getFullYear() + 1);
+	            data.EndDate = formatDate(currDate, false);
+	        }
+			
+	        if (!data.PaymentTerm) {
+	            data.PaymentTerm = "Month";
+	        }
+			
+	        if (data.CancellationType == "AllRiskTop") {
+	            data.HasTopCoverage = "true";
+	        }
+			
+	        var serviceUri = $('#questionnaire').questionnaire("option", "serviceUri");
+	        $('#questionnaire').questionnaire("sendAnswer", serviceUri, data,
+				// 'sendAnswer' success event
+				function(result) {
+				    if (result.status == "true") {
+				        var option = null;
+		    			
+				        $(".PremiumPerTerm").html("&euro; " + 
+		    					(result.PremiumPerTerm ? result.PremiumPerTerm : ""));
+				        $(".DiscountAmountPerTerm").html("&minus; " + "&euro; " + 
+		    					(result.DiscountAmountPerTerm ? result.DiscountAmountPerTerm : ""));
+				        $(".OrigPremiumPerTerm").html("&euro; " + 
+		    					(result.OriginalPremiumAmountPerTermIncl ? result.OriginalPremiumAmountPerTermIncl : ""));
+
+				        option = $("#HasTransportAidCoverage_Price").removeClass();		    			
+				        if (result.HasTransportAidCoverage) {		    						    				
+				            option.html("&euro; " + result.HasTransportAidCoverage);
+		    				
+				            if (data.HasTransportAidCoverage) {
+				                option.addClass("price-checked");
+				            } else {
+				                option.addClass("price");
+				            }
+				        }
+		    			
+				        option = $("#HasLuggageCoverage_Price").removeClass();		    			
+				        if (result.HasLuggageCoverage) {		    						    				
+				            option.html("&euro; " + result.HasLuggageCoverage);
+		    				
+				            if (data.HasLuggageCoverage) {
+				                option.addClass("price-checked");
+				            } else {
+				                option.addClass("price");
+				            }
+				        }
+		    			
+				        option = $("#HasAssistanceCoverage_Price").removeClass();		    			
+				        if (result.HasAssistanceCoverage) {		    						    				
+				            option.html("&euro; " + result.HasAssistanceCoverage);
+		    				
+				            if (data.HasAssistanceCoverage) {
+				                option.addClass("price-checked");
+				            } else {
+				                option.addClass("price");
+				            }
+				        }
+		    			
+				        option = $("#HasMoneyAndChequesCoverage_Price").removeClass();		    			
+				        if (result.HasMoneyAndChequesCoverage) {		    						    				
+				            option.html("&euro; " + result.HasMoneyAndChequesCoverage);
+		    				
+				            if (data.HasMoneyAndChequesCoverage) {
+				                option.addClass("price-checked");
+				            } else {
+				                option.addClass("price");
+				            }
+				        }
+		    			
+				        option = $("#HasTravelAccidentsCoverage_Price").removeClass();		    			
+				        if (result.HasTravelAccidentsCoverage) {		    						    				
+				            option.html("&euro; " + result.HasTravelAccidentsCoverage);
+		    				
+				            if (data.HasTravelAccidentsCoverage) {
+				                option.addClass("price-checked");
+				            } else {
+				                option.addClass("price");
+				            }
+				        }
+
+				        option = $("#HasMedicalCostsCoverage_Price").removeClass();		    			
+				        if (result.HasMedicalCostsCoverage) {		    						    				
+				            option.html("&euro; " + result.HasMedicalCostsCoverage);
+		    				
+				            if (data.HasMedicalCostsCoverage) {
+				                option.addClass("price-checked");
+				            } else {
+				                option.addClass("price");
+				            }
+				        }
+		    			
+				        option = $("#HasSpecialSportsCoverage_Price").removeClass();		    			
+				        if (result.HasSpecialSportsCoverage) {		    						    				
+				            option.html("&euro; " + result.HasSpecialSportsCoverage);
+		    				
+				            if (data.HasSpecialSportsCoverage) {
+				                option.addClass("price-checked");
+				            } else {
+				                option.addClass("price");
+				            }
+				        }
+
+				        option = $("#HasExtraSportEquipmentCoverage_Price").removeClass();		    			
+				        if (result.HasExtraSportEquipmentCoverage) {		    						    				
+				            option.html("&euro; " + result.HasExtraSportEquipmentCoverage);
+		    				
+				            if (data.HasExtraSportEquipmentCoverage) {
+				                option.addClass("price-checked");
+				            } else {
+				                option.addClass("price");
+				            }
+				        }
+		    			
+				        option = $("#HasLegalCoverage_Price").removeClass();		    			
+				        if (result.HasLegalCoverage) {		    						    				
+				            option.html("&euro; " + result.HasLegalCoverage);
+		    				
+				            if (data.HasLegalCoverage) {
+				                option.addClass("price-checked");
+				            } else {
+				                option.addClass("price");
+				            }
+				        }
+
+				        if (result.Standard) {
+				            option = $("#StandardCancellation_Price");
+		    				
+				            if (option.length == 0) {
+				                option = $("#StandardCancellation");
+				                option.after("<span id='StandardCancellation_Price'>&euro; "	
+			    							 + result.Standard + "</span>");
+				            } else {
+				                option.html("&euro; " + result.Standard);
+				            }
+		    				
+				            if (data.CancellationType == "Standard") {
+				                option.next().removeClass().addClass("price-checked");
+				            } else {
+				                option.next().removeClass().addClass("price");
+				            }		    						    						    						    						    						    						    						    						    				
+				        }
+
+				        if (result.Top) {
+				            option = $("#TopCancellation_Price");
+		    				
+				            if (option.length == 0) {
+				                option = $("#TopCancellation");
+				                option.after("<span id='TopCancellation_Price'>&euro; " 
+			    							 + result.Top + "</span>");
+				            } else {
+				                option.html("&euro; " + result.Top);
+				            }
+		    				
+				            if (data.CancellationType == "Top") {
+				                option.next().removeClass().addClass("price-checked");
+				            } else {
+				                option.next().removeClass().addClass("price");
+				            }		    						    						    						    						    						    						    						    						    						    				
+				        }
+
+				        if (result.AllRiskStandard) {
+				            option = $("#AllRiskStandardCancellation_Price");
+		    				
+				            if (option.length == 0) {
+				                option = $("#AllRiskStandardCancellation");
+				                option.after("<span id='AllRiskStandardCancellation_Price'>&euro; " 
+			    							 + result.AllRiskStandard + "</span>");
+				            } else {
+				                option.html("&euro; " + result.AllRiskStandard);
+				            }
+		    				
+				            if (data.CancellationType == "AllRiskStandard") {
+				                option.next().removeClass().addClass("price-checked");
+				            } else {
+				                option.next().removeClass().addClass("price");
+				            }		    						    						    						    						    						    						    						    						    						    						    				
+				        }
+
+				        if (result.AllRiskTop) {
+				            option = $("#AllRiskTopCancellation_Price");
+		    				
+				            if (option.length == 0) {
+				                option = $("#AllRiskTopCancellation");
+				                option.after("<span id='AllRiskTopCancellation_Price'>&euro; " 
+			    							 + result.AllRiskTop + "</span>");
+				            } else {
+				                option.html("&euro; " + result.AllRiskTop);
+				            }
+		    				
+				            if (data.CancellationType == "AllRiskTop") {
+				                option.next().removeClass().addClass("price-checked");
+				            } else {
+				                option.next().removeClass().addClass("price");
+				            }		    						    						    						    						    						    						    						    						    						    						    						    				
+				        }
+
+				        if (result.HasAttorney) {
+				            option = $("#HasAttorney_Price");
+		    				
+				            if (option.length == 0) {
+				                option = $("#HasAttorney"); 
+				                option.after("<span id='HasAttorney_Price'>&euro; " 
+			    							 + result.HasAttorney + "</span>");
+				            } else {
+				                option.html("&euro; " + result.HasAttorney);
+				            }
+		    				
+				            if (data.HasAttorney == "true") {
+				                option.next().removeClass().addClass("price-checked");
+				            } else {
+				                option.next().removeClass().addClass("price");
+				            }		    						    								    				
+				        }
+		    			
+				        if (result.HailCoverage) {
+				            option = $("#HasHailProtectedRoof_Price");
+		    				
+				            if (option.length == 0) {
+				                option = $("#HasHailProtectedRoof .field select");
+				                option.after("<span id='HasHailProtectedRoof_Price' class='price-checked'>&euro; " 
+			    							 + result.HailCoverage + "</span>");
+				            } else {
+				                option.html("&euro; " + result.HailCoverage);
+				            }
+				        }
+
+				        if (result.CaravanProductType) {
+				            option = $("#CaravanProductType_Price");
+		    				
+				            if (option.length == 0) {
+				                option = $("#CaravanProductType .field select");
+				                option.after("<span id='CaravanProductType_Price' class='price-checked'>&euro; " 
+			    							 + result.CaravanProductType + "</span>");
+				            } else {
+				                option.html("&euro; " + result.CaravanProductType);
+				            }
+				        }
+				    } else{
+				        $(".PremiumPerTerm").html("&euro; " + "?");
+				        $(".DiscountAmountPerTerm").html("&euro; " + "?");
+				        $(".OrigPremiumPerTerm").html("&euro; " + "?");
+				    }				
+				},
+					
+				// 'sendAnswer' error event
+				function() {
+				    $(".PremiumPerTerm").html("&euro; " + "?");
+				    $(".DiscountAmountPerTerm").html("&euro; " + "?");
+				    $(".OrigPremiumPerTerm").html("&euro; " + "?");
+				}			
+			);	   
+	    }							
+		
+	</script>
+	
+</div>
