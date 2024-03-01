@@ -1,0 +1,98 @@
+<script>
+    (function() {
+    	var formAPI = FE['{{options.containerId}}'];
+    	var initAnswers = formAPI.getAllOptions().initAnswers;
+    	var previousData = initAnswers['upload_previous'];
+    	var requiresRender = false;
+
+    	if(!window['upload_prefill_initial']) {
+    	    window['upload_prefill_initial'] = {};
+    	}
+    	
+    	if(previousData) {
+    	    
+    	    previousData = JSON.parse(previousData);
+        console.log(previousData);
+    		for(var fieldName in previousData) {
+    			
+    			var fieldDataArray = previousData[fieldName];
+    			var h = [];
+    			
+    			// Generate HTML for prefilled files
+    			for(var i in fieldDataArray) {
+    			    var fileId = fieldDataArray[i]['id'];
+    			    var fileURL = fieldDataArray[i]['url'];
+    				var fileName = fieldDataArray[i]['name'];
+    	
+    				h.push('<div class="input-group form-group prefilled upload-prefilled">');
+    				    h.push('<a href="'+fileURL+'" download>'+fileName+'</a>');
+    					h.push('<a class="remove-repeat-field" data-id="'+fileId+'"><i class="material-icons">remove_circle_outline</i></a>');
+    				h.push('</div>');
+    			}
+    			
+    			if(!window['upload_prefill_initial'][fieldName]) {
+    			    $('#{{options.containerId}} [data-uploadquestionname="'+fieldName+'"] .input-group.form-group.has-value').remove();
+    			    window['upload_prefill_initial'][fieldName] = true;
+    			    FE.setAnswer({
+    			        questionName: fieldName,
+    			        answer: ""
+    			    });
+    			    requiresRender = true;
+    			}
+    			
+    			// Append generated HTML to DOM
+    			var label = $('#{{options.containerId}} [data-uploadquestionname="'+fieldName+'"] > .fe-upload-field > .col > label');
+    			$(h.join('')).insertAfter(label);
+    		}
+    		
+    		if(requiresRender) {
+    		    FE.render();
+    		    return;
+    		}
+    
+    		// Attach event to "remove" button in prefilled rows
+    		$('#{{options.containerId}} [data-uploadquestionname] div.prefilled a.remove-repeat-field').on('click', function() {
+    		    console.log('here');
+    			var _t = $(this);
+    			var id = _t.data('id');
+    			var questionName = _t.closest('[data-uploadquestionname]').attr('data-uploadquestionname');
+    
+    			// Delete that key from initAnswers so it doesn't appear anymore after render()
+    			var elementIndex = -1;
+    			for(var i in previousData[questionName]) {
+    			    if(previousData[questionName][i].id == id) {
+    			        elementIndex = i;
+    			        break;
+    			    }
+    			}
+    			
+    			if(elementIndex >= 0) {
+    			    previousData[questionName].splice(elementIndex, 1);
+        			initAnswers['upload_previous'] = JSON.stringify(previousData);
+    			}
+    			
+    			// Get this widget's answer (which is stringified JSON,
+    			// where keys are fieldNames and values are arrays of removed IDs)
+    			// and push this new id into it
+    			var removedFilesIdsString = formAPI.getAnswer({
+    				questionName: "{{widget.name}}"
+    			});
+    			var removedFilesIds = removedFilesIdsString ? JSON.parse(removedFilesIdsString) : {};
+    			if (!removedFilesIds[questionName]) {
+    				removedFilesIds[questionName] = [];
+    			}
+    			removedFilesIds[questionName].push(id);
+    			// Set new value back to widget's answer
+    			formAPI.setAnswer({
+    				questionName: "{{widget.name}}",
+    				answer: JSON.stringify(removedFilesIds)
+    			});
+    
+    			// Re-render form so that file disappears from UI
+    			formAPI.render();
+    		});
+    		
+    	}
+    
+    })();
+</script>
