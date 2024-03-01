@@ -1,0 +1,36 @@
+<script type="text/javascript">
+
+$("#CandidateDropDown select").removeAttr("onchange").bind("change", function(){ searchCandidate() });
+  FE.serviceCall({
+    data: {
+        name: "AllCandidateSearch"
+    },
+    success: function(response) {
+        if(response.length > 0) {
+              var txt="<option value=\"\" >Select candidate</option>";
+                for(var i=0;i<response.length;i++){
+               txt += "<option value=\""+response[i].CandidateID+"\" id=\"\" class=\"\" >"+response[i].CandidateName + " " +response[i].CandidateSurName +  "</option>";
+          }
+        $("#CandidateDropDown select").html(txt);
+        
+        }
+    },
+    err: function() {
+        console.log('Error from AllCandidateSearch service');
+    }
+});
+
+function searchCandidate(){
+  var selectedCandidateID = $( "#CandidateDropDown option:selected" ).val();
+   FE.setFormVariable({
+            name: "CandidateData",
+            value: selectedCandidateID,
+            submit: true
+});
+ FE.setFormVariable({
+            name: "RefreshData",
+            value: "refresh",
+            submit: true
+});
+};
+  </script>
