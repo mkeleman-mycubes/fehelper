@@ -1,0 +1,6 @@
+<script>var a = FE.sayHi();console.log(a);</script>
+<script>FE.help();</script>
+<script>var b = FE.numberOfForms; console.log(b);</script>
+<script>FE.replaceFormWithHtml({
+html: "<div class='error'>We couldn't reach our services. Please try again later</div>"
+});</script>
