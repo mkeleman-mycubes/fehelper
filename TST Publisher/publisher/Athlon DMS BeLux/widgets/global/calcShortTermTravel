@@ -1,0 +1,107 @@
+<div class="mainhtml" >
+	<script>
+	    console.dir("Hello console user");
+	    var shortTermTravelTimer_{{widget.id}}{{ctx.id}} = 0;		
+	    shortTermTravel_{{widget.id}}{{ctx.id}}();
+
+	    $('#questionnaire').questionnaire('subscribeEvent', 'answer', event_shortTermTravel{{widget.id}}{{ctx.id}});
+
+	    function event_shortTermTravel{{widget.id}}{{ctx.id}}(questionId, questionName) 
+	    {		
+	        if (questionName == "InsuredValueContents") 
+	        {
+	            clearTimeout(shortTermTravelTimer_{{widget.id}}{{ctx.id}});			
+	            shortTermTravelTimer_{{widget.id}}{{ctx.id}} = setTimeout("shortTermTravelTimer_{{widget.id}}{{ctx.id}}();", 1000);
+	        }
+	    }
+
+	    function set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}(name, data) 
+	    {
+	        var answer = $('#questionnaire').questionnaire('findAnswer', name, '{{ctx.id}}');
+	        if (answer) data[name] = $.isArray(answer) ? answer[0] : answer;
+	    }
+
+	    function loading_shortTermTravelAnswer{{widget.id}}{{ctx.id}}(name) 
+	    {
+	        option = $("#" + name + "_Price");
+			
+	        if (option.length == 0) 
+	        {
+	            option = $("#" + name);
+	            option.after("<span id='" + name + "_Price' class='loading'></span>");
+	        } 
+	        else 
+	        {
+	            option.html("");
+	            option.removeClass().addClass("loading");				
+	        }
+	    }
+
+	    function shortTermTravel_{{widget.id}}{{ctx.id}}() 
+	    {				
+	        var data = new Object();
+	        data.name = "calculateShortTermTravel";
+	        data.clientId = "HVQxC5CTGCMXSsAs";
+	        data.appName = "EuropeescheTest";
+			
+	        $(".PremiumPerTerm").html("...");
+	        $(".DiscountAmountPerTerm").html("...");
+	        $(".OrigPremiumPerTerm").html("...");
+			
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('ShortTermTravelProductType', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('BookDate', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('InsuredAmount', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('NumberOfInsuredPersons', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('NumberOfChildrenBelowFive', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('HasWorldCoverage', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('HasLuggageCoverage', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('HasMedicalCoverage', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('HasLegalCoverage', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('HasAccidentsCoverage', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('HasSpecialSportsCoverage', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('HasTransportAidCoverage', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('HasSportEquipmentCoverage', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('HasMoneyCoverage', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('ShortTermCancellationCoverage', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('HasAttorneyCoverage', data);
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('NumberOfInsuredAttorneys', data);
+
+	        var currDate = null;
+	        var requestType = $('#questionnaire').questionnaire('findAnswer', 'RequestType', '{{ctx.id}}');
+
+	        if (requestType == "Alteration") {
+	            set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('StartDate', data);
+				
+	            currDate = parseDate(data.StartDate, new Date(), false);			
+	            data.StartDate = formatDate(currDate, false); 			
+	        } else {
+	            set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('StartDate_Request', data);
+				
+	            currDate = parseDate(data.StartDate_Request, new Date(), false);			
+	            data.StartDate = formatDate(currDate, false); 	
+				
+	            delete data.StartDate_Request;
+	        }
+
+	        set_shortTermTravelAnswer{{widget.id}}{{ctx.id}}('EndDate', data);
+
+	        if (!data.PaymentTerm) {
+	            data.PaymentTerm = "INC";
+	        }
+
+	        var serviceUri = $('#questionnaire').questionnaire("option", "serviceUri");
+	        console.dir(serviceUri);
+	        $('#questionnaire').questionnaire("sendAnswer", serviceUri, data,
+				// 'sendAnswer' success event
+				function(result) {
+				    console.dir(result);
+				    if (result.status == "true") {
+				        var option = null;
+		    			
+				        $("#CalculatedPremium").html(
+		    					result.CalculatedPremium ? result.CalculatedPremium : "");
+				    }
+				});
+	    }
+	        </script>
+    </div>
