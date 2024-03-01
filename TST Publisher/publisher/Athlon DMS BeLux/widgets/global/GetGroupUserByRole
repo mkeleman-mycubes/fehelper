@@ -1,0 +1,94 @@
+<script type="text/javascript">
+
+var companyRef = FE["task-form-container"].getAnswer({
+    questionName: "companyReference"
+});
+
+var allgroups = FE["task-form-container"].getAnswer({
+    questionName: "allgroups"
+});
+
+  var selectedUserId = "";
+  if ($('#userId')) {
+      selectedUserId = $('#userId').val();
+  }
+ 
+  if(allgroups){
+       var groupArray = allgroups.split(",");
+        var txt = "<option value=\"\" >Select User</option>";
+         for (var i = 0; i < groupArray.length; i++) {
+             var gName = groupArray[i];
+             data = {
+                name: "GetGroupUser",
+                answers: {
+                    groupId: gName
+                }
+             };
+             
+             FE.serviceCall({
+            data: data,
+            success: function(response) {
+            if (response.length > 0) {
+              for (var i = 0; i < response.length; i++) {
+                  if (selectedUserId != "" && selectedUserId == response[i].userId) {
+                      txt += "<option value=\"" + response[i].userId + "\" selected=\"selected\">" + response[i].userFirstName + " " + response[i].userLastName + "</option>";
+                  } else {
+                      txt += "<option value=\"" + response[i].userId + "\" >" + response[i].userFirstName + " " + response[i].userLastName + "</option>";
+                  }
+              }
+          }
+          $("#userList").append(txt);
+          txt ="";
+      },
+      err: function() {
+          console.log('Error from '+data.name+' service');
+      }
+  });
+         }
+  }
+  
+
+    data = {
+          name: "GetGroupUser",
+          answers: {
+              groupId: companyRef
+          }
+      };
+
+  FE.serviceCall({
+      data: data,
+      success: function(response) {
+          if (response.length > 0) {
+              var txt = "";
+              for (var i = 0; i < response.length; i++) {
+                  if (selectedUserId != "" && selectedUserId == response[i].userId) {
+                      txt += "<option value=\"" + response[i].userId + "\" selected=\"selected\">" + response[i].userFirstName + " " + response[i].userLastName + "</option>";
+                  } else {
+                      txt += "<option value=\"" + response[i].userId + "\" >" + response[i].userFirstName + " " + response[i].userLastName + "</option>";
+                  }
+
+              }
+          }
+          $("#userList").append(txt);
+      },
+      err: function() {
+          console.log('Error from '+data.name+' service');
+      }
+  });   
+
+  
+  
+
+  
+  $('#userList').attr('onchange', "setInUserQuestion(); " + $('#userList').attr('onchange'));
+
+  function setInUserQuestion() {
+      var selectedUser = $("#userList option:selected").val();
+      FE['{{options.containerId}}'].setAnswer({
+          questionName: "userId",
+          answer: selectedUser
+      });
+      $("#userId").val(selectedUser);
+      console.log(selectedUser);
+  };
+</script>
