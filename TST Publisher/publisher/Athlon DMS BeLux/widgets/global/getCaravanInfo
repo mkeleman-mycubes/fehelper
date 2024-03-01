@@ -1,0 +1,417 @@
+<script>
+//Support functions for form widgets
+if(!window.setAnswer){
+	window.setAnswer = function(name, value) {
+		$("#questionnaire").questionnaire('setAnswer', null, name, '{{ctx.id}}', value);
+	}
+}
+if(!window.findAnswer){
+	window.findAnswer = function findAnswer(name) {
+		return $("#questionnaire").questionnaire('findAnswer', name, '{{ctx.id}}')
+	}
+}
+if(!window.setVar){
+	window.setVar = function setVar(name, value) {
+		$("#questionnaire").questionnaire('setVar', '{{widget.id}}', '{{ctx.id}}', name, value);
+	}
+}
+if(!window.findVar){
+	window.findVar = function findVar(name) {
+		return $("#questionnaire").questionnaire('findVar', '{{widget.id}}', '{{ctx.id}}', name);
+	}
+}
+
+/*This function will filter the json string of any array values. So instead of an array like "Array" : ["apple","coconut","kiwi"]
+we get a data key of 'Array' with the value "apple,coconut,kiwi". Meaning we can easily look inside the string with the ?contains functionality
+of Freemarker in MIT. Making the templates more readable in the end*/
+if(!window.flattenJsonData){
+	window.flattenJsonData = function flattenJsonData(data) {
+		for (key in data) {
+			if (data.hasOwnProperty(key)) {
+				var tempString = data[key].toString().replace("[", "").replace("]", "");
+				data[key] = tempString;
+			}
+		}
+		return data;
+	}
+}
+
+if(!window.sendAnswer){
+	window.sendAnswer = function sendAnswer(data, successHandler, failureHandler) {
+		var serviceUri = $("#questionnaire").questionnaire("option", "serviceUri");
+		$("#questionnaire").questionnaire("sendAnswer", serviceUri, data, successHandler, failureHandler);
+	}
+}
+    //___--- Initalization process ---___\\
+    /*
+        This section is necessary in the following case:
+        If we have a brand or model prefilled which is not retrieved by the webservice, it means that the brand and or model
+        given is unknown/custom input. This means that we have to remember the values of model/brand which is custom, set
+        the brand/model values to 'Overig' or something similair so that the dropdown will display the custom value (like 'Overig'),
+        then set the textfields designed for custom input with the custom brand/model.
+
+        this is used for altering existing custom brand/models.
+    */
+    var brandVar = $('#questionnaire').questionnaire('findVar', {{widget.id}}, '{{ctx.id}}', 'Brand_Alternative');
+    var modelVar = $('#questionnaire').questionnaire('findVar', {{widget.id}}, '{{ctx.id}}', 'Model_Alternative');
+    if(brandVar && ! $('#questionnaire').questionnaire('findAnswer', 'Brand_Alternative', '{{ctx.id}}'))
+    {
+        setAnswer('Model_Alternative',modelVar);
+        setAnswer('Brand_Alternative',brandVar);
+        $("#questionnaire #Model_Alternative input").val(modelVar);
+        $("#questionnaire #Brand_Alternative input").val(brandVar);
+    }
+    if(modelVar && ! $('#questionnaire').questionnaire('findAnswer', 'Model_Alternative_Secondary', '{{ctx.id}}'))
+    {
+        setAnswer('Model_Alternative_Secondary',modelVar);
+        $("#questionnaire #Model_Alternative_Secondary input").val(modelVar);
+    }
+
+    //theOddOne variable is a variable which is different from all the others. So a lot of exceptions in the following code is based on this variable
+    var theOddOne = $('#questionnaire').questionnaire('findVar', {{widget.id}}, '{{ctx.id}}', 'theOddOne');
+    var BrandList = $('#questionnaire').questionnaire('findVar', {{widget.id}}, '{{ctx.id}}', 'BrandList');
+    if(!$('#questionnaire').questionnaire('findVar', {{widget.id}}, '{{ctx.id}}', 'caravanInfo'))
+    {
+        getCaravanInfo_{{widget.id}}{{ctx.id}}();
+    }
+    else
+    {
+        updateCaravanInfo_{{widget.id}}{{ctx.id}}($('#questionnaire').questionnaire('findVar', {{widget.id}}, '{{ctx.id}}', 'caravanInfo'));
+    }
+	
+    // ___--- Questionnaire init ---___ \\
+    /*
+        This section is a small portion of code necessary for questionnaire to set events, variables etc
+    */
+    var getCaravanInfoTimer_{{widget.id}}{{ctx.id}} = 0;
+    $('#questionnaire').questionnaire('subscribeEvent', 'answer', event_getCaravanInfo{{widget.id}}{{ctx.id}});
+		
+    function event_getCaravanInfo{{widget.id}}{{ctx.id}}(questionId, questionName) 
+    {
+        if (questionName === undefined || questionName == "ConstructionYear" || questionName == "PurchaseDate" || questionName == "ListPrice" || questionName == "Brand" || questionName == "Model" || questionName == "CaravanType") 
+        {
+            clearTimeout(getCaravanInfoTimer_{{widget.id}}{{ctx.id}});		
+    getCaravanInfoTimer_{{widget.id}}{{ctx.id}} = setTimeout("getCaravanInfo_{{widget.id}}{{ctx.id}}();", 1000);
+    }
+    }
+
+    // ___--- Core functionality ---___ \\
+    /*
+        The following function is the heart of this widget. It controls when which function should get called.
+    */
+	
+    function getCaravanInfo_{{widget.id}}{{ctx.id}}() 
+    {			
+        var data = new Object();
+        data = $('#questionnaire').questionnaire('findAllAnswers');
+        for (key in data) 
+        {
+            if (data.hasOwnProperty(key)) 
+            {
+                var tempString = data[key].toString().replace("[", "").replace("]", "");
+                data[key] = tempString;
+            }
+        }
+        data.name = "getCaravanInfo";
+        var caravanInfo = $('#questionnaire').questionnaire('findVar', {{widget.id}}, '{{ctx.id}}', 'caravanInfo');
+        var prevCaravanType = $('#questionnaire').questionnaire('findVar', {{widget.id}}, '{{ctx.id}}', 'prevCaravanType');
+		
+        var brandSelect = $("#questionnaire #Brand select");
+        var modelSelect = $("#questionnaire #Model select");
+		
+        if (brandSelect) 
+        {
+            brandSelect.prop("disabled", true);
+            if($('#questionnaire').questionnaire('findAnswer', 'Brand', '{{ctx.id}}') == "")
+            {
+                brandSelect.empty();			
+                brandSelect.append("<option value=''> ... </option>");
+            }
+        }
+		
+        if (modelSelect) 
+        {
+            modelSelect.prop("disabled", true);
+            if($('#questionnaire').questionnaire('findAnswer', 'Model', '{{ctx.id}}') == "")
+            {
+                modelSelect.empty();
+                modelSelect.append("<option value=''> ... </option>");
+            }
+        }
+        if (data.ConstructionYear && data.PurchaseDate && 
+            (caravanInfo == null || data.Brand != "" || data.CaravanType != caravanInfo.CaravanType ||  
+			data.ConstructionYear != caravanInfo.ConstructionYear || data.PurchaseDate != caravanInfo.PurchaseDate)) 
+        {
+            /*  The reason why the two following variables have identical input is because javascript 
+                rather copies references instead of object instances. Meaning i need to initialize two
+                objects with the same input to prevent them referencing to the same data if I adjust
+                one another. (to keep them separate)*/
+            var newCaravanInfo = {CaravanType: data.CaravanType, ConstructionYear: data.ConstructionYear,
+                PurchaseDate: data.PurchaseDate, Result: {}};
+            var modelInfo = {CaravanType: data.CaravanType, ConstructionYear: data.ConstructionYear,
+                PurchaseDate: data.PurchaseDate, Result: {}};
+            if(! BrandList || data.CaravanType != prevCaravanType)
+            {
+                fillBrandList_{{widget.id}}{{ctx.id}}(newCaravanInfo, modelInfo, data);
+                setVar('caravanType',data.CaravanType);
+            }
+            else
+            {
+                fillModelList_{{widget.id}}{{ctx.id}}(newCaravanInfo, data);
+            }
+        } 
+        else 
+        {
+            updateCaravanInfo_{{widget.id}}{{ctx.id}}(caravanInfo ? caravanInfo : {});
+        }
+    }
+
+    function fillModelList_{{widget.id}}{{ctx.id}}(newCaravanInfo, data)
+    {
+        var serviceUri = $('#questionnaire').questionnaire("option", "serviceUri");
+        $('#questionnaire').questionnaire("sendAnswer", serviceUri, data,
+            // 'sendAnswer' success event
+            function(json) 
+            {
+                if(json.status == "true")
+                {
+                    var caravanResults = json.results;
+                    for (var i = 0; i < caravanResults.length; i++) 
+                    {
+                        var key = caravanResults[i].Brand;
+                        if (newCaravanInfo.Result[key] === undefined) newCaravanInfo.Result[key] = [];
+                        newCaravanInfo.Result[key].push(caravanResults[i]);
+                    }
+                    setVar('caravanInfo',newCaravanInfo);
+                    updateCaravanInfo_{{widget.id}}{{ctx.id}}(newCaravanInfo);
+                }
+            }
+						
+            // 'sendAnswer' error event
+            /*,function() {
+                    setVar('caravanInfo',newCaravanInfo);
+                updateCaravanInfo_{{widget.id}}{{ctx.id}}(newCaravanInfo);
+            }	*/		
+        );	
+
+    }
+
+    function fillBrandList_{{widget.id}}{{ctx.id}}(newCaravanInfo, modelListInfo, dataModel)
+    {
+        var data = {};
+        data.ConstructionYear = newCaravanInfo.ConstructionYear;
+        data.PurchaseDate = newCaravanInfo.PurchaseDate;
+        data.CaravanType = newCaravanInfo.CaravanType;
+        data.name = "getCaravanInfo";
+        var serviceUri = $('#questionnaire').questionnaire("option", "serviceUri");
+        $('#questionnaire').questionnaire("sendAnswer", serviceUri, data,
+            // 'sendAnswer' success event
+            function(json) 
+            {
+                if(json.status == "true")
+                {
+                    var caravanResults = json.results;
+                    for (var i = 0; i < caravanResults.length; i++) 
+                    {
+                        var key = caravanResults[i].Brand;
+                        if(caravanResults[i].RowId.toString() == '99999')
+                        {
+                            setVar('theOddOne', key);
+                            theOddOne = key;
+                        }
+                        if (newCaravanInfo.Result[key] === undefined) newCaravanInfo.Result[key] = [];				
+                        newCaravanInfo.Result[key].push(caravanResults[i]);
+                    }
+
+                    setVar('caravanInfo',newCaravanInfo);
+                    BrandList = newCaravanInfo.Result;
+                    setVar('BrandList',BrandList);
+                    fillModelList_{{widget.id}}{{ctx.id}}(modelListInfo, dataModel);
+                }
+            }
+            //,
+						
+            // 'sendAnswer' error event
+            //function() {
+            //}			
+        );
+    }
+	
+    function updateCaravanInfo_{{widget.id}}{{ctx.id}}(caravanInfo) 
+    {	
+        if (caravanInfo) 
+        {			
+            var brandSelect = $("#questionnaire #Brand select");
+
+            if (brandSelect) 
+            {			
+                var brandData = null;
+                var brandValue = $('#questionnaire').questionnaire('findAnswer', 'Brand', '{{ctx.id}}');
+                var isKnownBrand = false;
+				
+                var caravanResult = caravanInfo.Result ? caravanInfo.Result : {}; 
+                var html = "<option value=''>- selecteer optie -</option>";
+                //console.log("brandlist length: " + Object.keys(BrandList).length);
+                for (var currBrand in BrandList) 
+                {
+                    if (BrandList.hasOwnProperty(currBrand)) 
+                    {
+                        html += "<option value='" + currBrand + "' " + 
+                        (currBrand == brandValue ? "selected" : "") + " >" + currBrand + "</option>";
+                        if (currBrand == brandValue)
+                        {
+                            isKnownBrand = true;
+                        }
+                    }
+                }
+                for (var currBrand in caravanResult) 
+                {
+                    if (caravanResult.hasOwnProperty(currBrand)) 
+                    {
+                        if(currBrand.toLowerCase().indexOf(theOddOne.toLowerCase().substring(0, Math.floor(theOddOne.length/2))) >= 0)
+                        {
+                            if (theOddOne == brandValue)
+                            {
+                                caravanResult[theOddOne] = caravanResult[currBrand];
+                                caravanResult[theOddOne][0].Brand = theOddOne;
+                                caravanResult[theOddOne][0].Model = theOddOne;
+                                brandData = caravanResult[theOddOne];
+                            }
+                        }
+                        else
+                        {
+                            if (currBrand == brandValue)
+                            {
+                                brandData = caravanResult[currBrand];
+                            }
+                        }
+                    }
+                }
+
+                brandSelect.prop("disabled", false);
+                brandSelect.empty();
+                brandSelect.append(html);
+                if (isKnownBrand == false) 
+                {
+                    if(brandValue)
+                    {
+                        var tempmodel = $('#questionnaire').questionnaire('findAnswer', 'Model', '{{ctx.id}}');
+                        setVar('Model_Alternative',tempmodel);
+                        setVar('Brand_Alternative',brandValue);
+                        setAnswer('Model',theOddOne);
+                        setAnswer('Brand',theOddOne);
+                        $('#questionnaire').questionnaire('renderEvent');
+                    }
+                    else
+                    {
+                        setAnswer('Model','');
+                        setAnswer('Brand','');
+
+                        if (caravanInfo.Brand != "" || caravanInfo.Model != "") 
+                        {
+                            console.log('Beep boop i broke');
+                            caravanInfo.Brand = "";
+                            caravanInfo.Model = "";
+                            clearCaravanValues();
+                        }
+                    }
+                }
+
+                var modelSelect = $("#questionnaire #Model select");				
+				
+                if (modelSelect) {
+                    html = "<option value=''>- selecteer optie -</option>";
+                    if (brandData) {
+                        var modelData = null;
+                        var modelValue = $('#questionnaire').questionnaire('findAnswer', 'Model', '{{ctx.id}}');
+                        var brandValue = $('#questionnaire').questionnaire('findAnswer', 'Brand', '{{ctx.id}}');
+                        for (var i = 0; i < brandData.length; i++) 
+                        {
+                            var currModel = brandData[i].Model;
+                            if(currModel != null && currModel != ''){
+                                html += "<option value='" + currModel + "' " + 
+                                (currModel == modelValue ? "selected" : "") + " >" + currModel + "</option>";
+                                if (currModel == modelValue) modelData = brandData[i];
+                            }
+                        }
+                        if(! modelData && modelValue && (! $('#questionnaire').questionnaire('findVar', {{widget.id}}, '{{ctx.id}}', 'Model_Alternative') || ! $('#questionnaire').questionnaire('findVar', {{widget.id}}, '{{ctx.id}}', 'Model_Alternative_Secondary')))
+                        {
+                            setVar('Model_Alternative',modelValue);
+                            setAnswer('Model',theOddOne);
+                            $('#questionnaire').questionnaire('renderEvent');
+                        }
+						
+                        if (modelData) {
+                            if (caravanInfo.Model != modelData.Model || caravanInfo.Brand != modelData.Brand) {
+                                caravanInfo.Model = modelData.Model; 
+                                caravanInfo.Brand = modelData.Brand;
+                                setCaravanValues(modelData);
+                            }
+                        } 
+                        else 
+                        {
+                            if($('#questionnaire').questionnaire('findAnswer', 'Brand', '{{ctx.id}}') == theOddOne && caravanInfo.Result[theOddOne] ){
+                                var newResult = caravanInfo.Result[theOddOne][0];
+                                setCaravanValues(newResult);
+                            }
+                            else{
+                                console.log('the odd one: ' + theOddOne);
+                                console.log('model value: ' + $('#questionnaire').questionnaire('findAnswer', 'Model', '{{ctx.id}}'));
+                                if($('#questionnaire').questionnaire('findAnswer', 'Model', '{{ctx.id}}') != theOddOne && $('#questionnaire').questionnaire('findAnswer', 'Model', '{{ctx.id}}') != null){
+                                    console.log('model does not equal the odd one. Resetting values');
+                                    caravanInfo.Model = "";
+                                    setAnswer('Model',"");
+                                    clearCaravanValues();
+                                }
+                            }
+                        }
+                    }
+                    if($('#questionnaire').questionnaire('findAnswer', 'Model', '{{ctx.id}}') == theOddOne || $('#questionnaire').questionnaire('findAnswer', 'Brand', '{{ctx.id}}') == theOddOne){
+                        $("#questionnaire #ListPrice input").prop("disabled", false);
+                        $("#questionnaire #ListPrice input").removeAttr('placeholder');
+                    }
+                    modelSelect.prop("disabled", false);
+                    modelSelect.empty();
+                    modelSelect.append(html);
+                }
+            }
+        }
+    }
+    function clearCaravanValues()
+    {
+        setAnswer('ListPrice', "");
+        $("#questionnaire #ListPrice input").val("");
+		
+        setAnswer('InsuredValueCasco', "");
+        $("#questionnaire #InsuredValueCasco input").val("");
+							
+        setAnswer('TotalWeight', "");
+        setAnswer('EmptyWeight', "");
+        setAnswer('InsuredValueHigh', "");
+        setAnswer('InsuredValueLow', "");
+
+    }
+    function setCaravanValues(settings)
+    {
+        var casco = settings.InsuredAmountCasco;
+        if(settings.ListPrice != 0)
+        {
+            setAnswer('InsuredValueCasco', casco);
+            $("#questionnaire #InsuredValueCasco input").val(casco);
+            setAnswer('ListPrice', settings.ListPrice);
+            $("#questionnaire #ListPrice input").val(settings.ListPrice);
+        }
+        setAnswer('TotalWeight', settings.TotalWeight);
+        setAnswer('EmptyWeight', settings.EmptyWeight);
+        setAnswer('InsuredValueHigh', settings.InsuredValueHigh);
+        setAnswer('InsuredValueLow', settings.InsuredValueLow);
+    }
+    function setAnswer(toSet, value)
+    {
+        $('#questionnaire').questionnaire('setAnswer', null, toSet, '{{ctx.id}}', value);
+    }
+    function setVar(toSet, value)
+    {
+        $('#questionnaire').questionnaire('setVar', {{widget.id}}, '{{ctx.id}}', toSet, value);
+    }
+</script>
