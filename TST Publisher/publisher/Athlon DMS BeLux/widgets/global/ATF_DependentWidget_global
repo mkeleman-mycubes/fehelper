@@ -1,4 +1,0 @@
-The code to get "value2" in widget looks like:<p>{{options.environment.var2}}</p>
-
-To get image in widget:
-<p><img src="{{options.environment.acc}}"></p>
