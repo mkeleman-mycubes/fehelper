@@ -1,0 +1,184 @@
+<div {{#if widget.description}}title="{{{widget.description}}}"{{/if}}
+    {{#if widget.name}}id="{{widget.name}}_{{widget.id}}_{{ctx.id}}"{{/if}} 
+     class="form-group {{#if widget.className}} {{{widget.className}}}{{/if}}">
+
+        <label>{{{widget.label}}}</label>
+        <select  class="form-control select {{#ifVarNotEqual 'error' ''}}ValidationError{{/ifVarNotEqual}}" {{#if widget.disabled}}disabled{{/if}} {{#if widget.elementId}}id="{{widget.elementId}}"{{else}}id="{{{widget.name}}}_select"{{/if}}
+                {{#if widget.description}} style="display : inline-block !important" {{/if}}
+                onchange="$('#questionnaire').questionnaire('answerEvent', {{widget.id}}, '{{ctx.id}}', this.value, this.options[this.selectedIndex].text, true);">
+        </select>
+        {{#if widget.description}}
+                <div style="opacity:1!important;"class="tooltip inline-group" onclick="$('#tooltip{{ctx.id}}').dialog({modal: true, buttons: {Ok: function() {$( this ).dialog('close');}}});"></div>
+                <div id="tooltip{{ctx.id}}" style="display:none;">{{{widget.description}}}</div>
+        {{/if}} 
+        {{#ifVar 'error'}}<ul id="error{{ctx.id}}" class="parsley-errors-list filled"><li>{{getVar 'error'}}</li></ul>{{/ifVar}}    
+            
+    <div class="sub-html">{{{subHtml}}}</div>
+    
+</div>
+
+
+<script>
+    $('#questionnaire').questionnaire('setVar', {{widget.id}}, '{{ctx.id}}', 'questId', {{widget.id}});
+    $('#questionnaire').questionnaire('setVar', {{widget.id}}, '{{ctx.id}}', 'questName', '{{widget.name}}');
+
+    var getInfoTimer_{{widget.id}}{{ctx.id}} = 0;
+    getInfo_{{widget.id}}{{ctx.id}}();
+    
+    $('#questionnaire').questionnaire('subscribeEvent', 'answer', event_getInfo{{widget.id}}{{ctx.id}});
+
+    function event_getInfo{{widget.id}}{{ctx.id}}(questionId, questionName) 
+    {
+        if (questionName == "DontNameAQuestionEverLikeThis") 
+        {
+            clearTimeout(getCaravanInfoTimer_{{widget.id}}{{ctx.id}});
+    getInfoTimer_{{widget.id}}{{ctx.id}} = setTimeout("getInfo_{{widget.id}}{{ctx.id}}();", 1000);
+    }
+    }
+    
+    function setDataAnswer_{{widget.id}}{{ctx.id}}(name, data) 
+    {
+        var answer = $('#questionnaire').questionnaire('findAnswer', name, '{{ctx.id}}');
+        if (answer) data[name] = $.isArray(answer) ? answer[0] : answer;
+    }
+    
+    function getInfo_{{widget.id}}{{ctx.id}}() 
+    {
+        var genericInfoPackage = $('#questionnaire').questionnaire('findVar', '{{widget.id}}', '{{ctx.id}}', '{{widget.name}}');
+       //console.dir(genericInfoPackage);
+        if(genericInfoPackage == null)
+        {
+            var data = new Object();
+            data.name = "RetrieveLabelValuesByCategory";
+            data.locale = $('#questionnaire').questionnaire('findAnswer', 'locale', '{{ctx.id}}');
+            data.Categorie = "{{widget.variables.Categorie}}";
+            var requestType = $('#questionnaire').questionnaire('findAnswer', 'RequestType', '{{ctx.id}}');
+
+            if (requestType == "Alteration") {
+                setDataAnswer_{{widget.id}}{{ctx.id}}('StartDate', data);
+                
+                currDate = parseDate(data.StartDate, new Date(), false);            
+                data.StartDate = formatDate(currDate, false);           
+            } else {
+                setDataAnswer_{{widget.id}}{{ctx.id}}('StartDate_Request', data);
+                
+                currDate = parseDate(data.StartDate_Request, new Date(), false);            
+                data.StartDate = formatDate(currDate, false);   
+                
+                delete data.StartDate_Request;
+            }
+
+            var serviceUri = $('#questionnaire').questionnaire("option", "serviceUri");
+            $('#questionnaire').questionnaire("sendAnswer", serviceUri, data,
+            // 'sendAnswer' success event
+            function (result)
+            {
+                $('#questionnaire').questionnaire('setVar', '{{widget.id}}', '{{ctx.id}}', '{{widget.name}}', result);
+                var ReferedLabelValueElement = "{{widget.name}}_{{widget.id}}_{{ctx.id}}";
+                for (var index in result) 
+                {
+                    if (result.hasOwnProperty(index)) 
+                    {
+                        var attr = result[index];
+                        if(attr instanceof Array)
+                        {
+                            iterateThroughLabelValues_{{widget.id}}{{ctx.id}}(attr, ReferedLabelValueElement);
+                        }
+                        else
+                        {
+                            //console.log(index + " " + attr);
+                            $('#questionnaire').questionnaire('setAnswer', null, index, '{{ctx.id}}', attr);
+                            $("#" + index + " input").val(attr);
+                            $("#" + index + "Label").html(attr);
+                        }
+                    }
+                }
+            });
+        }
+        else
+        {
+            var ReferedLabelValueElement = "{{widget.name}}_{{widget.id}}_{{ctx.id}}";
+            for (var index in genericInfoPackage) 
+            {
+                if (genericInfoPackage.hasOwnProperty(index)) 
+                {
+                    var attr = genericInfoPackage[index];
+                    if(attr instanceof Array)
+                    {
+                        iterateThroughLabelValues_{{widget.id}}{{ctx.id}}(attr, ReferedLabelValueElement);
+                    }
+                    else
+                    {
+                        //console.log(index + " " + attr);
+                        $('#questionnaire').questionnaire('setAnswer', null, index, '{{ctx.id}}', attr);
+                        $("#" + index + " input").val(attr);
+                        $("#" + index + "Label").html(attr);
+                    }
+                }
+            }
+        }
+    }
+
+    function iterateThroughLabelValues_{{widget.id}}{{ctx.id}}(data, parent)
+    {
+        var html;
+        var contextValue = $('#questionnaire').questionnaire('findAnswer', '{{widget.name}}', '{{ctx.id}}');
+        var listElement = $("#"+ parent + " select");
+        var fieldForOptionValue = "{{widget.variables.fieldForOptionValue}}";
+
+       //console.log("parent" + parent);
+       //console.log("fieldForOptionValue " + fieldForOptionValue);
+       //console.dir(data);
+       var currentValueContainsInNewList = false;
+       for (var index in data)
+        {
+            if (data.hasOwnProperty(index)) 
+            {
+                var attr = data[index];
+                if(attr['Label'] == contextValue){
+                    currentValueContainsInNewList = true;
+                }
+            }
+        }
+        if(!currentValueContainsInNewList){
+            contextValue = null;
+        }
+        for (var index in data)
+        {
+           //console.log(contextValue);
+            if (data.hasOwnProperty(index)) 
+            {
+                var attr = data[index];
+                if(attr instanceof Array)
+                {
+                    //console.log("Object \"" + index + "\" with value \'" + attr + "\' is type of \"object\".");
+                    iterateThroughLabelValues_{{widget.id}}{{ctx.id}}(attr, index);
+                }
+                else
+                {
+                    //console.log(attr);
+                    if(!contextValue)
+                    {
+                        $('#questionnaire').questionnaire('setAnswer', {{widget.id}}, '{{widget.name}}', '{{ctx.id}}', attr['Label']);
+                        contextValue = $('#questionnaire').questionnaire('findAnswer', '{{widget.name}}', '{{ctx.id}}');
+                    }
+
+                    var optionValue = fieldForOptionValue == 'waarde'? attr['Value'] :attr['Label'] ;
+                    var selected = optionValue == contextValue;
+
+                    html += "<option value='" + optionValue + "' " + 
+                            (selected ? "selected" : "") + " >" + attr['Value'] + "</option>";
+                }
+            }
+        }
+        listElement.append(html);
+        //console.log(listElement);
+    }
+
+    function strip_{{widget.id}}{{ctx.id}}(html)
+    {
+        var tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || "";
+    }
+</script>
