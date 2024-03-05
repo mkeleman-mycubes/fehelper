@@ -1,0 +1,87 @@
+<div id="project_form"></div>
+<script type="text/javascript">
+var tenantId = $('#tenantId').val();
+var bzctrlUserGroups = $('#BzctrlUserGroup').val();
+var toBeDeletedCompanyGroup = new Array();
+ var comProArray = new Array();
+
+FE['form-container-users'].serviceCall({
+    data: {
+        name: "Get All Companies"
+    },
+    success: function(response) {
+         var txt = "";
+         var len = response.length;
+            txt = "<table style=\"width:100%\"><tr><th>Company</th><th>Action</th></tr>";
+            if(len > 0) {
+                console.log(response);
+                for(var i=0;i<len;i++){
+                   if(tenantId != "null" && tenantId != "") {
+                             if(response[i].Customer == tenantId || tenantId == "*"){
+                                 if(bzctrlUserGroups && bzctrlUserGroups!="" && bzctrlUserGroups.indexOf(response[i].CompanyReference)>=0){
+                                     txt += "<tr><td>"+response[i].companyName+"</td><td><input id=\""+response[i].CompanyReference+"\" onclick=\"saveInFromVariables(this);\" type=\"checkbox\" name=\"linkedProjects\" value=\""+response[i].CompanyReference+"\" checked></td>";
+                                 }else{
+                                     txt += "<tr><td>"+response[i].companyName+"</td><td><input id=\""+response[i].CompanyReference+"\" onclick=\"saveInFromVariables(this);\" type=\"checkbox\" name=\"linkedProjects\" value=\""+response[i].CompanyReference+"\"></td>";
+                                 }
+                        
+                          } 
+                         }else{
+                              txt += "<tr><td>"+response[i].companyName+"</td><td><input id=\""+response[i].CompanyReference+"\" onclick=\"saveInFromVariables(this);\" type=\"checkbox\" name=\"linkedProjects\" value=\""+response[i].CompanyReference+"\"></td>";
+                         }
+                   
+                }
+                if(txt != "") {
+                 $("#project_form").html(txt);
+                }
+            }
+    },
+    err: function() {
+        console.log('Error from Get All Companies service');
+        FE.replaceFormWithHtml({
+            html: "<div class='error'>We couldn't reach our services. Please try again later</div>"
+        });
+    }
+});
+
+function saveInFromVariables(selectedValue){
+    if($(selectedValue).prop("checked") == false){
+        toBeDeletedCompanyGroup.push($(selectedValue).val());
+    }
+     if($(selectedValue).prop("checked") == true){
+        comProArray.push($(selectedValue).val());
+    }
+    
+   bzctrlUserGroups = "";
+   var counter = 1;
+   $("input:checkbox[name=linkedProjects]:checked").each(function(){
+       if(counter==1){
+            bzctrlUserGroups =  $(this).val();
+       }else{
+             bzctrlUserGroups = bzctrlUserGroups + "," + $(this).val() ;
+       }
+       counter = counter+1;
+    });
+   
+
+FE['form-container-users'].setFormVariable({
+    name: "userGroups",
+    value: comProArray,
+    submit: true
+});
+
+
+FE['form-container-users'].setAnswer({
+    questionName: "BzctrlUserGroup",
+    answer: bzctrlUserGroups,
+    render: false
+});
+ 
+FE['form-container-users'].setFormVariable({
+    name: "toBeDeletedCompanyGroup",
+    value: toBeDeletedCompanyGroup,
+    submit: true
+});
+ 
+};
+
+</script>
