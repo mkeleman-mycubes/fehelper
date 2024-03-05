@@ -1,0 +1,9 @@
+<script type="text/javascript">
+
+	var hasFailedValidationString = findAnswer("HasFailedValidations")
+	var hasFailedValidation = hasFailedValidationString && hasFailedValidationString.toLowerCase() == "true"
+	if (hasFailedValidation) {
+		var failedValidationMessage = findAnswer("FailedValidationMessage")
+		showErrorWithData( /*data*/{ FailedValidationMessage: failedValidationMessage }, /*message */ '{{{widget.description}}}');
+	}
+</script>
