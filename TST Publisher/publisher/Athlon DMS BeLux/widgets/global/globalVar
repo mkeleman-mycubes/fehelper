@@ -1,6 +1,0 @@
-<script>FE.setFormVariable({
-name: "Name2",
-value: "Value2",
-submit: true
-});
-</script>
