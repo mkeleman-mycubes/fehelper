@@ -1,7 +1,0 @@
-<script>
-FE.setFormVariable({
-name: "111",
-value: "222",
-submit: true
-});
-</script>
