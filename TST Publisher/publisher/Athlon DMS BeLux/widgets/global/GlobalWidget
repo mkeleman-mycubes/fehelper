@@ -1,8 +1,0 @@
-{{widget.labels.firstLabel}}
-<br>
-{{widget.labels.secondLabel}}
-<br>
-Global widget!
-<script>
-console.log("Hello global widget!");
-</script>
