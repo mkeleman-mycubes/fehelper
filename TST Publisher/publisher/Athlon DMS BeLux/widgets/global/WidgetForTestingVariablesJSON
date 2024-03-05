@@ -1,3 +1,0 @@
-<p>{{widget.variables.json.test1}}</p>
-
-<p>{{widget.variables.json.test2.secondLevel.thirdLevel}}</p>
