@@ -1,0 +1,40 @@
+<script>
+FE.setAnswer({
+questionName: "TextField",
+answer: "Answer for text field"
+});
+FE.setAnswer({
+questionName: "Checkbox",
+answer: ["checkboxes option 1","checkboxes option 2"]
+});
+var getAnswer1 = FE.getAnswer({
+questionName: "TextField"
+});console.log(getAnswer1);
+var getAnswer2 = FE.getAnswer({
+questionName: "Checkbox"
+});console.log(getAnswer2);
+var getAllAnswers = FE.getAllAnswers();console.log(getAllAnswers);
+var getCurrentFormState = FE.getCurrentFormState();console.log(getCurrentFormState);
+var getSummary = FE.getSummary();console.log(getSummary);
+var getAllTags = FE.getAllTags();console.log(getAllTags);
+var getFormObject = FE.getFormObject();console.log(getFormObject);
+FE.setContextVar({
+nodeId: 3,
+ctxId: "_3",
+varName: "someTestVariable",
+varValue: "someTestValue"
+});
+var getContextVar = FE.getContextVar({
+nodeId: 3,
+ctxId: "_3",
+varName: "someTestVariable"
+});console.log(getContextVar);
+FE.setOption({
+name: "hashNavigation",
+value: true
+});
+var getOption = FE.getOption({
+name: "hashNavigation"
+});console.log(getOption);
+var getAllOptions = FE.getAllOptions();console.log(getAllOptions);
+</script>
