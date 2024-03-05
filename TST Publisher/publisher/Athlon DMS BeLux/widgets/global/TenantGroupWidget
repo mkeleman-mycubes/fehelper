@@ -1,0 +1,48 @@
+
+<script type="text/javascript">
+ 
+  var selectedCandidateGroupId =""
+  var tenant = $('#tenantId').val() ;
+  if($('#candidateGroupId')){
+      selectedCandidateGroupId = $('#candidateGroupId').val() ;
+  }
+  
+  FE.serviceCall({
+    data: {
+        name: "GetTenantGroups",
+        answers: {
+            tenantId: tenant
+        }
+    },
+    success: function(response) {
+        console.log(response);
+        if(response.length > 0) {
+            var txt="<option value=\"\" >Select Group</option>";
+            for(var i=0;i<response.length;i++){
+                if(selectedCandidateGroupId!="" && selectedCandidateGroupId==response[i].id){
+                          txt += "<option value=\""+response[i].id+"\" selected=\"selected\" >"+response[i].name + "</option>";
+                }else{
+                        txt += "<option value=\""+response[i].id+"\" >"+response[i].name + "</option>";  
+                }
+            }
+            $("#groupList").html(txt);
+        }
+    },
+    err: function() {
+        console.log('Error from GetTenantGroups service');
+    }
+});
+
+$('#groupList').attr('onchange', "setInGroupQuestion(); " + $('#groupList').attr('onchange'));
+
+function setInGroupQuestion(){
+    var selectedGroup = $( "#groupList option:selected" ).val();
+    FE['{{options.containerId}}'].setAnswer({
+        questionName: "candidateGroupId",
+        answer: selectedGroup
+    });
+    $("#candidateGroupId").val(selectedGroup);
+    console.log(selectedGroup);
+   
+};
+ </script>
