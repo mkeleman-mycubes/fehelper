@@ -1,0 +1,59 @@
+{
+  "variables": {
+    "volgnummerBestaandeAGS": {
+        "value": "${body.answers['volgnummerBestaandeAGS'].data.answer[0]}",
+        "type": "String"
+    },
+    "organisatieNaam": {
+        "value": "${body.answers['organisatieNaam'].data.answer[0]}",
+        "type": "String"
+    },
+    "naamSoftwareLeverancier": {
+        "value": "${body.answers['naamSoftwareLeverancier'].data.answer[0]}",
+        "type": "String"
+    },
+    "doetUNogAangifteVoorAGS": {
+        "value": "${body.answers['doetUNogAangifteVoorAGS'].data.answer[0]}",
+        "type": "String"
+    },
+    <#if body.answers['doetUNogAangifteVoorAGS'].data.answer[0] =="Ja">   
+    "naamContactpersoon": {
+        "value": "${body.answers['naamContactpersoon'].data.answer[0]}",
+        "type": "String"
+    },
+    "emailContactpersoon": {
+        "value": "${body.answers['emailContactpersoon'].data.answer[0]}",
+        "type": "String"
+    },    
+    "telContactpersoon": {
+        "value": "${body.answers['telContactpersoon'].data.answer[0]}",
+        "type": "String"
+    },
+    "naamFunctioneelExpert": {
+        "value": "${body.answers['naamFunctioneelExpert'].data.answer[0]}",
+        "type": "String"
+    },    
+    "emailFunctioneelExpert": {
+        "value": "${body.answers['emailFunctioneelExpert'].data.answer[0]}",
+        "type": "String"
+    },
+    "telFunctioneelExpert": {
+        "value": "${body.answers['telFunctioneelExpert'].data.answer[0]}",
+        "type": "String"
+    },
+    "bijzonderheden": {
+        "value": "${body.answers['bijzonderheden'].data.answer[0]}",
+        "type": "String"
+    }
+<#else>
+ "telefoonnummer_niet_migreren": {
+        "value": "${body.answers['telefoonnummer_niet_migreren'].data.answer[0]}",
+        "type": "String"
+    },
+    "redenNietMigreren": {
+        "value": "${body.answers['redenNietMigreren'].data.answer[0]}",
+        "type": "String"
+    }
+</#if>
+  }
+}
