@@ -1,0 +1,13 @@
+def envVariables = [:];
+envVariables["formsUrl"] = "https://tst-cloud.formsengine.io/belastingdienst";
+envVariables["belastingdienstUrl"] = "https://www.belastingdienst.nl";
+envVariables["belastingdienstHref"] = "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/berichten/nieuws/douane/handel-en-transport-gateway-vervangt-digipoort-handel-en-transport";
+envVariables["channelUrl"] = "https://channel.royalcast.com";
+envVariables["channelHref"] = "https://channel.royalcast.com/webcast/douanenl/20191004_1";
+
+if (body.formVariables) {
+    body.formVariables["envVariables"] = envVariables;
+} else {
+    body.formVariables = [:];
+    body.formVariables["envVariables"] = envVariables;
+}
