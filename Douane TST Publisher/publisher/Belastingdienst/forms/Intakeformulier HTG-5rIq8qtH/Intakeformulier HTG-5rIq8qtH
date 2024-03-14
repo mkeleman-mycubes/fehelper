@@ -1,0 +1,3138 @@
+{
+  "hash": "5rIq8qtH",
+  "name": "Intakeformulier HTG",
+  "description": "",
+  "tags": "",
+  "company": "1346",
+  "version": "0.01",
+  "theme": "3007",
+  "themeViewUri": "",
+  "serviceUri": "https://test-integrator.formsengine.io/mit/trainman/yMxHQHLRso2ajjnl/dms-migratie",
+  "servicePackageId": "",
+  "serviceTemplateName": "HTG intake_piper",
+  "prefillServiceTemplateName": "prefill_intake_piper",
+  "jsDependencies": "[]",
+  "data": {
+    "id": 267394,
+    "type": "questionnaire",
+    "name": "Intakeformulier HTG",
+    "description": "",
+    "successContent": {
+      "NL": "Bedankt voor het insturen van het intakeformulier. U ontvangt ter bevestiging een mail met uw ingediende gegevens.<br><br>\n\nIndien u aangegeven heeft dat er geen nieuwe aansluiting op HTG nodig is dan neemt het aansluitteam contact met u op.<br>\nIndien u aangegeven heeft dat er wel een nieuwe aansluiting op de HTG nodig is dan ontvangt u een mail met een link naar het planningsformulier. \n<br><br>\nU kunt de pagina sluiten.",
+      "EN": "Thank you for submitting the intake form. You will receive a confirmation e-mail with your \nsubmitted data.<br><br>\n\nIf you have indicated that no new connection to the HTG is necessary, the connection team will contact you.<br>\nIf you have indicated that a new connection to the HTG is necessary, you will receive an e-mail with a link to the planning form.\n<br><br>\nYou may close the page.\n"
+    },
+    "errorContent": {
+      "NL": ""
+    },
+    "submitUrl": "",
+    "submitErrorUrl": "",
+    "tags": "",
+    "backButton": {
+      "NL": "Vorige",
+      "EN": ""
+    },
+    "nextButton": {
+      "NL": "Volgende",
+      "EN": ""
+    },
+    "submitButton": {
+      "NL": "Versturen",
+      "EN": ""
+    },
+    "locales": "NL,EN",
+    "defLocale": "NL",
+    "company": "Belastingdienst",
+    "user": "supportBelastingdienst",
+    "publishDate": "25-02-2022 12:56:41",
+    "publishVersion": "0.01",
+    "pages": [
+      {
+        "id": 267395,
+        "type": "section",
+        "label": {
+          "NL": "Intake formulier HTG",
+          "EN": "Intake form HTG"
+        },
+        "description": "",
+        "name": "intakeformulierHTG",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "nextButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "submitButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 267396,
+            "type": "question",
+            "label": {
+              "NL": "id",
+              "EN": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "id",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "summary no",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267397,
+            "type": "question",
+            "label": {
+              "NL": "Uw gegevens",
+              "EN": ""
+            },
+            "description": {
+              "NL": "<h3>Uw gegevens</h3>",
+              "EN": "<h3>Your data</h3>"
+            },
+            "name": "uwGegevens",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267398,
+            "type": "question",
+            "label": {
+              "NL": "Aansluitnummer bij Digipoort H&T",
+              "EN": "Connection number Digipoort H&T"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "aansluitNummerLogius",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": true,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [
+              {
+                "args": "",
+                "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+              }
+            ],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267399,
+            "type": "question",
+            "label": {
+              "NL": "Nieuw aansluitnummer voor HTG",
+              "EN": "New connection number HTG"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "aansluitNummerHTG",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": true,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [
+              {
+                "args": "",
+                "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+              }
+            ],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267400,
+            "type": "question",
+            "label": {
+              "NL": "Organisatienaam",
+              "EN": "Name organisation"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "organisatieNaam",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [
+              {
+                "args": "",
+                "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+              }
+            ],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267406,
+            "type": "question",
+            "label": {
+              "NL": "Is uw aansluiting nog actief en is er een nieuwe aansluiting op HTG nodig?",
+              "EN": "Is connection still active and is a new connection to HTG required?"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "isAansluitingNogActiefEnIsEenNieuweAansluitingOpHTGNodig",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "radio",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": [
+              {
+                "id": 267407,
+                "type": "answeroption",
+                "label": {
+                  "NL": "Ja",
+                  "EN": "Yes"
+                },
+                "description": "",
+                "name": "Ja",
+                "defaultValue": false,
+                "disabled": false,
+                "elementId": "",
+                "className": "",
+                "condScript": "",
+                "condJson": "",
+                "tooltip": {
+                  "NL": ""
+                },
+                "questions": []
+              },
+              {
+                "id": 267408,
+                "type": "answeroption",
+                "label": {
+                  "NL": "Nee",
+                  "EN": "No"
+                },
+                "description": "",
+                "name": "Nee",
+                "defaultValue": false,
+                "disabled": false,
+                "elementId": "",
+                "className": "",
+                "condScript": "",
+                "condJson": "",
+                "tooltip": {
+                  "NL": ""
+                },
+                "questions": []
+              }
+            ]
+          },
+          {
+            "id": 267409,
+            "type": "operator",
+            "label": {
+              "NL": "show aansluiting ja",
+              "EN": ""
+            },
+            "description": "",
+            "name": "show_aansluiting_ja",
+            "operatorType": "condition",
+            "elementId": "",
+            "className": "",
+            "condScript": "",
+            "condJson": "[{\"action\":\"Show\",\"page\":\"Intake formulier HTG\",\"question\":\"isAansluitingNogActiefEnIsEenNieuweAansluitingOpHTGNodig\",\"operation\":\"is\",\"param\":\"Ja\"}]",
+            "operatorButton": {
+              "NL": "",
+              "EN": ""
+            },
+            "operands": [
+              {
+                "id": 267352,
+                "type": "question",
+                "label": {
+                  "NL": "Koppelvlak",
+                  "EN": "Interface"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "koppelvlak",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "radio",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value || value == '' ) { return \"U dient een keuze te maken\" }"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": [
+                  {
+                    "id": 267335,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "MTA (VPN & Mailserver)",
+                      "EN": "MTA (VPN & Mailserver)"
+                    },
+                    "description": "",
+                    "name": "MTA",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  },
+                  {
+                    "id": 267336,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "MSA/POP3 (mailbox)",
+                      "EN": "MSA/POP3 (mailbox)"
+                    },
+                    "description": "",
+                    "name": "MSA",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  }
+                ]
+              },
+              {
+                "id": 267353,
+                "type": "question",
+                "label": {
+                  "NL": "Aansluiting voor Preproductie?",
+                  "EN": "Connection to Preproduction?"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "aansluitingVoorPreproductie",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "radio",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": "Preproductie bevat testsystemen van overheid waaronder BTO van Douane",
+                  "EN": "A connection to the preproduction HTG gives the possibility to test your software developments. The various authorities have test environments for this. For example, Customs has the Business Test Environment (BTO)."
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value || value == '' ) { return \"U dient een keuze te maken\" }"
+                  },
+                  {
+                    "args": "",
+                    "script": "def valuePreProductie = values.get('aansluitingVoorPreproductie')\r\ndef valueProductie = values.get('aansluitingVoorProductie')\r\n\r\nif (valuePreProductie == \"Nee\" & valueProductie == \"Nee\") {\r\n    return 'Er moet minimaal op een van de omgevinging Preproductie/Productie \"Ja\" geselecteerd worden'\r\n}"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": [
+                  {
+                    "id": 267337,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "Ja",
+                      "EN": "Yes"
+                    },
+                    "description": "",
+                    "name": "Ja",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  },
+                  {
+                    "id": 267338,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "Nee",
+                      "EN": "No"
+                    },
+                    "description": "",
+                    "name": "Nee",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  }
+                ]
+              },
+              {
+                "id": 267354,
+                "type": "question",
+                "label": {
+                  "NL": "Aansluiting voor Productie?",
+                  "EN": "Connection to Production?"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "aansluitingVoorProductie",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "radio",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value || value == '' ) { return \"U dient een keuze te maken\" }"
+                  },
+                  {
+                    "args": "",
+                    "script": "def valuePreProductie = values.get('aansluitingVoorPreproductie')\r\ndef valueProductie = values.get('aansluitingVoorProductie')\r\n\r\nif (valuePreProductie == \"Nee\" & valueProductie == \"Nee\") {\r\n    return 'Er moet minimaal op een van de omgevinging Preproductie/Productie \"Ja\" geselecteerd worden'\r\n}"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": [
+                  {
+                    "id": 267339,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "Ja",
+                      "EN": "Yes"
+                    },
+                    "description": "",
+                    "name": "Ja",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  },
+                  {
+                    "id": 267340,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "Nee",
+                      "EN": "No"
+                    },
+                    "description": "",
+                    "name": "Nee",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  }
+                ]
+              },
+              {
+                "id": 267355,
+                "type": "group",
+                "name": "Berichtstromen",
+                "description": "",
+                "elementId": "",
+                "className": "",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267356,
+                    "type": "question",
+                    "label": {
+                      "NL": "Berichtstromen",
+                      "EN": "Message flows"
+                    },
+                    "description": {
+                      "NL": "<h3>Berichtstromen</h3>",
+                      "EN": "<h3>Message flows</h3>"
+                    },
+                    "name": "berichtstromen",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267357,
+                    "type": "question",
+                    "label": {
+                      "NL": "Logistieke stromen Douane",
+                      "EN": "Logistics processes Customs"
+                    },
+                    "description": {
+                      "NL": "Logistieke stromen Douane:",
+                      "EN": "Logistics processes Customs:"
+                    },
+                    "name": "logistieke_stromen_douane",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267358,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomAGS",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267341,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "Douane: Opslag, invoer en uitvoer (AGS)",
+                          "EN": "Customs: Storage, import and export (AGS)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267359,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomCID",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267342,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "Douane: Comfortinfo (CID)",
+                          "EN": "Customs: Comfort information (CID)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267360,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomNCTS",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267343,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "Douane: Transit/vervoer (NCTS)",
+                          "EN": "Customs: Transit (NCTS)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267361,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomEMCS",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267344,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "Douane: Accijns (EMCS)",
+                          "EN": "Customs: Excisable goods (EMCS)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267362,
+                    "type": "question",
+                    "label": {
+                      "NL": "Stromen Single Window voor maritiem en lucht",
+                      "EN": "Logistics processes Customs"
+                    },
+                    "description": {
+                      "NL": "<br /><br />\nStromen Single Window voor maritiem en lucht:\n",
+                      "EN": "<br /><br />\nLogistics processes Customs:"
+                    },
+                    "name": "stromenSingleWindowVoorMaritiemEnLucht",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267363,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomGB",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267345,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "Grensbewaking: Personen aan boord",
+                          "EN": "Border Control: Persons on board"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267364,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomDou",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267346,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "Douane: Binnenbrengen, Uitgaan, Proviandering",
+                          "EN": "Customs: entry of goods to the EU, exit of goods from the EU, provisioning"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267365,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomRWS",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267347,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "Rijkswaterstaat: SafeSeaNet",
+                          "EN": "Rijkswaterstaat: SafeSeaNet"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267366,
+                    "type": "question",
+                    "label": {
+                      "NL": "Logistieke stromen NVWA",
+                      "EN": "Logistics processes Netherlands Food and Consumer Product Safety Authority (NVWA)"
+                    },
+                    "description": {
+                      "NL": "<br /><br />\nLogistieke stromen NVWA:",
+                      "EN": "<br /><br />\nLogistics processes Netherlands Food and Consumer Product Safety Authority (NVWA):"
+                    },
+                    "name": "logistiekeStromenNVWA",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267367,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomVET",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267348,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "NVWA: Veterinair (VGA Client)",
+                          "EN": "NVWA: Veterinary (VGA Client)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267368,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomFYT",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267349,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "NVWA: Fytosanitair (PD Client)",
+                          "EN": "NVWA: Phytosanitary (PD Client)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267369,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomELOG",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267350,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "NVWA: Visserij (E-logboek)",
+                          "EN": "NVWA: Fishery (E-logbook)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 267370,
+                "type": "group",
+                "name": "Contactgegevens",
+                "description": "",
+                "elementId": "",
+                "className": "",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267371,
+                    "type": "question",
+                    "label": {
+                      "NL": "Contactgegevens",
+                      "EN": "Contact"
+                    },
+                    "description": {
+                      "NL": "<h3>Contactgegevens</h3>",
+                      "EN": "<h3>Contact</h3>"
+                    },
+                    "name": "contactgegevens",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267372,
+                    "type": "group",
+                    "name": "Contactpersoon",
+                    "description": "",
+                    "elementId": "",
+                    "className": "",
+                    "tags": "",
+                    "children": [
+                      {
+                        "id": 267373,
+                        "type": "question",
+                        "label": {
+                          "NL": "Contactpersoon",
+                          "EN": "Contact"
+                        },
+                        "description": {
+                          "NL": "<b>Contactpersoon</b>\n<br>\n<br>\naanspreekpunt voor gehele aansluitproces HTG, ontvangst mails aansluitproces HTG, afstemming over planning, etc.",
+                          "EN": "<b>Contact person</b>\n<br>\n<br>\npoint of contact for entire HTG connection process, receiving e-mails for HTG connection process, coordination of planning, etc. "
+                        },
+                        "name": "contactpersoon",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textlabel",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 267374,
+                        "type": "question",
+                        "label": {
+                          "NL": "Naam",
+                          "EN": "Name"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "naamContactpersoon",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 267375,
+                        "type": "question",
+                        "label": {
+                          "NL": "Email",
+                          "EN": "E-mail address"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "emailContactpersoon",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[A-Za-z]{2,4}/\r\nemail = value\r\nif(email ==~ emailPattern){\r\n}else{\r\nreturn [ERR_MAIL_FORMAT:\"Uw email adres is niet geldig\"]\r\n}"
+                          },
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 267376,
+                        "type": "question",
+                        "label": {
+                          "NL": "Tel.",
+                          "EN": "Telephone number"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "telContactpersoon",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267377,
+                    "type": "group",
+                    "name": "Technisch expert",
+                    "description": "",
+                    "elementId": "",
+                    "className": "",
+                    "tags": "",
+                    "children": [
+                      {
+                        "id": 267378,
+                        "type": "question",
+                        "label": {
+                          "NL": "Technisch expert",
+                          "EN": "Technical expert"
+                        },
+                        "description": {
+                          "NL": "<br />\n<br />\n<b>Technisch expert</b>\n<br>\n<br>\nvoor afstemming over koppelvlak (VPN postbussen), netwerk, firewalls, etc.\n<br>\n<br>\nvoor ontvangst per SMS van: <br>\n- preshared key voor MTA óf<br>\n- wachtwoord voor MSA/POP3\n",
+                          "EN": "<br />\n<br />\n<b>Technical expert</b>\n<br>\n<br>\nfor information exchange about interface (VPN, mailboxes), network, firewalls, etc. \n<br>\n<br>\nfor receiving by SMS:<br>\n- preshared key for MTA ór<br>\n- password for MSA/POP3"
+                        },
+                        "name": "technischExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textlabel",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 267379,
+                        "type": "question",
+                        "label": {
+                          "NL": "Naam",
+                          "EN": "Name"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "naamTechnischExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 267380,
+                        "type": "question",
+                        "label": {
+                          "NL": "Email",
+                          "EN": "E-mail address"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "emailTechnischExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[A-Za-z]{2,4}/\r\nemail = value\r\nif(email ==~ emailPattern){\r\n}else{\r\nreturn [ERR_MAIL_FORMAT:\"Uw email adres is niet geldig\"]\r\n}"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 267381,
+                        "type": "question",
+                        "label": {
+                          "NL": "Tel.",
+                          "EN": "Telephone number"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "telTechnischExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 267382,
+                        "type": "question",
+                        "label": {
+                          "NL": "Mobiel voor SMS",
+                          "EN": "Mobile number for SMS"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "nummerVoorSmsTechnischExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267383,
+                    "type": "group",
+                    "name": "Functioneel expert",
+                    "description": "",
+                    "elementId": "",
+                    "className": "",
+                    "tags": "",
+                    "children": [
+                      {
+                        "id": 267384,
+                        "type": "question",
+                        "label": {
+                          "NL": "Functioneel expert",
+                          "EN": "Functional expert"
+                        },
+                        "description": {
+                          "NL": "<br /><br />\n<b>Functioneel expert</b>\n<br>\n<br>\nvoor afstemming over berichtstromen, aangevers per berichtstroom, etc.",
+                          "EN": "<br /><br />\n<b>Functional expert</b>\n<br>\n<br>\nfor information exchange about coordination on processes, declarants per process, etc. "
+                        },
+                        "name": "functioneelExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textlabel",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 267385,
+                        "type": "question",
+                        "label": {
+                          "NL": "Naam",
+                          "EN": "Name"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "naamFunctioneelExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 267386,
+                        "type": "question",
+                        "label": {
+                          "NL": "Email",
+                          "EN": "E-mail address"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "emailFunctioneelExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[A-Za-z]{2,4}/\r\nemail = value\r\nif(email ==~ emailPattern){\r\n}else{\r\nreturn [ERR_MAIL_FORMAT:\"Uw email adres is niet geldig\"]\r\n}"
+                          },
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 267387,
+                        "type": "question",
+                        "label": {
+                          "NL": "Tel.",
+                          "EN": "Telephone number"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "telFunctioneelExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": "",
+                          "EN": ""
+                        },
+                        "options": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 267388,
+                "type": "question",
+                "label": {
+                  "NL": "Bedrijfsnaam softwareleverancier",
+                  "EN": "Name software supplier"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "naamSoftwareLeverancier",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textfield",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": "Indien van toepassing",
+                  "EN": "If applicable"
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": []
+              },
+              {
+                "id": 267389,
+                "type": "question",
+                "label": {
+                  "NL": "Bijzonderheden",
+                  "EN": "Additional information"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "bijzonderheden",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textarea",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": "Aanvullende informatie die voor de migratie van uw aansluiting van belang is",
+                  "EN": "Important Information for the migration of your connection"
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": []
+              },
+              {
+                "id": 267390,
+                "type": "question",
+                "label": {
+                  "NL": "Andere aansluitingen",
+                  "EN": "Others connections"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "andereAansluitingen",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textarea",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": "Heeft u aansluitingen die actief zijn en waarvoor u geen intakemail hebt ontvangen, wilt u dan aangeven welke aansluitingen dit zijn. ",
+                  "EN": "Do you have connections that are active and for which you have not received an intake e-mail? Please indicate which connections these are. "
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": []
+              }
+            ]
+          },
+          {
+            "id": 267410,
+            "type": "operator",
+            "label": {
+              "NL": "show aansluiting nee"
+            },
+            "description": "",
+            "name": "show_aansluiting_nee",
+            "operatorType": "condition",
+            "elementId": "",
+            "className": "",
+            "condScript": "",
+            "condJson": "[{\"action\":\"Show\",\"page\":\"Intake formulier HTG\",\"question\":\"isAansluitingNogActiefEnIsEenNieuweAansluitingOpHTGNodig\",\"operation\":\"is\",\"param\":\"Nee\"}]",
+            "operatorButton": {
+              "NL": ""
+            },
+            "operands": [
+              {
+                "id": 267392,
+                "type": "question",
+                "label": {
+                  "NL": "Telefoonnummer",
+                  "EN": "Telephone number"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "telefoonnummer_niet_migreren",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textfield",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": "Het aansluitteam neemt contact met u op.",
+                  "EN": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": []
+              },
+              {
+                "id": 267393,
+                "type": "question",
+                "label": {
+                  "NL": "Toelichting",
+                  "EN": "Explanation"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "redenNietMigreren",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textarea",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 267402,
+        "type": "section",
+        "label": {
+          "NL": "Ingevulde gegevens",
+          "EN": "Entered data"
+        },
+        "description": "",
+        "name": "samenvatting",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "nextButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "submitButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 267403,
+            "type": "question",
+            "label": {
+              "NL": "",
+              "EN": "Explanation"
+            },
+            "description": {
+              "NL": "Controleer uw gegevens hieronder goed. Eenmaal opgestuurd kunnen deze niet meer aangepast worden.",
+              "EN": "Check your details below carefully. Once submitted, they can no longer be adjusted."
+            },
+            "name": "toelichting",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "summary no",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267404,
+            "type": "question",
+            "label": {
+              "NL": "",
+              "EN": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "samenvatting",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "summary",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "summary no",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267405,
+            "type": "question",
+            "label": {
+              "NL": "CustomizeSummary",
+              "EN": ""
+            },
+            "description": {
+              "NL": "<script>\n    //------Bold-Text------\n    \n    jQuery(\"label:contains('Logistieke stromen Douane:')\").css(\"font-weight\", \"bold\");\n    jQuery(\"label:contains('Stromen Single Window voor maritiem en lucht:')\").css(\"font-weight\", \"bold\");\n    jQuery(\"label:contains('Logistieke stromen NVWA:')\").css(\"font-weight\", \"bold\");\n    \n    //Uw gegevens\n    \n    if (jQuery(\".label.questionName:contains(Uw gegevens)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Uw gegevens)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<h3>Uw gegevens</h3>\").css(\"color\", \"black\");\n    }\n    \n    //Berichtstromen\n    \n    if (jQuery(\".label.questionName:contains(Berichtstromen)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Berichtstromen)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<h3>Berichtstromen</h3>\").css(\"color\", \"black\");\n    }\n    \n    //Logistieke stromen Douane:\n    \n    if (jQuery(\".label.questionName:contains(Logistieke stromen Douane)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Logistieke stromen Douane)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<p>Logistieke stromen Douane</p>\").css({\"color\": \"black\", \"font-weight\": \"bold\", \"font-size\": \"14px\"});\n    }\n    \n    //Stromen Single Window voor maritiem en lucht\n    \n    if (jQuery(\".label.questionName:contains(Stromen Single Window voor maritiem en lucht)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n        jQuery(\".label.questionName:contains(Stromen Single Window voor maritiem en lucht)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<br/><br/><p>Stromen Single Window voor maritiem en lucht:</p>\").css({\"color\": \"black\", \"font-weight\": \"bold\", \"font-size\": \"14px\"});\n    }\n    \n    //Logistieke stromen NVWA\n    \n    if (jQuery(\".label.questionName:contains(Logistieke stromen NVWA)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n        jQuery(\".label.questionName:contains(Logistieke stromen NVWA)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<br/><br/><p>Logistieke stromen NVWA:</p>\").css({\"color\": \"black\", \"font-weight\": \"bold\", \"font-size\": \"14px\"});\n    }\n    \n    //Contactgegevens\n    \n    if (jQuery(\".label.questionName:contains(Contactgegevens)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Contactgegevens)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<h3>Contactgegevens</h3>\").css(\"color\", \"black\");\n    }\n    \n    //Contactpersoon\n    \n    if (jQuery(\".label.questionName:contains(Contactpersoon)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Contactpersoon)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<label><b>Contactpersoon</b><br/><br/>aanspreekpunt voor gehele aansluitproces HTG, ontvangst mails aansluitproces HTG, afstemming over planning, etc.</label>\").css(\"color\", \"black\");\n    }\n    \n    //Technisch expert\n    \n    if (jQuery(\".label.questionName:contains(Technisch expert)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Technisch expert)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<label><br/><br/><b>Technisch expert</b><br/><br/>voor afstemming over koppelvlak (VPN postbussen), netwerk, firewalls, etc.<br/><br/>voor ontvangst per SMS van:<br/>- preshared key voor MTA óf<br/>- wachtwoord voor MSA/POP3</label>\").css(\"color\", \"black\");\n    }\n    \n    //Functioneel expert\n    \n    if (jQuery(\".label.questionName:contains(Functioneel expert)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Functioneel expert)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<label><br/><br/><b>Functioneel expert</b><br/><br/>voor afstemming over berichtstromen, aangevers per berichtstroom, etc.<br/><br/>\").css(\"color\", \"black\");\n    }\n    \n    // NL Form\n    \n    \n    \n    if(jQuery(\"label:contains('Is uw aansluiting nog actief en is er een nieuwe aansluiting op HTG nodig?')\").eq(0)[0].innerText == \"Is uw aansluiting nog actief en is er een nieuwe aansluiting op HTG nodig?\") {\n    if (FE.getAnswer({questionName: 'isAansluitingNogActiefEnIsEenNieuweAansluitingOpHTGNodig'}) == 'Ja') {\n        //------Stroom AGS------\n    if (FE.getAnswer({questionName: 'stroomAGS'})) {\n        jQuery(\"label:contains('stroomAGS')\").eq(0).text('Douane: Opslag, invoer en uitvoer (AGS)');\n        jQuery(\"label:contains('Douane: Opslag, invoer en uitvoer (AGS)')\").closest('.row').find('label.answer').eq(0).text('Ja');\n    } else {\n        jQuery(\"label:contains('stroomAGS')\").eq(0).text('Douane: Opslag, invoer en uitvoer (AGS)');\n        jQuery(\"label:contains('Douane: Opslag, invoer en uitvoer (AGS)')\").closest('.row').find('label.answer').eq(0).text('Nee');\n    }\n    \n    // //------stroomCID------\n    \n    if (FE.getAnswer({questionName: 'stroomCID'})) {\n        jQuery(\"label:contains('stroomCID')\").eq(0).text('Douane: Comfortinfo (CID)');\n        jQuery(\"label:contains('Douane: Comfortinfo (CID)')\").closest('.row').find('label.answer').eq(0).text('Ja');\n    } else {\n        jQuery(\"label:contains('stroomCID')\").eq(0).text('Douane: Comfortinfo (CID)');\n        jQuery(\"label:contains('Douane: Comfortinfo (CID)')\").closest('.row').find('label.answer').eq(0).text('Nee');\n    }\n    \n    //------stroomNCTS------\n    \n    if (FE.getAnswer({questionName: 'stroomNCTS'})) {\n        jQuery(\"label:contains('stroomNCTS')\").eq(0).text('Douane: Transit/vervoer (NCTS)');\n        jQuery(\"label:contains('Douane: Transit/vervoer (NCTS)')\").closest('.row').find('label.answer').eq(0).text('Ja');\n    } else {\n        jQuery(\"label:contains('stroomNCTS')\").eq(0).text('Douane: Transit/vervoer (NCTS)');\n        jQuery(\"label:contains('Douane: Transit/vervoer (NCTS)')\").closest('.row').find('label.answer').eq(0).text('Nee');\n    }\n    \n    //------stroomEMCS------\n    \n    if (FE.getAnswer({questionName: 'stroomEMCS'})) {\n        jQuery(\"label:contains('stroomEMCS')\").eq(0).text('Douane: Accijns (EMCS)');\n        jQuery(\"label:contains('Douane: Accijns (EMCS)')\").closest('.row').find('label.answer').eq(0).text('Ja');\n    } else {\n        jQuery(\"label:contains('stroomEMCS')\").eq(0).text('Douane: Accijns (EMCS)');\n        jQuery(\"label:contains('Douane: Accijns (EMCS)')\").closest('.row').find('label.answer').eq(0).text('Nee');\n    }\n    \n    //------stroomGB------\n    \n    if (FE.getAnswer({questionName: 'stroomGB'})) {\n        jQuery(\"label:contains('stroomGB')\").eq(0).text('Grensbewaking: Personen aan boord');\n        jQuery(\"label:contains('Grensbewaking: Personen aan boord')\").closest('.row').find('label.answer').eq(0).text('Ja');\n    } else {\n        jQuery(\"label:contains('stroomGB')\").eq(0).text('Grensbewaking: Personen aan boord');\n        jQuery(\"label:contains('Grensbewaking: Personen aan boord')\").closest('.row').find('label.answer').eq(0).text('Nee');\n    }\n    \n    //------stroomDou------\n    \n    if (FE.getAnswer({questionName: 'stroomDou'})) {\n        jQuery(\"label:contains('stroomDou')\").eq(0).text('Douane: Binnenbrengen, Uitgaan, Proviandering');\n        jQuery(\"label:contains('Douane: Binnenbrengen, Uitgaan, Proviandering')\").closest('.row').find('label.answer').eq(0).text('Ja');\n    } else {\n        jQuery(\"label:contains('stroomDou')\").eq(0).text('Douane: Binnenbrengen, Uitgaan, Proviandering');\n        jQuery(\"label:contains('Douane: Binnenbrengen, Uitgaan, Proviandering')\").closest('.row').find('label.answer').eq(0).text('Nee');\n    }\n    \n    //------stroomRWS------\n    \n    if (FE.getAnswer({questionName: 'stroomRWS'})) {\n        jQuery(\"label:contains('stroomRWS')\").eq(0).text('Rijkswaterstaat: SafeSeaNet');\n        jQuery(\"label:contains('Rijkswaterstaat: SafeSeaNet')\").closest('.row').find('label.answer').eq(0).text('Ja');\n    } else {\n        jQuery(\"label:contains('stroomRWS')\").eq(0).text('Rijkswaterstaat: SafeSeaNet');\n        jQuery(\"label:contains('Rijkswaterstaat: SafeSeaNet')\").closest('.row').find('label.answer').eq(0).text('Nee');\n    }\n    \n    //------stroomVET------\n    \n    if (FE.getAnswer({questionName: 'stroomVET'})) {\n        jQuery(\"label:contains('stroomVET')\").eq(0).text('NVWA: Veterinair (VGA Client)');\n        jQuery(\"label:contains('NVWA: Veterinair (VGA Client)')\").closest('.row').find('label.answer').eq(0).text('Ja');\n    } else {\n        jQuery(\"label:contains('stroomVET')\").eq(0).text('NVWA: Veterinair (VGA Client)');\n        jQuery(\"label:contains('NVWA: Veterinair (VGA Client)')\").closest('.row').find('label.answer').eq(0).text('Nee');\n    }\n    \n    //------stroomFYT------\n    \n    if (FE.getAnswer({questionName: 'stroomFYT'})) {\n        jQuery(\"label:contains('stroomFYT')\").eq(0).text('NVWA: Fytosanitair (PD Client)');\n        jQuery(\"label:contains('NVWA: Fytosanitair (PD Client)')\").closest('.row').find('label.answer').eq(0).text('Ja');\n    } else {\n        jQuery(\"label:contains('stroomFYT')\").eq(0).text('NVWA: Fytosanitair (PD Client)');\n        jQuery(\"label:contains('NVWA: Fytosanitair (PD Client)')\").closest('.row').find('label.answer').eq(0).text('Nee');\n    }\n    \n    //------stroomELOG------\n    \n    if (FE.getAnswer({questionName: 'stroomELOG'})) {\n        jQuery(\"label:contains('stroomELOG')\").eq(0).text('NVWA: Visserij (E-logboek)');\n        jQuery(\"label:contains('NVWA: Visserij (E-logboek)')\").closest('.row').find('label.answer').eq(0).text('Ja');\n    } else {\n        jQuery(\"label:contains('stroomELOG')\").eq(0).text('NVWA: Visserij (E-logboek)');\n        jQuery(\"label:contains('NVWA: Visserij (E-logboek)')\").closest('.row').find('label.answer').eq(0).text('Nee');\n    }\n    }\n    }\n</script>",
+              "EN": "<script>\n\n    jQuery(\"label:contains('Logistics processes Customs:')\").css(\"font-weight\", \"bold\");\n    jQuery(\"label:contains('Logistics processes Customs:')\").css(\"font-weight\", \"bold\");\n    jQuery(\"label:contains('Logistics processes Netherlands Food and Consumer Product Safety Authority (NVWA):')\").css(\"font-weight\", \"bold\");\n    \n    //Your data\n    \n    if (jQuery(\".label.questionName:contains(uwGegevens)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(uwGegevens)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<h3>Your data</h3>\").css(\"color\", \"black\");\n    }\n    \n    //Message flows\n    \n    if (jQuery(\".label.questionName:contains(Message flows)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Message flows)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<h3>Message flows</h3>\").css(\"color\", \"black\");\n    }\n    \n    //Logistics processes Customs\n    \n    if (jQuery(\".label.questionName:contains(Logistics processes Customs)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Logistics processes Customs)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<p>Logistics processes Customs:</p>\").css({\"color\": \"black\", \"font-weight\": \"bold\", \"font-size\": \"14px\"});\n    }\n    \n    //Logistics processes Customs\n    \n    if (jQuery(\".label.questionName:contains(Logistics processes Customs)\").closest('section').next(\"section.field-col.col.col-8\").eq(1)[0].innerText === \"\") {\n        jQuery(\".label.questionName:contains(Logistics processes Customs)\").closest('section').next(\"section.field-col.col.col-8\").eq(1).append(\"<br/><br/><p>Logistics processes Customs:</p>\").css({\"color\": \"black\", \"font-weight\": \"bold\", \"font-size\": \"14px\"});\n    }\n    \n    //Logistics processes Netherlands Food and Consumer Product Safety Authority (NVWA)\n    \n    if (jQuery(\".label.questionName:contains(Logistics processes Netherlands Food and Consumer Product Safety Authority (NVWA))\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n        jQuery(\".label.questionName:contains(Logistics processes Netherlands Food and Consumer Product Safety Authority (NVWA))\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<br/><br/><p>Logistics processes Netherlands Food and Consumer Product Safety Authority (NVWA):</p>\").css({\"color\": \"black\", \"font-weight\": \"bold\", \"font-size\": \"14px\"});\n    }\n    \n    //Contact\n    \n    if (jQuery(\".label.questionName:contains(Contact)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Contact)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<h3>Contact data</h3>\").css(\"color\", \"black\");\n    }\n    \n    //Contact\n    \n    if (jQuery(\".label.questionName:contains(Contact)\").closest('section').next(\"section.field-col.col.col-8\").eq(1)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Contact)\").closest('section').next(\"section.field-col.col.col-8\").eq(1).append(\"<label><b>Contact</b><br/><br/>point of contact for entire HTG connection process, receiving e-mails for HTG connection process, coordination of planning, etc.</label>\").css(\"color\", \"black\");\n    }\n    \n    //Technisch expert\n    \n    if (jQuery(\".label.questionName:contains(Technical expert)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Technical expert)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<label><br/><br/><b>Technical expert</b><br/><br/>point of contact for entire HTG connection process, receiving e-mails for HTG connection process, coordination of planning, etc.<br/><br/>for receiving password by:<br/>- SMS for MSA/POP3 or<br/>- preshared key</label>\").css(\"color\", \"black\");\n    }\n    \n    //Functioneel expert\n    \n    if (jQuery(\".label.questionName:contains(Functional expert)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\tjQuery(\".label.questionName:contains(Functional expert)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<label><br/><br/><b>Functional expert</b><br/><br/>for information exchange about coordination on processes, declarants per process, etc. <br/><br/>\").css(\"color\", \"black\");\n    }\n    \n    //EN form\n\n    if (jQuery(\"label:contains('Is connection still active and is a new connection to HTG required?')\").eq(0)[0].innerText == \"Is connection still active and is a new connection to HTG required?\") {\n    if (FE.getAnswer({questionName: 'isAansluitingNogActiefEnIsEenNieuweAansluitingOpHTGNodig'}) == 'Ja') {\n        jQuery(\"label:contains('Is connection still active and is a new connection to HTG required?')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    //------aansluitingVoorPreproductie------\n    if(FE.getAnswer({questionName: 'aansluitingVoorPreproductie'}) == \"Ja\") {\n        jQuery(\"label:contains('Connection to Preproduction?')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('Connection to Preproduction?')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n    \n    //------aansluitingVoorProductie------\n    if(FE.getAnswer({questionName: 'aansluitingVoorProductie'}) == \"Ja\") {\n        jQuery(\"label:contains('Connection to Production?')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('Connection to Production?')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n        //------Stroom AGS------\n    if (FE.getAnswer({questionName: 'stroomAGS'})) {\n        jQuery(\"label:contains('stroomAGS')\").eq(0).text('Customs: Storage, import and export (AGS)');\n        jQuery(\"label:contains('Customs: Storage, import and export (AGS)')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('stroomAGS')\").eq(0).text('Customs: Storage, import and export (AGS)');\n        jQuery(\"label:contains('Customs: Storage, import and export (AGS)')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n    \n    // //------stroomCID------\n    \n    if (FE.getAnswer({questionName: 'stroomCID'})) {\n        jQuery(\"label:contains('stroomCID')\").eq(0).text('Customs: Comfort information (CID)');\n        jQuery(\"label:contains('Customs: Comfort information (CID)')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('stroomCID')\").eq(0).text('Customs: Comfort information (CID)');\n        jQuery(\"label:contains('Customs: Comfort information (CID)')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n    \n    //------stroomNCTS------\n    \n    if (FE.getAnswer({questionName: 'stroomNCTS'})) {\n        jQuery(\"label:contains('stroomNCTS')\").eq(0).text('Customs: Transit (NCTS)');\n        jQuery(\"label:contains('Customs: Transit (NCTS)')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('stroomNCTS')\").eq(0).text('Customs: Transit (NCTS)');\n        jQuery(\"label:contains('Customs: Transit (NCTS)')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n    \n    //------stroomEMCS------\n    \n    if (FE.getAnswer({questionName: 'stroomEMCS'})) {\n        jQuery(\"label:contains('stroomEMCS')\").eq(0).text('Customs: Excisable goods (EMCS)');\n        jQuery(\"label:contains('Customs: Excisable goods (EMCS)')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('stroomEMCS')\").eq(0).text('Customs: Excisable goods (EMCS)');\n        jQuery(\"label:contains('Customs: Excisable goods (EMCS)')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n    \n    //------stroomGB------\n    \n    if (FE.getAnswer({questionName: 'stroomGB'})) {\n        jQuery(\"label:contains('stroomGB')\").eq(0).text('Border Control: Persons on board');\n        jQuery(\"label:contains('Border Control: Persons on board')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('stroomGB')\").eq(0).text('Border Control: Persons on board');\n        jQuery(\"label:contains('Border Control: Persons on board')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n    \n    //------stroomDou------\n    \n    if (FE.getAnswer({questionName: 'stroomDou'})) {\n        jQuery(\"label:contains('stroomDou')\").eq(0).text('Customs: entry of goods to the EU, exit of goods from the EU, provisioning');\n        jQuery(\"label:contains('Customs: entry of goods to the EU, exit of goods from the EU, provisioning')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('stroomDou')\").eq(0).text('Customs: entry of goods to the EU, exit of goods from the EU, provisioning');\n        jQuery(\"label:contains('Customs: entry of goods to the EU, exit of goods from the EU, provisioning')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n    \n    //------stroomRWS------\n    \n    if (FE.getAnswer({questionName: 'stroomRWS'})) {\n        jQuery(\"label:contains('stroomRWS')\").eq(0).text('Rijkswaterstaat: SafeSeaNet');\n        jQuery(\"label:contains('Rijkswaterstaat: SafeSeaNet')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('stroomRWS')\").eq(0).text('Rijkswaterstaat: SafeSeaNet');\n        jQuery(\"label:contains('Rijkswaterstaat: SafeSeaNet')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n    \n    //------stroomVET------\n    \n    if (FE.getAnswer({questionName: 'stroomVET'})) {\n        jQuery(\"label:contains('stroomVET')\").eq(0).text('NVWA: Veterinary (VGA Client)');\n        jQuery(\"label:contains('NVWA: Veterinary (VGA Client)')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('stroomVET')\").eq(0).text('NVWA: Veterinary (VGA Client)');\n        jQuery(\"label:contains('NVWA: Veterinary (VGA Client)')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n    \n    //------stroomFYT------\n    \n    if (FE.getAnswer({questionName: 'stroomFYT'})) {\n        jQuery(\"label:contains('stroomFYT')\").eq(0).text('NVWA: Phytosanitary (PD Client)');\n        jQuery(\"label:contains('NVWA: Phytosanitary (PD Client)')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('stroomFYT')\").eq(0).text('NVWA: Phytosanitary (PD Client)');\n        jQuery(\"label:contains('NVWA: Phytosanitary (PD Client)')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n    \n    //------stroomELOG------\n    \n    if (FE.getAnswer({questionName: 'stroomELOG'})) {\n        jQuery(\"label:contains('stroomELOG')\").eq(0).text('NVWA: Fishery (E-logbook)');\n        jQuery(\"label:contains('NVWA: Fishery (E-logbook)')\").closest('.row').find('label.answer').eq(0).text('Yes');\n    } else {\n        jQuery(\"label:contains('stroomELOG')\").eq(0).text('NVWA: Fishery (E-logbook)');\n        jQuery(\"label:contains('NVWA: Fishery (E-logbook)')\").closest('.row').find('label.answer').eq(0).text('No');\n    }\n    } else {\n      jQuery(\"label:contains('Is connection still active and is a new connection to HTG required?')\").closest('.row').find('label.answer').eq(0).text('No'); \n    }\n    }\n</script>"
+            },
+            "name": "customize_summary",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          }
+        ]
+      }
+    ],
+    "version": 0,
+    "token": "nalZ2arq"
+  }
+}
