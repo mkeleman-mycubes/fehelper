@@ -1,0 +1,13 @@
+{   
+    "id": ["${headers.processInstanceId}"],
+    "migratie_notes": 
+        <#if body.migratie_notes?has_content>
+            
+              ["${body.migratie_notes.value}"]
+            
+        <#else>
+            
+                ""
+            
+        </#if>
+}
