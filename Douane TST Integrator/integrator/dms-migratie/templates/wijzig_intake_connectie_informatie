@@ -1,0 +1,12 @@
+{
+  "modifications": {
+    "naamSoftwareLeverancier": {
+        "value": "${body.answers['naamSoftwareLeverancier'].data.answer[0]}",
+        "type": "String"
+    },     
+    "bijzonderheden": {
+        "value": "${body.answers['bijzonderheden'].data.answer[0]}",
+        "type": "String"
+    }
+  }
+}
