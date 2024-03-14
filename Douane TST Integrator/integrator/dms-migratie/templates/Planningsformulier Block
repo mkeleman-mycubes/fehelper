@@ -1,0 +1,3 @@
+{
+    "date" : "${body.answers.date.data.answer[0]?date("dd-MM-yyyy")?string("yyyy-MM-dd")}"
+}
