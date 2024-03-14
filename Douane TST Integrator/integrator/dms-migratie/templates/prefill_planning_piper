@@ -1,0 +1,13 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "getTaskId"
+        },
+        {
+            "type" : "action",
+            "name" : "prefill_planning",
+            "script" : "taskId = body.id; headers.taskId = taskId"
+        }
+    ]
+}
