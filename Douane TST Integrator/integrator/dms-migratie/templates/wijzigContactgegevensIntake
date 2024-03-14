@@ -1,0 +1,36 @@
+{
+  "modifications": {
+    "volgnummerBestaandeAGS": {
+        "value": "${body.answers['volgnummerBestaandeAGS'].data.answer[0]}",
+        "type": "String"
+    },
+    "EORInummer": {
+        "value": "${body.answers['EORInummer'].data.answer[0]}",
+        "type": "String"
+    },
+    "organisatieNaam": {
+        "value": "${body.answers['organisatieNaam'].data.answer[0]}",
+        "type": "String"
+    },
+    "intakeEmail": {
+        "value": "${body.answers['intakeEmail'].data.answer[0]}",
+        "type": "String"
+    },    
+    "intakeTitel": {
+        "value": "${body.answers['intakeTitel'].data.answer[0]}",
+        "type": "String"
+    },
+    "intakeVoornaam": {
+        "value": "${body.answers['intakeVoornaam'].data.answer[0]}",
+        "type": "String"
+    },
+    "intakeTussenvoegsel": {
+        "value": "${body.answers['intakeTussenvoegsel'].data.answer[0]}",
+        "type": "String"
+    },
+    "intakeAchternaam": {
+        "value": "${body.answers['intakeAchternaam'].data.answer[0]}",
+        "type": "String"
+    }  
+  }
+}
