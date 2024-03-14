@@ -1,0 +1,5 @@
+{
+    "processInstanceId":"${body.id}",
+    "tenantIdIn": ["Belastingdienst"],
+    "name": "${body.taskname}"
+}
