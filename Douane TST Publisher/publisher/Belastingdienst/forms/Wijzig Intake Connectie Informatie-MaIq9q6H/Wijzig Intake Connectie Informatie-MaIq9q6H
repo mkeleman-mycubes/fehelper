@@ -1,0 +1,434 @@
+{
+  "hash": "MaIq9q6H",
+  "name": "Wijzig Intake Connectie Informatie",
+  "description": "",
+  "tags": "",
+  "company": "1346",
+  "version": "0.01",
+  "theme": "",
+  "themeViewUri": "",
+  "serviceUri": "https://test-integrator.formsengine.io/mit/trainman/yMxHQHLRso2ajjnl/dms-migratie",
+  "servicePackageId": "",
+  "serviceTemplateName": "wijzig_intake_connectie_informatie_piper",
+  "prefillServiceTemplateName": "prefill_processInstanceId_piper",
+  "jsDependencies": "[]",
+  "data": {
+    "id": 267653,
+    "type": "questionnaire",
+    "name": "Wijzig Intake Connectie Informatie",
+    "description": "",
+    "successContent": {
+      "NL": ""
+    },
+    "errorContent": {
+      "NL": ""
+    },
+    "submitUrl": "",
+    "submitErrorUrl": "",
+    "tags": "",
+    "backButton": {
+      "NL": ""
+    },
+    "nextButton": {
+      "NL": ""
+    },
+    "submitButton": {
+      "NL": "Wijzig"
+    },
+    "locales": "NL,EN",
+    "defLocale": "NL",
+    "company": "Belastingdienst",
+    "user": "supportBelastingdienst",
+    "publishDate": "25-02-2022 12:57:43",
+    "publishVersion": "0.01",
+    "pages": [
+      {
+        "id": 267654,
+        "type": "section",
+        "label": {
+          "NL": "Wijzig contactgegevens"
+        },
+        "description": "",
+        "name": "wijzig_contactgegevens",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": ""
+        },
+        "nextButton": {
+          "NL": ""
+        },
+        "submitButton": {
+          "NL": "Versturen"
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 267655,
+            "type": "question",
+            "label": {
+              "NL": "id"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "id",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267656,
+            "type": "question",
+            "label": {
+              "NL": "status"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "status",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267657,
+            "type": "question",
+            "label": {
+              "NL": "intakeFormulierOntvangen"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "intakeFormulierOntvangen",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267658,
+            "type": "question",
+            "label": {
+              "NL": "isEenGrootverbruiker"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "isEenGrootverbruiker",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267672,
+            "type": "question",
+            "label": {
+              "NL": "titel"
+            },
+            "description": {
+              "NL": "<h3><b>Intake connectie gegevens</b></h3>"
+            },
+            "name": "titel",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267685,
+            "type": "question",
+            "label": {
+              "NL": "Bedrijfsnaam softwareleverancier"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "naamSoftwareLeverancier",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267683,
+            "type": "question",
+            "label": {
+              "NL": "Bijzonderheden"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "bijzonderheden",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          }
+        ]
+      }
+    ],
+    "version": 0,
+    "token": "nalZ2arq"
+  }
+}

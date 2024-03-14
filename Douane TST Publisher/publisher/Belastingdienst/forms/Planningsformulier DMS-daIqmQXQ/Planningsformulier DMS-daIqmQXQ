@@ -1,0 +1,1489 @@
+{
+  "hash": "daIqmQXQ",
+  "name": "Planningsformulier DMS",
+  "description": "",
+  "tags": "",
+  "company": "1346",
+  "version": "0.01",
+  "theme": "3007",
+  "themeViewUri": "",
+  "serviceUri": "https://test-integrator.formsengine.io/mit/trainman/yMxHQHLRso2ajjnl/dms-migratie",
+  "servicePackageId": "",
+  "serviceTemplateName": "HTG migratie planner_piper",
+  "prefillServiceTemplateName": "prefill_planning_piper",
+  "jsDependencies": "[]",
+  "data": {
+    "id": 321758,
+    "type": "questionnaire",
+    "name": "Planningsformulier DMS",
+    "description": "",
+    "successContent": {
+      "NL": "Bedankt voor het invullen van het planningsformulier. U ontvangt ter bevestiging een mail met uw ingediende gegevens.<br><br>\nU kunt de pagina sluiten.",
+      "EN": "Thank you for completing the planning form.  You will receive a confirmation e-mail with your submitted data.\n<br><br>\nYou may close the page."
+    },
+    "errorContent": {
+      "NL": ""
+    },
+    "submitUrl": "",
+    "submitErrorUrl": "",
+    "tags": "",
+    "backButton": {
+      "NL": "Vorige",
+      "EN": ""
+    },
+    "nextButton": {
+      "NL": "Volgende",
+      "EN": ""
+    },
+    "submitButton": {
+      "NL": "Versturen",
+      "EN": ""
+    },
+    "locales": "NL,EN",
+    "defLocale": "NL",
+    "company": "Belastingdienst",
+    "user": "supportBelastingdienst",
+    "publishDate": "28-11-2022 03:59:30",
+    "publishVersion": "0.01",
+    "pages": [
+      {
+        "id": 321759,
+        "type": "section",
+        "label": {
+          "NL": "Planning migratie",
+          "EN": "Planning migration"
+        },
+        "description": "",
+        "name": "planningsformulierDMS",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "nextButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "submitButton": {
+          "NL": "Versturen",
+          "EN": ""
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 321760,
+            "type": "question",
+            "label": {
+              "NL": "id"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "id",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "summary no",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321765,
+            "type": "question",
+            "label": {
+              "NL": "Organisatienaam",
+              "EN": "Name organisation"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "organisatieNaam",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": true,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321766,
+            "type": "question",
+            "label": {
+              "NL": "EORI nummer",
+              "EN": "EORI number"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "EORInummer",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": true,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321767,
+            "type": "question",
+            "label": {
+              "NL": "Volgnummer bestaande AGS aansluiting",
+              "EN": "Serial number existing AGS connection"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "volgnummerBestaandeAGS",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": true,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 322106,
+            "type": "question",
+            "label": {
+              "NL": "",
+              "EN": ""
+            },
+            "description": {
+              "NL": "Hieronder vindt u het huidige electronische aansluitadres die bij ons geregistreerd is. Mocht u voor DMS een nieuw electronisch aansluitadres gebruiken, selecteer dan \"Ja\" en geef het nieuwe electronisch aansluitadres dan hieronder op. Indien u hetzelfde aansluitadres blijft gebruiken, selecteer dan \"Nee\".",
+              "EN": "Below you see the current registered mailbox address. If you use a new mailbox for DMS, select \"Yes\" and enter the new mailbox address below. If you continue to use the same mailbox address please select \"No\""
+            },
+            "name": "uitleg mailbox adres",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "summary no",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 322103,
+            "type": "question",
+            "label": {
+              "NL": "Electronisch aansluitadres",
+              "EN": "Current mailbox addres"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "mailInboxAdres",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": true,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 322102,
+            "type": "question",
+            "label": {
+              "NL": "Gaat u een ander aansluitadres voor DMS gebruiken?",
+              "EN": "Are you using a different mailbox"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "andereMailbox",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "radio",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [
+              {
+                "args": "",
+                "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+              }
+            ],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": [
+              {
+                "id": 322104,
+                "type": "answeroption",
+                "label": {
+                  "NL": "Ja",
+                  "EN": "Yes"
+                },
+                "description": "",
+                "name": "Ja",
+                "defaultValue": false,
+                "disabled": false,
+                "elementId": "",
+                "className": "",
+                "condScript": "",
+                "condJson": "",
+                "tooltip": {
+                  "NL": ""
+                },
+                "questions": []
+              },
+              {
+                "id": 322105,
+                "type": "answeroption",
+                "label": {
+                  "NL": "Nee",
+                  "EN": "No"
+                },
+                "description": "",
+                "name": "Nee",
+                "defaultValue": false,
+                "disabled": false,
+                "elementId": "",
+                "className": "",
+                "condScript": "",
+                "condJson": "",
+                "tooltip": {
+                  "NL": ""
+                },
+                "questions": []
+              }
+            ]
+          },
+          {
+            "id": 322196,
+            "type": "operator",
+            "label": {
+              "NL": "show new mailbox"
+            },
+            "description": "",
+            "name": "show_new_mailbox",
+            "operatorType": "condition",
+            "elementId": "",
+            "className": "",
+            "condScript": "",
+            "condJson": "[{\"action\":\"Show\",\"page\":\"Planning migratie\",\"question\":\"andereMailbox\",\"operation\":\"is\",\"param\":\"Ja\"}]",
+            "operatorButton": {
+              "NL": ""
+            },
+            "operands": [
+              {
+                "id": 322107,
+                "type": "question",
+                "label": {
+                  "NL": "Nieuw aansluitadres DMS",
+                  "EN": "New mailbox address"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "nieuwMailboxAdres",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textfield",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": []
+              }
+            ]
+          },
+          {
+            "id": 321776,
+            "type": "question",
+            "label": {
+              "NL": "Planning aansluitmoment Productie",
+              "EN": "Planning aansluitmoment Productie"
+            },
+            "description": {
+              "NL": "<H3><b>Planning aansluitmoment Productie</b></H3>",
+              "EN": "<H3><b>Planning Production</b></H3>"
+            },
+            "name": "Planning aansluitmoment productie",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321777,
+            "type": "question",
+            "label": {
+              "NL": "Gewenste aansluitdag productie",
+              "EN": "Desired connection day production"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "gewensteAansluitdag_prod",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "date",
+            "validScript": "",
+            "elementId": "",
+            "className": "daySelectorContainer_prod",
+            "hint": {
+              "NL": "Selecteer een datum",
+              "EN": "Select a date"
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "EMPTY",
+              "EN": "EMPTY"
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [
+              {
+                "args": "",
+                "script": "def valueProductie = values.get('migratie_tijdstip_prod_id')\r\ndef valuePreProductie = values.get('migratie_tijdstip_preprod_id')\r\n\r\nif (valueProductie && valuePreProductie && valueProductie == valuePreProductie) {\r\n    return \"There are no possibility to reserve similar slots on both calendars\";\r\n}"
+              },
+              {
+                "args": "",
+                "script": "import java.text.SimpleDateFormat\r\n\r\ndef valuePreProductie = values.get('gewensteAansluitdag_preprod')\r\ndef valueProductie = values.get('gewensteAansluitdag_prod')\r\ndef slotPreProductie = values.get('migratie_tijdstip_preprod')\r\ndef slotProductie = values.get('migratie_tijdstip_prod')\r\n\r\nSimpleDateFormat formatter = new SimpleDateFormat(\"dd-MM-yyyy HH:mm\")\r\nDate datePreProd = formatter.parse(valuePreProductie + ' ' + slotPreProductie)\r\nDate dateProd = formatter.parse(valueProductie + ' ' + slotProductie)\r\n\r\nif (datePreProd.after(dateProd)) {\r\n    return \"Preproductie calendar date cannot be greater than productie calendar date\"\r\n}\r\n\r\n// return \"test\" + datePreProd.after(dateProd)"
+              },
+              {
+                "args": "",
+                "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+              }
+            ],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321778,
+            "type": "question",
+            "label": {
+              "NL": "Migratie tijd productie",
+              "EN": "Migration time production"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "migratie_tijdstip_prod",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "summary no",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321779,
+            "type": "question",
+            "label": {
+              "NL": "Migratie Tijdstip ID Productie"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "migratie_tijdstip_prod_id",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "summary no",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321780,
+            "type": "question",
+            "label": {
+              "NL": "Migratie tijdstip productie",
+              "EN": "Migration time production"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "migratie_tijdstip_string_prod",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "hidden hide-label",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321781,
+            "type": "question",
+            "label": {
+              "NL": "Heeft u nog opmerkingen?",
+              "EN": "Remarks?"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "opmerkingenPlanningProd",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textarea",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321782,
+            "type": "question",
+            "label": {
+              "NL": "timeSlotsSelector",
+              "EN": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "timeSlotsSelector",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "widget",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": "[{\"val\":\"Selecteer de gewenste tijd om aan te sluiten. De volgende tijden zijn nog beschikbaar.\",\"name\":\"leftHint\"},{\"val\":\"Veld is verplicht\",\"name\":\"errorMessage\"}]",
+              "EN": "[{\"val\":\"Select the desired time to connect. The following times are still available.\",\"name\":\"leftHint\"},{\"val\":\"Field is required\",\"name\":\"errorMessage\"}]"
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "timeSlotsSelector",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321793,
+            "type": "question",
+            "label": {
+              "NL": "koppelvlak"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "koppelvlak",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "MSA"
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321796,
+            "type": "question",
+            "label": {
+              "NL": "aansluitingVoorPreproductie"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "aansluitingVoorPreproductie",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "Nee"
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321797,
+            "type": "question",
+            "label": {
+              "NL": "aansluitingVoorProductie"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "aansluitingVoorProductie",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "Ja"
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 323922,
+            "type": "question",
+            "label": {
+              "NL": "Planning firstday date"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "planningPeriodFirstDayDate",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 323923,
+            "type": "question",
+            "label": {
+              "NL": "Planning lastday date"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "planningPeriodLastDayDate",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 323924,
+            "type": "question",
+            "label": {
+              "NL": "geplandeMaandProductie"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "geplandeMaandProductie",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          }
+        ]
+      },
+      {
+        "id": 321783,
+        "type": "section",
+        "label": {
+          "NL": "Ingevulde gegevens",
+          "EN": "Entered data"
+        },
+        "description": "",
+        "name": "samenvatting",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "nextButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "submitButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 321784,
+            "type": "question",
+            "label": {
+              "NL": "",
+              "EN": ""
+            },
+            "description": {
+              "NL": "Controleer uw gegevens hieronder goed. Eenmaal opgestuurd kunnen deze niet meer aangepast worden.",
+              "EN": "Check your details below carefully. Once sent, these can no longer be adjusted."
+            },
+            "name": "toelichting",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "summary no",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321785,
+            "type": "question",
+            "label": {
+              "NL": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "samenvatting",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "summary",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "summary no",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321786,
+            "type": "question",
+            "label": {
+              "NL": "PlanningSummary",
+              "EN": ""
+            },
+            "description": {
+              "NL": "<script>\n    //Planning aansluitmoment Preproductie\n    if (jQuery(\".label.questionName:contains(Planning aansluitmoment Preproductie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0]) {\n    if (jQuery(\".label.questionName:contains(Planning aansluitmoment Preproductie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\t    jQuery(\".label.questionName:contains(Planning aansluitmoment Preproductie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<h3><b>Planning aansluitmoment Preproductie</b></h3>\").css(\"color\", \"black\");\n    }\n    }\n    \n    //Planning aansluitmoment Productie\n    if (jQuery(\".label.questionName:contains(Planning aansluitmoment Productie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0]) {\n    if (jQuery(\".label.questionName:contains(Planning aansluitmoment Productie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\t    jQuery(\".label.questionName:contains(Planning aansluitmoment Productie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<h3><b>Planning aansluitmoment Productie</b></h3>\").css(\"color\", \"black\");\n    }\n    }\n</script>\n",
+              "EN": "<script>\n    //Planning aansluitmoment Preproductie\n    if (jQuery(\".label.questionName:contains(Planning aansluitmoment Preproductie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0]) {\n    if (jQuery(\".label.questionName:contains(Planning aansluitmoment Preproductie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\t    jQuery(\".label.questionName:contains(Planning aansluitmoment Preproductie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<h3><b>Planning Preproduction</b></h3>\").css(\"color\", \"black\");\n    }\n    }\n    \n    //Planning aansluitmoment Productie\n    if (jQuery(\".label.questionName:contains(Planning aansluitmoment Productie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0]) {\n    if (jQuery(\".label.questionName:contains(Planning aansluitmoment Productie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0)[0].innerText === \"\") {\n\t    jQuery(\".label.questionName:contains(Planning aansluitmoment Productie)\").closest('section').next(\"section.field-col.col.col-8\").eq(0).append(\"<h3><b>Planning Production</b></h3>\").css(\"color\", \"black\");\n    }\n    }\n</script>\n"
+            },
+            "name": "planningsummary",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          }
+        ]
+      }
+    ],
+    "version": 0,
+    "token": "nalZ2arq"
+  }
+}

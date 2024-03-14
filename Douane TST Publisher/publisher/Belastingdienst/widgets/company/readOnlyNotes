@@ -1,0 +1,30 @@
+<script>
+    var submit = jQuery("#{{options.containerId}} #submitConfigBtn");
+    var submitFunc = submit[0].onclick;
+    submit[0].onclick = null;
+    submit.on('click', function(e) {
+        e.preventDefault();
+        var result = [];
+        var answers = FE['{{options.containerId}}'].getAllAnswers().migratie_notes[0];
+        answers = answers.replace(/"/g, "'" ).replace(/\//g, "|");
+        result.push(answers);
+        FE['{{options.containerId}}'].setFormVariable({name: 'answer', value: result, submit: true});
+        submitFunc();
+    });
+    jQuery("label:contains('Migratie notes')").hide();
+    jQuery(".MuiFormControl-root.MuiFormControl-fullWidth.MuiTextField-root.MuiFormControl-marginNormal ").css("margin", "0");
+    jQuery(".MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInput-formControl.MuiInputBase-multiline.MuiInput-multiline ").css("margin-top", "0");
+    jQuery("textarea.MuiInputBase-input.MuiInput-input.MuiInputBase-inputMultiline.MuiInput-inputMultiline").css("max-height", "190px");
+    jQuery("textarea.MuiInputBase-input.MuiInput-input.MuiInputBase-inputMultiline.MuiInput-inputMultiline").css("min-height", "190px");
+    jQuery("textarea.MuiInputBase-input.MuiInput-input.MuiInputBase-inputMultiline.MuiInput-inputMultiline").attr("rows", "10");
+    jQuery("textarea.MuiInputBase-input.MuiInput-input.MuiInputBase-inputMultiline.MuiInput-inputMultiline").attr("maxlength",  "3900");
+    jQuery('textarea.MuiInputBase-input.MuiInput-input.MuiInputBase-inputMultiline.MuiInput-inputMultiline').css('overflow-y', 'scroll');
+    jQuery('textarea.MuiInputBase-input.MuiInput-input.MuiInputBase-inputMultiline.MuiInput-inputMultiline').css('resize', 'none');
+    jQuery("#{{options.containerId}} .MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInput-formControl.MuiInputBase-multiline.MuiInput-multiline").after("<span>Maximaal 3900 karakters toegestaan.</span>");
+    jQuery("span:contains('Maximaal 3900 karakters toegestaan.')").css("color", "red");
+    if(FE['{{options.containerId}}'].getAllOptions().readOnly) {
+        jQuery("h2:contains('Migration notes')").hide();
+        jQuery("#submitConfigBtn").hide();
+        jQuery("textarea.MuiInputBase-input.MuiInput-input.MuiInputBase-inputMultiline.MuiInput-inputMultiline").attr('readonly', true);
+    }
+</script>

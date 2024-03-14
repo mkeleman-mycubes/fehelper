@@ -1,0 +1,235 @@
+{
+  "hash": "rPrqIqCy",
+  "name": "Verstuur mailing",
+  "description": "",
+  "tags": "",
+  "company": "1346",
+  "version": "0.01",
+  "theme": "3008",
+  "themeViewUri": "",
+  "serviceUri": "https://test-integrator.formsengine.io/mit/trainman/yMxHQHLRso2ajjnl/dms-migratie",
+  "servicePackageId": "",
+  "serviceTemplateName": "Send_emails",
+  "prefillServiceTemplateName": "",
+  "jsDependencies": "[]",
+  "data": {
+    "id": 328825,
+    "type": "questionnaire",
+    "name": "Verstuur mailing",
+    "description": "",
+    "successContent": {
+      "NL": "<br>\nBinnen enkele seconden ontvangt u de portaal data export in uw opgegeven email adres. Mails sent<br>"
+    },
+    "errorContent": {
+      "NL": ""
+    },
+    "submitUrl": "",
+    "submitErrorUrl": "",
+    "tags": "",
+    "backButton": {
+      "NL": ""
+    },
+    "nextButton": {
+      "NL": ""
+    },
+    "submitButton": {
+      "NL": ""
+    },
+    "locales": "NL",
+    "defLocale": "NL",
+    "company": "Belastingdienst",
+    "user": "supportBelastingdienst",
+    "publishDate": "29-11-2022 06:51:19",
+    "publishVersion": "0.01",
+    "pages": [
+      {
+        "id": 328826,
+        "type": "section",
+        "label": {
+          "NL": "Verstuur mailing"
+        },
+        "description": "",
+        "name": "export_htg_planning_data",
+        "elementId": "",
+        "className": "send-email-form",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": ""
+        },
+        "nextButton": {
+          "NL": ""
+        },
+        "submitButton": {
+          "NL": "Versturen"
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 328827,
+            "type": "question",
+            "label": {
+              "NL": "Uitleg"
+            },
+            "description": {
+              "NL": "Vul het Onderwerp en het Bericht in en klik op “Versturen”"
+            },
+            "name": "uitleg",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 328828,
+            "type": "question",
+            "label": {
+              "NL": "Onderwerp"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "onderwerp",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": "E-mail adres waarnaar een Excel uitdraai met de complete slot-planning data heen word gestuurd."
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [
+              {
+                "args": "",
+                "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+              }
+            ],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 328829,
+            "type": "question",
+            "label": {
+              "NL": "Bericht"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "bericht",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textarea",
+            "validScript": "",
+            "elementId": "",
+            "className": "text-area",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          }
+        ]
+      }
+    ],
+    "version": 0,
+    "token": "nalZ2arq"
+  }
+}

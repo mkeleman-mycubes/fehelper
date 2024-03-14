@@ -1,0 +1,343 @@
+<style>
+  td.unavailable .ui-state-default {
+    background: #999 !important;
+    border: 1px solid #999;
+  }
+  td.available .ui-state-default {
+    background: #39870d;
+    color: #fff;
+    border: 1px solid #39870d;
+  }
+</style>
+
+<script>
+(function() {
+  var $datepickerPreprod = jQuery('.daySelectorContainer_preprod');
+  var $datepickerProd = jQuery('.daySelectorContainer_prod');
+
+  // Hide questions with .hidden.hide-label classes
+  jQuery('.hidden.hide-label').closest('.row').hide();
+
+  // Disable during loading
+  $datepickerPreprod.attr('disabled', true).attr('placeholder', 'Loading...');
+  $datepickerProd.attr('disabled', true).attr('placeholder', 'Loading...');
+
+  $datepickerPreprod.datepicker('option', 'hideIfNoPrevNext', true);
+  $datepickerProd.datepicker('option', 'hideIfNoPrevNext', true);
+
+  // Call to integrator and modify
+  // datepicker to display only available days
+  window['FE_slotsInfo_{{options.containerId}}'] = window['FE_slotsInfo_{{options.containerId}}'] || null;
+  var FE_slotsInfo = window['FE_slotsInfo_{{options.containerId}}'];
+
+  if (FE_slotsInfo) {
+    gotSlotsInfo(FE_slotsInfo);
+  } else {
+    jQuery('#{{options.containerId}}').questionnaire(
+      'sendAnswer',
+      '',
+      {
+        name: 'HTG migratie planner_timeslots',
+        timeSlotType: jQuery('#{{options.containerId}}').questionnaire('findAnswer', 'koppelvlak', '{{ctx.id}}')
+      },
+      function(slotsInfo) {
+        gotSlotsInfo(slotsInfo);
+      },
+      function() {
+        console.error('HTG migratie planner_timeslots - service unavailable');
+      }
+    );
+  }
+
+  // This function is called after information about slots comes from backend,
+  // or from memory (if it has been called before)
+  function gotSlotsInfo(slotsInfo) {
+    window['FE_slotsInfo_{{options.containerId}}'] = FE_slotsInfo = slotsInfo;
+
+    var preProductieMode = jQuery('#{{options.containerId}}').questionnaire('findAnswer', 'aansluitingVoorPreproductie', '{{ctx.id}}') == 'Ja';
+    var productieMode = jQuery('#{{options.containerId}}').questionnaire('findAnswer', 'aansluitingVoorProductie', '{{ctx.id}}') == 'Ja';
+
+    if (FE.getAllOptions().locale === "" || FE.getAllOptions().locale === "NL") {
+        $datepickerPreprod.removeAttr('disabled').attr('placeholder', 'Selecteer een datum');
+        $datepickerProd.removeAttr('disabled').attr('placeholder', 'Selecteer een datum');
+    }
+    
+    if (FE.getAllOptions().locale === "EN") {
+        $datepickerPreprod.removeAttr('disabled').attr('placeholder', 'Select a date');
+        $datepickerProd.removeAttr('disabled').attr('placeholder', 'Select a date');
+    }
+  
+    $datepickerPreprod.attr('readonly', true);
+    $datepickerProd.attr('readonly', true);
+
+    // Set min date to first available slot
+    // to avoid datepicker to appear in 1970 initially
+    if (FE_slotsInfo.length) {
+      for (var i in FE_slotsInfo) {
+        var found = false;
+        for (var j in FE_slotsInfo[i].slots) {
+          if (FE_slotsInfo[i].slots[j].status == 'Vrij') {
+            if (preProductieMode) $datepickerPreprod.datepicker('option', 'minDate', FE_slotsInfo[i].date);
+            if (productieMode) $datepickerProd.datepicker('option', 'minDate', FE_slotsInfo[i].date);
+            found = true;
+            break;
+          }
+        }
+        if (found) break;
+      }
+    }
+
+    function reformatDate(dateFormatted) {
+      var newDateFormat = dateFormatted.split('-'); // example input "2020-04-01"
+      newDateFormat = newDateFormat[2] + '-' + newDateFormat[1] + '-' + newDateFormat[0]; //example output: "01-04-2020"
+      return newDateFormat;
+    }
+
+    var geplandeMaandPreproductie = jQuery('#{{options.containerId}}').questionnaire('findAnswer', 'geplandeMaandPreproductie', '{{ctx.id}}');
+    var geplandeMaandProductie = jQuery('#{{options.containerId}}').questionnaire('findAnswer', 'geplandeMaandProductie', '{{ctx.id}}');
+    
+    if (preProductieMode) {
+      $datepickerPreprod.datepicker('option', 'beforeShowDay', FE_dateShow);
+      $datepickerPreprod.datepicker('option', 'onSelect', FE_dateSelectedPreprod);
+      
+      if (!geplandeMaandPreproductie) {
+         geplandeMaandPreproductie = geplandeMaandProductie;
+      }
+
+      if (geplandeMaandPreproductie) {
+        var geplandeMaand = geplandeMaandPreproductie.split('-');
+        if (geplandeMaand.length > 1) {
+          $datepickerPreprod.datepicker('option', 'minDate', new Date(geplandeMaand[0], parseInt(geplandeMaand[1]) - 1, 1));
+          $datepickerProd.datepicker('option', 'minDate', new Date(geplandeMaand[0], parseInt(geplandeMaand[1]) - 1, 1));
+          // $datepickerPreprod.datepicker('option', 'maxDate', new Date(geplandeMaand[0], parseInt(geplandeMaand[1]), 0));
+        }
+      }
+
+      jQuery('#generated_timeslots_preprod').hide();
+
+      var fieldValue = $datepickerPreprod.val();
+      if (fieldValue) {
+        FE_dateSelectedPreprod(fieldValue);
+      }
+    }
+
+    if (productieMode) {
+      $datepickerProd.datepicker('option', 'beforeShowDay', FE_dateShow);
+      $datepickerProd.datepicker('option', 'onSelect', FE_dateSelectedProd);
+
+      if (!geplandeMaandProductie) {
+         geplandeMaandProductie = geplandeMaandPreproductie;
+      }
+      
+      if (geplandeMaandProductie) {
+        var geplandeMaand = geplandeMaandProductie.split('-');
+        if (geplandeMaand.length > 1) {
+          $datepickerProd.datepicker('option', 'minDate', new Date(geplandeMaand[0], parseInt(geplandeMaand[1]) - 1, 1));
+          var datepickerProdMaxDate = $datepickerProd.datepicker('option', 'maxDate');
+          if (!datepickerProdMaxDate) {
+            $datepickerProd.datepicker('option', 'maxDate', new Date(geplandeMaand[0], parseInt(geplandeMaand[1]), 0));
+          }
+        }
+      }
+
+      jQuery('#generated_timeslots_prod').hide();
+
+      var fieldValue = $datepickerProd.val();
+      if (fieldValue) {
+        FE_dateSelectedProd(fieldValue);
+      }
+    }
+  }
+
+  // This function is called to show date selected
+  // in datepicker
+  function FE_dateShow(date) {
+    var year = date.getFullYear();
+    var month = parseInt(date.getMonth() + 1);
+    if (month < 10) {
+      month = '0' + month;
+    }
+    var day = date.getDate();
+    if (day < 10) {
+      day = '0' + day;
+    }
+
+    var dateFormatted = day + '-' + month + '-' + year;
+
+    var found = false;
+    for (var i in FE_slotsInfo) {
+      if (FE_slotsInfo[i].date == dateFormatted) {
+        for (var j in FE_slotsInfo[i].slots) {
+          if (FE_slotsInfo[i].slots[j].status == 'Vrij') {
+            found = true;
+            break;
+          }
+        }
+        if (found) {
+          break;
+        }
+      }
+    }
+
+    if (found) {
+      return [true, 'available'];
+    }
+    return [false, 'unavailable'];
+  }
+
+  // This function is called when date is selected
+  // in preprod datepicker
+  function FE_dateSelectedPreprod(date) {
+      
+    if (date.length > 0) {
+      window.dateSelectedPreprod = true;
+
+      // get available slots
+      for (var i in FE_slotsInfo) {
+        if (FE_slotsInfo[i].date == date) {
+          generateTimeslotsHTML(FE_slotsInfo[i].slots, date, 'preprod');
+        }
+      }
+
+      jQuery('.daySelectorContainer_preprod').val(date);
+      jQuery('.daySelectorContainer_preprod').trigger('input');
+    }
+  }
+
+  // This function is called when date is selected
+  // in prod datepicker
+  function FE_dateSelectedProd(date) {
+      console.log(date)
+    if (date.length > 0) {
+      window.dateSelectedProd = true;
+
+      // get available slots
+      for (var i in FE_slotsInfo) {
+        if (FE_slotsInfo[i].date == date) {
+            
+          generateTimeslotsHTML(FE_slotsInfo[i].slots, date, 'prod');
+        }
+      }
+
+      jQuery('.daySelectorContainer_prod').val(date);
+      jQuery('.daySelectorContainer_prod').trigger('input');
+    }
+  }
+
+  // This function generates timeslots checkboxes
+  function generateTimeslotsHTML(slots, date, modeType) {
+    jQuery('#generated_timeslots_' + modeType).remove();
+    var h = [];
+    var currentTimeslotValue = FE['{{options.containerId}}'].getAnswer({
+      questionName: 'migratie_tijdstip_' + modeType
+    });
+
+    h.push('<fieldset id="generated_timeslots_' + modeType + '" style="padding-left:0px;padding-top:0px;">');
+    h.push('<div class>');
+    h.push('<div class="row">');
+    h.push('<section class="label-col col col-4">');
+    h.push('<label class="label">');
+    h.push('{{widget.labels.leftHint}}');
+    h.push('</label>');
+    h.push('</section>');
+
+    h.push('<section class="field-col col col-8">');
+    for (var i in slots) {
+      if (slots[i].status == 'Vrij') {
+        h.push('<label class="radio checkbox-label">');
+        var from = moment(date + ' ' + slots[i].startTime, 'DD-MM-YYYY HH:mm:ss').format('HH:mm');
+        var to = moment(date + ' ' + slots[i].startTime, 'DD-MM-YYYY HH:mm:ss')
+          .add(slots[i].durationMinutes, 'm')
+          .format('HH:mm');
+		var label = from + ' - ' + to + ' CET';
+		var val = from + '|' + slots[i].id + '|' + label;
+
+        // var checked = '';
+        // if (currentTimeslotValue === from) {
+        //   checked = 'checked';
+        // }
+
+        h.push('<input type="radio" name="timeslotsRadio_' + modeType + '" value="' + val + '"><i></i>');
+        h.push(label);
+        h.push('</label>');
+      }
+    }
+    h.push('</section>');
+
+    h.push('<div class="tooltip">');
+    h.push('Selecteer hier het gewenste slot');
+    h.push('</div>');
+    h.push('</div>');
+    h.push('</div>');
+    h.push('</fieldset>');
+
+    jQuery('.daySelectorContainer_' + modeType).closest('.dateContainer').after(h.join(''));
+
+    // Applicable both for checkbox and radio.
+    // If checkbox, values will be separated by comma
+    jQuery('#generated_timeslots_' + modeType + ' input').on('change', function() {
+      var answerStrID = '';
+      var answerStrTime = '';
+	  var answerStrLabel = '';
+
+      jQuery('.btn.btn-submit').removeClass('disabled');
+      jQuery('#generated_timeslots_' + modeType).find('.error').remove();
+      jQuery('#generated_timeslots_' + modeType + ' input:checked').each(function() {
+        var answerStr = jQuery(this).val();
+        if (answerStr.length > 0) {
+          answerStrTime = answerStr.split('|')[0];
+          answerStrID = answerStr.split('|')[1];
+		  answerStrLabel = answerStr.split('|')[2];
+        }
+      });
+
+      var datepickerId = jQuery('.daySelectorContainer_' + modeType).attr('id').split('_');
+      var questionId = parseInt(datepickerId[1].substring(4));
+      var questionCtxId = '_' + datepickerId[2];
+
+console.log(answerStrID);
+      jQuery('#{{options.containerId}}').questionnaire('setAnswer', null, 'migratie_tijdstip_' + modeType, '{{ctx.id}}', answerStrTime);
+      jQuery('#{{options.containerId}}').questionnaire('setAnswer', null, 'migratie_tijdstip_' + modeType + '_id', '{{ctx.id}}', answerStrID);
+	  jQuery('#{{options.containerId}}').questionnaire('setAnswer', null, 'migratie_tijdstip_string_' + modeType, '{{ctx.id}}', answerStrLabel);
+
+      jQuery('#{{options.containerId}}').questionnaire('ajaxValidateEvent', questionId, 'date', questionCtxId);
+    });
+  }
+  
+  // Timeslots validation
+  (function() {
+    var submitConfigBtn = jQuery('#submitConfigBtn');
+    var submitFormContainer = jQuery('#generated_timeslots_prod');
+    var formChecked = submitFormContainer.find('input:checked').length > 0;
+    
+    if (submitFormContainer.length && !formChecked && submitConfigBtn[0]) {
+        jQuery('<div class="has-error"><span class="help-block">{{{widget.labels.errorMessage}}}</span></div>').appendTo(submitFormContainer.find('.field-col'));
+    }
+    
+    var defaultFunc = jQuery('.next-btn')[0].onclick;
+    jQuery('.next-btn')[0].onclick = function() {
+        var preprodContainer = jQuery('#generated_timeslots_preprod');
+        var prodContainer = jQuery('#generated_timeslots_prod');
+        var preprodChecked = preprodContainer.find('input:checked').length > 0;
+        var prodChecked = prodContainer.find('input:checked').length > 0;
+        var fault = false;
+        
+        jQuery('.has-error').remove();
+        
+        if (preprodContainer.length && !preprodChecked) {
+            jQuery('<div class="has-error"><span class="help-block">{{{widget.labels.errorMessage}}}</span></div>').appendTo(preprodContainer.find('.field-col'));
+            fault = true;
+        }
+
+        if (prodContainer.length && !prodChecked) {
+            jQuery('<div class="has-error"><span class="help-block">{{{widget.labels.errorMessage}}}</span></div>').appendTo(prodContainer.find('.field-col'));
+            fault = true;
+        }
+        
+        if (!fault) {
+            defaultFunc();
+        }
+    }
+  })();
+})();
+</script>

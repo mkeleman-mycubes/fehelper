@@ -1,0 +1,408 @@
+{
+  "hash": "2aIq1QMH",
+  "name": "Wijzig electronische aansluitgegevens",
+  "description": "",
+  "tags": "",
+  "company": "1346",
+  "version": "0.01",
+  "theme": "",
+  "themeViewUri": "",
+  "serviceUri": "https://test-integrator.formsengine.io/mit/trainman/yMxHQHLRso2ajjnl/dms-migratie",
+  "servicePackageId": "",
+  "serviceTemplateName": "wijzig_mailboxgegevens_piper",
+  "prefillServiceTemplateName": "prefill_processInstanceId_piper",
+  "jsDependencies": "[]",
+  "data": {
+    "id": 322197,
+    "type": "questionnaire",
+    "name": "Wijzig electronische aansluitgegevens",
+    "description": "",
+    "successContent": {
+      "NL": ""
+    },
+    "errorContent": {
+      "NL": ""
+    },
+    "submitUrl": "",
+    "submitErrorUrl": "",
+    "tags": "",
+    "backButton": {
+      "NL": ""
+    },
+    "nextButton": {
+      "NL": ""
+    },
+    "submitButton": {
+      "NL": "Wijzig"
+    },
+    "locales": "NL,EN",
+    "defLocale": "NL",
+    "company": "Belastingdienst",
+    "user": "supportBelastingdienst",
+    "publishDate": "10-03-2022 02:59:56",
+    "publishVersion": "0.01",
+    "pages": [
+      {
+        "id": 322198,
+        "type": "section",
+        "label": {
+          "NL": "Wijzig electronische aansluitgegevens",
+          "EN": ""
+        },
+        "description": "",
+        "name": "wijzig_mailboxgegevens",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "nextButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "submitButton": {
+          "NL": "Versturen",
+          "EN": ""
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 322199,
+            "type": "question",
+            "label": {
+              "NL": "id"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "id",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 322203,
+            "type": "question",
+            "label": {
+              "NL": "titel",
+              "EN": ""
+            },
+            "description": {
+              "NL": "<h3><b>Electronische aansluitgegevens</b></h3>",
+              "EN": ""
+            },
+            "name": "titel",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 322206,
+            "type": "question",
+            "label": {
+              "NL": "Electronisch aansluitadres"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "mailInboxAdres",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textfield",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": true,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 322204,
+            "type": "question",
+            "label": {
+              "NL": "Gaat u een ander aansluitadres voor DMS gebruiken?"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "andereMailbox",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "radio",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": [
+              {
+                "id": 322207,
+                "type": "answeroption",
+                "label": {
+                  "NL": "Ja"
+                },
+                "description": "",
+                "name": "Ja",
+                "defaultValue": false,
+                "disabled": false,
+                "elementId": "",
+                "className": "",
+                "condScript": "",
+                "condJson": "",
+                "tooltip": {
+                  "NL": ""
+                },
+                "questions": []
+              },
+              {
+                "id": 322208,
+                "type": "answeroption",
+                "label": {
+                  "NL": "Nee"
+                },
+                "description": "",
+                "name": "Nee",
+                "defaultValue": false,
+                "disabled": false,
+                "elementId": "",
+                "className": "",
+                "condScript": "",
+                "condJson": "",
+                "tooltip": {
+                  "NL": ""
+                },
+                "questions": []
+              }
+            ]
+          },
+          {
+            "id": 322209,
+            "type": "operator",
+            "label": {
+              "NL": "show new mailbox"
+            },
+            "description": "",
+            "name": "show_new_mailbox",
+            "operatorType": "condition",
+            "elementId": "",
+            "className": "",
+            "condScript": "",
+            "condJson": "[{\"action\":\"Show\",\"page\":\"Wijzig mailboxgegevens\",\"question\":\"andereMailbox\",\"operation\":\"is\",\"param\":\"Ja\"}]",
+            "operatorButton": {
+              "NL": ""
+            },
+            "operands": [
+              {
+                "id": 322210,
+                "type": "question",
+                "label": {
+                  "NL": "Nieuw aansluitadres DMS"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "nieuwMailboxAdres",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textfield",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                  },
+                  {
+                    "args": "",
+                    "script": "emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[A-Za-z]{2,4}/\r\nemail = value\r\nif(email ==~ emailPattern){\r\n}else{\r\nreturn [ERR_MAIL_FORMAT:\"Uw email adres is niet geldig\"]\r\n}"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "version": 0,
+    "token": "nalZ2arq"
+  }
+}

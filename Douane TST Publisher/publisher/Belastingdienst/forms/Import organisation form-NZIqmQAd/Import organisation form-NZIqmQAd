@@ -1,0 +1,184 @@
+{
+  "hash": "NZIqmQAd",
+  "name": "Import organisation form",
+  "description": "",
+  "tags": "",
+  "company": "1346",
+  "version": "0.01",
+  "theme": "3007",
+  "themeViewUri": "",
+  "serviceUri": "https://test-integrator.formsengine.io/mit/trainman/yMxHQHLRso2ajjnl/dms-migratie",
+  "servicePackageId": "",
+  "serviceTemplateName": "import_organisation_piper",
+  "prefillServiceTemplateName": "",
+  "jsDependencies": "[]",
+  "data": {
+    "id": 321787,
+    "type": "questionnaire",
+    "name": "Import organisation form",
+    "description": "",
+    "successContent": {
+      "NL": "<br>\nBinnen enkele seconden verschijnt de nieuwe organisatie in het tabblad Dashboard als het bestand correct is ingevuld\n</br>"
+    },
+    "errorContent": {
+      "NL": "<span class=\"err-message\">\n    Er is een fout opgetreden bij het importeren, de volgende reden kan zijn:\n    <ol>\n        <li>Datum formaat is niet correct</li>\n        <li>EORI nummer(s) zijn niet uniek</li>\n        <li>Een andere fout in de applicatie</li>\n    </ol>\n</span>"
+    },
+    "submitUrl": "",
+    "submitErrorUrl": "",
+    "tags": "",
+    "backButton": {
+      "NL": ""
+    },
+    "nextButton": {
+      "NL": ""
+    },
+    "submitButton": {
+      "NL": ""
+    },
+    "locales": "NL",
+    "defLocale": "NL",
+    "company": "Belastingdienst",
+    "user": "supportBelastingdienst",
+    "publishDate": "22-05-2023 12:29:29",
+    "publishVersion": "0.01",
+    "pages": [
+      {
+        "id": 321788,
+        "type": "section",
+        "label": {
+          "NL": "Import organisation data"
+        },
+        "description": "",
+        "name": "import_organisation_data",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": ""
+        },
+        "nextButton": {
+          "NL": ""
+        },
+        "submitButton": {
+          "NL": "Versturen"
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 321789,
+            "type": "question",
+            "label": {
+              "NL": "New organisation label"
+            },
+            "description": {
+              "NL": "Upload een bestand om nieuwe organisaties te importeren"
+            },
+            "name": "organisation",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 321791,
+            "type": "question",
+            "label": {
+              "NL": "Bestand"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "upload_file",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "upload",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [
+              {
+                "args": "",
+                "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+              }
+            ],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          }
+        ]
+      }
+    ],
+    "version": 0,
+    "token": "nalZ2arq"
+  }
+}

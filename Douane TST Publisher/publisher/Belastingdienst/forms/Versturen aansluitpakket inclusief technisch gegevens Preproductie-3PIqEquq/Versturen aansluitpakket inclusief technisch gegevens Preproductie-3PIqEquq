@@ -1,0 +1,1710 @@
+{
+  "hash": "3PIqEquq",
+  "name": "Versturen aansluitpakket inclusief technisch gegevens Preproductie",
+  "description": "",
+  "tags": "",
+  "company": "1346",
+  "version": "0.01",
+  "theme": "3007",
+  "themeViewUri": "",
+  "serviceUri": "https://test-integrator.formsengine.io/mit/trainman/yMxHQHLRso2ajjnl/dms-migratie",
+  "servicePackageId": "",
+  "serviceTemplateName": "complete_task_piper",
+  "prefillServiceTemplateName": "prefill_tasks_piper",
+  "jsDependencies": "[]",
+  "data": {
+    "id": 265760,
+    "type": "questionnaire",
+    "name": "Versturen aansluitpakket inclusief technisch gegevens Preproductie",
+    "description": "",
+    "successContent": {
+      "NL": "Taak is afgehandeld"
+    },
+    "errorContent": {
+      "NL": ""
+    },
+    "submitUrl": "",
+    "submitErrorUrl": "",
+    "tags": "",
+    "backButton": {
+      "NL": ""
+    },
+    "nextButton": {
+      "NL": ""
+    },
+    "submitButton": {
+      "NL": ""
+    },
+    "locales": "NL,EN",
+    "defLocale": "NL",
+    "company": "Belastingdienst",
+    "user": "supportBelastingdienst",
+    "publishDate": "25-02-2022 12:57:32",
+    "publishVersion": "0.01",
+    "pages": [
+      {
+        "id": 265761,
+        "type": "section",
+        "label": {
+          "NL": "Versturen aansluitpakket inclusief technisch gegevens Preproductie"
+        },
+        "description": "",
+        "name": "versturen_aansluitpakket_inclusief_technisch_gegevens_preproductie",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": ""
+        },
+        "nextButton": {
+          "NL": ""
+        },
+        "submitButton": {
+          "NL": "Versturen"
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 265762,
+            "type": "question",
+            "label": {
+              "NL": "Tekst aansluitteam"
+            },
+            "description": {
+              "NL": "Aansluitpakket voor preproductie versturen naar de Contactpersoon. <br><br><b>Indien MTA:</b><br>\nAansluitpakket MTA + technisch formulier opsturen. \n<br><br><b>Indien MSA:</b><br>\nAansluitpakket MSA + gegevens mailbox opsturen. "
+            },
+            "name": "tekst_aansluitteam",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 266051,
+            "type": "question",
+            "label": {
+              "NL": "id"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "id",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 266605,
+            "type": "library",
+            "name": "default questions",
+            "description": "",
+            "children": [
+              {
+                "id": 266606,
+                "type": "question",
+                "label": {
+                  "NL": "Aansluitnummer bij Digipoort H&T",
+                  "EN": "Aansluitnummer bij Digipoort H&T ENG"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "aansluitNummerLogius",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textfield",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": true,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": []
+              },
+              {
+                "id": 266607,
+                "type": "question",
+                "label": {
+                  "NL": "Nieuw aansluitnummer voor HTG"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "aansluitNummerHTG",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textfield",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": true,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": []
+              },
+              {
+                "id": 266608,
+                "type": "question",
+                "label": {
+                  "NL": "Organisatienaam"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "organisatieNaam",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textfield",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": []
+              },
+              {
+                "id": 266609,
+                "type": "question",
+                "label": {
+                  "NL": "Koppelvlak",
+                  "EN": "Interface"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "koppelvlak",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "radio",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value || value == '' ) { return \"U dient een keuze te maken\" }"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": [
+                  {
+                    "id": 266610,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "MTA (VPN & Mailserver)"
+                    },
+                    "description": "",
+                    "name": "MTA",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  },
+                  {
+                    "id": 266611,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "MSA/POP3 (mailbox)"
+                    },
+                    "description": "",
+                    "name": "MSA",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  }
+                ]
+              },
+              {
+                "id": 266612,
+                "type": "question",
+                "label": {
+                  "NL": "Aansluiting voor Preproductie?",
+                  "EN": "Connection to Preproduction?"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "aansluitingVoorPreproductie",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "radio",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": "Preproductie bevat testsystemen van overheid waaronder BTO van Douane",
+                  "EN": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value || value == '' ) { return \"U dient een keuze te maken\" }"
+                  },
+                  {
+                    "args": "",
+                    "script": "def valuePreProductie = values.get('aansluitingVoorPreproductie')\r\ndef valueProductie = values.get('aansluitingVoorProductie')\r\n\r\nif (valuePreProductie == \"Nee\" & valueProductie == \"Nee\") {\r\n    return 'Er moet minimaal op een van de omgevinging Preproductie/Productie \"Ja\" geselecteerd worden'\r\n}"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": [
+                  {
+                    "id": 266613,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "Ja"
+                    },
+                    "description": "",
+                    "name": "Ja",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  },
+                  {
+                    "id": 266614,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "Nee"
+                    },
+                    "description": "",
+                    "name": "Nee",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  }
+                ]
+              },
+              {
+                "id": 266615,
+                "type": "question",
+                "label": {
+                  "NL": "Aansluiting voor Productie?",
+                  "EN": "Connection to Production?"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "aansluitingVoorProductie",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "radio",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [
+                  {
+                    "args": "",
+                    "script": "if (!value || value == '' ) { return \"U dient een keuze te maken\" }"
+                  },
+                  {
+                    "args": "",
+                    "script": "def valuePreProductie = values.get('aansluitingVoorPreproductie')\r\ndef valueProductie = values.get('aansluitingVoorProductie')\r\n\r\nif (valuePreProductie == \"Nee\" & valueProductie == \"Nee\") {\r\n    return 'Er moet minimaal op een van de omgevinging Preproductie/Productie \"Ja\" geselecteerd worden'\r\n}"
+                  }
+                ],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": [
+                  {
+                    "id": 266616,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "Ja"
+                    },
+                    "description": "",
+                    "name": "Ja",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  },
+                  {
+                    "id": 266617,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "Nee"
+                    },
+                    "description": "",
+                    "name": "Nee",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  }
+                ]
+              },
+              {
+                "id": 266618,
+                "type": "group",
+                "name": "Contactgegevens",
+                "description": "",
+                "elementId": "",
+                "className": "",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 266619,
+                    "type": "question",
+                    "label": {
+                      "NL": "Contactgegevens"
+                    },
+                    "description": {
+                      "NL": "<h3>Contactgegevens</h3>"
+                    },
+                    "name": "contactgegevens",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 266620,
+                    "type": "group",
+                    "name": "Contactpersoon",
+                    "description": "",
+                    "elementId": "",
+                    "className": "",
+                    "tags": "",
+                    "children": [
+                      {
+                        "id": 266621,
+                        "type": "question",
+                        "label": {
+                          "NL": "Contactpersoon"
+                        },
+                        "description": {
+                          "NL": "<b>Contactpersoon</b>\n<br>\n<br>\naanspreekpunt voor gehele aansluitproces HTG, ontvangst mails aansluitproces HTG, afstemming over planning, etc."
+                        },
+                        "name": "contactpersoon",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textlabel",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 266622,
+                        "type": "question",
+                        "label": {
+                          "NL": "Naam"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "naamContactpersoon",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 266623,
+                        "type": "question",
+                        "label": {
+                          "NL": "Email"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "emailContactpersoon",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[A-Za-z]{2,4}/\r\nemail = value\r\nif(email ==~ emailPattern){\r\n}else{\r\nreturn [ERR_MAIL_FORMAT:\"Uw email adres is niet geldig\"]\r\n}"
+                          },
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 266624,
+                        "type": "question",
+                        "label": {
+                          "NL": "Tel."
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "telContactpersoon",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 266625,
+                    "type": "group",
+                    "name": "Technisch expert",
+                    "description": "",
+                    "elementId": "",
+                    "className": "",
+                    "tags": "",
+                    "children": [
+                      {
+                        "id": 266626,
+                        "type": "question",
+                        "label": {
+                          "NL": "Technisch expert"
+                        },
+                        "description": {
+                          "NL": "<br />\n<br />\n<b>Technisch expert</b>\n<br>\n<br>\nvoor afstemming over koppelvlak (VPN postbussen), netwerk, firewalls, etc.\n<br>\n<br>\nvoor ontvangst per SMS van: <br>\n- preshared key voor MTA óf<br>\n- wachtwoord voor MSA/POP3\n"
+                        },
+                        "name": "technischExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textlabel",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 266627,
+                        "type": "question",
+                        "label": {
+                          "NL": "Naam"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "naamTechnischExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 266628,
+                        "type": "question",
+                        "label": {
+                          "NL": "Email"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "emailTechnischExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[A-Za-z]{2,4}/\r\nemail = value\r\nif(email ==~ emailPattern){\r\n}else{\r\nreturn [ERR_MAIL_FORMAT:\"Uw email adres is niet geldig\"]\r\n}"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 266629,
+                        "type": "question",
+                        "label": {
+                          "NL": "Tel."
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "telTechnischExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 266630,
+                        "type": "question",
+                        "label": {
+                          "NL": "Mobiel voor SMS"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "nummerVoorSmsTechnischExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 266631,
+                    "type": "group",
+                    "name": "Functioneel expert",
+                    "description": "",
+                    "elementId": "",
+                    "className": "",
+                    "tags": "",
+                    "children": [
+                      {
+                        "id": 266632,
+                        "type": "question",
+                        "label": {
+                          "NL": "Functioneel expert"
+                        },
+                        "description": {
+                          "NL": "<br /><br />\n<b>Functioneel expert</b>\n<br>\n<br>\nvoor afstemming over berichtstromen, aangevers per berichtstroom, etc."
+                        },
+                        "name": "functioneelExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textlabel",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 266633,
+                        "type": "question",
+                        "label": {
+                          "NL": "Naam"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "naamFunctioneelExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 266634,
+                        "type": "question",
+                        "label": {
+                          "NL": "Email"
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "emailFunctioneelExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[A-Za-z]{2,4}/\r\nemail = value\r\nif(email ==~ emailPattern){\r\n}else{\r\nreturn [ERR_MAIL_FORMAT:\"Uw email adres is niet geldig\"]\r\n}"
+                          },
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      },
+                      {
+                        "id": 266635,
+                        "type": "question",
+                        "label": {
+                          "NL": "Tel."
+                        },
+                        "description": {
+                          "NL": ""
+                        },
+                        "name": "telFunctioneelExpert",
+                        "subLabel": {
+                          "NL": ""
+                        },
+                        "inputType": "textfield",
+                        "validScript": "",
+                        "elementId": "",
+                        "className": "",
+                        "hint": {
+                          "NL": ""
+                        },
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "labelVariables": {
+                          "NL": ""
+                        },
+                        "tags": "",
+                        "defaultValue": {
+                          "NL": ""
+                        },
+                        "disabled": false,
+                        "minDate": "",
+                        "minDateType": "",
+                        "minDateOffset": "",
+                        "maxDate": "",
+                        "maxDateType": "",
+                        "maxDateOffset": "",
+                        "dateType": "calendar",
+                        "secured": false,
+                        "customTemplate": "",
+                        "varNames": "",
+                        "varValues": "{}",
+                        "mask": "",
+                        "validations": [
+                          {
+                            "args": "",
+                            "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+                          }
+                        ],
+                        "deduceJson": "",
+                        "deduceScript": "",
+                        "unselectLabel": {
+                          "NL": ""
+                        },
+                        "options": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 266636,
+                "type": "question",
+                "label": {
+                  "NL": "Bedrijfsnaam softwareleverancier"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "naamSoftwareLeverancier",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textfield",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": "Indien van toepassing"
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": []
+              },
+              {
+                "id": 266637,
+                "type": "question",
+                "label": {
+                  "NL": "Bijzonderheden"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "bijzonderheden",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textarea",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": "Aanvullende informatie die voor de migratie van uw aansluiting van belang is"
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": []
+              },
+              {
+                "id": 266638,
+                "type": "question",
+                "label": {
+                  "NL": "Andere aansluitingen"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "andereAansluitingen",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textarea",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": "Heeft u aansluitingen die actief zijn en waarvoor u geen intakemail hebt ontvangen, wilt u dan aangeven welke aansluitingen dit zijn. "
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": []
+              }
+            ]
+          },
+          {
+            "id": 265763,
+            "type": "question",
+            "label": {
+              "NL": "Aansluitpakket verstuurd"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "aansluitpakket_verstuurd",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "checkbox",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [
+              {
+                "args": "",
+                "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+              }
+            ],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": [
+              {
+                "id": 265764,
+                "type": "answeroption",
+                "label": {
+                  "NL": ""
+                },
+                "description": "",
+                "name": "Ja",
+                "defaultValue": false,
+                "disabled": false,
+                "elementId": "",
+                "className": "",
+                "condScript": "",
+                "condJson": "",
+                "tooltip": {
+                  "NL": ""
+                },
+                "questions": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "version": 0,
+    "token": "nalZ2arq"
+  }
+}

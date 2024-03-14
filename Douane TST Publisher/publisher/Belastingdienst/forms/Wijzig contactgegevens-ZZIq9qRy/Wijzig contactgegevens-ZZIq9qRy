@@ -1,0 +1,841 @@
+{
+  "hash": "ZZIq9qRy",
+  "name": "Wijzig contactgegevens",
+  "description": "",
+  "tags": "",
+  "company": "1346",
+  "version": "0.01",
+  "theme": "",
+  "themeViewUri": "",
+  "serviceUri": "https://test-integrator.formsengine.io/mit/trainman/yMxHQHLRso2ajjnl/dms-migratie",
+  "servicePackageId": "",
+  "serviceTemplateName": "wijzig_contactgegevens_piper",
+  "prefillServiceTemplateName": "prefill_processInstanceId_piper",
+  "jsDependencies": "[]",
+  "data": {
+    "id": 267633,
+    "type": "questionnaire",
+    "name": "Wijzig contactgegevens",
+    "description": "",
+    "successContent": {
+      "NL": "Bedankt voor het insturen van het intakeformulier. U ontvangt ter bevestiging een mail met uw ingediende gegevens.<br><br>\n\nIndien u aangegeven heeft dat er geen nieuwe aansluiting op HTG nodig is dan neemt het aansluitteam contact met u op.<br>\nIndien u aangegeven heeft dat er wel een nieuwe aansluiting op de HTG nodig is dan ontvangt u een mail met een link naar het planningsformulier. \n<br><br>\nU kunt de pagina sluiten.",
+      "EN": "Thank you for submitting the intake form. You will receive a confirmation e-mail with your \nsubmitted data.<br><br>\n\nIf you have indicated that no new connection to the HTG is necessary, the connection team will contact you.<br>\nIf you have indicated that a new connection to the HTG is necessary, you will receive an e-mail with a link to the planning form.\n<br><br>\nYou may close the page.\n"
+    },
+    "errorContent": {
+      "NL": ""
+    },
+    "submitUrl": "",
+    "submitErrorUrl": "",
+    "tags": "",
+    "backButton": {
+      "NL": "Vorige",
+      "EN": ""
+    },
+    "nextButton": {
+      "NL": "Volgende",
+      "EN": ""
+    },
+    "submitButton": {
+      "NL": "Wijzig",
+      "EN": ""
+    },
+    "locales": "NL,EN",
+    "defLocale": "NL",
+    "company": "Belastingdienst",
+    "user": "supportBelastingdienst",
+    "publishDate": "16-03-2022 01:14:20",
+    "publishVersion": "0.01",
+    "pages": [
+      {
+        "id": 267634,
+        "type": "section",
+        "label": {
+          "NL": "Wijzig contactgegevens",
+          "EN": "Intake form HTG"
+        },
+        "description": "",
+        "name": "intakeformulierHTG",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "nextButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "submitButton": {
+          "NL": "",
+          "EN": ""
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 267635,
+            "type": "question",
+            "label": {
+              "NL": "id",
+              "EN": ""
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "id",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "summary no",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 322242,
+            "type": "question",
+            "label": {
+              "NL": "status"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "status",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267609,
+            "type": "group",
+            "name": "Contactgegevens",
+            "description": "",
+            "elementId": "",
+            "className": "",
+            "tags": "",
+            "children": [
+              {
+                "id": 267610,
+                "type": "question",
+                "label": {
+                  "NL": "Contactgegevens",
+                  "EN": "Contact"
+                },
+                "description": {
+                  "NL": "<h3><b>Contactgegevens</b></h3>",
+                  "EN": "<h3>Contact</h3>"
+                },
+                "name": "contactgegevens",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textlabel",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": []
+              },
+              {
+                "id": 267611,
+                "type": "group",
+                "name": "Contactpersoon",
+                "description": "",
+                "elementId": "",
+                "className": "",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267612,
+                    "type": "question",
+                    "label": {
+                      "NL": "Contactpersoon",
+                      "EN": "Contact"
+                    },
+                    "description": {
+                      "NL": "<b>Algemeen Contactpersoon</b>",
+                      "EN": "<b>Contact</b>\n<br>\n<br>\npoint of contact for entire HTG connection process, receiving e-mails for HTG connection process, coordination of planning, etc. "
+                    },
+                    "name": "contactpersoon",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267613,
+                    "type": "question",
+                    "label": {
+                      "NL": "Naam",
+                      "EN": "Name"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "naamContactpersoon",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textfield",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267614,
+                    "type": "question",
+                    "label": {
+                      "NL": "Email",
+                      "EN": "E-mail address"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "emailContactpersoon",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textfield",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [
+                      {
+                        "args": "",
+                        "script": "emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[A-Za-z]{2,4}/\r\nemail = value\r\nif(email ==~ emailPattern){\r\n}else{\r\nreturn [ERR_MAIL_FORMAT:\"Uw email adres is niet geldig\"]\r\n}"
+                      }
+                    ],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267615,
+                    "type": "question",
+                    "label": {
+                      "NL": "Tel.",
+                      "EN": "Telephone number"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "telContactpersoon",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textfield",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  }
+                ]
+              },
+              {
+                "id": 267622,
+                "type": "group",
+                "name": "Functioneel expert",
+                "description": "",
+                "elementId": "",
+                "className": "",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267623,
+                    "type": "question",
+                    "label": {
+                      "NL": "Functioneel expert",
+                      "EN": "Functional expert"
+                    },
+                    "description": {
+                      "NL": "<br />\n<b>Functioneel Contactpersoon</b>",
+                      "EN": "<br /><br />\n<b>Functional expert</b>\n<br>\n<br>\nfor information exchange about coordination on processes, declarants per process, etc. "
+                    },
+                    "name": "functioneelExpert",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267624,
+                    "type": "question",
+                    "label": {
+                      "NL": "Naam",
+                      "EN": "Name"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "naamFunctioneelExpert",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textfield",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267625,
+                    "type": "question",
+                    "label": {
+                      "NL": "Email",
+                      "EN": "E-mail address"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "emailFunctioneelExpert",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textfield",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [
+                      {
+                        "args": "",
+                        "script": "emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[A-Za-z]{2,4}/\r\nemail = value\r\nif(email ==~ emailPattern){\r\n}else{\r\nreturn [ERR_MAIL_FORMAT:\"Uw email adres is niet geldig\"]\r\n}"
+                      }
+                    ],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267626,
+                    "type": "question",
+                    "label": {
+                      "NL": "Tel.",
+                      "EN": "Telephone number"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "telFunctioneelExpert",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textfield",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": "",
+                      "EN": ""
+                    },
+                    "options": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 322243,
+            "type": "operator",
+            "label": {
+              "NL": "checkStatus"
+            },
+            "description": "",
+            "name": "checkstatus",
+            "operatorType": "condition",
+            "elementId": "",
+            "className": "",
+            "condScript": "",
+            "condJson": "[{\"action\":\"Show\",\"page\":\"Wijzig contactgegevens\",\"question\":\"status\",\"operation\":\"is\",\"param\":\"Planning\"}]",
+            "operatorButton": {
+              "NL": ""
+            },
+            "operands": [
+              {
+                "id": 322239,
+                "type": "question",
+                "label": {
+                  "NL": "Wilt u de planningsmail opnieuw uitzenden naar de Algemeen contactpersoon"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "resendPlanningMail",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "radio",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": [
+                  {
+                    "id": 322241,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "Nee"
+                    },
+                    "description": "",
+                    "name": "Nee",
+                    "defaultValue": true,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  },
+                  {
+                    "id": 322240,
+                    "type": "answeroption",
+                    "label": {
+                      "NL": "Ja"
+                    },
+                    "description": "",
+                    "name": "Ja",
+                    "defaultValue": false,
+                    "disabled": false,
+                    "elementId": "",
+                    "className": "",
+                    "condScript": "",
+                    "condJson": "",
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "questions": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "version": 0,
+    "token": "nalZ2arq"
+  }
+}
