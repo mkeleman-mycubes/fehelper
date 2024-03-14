@@ -1,0 +1,25 @@
+Beste ${body.variables.intakeTitel.value} ${body.variables.intakeVoornaam.value} ${body.variables.intakeTussenvoegsel.value} ${body.variables.intakeAchternaam.value},
+<br><br>
+Hierbij bevestigen wij dat u bij ons heeft aangegeven dat uw aansluiting op AGS niet (meer) actief is en u daarom geen nieuwe aansluiting op de DMS nodig heeft. Dit betreft uw aansluiting met EORInummer <b>${body.variables.EORInummer.value}</b> en volgnummer <b>${body.variables.volgnummerBestaandeAGS.value}</b> en onder organisatienaam <b>${body.variables.organisatieNaam.value}</b>. 
+
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam DMS
+
+
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear <#if body.variables.intakeTitel.value == "heer/mevrouw">sir/madam</#if><#if body.variables.intakeTitel.value == "heer">sir</#if><#if body.variables.intakeTitel.value == "meneer">sir</#if><#if body.variables.intakeTitel.value == "mevrouw">madam</#if> ${body.variables.intakeVoornaam.value}  ${body.variables.intakeTussenvoegsel.value} ${body.variables.intakeAchternaam.value},
+<br><br>
+
+We hereby confirm that you have indicated to us that your connection to AGS is no longer active and therefore you do not need a new connection to the DMS. This concerns your connection known with EORInumber <b>${body.variables.EORInummer.value}</b> and Serial number <b>${body.variables.volgnummerBestaandeAGS.value}</b> and with organisation name <b>${body.variables.organisatieNaam.value}</b>. 
+
+<br><br>
+Sincerely,
+<br><br>
+Connection team DMS
