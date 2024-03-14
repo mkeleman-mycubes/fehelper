@@ -1,0 +1,61 @@
+{
+  "variables": {
+  
+
+    <#if body.answers['aansluitingVoorPreproductie'].data.answer[0]?html == "Ja">
+    "gewensteAansluitdag_preprod": {
+        "value": "${body.answers['gewensteAansluitdag_preprod'].data.answer[0]}",
+        "type": "String"
+    },  
+    "migratie_tijdstip_preprod": {
+        "value": "${body.answers['migratie_tijdstip_preprod'].data.answer[0]}",
+        "type": "String"
+    },
+    "migratie_tijdstip_preprod_id": {
+        "value": "${body.timeSlotIdPreprod}",
+        "type": "String"
+    },
+    "opmerkingenPlanningPreprod": {
+        "value": "${body.answers['opmerkingenPlanningPreprod'].data.answer[0]}",
+        "type": "String"
+    }
+    </#if>  
+     <#if body.answers['aansluitingVoorPreproductie'].data.answer[0]?html == "Ja" && body.answers['aansluitingVoorProductie'].data.answer[0]?html == "Ja">  
+    ,    
+    </#if>
+        <#if body.answers['aansluitingVoorProductie'].data.answer[0]?html == "Ja">
+            "andereMailbox": {
+                "value": "${body.answers['andereMailbox'].data.answer[0]}",
+                "type": "String"
+            }, 
+            <#if body.answers['andereMailbox'].data.answer[0]?html == "Ja">
+                "nieuwMailboxAdres": {
+                    "value" : "${body.answers['nieuwMailboxAdres'].data.answer[0]}",
+                    "type": "String"
+                },
+            <#elseif body.answers['andereMailbox'].data.answer[0]?html == "Nee">
+                "nieuwMailboxAdres": {
+                    "value" : "",
+                    "type": "String"
+                },
+            </#if>
+            "gewensteAansluitdag_prod": {
+                "value": "${body.answers['gewensteAansluitdag_prod'].data.answer[0]}",
+                "type": "String"
+            },    
+            "migratie_tijdstip_prod": {
+                "value": "${body.answers['migratie_tijdstip_prod'].data.answer[0]}",
+                "type": "String"
+            },
+            "migratie_tijdstip_prod_id": {
+                "value": "${body.timeSlotIdProd}",
+                "type": "String"
+            },
+            "opmerkingenPlanningProd": {
+                "value": "${body.answers['opmerkingenPlanningProd'].data.answer[0]}",
+                "type": "String"
+            }
+                
+        </#if>  
+  }
+}
