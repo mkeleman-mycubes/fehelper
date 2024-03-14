@@ -1,0 +1,5 @@
+Beste NHD,
+<br /><br />
+Ter informatie.
+<br />
+<b>${body.variables.organisatieNaam.value}</b> met EORInummer <b>${body.variables.EORInummer.value}</b> en volgnummer <b>${body.variables.volgnummerBestaandeAGS.value}</b> is succesvol functioneel gemigreerd en heeft hiermee de migratieproces volledig afgerond.<br /> 
