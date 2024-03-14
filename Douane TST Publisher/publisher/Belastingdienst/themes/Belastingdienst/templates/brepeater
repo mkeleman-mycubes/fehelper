@@ -1,0 +1,5 @@
+{
+  "name": "brepeater",
+  "desc": "",
+  "data": "<div id=\"{{repeater.elementId}}\" class=\"brepeater {{repeater.className}}\">\r\n\t<div class=\"brepeater-html\">\r\n\t\t{{#each listHtml}}\r\n\t\t    <div class=\"brepeater-html-item\">\r\n\t\t        <div class=\"text-right\">\r\n                    {{#ifVarNotEqual 'totalIter' 1}}\r\n            \t\t\t<a onclick=\"jQuery('#{{../../options.containerId}}').questionnaire('repeateEvent', {{../../repeater.id}}, '{{../../ctx.id}}', {{@index}});\" class=\"btn btn-primary brepeater-remove\">x</a>\r\n        \t\t\t{{/ifVarNotEqual}}\r\n        \t\t</div>\r\n    \t\t\t<div class=\"repeater-html\">{{{this}}}</div>\r\n    \t\t</div>\r\n\t\t{{/each}}\r\n\t</div>\r\n\r\n\t<a class=\"add-btn btn btn-primary\" onclick=\"jQuery('#{{options.containerId}}').questionnaire('repeateEvent', {{repeater.id}}, '{{ctx.id}}');\">\r\n\t\t{{repeater.buttonLabel}}\r\n\t</a>\r\n</div>"
+}
