@@ -1,0 +1,13 @@
+{
+    "id":"${headers.taskId}",
+    "koppelvlak":"${body.koppelvlak.value}",
+    "geplandeMaandProductie":"${body.geplandeMaandProductie.value}",
+    "organisatienaam" : "${body.organisatieNaam.value}",
+    "mailInboxAdres" : "${body.mailInboxAdres.value}",
+    "EORInummer" : "${body.EORInummer.value}",
+    "volgnummerBestaandeAGS" : "${body.volgnummerBestaandeAGS.value}",
+    "aansluitingVoorPreproductie" : "${body.aansluitingVoorPreproductie.value}",
+    "aansluitingVoorProductie" : "${body.aansluitingVoorProductie.value}",
+    "andereMailbox" : "${body.andereMailbox.value}",
+    "nieuwMailboxAdres" : "${body.nieuwMailboxAdres.value}"
+}
