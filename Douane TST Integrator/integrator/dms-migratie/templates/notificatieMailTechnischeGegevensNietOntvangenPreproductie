@@ -1,0 +1,9 @@
+Beste aansluitteam,
+<br /><br />
+<b>${body.variables.organisatieNaam.value}</b> heeft nog niet de technische gegevens voor de aansluiting op Preproductie aangeleverd.<br /> Graag contact met ze opnemen. Hieronder de contactgegevens:
+<br /><br />
+
+HTG nummer: ${body.variables.aansluitNummerHTG.value}<br />
+Naam: ${body.variables.naamContactpersoon.value}<br />
+E-mail: ${body.variables.emailContactpersoon.value}<br />
+Tel: ${body.variables.telContactpersoon.value}<br />
