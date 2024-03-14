@@ -1,0 +1,23 @@
+{
+  "modifications": {
+    "mailInboxAdres": {
+        "value": "${body.answers['mailInboxAdres'].data.answer[0]}",
+        "type": "String"
+    },
+    "andereMailbox": {
+        "value": "${body.answers['andereMailbox'].data.answer[0]}",
+        "type": "String"
+    },
+        <#if body.answers['andereMailbox'].data.answer[0]?html == "Ja">
+            "nieuwMailboxAdres": {
+                "value" : "${body.answers['nieuwMailboxAdres'].data.answer[0]}",
+                "type": "String"
+            }
+        <#else>
+            "nieuwMailboxAdres": {
+                "value" : "",
+                "type": "String"
+            }
+        </#if>
+  }
+}
