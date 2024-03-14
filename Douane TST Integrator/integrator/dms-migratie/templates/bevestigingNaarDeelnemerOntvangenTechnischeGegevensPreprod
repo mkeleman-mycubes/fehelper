@@ -1,0 +1,33 @@
+Beste ${body.variables.naamContactpersoon.value},
+<br><br>
+Hiermee bevestigen wij dat wij uw formulier met de technische gegevens voor aansluiting <b>${body.variables.aansluitNummerHTG.value}</b> hebben ontvangen. Hartelijk dank voor het aanleveren. Mochten wij nog vragen hebben, dan nemen wij contact met u op. Binnenkort sturen wij uw technisch expert per sms het wachtwoord/preshared key voor uw aansluiting. Om de volgende stap, het <b>Technisch aansluiten</b>, te starten bellen wij uw technisch expert op het geplande slot op <b>${body.variables.gewensteAansluitdag_preprod.value} ${body.variables.migratie_tijdstip_preprod.value} CET</b>. Bij vragen over deze mail kunt u contact opnemen via het emailadres douane.dlk.htg@belastingdienst.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 07.00 tot 17.00 uur.
+
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam HTG
+<br><br>
+Deze mail is automatisch verstuurd. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de HTG te realiseren en voor onze administratie.
+
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear ${body.variables.naamContactpersoon.value},
+<br><br>
+
+We hereby confirm that we have received your form with technical data for connection <b>${body.variables.aansluitNummerHTG.value}</b>. Thank you very much for your technical data. If we have any more questions we will contact you. Shortly we will send your technical expert by SMS the password/preshared key for your connection. For the following step, the  <b>Technical connection</b>, we will call your technical expert at the scheduled time slot on <b>${body.variables.gewensteAansluitdag_preprod.value} ${body.variables.migratie_tijdstip_preprod.value} CET</b>. Should you have any questions about this e-mail, please don’t hesitate to contact us, the National Customs Helpdesk via the e-mail address douane.dlk.htg@belastingdienst.nl or by telephone (088 156 66 55) on workdays from 7 a.m. to 5 p.m.
+
+<br><br>
+Sincerely,
+<br><br>
+Connection team HTG
+<br><br>
+This e-mail has been sent automatically. We only use your data to realise your new connection to the HTG and for our administration.
+
+
+
+
+
