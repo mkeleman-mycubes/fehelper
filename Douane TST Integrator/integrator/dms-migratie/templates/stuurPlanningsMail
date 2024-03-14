@@ -1,0 +1,51 @@
+<#assign dateToday = .now?long />
+<#assign envVariables = body.formVariables.envVariables />
+<#assign nextWeek = dateToday + (7 * 24 * 60 * 60 * 1000) />
+Beste ${body.variables.naamContactpersoon.value},
+<br><br>
+U heeft de stap Intake van het aansluitproces op de DMS afgerond. Daarbij heeft u aangegeven te willen worden aangesloten op DMS met EORInummer <b>${body.variables.EORInummer.value}</b> en volgnummer <b>${body.variables.volgnummerBestaandeAGS.value}</b>. 
+
+
+ Deze e-mail heeft betrekking op de volgende stap in het aansluitproces, de <b>Tijdslot-planning</b>. In deze stap plant u een tijdslot van een uur waarin u samen met het aansluitteam van Douane start met het realiseren van uw aansluiting. U kunt een beschikbaar tijdslot kiezen in de periode waarin u door ons bent ingedeeld. 
+
+
+Voor het realiseren van uw functionele aansluiting kunt u <b> <a href="${envVariables.formsUrl}/planningsformulier/?id=${body.processInstanceId}&language=NL">hier</a></b> een tijdslot plannen. 
+
+Wij verzoeken u <b>uiterlijk ${nextWeek?number_to_datetime?string["dd-MM-yyyy"]}</b> uw tijdslot voor de functionele aansluiting te plannen, zodat uw bedrijf tijdig kan worden aangesloten op de DMS.
+
+U ontvangt vervolgens van ons een bevestigingsmail.
+
+Bij vragen over deze e-mail kunt u contact opnemen via het e-mailadres Douane.DMS.migratie@douane.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 08.00 tot 16.00 uur.
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam DMS
+<br><br>
+Deze e-mail is automatisch verstuurd. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de DMS te realiseren en voor onze administratie.
+
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear ${body.variables.naamContactpersoon.value},
+<br><br>
+You have completed the part of the intake of the connection process to the DMS, where you have indicated that you would want to connect to DMS with EORInumber <b>${body.variables.EORInummer.value}</b> and Serial number <b>${body.variables.volgnummerBestaandeAGS.value}</b>.
+
+This e-mail relates to the next step in the connection process, the <b>Time Slot planning</b>. In this step you plan a time slot of one hour in which you start realising your connection together with the Customs connection team. You can choose an available time slot in the period in which you are assigned to by us.
+
+To realise your functional connection you can plan a time slot <b> <a href="${envVariables.formsUrl}/planningsformulier/?id=${body.processInstanceId}&language=EN">here</a></b>. 
+
+We kindly request that you schedule your time slot for the functional connection <b>at the latest on ${nextWeek?number_to_datetime?string["dd-MM-yyyy"]}</b> so that your company can connect to the DMS in time. Subsequently you will receive a confirmation e-mail from us which also states the next step in the connection process. Should you have any questions about this e-mail, please don’t hesitate to contact us via e-mail address Douane.DMS.migratie@douane.nl or the National Customs Helpdesk by telephone (088 156 66 55) on workdays from 8 a.m. to 4 p.m.
+<br><br>
+Sincerely,
+<br><br>
+Connection team DMS
+<br><br>
+This e-mail has been sent automatically. We only use your data to realise your new connection to the DMS and for our administration.
+
+
+
+
+
