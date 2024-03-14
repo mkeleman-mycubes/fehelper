@@ -1,0 +1,5 @@
+{
+  "name": "textlabel",
+  "desc": "",
+  "data": "<div {{#if question.elementId}}id=\"{{{question.elementId}}}\"{{/if}} \r\n     class=\"question-text{{#if question.className}} {{{question.className}}}{{/if}}\">\r\n\r\n    <div class=\"row\">\r\n        <section class=\"col col-12\">\r\n            <label class=\"label\">\r\n            \t{{#if question.descLabel}}\r\n            \t\t{{escapeHTML question.descLabel}}\r\n            \t{{else}} \r\n            \t\t{{{question.label}}}\r\n            \t{{/if}}\r\n            </label>\r\n        </section>\r\n    </div>\r\n    \t\r\n    <div class=\"sub-html\">{{{subHtml}}}</div>\r\n\t\r\n</div>"
+}
