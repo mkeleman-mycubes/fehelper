@@ -1,0 +1,8 @@
+def variables = body;
+def formVariables = body.formVariables;
+def processInstanceId = body.processInstanceId
+body = [:];
+
+body["variables"] = variables;
+body["processInstanceId"] = processInstanceId;
+body["formVariables"] = formVariables;
