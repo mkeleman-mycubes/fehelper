@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "bevestigen_dat_technisch_formulier_prod_ontvangen_is",
+            "script" : "taskId = body.answers['id'].data.answer[0]; headers.taskId = taskId"
+        }
+    ]
+}
