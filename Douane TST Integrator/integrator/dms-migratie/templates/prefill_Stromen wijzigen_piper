@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "prefill_Stromen wijzigen",
+            "script" : "processInstanceId = body.id; headers.processInstanceId = processInstanceId"
+        }
+    ]
+}
