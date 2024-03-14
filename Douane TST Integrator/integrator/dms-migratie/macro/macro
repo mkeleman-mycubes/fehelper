@@ -1,0 +1,112 @@
+<#--
+Macro that will print a object in json format.
+This method handles single objects, hashes and arrays.
+Hashes and arrays will recursively handled.
+name: name of variable
+source: object to be printed
+-->
+<#macro printObjectToJson name="" source="body" nested="false" hasNext="false">
+    <#if name?has_content>
+        "${name}":
+    </#if>
+    <#if source?is_hash>
+        {
+            <#list source?keys as key>
+                <#assign hn = key?has_next?c>
+                <@printObjectToJson name=key source=source[key] nested="true" hasNext=hn />
+            </#list>
+        }<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_sequence>
+        [
+            <#list source as seqObject>
+                <#if seqObject?has_content>
+                    <#assign hn = seqObject?has_next?c>
+                    <@printObjectToJson source=seqObject nested="true" hasNext=hn />
+                </#if>
+            </#list>
+        ]<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_boolean>
+        "${source?string("true","false")}"<#if nested=="true" && hasNext=="true">,</#if>
+    <#elseif source?is_number>
+        "${source?c}"<#if nested=="true" && hasNext=="true">,</#if>
+    <#else>
+        "${source?json_string}"<#if nested=="true" && hasNext=="true">,</#if>
+    </#if>
+</#macro>
+
+<#function getVariableValue variable>
+    <#if variable.value?has_content>
+        <#if variable.type=="Boolean">
+        <#return variable.value?c/>
+        <#else>
+        <#return variable.value/>
+        </#if>
+    <#else>
+        <#return ""/>
+    </#if>
+</#function>
+<#function useQuote variable>
+    <#if variable.type == "String" || variable.type == "Json">
+        <#return true/>
+    <#else>
+        <#return false/>
+    </#if>
+</#function>
+
+<#macro camundaMessage messageBody>
+{
+    "messageName": "${messageBody.name}",
+    "businessKey": "${messageBody.businessKey}",
+    <#if messageBody.variables.correlationId.value?has_content>
+    "processInstanceId": "${messageBody.variables.correlationId.value}",
+    </#if>
+    "processVariables": {
+        <#list messageBody.variables?keys as name>
+        <#if messageBody.variables[name].type != "Null">
+        "${name}": {
+            "value": <#if useQuote(messageBody.variables[name])>"</#if>${getVariableValue(messageBody.variables[name])}<#if useQuote(messageBody.variables[name])>"</#if>,
+            "type": "${messageBody.variables[name].type}"
+        }<#if !name?is_last>,</#if>
+        </#if>
+        </#list>
+    }
+}
+</#macro>
+
+<#macro camundaStartMessage messageBody>
+{
+    "messageName": "${messageBody.name}",
+    "businessKey": "${messageBody.businessKey}",
+    "tenantId": "${messageBody.tenantId}",
+    
+    "processVariables": {
+        <#list messageBody.variables?keys as name>
+        <#if messageBody.variables[name].type != "Null">
+        "${name}": {
+            "value": <#if useQuote(messageBody.variables[name])>"</#if>${getVariableValue(messageBody.variables[name])}<#if useQuote(messageBody.variables[name])>"</#if>,
+            "type": "${messageBody.variables[name].type}"
+        }<#if !name?is_last>,</#if>
+        </#if>
+        </#list>
+    },
+    "resultEnabled": true
+}
+</#macro>
+
+<#macro camundaCorrelateMessage messageBody>
+{
+    "messageName": "${messageBody.name}",
+    "processInstanceId": "${messageBody.processInstanceId}",
+    "processVariables": {
+        <#list messageBody.variables?keys as name>
+        <#if messageBody.variables[name].type != "Null">
+        "${name}": {
+            "value": <#if useQuote(messageBody.variables[name])>"</#if>${getVariableValue(messageBody.variables[name])}<#if useQuote(messageBody.variables[name])>"</#if>,
+            "type": "${messageBody.variables[name].type}"
+        }<#if !name?is_last>,</#if>
+        </#if>
+        </#list>
+    },
+    "resultEnabled": true
+}
+</#macro>
