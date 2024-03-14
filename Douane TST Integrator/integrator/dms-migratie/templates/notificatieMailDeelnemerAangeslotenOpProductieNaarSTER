@@ -1,0 +1,9 @@
+Beste STER,
+<br /><br />
+<b>${body.variables.organisatieNaam.value}</b> Klant is technisch succesvol gemigreerd naar productie.<br /> Gelieve nu contact opnemen met de klant om de functionele migratie te starten. Hieronder de contactgegevens:
+<br /><br />
+
+HTG nummer: ${body.variables.EORInummer.value}<br />
+Naam: ${body.variables.naamContactpersoon.value}<br />
+E-mail: ${body.variables.emailContactpersoon.value}<br />
+Tel: ${body.variables.telContactpersoon.value}<br />
