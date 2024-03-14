@@ -1,0 +1,6 @@
+{
+    "dataToConvert": {
+        "value": "{\"data\":\"${body.XMLFile}\"}",
+        "type": "Json"
+    }
+}
