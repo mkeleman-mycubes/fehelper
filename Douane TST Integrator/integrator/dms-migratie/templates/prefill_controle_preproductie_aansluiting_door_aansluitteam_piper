@@ -1,0 +1,14 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "getTaskId",
+            "script" : "id = body.id; headers.id = id"
+        },
+        {
+            "type" : "action",
+            "name" : "prefill_controle_preproductie_aansluiting_door_aansluitteam",
+            "script" : "taskId = body.id; headers.taskId = taskId; headers.id = id"
+        }
+    ]
+}
