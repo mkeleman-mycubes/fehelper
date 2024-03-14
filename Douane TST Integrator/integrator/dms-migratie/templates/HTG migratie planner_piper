@@ -1,0 +1,59 @@
+{
+    "pipes": [
+
+        <#if body.answers['aansluitingVoorPreproductie'].data.answer[0]?html == "Ja" && body.answers['aansluitingVoorProductie'].data.answer[0]?html == "Ja" >
+        {
+            "type" : "action",
+            "name" : "HTG migratie planner_reserve_preprod",
+            "script" : "data = body; timeSlotId = body.answers['migratie_tijdstip_preprod_id'].data.answer[0]; body.timeSlotId = timeSlotId; taskId = body.answers['id'].data.answer[0]; headers.taskId = taskId"
+        },
+        {
+            "type" : "action",
+            "name" : "HTG migratie planner_reserve_prod",
+            "script" : "body.answers= data.answers; timeSlotId = data.answers['migratie_tijdstip_prod_id'].data.answer[0]; body.timeSlotId = timeSlotId;timeSlotIdPreprod = body.timeSlotIdPreprod"
+        },
+        {
+            "type" : "action",
+            "name" : "HTG migratie planner",
+            <#-- "script" :  -->
+            "script" : "body.answers = data.answers; headers.taskId = taskId;body.timeSlotIdPreprod=timeSlotIdPreprod"
+        }        
+        
+        <#else>
+          
+
+
+                <#if body.answers['aansluitingVoorPreproductie'].data.answer[0]?html == "Ja">
+                {
+                    "type" : "action",
+                    "name" : "HTG migratie planner_reserve_preprod",
+                    "script" : "data = body; timeSlotId = body.answers['migratie_tijdstip_preprod_id'].data.answer[0]; body.timeSlotId = timeSlotId; taskId = body.answers['id'].data.answer[0]; headers.taskId = taskId"
+                },
+                {
+                    "type" : "action",
+                    "name" : "HTG migratie planner",
+                    <#-- "script" :  -->
+                    "script" : "body.answers = data.answers; headers.taskId = taskId"
+                }        
+                
+                 </#if>  
+                 
+                <#if body.answers['aansluitingVoorProductie'].data.answer[0]?html == "Ja">
+                    {
+                        "type" : "action",
+                        "name" : "HTG migratie planner_reserve_prod",
+                        "script" : "data = body; timeSlotId = body.answers['migratie_tijdstip_prod_id'].data.answer[0]; body.timeSlotId = timeSlotId; taskId = body.answers['id'].data.answer[0]; headers.taskId = taskId"
+                    },
+                    {
+                        "type" : "action",
+                        "name" : "HTG migratie planner",
+                        <#-- "script" :  -->
+                        "script" : "body.answers = data.answers; headers.taskId = taskId"
+                    }        
+                
+                 </#if>              
+
+        </#if> 
+      
+    ]
+}
