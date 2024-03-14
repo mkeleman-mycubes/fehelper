@@ -1,0 +1,3293 @@
+{
+  "hash": "MPIqfqHH",
+  "name": "Stromen wijzigen",
+  "description": "",
+  "tags": "",
+  "company": "1346",
+  "version": "0.01",
+  "theme": "",
+  "themeViewUri": "",
+  "serviceUri": "https://test-integrator.formsengine.io/mit/trainman/yMxHQHLRso2ajjnl/dms-migratie",
+  "servicePackageId": "",
+  "serviceTemplateName": "Stromen wijzigen_piper",
+  "prefillServiceTemplateName": "prefill_processInstanceId_piper",
+  "jsDependencies": "[]",
+  "data": {
+    "id": 267148,
+    "type": "questionnaire",
+    "name": "Stromen wijzigen",
+    "description": "",
+    "successContent": {
+      "NL": "De wijzigingen op de stromen zijn succesvol doorgevoerd."
+    },
+    "errorContent": {
+      "NL": ""
+    },
+    "submitUrl": "",
+    "submitErrorUrl": "",
+    "tags": "",
+    "backButton": {
+      "NL": ""
+    },
+    "nextButton": {
+      "NL": ""
+    },
+    "submitButton": {
+      "NL": "Wijzig"
+    },
+    "locales": "NL,EN",
+    "defLocale": "NL",
+    "company": "Belastingdienst",
+    "user": "supportBelastingdienst",
+    "publishDate": "25-02-2022 12:57:10",
+    "publishVersion": "0.01",
+    "pages": [
+      {
+        "id": 267149,
+        "type": "section",
+        "label": {
+          "NL": "Stromen"
+        },
+        "description": "",
+        "name": "stromen",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": ""
+        },
+        "nextButton": {
+          "NL": ""
+        },
+        "submitButton": {
+          "NL": ""
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 267181,
+            "type": "question",
+            "label": {
+              "NL": "Berichtstromen",
+              "EN": "Message flows"
+            },
+            "description": {
+              "NL": "<h3>Berichtstromen</h3>",
+              "EN": "<h3>Message flows</h3>"
+            },
+            "name": "berichtstromen",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": "",
+              "EN": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": "",
+              "EN": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": "",
+              "EN": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267258,
+            "type": "question",
+            "label": {
+              "NL": "id"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "id",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "hidden",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 267334,
+            "type": "group",
+            "name": "Labels_name",
+            "description": "",
+            "elementId": "",
+            "className": "labels_name",
+            "tags": "",
+            "children": [
+              {
+                "id": 267331,
+                "type": "question",
+                "label": {
+                  "NL": "Migreren"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "te_migreren",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textlabel",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": []
+              },
+              {
+                "id": 267332,
+                "type": "question",
+                "label": {
+                  "NL": "Gestart"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "gestart",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textlabel",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": []
+              },
+              {
+                "id": 267333,
+                "type": "question",
+                "label": {
+                  "NL": "Gemigreerd"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "gemigreerd",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textlabel",
+                "validScript": "",
+                "elementId": "",
+                "className": "",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": []
+              }
+            ]
+          },
+          {
+            "id": 267180,
+            "type": "group",
+            "name": "Te Migreren",
+            "description": "",
+            "elementId": "",
+            "className": "",
+            "tags": "",
+            "children": [
+              {
+                "id": 267313,
+                "type": "question",
+                "label": {
+                  "NL": "Logistieke stromen Douane"
+                },
+                "description": {
+                  "NL": ""
+                },
+                "name": "logistieke_stromen_douane",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textlabel",
+                "validScript": "",
+                "elementId": "",
+                "className": "stromen",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": []
+              },
+              {
+                "id": 267312,
+                "type": "group",
+                "name": "Logistieke stromen Douane1",
+                "description": "",
+                "elementId": "",
+                "className": "sublabel_name",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267293,
+                    "type": "question",
+                    "label": {
+                      "NL": "Douane: Opslag, invoer en uitvoer (AGS)"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "douane_opslag_invoer_en_uitvoer_ags",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label_single",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267294,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomAGS",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267295,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": ""
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267209,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomAGS_gestart",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267210,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Customs: Storage, import and export (AGS)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267235,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomAGS_gemigreerd",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267236,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Customs: Storage, import and export (AGS)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 267322,
+                "type": "group",
+                "name": "Logistieke Stromen Douane2",
+                "description": "",
+                "elementId": "",
+                "className": "sublabel_name",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267296,
+                    "type": "question",
+                    "label": {
+                      "NL": "Douane: Comfortinfo (CID)"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "douane_comfortinfo_cid",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label_single",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267297,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomCID",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267298,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": ""
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267211,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomCID_gestart",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267212,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Customs: Comfort information (CID)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267237,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomCID_gemigreerd",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267238,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Customs: Comfort information (CID)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 267323,
+                "type": "group",
+                "name": "Logistieke stromen Douane3",
+                "description": "",
+                "elementId": "",
+                "className": "sublabel_name",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267299,
+                    "type": "question",
+                    "label": {
+                      "NL": "Douane: Transit/vervoer (NCTS)"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "douane_transitvervoer_ncts",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label_single",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267300,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomNCTS",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267301,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": ""
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267213,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomNCTS_gestart",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267214,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Customs: Transit (NCTS)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267239,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomNCTS_gemigreerd",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267240,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Customs: Transit (NCTS)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 267324,
+                "type": "group",
+                "name": "Logistieke stromen Douane4",
+                "description": "",
+                "elementId": "",
+                "className": "sublabel_name",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267302,
+                    "type": "question",
+                    "label": {
+                      "NL": "Douane: Accijns (EMCS)"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "douane_accijns_emcs",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label_single",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267303,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomEMCS",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267304,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": ""
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267215,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomEMCS_gestart",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267216,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Customs: Excisable goods (EMCS)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267241,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomEMCS_gemigreerd",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267242,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Customs: Excisable goods (EMCS)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 267191,
+                "type": "question",
+                "label": {
+                  "NL": "Stromen Single Window voor maritiem en lucht",
+                  "EN": "Logistics processes Customs"
+                },
+                "description": {
+                  "NL": "<br /><br />\nStromen Single Window voor maritiem en lucht:\n",
+                  "EN": "<br /><br />\nLogistics processes Customs:"
+                },
+                "name": "stromenSingleWindowVoorMaritiemEnLucht",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textlabel",
+                "validScript": "",
+                "elementId": "",
+                "className": "stromen",
+                "hint": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": "",
+                  "EN": ""
+                },
+                "options": []
+              },
+              {
+                "id": 267325,
+                "type": "group",
+                "name": "Stromen Single Window voor maritiem en lucht1",
+                "description": "",
+                "elementId": "",
+                "className": "sublabel_name",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267305,
+                    "type": "question",
+                    "label": {
+                      "NL": "Grensbewaking: Personen aan brood"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "grensbewaking_personen_aan_brood",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label_single",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267192,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomGB",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267193,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Border Control: Persons on board"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267218,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomGB_gestart",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267219,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Border Control: Persons on board"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267244,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomGB_gemigreerd",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267245,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Border Control: Persons on board"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 267326,
+                "type": "group",
+                "name": "Stromen Single Window voor maritiem en lucht2",
+                "description": "",
+                "elementId": "",
+                "className": "sublabel_name",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267306,
+                    "type": "question",
+                    "label": {
+                      "NL": "Douane: Binnenbrengen, Uitgaan, Proviandering"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "douane_binnenbrengen_uitgaan_proviandering",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label_single",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267194,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomDou",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267195,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Customs: entry of goods to the EU, exit of goods from the EU, provisioning"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267220,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomDou_gestart",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267221,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Customs: entry of goods to the EU, exit of goods from the EU, provisioning"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267246,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomDou_gemigreerd",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267247,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Customs: entry of goods to the EU, exit of goods from the EU, provisioning"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 267327,
+                "type": "group",
+                "name": "Stromen Single Window voor maritiem en lucht3",
+                "description": "",
+                "elementId": "",
+                "className": "sublabel_name",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267307,
+                    "type": "question",
+                    "label": {
+                      "NL": "Rijkswaterstaat: SafeSeaNet"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "rijkswaterstaat_safeseanet",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label_single",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267196,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomRWS",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label-name",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267197,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Rijkswaterstaat: SafeSeaNet"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267222,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomRWS_gestart",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267223,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Rijkswaterstaat: SafeSeaNet"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267248,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomRWS_gemigreerd",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267249,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "Rijkswaterstaat: SafeSeaNet"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 267257,
+                "type": "question",
+                "label": {
+                  "NL": "Logistieke stromen NVWA"
+                },
+                "description": {
+                  "NL": "<br /><br />\nLogistieke stromen NVWA:\n"
+                },
+                "name": "logistieke_stromen_nvwa",
+                "subLabel": {
+                  "NL": ""
+                },
+                "inputType": "textlabel",
+                "validScript": "",
+                "elementId": "",
+                "className": "stromen",
+                "hint": {
+                  "NL": ""
+                },
+                "tooltip": {
+                  "NL": ""
+                },
+                "labelVariables": {
+                  "NL": ""
+                },
+                "tags": "",
+                "defaultValue": {
+                  "NL": ""
+                },
+                "disabled": false,
+                "minDate": "",
+                "minDateType": "",
+                "minDateOffset": "",
+                "maxDate": "",
+                "maxDateType": "",
+                "maxDateOffset": "",
+                "dateType": "calendar",
+                "secured": false,
+                "customTemplate": "",
+                "varNames": "",
+                "varValues": "{}",
+                "mask": "",
+                "validations": [],
+                "deduceJson": "",
+                "deduceScript": "",
+                "unselectLabel": {
+                  "NL": ""
+                },
+                "options": []
+              },
+              {
+                "id": 267328,
+                "type": "group",
+                "name": "Logistieke stromen NVWA1",
+                "description": "",
+                "elementId": "",
+                "className": "sublabel_name",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267308,
+                    "type": "question",
+                    "label": {
+                      "NL": "NVWA: Veterinair (VGA Client)"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "nvwa_veterinair_vga_client",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label_single",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267199,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomVET",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label-name",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267200,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "NVWA: Veterinary (VGA Client)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267225,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomVET_gestart",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267226,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "NVWA: Veterinary (VGA Client)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267251,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomVET_gemigreerd",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267252,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "NVWA: Veterinary (VGA Client)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 267329,
+                "type": "group",
+                "name": "Logistieke stromen NVWA2",
+                "description": "",
+                "elementId": "",
+                "className": "sublabel_name",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267309,
+                    "type": "question",
+                    "label": {
+                      "NL": "NVWA: Fytosanitair (PD Client)"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "nvwa_fytosanitair_pd_client",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label_single",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267201,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomFYT",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267202,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "NVWA: Phytosanitary (PD Client)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267227,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomFYT_gestart",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267228,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "NVWA: Phytosanitary (PD Client)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267253,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomFYT_gemigreerd",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267254,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "NVWA: Phytosanitary (PD Client)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 267330,
+                "type": "group",
+                "name": "Logistieke stromen NVWA3",
+                "description": "",
+                "elementId": "",
+                "className": "sublabel_name",
+                "tags": "",
+                "children": [
+                  {
+                    "id": 267310,
+                    "type": "question",
+                    "label": {
+                      "NL": "NVWA: Visserij (E-logboek)"
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "nvwa_visserij_e_logboek",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "textlabel",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "label_single",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": []
+                  },
+                  {
+                    "id": 267203,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomELOG",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267204,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "NVWA: Fishery (E-logbook)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267229,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomELOG_gestart",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267230,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "NVWA: Fishery (E-logbook)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  },
+                  {
+                    "id": 267255,
+                    "type": "question",
+                    "label": {
+                      "NL": ""
+                    },
+                    "description": {
+                      "NL": ""
+                    },
+                    "name": "stroomELOG_gemigreerd",
+                    "subLabel": {
+                      "NL": ""
+                    },
+                    "inputType": "checkbox",
+                    "validScript": "",
+                    "elementId": "",
+                    "className": "single-box",
+                    "hint": {
+                      "NL": ""
+                    },
+                    "tooltip": {
+                      "NL": ""
+                    },
+                    "labelVariables": {
+                      "NL": ""
+                    },
+                    "tags": "",
+                    "defaultValue": {
+                      "NL": ""
+                    },
+                    "disabled": false,
+                    "minDate": "",
+                    "minDateType": "",
+                    "minDateOffset": "",
+                    "maxDate": "",
+                    "maxDateType": "",
+                    "maxDateOffset": "",
+                    "dateType": "calendar",
+                    "secured": false,
+                    "customTemplate": "",
+                    "varNames": "",
+                    "varValues": "{}",
+                    "mask": "",
+                    "validations": [],
+                    "deduceJson": "",
+                    "deduceScript": "",
+                    "unselectLabel": {
+                      "NL": ""
+                    },
+                    "options": [
+                      {
+                        "id": 267256,
+                        "type": "answeroption",
+                        "label": {
+                          "NL": "",
+                          "EN": "NVWA: Fishery (E-logbook)"
+                        },
+                        "description": "",
+                        "name": "1",
+                        "defaultValue": false,
+                        "disabled": false,
+                        "elementId": "",
+                        "className": "",
+                        "condScript": "",
+                        "condJson": "",
+                        "tooltip": {
+                          "NL": ""
+                        },
+                        "questions": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "version": 0,
+    "token": "nalZ2arq"
+  }
+}
