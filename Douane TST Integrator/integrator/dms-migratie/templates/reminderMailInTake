@@ -1,0 +1,40 @@
+<#assign dateToday = .now?long />
+<#assign envVariables = body.formVariables.envVariables />
+<#assign nextDate = dateToday + (4 * 24 * 60 * 60 * 1000) />
+Beste ${body.variables.intakeTitel.value} ${body.variables.intakeVoornaam.value} ${body.variables.intakeTussenvoegsel.value} ${body.variables.intakeAchternaam.value},
+<br><br>
+
+Om uw bedrijf zorgvuldig op de DMS aan te kunnen laten sluiten, hebben wij u een week geleden een e-mail gestuurd met het verzoek om voor uw aansluiting het intakeformulier in te vullen. Wij hebben uw gegevens helaas nog niet ontvangen. Wij verzoeken u om <b>uiterlijk ${nextDate?number_to_datetime?string["dd-MM-yyyy"]} </b> het formulier in te vullen. 
+
+Het intakeformulier met daarop de gevraagde gegevens kunt u <b><a href="${envVariables.formsUrl}/intake/?id=${body.processInstanceId}&language=NL">hier</a> </b> vinden. Uw EORInummer is <b>${body.variables.EORInummer.value}</b> en volgnummer is <b>${body.variables.volgnummerBestaandeAGS.value}</b>.  
+
+U ontvangt vervolgens van ons een bevestigingsmail waarin tevens staat wat de volgende stap in het aansluitproces is.
+
+Mocht uw aansluiting op AGS niet meer actief zijn en heeft u daarom geen nieuwe aansluiting op de DMS nodig hebben, geeft u dit dan aan op het intakeformulier.
+
+Bij vragen over deze e-mail kunt u contact opnemen via het e-mailadres Douane.DMS.migratie@douane.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 08.00 tot 16.00 uur.
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam DMS
+<br><br>
+Deze e-mail is automatisch verstuurd. Mocht u inmiddels de gegevens al wel hebben ingevuld en de ingevulde gegevens hebben bevestigd, dan kunt u deze e-mail als niet verzonden beschouwen. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de DMS te realiseren en voor onze administratie.
+
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear <#if body.variables.intakeTitel.value == "heer/mevrouw">sir/madam</#if><#if body.variables.intakeTitel.value == "heer">sir</#if><#if body.variables.intakeTitel.value == "meneer">sir</#if><#if body.variables.intakeTitel.value == "mevrouw">madam</#if> ${body.variables.intakeVoornaam.value}  ${body.variables.intakeTussenvoegsel.value} ${body.variables.intakeAchternaam.value},
+<br><br>
+To be able to connect your company correctly to the DMS, we have sent you an e-mail a week ago with the request to fill out the intake form for your connection. Unfortunately we have not yet received your data. We kindly request that you fill out the form <b>at the latest on ${nextDate?number_to_datetime?string["dd-MM-yyyy"]} </b>. The intake form with the requested information can be found <b><a href="${envVariables.formsUrl}/intake/?id=${body.processInstanceId}&language=EN">here</a> </b>. Your EORInumber is <b>${body.variables.EORInummer.value}</b> and Serial number is <b>${body.variables.volgnummerBestaandeAGS.value}</b>.
+
+Subsequently you will receive a confirmation e-mail which also contains the next step in the connection process. If your connection to AGS is no longer active and therefore you do not need a new connection to the DMS, please indicate this on the intake form. Should you have any questions about this e-mail, please don’t hesitate to contact us via e-mail address Douane.DMS.migratie@douane.nl or the National Customs Helpdesk by telephone (088 156 66 55) on workdays from 8 a.m. to 4 p.m.
+<br><br>
+Sincerely,
+<br><br>
+Connection team DMS,
+<br><br>
+This e-mail has been sent automatically. If you have already sent your data you may disregard this letter. We only use your data to realise your new connection to the DMS and for our administration.
+
