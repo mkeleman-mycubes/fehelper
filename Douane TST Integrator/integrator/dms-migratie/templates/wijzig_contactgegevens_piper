@@ -1,0 +1,28 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "wijzig_contactgegevens",
+            "script" : "processInstanceId = body.answers['id'].data.answer[0]; headers.processInstanceId = processInstanceId; answers = body.answers;"
+        },
+        
+        
+        <#if body.answers['resendPlanningMail']?? && body.answers['resendPlanningMail'].data.answer[0]?html == "Ja" >
+        
+        
+            {
+                "type" : "action",
+                "name" : "get_subprocess_data",
+                "script" : "headers.processInstanceId = processInstanceId;"
+            },
+        
+            {
+                "type" : "action",
+                "name" : "stuurPlanningsMail_piper",
+                "script" : "body.processInstanceId = processInstanceId;"
+            }
+            
+        </#if>
+    ]
+}
+        
