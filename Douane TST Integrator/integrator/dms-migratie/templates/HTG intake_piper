@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "HTG intake",
+            "script" : "taskId = body.answers['id'].data.answer[0]; headers.taskId = taskId"
+        }
+    ]
+}
