@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "Stromen wijzigen",
+            "script" : "processInstanceId = body.answers['id'].data.answer[0]; headers.processInstanceId = processInstanceId"
+        }
+    ]
+}
