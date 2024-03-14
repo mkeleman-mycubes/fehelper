@@ -1,0 +1,15 @@
+Beste aansluitteam,
+<br /><br />
+<b>${body.variables.organisatieNaam.value}</b> heeft nog niet het planningsformulier ingediend.<br /> Graag contact met ze opnemen. Hieronder de contactgegevens:
+<br /><br />
+
+HTG nummer: ${body.variables.EORInummer.value}<br />
+Naam: ${body.variables.naamContactpersoon.value}<br />
+E-mail: ${body.variables.emailContactpersoon.value}<br />
+Tel: ${body.variables.telContactpersoon.value}<br />
+
+<br><br>
+Hierbij de link naar het planningsformulier https://acc-cloud.formsengine.io/belastingdienst/planningsformulier/?id=${body.processInstanceId}
+
+
+
