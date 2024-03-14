@@ -1,0 +1,8 @@
+{
+  "variables": {
+    "aangesloten_op_preprod_en_test_uitgevoerd": {
+        "value": "${body.answers['aangesloten_op_preprod_en_test_uitgevoerd'].data.answer[0]}",
+        "type": "String"
+    }
+  }
+}
