@@ -1,0 +1,28 @@
+Beste ${body.variables.naamContactpersoon.value},
+<br><br>
+Hiermee bevestigen wij dat wij uw formulier met de functionele gegevens voor aansluiting met EORInummer <b>${body.variables.EORInummer.value}</b> en volgnummer <b>${body.variables.volgnummerBestaandeAGS.value}</b> hebben ontvangen. Hartelijk dank voor het aanleveren. Mochten wij nog vragen hebben, dan nemen wij contact met u op. Om de volgende stap, het <b>Functioneel aansluiten</b>, te starten bellen wij uw functioneel contactpersoon op het geplande slot op <b>${body.variables.gewensteAansluitdag_prod.value} ${body.variables.migratie_tijdstip_prod.value} CET</b>. Bij vragen over deze mail kunt u contact opnemen via het emailadres Douane.DMS.migratie@douane.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 08.00 tot 16.00 uur.
+
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam DMS
+<br><br>
+Deze mail is automatisch verstuurd. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de DMS te realiseren en voor onze administratie.
+
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear ${body.variables.naamContactpersoon.value},
+<br><br>
+
+We hereby confirm that we have received your form with functional data for connection with EORInumber <b>${body.variables.EORInummer.value}</b> and Serial number <b>${body.variables.volgnummerBestaandeAGS.value}</b>. Thank you very much for your functional data. If we have any more questions we will contact you. Shortly we will send your technical expert by SMS the password/preshared key for your connection. For the following step, the  <b>Functional connection</b>, we will call your functional contact at the scheduled time slot on <b>${body.variables.gewensteAansluitdag_prod.value} ${body.variables.migratie_tijdstip_prod.value} CET</b>. Should you have any questions about this e-mail, please don’t hesitate to contact us via e-mail address Douane.DMS.migratie@douane.nl or the National Customs Helpdesk by telephone (088 156 66 55) on workdays from 8 a.m. to 4 p.m.
+
+<br><br>
+Sincerely,
+<br><br>
+Connection team DMS
+<br><br>
+This e-mail has been sent automatically. We only use your data to realise your new connection to the DMS and for our administration.
