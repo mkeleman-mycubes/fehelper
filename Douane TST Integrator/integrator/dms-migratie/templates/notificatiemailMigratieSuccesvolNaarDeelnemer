@@ -1,0 +1,27 @@
+Beste ${body.variables.naamContactpersoon.value},
+<br><br>
+Hiermee bevestigen wij dat uw bedrijf met EORInummer <b>${body.variables.EORInummer.value}</b> en volgnummer <b>${body.variables.volgnummerBestaandeAGS.value}</b> functioneel is aangesloten op DMS. Hartelijk dank voor uw inzet. Het aansluitproces op DMS is hiermee volledig afgerond voor uw aansluiting. Vanaf nu dient u DMS te gebruiken voor uw nieuwe aangiften invoer, opslag en uitvoer. Bij vragen over deze e-mail kunt u contact opnemen via het emailadres Douane.DMS.migratie@douane.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 08.00 tot 16.00 uur.
+
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam DMS
+<br><br>
+Deze e-mail is automatisch verstuurd. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de DMS te realiseren en voor onze administratie.
+
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear ${body.variables.naamContactpersoon.value},
+<br><br>
+
+We hereby confirm that your company with connection EORInumber <b>${body.variables.EORInummer.value}</b> and Serial number <b>${body.variables.volgnummerBestaandeAGS.value}</b> is functionally connected to DMS. Thank you very much for your effort. The connection process to the DMS has now been completed. From now on you should use DMS for your new import, storage and export declarations. Should you have any questions about this e-mail, please don’t hesitate to contact us via e-mail address Douane.DMS.migratie@douane.nl or the National Customs Helpdesk by telephone (088 156 66 55) on workdays from 8 a.m. to 4 p.m.
+<br><br>
+Sincerely,
+<br><br>
+Connection team DMS
+<br><br>
+This e-mail has been sent automatically. We only use your data to realise your new connection to the DMS and for our administration.
