@@ -1,0 +1,28 @@
+Beste ${body.variables.naamContactpersoon.value},
+<br><br>
+Hiermee bevestigen wij dat uw bedrijf met aansluiting <b>${body.variables.EORInummer.value}</b> technisch is aangesloten op de Preproductie. Bij vragen over deze mail of het testen op de Preproductie kunt u contact opnemen via het emailadres douane.dlk.htg@belastingdienst.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 07.00 tot 17.00 uur. 
+
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam HTG
+<br><br>
+Deze mail is automatisch verstuurd. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de HTG te realiseren en voor onze administratie.
+
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear ${body.variables.naamContactpersoon.value},
+<br><br>
+
+We hereby confirm that your company with connection <b>${body.variables.EORInummer.value}</b> is technically connected to Preproduction. Should you have any questions about this e-mail or testing on the Preproduction, please don’t hesitate to contact us, the National Customs Helpdesk via the e-mail address douane.dlk.htg@belastingdienst.nl or by telephone (088 156 66 55) on workdays from 7 a.m. to 5 p.m.
+<br><br>
+Sincerely,
+<br><br>
+Connection team HTG
+<br><br>
+This e-mail has been sent automatically. We only use your data to realise your new connection to the HTG and for our administration.
+
