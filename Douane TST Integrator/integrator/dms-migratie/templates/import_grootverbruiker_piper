@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "import_grootverbruiker",
+            "script": "body.base64File=headers.upload_file"
+        }
+    ]
+}
