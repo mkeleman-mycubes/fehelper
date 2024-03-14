@@ -1,0 +1,95 @@
+Beste ${body.variables.naamContactpersoon.value},
+<br><br>
+Hiermee bevestigen wij dat wij uw tijdslot-planning voor aansluiting op DMS met EORInummer <b>${body.variables.EORInummer.value}</b> en volgnummer <b>${body.variables.volgnummerBestaandeAGS.value}</b> hebben ontvangen. Hartelijk dank voor het aanleveren. Mochten wij nog vragen hebben, dan nemen wij contact met u op. Onderaan deze e-mail vindt u een overzicht van uw tijdslot. Wij adviseren u om deze e-mail te bewaren.
+
+De tweede stap in het aansluitproces, de Tijdslot-planning, is hiermee afgerond.
+
+Bij vragen over deze e-mail kunt u contact opnemen via het e-mailadres Douane.DMS.migratie@douane.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 08.00 tot 16.00 uur. 
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam DMS
+<br><br>
+Deze e-mail is automatisch verstuurd. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de DMS te realiseren en voor onze administratie.
+
+
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear ${body.variables.naamContactpersoon.value},
+<br><br>
+We hereby confirm that we have received your time slot schedule for connection on DMS with EORInumber <b>${body.variables.EORInummer.value}</b> and Serial number <b>${body.variables.volgnummerBestaandeAGS.value}</b>. Thank you very much for your planning. If we have any more questions we will contact you. At the foot of this e-mail you will find your schedule. We advise you to save this e-mail. The second step in this connection process has now been completed, the time slot planning. Should you have any questions about this e-mail, please don’t hesitate to contact us via e-mail address Douane.DMS.migratie@douane.nl or the National Customs Helpdesk by telephone (088 156 66 55) on workdays from 8 a.m. to 4 p.m.
+<br><br>
+Sincerely,
+<br><br>
+Connection team DMS
+<br><br>
+This e-mail has been sent automatically. We only use your data to realise your new connection to the DMS and for our administration.
+<br><br>
+
+<H3>Planning:</H3>
+<table border="1" cellpadding="5" cellspacing="0">
+
+<tr>
+<td width="150">Organisatie / Organisation</td>
+<td>${body.variables.organisatieNaam.value}</td>
+</tr>
+<tr>
+<td width="150">EORInummer / EORInumber</td>
+<td>${body.variables.EORInummer.value}</td>
+</tr>
+
+
+
+
+<#if body.variables.aansluitingVoorProductie.value == "Ja">
+<tr>
+<td width="500" colspan="2">
+<b>Functionele aansluiting / Functional connection</b>
+</td>
+</tr>
+<tr>
+<td width="150">Datum / Date</td>
+<td>${body.variables.gewensteAansluitdag_prod.value}</td>
+</tr>
+<tr>
+<td width="150">Tijdstip / Time</td>
+<td>
+<#if body.variables.migratie_tijdstip_prod.value == "08:00">
+08:00-9:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "09:00">
+09:00-10:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "10:00">
+10:00-11:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "11:00">
+11:00-12:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "13:00">
+13:00-14:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "14:00">
+14:00-15:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "15:00">
+15:00-16:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "16:00">
+16:00-17:00 CET
+</#if>
+
+ 
+</td>
+</tr>
+<tr>
+<td width="150">Opmerkingen / Remarks</td>
+<td>${body.variables.opmerkingenPlanningProd.value} </td>
+</tr>
+</#if>
+</table>
+
