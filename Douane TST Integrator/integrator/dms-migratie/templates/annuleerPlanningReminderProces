@@ -1,0 +1,4 @@
+{
+	  "messageName" : "annuleerPlanningReminderProces",
+	  "businessKey" : "${body.variables.EORInummer.value}-${body.variables.volgnummerBestaandeAGS.value}"
+}
