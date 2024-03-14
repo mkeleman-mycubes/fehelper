@@ -1,0 +1,19 @@
+{
+    "pipes": [
+		{
+			"type": "script",
+			"name": "getEnvVariables"
+		},
+		<#if body.emailContactpersoon??>
+		    {
+    			"type": "script",
+    			"name": "bodyVariables"
+		    },
+		</#if>
+    	{
+    		"type": "action",
+			"name": "stuurPlanningsMail",
+			"script" : "headers.processInstanceId = body.processInstanceId;"
+		}
+    ]
+}
