@@ -1,0 +1,9 @@
+{
+  "variables": {
+
+    "aangesloten_en_test_uitgevoerd": {
+        "value": "${body.answers['aangesloten_en_test_uitgevoerd'].data.answer[0]}",
+        "type": "String"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "messageName": "ImporteerDeelnemers_RequestMessage",
+    "processVariables": {
+        "dataToConvert": {
+            "value": "{\"data\":\"${body.validatedFile}\"}",
+            "type": "Json"
+        }
+    }
+}

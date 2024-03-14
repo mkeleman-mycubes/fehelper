@@ -1,0 +1,12 @@
+{
+    "pipes": [
+		{
+			"type": "script",
+			"name": "getEnvVariables"
+		},
+		{
+			"type": "action",
+			"name": "reminderMailPlanning"
+		}
+    ]
+}

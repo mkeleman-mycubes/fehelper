@@ -1,0 +1,11 @@
+{
+    "id":"${headers.id}",
+    "volgnummerBestaandeAGS":"${body.volgnummerBestaandeAGS.value}",
+    "EORInummer":"${body.EORInummer.value}",
+    "intakeEmail":"${body.intakeEmail.value}",
+    "intakeTitel":"${body.intakeTitel.value}",
+    "organisatieNaam":"${body.organisatieNaam.value}",
+    "intakeVoornaam" : "${body.intakeVoornaam.value}",
+    "intakeTussenvoegsel" : "${body.intakeTussenvoegsel.value}",
+    "intakeAchternaam": "${body.intakeAchternaam.value}"
+}

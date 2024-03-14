@@ -1,0 +1,17 @@
+{
+    "pipes": [
+    <#if body.answers.opnieuw_intake_mail_uitsturen.data.answer[0] == "Ja">
+        {
+            "type" : "action",
+            "name" : "resendIntakeForm"
+        }
+        <#else>
+        {
+            "type" : "action",
+            "name" : "wijzigContactgegevensIntake",
+            "script" : "processInstanceId = body.answers['id'].data.answer[0]; headers.processInstanceId = processInstanceId"
+        }        
+        </#if>
+    ]
+}
+        

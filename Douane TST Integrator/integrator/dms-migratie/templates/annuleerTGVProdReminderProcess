@@ -1,0 +1,4 @@
+{
+	  "messageName" : "annuleerTGVProdReminderProcess",
+	  "businessKey" : "${body.variables.EORInummer.value}-${body.variables.volgnummerBestaandeAGS.value}"
+}

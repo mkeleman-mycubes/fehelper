@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "prefill_herplanning_preprod",
+            "script" : "processInstanceId = body.id; headers.processInstanceId = processInstanceId"
+        }
+    ]
+}

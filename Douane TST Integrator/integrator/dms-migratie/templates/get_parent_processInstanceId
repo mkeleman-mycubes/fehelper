@@ -1,0 +1,4 @@
+{
+    "processDefinitionKey": "Klantenreis",
+    "businessKey": "${body.answers['EORInummer'].data.answer[0]}-${body.answers['volgnummerBestaandeAGS'].data.answer[0]}"
+}

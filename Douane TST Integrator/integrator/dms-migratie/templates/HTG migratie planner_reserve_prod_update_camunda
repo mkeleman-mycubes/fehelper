@@ -1,0 +1,21 @@
+{
+  "modifications": {
+
+    "gewensteAansluitdag_prod": {
+        "value": "${body.answers['gewensteAansluitdag_prod'].data.answer[0]}",
+        "type": "String"
+    },  
+    "migratie_tijdstip_prod": {
+        "value": "${body.answers['migratie_tijdstip_prod'].data.answer[0]}",
+        "type": "String"
+    },
+    "migratie_tijdstip_prod_id": {
+        "value": "${body.timeSlotIdProd?replace(",", "")}",
+        "type": "String"
+    },
+    "opmerkingenPlanningProd": {
+        "value": "${body.answers['opmerkingenPlanningProd'].data.answer[0]}",
+        "type": "String"
+    }    
+  }
+}

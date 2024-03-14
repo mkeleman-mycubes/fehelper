@@ -1,0 +1,6 @@
+{
+	"email" : "${body.answers.e_mail.data.answer[0]}",
+	"subject" : "Export slot-planning DMS migratie planning tool",
+	"content" : "Hierbij als bijlage de opgevraagde slot-planning Excel export bestand."
+
+}

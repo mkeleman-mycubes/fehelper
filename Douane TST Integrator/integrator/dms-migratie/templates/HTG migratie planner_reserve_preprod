@@ -1,0 +1,8 @@
+{
+    "id" : ${body.timeSlotId},
+	"organizationName" : "${body.answers.organisatienaam.data.answer[0]}",
+	"processInstanceId" : "${body.answers.id.data.answer[0]}",
+	"htgName" : "${body.answers.aansluitNummerHTG.data.answer[0]}",
+	"environment" : "preproduction",
+	"remarks" : "${body.answers.opmerkingenPlanningPreprod.data.answer[0]}",
+}

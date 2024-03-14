@@ -1,0 +1,10 @@
+{
+	"id" : ${body.timeSlotId},
+	"organizationName" : "${body.answers.organisatieNaam.data.answer[0]}",
+	"processInstanceId" : "${body.answers.id.data.answer[0]}",
+	"htgName" : "${body.answers.EORInummer.data.answer[0]}",
+	"sequenceNumber": "${body.answers.volgnummerBestaandeAGS.data.answer[0]}",
+	"environment" : "production",
+	"remarks":"${body.answers.opmerkingenPlanningProd.data.answer[0]}"
+
+}

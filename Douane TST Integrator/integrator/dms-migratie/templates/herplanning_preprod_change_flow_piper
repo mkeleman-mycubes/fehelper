@@ -1,0 +1,24 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "remove_original_planning_preprod",
+            "script" : "data = body; timeSlotId = body.answers['migratie_tijdstip_preprod_id'].data.answer[0]; body.timeSlotId = timeSlotId; processInstanceId = body.answers['id'].data.answer[0]; headers.processInstanceId = processInstanceId;migratie_tijdstip_preprod_old_id=body.answers['migratie_tijdstip_preprod_old_id'].data.answer[0];headers.migratie_tijdstip_preprod_old_id=migratie_tijdstip_preprod_old_id"
+        },
+        {
+            "type" : "action",
+            "name" : "HTG migratie planner_reserve_preprod",
+            "script" : "body = data"
+        },
+        {
+            "type" : "action",
+            "name" : "HTG migratie planner_reserve_preprod_update_camunda_flow",
+            "script" : "body.answers = data.answers; headers.processInstanceId = processInstanceId"
+        },
+        {
+            "type" : "action",
+            "name" : "stuurBevestigingmailHerPlanningPreprodDeelnemer",
+            "script" : "body = data; headers.processInstanceId = processInstanceId"
+        }  
+    ]
+}

@@ -1,0 +1,13 @@
+Beste aansluitteam,
+<br><br>
+
+<b>${body.variables.naamContactpersoon.value}</b> van organisatie <b>${body.variables.organisatieNaam.value}</b> heeft aangegeven op preproductie (en productie) aan te sluiten in het intakeformulier. Graag controleren en eventueel contact opnemen.
+<br><br>
+Hierbij de mail <b>${body.variables.emailContactpersoon.value}</b> <br>
+en telefoonnummer <b>${body.variables.telContactpersoon.value}</b>
+<br><br>
+Gebruik het volgende formulier om deze stap af te ronden<br>
+https://htg-migratie.nl/acc/controleraansluitingpreproductie/?id=${body.processInstanceId}
+
+
+

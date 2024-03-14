@@ -1,0 +1,124 @@
+{
+  "modifications": {
+    "stroomAGS": {
+        "value": "${body.answers['stroomAGS'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomCID": {
+        "value": "${body.answers['stroomCID'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomNCTS": {
+        "value": "${body.answers['stroomNCTS'].data.answer[0]}",
+        "type": "String"
+    },
+        "stroomEMCS": {
+        "value": "${body.answers['stroomEMCS'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomGB": {
+        "value": "${body.answers['stroomGB'].data.answer[0]}",
+        "type": "String"
+    },
+        "stroomDou": {
+        "value": "${body.answers['stroomDou'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomRWS": {
+        "value": "${body.answers['stroomRWS'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomVET": {
+        "value": "${body.answers['stroomVET'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomFYT": {
+        "value": "${body.answers['stroomFYT'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomELOG": {
+        "value": "${body.answers['stroomELOG'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomAGS_gestart": {
+        "value": "${body.answers['stroomAGS_gestart'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomCID_gestart": {
+        "value": "${body.answers['stroomCID_gestart'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomNCTS_gestart": {
+        "value": "${body.answers['stroomNCTS_gestart'].data.answer[0]}",
+        "type": "String"
+    },
+        "stroomEMCS_gestart": {
+        "value": "${body.answers['stroomEMCS_gestart'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomGB_gestart": {
+        "value": "${body.answers['stroomGB_gestart'].data.answer[0]}",
+        "type": "String"
+    },
+        "stroomDou_gestart": {
+        "value": "${body.answers['stroomDou_gestart'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomRWS_gestart": {
+        "value": "${body.answers['stroomRWS_gestart'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomVET_gestart": {
+        "value": "${body.answers['stroomVET_gestart'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomFYT_gestart": {
+        "value": "${body.answers['stroomFYT_gestart'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomELOG_gestart": {
+        "value": "${body.answers['stroomELOG_gestart'].data.answer[0]}",
+        "type": "String"
+    },    
+    "stroomAGS_gemigreerd": {
+        "value": "${body.answers['stroomAGS_gemigreerd'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomCID_gemigreerd": {
+        "value": "${body.answers['stroomCID_gemigreerd'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomNCTS_gemigreerd": {
+        "value": "${body.answers['stroomNCTS_gemigreerd'].data.answer[0]}",
+        "type": "String"
+    },
+        "stroomEMCS_gemigreerd": {
+        "value": "${body.answers['stroomEMCS_gemigreerd'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomGB_gemigreerd": {
+        "value": "${body.answers['stroomGB_gemigreerd'].data.answer[0]}",
+        "type": "String"
+    },
+        "stroomDou_gemigreerd": {
+        "value": "${body.answers['stroomDou_gemigreerd'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomRWS_gemigreerd": {
+        "value": "${body.answers['stroomRWS_gemigreerd'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomVET_gemigreerd": {
+        "value": "${body.answers['stroomVET_gemigreerd'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomFYT_gemigreerd": {
+        "value": "${body.answers['stroomFYT_gemigreerd'].data.answer[0]}",
+        "type": "String"
+    },
+    "stroomELOG_gemigreerd": {
+        "value": "${body.answers['stroomELOG_gemigreerd'].data.answer[0]}",
+        "type": "String"
+    }
+  }
+}

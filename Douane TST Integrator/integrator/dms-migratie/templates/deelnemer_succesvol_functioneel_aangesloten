@@ -1,0 +1,9 @@
+{
+  "variables": {
+
+    "succesvol_functioneel_aangesloten": {
+        "value": "${body.answers['succesvol_functioneel_aangesloten'].data.answer[0]}",
+        "type": "String"
+    }
+  }
+}

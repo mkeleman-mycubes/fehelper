@@ -1,0 +1,8 @@
+{
+  "variables": {
+    "aansluitingVoorPreproductie": {
+        "value": "${body.answers['aansluitingVoorPreproductie'].data.answer[0]}",
+        "type": "String"
+    }
+  }
+}

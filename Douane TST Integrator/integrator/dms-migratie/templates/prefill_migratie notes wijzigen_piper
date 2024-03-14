@@ -1,0 +1,23 @@
+{
+    "pipes": [
+        <#if body.isProcessFinished?? && body.isProcessFinished == true>
+            {
+                "type": "action",
+                "name": "prefill_history_migratie notes wijzigen",
+                "script": "processInstanceId = body.id; headers.processInstanceId = processInstanceId"
+            },
+            {
+                "type": "transform",
+                "name": "prefill_history_migratie notes wijzigen_result",
+                "script": "headers.processInstanceId = processInstanceId"
+            }
+        
+            <#else>
+            {
+                "type" : "action",
+                "name" : "prefill_migratie notes wijzigen",
+                "script" : "processInstanceId = body.id; headers.processInstanceId = processInstanceId"
+            }
+        </#if>
+    ]
+}

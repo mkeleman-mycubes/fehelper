@@ -1,0 +1,12 @@
+{
+    "id":"${headers.processInstanceId}",
+    "koppelvlak":"${body.koppelvlak.value}",
+    "aansluitingVoorProductie" : "${body.aansluitingVoorProductie.value}",
+    "aansluitingVoorPreproductie" : "${body.aansluitingVoorPreproductie.value}",
+    "organisatienaam" : "${body.organisatieNaam.value}",
+    "naamContactpersoon" : "${body.naamContactpersoon.value}",
+    "emailContactpersoon" : "${body.emailContactpersoon.value}",
+    "aansluitNummerHTG" : "${body.aansluitNummerHTG.value}",
+    "migratie_tijdstip_preprod_old_id" : "${body.migratie_tijdstip_preprod_id.value}",
+    "opmerkingenPlanningPreprod" : "${body.opmerkingenPlanningPreprod.value}"
+}

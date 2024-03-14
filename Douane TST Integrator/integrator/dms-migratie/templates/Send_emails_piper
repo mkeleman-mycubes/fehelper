@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "Send_emails",
+            "script" : "onderwerp = body.answers['onderwerp'].data.answer[0]; headers.onderwerp = onderwerp"
+        }
+    ]
+}

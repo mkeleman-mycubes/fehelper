@@ -1,0 +1,17 @@
+{
+    "pipes": [
+        <#if body.answers.question.data.answer[0] == "block">
+            {
+                "type" : "action",
+                "name" : "Planningsformulier Block",
+                "script": "body.answers = body.answers"
+            }
+        <#else>
+            {
+                "type" : "action",
+                "name" : "Planningsformulier UnBlock",
+                "script" : "body = body.answers;"
+            }
+        </#if>
+    ]
+}    

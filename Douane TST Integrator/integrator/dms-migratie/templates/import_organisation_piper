@@ -1,0 +1,14 @@
+{
+    "pipes": [
+        {
+            "type": "action",
+            "name": "validateOrganisationSheet",
+            "script": "body.XMLFile=headers.upload_file; XMLFile=headers.upload_file; headers.remove('upload_file')"
+        },
+        {
+            "type": "action",
+            "name": "import_organisation",
+            "script": "body.validatedFile=XMLFile"
+        }
+    ]
+}

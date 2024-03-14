@@ -1,0 +1,96 @@
+Beste ${body.answers['naamContactpersoon'].data.answer[0]},
+<br><br>
+Hiermee bevestigen wij dat wij voor u uw slot-planning voor aansluiting <b>${body.answers['aansluitNummerHTG'].data.answer[0]}</b> hebben aangepast. Onderaan deze mail vindt u een overzicht van uw slot(s). Wij adviseren u om deze mail te bewaren. Bij vragen over deze mail kunt u contact opnemen via het emailadres douane.dlk.htg@belastingdienst.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 07.00 tot 17.00 uur. 
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam HTG
+<br><br>
+Deze mail is automatisch verstuurd. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de HTG te realiseren en voor onze administratie.
+
+
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear ${body.answers['naamContactpersoon'].data.answer[0]},
+<br><br>
+We hereby confirm that we have rescheduled your time slot for connection  <b>${body.answers['aansluitNummerHTG'].data.answer[0]}</b>. At the foot of this e-mail you will find your schedule. We advise you to save this e-mail. Should you have any questions about this e-mail, please don’t hesitate to contact us, the National Customs Helpdesk via the e-mail address douane.dlk.htg@belastingdienst.nl or by telephone (088 156 66 55) on workdays from 7 a.m. to 5 p.m.
+
+<br><br>
+Sincerely,
+<br><br>
+Connection team HTG
+<br><br>
+This e-mail has been sent automatically. We only use your data to realise your new connection to the HTG and for our administration.
+<br><br>
+
+
+<H3>Planning:</H3>
+<table border="1" cellpadding="5" cellspacing="0">
+
+<tr>
+<td width="150">Organisatie / Organisation</td>
+<td>${body.answers['naamContactpersoon'].data.answer[0]} </td>
+</tr>
+<tr>
+<td width="150">HTG nummer / HTG number</td>
+<td>${body.answers['aansluitNummerHTG'].data.answer[0]} </td>
+</tr>
+<tr>
+<td width="150">Koppelvlak / Type of interface</td>
+<td>${body.answers['koppelvlak'].data.answer[0]}</td>
+</tr>
+
+
+<tr>
+<td width="500" colspan="2">
+<b>Preproductie / Preproduction</b>
+</td>
+</tr>
+<tr>
+<td width="150">Datum / Date</td>
+<td>${body.answers['gewensteAansluitdag_preprod'].data.answer[0]}</td>
+</tr>
+<tr>
+<td width="150">Tijdstip / Time</td>
+<td>
+
+
+<#if body.answers['migratie_tijdstip_preprod'].data.answer[0] == "08:00">
+08:00-9:00 CET
+</#if>
+<#if body.answers['migratie_tijdstip_preprod'].data.answer[0] == "09:00">
+09:00-10:00 CET
+</#if>
+<#if body.answers['migratie_tijdstip_preprod'].data.answer[0] == "10:00">
+10:00-11:00 CET
+</#if>
+<#if body.answers['migratie_tijdstip_preprod'].data.answer[0] == "11:00">
+11:00-12:00 CET
+</#if>
+<#if body.answers['migratie_tijdstip_preprod'].data.answer[0] == "13:00">
+13:00-14:00 CET
+</#if>
+<#if body.answers['migratie_tijdstip_preprod'].data.answer[0] == "14:00">
+14:00-15:00 CET
+</#if>
+<#if body.answers['migratie_tijdstip_preprod'].data.answer[0] == "15:00">
+15:00-16:00 CET
+</#if>
+<#if body.answers['migratie_tijdstip_preprod'].data.answer[0] == "16:00">
+16:00-17:00 CET
+</#if>
+
+</td>
+</tr>
+<tr>
+<td width="150">Opmerkingen / Remarks</td>
+<td>${body.answers['opmerkingenPlanningPreprod'].data.answer[0]}</td>
+</tr>
+
+</table>
+
+

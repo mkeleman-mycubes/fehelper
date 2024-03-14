@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "controle_preproductie_aansluiting_door_aansluitteam",
+            "script" : "taskId = body.answers['id'].data.answer[0]; headers.taskId = taskId"
+        }
+    ]
+}

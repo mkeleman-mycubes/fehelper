@@ -1,0 +1,10 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "wijzig_intake_connectie_informatie",
+            "script" : "processInstanceId = body.answers['id'].data.answer[0]; headers.processInstanceId = processInstanceId"
+        }        
+    ]
+}
+        

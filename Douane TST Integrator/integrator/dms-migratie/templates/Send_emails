@@ -1,0 +1,8 @@
+<#-- available sendTo options: sendTo, sendToCC, sendToBCC -->
+{
+  "sendTo": "noreply@douane-dms-migratie.nl",
+  "sendFrom": "noreply@douane-dms-migratie.nl",
+  "subject": "${body.answers["onderwerp"].data.answer[0]}",
+  "html": "${body.answers["bericht"].data.answer[0]}",
+  "bcc": ${false?c}
+}

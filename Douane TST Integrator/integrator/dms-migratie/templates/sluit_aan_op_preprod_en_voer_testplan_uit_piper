@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "sluit_aan_op_preprod_en_voer_testplan_uit",
+            "script" : "taskId = body.answers['id'].data.answer[0]; headers.taskId = taskId"
+        }
+    ]
+}

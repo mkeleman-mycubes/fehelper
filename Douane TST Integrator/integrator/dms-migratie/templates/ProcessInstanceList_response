@@ -1,0 +1,10 @@
+[
+<#list body as instance>
+    <#if instance?index gt 0>,</#if>
+    {
+    "id": "${instance.id}",
+    "businessKey": "${instance.businessKey!""}",
+    "tenantId": "${instance.tenantId!""}"
+    }
+</#list>
+]

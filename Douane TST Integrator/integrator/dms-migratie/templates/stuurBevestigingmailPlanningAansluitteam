@@ -1,0 +1,71 @@
+Bevestiging mail planning Aansluitteam
+
+
+========================
+
+<H3>Planning:</H3>
+<table border="1" cellpadding="5" cellspacing="0">
+
+<tr>
+<td width="150">Organisatie / Organisation</td>
+<td>${body.variables.organisatieNaam.value}</td>
+</tr>
+<tr>
+<td width="150">HTG nummer / HTG number</td>
+<td>${body.variables.aansluitNummerHTG.value}</td>
+</tr>
+<tr>
+<td width="150">Koppelvlak / Type of interface</td>
+<td>${body.variables.koppelvlak.value}</td>
+</tr>
+
+
+
+<#if body.variables.aansluitingVoorProductie.value == "Ja">
+<tr>
+<td width="500" colspan="2">
+<b>Productie / Production</b>
+</td>
+</tr>
+<tr>
+<td width="150">Datum / Date</td>
+<td>${body.variables.gewensteAansluitdag_prod.value}</td>
+</tr>
+<tr>
+<td width="150">Tijdstip / Time</td>
+<td>
+<#if body.variables.migratie_tijdstip_prod.value == "08:00">
+08:00-9:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "09:00">
+09:00-10:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "10:00">
+10:00-11:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "11:00">
+11:00-12:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "13:00">
+13:00-14:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "14:00">
+14:00-15:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "15:00">
+15:00-16:00 CET
+</#if>
+<#if body.variables.migratie_tijdstip_prod.value == "16:00">
+16:00-17:00 CET
+</#if>
+
+ 
+</td>
+</tr>
+<tr>
+<td width="150">Opmerkingen / Remarks</td>
+<td>${body.variables.opmerkingenPlanningProd.value} </td>
+</tr>
+</#if>
+</table>
+

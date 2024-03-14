@@ -1,0 +1,9 @@
+{
+  "variables": {
+
+    "aansluitpakket_verstuurd": {
+        "value": "${body.answers['aansluitpakket_verstuurd'].data.answer[0]}",
+        "type": "String"
+    }
+  }
+}

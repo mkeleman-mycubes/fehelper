@@ -1,0 +1,6 @@
+Beste aansluitteam,
+<br /><br />
+<b>${body.variables.organisatieNaam.value}</b> heeft nog niet het intakeformulier ingediend.<br /> Graag contact opnemen met <b> ${body.variables.intakeTitel.value} ${body.variables.intakeVoornaam.value} ${body.variables.intakeTussenvoegsel.value} ${body.variables.intakeAchternaam.value} </b>met het verzoek om het intake formulier in te vullen..
+<br /><br />
+We hebben de email verstuurd naar e-mail adres ${body.variables.intakeEmail.value}. <br> <br>Hierbij de link naar het volgende formulier https://acc-cloud.formsengine.io/belastingdienst/intake/?id=${body.processInstanceId}
+

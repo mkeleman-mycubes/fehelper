@@ -1,0 +1,13 @@
+{
+    "id":"${headers.processInstanceId}",
+    "koppelvlak":"${body.koppelvlak.value}",
+    "aansluitingVoorProductie" : "${body.aansluitingVoorProductie.value}",
+    "aansluitingVoorPreproductie" : "${body.aansluitingVoorPreproductie.value}",
+    "organisatienaam" : "${body.organisatieNaam.value}",
+    "naamContactpersoon" : "${body.naamContactpersoon.value}",
+    "emailContactpersoon" : "${body.emailContactpersoon.value}",
+    "volgnummerBestaandeAGS" : "${body.volgnummerBestaandeAGS.value}",
+    "EORInummer" : "${body.EORInummer.value}",
+    "migratie_tijdstip_prod_old_id" : "${body.migratie_tijdstip_prod_id.value}",
+    "opmerkingenPlanningProd" : "${body.opmerkingenPlanningProd.value}"
+}

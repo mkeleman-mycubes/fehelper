@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "wijzig_mailboxgegevens",
+            "script" : "processInstanceId = body.answers['id'].data.answer[0]; headers.processInstanceId = processInstanceId"
+        }        
+    ]
+}

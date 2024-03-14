@@ -1,0 +1,13 @@
+{
+  "variables": {
+
+    "doetUNogAangifteVoorAGS": {
+        "value": "${body.answers['doetUNogAangifteVoorAGS'].data.answer[0]}",
+        "type": "String"
+    },
+        "telefoonnummer_niet_migreren": {
+        "value": "${body.answers['telefoonnummer_niet_migreren'].data.answer[0]}",
+        "type": "String"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "authorization": "Basic c2luZzp0N3s4WU5ebQ==",
+  "plannerendpoint": "https://migratie-planner.tst-docker.mycubes.nl",
+  "camundaendpoint": "https://tst-camunda.mycubes.nl/rest",
+  "serverendpoint": "https://belastingdienst.tst-docker.mycubes.nl"
+}

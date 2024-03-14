@@ -1,0 +1,9 @@
+{
+  "variables": {
+
+    "technische_formulier_prod_ontvangen": {
+        "value": "${body.answers['technische_formulier_prod_ontvangen'].data.answer[0]}",
+        "type": "String"
+    }
+  }
+}

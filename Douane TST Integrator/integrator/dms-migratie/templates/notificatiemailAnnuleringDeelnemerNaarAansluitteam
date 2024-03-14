@@ -1,0 +1,15 @@
+Beste aansluitteam,
+<br><br>
+
+<b>${body.variables.intakeTitel.value} ${body.variables.intakeVoornaam.value} ${body.variables.intakeTussenvoegsel.value} ${body.variables.intakeAchternaam.value}</b> van organisatie <b>${body.variables.organisatieNaam.value}</b> heeft aangegeven niet met de migratie verder te gaan.
+Graag contact opnemen met de klant.
+<br><br>
+email: <b>${body.variables.intakeEmail.value}</b><br>
+telefoonnummer: <b>${body.variables.telefoonnummer_niet_migreren.value}</b><br>
+reden niet migreren: <b>${body.variables.redenNietMigreren.value}</b>
+<br><br>
+Gebruik het volgende formulier om het contact met de klant te registeren:<br>
+https://htg-migratie.nl/acc/contactannuleringmigratie/?id=${body.processInstanceId}
+
+
+

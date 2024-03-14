@@ -1,0 +1,43 @@
+<#assign dateToday = .now?long />
+<#assign envVariables = body.formVariables.envVariables />
+<#assign nextWeek = dateToday + (7 * 24 * 60 * 60 * 1000) />
+Beste ${body.variables.intakeTitel.value} ${body.variables.intakeVoornaam.value}  ${body.variables.intakeTussenvoegsel.value} ${body.variables.intakeAchternaam.value},
+<br><br>
+
+U ontvangt deze e-mail in verband met de implementatie van DMS. Uw bedrijf heeft momenteel een aansluiting op AGS, die omgezet moeten worden naar DMS. Om u als bedrijf zorgvuldig op de DMS aan te kunnen laten sluiten, zal een aansluitproces moeten worden doorlopen. Dit aansluitproces bestaat uit de volgende stappen:<br>
+• Intake<br>
+• Tijdslot-planning<br>
+• Functionele aansluiting<br>
+Wij zullen u tijdig informeren over de benodigde acties, zodat u stapsgewijs wordt meegenomen in het aansluitproces.
+
+Deze e-mail heeft betrekking op de eerste stap in het aansluitproces, de <b>Intake</b>. De intake heeft tot doel om informatie te verzamelen, die nodig is voor de vervolgstappen in het aansluiten.
+Het intakeformulier met daarop de gevraagde gegevens kunt u <b> <a href="${envVariables.formsUrl}/intake/?id=${body.processInstanceId}&language=NL">hier</a></b> vinden. Uw EORInummer is <b>${body.variables.EORInummer.value}</b> en volgnummer is <b>${body.variables.volgnummerBestaandeAGS.value}</b>. Indien u meerdere volgnummers heeft, ontvangt u per volgnummer een intakeformulier. Om u zo goed mogelijk van dienst te zijn, zijn er in dit intakeformulier gegevens ingevuld op basis van informatie over uw huidige aansluiting bij AGS. Wij verzoeken u <b>uiterlijk ${nextWeek?number_to_datetime?string["dd-MM-yyyy"]} </b> het intakeformulier te controleren, eventueel te actualiseren en verder in te vullen.
+U ontvangt vervolgens van ons een bevestigingsmail, waarin tevens staat wat de volgende stap in het aansluitproces is.
+Mocht uw aansluiting op AGS niet meer actief zijn en mocht u daarom geen nieuwe aansluiting op de DMS nodig hebben, geeft u dit dan aan op het intakeformulier.
+Bij vragen over deze e-mail of het intakeformulier kunt u contact opnemen via het e-mailadres Douane.DMS.migratie@douane.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 08.00 tot 16.00 uur.
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam DMS
+<br><br>
+Deze e-mail is automatisch verstuurd. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de DMS te realiseren en voor onze administratie.
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear <#if body.variables.intakeTitel.value == "heer/mevrouw">sir/madam</#if><#if body.variables.intakeTitel.value == "heer">sir</#if><#if body.variables.intakeTitel.value == "meneer">sir</#if><#if body.variables.intakeTitel.value == "mevrouw">madam</#if> ${body.variables.intakeVoornaam.value}  ${body.variables.intakeTussenvoegsel.value} ${body.variables.intakeAchternaam.value},
+<br><br>
+
+We have sent you this e-mail due to the implementation of DMS. Currently your company has a connection to AGS which must be converted to DMS. To be able to connect you correctly to the DMS, a connection process must be followed. This connection process consists of the following steps:  <br>
+• Intake<br>
+• Timeslot-planning<br>
+• Functional connection<br>
+We shall inform you in a timely manner about the required actions to take so that you are gradually taken through the connection process. This e-mail relates to the first step in the connection process, the <b>Intake</b>. The purpose of the intake is to collect information necessary for the next steps in the connection. The intake form with the requested information can be found <b> <a href="${envVariables.formsUrl}/intake/?id=${body.processInstanceId}&language=EN">here</a></b>. Your EORInumber is <b>${body.variables.EORInummer.value}</b> and Serial number is <b>${body.variables.volgnummerBestaandeAGS.value}</b>. If you have multiple serial numbers, you will receive an intake form for each serial number. In order to provide you with the best possible service, data has already been entered on this intake form based on information from your current connection with AGS. We kindly request that you check the intake form, update it and complete it <b>no later than  ${nextWeek?number_to_datetime?string["dd-MM-yyyy"]}</b>. We will then send you a confirmation e-mail which also states the next step in the connection process. If your connection to AGS is no longer active and therefore you do not need a new connection to the DMS, please indicate this on the intake form. Should you have any questions about this e-mail, please don’t hesitate to contact us via e-mail address Douane.DMS.migratie@douane.nl or the National Customs Helpdesk by telephone (088 156 66 55) on workdays from 8 a.m. to 4 p.m.
+<br><br>
+Sincerely,
+<br><br>
+Connection team DMS,
+<br><br>
+This e-mail has been sent automatically. We only use your data to realise your new connection to the DMS and for our administration.

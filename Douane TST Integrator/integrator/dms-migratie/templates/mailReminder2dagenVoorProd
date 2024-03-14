@@ -1,0 +1,28 @@
+Beste ${body.variables.naamContactpersoon.value},
+<br><br>
+Hiermee willen wij u er graag herinneren dat wij op <b>${body.variables.gewensteAansluitdag_prod.value} ${body.variables.migratie_tijdstip_prod.value} CET</b> uw bedrijf functioneel aan sluiten op DMS. Uw EORInummer is <b>${body.variables.EORInummer.value}</b> en volgnummer is <b>${body.variables.volgnummerBestaandeAGS.value}</b>. Bij vragen over deze e-mail kunt u contact opnemen via het e-mailadres Douane.DMS.migratie@douane.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 08.00 tot 16.00 uur.
+
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam DMS
+<br><br>
+Deze e-mail is automatisch verstuurd. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de DMS te realiseren en voor onze administratie.
+
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear ${body.variables.naamContactpersoon.value},
+<br><br>
+
+We hereby kindly reminder that we will realise your functional connection to DMS on <b>${body.variables.gewensteAansluitdag_prod.value} ${body.variables.migratie_tijdstip_prod.value} CET</b>. Your EORInumber is <b>${body.variables.EORInummer.value}</b> and Serial number is <b>${body.variables.volgnummerBestaandeAGS.value}</b>. Should you have any questions about this e-mail, please don’t hesitate to contact us via e-mail address Douane.DMS.migratie@douane.nl or the National Customs Helpdesk by telephone (088 156 66 55) on workdays from 8 a.m. to 4 p.m.
+<br><br>
+Sincerely,
+<br><br>
+Connection team DMS
+<br><br>
+This e-mail has been sent automatically. We only use your data to realise your new connection to the DMS and for our administration.
+

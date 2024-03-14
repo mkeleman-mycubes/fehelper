@@ -1,0 +1,15 @@
+{
+  <#list body as processData>
+
+    <#if processData.name??>
+      "${processData.name}": {
+        "value": <#if processData.value?is_boolean || processData.value?is_number>
+          "${processData.value?c}"
+        <#else>
+          "${processData.value?json_string}"
+        </#if>
+      }<#sep>,</#sep> 
+    </#if>
+  
+  </#list>
+}
