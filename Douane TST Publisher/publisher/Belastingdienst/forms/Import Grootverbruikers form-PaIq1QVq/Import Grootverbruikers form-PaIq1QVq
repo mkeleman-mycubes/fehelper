@@ -1,0 +1,184 @@
+{
+  "hash": "PaIq1QVq",
+  "name": "Import Grootverbruikers form",
+  "description": "",
+  "tags": "",
+  "company": "1346",
+  "version": "0.01",
+  "theme": "3007",
+  "themeViewUri": "",
+  "serviceUri": "https://test-integrator.formsengine.io/mit/trainman/yMxHQHLRso2ajjnl/dms-migratie",
+  "servicePackageId": "",
+  "serviceTemplateName": "import_grootverbruiker_piper",
+  "prefillServiceTemplateName": "",
+  "jsDependencies": "[]",
+  "data": {
+    "id": 322108,
+    "type": "questionnaire",
+    "name": "Import Grootverbruikers form",
+    "description": "",
+    "successContent": {
+      "NL": "<br>\nBinnen enkele seconden verschijnt zullen de gevonden combinaties EORI-volgnummer gemigreerd gemeld worden. Controleer de Integrator AuditTrail bij een foutmelding om te zien welke niet zijn gemigreerd\n</br>"
+    },
+    "errorContent": {
+      "NL": "<span class=\"err-message\">\n    Het geuploade bestand is niet in orde\n</span>"
+    },
+    "submitUrl": "",
+    "submitErrorUrl": "",
+    "tags": "",
+    "backButton": {
+      "NL": ""
+    },
+    "nextButton": {
+      "NL": ""
+    },
+    "submitButton": {
+      "NL": ""
+    },
+    "locales": "NL",
+    "defLocale": "NL",
+    "company": "Belastingdienst",
+    "user": "supportBelastingdienst",
+    "publishDate": "14-03-2022 09:04:21",
+    "publishVersion": "0.01",
+    "pages": [
+      {
+        "id": 322109,
+        "type": "section",
+        "label": {
+          "NL": "Import grootverbruiker data"
+        },
+        "description": "",
+        "name": "import_grootverbruiker_data",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": ""
+        },
+        "nextButton": {
+          "NL": ""
+        },
+        "submitButton": {
+          "NL": "Versturen"
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": [
+          {
+            "id": 322110,
+            "type": "question",
+            "label": {
+              "NL": "New grootverbruiker label"
+            },
+            "description": {
+              "NL": "Upload een bestand om een lijst met Grootverbuikers gemigreerd te melden"
+            },
+            "name": "grootverbruiker",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "textlabel",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          },
+          {
+            "id": 322111,
+            "type": "question",
+            "label": {
+              "NL": "Bestand"
+            },
+            "description": {
+              "NL": ""
+            },
+            "name": "upload_file",
+            "subLabel": {
+              "NL": ""
+            },
+            "inputType": "upload",
+            "validScript": "",
+            "elementId": "",
+            "className": "",
+            "hint": {
+              "NL": ""
+            },
+            "tooltip": {
+              "NL": ""
+            },
+            "labelVariables": {
+              "NL": ""
+            },
+            "tags": "",
+            "defaultValue": {
+              "NL": ""
+            },
+            "disabled": false,
+            "minDate": "",
+            "minDateType": "",
+            "minDateOffset": "",
+            "maxDate": "",
+            "maxDateType": "",
+            "maxDateOffset": "",
+            "dateType": "calendar",
+            "secured": false,
+            "customTemplate": "",
+            "varNames": "",
+            "varValues": "{}",
+            "mask": "",
+            "validations": [
+              {
+                "args": "",
+                "script": "if (!value ) { return [ERR_EMPTY:\"Veld is verplicht\"] }"
+              }
+            ],
+            "deduceJson": "",
+            "deduceScript": "",
+            "unselectLabel": {
+              "NL": ""
+            },
+            "options": []
+          }
+        ]
+      }
+    ],
+    "version": 0,
+    "token": "nalZ2arq"
+  }
+}
