@@ -1,0 +1,221 @@
+Beste ${body.variables.intakeTitel.value} ${body.variables.intakeVoornaam.value} ${body.variables.intakeTussenvoegsel.value} ${body.variables.intakeAchternaam.value},
+<br><br>
+Hiermee bevestigen wij dat wij uw intakegegevens voor aansluiting met EORInummer <b>${body.variables.EORInummer.value}</b> en volgnummer <b>${body.variables.volgnummerBestaandeAGS.value}</b> hebben ontvangen. Hartelijk dank voor het aanleveren. Mochten wij nog vragen hebben, dan nemen wij contact met u op. Onderaan deze e-mail vindt u een overzicht van uw gegevens. Wij adviseren u om deze e-mail te bewaren.
+
+<#if body.variables.doetUNogAangifteVoorAGS.value =="Ja">
+De eerste stap in het aansluitproces, de Intake, is hiermee afgerond. Om de tweede stap, de <b>Tijdslot-planning</b>, te starten ontvangt u van ons een e-mail.
+</#if>
+
+Bij vragen over deze mail kunt u contact opnemen via het emailadres Douane.DMS.migratie@douane.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 08.00 tot 16.00 uur. 
+<br><br>
+
+<H3>Gegevens intakeformulier DMS:</H3>
+<table border="1" cellpadding="5" cellspacing="0">
+
+<tr>
+<td width="300">EORInummer</td>
+<td>${body.variables.EORInummer.value}</td>
+</tr>
+<tr>
+<td width="300">Volgnummer</td>
+<td>${body.variables.volgnummerBestaandeAGS.value}</td>
+</tr>
+<tr>
+<td width="300">Organisatienaam</td>
+<td>${body.variables.organisatieNaam.value}</td>
+</tr>
+<tr>
+<td width="300">Doet u nog aangifte in AGS?</td>
+<td>${body.variables.doetUNogAangifteVoorAGS.value}</td>
+</tr>
+<tr>
+<td width="300"> <b>Bedrijfsnaam softwareleverancier</b><br>
+Indien van toepassing</td>
+<td>${body.variables.naamSoftwareLeverancier.value}</td>
+</tr>
+
+
+<#if body.variables.doetUNogAangifteVoorAGS.value =="Ja">
+
+
+
+<tr>
+<td width="300" colspan="2">
+<b>Algemeen contactpersoon</b><br>
+<i>(aanspreekpunt voor gehele aansluitproces)</i>
+</td>
+</tr>
+<tr>
+<td width="300">-Naam</td>
+<td>${body.variables.naamContactpersoon.value}</td>
+</tr>
+<tr>
+<td width="300">-E-mail</td>
+<td>${body.variables.emailContactpersoon.value}</td>
+</tr>
+<tr>
+<td width="300">-Telefoonnummer</td>
+<td>${body.variables.telContactpersoon.value}</td>
+</tr>
+<tr>
+<td width="300" colspan="2">
+<b>Functioneel contactpersoon</b>
+<br>
+<i>(voor afstemming over de planning)</i>
+</td>
+</tr>
+<tr>
+<td width="300">-Naam</td>
+<td>${body.variables.naamFunctioneelExpert.value}</td>
+</tr>
+<tr>
+<td width="300">-E-mail</td>
+<td>${body.variables.emailFunctioneelExpert.value}</td>
+</tr>
+<tr>
+<td width="300">-Telefoonnummer</td>
+<td>${body.variables.telFunctioneelExpert.value}</td>
+</tr>
+<tr>
+<td width="300"><b>Bijzonderheden</b><br>
+<i>Aanvullende informatie die voor de migratie van uw aansluiting van belang is</i>
+</td>
+<td>${body.variables.bijzonderheden.value}</td>
+</tr>
+
+<#else>
+
+<tr>
+<td width="300">Telefoonnummer</td>
+<td>${body.variables.telefoonnummer_niet_migreren.value}</td>
+</tr>
+<tr>
+<td width="300">Toelichting</td>
+<td>${body.variables.redenNietMigreren.value}</td>
+</tr>
+
+</#if>
+</table>
+
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam DMS
+<br><br>
+Deze e-mail is automatisch verstuurd. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de DMS te realiseren en voor onze administratie.
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear <#if body.variables.intakeTitel.value == "heer/mevrouw">sir/madam</#if><#if body.variables.intakeTitel.value == "heer">sir</#if><#if body.variables.intakeTitel.value == "meneer">sir</#if><#if body.variables.intakeTitel.value == "mevrouw">madam</#if> ${body.variables.intakeVoornaam.value}  ${body.variables.intakeTussenvoegsel.value} ${body.variables.intakeAchternaam.value},
+<br><br>
+
+We hereby confirm that we have received your intake data for connecting to EORInumber <b>${body.variables.EORInummer.value}</b> and Serial number <b>${body.variables.volgnummerBestaandeAGS.value}</b>. Thank you for submitting. If we have any questions we will contact you. At the end of this e-mail you will find an overview of your data. We advise you to save this e-mail. 
+
+<#if body.variables.doetUNogAangifteVoorAGS.value =="Ja">
+The first step in the connection process, the intake, has now been completed. To start the second step, the <b>Time Slot planning</b>, you will receive an e-mail from us. 
+</#if>
+
+Should you have any questions about this e-mail, please don’t hesitate to contact us via e-mail address Douane.DMS.migratie@douane.nl or the National Customs Helpdesk by telephone (088 156 66 55) on workdays from 8 a.m. to 4 p.m.
+<br><br>
+
+<H3>Data intake form:</H3>
+<table border="1" cellpadding="5" cellspacing="0">
+
+<tr>
+<td width="300">EORInumber</td>
+<td>${body.variables.EORInummer.value}</td>
+</tr>
+<tr>
+<td width="300">Serial number</td>
+<td>${body.variables.volgnummerBestaandeAGS.value}</td>
+</tr>
+<tr>
+<td width="300">Name organisation</td>
+<td>${body.variables.organisatieNaam.value}</td>
+</tr>
+<tr>
+<td width="300">Is your AGS connection still active?</td>
+<td>
+<#if body.variables.doetUNogAangifteVoorAGS.value =="Ja">
+Yes
+<#else>
+No
+</#if>
+</td>
+</tr>
+<tr>
+<td width="300"> <b>Name software supplier</b><br>
+If applicable</td>
+<td>${body.variables.naamSoftwareLeverancier.value}</td>
+</tr>
+
+
+<#if body.variables.doetUNogAangifteVoorAGS.value =="Ja">
+<tr>
+<td width="300" colspan="2">
+<b>Contact</b><br>
+<i>(point of contact for the entire connection process)</i>
+</td>
+</tr>
+<tr>
+<td width="300">-Name</td>
+<td>${body.variables.naamContactpersoon.value}</td>
+</tr>
+<tr>
+<td width="300">-E-mail</td>
+<td>${body.variables.emailContactpersoon.value}</td>
+</tr>
+<tr>
+<td width="300">-Telephone number</td>
+<td>${body.variables.telContactpersoon.value}</td>
+</tr>
+<tr>
+<td width="300" colspan="2">
+<b>Functional contact </b>
+<br>
+<i>(for coordination about the planning)</i>
+</td>
+</tr>
+<tr>
+<td width="300">-Name</td>
+<td>${body.variables.naamFunctioneelExpert.value}</td>
+</tr>
+<tr>
+<td width="300">-E-mail address</td>
+<td>${body.variables.emailFunctioneelExpert.value}</td>
+</tr>
+<tr>
+<td width="300">-Telephone number</td>
+<td>${body.variables.telFunctioneelExpert.value}</td>
+</tr>
+<tr>
+<td width="300"><b>Additional information</b><br>
+<i>Important Information for the migration of your connection</i>
+</td>
+<td>${body.variables.bijzonderheden.value}</td>
+</tr>
+
+
+<#else>
+
+<tr>
+<td width="300">Telephone number</td>
+<td>${body.variables.telefoonnummer_niet_migreren.value}</td>
+</tr>
+<tr>
+<td width="300">Explanation</td>
+<td>${body.variables.redenNietMigreren.value}</td>
+</tr>
+
+</#if>
+</table>
+
+<br><br>
+Sincerely,
+<br><br>
+Connection team DMS,
+<br><br>
+This e-mail has been sent automatically. We only use your data to realise your new connection to the DMS and for our administration.
