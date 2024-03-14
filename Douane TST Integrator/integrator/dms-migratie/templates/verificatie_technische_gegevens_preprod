@@ -1,0 +1,9 @@
+{
+  "variables": {
+
+    "Technische formulier Preprod ontvangen": {
+        "value": "${body.answers['technische_formulier_preprod_ontvangen'].data.answer[0]}",
+        "type": "String"
+    }
+  }
+}
