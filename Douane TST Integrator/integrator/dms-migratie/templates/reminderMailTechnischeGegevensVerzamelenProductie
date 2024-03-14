@@ -1,0 +1,29 @@
+<#assign dateToday = .now?long />
+<#assign todayPlus4Days = dateToday + (4 * 24 * 60 * 60 * 1000) />
+Beste ${body.variables.naamContactpersoon.value},
+<br><br>
+Om uw bedrijf zorgvuldig op de DMS aan te kunnen laten sluiten hebben wij u een week geleden een mail gestuurd met het verzoek om voor uw aansluiting op DMS het formulier met de functionele gegevens voor DMS in te vullen. Wij hebben uw formulier helaas nog niet ontvangen. Wij verzoeken u om <b>uiterlijk ${todayPlus4Days?number_to_datetime?string["dd-MM-yyyy"]}</b>uw formulier ingevuld terug te sturen naar het emailadres Douane.DMS.migratie@douane.nl. Uw EORInummer is <b>${body.variables.EORInummer.value}</b> en volgnummer <b>${body.variables.volgnummerBestaandeAGS.value}</b>. U ontvangt vervolgens van ons een bevestigingsmail. Bij vragen over deze mail kunt u contact opnemen via het emailadres Douane.DMS.migratie@douane.nl of telefonisch (088 156 66 55) met de Nationale Helpdesk Douane op werkdagen van 08.00 tot 16.00 uur. 
+
+<br><br>
+Met vriendelijke groet,
+<br><br>
+Aansluitteam DMS
+<br><br>
+Deze mail is automatisch verstuurd. Mocht u inmiddels de gegevens al wel hebben ingevuld en het formulier hebben teruggestuurd, dan kunt u deze mail als niet verzonden beschouwen. Wij gebruiken uw gegevens uitsluitend om uw nieuwe aansluiting op de DMS te realiseren en voor onze administratie.
+
+<br><br>
+<hr>
+<br>
+<b>ENGLISH VERSION</b>
+<br><br>
+
+Dear ${body.variables.naamContactpersoon.value},
+<br><br>
+
+To be able to connect your company carefully to the DMS, we have sent you an e-mail a week ago with the request to fill out the form with the technical data for the DMS for your connection. Unfortunately we have not yet received your data. We kindly request that you fill out the form and send the form <b>at the latest ${todayPlus4Days?number_to_datetime?string["dd-MM-yyyy"]}</b> to the e-mail address Douane.DMS.migratie@douane.nl. Your EORInumber is <b>${body.variables.EORInummer.value}</b> and Serial number is <b>${body.variables.volgnummerBestaandeAGS.value}</b>. Subsequently you will receive a confirmation e-mail from us. Should you have any questions about this e-mail, please don’t hesitate to contact us via e-mail address Douane.DMS.migratie@douane.nlor the National Customs Helpdesk by telephone (088 156 66 55) on workdays from 8 a.m. to 4 p.m.
+<br><br>
+Sincerely,
+<br><br>
+Connection team DMS
+<br><br>
+This e-mail has been sent automatically. If you have already fill out the form and sent it you may disregard this letter. We only use your data to realise your new connection to the DMS and for our administration.
