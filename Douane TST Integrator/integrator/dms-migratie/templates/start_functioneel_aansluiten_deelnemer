@@ -1,0 +1,9 @@
+{
+  "variables": {
+
+    "functionele_aansluiting_gestart": {
+        "value": "${body.answers['functionele_aansluiting_gestart'].data.answer[0]}",
+        "type": "String"
+    }
+  }
+}
