@@ -1,0 +1,8 @@
+{
+  "modifications": {
+    "migratie_notes": {
+        "value": "${body.formVariables.answer[0]}",
+        "type": "String"
+    }
+  }
+}
