@@ -1,0 +1,5 @@
+{ 
+    "email" : "${body.answers.e_mail.data.answer[0]}",
+    "subject" : "Export DMS migratie portaal data",
+    "content" : "Hierbij als bijlage de opgevraagde DMS migratie portaal data."
+}
