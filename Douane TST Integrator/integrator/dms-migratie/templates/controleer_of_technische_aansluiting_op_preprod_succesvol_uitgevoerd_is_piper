@@ -1,0 +1,9 @@
+{
+    "pipes": [
+        {
+            "type" : "action",
+            "name" : "controleer_of_technische_aansluiting_op_preprod_succesvol_uitgevoerd_is",
+            "script" : "taskId = body.answers['id'].data.answer[0]; headers.taskId = taskId"
+        }
+    ]
+}
