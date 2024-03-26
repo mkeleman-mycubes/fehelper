@@ -1,0 +1,76 @@
+{
+  "hash": "KZrqcqeH",
+  "name": "HTG slot herplannen door Deelnemer",
+  "description": "",
+  "tags": "",
+  "company": "1346",
+  "version": "0.01",
+  "theme": "",
+  "themeViewUri": "",
+  "serviceUri": "",
+  "servicePackageId": "",
+  "serviceTemplateName": "",
+  "prefillServiceTemplateName": "",
+  "jsDependencies": "[]",
+  "data": {
+    "id": 338835,
+    "type": "questionnaire",
+    "name": "HTG slot herplannen door Deelnemer",
+    "description": "",
+    "successContent": {
+      "NL": ""
+    },
+    "errorContent": {
+      "NL": ""
+    },
+    "submitUrl": "",
+    "submitErrorUrl": "",
+    "tags": "",
+    "backButton": {
+      "NL": "Nee"
+    },
+    "nextButton": {
+      "NL": "Ja"
+    },
+    "submitButton": {
+      "NL": "Ja"
+    },
+    "locales": "NL",
+    "defLocale": "NL",
+    "company": "Belastingdienst",
+    "user": "supportBelastingdienst",
+    "publishDate": "26-03-2024 06:09:51",
+    "publishVersion": "0.01",
+    "pages": [
+      {
+        "id": 338836,
+        "type": "section",
+        "label": {
+          "NL": "Planningsformulier HTG bevestiging"
+        },
+        "description": "",
+        "name": "planningsformulier_htg_bevestiging",
+        "elementId": "",
+        "className": "",
+        "condScript": "",
+        "condJson": "",
+        "tags": "",
+        "backButton": {
+          "NL": "Nee"
+        },
+        "nextButton": {
+          "NL": "Ja"
+        },
+        "submitButton": {
+          "NL": "Ja"
+        },
+        "submitUrl": "",
+        "submitErrorUrl": "",
+        "pageUrl": "",
+        "questions": []
+      }
+    ],
+    "version": 0,
+    "token": "nalZ2arq"
+  }
+}
